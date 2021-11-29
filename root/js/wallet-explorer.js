@@ -47,6 +47,22 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
       });
     }
     nftsLoaded = true;
+
+    buildPage();
+  }
+
+  // Build the html
+  function buildPage() {
+    let container = document.getElementById("nft-content");
+    for(let i = 0; i < auctions.length; i++) {
+        let auctionCard = document.createElement('div');
+        let assetName = document.createElement('h2');
+        let assetImage = document.createElement('img');
+
+        auctionCard.append(assetName);
+        auctionCard.append(assetImage);
+        container.append(auctionCard);
+    }  
   }
 
   // Build an object from the res, used to clean up the getMetaData function
