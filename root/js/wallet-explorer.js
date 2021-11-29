@@ -98,7 +98,7 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     assetName.innerText = name;
     assetMetadata.innerText = metadata;
 
-    auctionCard.classList.add("auction-card");
+    auctionCard.classList.add("auction-card-modal");
 
     auctionCard.append(assetName);
     auctionCard.append(assetImage);

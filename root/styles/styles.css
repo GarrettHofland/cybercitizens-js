@@ -249,6 +249,22 @@ a {
   margin: 0 auto;
 }
 
+.auction-card-modal {
+  height: auto;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  color: #a02161;
+  text-align: center;
+  border: 3px solid #8c1d8c;
+  border-radius: 6px;
+}
+.auction-card-modal img {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+
 .auction-card {
   height: auto;
   width: 100%;
@@ -398,6 +414,58 @@ ul li {
 
 .team-column {
   text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: absolute;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  width: 100vw;
+  /* Full width */
+  height: 100vh;
+  /* Full height */
+  margin: auto auto;
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  /* Could be more or less, depending on screen size */
+}
+.modal-content .auction-card {
+  width: 50%;
+  height: auto;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media all and (max-width: 768px) {
