@@ -254,7 +254,7 @@ a {
 .auction-card-modal {
   width: 60%;
   height: auto;
-  margin: 0 auto;
+  margin: 20vh auto;
   color: #a02161;
   text-align: center;
   border: 3px solid #8c1d8c;
@@ -431,7 +431,7 @@ ul li {
   left: 0;
   width: 100vw;
   /* Full width */
-  height: 100vh;
+  height: auto;
   /* Full height */
   margin: auto auto;
   overflow: auto;

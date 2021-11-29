@@ -278,7 +278,7 @@ a {
 .auction-card-modal {
     width: 60%;
     height: auto;
-    margin: 0 auto;
+    margin: 20vh auto;
     color: $main-hover;
     text-align: center;
     border: 3px solid $secondary-hover;
@@ -455,7 +455,7 @@ a {
     left: 0;
     // top: 0;
     width: 100vw; /* Full width */
-    height: 100vh; /* Full height */
+    height: auto; /* Full height */
     margin: auto auto;
     overflow: auto; /* Enable scroll if needed */
     // background-color: rgb(0,0,0); /* Fallback color */
