@@ -7,6 +7,10 @@ document.querySelector(".up-button").onclick = function(event) {
     window.scrollTo(0, 0);
 }
 
+document.querySelector("#explorer").onclick = function(event) {
+    window.location = "pages/explore.html";
+}
+
 function exitMenuOnLinkClick() {
     navLinks.classList.toggle("open");
     links.forEach(link => {

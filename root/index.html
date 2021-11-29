@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="styles/styles.css" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybercitizens</title>
@@ -52,7 +53,7 @@
         </p>
         <div class="button-group animate__animated animate__fadeInLeft animate__delay-1s">
           <button class="button even-button"><a href="https://ergoauctions.org/#/auction/active?type=all&searchValue=ErgoPixels">Buy</a></button>
-          <button class="button odd-button" on-click="navigateExplore()">Explore</button>
+          <button class="button odd-button" id="explorer">Explore</button>
           <button class="button odd-button"><a href="https://twitter.com/ErgoPixels"><img src="assets/logo-twitter.svg"></a></button>
           <button class="button odd-button"><a href="https://discord.com/invite/7FcEFKcKJ7"><img src="assets/logo-discord.svg"></a></button>
         </div>
@@ -76,6 +77,28 @@
   </section>
   <section class="section s4" id="team">
     <h2 class="section-header">Our Team</h2>
+    <div class="team-container">
+        <div class="team-column">
+            <img class="team-member-image" src="assets/cybercitizens/086.png">
+            <h3 class="team-member-name">PIXEL</h3>
+            <p class="team-member-description">LOVER OF the CYBERPUNK theme and pixels</p>
+        </div>
+        <div class="team-column">
+            <img class="team-member-image" src="assets/cybercitizens/108.png">
+            <h3 class="team-member-name">BREEHZE</h3>
+            <p class="team-member-description">HE GENERATEs stuff</p>
+        </div>
+        <div class="team-column">
+            <img class="team-member-image" src="assets/cybercitizens/173.png">
+            <h3 class="team-member-name">CURSE</h3>
+            <p class="team-member-description">he's not really cursed, he knows html and css</p>
+        </div>
+        <div class="team-column">
+            <img class="team-member-image" src="assets/cybercitizens/206.png">
+            <h3 class="team-member-name">AGRO</h3>
+            <p class="team-member-description">HE KNOWS HOW PHOTOSHOP WORKS</p>
+        </div>
+    </div>
   </section>
   <section class="section s5" id="faq">
     <h2 class="section-header">F.A.Q</h2>
@@ -117,5 +140,6 @@
 </div>
     <!-- End -->
     <script src="js/app.js"></script>
+    <script src="js/wallet-explorer.js"></script>
 </body>
 </html>
