@@ -243,6 +243,52 @@ a {
     margin: 40% auto;
 }
 
+.nft-container > * {
+    flex-basis: 100%;
+}
+
+// Explore page css
+.nft-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 10vh;
+}
+
+.auction-card {
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    color: $main-hover;
+    text-align: center;
+    flex: 0 0 30%; /*grow | shrink | basis */
+    border: 3px solid $secondary-hover;
+    border-radius: 6px;
+
+    img {
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.auction-card:hover {
+    border-color: $secondary-colour;
+    color: $main-colour;
+}
+
+.Loading-text {
+    width: 100%;
+    height: auto;
+    margin: auto auto;
+    font-size: 4em;
+    text-align:center;
+}
+
 // Header scss
 .navMenu {
     display: grid;
@@ -632,5 +678,10 @@ a {
     .team-member-image {
         width: 60%;
         height: 60%;
+    }
+
+    // Explorer css
+    .nft-container > * {
+        flex-basis: 100%;
     }
 }

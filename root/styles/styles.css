@@ -218,7 +218,52 @@ a {
 }
 
 .slideshow-container {
-  margin: 10% auto;
+  margin: 40% auto;
+}
+
+.nft-container > * {
+  flex-basis: 100%;
+}
+
+.nft-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+
+.auction-card {
+  height: auto;
+  width: 90%;
+  margin: 0 auto;
+  color: #a02161;
+  text-align: center;
+  flex: 0 0 30%;
+  /*grow | shrink | basis */
+  border: 3px solid #8c1d8c;
+  border-radius: 6px;
+}
+.auction-card img {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+
+.auction-card:hover {
+  border-color: #f711f7;
+  color: #f71184;
+}
+
+.Loading-text {
+  width: 100%;
+  height: auto;
+  margin: auto auto;
+  font-size: 4em;
+  text-align: center;
 }
 
 .navMenu {
@@ -599,6 +644,10 @@ ul li {
   .team-member-image {
     width: 60%;
     height: 60%;
+  }
+
+  .nft-container > * {
+    flex-basis: 100%;
   }
 }
 
