@@ -80,6 +80,28 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
   // Show a popup of the NFT
   function showNFTModal(image, name) {
     console.log(image, name);
+
+    var modal = document.getElementById("explorerModal");
+    let assetName = document.createElement('h2');
+    let assetImage = document.createElement('img');
+
+    while(modal.firstChild)
+      modal.removeChild(modal.firstChild);
+
+    assetImage.src = image;
+    assetName.innerText = name;
+
+    modal.classList.add("auction-card");
+
+    modal.append(assetName);
+    modal.append(assetImage);
+
+    modal.style.display = "block";
+
+    modal.onclick = function() {
+      modal.style.display = "none";
+    }
+
   }
 
   // Build an object from the res, used to clean up the getMetaData function
