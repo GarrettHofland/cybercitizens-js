@@ -17,6 +17,7 @@ $header-background-colour: #322554;
 
 html {
     scroll-behavior: smooth;
+    background-color: $background-colour;
     background-image: url("../assets/bg.png");
     background-repeat: no-repeat;
     background-attachment: fixed; 
