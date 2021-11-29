@@ -246,29 +246,48 @@ a {
     margin: 40% auto;
 }
 
-.nft-container > * {
-    flex-basis: 100%;
+.explore-content {
+    margin-top: 20vh;
+    text-align: center;
+    margin: 0 auto;
+
+    .section-header {
+        margin-top: 10vh;
+    }
+}
+
+#nft-container > * {
+    flex: 0 0 30%;
 }
 
 // Explore page css
-.nft-container {
+#nft-container {
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // align-items: center;
+    // justify-content: center;
+    // gap: 20px;
+    // width: 90vw;
+    // height: auto;
+    // margin: 0 auto;
+    // top: 20vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     width: 90vw;
+    height: auto;
     margin: 0 auto;
-    margin-top: 10vh;
 }
 
 .auction-card {
     height: auto;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     color: $main-hover;
     text-align: center;
-    flex: 0 0 30%; /*grow | shrink | basis */
     border: 3px solid $secondary-hover;
     border-radius: 6px;
 
@@ -513,9 +532,6 @@ a {
         font-size: 1rem;
     }
 
-    .img-column {
-    }
-
     .even-button {
         background-color: $main-colour;
         // transition: ease-out 1s;
@@ -681,8 +697,15 @@ a {
         height: auto;
     }
 
+
     // Explorer css
+
     .nft-container > * {
-        flex-basis: 100%;
+        display: block;
     }
+
+    .nft-container {
+        display: block;
+    }
+        
 }

@@ -67,7 +67,7 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 
         auctionCard.append(assetName);
         auctionCard.append(assetImage);
-        document.querySelector("body").append(auctionCard);
+        container.append(auctionCard);
     }  
   }
 

@@ -225,29 +225,36 @@ a {
   margin: 40% auto;
 }
 
-.nft-container > * {
-  flex-basis: 100%;
+.explore-content {
+  margin-top: 20vh;
+  text-align: center;
+  margin: 0 auto;
+}
+.explore-content .section-header {
+  margin-top: 10vh;
 }
 
-.nft-container {
+#nft-container > * {
+  flex: 0 0 30%;
+}
+
+#nft-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   width: 90vw;
+  height: auto;
   margin: 0 auto;
-  margin-top: 10vh;
 }
 
 .auction-card {
   height: auto;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   color: #a02161;
   text-align: center;
-  flex: 0 0 30%;
-  /*grow | shrink | basis */
   border: 3px solid #8c1d8c;
   border-radius: 6px;
 }
@@ -646,7 +653,11 @@ ul li {
   }
 
   .nft-container > * {
-    flex-basis: 100%;
+    display: block;
+  }
+
+  .nft-container {
+    display: block;
   }
 }
 
