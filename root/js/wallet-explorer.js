@@ -82,6 +82,7 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     console.log(image, name);
 
     var modal = document.getElementById("explorerModal");
+    let auctionCard = document.createElement("div");
     let assetName = document.createElement('h2');
     let assetImage = document.createElement('img');
 
@@ -91,10 +92,12 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     assetImage.src = image;
     assetName.innerText = name;
 
-    modal.classList.add("auction-card");
+    auctionCard.classList.add("auction-card");
 
-    modal.append(assetName);
-    modal.append(assetImage);
+    auctionCard.append(assetName);
+    auctionCard.append(assetImage);
+
+    modal.append(auctionCard);
 
     modal.style.display = "block";
 
