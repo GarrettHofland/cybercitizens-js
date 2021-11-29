@@ -275,17 +275,20 @@ a {
 
 .auction-card-modal {
     height: auto;
-    width: 100%;
+    width: 90%;
     height: auto;
     margin: 0 auto;
     color: $main-hover;
     text-align: center;
     border: 3px solid $secondary-hover;
     border-radius: 6px;
+    background-color: $background-colour;
 
     img {
+        border: 3px solid $secondary-hover;
+        border-radius: 6px;
         margin: 0 auto;
-        width: 100%;
+        width: 50%;
         height: auto;
     }
 }
@@ -760,6 +763,15 @@ a {
 
     .nft-container {
         display: block;
+    }
+
+    .auction-card-modal {
+    
+        img {
+            margin: 0 auto;
+            width: 90%;
+            height: auto;
+        }
     }
         
 }
