@@ -6,6 +6,8 @@ $main-hover: #a02161;
 $secondary-colour: #f711f7;
 $secondary-hover: #8c1d8c;
 
+$main-colour-gradient: linear-gradient(to bottom, #f71184 0%, #f711f7 100%);
+
 
 $nav-height: 8vh;
 $mobile-nav-height: 4vh;
@@ -15,6 +17,7 @@ $header-background-colour: #322554;
 
 html {
     scroll-behavior: smooth;
+    background-color: $background-colour;
     background-image: url("../assets/bg.png");
     background-repeat: no-repeat;
     background-attachment: fixed; 
@@ -69,8 +72,13 @@ a {
 }
 
 .s1 {
-    height: 110vh;
+    height: 100vh;
     margin-top: 0;
+    margin-bottom: none;
+}
+
+.s2 {
+    margin-top: none;
 }
 
 .columns {
@@ -228,8 +236,16 @@ a {
 .section-header {
     font-size: 4rem;
     margin: 0 auto;
-    margin-bottom: 8vh;
     color: $main-colour;
+
+}
+
+.section-header-container {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 8vh;
+    border-bottom: $main-colour 2px solid;
+    text-align: center;
 }
 
 #ergopixel-img {
@@ -246,29 +262,60 @@ a {
     margin: 40% auto;
 }
 
-.nft-container > * {
-    flex-basis: 100%;
+
+.explore-content {
+    margin-top: 20vh;
+    text-align: center;
+    margin: 0 auto;
+    height: auto;
+    width: auto;
+
+    .section-header {
+        margin-top: 10vh;
+    }
+}
+
+#nft-container > * {
+    flex: 0 0 30%;
 }
 
 // Explore page css
-.nft-container {
+#nft-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     width: 90vw;
+    height: auto;
     margin: 0 auto;
-    margin-top: 10vh;
+}
+
+.auction-card-modal {
+    width: 60%;
+    height: auto;
+    margin: 20vh auto;
+    color: $main-hover;
+    text-align: center;
+    border: 3px solid $secondary-hover;
+    border-radius: 6px;
+    background-color: $background-colour;
+
+    img {
+        border: 3px solid $secondary-hover;
+        border-radius: 6px;
+        margin: 0 auto;
+        width: 50%;
+        height: auto;
+    }
 }
 
 .auction-card {
     height: auto;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     color: $main-hover;
     text-align: center;
-    flex: 0 0 30%; /*grow | shrink | basis */
     border: 3px solid $secondary-hover;
     border-radius: 6px;
 
@@ -311,7 +358,7 @@ a {
     padding: 0;
     margin: 0 auto;
     color: white;
-    border-bottom: 2px solid slategray;
+    border-bottom: 2px solid $main-colour;
   }
   
   .link-button {
@@ -385,6 +432,8 @@ a {
 }
 
 .team-member-image {
+    width: 60%;
+    height: auto;
     margin: 0 auto;
 }
 
@@ -411,6 +460,53 @@ a {
 .team-column {
     text-align: center;
 }
+
+// Modal CSS
+/* The Modal (background) */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    // top: 0;
+    width: 100vw; /* Full width */
+    height: auto; /* Full height */
+    margin: auto auto;
+    overflow: auto; /* Enable scroll if needed */
+    // background-color: rgb(0,0,0); /* Fallback color */
+    // background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: none;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+
+    .auction-card {
+        width: 50%;
+        height: auto;
+    }
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 @media all and (max-width : 768px) {
     *{
@@ -509,9 +605,6 @@ a {
         border-radius: 8px;
         font-weight: bolder;
         font-size: 1rem;
-    }
-
-    .img-column {
     }
 
     .even-button {
@@ -679,8 +772,24 @@ a {
         height: auto;
     }
 
+
     // Explorer css
+
     .nft-container > * {
-        flex-basis: 100%;
+        display: block;
     }
+
+    .nft-container {
+        display: block;
+    }
+
+    .auction-card-modal {
+    
+        img {
+            margin: 0 auto;
+            width: 90%;
+            height: auto;
+        }
+    }
+        
 }
