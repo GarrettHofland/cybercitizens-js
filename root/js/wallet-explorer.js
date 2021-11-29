@@ -58,9 +58,11 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
         let auctionCard = document.createElement('div');
         let assetName = document.createElement('h2');
         let assetImage = document.createElement('img');
+        let assetMetaData = auctions[i].description;
 
         assetImage.src = auctions[i].image;
         assetName.innerText = auctions[i].name;
+        
 
         auctionCard.classList.add("auction-card");
         auctionCard.classList.add("popupNFT"+i);
@@ -78,24 +80,29 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
   }
 
   // Show a popup of the NFT
-  function showNFTModal(image, name) {
-    console.log(image, name);
+  function showNFTModal(image, name, metadata) {
+    if(metadata === undefined)
+      metadata = "No metadata available.";
 
     var modal = document.getElementById("explorerModal");
     let auctionCard = document.createElement("div");
     let assetName = document.createElement('h2');
     let assetImage = document.createElement('img');
+    let assetMetadata = document.createElement("p");
 
     while(modal.firstChild)
       modal.removeChild(modal.firstChild);
 
+
     assetImage.src = image;
     assetName.innerText = name;
+    assetMetadata.innerText = metadata;
 
     auctionCard.classList.add("auction-card");
 
     auctionCard.append(assetName);
     auctionCard.append(assetImage);
+    auctionCard.append(assetMetadata);
 
     modal.append(auctionCard);
 
