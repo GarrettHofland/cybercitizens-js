@@ -89,9 +89,15 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     let assetName = document.createElement('h2');
     let assetImage = document.createElement('img');
     let assetMetadata = document.createElement("p");
+    let otherCards = document.getElementsByClassName("auction-card");
+    let usersPosition = window.screenY;
 
     while(modal.firstChild)
       modal.removeChild(modal.firstChild);
+
+    for(let i = 0; i < otherCards.length; i++){
+      otherCards.item(i).style.display = "none";
+    }
 
 
     assetImage.src = image;
@@ -110,6 +116,9 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 
     modal.onclick = function() {
       modal.style.display = "none";
+      for(let i = 0; i < otherCards.length; i++){
+        otherCards.item(i).style.display = "block";
+      }
     }
 
   }
