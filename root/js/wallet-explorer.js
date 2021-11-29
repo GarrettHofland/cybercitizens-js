@@ -63,12 +63,23 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
         assetName.innerText = auctions[i].name;
 
         auctionCard.classList.add("auction-card");
+        auctionCard.classList.add("popupNFT"+i);
         console.log(auctionCard.className);
 
         auctionCard.append(assetName);
         auctionCard.append(assetImage);
         container.append(auctionCard);
+
+        document.querySelector(".popupNFT"+i).onclick = function() {
+          console.log("test");
+          showNFTModal(auctions[i].image, auctions[i].name);
+        }
     }  
+  }
+
+  // Show a popup of the NFT
+  function showNFTModal(image, name) {
+    console.log(image, name);
   }
 
   // Build an object from the res, used to clean up the getMetaData function
