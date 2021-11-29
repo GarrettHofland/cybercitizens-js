@@ -234,9 +234,13 @@ a {
 
 #ergopixel-img {
     width: 90%;
-    height: 90%;
+    height: 70%;
     border: 6px solid $main-colour;
     margin: 0 auto;
+}
+
+.slideshow-container {
+    margin: 10% auto;
 }
 
 // Header scss
@@ -523,11 +527,7 @@ a {
     }
 
     // Header scss
-    // *{
-    //     margin: 0;
-    //     padding: 0;
-    //     box-sizing: border-box;
-    //   }
+
     
       nav {
         position: relative;

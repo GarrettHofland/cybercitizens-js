@@ -1,6 +1,6 @@
   let mrPixel = "9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT";
 
-  document.onload = function(event) {
+  document.onload = function() {
     // getAuctionsRaw(mrPixel);
   }
 
