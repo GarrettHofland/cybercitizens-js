@@ -90,7 +90,8 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     let assetImage = document.createElement('img');
     let assetMetadata = document.createElement("p");
     let otherCards = document.getElementsByClassName("auction-card");
-    let usersPosition = window.screenY;
+    let userY = window.screenY;
+    let userX = window.screenX;
 
     while(modal.firstChild)
       modal.removeChild(modal.firstChild);

@@ -229,6 +229,8 @@ a {
   margin-top: 20vh;
   text-align: center;
   margin: 0 auto;
+  height: auto;
+  width: auto;
 }
 .explore-content .section-header {
   margin-top: 10vh;
@@ -250,8 +252,7 @@ a {
 }
 
 .auction-card-modal {
-  height: auto;
-  width: 90%;
+  width: 60%;
   height: auto;
   margin: 0 auto;
   color: #a02161;
@@ -435,10 +436,7 @@ ul li {
   margin: auto auto;
   overflow: auto;
   /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
+  background-color: none;
 }
 
 /* Modal Content/Box */
