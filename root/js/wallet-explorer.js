@@ -1,7 +1,15 @@
-  let mrPixel = "9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT";
+let mrPixel = "9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT";
+auctionAddress = `5t19JGogcry9DRipPNcLs4mSnHYXQoqazPDMXXcdMixeH2mkgzMvWXjENsHRJzfHAFnTL5FBDHQCzBcnYg4CU1LcJZMmUXAaDcsKdgfBk4sE9BDbLt6Yxkjh6ow65HGCgxkwNAEArMAz8tqZL7GzKx4AvYVkqG3ExKggwDyVrvx7YzN8xeFtEUcnVkDKM8ow7YWW8eee2EidfYArPRd8fxQr5EuZVEiQbzKZ6m4xgtHfhsEptE3pNdt69F94gkytpounxBYpJPqfeZ8hVxLk8qaXTGFiJTDTt2p9D5ue4skZf4AGSLJyuzpMkjdifczQNc784ic1nbTAcjL3FKGHqnkaVwnCxU7go45X9ZFHwdpc6v67vFDoHzAAqypax4UFF1ux84X5G4xK5NFFjMZtvPyjqn2ErNXVgHBs2AkpngBPjnVRiN4sWkhR66NfBNpigU8PaTiB4Rim2FMZSXuyhRySCA1BV8ydVxz45T9VHqHA6WYkXp2ppAHmc29F8MrHX5Ew2x6amraFgvsdgAB3XiiEqEjRc83mhZVL1QgKi5CdeeGNYiXeCkxaRhG3j6r1JdAgzGDAQfN8sdRcEc1aYxbPfbqM1s81NFm7K1UmMUxrfCUp73poGAfV8FvQa2akyascKBaSCqvwuHW2ZP4oMoJHjZjTAgQjQF8cBNF9YLo6wXEtMQT5FYc3bHSgd4xZXCk2oHYjUSACW1Z5e7KZ3Qw1Sa2UvpMdWhbZ5Ncu99WT7v6nHFLJvHEPM7evr41nhCe9Yt3pAq4ee4rKCtEer4vQWq2b5UJSDXDj5VkVepQ5tmeXfXrBc42Yqucy6VeQSE7W66o4hQjwW1iN3yipmdTmpaAEASmbXwCxRSm7g4sNkfA969xo14PZQpBY3QUGqgCWoqJJVFWMhfvD53rzfgJpA4JH5B1fvY99q5iwbsAKdJfZi4fxub9QWZSNQfht4JqXMDmc6XTkWLE4VCxBRQYzF44H2E6mdf5EbZHUrpXj5c2VfC6PZGg9qmrz14aZjafM4M7kRTqMwVB8R9r7kXM1FWidGoprp2fRoJUALAKxKDSTVHX8ejT8zkSKJ5W45dSQjMe3WUDTeKhiy6Fqio2ukV8THaizTp6yZWxMVdu3a15pGBv1kmXZJEnLN9BsxyhnW2iGM7tvwK1jAneXeBH1uVdusR59j5ubCGKeoaS5ToC8Ky6wZ2iCyb2JF5CTvR4sMUg2ksmUm1dk8EoRjJ9i5gkqY`;
+auctionAddresses = [auctionAddress];
+let auctions = [];
 
-  document.onload = function() {
-    // getAuctionsRaw(mrPixel);
+//Explorer Vars
+explorerApi = 'https://api.ergoplatform.com/api/v0'
+explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
+
+  window.onload = function() {
+    console.log("T");
+    getAuctionsRaw(mrPixel);
   }
 
   document.querySelector("#explorerToHome").onclick = function(event) {
@@ -58,11 +66,11 @@
 
   // Get the NFT's metadata by using the ergoplatform explorer API
   async function getMetaData(tokenId) {
-    await httpClient.get(`https://api.ergoplatform.com/api/v0/assets/${tokenId}/issuingBox`)
-    .toPromise()
-    .then(response => JSON.parse(JSON.stringify(response)))
+    await fetch(`https://api.ergoplatform.com/api/v0/assets/${tokenId}/issuingBox`)
+    .then(res => res.json())
     .then(res => {
       auctions.push(createNFTObject(res));
+      console.log(auctions);
     })
     .catch(error => console.log(error));
   }
@@ -88,21 +96,21 @@
 
     // Get active auctions from supplied address
     function getActiveAuctions(addr) {
-        return this.getRequest(`/boxes/unspent/byAddress/${addr}?limit=500`, this.explorerApiV1)
+        return getRequest(`/boxes/unspent/byAddress/${addr}?limit=500`, explorerApiV1)
             .then(res => res.items)
             .then((boxes) => boxes.filter((box) => box.assets.length > 0));
     }
 
     // Get all active auctions from the supplied address
     async function getAllActiveAuctions() {
-        const spending = (await this.getUnconfirmedTxsFor(this.auctionAddress)).filter((s) => s.inputs.length > 1)
+        const spending = (await getUnconfirmedTxsFor(auctionAddress)).filter((s) => s.inputs.length > 1)
         let idToNew = {};
         spending.forEach((s) => {
             let curId = s.inputs[s.inputs.length - 1].boxId;
             if (idToNew[curId] === undefined || idToNew[curId].value < s.value)
                 idToNew[curId] = s.outputs[0]
         })
-        const all = this.auctionAddresses.map((addr) => this.getActiveAuctions(addr));
+        const all = auctionAddresses.map((addr) => getActiveAuctions(addr));
         return Promise.all(all)
             .then((res) => [].concat.apply([], res))
             .then(res => {
@@ -111,4 +119,15 @@
                     else return r
                 })
             })
+    }
+
+    function getUnconfirmedTxsFor(addr) {
+        return getRequest(
+            `/mempool/transactions/byAddress/${addr}`, explorerApiV1
+        ).then((res) => res.items);
+    }
+
+    function getRequest(url, api = explorerApi) {
+        console.log(api + url);
+        return fetch(api + url).then(res => res.json())
     }
