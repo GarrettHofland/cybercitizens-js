@@ -52,8 +52,13 @@ a {
 }
 
 .s1 {
-  height: 110vh;
+  height: 100vh;
   margin-top: 0;
+  margin-bottom: none;
+}
+
+.s2 {
+  margin-top: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -207,8 +212,14 @@ a {
 .section-header {
   font-size: 4rem;
   margin: 0 auto;
-  margin-bottom: 8vh;
   color: #f71184;
+}
+
+.section-header-container {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 8vh;
+  border-bottom: #f71184 2px solid;
 }
 
 #ergopixel-img {

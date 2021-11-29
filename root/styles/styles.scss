@@ -6,6 +6,8 @@ $main-hover: #a02161;
 $secondary-colour: #f711f7;
 $secondary-hover: #8c1d8c;
 
+$main-colour-gradient: linear-gradient(to bottom, #f71184 0%, #f711f7 100%);
+
 
 $nav-height: 8vh;
 $mobile-nav-height: 4vh;
@@ -69,8 +71,13 @@ a {
 }
 
 .s1 {
-    height: 110vh;
+    height: 100vh;
     margin-top: 0;
+    margin-bottom: none;
+}
+
+.s2 {
+    margin-top: none;
 }
 
 .columns {
@@ -228,8 +235,15 @@ a {
 .section-header {
     font-size: 4rem;
     margin: 0 auto;
-    margin-bottom: 8vh;
     color: $main-colour;
+
+}
+
+.section-header-container {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 8vh;
+    border-bottom: $main-colour 2px solid;
 }
 
 #ergopixel-img {
