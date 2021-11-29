@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css" media="screen" />
+    <title>Document</title>
+</head>
+<body>
+        <!-- Header Start -->
+        <div class="navMenu">
+            <div class="left">
+              <img on-click="scrollToTop()" class="logo" src="../assets/logo-transparent-bg.png">
+            </div>
+            <div class="right">
+              <nav>
+              <div on-click="toggleOpen()" class="hamburger">
+                <div class="line">&nbsp;</div>
+                <div class="line">&nbsp;</div>
+                <div class="line">&nbsp;</div>
+              </div>
+              <ul class="nav-links">
+                  <li id="explorerToHome"><a class="link-button-header odd-button">Home</a></li>
+              </ul>
+              </nav>
+            </div>
+        </div>
+        <!-- Header End -->
+    <button on-click="scrollToTop()" class="up-button"><img class="up-img" src="../assets/up.svg"/></button>
+    <script src="../js/app.js"></script>
+    <script src="../js/wallet-explorer.js"></script>
+</body>
+</html>

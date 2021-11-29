@@ -1,23 +1,21 @@
+  let mrPixel = "9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT";
+
+  document.onload = function(event) {
+    // getAuctionsRaw(mrPixel);
+  }
+
+  document.querySelector("#explorerToHome").onclick = function(event) {
+    window.location = "../index.html";
+}
+
   // Scrolls user to the top of the page
-  function scrollToTop() {
+ function scrollToTop() {
     window.scrollTo(0,0);
-   }
-
-  // Get the current block height of the ERGO blockchain
-  async function getCurrentBlockHeight() {
-    return await yoroi.currentHeight();
-  }
-
-  // Get the current box from the wallet
-  async function getCurrentBox(walletAddress) {
-    await yoroi.boxByAddress(walletAddress)
-    .then( res => {
-    });
-  }
+}
 
   // Get every NFT able to be auctioned from the wallet 
   async function getAuctionsRaw(walletAddress) {
-      await yoroi.getActiveAuctions(walletAddress)
+      await getActiveAuctions(walletAddress)
       .then(res => {
         auctionsRaw = res;
         buildAuctions();
@@ -26,7 +24,7 @@
 
   // Get every single NFT that is currently able to be auctioned
   async function getAllAuctionsRaw() {
-    await yoroi.getAllActiveAuctions()
+    await getAllActiveAuctions()
     .then(res => {
       auctionsRaw = res;
       buildAuctions();
@@ -87,3 +85,30 @@
 		}
 		return str;
 	}
+
+    // Get active auctions from supplied address
+    function getActiveAuctions(addr) {
+        return this.getRequest(`/boxes/unspent/byAddress/${addr}?limit=500`, this.explorerApiV1)
+            .then(res => res.items)
+            .then((boxes) => boxes.filter((box) => box.assets.length > 0));
+    }
+
+    // Get all active auctions from the supplied address
+    async function getAllActiveAuctions() {
+        const spending = (await this.getUnconfirmedTxsFor(this.auctionAddress)).filter((s) => s.inputs.length > 1)
+        let idToNew = {};
+        spending.forEach((s) => {
+            let curId = s.inputs[s.inputs.length - 1].boxId;
+            if (idToNew[curId] === undefined || idToNew[curId].value < s.value)
+                idToNew[curId] = s.outputs[0]
+        })
+        const all = this.auctionAddresses.map((addr) => this.getActiveAuctions(addr));
+        return Promise.all(all)
+            .then((res) => [].concat.apply([], res))
+            .then(res => {
+                return res.map(r => {
+                    if (idToNew[r.boxId] !== undefined) return idToNew[r.boxId]
+                    else return r
+                })
+            })
+    }

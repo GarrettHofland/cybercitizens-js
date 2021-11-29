@@ -7,8 +7,10 @@ document.querySelector(".up-button").onclick = function(event) {
     window.scrollTo(0, 0);
 }
 
-document.querySelector("#explorer").onclick = function(event) {
-    window.location = "pages/explore.html";
+if(document.querySelector("#explorer")){
+    document.querySelector("#explorer").onclick = function(event) {
+        window.location = "pages/explore.html";
+    }
 }
 
 function exitMenuOnLinkClick() {
@@ -27,3 +29,8 @@ hamburger.addEventListener('click', () => {
         link.addEventListener('click', exitMenuOnLinkClick);
     });
 });
+
+function displayNextImage() {
+    x = (x === images.length - 1) ? 0 : x + 1;
+    document.getElementById("img").src = images[x];
+}

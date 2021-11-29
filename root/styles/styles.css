@@ -210,6 +210,13 @@ a {
   color: #f71184;
 }
 
+#ergopixel-img {
+  width: 90%;
+  height: 90%;
+  border: 6px solid #f71184;
+  margin: 0 auto;
+}
+
 .navMenu {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -476,6 +483,18 @@ ul li {
 
   .column {
     width: 100vw;
+  }
+
+  #ergopixel-img {
+    display: inline-block;
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .slideshow-container {
+    width: 100%;
+    margin-top: 5%;
   }
 
   nav {
