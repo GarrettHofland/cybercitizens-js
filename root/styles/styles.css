@@ -78,6 +78,7 @@ a {
 
 .img-column {
   display: flex;
+  margin: 4rem auto;
 }
 
 .main-header {
@@ -211,13 +212,16 @@ a {
 }
 
 #ergopixel-img {
-  width: 90%;
-  height: 70%;
+  display: inline-block;
+  width: 60%;
+  height: 60%;
   border: 6px solid #f71184;
   margin: 0 auto;
 }
 
 .slideshow-container {
+  width: 50%;
+  height: auto;
   margin: 40% auto;
 }
 
@@ -358,8 +362,8 @@ ul li {
 }
 
 .team-member-image {
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -487,11 +491,6 @@ ul li {
     font-size: 1rem;
   }
 
-  .img-column {
-    width: 90%;
-    margin: 0 auto;
-  }
-
   .even-button {
     background-color: #f71184;
   }
@@ -536,7 +535,7 @@ ul li {
 
   #ergopixel-img {
     display: inline-block;
-    width: 40%;
+    width: 60%;
     height: auto;
     margin: 0 auto;
   }
@@ -642,8 +641,8 @@ ul li {
   }
 
   .team-member-image {
-    width: 60%;
-    height: 60%;
+    width: 40%;
+    height: auto;
   }
 
   .nft-container > * {
