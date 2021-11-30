@@ -18,7 +18,7 @@ $header-background-colour: #322554;
 html {
     scroll-behavior: smooth;
     background-color: $background-colour;
-    background-image: url("../assets/bg.png");
+    // background-image: url("../assets/bg.png");
     background-repeat: no-repeat;
     background-attachment: fixed; 
     background-position: left;
@@ -81,6 +81,27 @@ a {
     margin-top: none;
 }
 
+.s3 {
+
+}
+
+.s4 {
+
+}
+
+.s5 {
+    align-content: center;
+    text-align: center;
+}
+
+.s6 {
+    align-content: center;
+    text-align: center;
+}
+
+.s7 {
+
+}
 .columns {
     @media only screen and (min-width : 768px) {
         margin-top: 1rem;
@@ -137,6 +158,17 @@ a {
 
 .tag-line {
     font-size: 2rem;
+}
+
+.placeholder-header {
+    font-size: 4rem;
+}
+
+.placeholder-content {
+    font-size: 2rem;
+    color: $main-colour;
+    border-bottom: $secondary-colour 4px solid;
+    margin: auto;
 }
 
 .minter-tag {
@@ -250,15 +282,15 @@ a {
 
 #ergopixel-img {
     display: inline-block;
-    width: 60%;
-    height: 60%;
+    width: 80%;
+    height: auto;
     border: 6px solid $main-colour;
     margin: 0 auto;
 }
 
 .slideshow-container {
-    width: 50%;
-    height: auto;
+    // width: 50%;
+    // height: auto;
     margin: 40% auto;
 }
 
@@ -345,7 +377,7 @@ a {
     grid-template-columns: 50% 50%;
     position: absolute;  
     right: 0;
-    height: $nav-height;
+    height: auto;
     filter: none !important;
     pointer-events: auto !important;
     user-select: auto !important;
@@ -686,7 +718,9 @@ a {
         margin: 4px;
         background-color: $main-colour;
     }
-    
+    .navMenu {
+        height: $nav-height;
+    }
       /* Header responsive CSS */
       .nav-links {
         position: fixed;
