@@ -41,7 +41,7 @@ body {
     right: 5%;
     width: 5%;
     height: 5%;
-    border: 2px $secondary-colour solid;
+    border: 4px $secondary-colour solid;
     border-radius: 4px;
     background-color: $main-colour;
     transition: ease-out 1s;
@@ -53,7 +53,8 @@ body {
 }
 
 .up-button:hover {
-    background-color: $secondary-colour;
+    background-color: $highlight-colour;
+    border: 2px $header-background-colour solid;
 }
 
 a {
@@ -200,13 +201,13 @@ a {
 
 .button-group {
     display: flex;
-    width: 40%;
+    width: 100%;
     column-gap: 2%;;
 }
 
 .button {
     height: 4vh;
-    width: 10vw;
+    width: 12vw;
     padding: 0;
     border: none;
     background: none;
@@ -222,10 +223,16 @@ a {
 .even-button {
     background-color: $main-colour;
     transition: ease-out 1s;
+    a {
+        transition: ease-out 1s;
+    }
 }
 
 .even-button:hover {
-    background-color: $main-hover;
+    background-color: $highlight-colour;
+    a {
+        color: white;
+    }
 }
 
 .odd-button {
@@ -234,25 +241,8 @@ a {
 }
 
 .odd-button:hover {
-    background-color: $secondary-hover;
-}
-
-@keyframes evenHover {
-    from {
-        background-color: $main-colour; 
-    }
-    to {
-        background-color: $main-hover; 
-    }
-}
-
-@keyframes oddHover {
-    from {
-        background-color: $secondary-colour;
-    }
-    to {
-        background-color: $secondary-hover;
-    }
+    background-color: $highlight-colour;
+    color: white;
 }
 
 .faq-header {
@@ -788,16 +778,6 @@ a {
         border-radius: 8px;
         font-weight: bolder;
         font-size: 1rem;
-    }
-
-    .even-button {
-        background-color: $main-colour;
-        // transition: ease-out 1s;
-    }
-
-    .odd-button {
-        background-color: $secondary-colour;
-        // transition: ease-out 1s;
     }
 
     .faq-header {

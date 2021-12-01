@@ -22,7 +22,7 @@ body {
   right: 5%;
   width: 5%;
   height: 5%;
-  border: 2px #f711f7 solid;
+  border: 4px #f711f7 solid;
   border-radius: 4px;
   background-color: #f71184;
   transition: ease-out 1s;
@@ -33,7 +33,8 @@ body {
 }
 
 .up-button:hover {
-  background-color: #f711f7;
+  background-color: #258ae8;
+  border: 2px #322554 solid;
 }
 
 a {
@@ -167,13 +168,13 @@ a {
 
 .button-group {
   display: flex;
-  width: 40%;
+  width: 100%;
   column-gap: 2%;
 }
 
 .button {
   height: 4vh;
-  width: 10vw;
+  width: 12vw;
   padding: 0;
   border: none;
   background: none;
@@ -190,9 +191,15 @@ a {
   background-color: #f71184;
   transition: ease-out 1s;
 }
+.even-button a {
+  transition: ease-out 1s;
+}
 
 .even-button:hover {
-  background-color: #a02161;
+  background-color: #258ae8;
+}
+.even-button:hover a {
+  color: white;
 }
 
 .odd-button {
@@ -201,25 +208,10 @@ a {
 }
 
 .odd-button:hover {
-  background-color: #8c1d8c;
+  background-color: #258ae8;
+  color: white;
 }
 
-@keyframes evenHover {
-  from {
-    background-color: #f71184;
-  }
-  to {
-    background-color: #a02161;
-  }
-}
-@keyframes oddHover {
-  from {
-    background-color: #f711f7;
-  }
-  to {
-    background-color: #8c1d8c;
-  }
-}
 .faq-header {
   font-size: 4rem;
   margin: 0 auto;
@@ -734,14 +726,6 @@ ul li {
     border-radius: 8px;
     font-weight: bolder;
     font-size: 1rem;
-  }
-
-  .even-button {
-    background-color: #f71184;
-  }
-
-  .odd-button {
-    background-color: #f711f7;
   }
 
   .faq-header {
