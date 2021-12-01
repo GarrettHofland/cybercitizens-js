@@ -2,7 +2,6 @@
 html {
   scroll-behavior: smooth;
   background-color: #231742;
-  background-image: url("../assets/bg.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: left;
@@ -62,6 +61,16 @@ a {
   margin-top: none;
 }
 
+.s5 {
+  align-content: center;
+  text-align: center;
+}
+
+.s6 {
+  align-content: center;
+  text-align: center;
+}
+
 @media only screen and (min-width: 768px) {
   .columns {
     margin-top: 1rem;
@@ -116,6 +125,17 @@ a {
 
 .tag-line {
   font-size: 2rem;
+}
+
+.placeholder-header {
+  font-size: 4rem;
+}
+
+.placeholder-content {
+  font-size: 2rem;
+  color: #f71184;
+  border-bottom: #f711f7 4px solid;
+  margin: auto;
 }
 
 .minter-tag {
@@ -226,15 +246,13 @@ a {
 
 #ergopixel-img {
   display: inline-block;
-  width: 60%;
-  height: 60%;
+  width: 80%;
+  height: auto;
   border: 6px solid #f71184;
   margin: 0 auto;
 }
 
 .slideshow-container {
-  width: 50%;
-  height: auto;
   margin: 40% auto;
 }
 
@@ -430,7 +448,7 @@ a {
   grid-template-columns: 50% 50%;
   position: absolute;
   right: 0;
-  height: 8vh;
+  height: auto;
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
@@ -767,6 +785,10 @@ ul li {
     height: 3px;
     margin: 4px;
     background-color: #f71184;
+  }
+
+  .navMenu {
+    height: 8vh;
   }
 
   /* Header responsive CSS */
