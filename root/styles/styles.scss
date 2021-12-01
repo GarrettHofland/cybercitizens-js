@@ -350,6 +350,8 @@ a {
     width: 80px;
     height: 80px;
     animation-delay: 0s;
+    background-image: url("../assets/cybercitizens/0.png");
+    background-size:  contain;
 }
 
 
@@ -359,6 +361,8 @@ a {
     height: 20px;
     animation-delay: 2s;
     animation-duration: 12s;
+    background-image: url("../assets/cybercitizens/3.png");
+    background-size:  contain;
 }
 
 .circles li:nth-child(3){
@@ -366,6 +370,8 @@ a {
     width: 20px;
     height: 20px;
     animation-delay: 4s;
+    background-image: url("../assets/cybercitizens/346.png");
+    background-size:  contain;
 }
 
 .circles li:nth-child(4){
@@ -374,6 +380,8 @@ a {
     height: 60px;
     animation-delay: 0s;
     animation-duration: 18s;
+    background-image: url("../assets/cybercitizens/374.png");
+    background-size:  contain;
 }
 
 .circles li:nth-child(5){
@@ -381,6 +389,8 @@ a {
     width: 20px;
     height: 20px;
     animation-delay: 0s;
+    background-image: url("../assets/cybercitizens/590.png");
+    background-size:  contain;
 }
 
 .circles li:nth-child(6){
@@ -388,6 +398,8 @@ a {
     width: 110px;
     height: 110px;
     animation-delay: 3s;
+    background-image: url("../assets/cybercitizens/1852.png");
+    background-size:  contain;
 }
 
 .circles li:nth-child(7){
@@ -395,6 +407,8 @@ a {
     width: 150px;
     height: 150px;
     animation-delay: 7s;
+    background-image: url("../assets/cybercitizens/1873.png");
+    background-size:  contain;
 }
 
 .circles li:nth-child(8){
@@ -403,6 +417,8 @@ a {
     height: 25px;
     animation-delay: 15s;
     animation-duration: 45s;
+    background-image: url("../assets/cybercitizens/1881.png");
+    background-size:  contain;
 }
 
 .circles li:nth-child(9){
@@ -411,6 +427,8 @@ a {
     height: 15px;
     animation-delay: 2s;
     animation-duration: 35s;
+    background-image: url("../assets/cybercitizens/1911.png");
+    background-size:  contain;
 }
 
 .circles li:nth-child(10){
@@ -419,6 +437,8 @@ a {
     height: 150px;
     animation-delay: 0s;
     animation-duration: 11s;
+    background-image: url("../assets/cybercitizens/1962.png");
+    background-size:  contain;
 }
 
 
@@ -952,6 +972,10 @@ a {
             width: 90%;
             height: auto;
         }
+    }
+
+    .placeholder-header {
+        font-size: 2rem;
     }
         
 }

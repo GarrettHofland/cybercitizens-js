@@ -3,7 +3,7 @@ const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li');
 const menu = document.getElementsByClassName("navLinks");
 
-var images = ["assets/cybercitizens/086.png", "assets/cybercitizens/108.png", "assets/cybercitizens/173.png", "assets/cybercitizens/206.png"];
+var images = ["assets/cybercitizens/0.png", "assets/cybercitizens/3.png", "assets/cybercitizens/590.png", "assets/cybercitizens/1873.png"];
 var x = 0;
 
 if(document.querySelector("#ergopixel-img")){
