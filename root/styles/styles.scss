@@ -598,10 +598,11 @@ a {
 }
 
 .team-container {
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    width: 90vw;
+    flex-wrap: nowrap;
 }
 
 .team-member-image {
@@ -780,6 +781,14 @@ a {
         font-size: 1rem;
     }
 
+    .even-button {
+        background-color: $main-colour;
+    }
+
+    .odd-button {
+        background-color: $secondary-colour;
+    }
+
     .faq-header {
         margin-top: 10%;
         width: 80%;
@@ -841,7 +850,14 @@ a {
         right: 5%;
         top: 50%;
         transform: translate(-5%, -50%);
+        transition: ease-out 1s;
     }
+    .hamburger:hover {
+        .line {
+            background-color: $highlight-colour;
+        }
+    }
+
     
     .line {
         width: 30px;
