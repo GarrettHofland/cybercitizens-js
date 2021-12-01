@@ -48,7 +48,8 @@ a {
 .section {
   display: flex;
   flex-direction: column;
-  margin: 30vh auto;
+  width: 80%;
+  margin: 0 auto 10vh auto;
 }
 
 .s1 {
@@ -59,6 +60,7 @@ a {
 
 .s2 {
   margin-top: none;
+  background-size: scale;
 }
 
 .s5 {
@@ -100,7 +102,7 @@ a {
   color: #f71184;
   font-size: 10rem;
   margin: 0 auto;
-  border-bottom: 2px solid #f71184;
+  border-bottom: 6px solid #258ae8;
 }
 
 @keyframes glow {
@@ -129,6 +131,7 @@ a {
 
 .placeholder-header {
   font-size: 4rem;
+  text-align: center;
 }
 
 .placeholder-content {
@@ -234,14 +237,14 @@ a {
   font-size: 4rem;
   margin: 0 auto;
   color: #f71184;
+  border-bottom: #258ae8 2px solid;
 }
 
 .section-header-container {
   width: 90%;
   margin: 0 auto;
   margin-bottom: 8vh;
-  border-bottom: #f71184 2px solid;
-  text-align: center;
+  text-align: left;
 }
 
 #ergopixel-img {
@@ -907,6 +910,17 @@ ul li {
 
   .placeholder-header {
     font-size: 2rem;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .placeholder-content {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .section-header {
+    text-align: center;
   }
 }
 
