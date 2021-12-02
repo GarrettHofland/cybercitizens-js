@@ -74,6 +74,10 @@ a {
   text-align: center;
 }
 
+.columns {
+  display: flex;
+  gap: 2%;
+}
 @media only screen and (min-width: 768px) {
   .columns {
     margin-top: 1rem;
@@ -150,6 +154,11 @@ a {
 .address-container {
   display: flex;
   gap: 12px;
+}
+
+.address-span {
+  color: white;
+  padding-right: 2%;
 }
 
 .address {
@@ -646,7 +655,7 @@ ul li {
   cursor: pointer;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 40em) {
   * {
     margin: 0;
     padding: 0;

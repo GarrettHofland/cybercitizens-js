@@ -115,6 +115,9 @@ a {
         grid-template-columns: 70% 30%;
         gap: 3em;
     }
+
+    display: flex;
+    gap: 2%;
 }
 
 .column {
@@ -183,6 +186,11 @@ a {
 .address-container {
     display: flex;
     gap: 12px;
+}
+
+.address-span {
+    color: white;
+    padding-right: 2%;
 }
 
 .address {
@@ -702,7 +710,7 @@ a {
     cursor: pointer;
   }
 
-@media all and (max-width : 768px) {
+@media all and (max-width : 40em) {
     *{
         margin: 0;
         padding: 0;
