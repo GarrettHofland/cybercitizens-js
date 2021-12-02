@@ -10,8 +10,8 @@ $highlight-colour: #258ae8;
 $main-colour-gradient: linear-gradient(to bottom, #f71184 0%, #f711f7 100%);
 
 
-$nav-height: 8vh;
-$mobile-nav-height: 4vh;
+$nav-height: 12vh;
+$mobile-nav-height: 8vh;
 $nav-width: 100%;
 $mobile-nav-width: 100vw;
 $header-background-colour: #322554;
@@ -523,7 +523,6 @@ a {
     grid-template-columns: 50% 50%;
     position: absolute;  
     right: 0;
-    height: auto;
     filter: none !important;
     pointer-events: auto !important;
     user-select: auto !important;
@@ -556,36 +555,52 @@ a {
    }
   
   .logo {
-    width: 8%;
-    height: 8%;
+    display: block;
+    width: 15%;
+    height: 15%;
+    margin: 1em 0 1em 0;
+    background-color: $main-colour;
+    border: 2px $main-colour solid;
+    border-radius: 25px;
+    transition: ease-out 1s;
+  }
+
+  .logo:hover {
+      background-color: $highlight-colour;
+      border: 2px $highlight-colour solid;
   }
   
   .left {
-    pointer-events: none ;
-    margin-left: 1em;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
+    // background-color: red;
+    // display: flex;
+    // justify-content: flex-start;
+    pointer-events: auto;
+    width: 50%;
+
+    margin: 0 0 0 2em;
   }
   
   .right {
-      margin-left: auto;
-      margin-right: 2em;
-      margin-top: auto;
-      margin-bottom: auto;
+    // background-color: green;
+      display: inline-block;
+      margin: 1em 2em 1em 0;
+      align-items: right;
+      justify-content: right;
+  }
+
+  .hamburger {
+      display: none;
   }
   
   .nav-links {
-    position: fixed;
-    top: 1vh;
     right: 2vw;
   }
   
   ul {
     display: flex;
     align-items: stretch; /* Default */
-    justify-content: space-evenly;
-    gap: 1vw;
+    justify-content: flex-end;
+    gap: 1%;
     list-style: none;
     padding: 0;
     margin: 1vh auto;
@@ -843,19 +858,22 @@ a {
 
     // Header scss
 
+
     
       nav {
         position: relative;
       }
     
       .hamburger {
+        display: inline;
         z-index: 2;
         position: absolute;
-        cursor: pointer;
-        right: 5%;
-        top: 50%;
+        right: 1%;
+        top: 10%;
+        bottom: 10%;
         transform: translate(-5%, -50%);
         transition: ease-out 1s;
+        background-color: red;
     }
     .hamburger:hover {
         .line {
@@ -871,8 +889,9 @@ a {
         background-color: $main-colour;
     }
     .navMenu {
-        height: $nav-height;
+        height: $mobile-nav-height;
     }
+
       /* Header responsive CSS */
       .nav-links {
         position: fixed;
@@ -911,6 +930,7 @@ a {
           display: flex;
           flex-direction: column;
           pointer-events: none;
+          justify-content: space-evenly;
     
     
           li {
