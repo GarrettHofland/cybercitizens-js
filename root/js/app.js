@@ -14,6 +14,13 @@ document.querySelector(".up-button").onclick = function(event) {
     window.scrollTo(0, 0);
 }
 
+if(document.querySelector(".address")) {
+    document.querySelector(".address").onclick = function() {
+        copyToClipboard("9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT");
+        alert("Address copied to clipboard!");
+    }
+}
+
 if(document.querySelector("#explorer")){
     document.querySelector("#explorer").onclick = function(event) {
         window.location = "pages/explore.html";
@@ -40,4 +47,8 @@ hamburger.addEventListener('click', () => {
 function displayNextImage() {
     x = (x === images.length - 1) ? 0 : x + 1;
     document.getElementById("ergopixel-img").src = images[x];
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
 }

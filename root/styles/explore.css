@@ -1,0 +1,58 @@
+#nft-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 90vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+.auction-card-modal {
+  width: 60%;
+  height: auto;
+  margin: 20vh auto;
+  color: #a02161;
+  text-align: center;
+  border: 3px solid #8c1d8c;
+  border-radius: 6px;
+  background-color: #231742;
+}
+.auction-card-modal img {
+  border: 3px solid #8c1d8c;
+  border-radius: 6px;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+}
+
+.auction-card {
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  color: #a02161;
+  text-align: center;
+  border: 3px solid #8c1d8c;
+  border-radius: 6px;
+}
+.auction-card img {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+
+.auction-card:hover {
+  border-color: #f711f7;
+  color: #f71184;
+}
+
+.Loading-text {
+  width: 100%;
+  height: auto;
+  margin: auto auto;
+  font-size: 4em;
+  text-align: center;
+}
+
+/*# sourceMappingURL=explore.css.map */
