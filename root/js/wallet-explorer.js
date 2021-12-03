@@ -14,7 +14,13 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 
   document.querySelector("#explorerToHome").onclick = function(event) {
     window.location = "../index.html";
-}
+  }
+
+  if(document.querySelector("#searchButton") && document.querySelector("#searchBar")){
+    document.querySelector("#searchButton").onclick = function(event) {
+      getMetaData(document.querySelector("#searchBar").value);
+    }
+  }
 
   // Scrolls user to the top of the page
  function scrollToTop() {
@@ -43,12 +49,36 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
   async function buildAuctions() {
     for(let i = 0; i < auctionsRaw.length - 1; i++){
       auctionsRaw[i].assets.forEach(async (i) => {
-        await getMetaData(i.tokenId);
+        await getMetaDataAll(i.tokenId);
       });
     }
     nftsLoaded = true;
 
     setTimeout(buildPage, 1000);
+  }
+
+  function displaySearchResults(token) {
+    let container = document.getElementById("search-result");
+    console.log(token);
+    console.log("search results");
+
+    let auctionCard = document.createElement('div');
+    let assetName = document.createElement('h2');
+    let assetImage = document.createElement('img');
+    let assetMetaData = token.description;
+
+    assetImage.src = token.image;
+    assetName.innerText = token.name;
+    
+
+    auctionCard.classList.add("auction-card");
+    auctionCard.classList.add("search-card");
+    console.log(auctionCard.className);
+
+    auctionCard.append(assetName);
+    auctionCard.append(assetImage);
+    auctionCard.append(assetMetaData);
+    container.append(auctionCard);
   }
 
   // Build the html
@@ -142,8 +172,8 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     };
   }
 
-  // Get the NFT's metadata by using the ergoplatform explorer API
-  async function getMetaData(tokenId) {
+  // Get the NFTs' metadata by using the ergoplatform explorer API
+  async function getMetaDataAll(tokenId) {
     await fetch(`https://api.ergoplatform.com/api/v0/assets/${tokenId}/issuingBox`)
     .then(res => res.json())
     .then(res => {
@@ -152,6 +182,17 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     })
     .catch(error => console.log(error));
   }
+
+    // Get the NFT's metadata by using the ergoplatform explorer API
+    async function getMetaData(tokenId) {
+      await fetch(`https://api.ergoplatform.com/api/v0/assets/${tokenId}/issuingBox`)
+      .then(res => res.json())
+      .then(res => {
+        displaySearchResults(createNFTObject(res));
+        console.log(auctions);
+      })
+      .catch(error => console.log(error));
+    }
 
   // Get the NFT's image from ipfs
   function resolveIpfs(url) {

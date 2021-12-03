@@ -55,4 +55,9 @@
   text-align: center;
 }
 
+.search-card {
+  margin-top: 1em;
+  max-width: 80%;
+}
+
 /*# sourceMappingURL=explore.css.map */
