@@ -272,6 +272,25 @@ a {
     margin-bottom: 1em;
 }
 
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.token-search {
+    min-width: 50%;
+    height: 4vh;
+    border: 2px $main-colour solid;
+    background-color: $header-background-colour;
+    color: white;
+    border-radius: 6px;
+}
+
+.token-search:hover, .token-search:active {
+    border-color: $highlight-colour;
+}
+
 .section-header-container {
     width: 90%;
     margin: 0 auto;
