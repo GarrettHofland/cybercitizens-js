@@ -8,7 +8,6 @@ explorerApi = 'https://api.ergoplatform.com/api/v0'
 explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 
   window.onload = function() {
-    console.log("T");
     getAuctionsRaw(mrPixel);
   }
 
@@ -58,30 +57,38 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
   }
 
   function displaySearchResults(token) {
+    //04ebbd14f9dcf138ef11f037743abb5f21a70f804107eaacee807d0657864e34
+
     let container = document.getElementById("search-result");
-    console.log(token);
-    console.log("search results");
 
     while(container.firstChild)
       container.removeChild(container.firstChild);
 
-    let auctionCard = document.createElement('div');
+    let resultCard = document.createElement('div');
     let assetName = document.createElement('h2');
     let assetImage = document.createElement('img');
-    let assetMetaData = token.description;
+    let assetMetaData = JSON.parse(token.description[0].slice(1, token.description[0].length));
+
+    let attributeContainer = document.createElement('div');
+    let background = assetMetaData['721']['0']['traits:']['Background'];
+    let clothes = assetMetaData['721']['0']['traits:']['Clothes'];
+    let eyes = assetMetaData['721']['0']['traits:']['Eyes'];
+    let gender = assetMetaData['721']['0']['traits:']['Gender'];
+    let neck = assetMetaData['721']['0']['traits:']['Neck'];
+    let skintone = assetMetaData['721']['0']['traits:']['Skintone'];
 
     assetImage.src = token.image;
     assetName.innerText = token.name;
-    
 
-    auctionCard.classList.add("auction-card");
-    auctionCard.classList.add("search-card");
-    console.log(auctionCard.className);
+    attributeContainer.append(background, clothes, eyes, gender, neck, skintone);
 
-    auctionCard.append(assetName);
-    auctionCard.append(assetImage);
-    auctionCard.append(assetMetaData);
-    container.append(auctionCard);
+    resultCard.classList.add("auction-card");
+    resultCard.classList.add("search-card");
+
+    resultCard.append(assetName, assetImage, attributeContainer);
+    // resultCard.append(assetImage);
+    // resultCard.append(assetMetaData);
+    container.append(resultCard);
   }
 
   // Build the html
@@ -99,14 +106,12 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 
         auctionCard.classList.add("auction-card");
         auctionCard.classList.add("popupNFT"+i);
-        console.log(auctionCard.className);
 
         auctionCard.append(assetName);
         auctionCard.append(assetImage);
         container.append(auctionCard);
 
         document.querySelector(".popupNFT"+i).onclick = function() {
-          console.log("test");
           showNFTModal(auctions[i].image, auctions[i].name);
         }
     }  
@@ -187,7 +192,6 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     .then(res => res.json())
     .then(res => {
       auctions.push(createNFTObject(res));
-      console.log(auctions);
     })
     .catch(error => console.log(error));
   }
@@ -198,7 +202,6 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
       .then(res => res.json())
       .then(res => {
         displaySearchResults(createNFTObject(res));
-        console.log(auctions);
       })
       .catch(error => console.log(error));
     }
@@ -258,6 +261,5 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 
     // Function for appending requests to the exploreAPI URL
     function getRequest(url, api = explorerApi) {
-        console.log(api + url);
         return fetch(api + url).then(res => res.json())
     }
