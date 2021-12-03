@@ -135,7 +135,7 @@ a {
 }
 
 .placeholder-header {
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
 }
 
@@ -269,8 +269,8 @@ a {
   border-radius: 6px;
 }
 
-.token-search:hover, .token-search:active {
-  border-color: #258ae8;
+.token-search:focus {
+  border: 2px #258ae8 solid;
 }
 
 .section-header-container {
@@ -771,7 +771,6 @@ a {
   }
 
   .placeholder-header {
-    font-size: 2rem;
     margin: 0 auto;
     width: 90%;
   }
@@ -783,6 +782,27 @@ a {
 
   .section-header {
     text-align: center;
+  }
+
+  .search-container {
+    max-width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0 auto;
+  }
+  .search-container .button {
+    height: 4vh;
+  }
+
+  .token-search {
+    min-width: 50%;
+    height: 4vh;
+    border: 2px #f71184 solid;
+    background-color: #322554;
+    color: white;
+    border-radius: 6px;
   }
 }
 
