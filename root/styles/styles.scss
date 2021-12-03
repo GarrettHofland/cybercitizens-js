@@ -551,6 +551,43 @@ a {
     cursor: pointer;
 }
 
+// Roadmap 
+.roadmap {
+    width: min(600px, 80%);
+    text-align: left;
+    margin: 0 auto;
+    font-size: clamp(2rem, 3vw, 5rem);
+}
+
+.roadmap-number {
+    font-size: clamp(2rem, 5vw, 6rem);
+    background-color: green;
+    border-radius: 50%;
+    max-width: 10vw;
+    max-height: 10vh;
+    text-align: center;
+    display: none;
+}
+
+.roadmap-title {
+    padding-top: 1em;
+    color: $main-colour;
+}
+
+.roadmap-content {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+.roadmap-title, .roadmap-content {
+    padding-left: 2em;
+    border-left: 8px yellow solid;
+}
+
+.roadmap-passed {
+    border-color: green;
+}
+
 @media all and (max-width : 40em) {
     * {
         margin: 0;

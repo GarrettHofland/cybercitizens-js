@@ -41,7 +41,7 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 
   // Build the list of NFTs currently able to be auctioned from the wallet, from the raw wallet data
   async function buildAuctions() {
-    for( let i = 0; i < auctionsRaw.length - 1; i++){
+    for(let i = 0; i < auctionsRaw.length - 1; i++){
       auctionsRaw[i].assets.forEach(async (i) => {
         await getMetaData(i.tokenId);
       });
@@ -199,12 +199,14 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
             })
     }
 
+    // Get the unspent box
     function getUnconfirmedTxsFor(addr) {
         return getRequest(
             `/mempool/transactions/byAddress/${addr}`, explorerApiV1
         ).then((res) => res.items);
     }
 
+    // Function for appending requests to the exploreAPI URL
     function getRequest(url, api = explorerApi) {
         console.log(api + url);
         return fetch(api + url).then(res => res.json())
