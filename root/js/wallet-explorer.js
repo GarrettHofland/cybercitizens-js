@@ -62,6 +62,9 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     console.log(token);
     console.log("search results");
 
+    while(container.firstChild)
+      container.removeChild(container.firstChild);
+
     let auctionCard = document.createElement('div');
     let assetName = document.createElement('h2');
     let assetImage = document.createElement('img');
@@ -122,11 +125,13 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     let otherCards = document.getElementsByClassName("auction-card");
     let exploreHeader = document.getElementById("explore-header");
     let searchContainer = document.querySelector(".search-container");
+    let searchResult = document.querySelector("#search-result");
     let userY = window.screenY;
     let userX = window.screenX;
 
     exploreHeader.style.display = "none";
     searchContainer.style.display = "none";
+    searchResult.style.display = "none";
 
     while(modal.firstChild)
       modal.removeChild(modal.firstChild);
@@ -156,6 +161,7 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
       }
       exploreHeader.style.display = "block";
       searchContainer.style.display = "flex";
+      searchResult.style.display = "flex";
     }
 
   }
