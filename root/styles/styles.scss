@@ -611,6 +611,48 @@ a {
     border-color: green;
 }
 
+/*
+    Yoroi Wallet Purchasing Section
+*/
+.yoroi-container {
+    // border: 3px $main-colour solid;
+
+    text-align: center !important; 
+
+    background: transparent;
+    color: white;
+
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    width: 90% !important;
+    margin: 0 auto;
+
+    .button {
+        margin: 0 auto;
+    }
+
+    .button:hover { 
+        color:white;
+    }
+}
+
+.wallet-text {
+    margin: 1em auto;
+}
+
+.wallet-text {
+    max-width: 90%;
+
+    font-size: clamp(1rem, 1rem + 2vw, 2rem);
+
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
 @media all and (max-width : 40em) {
     * {
         margin: 0;
