@@ -1,7 +1,5 @@
-import * as wasm from "ergo-lib-wasm-browser";
-
-if(document.querySelector("#wallet")) {
-    document.querySelector("#wallet").onclick = function() {
-        alert("Wallet connector");
-    }
+window.onload = function(){
+    document.getElementById("wallet").addEventListener("click",function(){
+        ergo_request_read_access();
+    });
 }
