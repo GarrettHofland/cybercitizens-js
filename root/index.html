@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="styles/styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="styles/header.css" media="screen" />
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -15,7 +16,10 @@
     <!-- Header Start -->
     <div class="navMenu">
         <div class="left">
-          <img on-click="scrollToTop()" class="logo" src="assets/logo-transparent-bg.png">
+          <!-- <img on-click="scrollToTop()" class="logo" src="assets/logo-transparent-bg.png"> -->
+          <div class="logo-container">
+            <img id="wallet" class="logo" src="assets/wallet.svg"/>
+          </div>
         </div>
         <div class="right">
           <nav>
@@ -78,9 +82,7 @@
           <button class="button odd-button animate__animated animate__fadeIn animate__delay-5s"><a href="https://discord.com/invite/7FcEFKcKJ7"><img src="assets/logo-discord.svg"></a></button>
         </div>
         <div class="address-container">
-          <h3 class="tag-line animate__animated animate__fadeInUp animate__delay-1s">Artist Address:</h3>
-          <p on-click="copyAddress()" class="address animate__animated animate__fadeInUp animate__delay-1s">9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT</p>
-          <!-- <button class="button odd-button copy-button" onclick="copyAddress()"><img src="../../../assets/img/clipboard.svg"></button> -->
+          <p on-click="copyAddress()" class="address animate__animated animate__fadeInUp animate__delay-1s"><span class="address-span">Address:</span>9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT</p>
         </div>
       </div>
       <div class="column img-column">
@@ -103,6 +105,40 @@
     <div class="section-header-container">
       <h2 class="section-header">Roadmap</h2>
     </div>
+
+    <div class="roadmap">
+    <div class="roadmap-number">1</div>
+    <div class="roadmap-title roadmap-passed">Season 1: CYBER HALLOWEEN EVENT</div>
+    <div class="roadmap-content roadmap-passed">WE HAVE PREPARED OUR SPECIAL CYBER HALLOWEEN DROP FOR THIS WEEKEND</div>
+
+    <div class="roadmap-number"></div>
+    <div class="roadmap-title"></div>
+    <div class="roadmap-content"></div>
+
+    <div class="roadmap-number"></div>
+    <div class="roadmap-title"></div>
+    <div class="roadmap-content"></div>
+
+    <div class="roadmap-number"></div>
+    <div class="roadmap-title"></div>
+    <div class="roadmap-content"></div>
+
+    <div class="roadmap-number"></div>
+    <div class="roadmap-title"></div>
+    <div class="roadmap-content"></div>
+
+    <div class="roadmap-number"></div>
+    <div class="roadmap-title"></div>
+    <div class="roadmap-content"></div>
+
+    <div class="roadmap-number"></div>
+    <div class="roadmap-title"></div>
+    <div class="roadmap-content"></div>
+
+    <div class="roadmap-number"></div>
+    <div class="roadmap-title"></div>
+    <div class="roadmap-content"></div>
+  </div>
   </section>
 
   <section class="section s4" id="team">
@@ -193,5 +229,6 @@
 </div>
     <!-- End -->
     <script src="js/app.js"></script>
+    <script src="js/wallet-connector.js"></script>
 </body>
 </html>

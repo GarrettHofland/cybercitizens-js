@@ -74,6 +74,10 @@ a {
   text-align: center;
 }
 
+.columns {
+  display: flex;
+  gap: 2%;
+}
 @media only screen and (min-width: 768px) {
   .columns {
     margin-top: 1rem;
@@ -144,18 +148,27 @@ a {
 
 .minter-tag {
   margin: 0 auto;
+  /*  */
   font-size: 3rem;
 }
 
 .address-container {
   display: flex;
   gap: 12px;
+  max-width: 80%;
+}
+
+.address-span {
+  color: white;
+  padding-right: 1%;
+  word-break: none;
 }
 
 .address {
   color: #f711f7;
   font-size: 2rem;
   transition: ease-out 1s;
+  inline-size: min-content;
 }
 
 .address:hover {
@@ -406,143 +419,6 @@ a {
     border-radius: 50%;
   }
 }
-#nft-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 90vw;
-  height: auto;
-  margin: 0 auto;
-}
-
-.auction-card-modal {
-  width: 60%;
-  height: auto;
-  margin: 20vh auto;
-  color: #a02161;
-  text-align: center;
-  border: 3px solid #8c1d8c;
-  border-radius: 6px;
-  background-color: #231742;
-}
-.auction-card-modal img {
-  border: 3px solid #8c1d8c;
-  border-radius: 6px;
-  margin: 0 auto;
-  width: 50%;
-  height: auto;
-}
-
-.auction-card {
-  height: auto;
-  width: 100%;
-  margin: 0 auto;
-  color: #a02161;
-  text-align: center;
-  border: 3px solid #8c1d8c;
-  border-radius: 6px;
-}
-.auction-card img {
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
-}
-
-.auction-card:hover {
-  border-color: #f711f7;
-  color: #f71184;
-}
-
-.Loading-text {
-  width: 100%;
-  height: auto;
-  margin: auto auto;
-  font-size: 4em;
-  text-align: center;
-}
-
-.navMenu {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  position: absolute;
-  right: 0;
-  height: auto;
-  filter: none !important;
-  pointer-events: auto !important;
-  user-select: auto !important;
-  backdrop-filter: blur(10px);
-  background-color: #231742;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  padding: 0;
-  margin: 0 auto;
-  color: white;
-  border-bottom: 2px solid #f71184;
-}
-
-.link-button {
-  font-size: 2rem;
-  border-radius: 6px;
-  text-decoration: none;
-  color: black;
-  padding: 6px 26px;
-}
-
-.link-button-header {
-  font-size: 2rem;
-  border-radius: 6px;
-  text-decoration: none;
-  color: black;
-  padding: 6px 26px;
-}
-
-.logo {
-  width: 8%;
-  height: 8%;
-}
-
-.left {
-  pointer-events: none;
-  margin-left: 1em;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.right {
-  margin-left: auto;
-  margin-right: 2em;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.nav-links {
-  position: fixed;
-  top: 1vh;
-  right: 2vw;
-}
-
-ul {
-  display: flex;
-  align-items: stretch;
-  /* Default */
-  justify-content: space-evenly;
-  gap: 1vw;
-  list-style: none;
-  padding: 0;
-  margin: 1vh auto;
-}
-ul li {
-  display: block;
-  flex: 0 1 auto;
-  /* Default */
-  list-style-type: none;
-}
-
 .team-container > * {
   flex-basis: 100%;
 }
@@ -636,7 +512,43 @@ ul li {
   cursor: pointer;
 }
 
-@media all and (max-width: 768px) {
+.roadmap {
+  width: min(600px, 80%);
+  text-align: left;
+  margin: 0 auto;
+  font-size: clamp(2rem, 3vw, 5rem);
+}
+
+.roadmap-number {
+  font-size: clamp(2rem, 5vw, 6rem);
+  background-color: green;
+  border-radius: 50%;
+  max-width: 10vw;
+  max-height: 10vh;
+  text-align: center;
+  display: none;
+}
+
+.roadmap-title {
+  padding-top: 1em;
+  color: #f71184;
+}
+
+.roadmap-content {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+.roadmap-title, .roadmap-content {
+  padding-left: 2em;
+  border-left: 8px yellow solid;
+}
+
+.roadmap-passed {
+  border-color: green;
+}
+
+@media all and (max-width: 40em) {
   * {
     margin: 0;
     padding: 0;
@@ -703,10 +615,18 @@ ul li {
     display: none;
   }
 
+  .address-container {
+    margin: 0 auto;
+  }
+
   .address {
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 5% auto;
+    color: white;
+  }
+
+  .address-span {
     display: none;
   }
 
@@ -786,90 +706,6 @@ ul li {
   .slideshow-container {
     width: 100%;
     margin-top: 5%;
-  }
-
-  nav {
-    position: relative;
-  }
-
-  .hamburger {
-    z-index: 2;
-    position: absolute;
-    cursor: pointer;
-    right: 5%;
-    top: 50%;
-    transform: translate(-5%, -50%);
-    transition: ease-out 1s;
-  }
-
-  .hamburger:hover .line {
-    background-color: #258ae8;
-  }
-
-  .line {
-    width: 30px;
-    height: 3px;
-    margin: 4px;
-    background-color: #f71184;
-  }
-
-  .navMenu {
-    height: 8vh;
-  }
-
-  /* Header responsive CSS */
-  .nav-links {
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: #322554;
-    height: 100vh;
-    width: 100%;
-    flex-direction: column;
-    pointer-events: auto !important;
-    /* Making mask to show/hide the navigation on mobile */
-    clip-path: circle(10px at 90% -10%);
-    /* Better support for clippath with webkit */
-    -webkit-clip-path: circle(10px at 90% -10%);
-    transition: all 1s ease-out;
-  }
-
-  .nav-links li {
-    opacity: 0;
-  }
-
-  .nav-links li a {
-    font-size: 25px;
-  }
-
-  .nav-links.open {
-    clip-path: circle(1100px at 90% -10%);
-    -webkit-clip-path: circle(1100px at 90% -10%);
-    pointer-events: all;
-    opacity: 1;
-    color: white;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    pointer-events: none;
-  }
-  .nav-links.open li {
-    opacity: 1;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .logo {
-    display: none;
-  }
-
-  .link-button-header {
-    border-radius: 6px;
-    text-decoration: none;
-    color: #f71184;
-    padding: 6px 26px;
-    background: transparent;
   }
 
   .odd-button {
