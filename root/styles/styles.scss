@@ -264,8 +264,12 @@ a {
 }
 
 .explore-section-header {
-    width: 50%;
+    padding-top: 0.5em;
+    width: 70%;
     border: none;
+    text-align: left;
+    border-bottom: $highlight-colour 2px solid;
+    margin-bottom: 1em;
 }
 
 .section-header-container {
