@@ -58,6 +58,12 @@
 .search-card {
   margin-top: 1em;
   max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.search-card img {
+  max-width: 40%;
 }
 
 /*# sourceMappingURL=explore.css.map */
