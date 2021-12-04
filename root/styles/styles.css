@@ -644,6 +644,10 @@ a {
 .yoroi-container .button:hover {
   color: white;
 }
+.yoroi-container .button:hover a img {
+  filter: invert(100%) sepia(15%) saturate(2%) hue-rotate(291deg) brightness(113%) contrast(100%);
+  margin: 10em 10em;
+}
 
 .wallet-text {
   margin: 1em auto;
@@ -728,7 +732,7 @@ a {
   }
 
   .address {
-    display: inline-block;
+    display: none;
     font-size: 1rem;
     margin: 5% auto;
     color: white;
