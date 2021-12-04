@@ -162,12 +162,14 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     let exploreHeader = document.getElementById("explore-header");
     let searchContainer = document.querySelector(".search-container");
     let searchResult = document.querySelector("#search-result");
+    let footer = document.querySelector('footer');
     let userY = window.screenY;
     let userX = window.screenX;
 
     exploreHeader.style.display = "none";
     searchContainer.style.display = "none";
     searchResult.style.display = "none";
+    footer.style.display = "none";
 
     while(modal.firstChild)
       modal.removeChild(modal.firstChild);
@@ -198,6 +200,7 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
       exploreHeader.style.display = "block";
       searchContainer.style.display = "flex";
       searchResult.style.display = "flex";
+      footer.style.display = "block";
     }
 
   }
