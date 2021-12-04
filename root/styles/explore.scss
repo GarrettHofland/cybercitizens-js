@@ -71,16 +71,22 @@ $highlight-colour: #258ae8;
     display: flex;
     flex-direction: column;
     gap: 1em;
+    border: none;
 
     img {
-        max-width: 40%;
+        max-width: 30%;
         border: 2px $main-colour solid;
         border-radius: 5%;
+    }
+
+    h2 {
+        font-size: clamp(2rem, 2rem + 3vw, 5rem);
+        margin-bottom: 0;
     }
 }
 
 .explore-content {
-    margin-bottom: 1em;
+    margin-bottom: 4em;
 }
 
 .attribute-container {
@@ -89,7 +95,7 @@ $highlight-colour: #258ae8;
     flex-wrap: wrap;
     gap: 1em;
 
-    max-width: 80%;
+    width: 80%;
     margin: 1em auto;
 }
 
@@ -107,5 +113,11 @@ $highlight-colour: #258ae8;
     .attribute {
         min-width: 90%;
         padding: 4px;
+    }
+
+    .search-card {
+        img {
+            max-width: 50%;
+        }
     }
 }

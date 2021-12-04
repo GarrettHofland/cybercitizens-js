@@ -65,6 +65,13 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     while(container.firstChild)
       container.removeChild(container.firstChild);
 
+
+    if(token === "Error") {
+      let errorMsg = document.createElement('h1');
+      errorMsg.innerHTML = "NFT with TokenID not found or NFT does not belong to the CyberCitizens drop!";
+      container.append(errorMsg);
+    }
+
     let resultCard = document.createElement('div');
     let assetName = document.createElement('h2');
     let assetImage = document.createElement('img');
@@ -227,7 +234,10 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
       .then(res => {
         displaySearchResults(createNFTObject(res));
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error);
+        displaySearchResults("Error");
+      });
     }
 
   // Get the NFT's image from ipfs
