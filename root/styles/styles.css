@@ -893,6 +893,10 @@ a {
     color: white;
     border-radius: 6px;
   }
+
+  .circles li:nth-child(11), .circles li:nth-child(12), .circles li:nth-child(13), .circles li:nth-child(14), .circles li:nth-child(15), .circles li:nth-child(16), .circles li:nth-child(17) .circles li:nth-child(18) {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
