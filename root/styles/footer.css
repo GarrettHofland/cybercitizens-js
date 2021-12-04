@@ -1,0 +1,40 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 2px solid #f71184;
+  overflow-x: 0;
+}
+footer .footer-links {
+  display: flex;
+  gap: 2em;
+  width: 20%;
+  margin: 1em auto;
+}
+footer .footer-image {
+  width: 40%;
+  height: auto;
+  filter: invert(100%) sepia(15%) saturate(2%) hue-rotate(291deg) brightness(113%) contrast(100%);
+  padding: 0 1em;
+}
+footer .footer-text {
+  margin: 1em auto;
+}
+
+@media all and (max-width: 40em) {
+  .footer-links {
+    min-width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .footer-image {
+    min-width: 80% !important;
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

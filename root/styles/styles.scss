@@ -64,41 +64,11 @@ a {
     display: flex;
     flex-direction: column;
     width: 80%;
+    min-height: 50vh;
     margin: 0 auto 10vh auto;
 }
 
-.s1 {
-    height: 100vh;
-    margin-top: 0;
-    margin-bottom: none;
-}
-
-.s2 {
-    margin-top: none;
-    background-size: scale;
-}
-
-.s5 {
-    align-content: center;
-    text-align: center;
-}
-
-.s6 {
-    align-content: center;
-    text-align: center;
-}
-
 .columns {
-    @media only screen and (min-width : 768px) {
-        margin-top: 1rem;
-        margin-left: 4rem;
-        margin-right: 4rem;
-        width: 90%;
-        display: grid;
-        grid-template-columns: 70% 30%;
-        gap: 3em;
-    }
-
     display: flex;
     gap: 2%;
 }
@@ -112,8 +82,12 @@ a {
 }
 
 .img-column {
-    display: flex;
     margin: 4rem auto;
+
+    img {
+        width: 50%;
+        border-radius: 5%;
+    }
 }
 
 .main-header {
@@ -332,7 +306,7 @@ a {
 // Animation for main page
 .area {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: absolute;
     left: 0;
     right: 0;
@@ -456,6 +430,94 @@ a {
 }
 
 
+.circles li:nth-child(11) {
+    left: 5%;
+    width: 10px;
+    height: 10px;
+    animation-delay: 3s;
+    animation-duration: 14s;
+    background-image: url("../assets/cybercitizens/7.png");
+    background-size: contain;
+}
+
+
+.circles li:nth-child(12) {
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 1s;
+    animation-duration: 19s;
+    background-image: url("../assets/cybercitizens/70.png");
+    background-size: contain;
+}
+
+
+.circles li:nth-child(13) {
+    left: 23%;
+    width: 120px;
+    height: 120px;
+    animation-delay: 7s;
+    animation-duration: 15s;
+    background-image: url("../assets/cybercitizens/75.png");
+    background-size: contain;
+}
+
+
+.circles li:nth-child(14) {
+    left: 33%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 4s;
+    animation-duration: 17s;
+    background-image: url("../assets/cybercitizens/133.png");
+    background-size: contain;
+}
+
+
+.circles li:nth-child(15) {
+    left: 46%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 2s;
+    animation-duration: 19s;
+    background-image: url("../assets/cybercitizens/421.png");
+    background-size: contain;
+}
+
+
+.circles li:nth-child(16) {
+    left: 65%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 4s;
+    animation-duration: 15s;
+    background-image: url("../assets/cybercitizens/430.png");
+    background-size: contain;
+}
+
+
+.circles li:nth-child(17) {
+    left: 55%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 6s;
+    animation-duration: 21s;
+    background-image: url("../assets/cybercitizens/492.png");
+    background-size: contain;
+}
+
+
+.circles li:nth-child(18) {
+    left: 75%;
+    width: 40px;
+    height: 40px;
+    animation-delay: 8s;
+    animation-duration: 16s;
+    background-image: url("../assets/cybercitizens/2078.png");
+    background-size: contain;
+}
+
+
 
 @keyframes animate {
 
@@ -491,6 +553,7 @@ a {
     width: 60%;
     height: auto;
     margin: 0 auto;
+    border-radius: 5%;
 }
 
 .team-member-image:hover {
@@ -636,6 +699,13 @@ a {
 
     .button:hover { 
         color:white;
+
+        a {
+            img {
+                filter: invert(100%) sepia(15%) saturate(2%) hue-rotate(291deg) brightness(113%) contrast(100%);
+                margin: 10em 10em;
+            }
+        }
     }
 }
 
@@ -726,7 +796,8 @@ a {
     }
 
     .address {
-        display: inline-block;
+        display: none;
+        // display: inline-block;
         font-size: 1rem;
         margin: 5% auto;
         color: white;
