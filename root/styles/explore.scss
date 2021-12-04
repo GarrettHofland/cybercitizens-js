@@ -74,9 +74,38 @@ $highlight-colour: #258ae8;
 
     img {
         max-width: 40%;
+        border: 2px $main-colour solid;
+        border-radius: 5%;
     }
 }
 
 .explore-content {
     margin-bottom: 1em;
+}
+
+.attribute-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    max-width: 80%;
+    margin: 1em auto;
+}
+
+.attribute {
+    background: $highlight-colour;
+    min-width: 50%;
+    color: white;
+    border: 2px $main-colour solid;
+    border-radius: 12px;
+    font-size: clamp(1rem, 1.5rem + 2vw, 3rem);
+}
+
+
+@media all and (max-width : 40em) {
+    .attribute {
+        min-width: 90%;
+        padding: 4px;
+    }
 }

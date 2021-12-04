@@ -71,17 +71,40 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
     let assetMetaData = JSON.parse(token.description[0].slice(1, token.description[0].length));
 
     let attributeContainer = document.createElement('div');
-    let background = assetMetaData['721']['0']['traits:']['Background'];
-    let clothes = assetMetaData['721']['0']['traits:']['Clothes'];
-    let eyes = assetMetaData['721']['0']['traits:']['Eyes'];
-    let gender = assetMetaData['721']['0']['traits:']['Gender'];
-    let neck = assetMetaData['721']['0']['traits:']['Neck'];
-    let skintone = assetMetaData['721']['0']['traits:']['Skintone'];
+    let background = "Background: " + assetMetaData['721']['0']['traits:']['Background'];
+    let clothes = "Clothes: " + assetMetaData['721']['0']['traits:']['Clothes'];
+    let eyes = "Eyes: " + assetMetaData['721']['0']['traits:']['Eyes'];
+    let gender = "Gender: " + assetMetaData['721']['0']['traits:']['Gender'];
+    let neck = "Neck: " + assetMetaData['721']['0']['traits:']['Neck'];
+    let skintone = "Skintone: " + assetMetaData['721']['0']['traits:']['Skintone'];
 
     assetImage.src = token.image;
     assetName.innerText = token.name;
 
-    attributeContainer.append(background, clothes, eyes, gender, neck, skintone);
+    let backgroundEl = document.createElement('div');
+    let clothesEl = document.createElement('div');
+    let eyesEl = document.createElement('div');
+    let genderEl = document.createElement('div');
+    let neckEl = document.createElement('div');
+    let skintoneEl = document.createElement('div');
+
+    backgroundEl.classList.add("attribute");
+    clothesEl.classList.add("attribute");
+    eyesEl.classList.add("attribute");
+    genderEl.classList.add("attribute");
+    neckEl.classList.add("attribute");
+    skintoneEl.classList.add("attribute");
+
+    backgroundEl.innerHTML = background;
+    clothesEl.innerHTML = clothes;
+    eyesEl.innerHTML = eyes;
+    genderEl.innerHTML = gender;
+    neckEl.innerHTML = neck;
+    skintoneEl.innerHTML = skintone;
+
+    attributeContainer.append(backgroundEl, clothesEl, eyesEl, genderEl, neckEl, skintoneEl);
+
+    attributeContainer.classList.add("attribute-container");
 
     resultCard.classList.add("auction-card");
     resultCard.classList.add("search-card");
