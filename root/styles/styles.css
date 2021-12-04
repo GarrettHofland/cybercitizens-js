@@ -596,12 +596,12 @@ a {
 }
 
 .roadmap-number {
-  font-size: clamp(2rem, 5vw, 6rem);
-  background-color: green;
+  width: 10%;
+  background: green;
+  border: 4px green solid;
   border-radius: 50%;
-  max-width: 10vw;
-  max-height: 10vh;
   text-align: center;
+  right: 100px;
   display: none;
 }
 

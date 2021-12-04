@@ -30,6 +30,7 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
   async function getAuctionsRaw(walletAddress) {
       await getActiveAuctions(walletAddress)
       .then(res => {
+        console.log(res);
         auctionsRaw = res;
         buildAuctions();
       });
