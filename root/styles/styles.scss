@@ -828,8 +828,9 @@ span {
     .main-header {
         border: none;
         display: inline-block;
-        margin: 0 auto;
-        font-size: 4rem;
+        margin: 5% auto;
+        font-size: 3rem;
+        border-bottom: 2px solid $highlight-colour;
     }
 
     .sub-header {
