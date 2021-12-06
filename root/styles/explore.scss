@@ -5,13 +5,23 @@ $secondary-colour: #f711f7;
 $secondary-hover: #8c1d8c;
 $highlight-colour: #258ae8;
 
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#nft-container > * {
+    flex-basis: 50%;
+}
+
 // Explore page css
 #nft-container {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 1em;
     max-width: 70%;;
     height: auto;
     margin: 0 auto;
@@ -38,8 +48,8 @@ $highlight-colour: #258ae8;
 
 .auction-card {
     height: auto;
-    width: 100%;
-    margin: 0 auto;
+    max-width: 40%;
+    // margin: 0 auto;
     color: $main-hover;
     text-align: center;
     border: 3px solid $secondary-hover;
@@ -47,14 +57,20 @@ $highlight-colour: #258ae8;
 
     img {
         margin: 0 auto;
-        width: 100%;
+        width: 80%;
         height: auto;
+        border-radius: 8px;
+        border: 2px solid $main-colour;
     }
 }
 
 .auction-card:hover {
     border-color: $secondary-colour;
     color: $main-colour;
+
+    img {
+        border: 2px solid $highlight-colour;
+    }
 }
 
 .Loading-text {
@@ -97,6 +113,12 @@ $highlight-colour: #258ae8;
     }
 }
 
+.search-container:hover {
+    .button {
+        color: white;
+    }
+}
+
 .explore-content {
     margin-bottom: 4em;
 }
@@ -125,6 +147,10 @@ $highlight-colour: #258ae8;
     .attribute {
         min-width: 90%;
         padding: 4px;
+    }
+
+    .auction-card {
+        min-width: 80% !important;
     }
 
     .search-card {

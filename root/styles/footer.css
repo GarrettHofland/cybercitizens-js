@@ -2,7 +2,9 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  max-width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0px -4px 5px #f71184, 0px -6px 20px #f711f7;
+  min-width: 100vw !important;
   margin: 0 auto;
   text-align: center;
   border-top: 2px solid #f71184;

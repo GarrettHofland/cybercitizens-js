@@ -8,6 +8,7 @@
   user-select: auto !important;
   backdrop-filter: blur(10px);
   background-color: #231742;
+  box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #f711f7;
   top: 0;
   left: 0;
   z-index: 2;

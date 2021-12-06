@@ -22,6 +22,7 @@ $header-background-colour: #322554;
     user-select: auto !important;
     backdrop-filter: blur(10px);
     background-color: $background-colour; // Can change back to bg colour later, once logo background is changed
+    box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $secondary-colour;
     top: 0;
     left: 0;
     z-index: 2;
