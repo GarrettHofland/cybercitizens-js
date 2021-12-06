@@ -12,7 +12,7 @@ html, body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 2em;
   max-width: 70%;
   height: auto;
   margin: 0 auto;
@@ -43,6 +43,8 @@ html, body {
   text-align: center;
   border: 3px solid #8c1d8c;
   border-radius: 6px;
+  box-shadow: 10px 10px 5px black;
+  transition: 1s ease-out;
 }
 .auction-card img {
   margin: 0 auto;
@@ -50,11 +52,13 @@ html, body {
   height: auto;
   border-radius: 8px;
   border: 2px solid #f71184;
+  transition: 1s ease-out;
 }
 
 .auction-card:hover {
   border-color: #f711f7;
   color: #f71184;
+  box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #f711f7;
 }
 .auction-card:hover img {
   border: 2px solid #258ae8;

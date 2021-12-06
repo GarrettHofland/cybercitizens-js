@@ -33,6 +33,11 @@
   text-decoration: none;
   color: black;
   padding: 6px 26px;
+  box-shadow: 2px 2px 1px #a02161;
+}
+
+.link-button-header:hover {
+  box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #f711f7;
 }
 
 .logo {

@@ -21,7 +21,7 @@ html, body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 2em;
     max-width: 70%;;
     height: auto;
     margin: 0 auto;
@@ -54,6 +54,8 @@ html, body {
     text-align: center;
     border: 3px solid $secondary-hover;
     border-radius: 6px;
+    box-shadow: 10px 10px 5px black;
+    transition: 1s ease-out;
 
     img {
         margin: 0 auto;
@@ -61,12 +63,14 @@ html, body {
         height: auto;
         border-radius: 8px;
         border: 2px solid $main-colour;
+        transition: 1s ease-out;
     }
 }
 
 .auction-card:hover {
     border-color: $secondary-colour;
     color: $main-colour;
+    box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $secondary-colour;
 
     img {
         border: 2px solid $highlight-colour;

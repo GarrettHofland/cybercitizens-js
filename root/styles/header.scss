@@ -47,6 +47,11 @@ $header-background-colour: #322554;
     text-decoration: none;
     color: black;
     padding: 6px 26px;
+    box-shadow: 2px 2px 1px $main-hover;
+}
+
+.link-button-header:hover {
+    box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $secondary-colour;
 }
 
 .logo {
