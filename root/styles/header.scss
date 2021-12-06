@@ -26,7 +26,7 @@ $header-background-colour: #322554;
     top: 0;
     left: 0;
     z-index: 2;
-    min-width: 100%;
+    min-width: 100vw !important;
     padding: 0;
     margin: 0 auto;
     color: white;
@@ -43,7 +43,7 @@ $header-background-colour: #322554;
 
 .link-button-header {
     font-size: 2rem;
-    border-radius: 6px;
+    border-radius: 18px;
     text-decoration: none;
     color: black;
     padding: 6px 26px;
@@ -204,5 +204,6 @@ ul {
         color: $main-colour;
         padding: 6px 26px;
         background: transparent;
+        box-shadow:none;
     }
 }
