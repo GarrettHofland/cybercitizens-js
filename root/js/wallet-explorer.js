@@ -113,7 +113,7 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 
     attributeContainer.classList.add("attribute-container");
 
-    resultCard.classList.add("auction-card");
+    // resultCard.classList.add("auction-card");
     resultCard.classList.add("search-card");
 
     resultCard.append(assetName, assetImage, attributeContainer);

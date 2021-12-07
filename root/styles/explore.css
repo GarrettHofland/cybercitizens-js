@@ -45,6 +45,7 @@ html, body {
   border-radius: 6px;
   box-shadow: 10px 10px 5px black;
   transition: 1s ease-out;
+  cursor: pointer;
 }
 .auction-card img {
   margin: 0 auto;
@@ -53,6 +54,10 @@ html, body {
   border-radius: 8px;
   border: 2px solid #f71184;
   transition: 1s ease-out;
+}
+.auction-card h2 {
+  color: #f71184;
+  text-shadow: 1px 1px #258ae8;
 }
 
 .auction-card:hover {
@@ -74,20 +79,24 @@ html, body {
 
 .search-card {
   margin-top: 1em;
-  max-width: 80%;
+  width: 80% !important;
   display: flex;
   flex-direction: column;
   gap: 1em;
   border: none;
+  margin: 1em auto;
 }
 .search-card img {
   max-width: 30%;
   border: 2px #f71184 solid;
   border-radius: 5%;
+  margin: 0 auto;
 }
 .search-card h2 {
   font-size: clamp(2rem, 2rem + 3vw, 5rem);
   margin-bottom: 0;
+  color: #f71184;
+  text-shadow: 4px 4px #258ae8;
 }
 
 .search-container {
@@ -118,12 +127,13 @@ html, body {
 }
 
 .attribute {
-  background: #258ae8;
+  background: #f71184;
   min-width: 50%;
   color: white;
   border: 2px #f71184 solid;
   border-radius: 12px;
-  font-size: clamp(1rem, 1.5rem + 2vw, 3rem);
+  font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
+  text-shadow: 4px 4px #258ae8;
 }
 
 @media all and (max-width: 40em) {
@@ -138,6 +148,13 @@ html, body {
 
   .search-card img {
     max-width: 50%;
+  }
+
+  .auction-card-modal {
+    width: 80%;
+  }
+  .auction-card-modal img {
+    width: 80%;
   }
 }
 

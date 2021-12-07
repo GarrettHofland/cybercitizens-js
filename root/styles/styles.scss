@@ -255,7 +255,7 @@ span {
 }
 
 .even-button:hover {
-    background-color: $highlight-colour;
+    background-color: $secondary-colour;
 
     a {
         color: white;
@@ -263,13 +263,13 @@ span {
 }
 
 .odd-button {
-    background-color: $secondary-colour;
+    background-color: $main-colour;
     transition: ease-out 1s;
     cursor: pointer;
 }
 
 .odd-button:hover {
-    background-color: $highlight-colour;
+    background-color: $secondary-colour;
     color: white;
 }
 
@@ -848,13 +848,13 @@ span {
     }
 
     .tag-line-header {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         margin: 0 auto;
         margin-bottom: 5%;
     }
 
     .tag-line {
-        font-size: 2rem;
+        font-size: 4rem;
         text-align: center;
         width: 100%;
         margin: 0 auto;
