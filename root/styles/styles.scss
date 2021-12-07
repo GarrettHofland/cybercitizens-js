@@ -204,10 +204,13 @@ span {
     font-size: 2rem;
     transition: ease-out 1s;
     inline-size: min-content;
+    cursor: copy;
 }
 
 .address:hover {
-    color: #454ef7;
+    color: white;
+    
+    text-shadow: 2px 2px $main-colour;
 }
 
 .button-group>* {
@@ -244,6 +247,7 @@ span {
 .even-button {
     background-color: $main-colour;
     transition: ease-out 1s;
+    cursor: pointer;
 
     a {
         transition: ease-out 1s;
@@ -261,6 +265,7 @@ span {
 .odd-button {
     background-color: $secondary-colour;
     transition: ease-out 1s;
+    cursor: pointer;
 }
 
 .odd-button:hover {
