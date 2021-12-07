@@ -39,8 +39,8 @@ html, body {
 }
 
 .up-button:hover {
-  background-color: #258ae8;
-  border: 2px #322554 solid;
+  border: 2px #f71184 solid;
+  box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #258ae8;
 }
 
 a {
@@ -247,6 +247,7 @@ span {
   font-size: 4rem;
   margin: 0 auto;
   color: #f71184;
+  text-shadow: 2px 2px #258ae8;
 }
 
 .faq-answer {

@@ -1,6 +1,7 @@
 let accessGranted = false;
 
 window.onload = function(){
+    window.scrollTo(0,0);
     document.getElementById("wallet").addEventListener("click", function(){
         try {
             ergo_request_read_access().then(access => {

@@ -29,10 +29,12 @@
 
 .link-button-header {
   font-size: 2rem;
-  border-radius: 18px;
+  border-radius: 26px;
   text-decoration: none;
   color: black;
   padding: 6px 26px;
+  width: 12vw !important;
+  height: 6vh !important;
   box-shadow: 2px 2px 1px #a02161;
 }
 
@@ -42,11 +44,9 @@
 
 .logo {
   display: block;
+  margin: 2% 0;
   width: 15%;
   height: 15%;
-  margin: 1em 0 1em 0;
-  background-color: #f71184;
-  border: 2px #f71184 solid;
   border-radius: 25px;
   transition: ease-out 1s;
 }

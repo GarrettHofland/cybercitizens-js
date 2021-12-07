@@ -53,8 +53,9 @@ html, body {
 }
 
 .up-button:hover {
-    background-color: $highlight-colour;
-    border: 2px $header-background-colour solid;
+    // background-color: $highlight-colour;
+    border: 2px $main-colour solid;
+    box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $highlight-colour;
 }
 
 a {
@@ -271,6 +272,7 @@ span {
     font-size: 4rem;
     margin: 0 auto;
     color: $main-colour;
+    text-shadow: 2px 2px $highlight-colour;
 }
 
 .faq-answer {

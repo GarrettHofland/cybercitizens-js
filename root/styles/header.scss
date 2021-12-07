@@ -43,10 +43,12 @@ $header-background-colour: #322554;
 
 .link-button-header {
     font-size: 2rem;
-    border-radius: 18px;
+    border-radius: 26px;
     text-decoration: none;
     color: black;
     padding: 6px 26px;
+    width: 12vw !important;
+    height: 6vh !important;
     box-shadow: 2px 2px 1px $main-hover;
 }
 
@@ -56,11 +58,10 @@ $header-background-colour: #322554;
 
 .logo {
     display: block;
+    margin: 2% 0;
     width: 15%;
     height: 15%;
-    margin: 1em 0 1em 0;
-    background-color: $main-colour;
-    border: 2px $main-colour solid;
+    // background-color: $main-colour;
     border-radius: 25px;
     transition: ease-out 1s;
 }

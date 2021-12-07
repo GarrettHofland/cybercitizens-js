@@ -200,7 +200,7 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
       exploreHeader.style.display = "block";
       searchContainer.style.display = "flex";
       searchResult.style.display = "flex";
-      footer.style.display = "block";
+      footer.style.display = "flex";
     }
 
   }

@@ -20,7 +20,7 @@
         <div class="left">
           <!-- <img on-click="scrollToTop()" class="logo" src="assets/logo-transparent-bg.png"> -->
           <div class="logo-container">
-            <img id="wallet" class="logo" src="assets/wallet.svg"/>
+            <img class="logo" src="assets/logo-transparent-bg.png"/>
           </div>
         </div>
         <div class="right">
@@ -31,11 +31,11 @@
             <div class="line">&nbsp;</div>
           </div>
           <ul class="nav-links">
-              <li><a class="link-button-header odd-button" on-click="navigateHome(); toggleOpen()">Home</a></li>
               <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#mint" routerLink="." fragment="mint">Mint</a></li>
               <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#roadmap" routerLink="." fragment="roadmap">Roadmap</a></li>
               <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#team" routerLink="." fragment="team">Team</a></li>
               <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#faq" routerLink="." fragment="faq">F.A.Q</a></li>
+              <li><a class="link-button-header odd-button" id="wallet">Wallet</a></li>
           </ul>
           </nav>
         </div>
@@ -79,18 +79,18 @@
     <!-- </div> -->
     <div class="columns">
       <div class="column">
-        <h2 class="sub-header animate__animated animate__fadeInTopLeft animate__delay-1s">CyberCitizens <span>NFT Collection</span></h2>
-        <h3 class="tag-line-header animate__animated animate__fadeInTopRight animate__delay-1s"><span>2080 UNIQUELY GENERATED </span>CYBERCITIZENS LIVING ON THE ERGO BLOCKCHAIN</h3>
+        <h2 class="sub-header animate__animated animate__fadeInTopLeft animate__delay-1s">CyberCitizens <span>NFT Collection,</span></h2>
+        <h3 class="tag-line-header animate__animated animate__fadeInTopRight animate__delay-1s"><span>2080 UNIQUELY GENERATED </span>CYBERCITIZENS LIVING ON THE ERGO BLOCKCHAIN.</h3>
         <p class="tag-line animate__animated animate__fadeInRight animate__delay-1s">
           WELCOME TO THE CITY,<br>
           When you buy a CyberCitizen, you're not just buying an NFT. 
           Your CyberCitizen gives you membership to an exclusive city.
         </p>
         <div class="button-group">
-          <button class="button even-button animate__animated animate__fadeIn animate__delay-2s"><a href="https://ergoauctions.org/#/auction/active?type=all&searchValue=ErgoPixels">Auctions</a></button>
-          <button class="button odd-button animate__animated animate__fadeIn animate__delay-3s" id="explorer">Explore</button>
-          <button class="button odd-button animate__animated animate__fadeIn animate__delay-4s"><a href="https://twitter.com/ErgoPixels"><img src="assets/logo-twitter.svg"></a></button>
-          <button class="button odd-button animate__animated animate__fadeIn animate__delay-5s"><a href="https://discord.com/invite/7FcEFKcKJ7"><img src="assets/logo-discord.svg"></a></button>
+          <button class="button even-button animate__animated animate__fadeInLeft animate__delay-2s"><a href="https://ergoauctions.org/#/auction/active?type=all&searchValue=ErgoPixels">Auctions</a></button>
+          <button class="button odd-button animate__animated animate__fadeInDown animate__delay-2s" id="explorer">Explore</button>
+          <button class="button odd-button animate__animated animate__fadeInUp animate__delay-2s"><a href="https://twitter.com/ErgoPixels"><img src="assets/logo-twitter.svg"></a></button>
+          <button class="button odd-button animate__animated animate__fadeInRight animate__delay-2s"><a href="https://discord.com/invite/7FcEFKcKJ7"><img src="assets/logo-discord.svg"></a></button>
         </div>
         <div class="address-container">
           <p on-click="copyAddress()" class="address animate__animated animate__fadeInUp animate__delay-1s"><span class="address-span">Address:</span>9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT</p>
@@ -101,7 +101,7 @@
       </div>
     </div>
 
-  </section>
+  </section> 
 
   <section class="section s2" id="mint">
     <div class="section-header-container">
@@ -234,7 +234,7 @@
     <p class="faq-answer">
       the DROP WILL BE Announced AFTER the AUCTIONHOUSE V2 update.
     </p>
-    <h2 class="faq-header">7.) WHAT WILL AIRDROP CONTAIN?</h2>
+    <h2 class="faq-header">7.) WHAT WILL THE AIRDROP CONTAIN?</h2>
     <p class="faq-answer">
       The airdrop will contain a cartoon version of your pixel nft.
     </p>
