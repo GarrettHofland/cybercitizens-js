@@ -4,6 +4,7 @@ footer {
   gap: 2px;
   box-sizing: border-box;
   box-shadow: 0px -4px 5px #f71184, 0px -6px 20px #f711f7;
+  background-color: #231742;
   min-width: 100vw !important;
   margin: 0 auto;
   text-align: center;

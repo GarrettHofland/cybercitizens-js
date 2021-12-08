@@ -9,6 +9,8 @@ $highlight-colour: #258ae8;
 html, body {
     margin: 0;
     padding: 0;
+    background-color: $background-colour;
+    background-image: none;
 }
 
 #nft-container > * {
