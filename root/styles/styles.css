@@ -2,11 +2,6 @@
 html {
   scroll-behavior: smooth;
   background-color: #231742;
-  background-image: url("../assets/neonslide.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: left;
-  background-size: cover;
 }
 
 body {
@@ -60,9 +55,10 @@ a {
   width: 80%;
   min-height: 50vh;
   margin: 0 auto 10vh auto;
-  background-color: rgba(35, 23, 66, 0.8);
+  background-color: rgba(50, 37, 84, 0.99);
   border-radius: 20px;
   padding: 1em 1em;
+  border: 1px linear-gradient(to bottom, #f71184 0%, #f711f7 100%) solid;
 }
 
 .s1 {
@@ -101,7 +97,7 @@ main {
 
 .main-header {
   color: #f71184;
-  text-shadow: 4px 4px #258ae8;
+  text-shadow: 2px 2px #258ae8;
   letter-spacing: 6px;
   font-size: clamp(6rem, 8rem + 2vw, 10rem);
   margin: 2% auto 0 auto;
@@ -198,12 +194,13 @@ span {
   display: flex;
   width: 100%;
   column-gap: 2%;
+  padding: 2% 2%;
 }
 
 .button {
   height: 4vh;
   width: 12vw;
-  padding: 0;
+  padding: 1em;
   border: none;
   background: none;
   border-radius: 18px;
@@ -333,9 +330,10 @@ span {
 }
 
 .area {
+  z-index: -100;
   width: 100%;
   min-height: 100vh;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
 }
@@ -751,11 +749,10 @@ span {
     margin: 10vh auto;
     text-align: center;
     padding: 0 0;
-    padding-bottom: 30vh;
   }
 
   .s1 {
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .columns {
@@ -816,8 +813,9 @@ span {
 
   .button-group {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 90%;
+    gap: 1em;
     column-gap: 2%;
     margin: 0 auto;
     margin-top: 5%;
@@ -826,12 +824,14 @@ span {
   .button {
     height: 6vh;
     width: auto;
-    padding: 0;
     border: none;
     background: none;
     border-radius: 8px;
     font-weight: bolder;
     font-size: 1rem;
+  }
+  .button img {
+    width: 10%;
   }
 
   .even-button {
