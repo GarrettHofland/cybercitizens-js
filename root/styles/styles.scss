@@ -231,23 +231,28 @@ span {
 .button {
     height: 4vh;
     width: 12vw;
-    padding: 1em;
+    // padding: 1em;
     border: none;
     background: none;
     border-radius: 18px;
     font-weight: bolder;
     box-shadow: 2px 2px 1px black;
     transition: 1s ease-out;
+
+    img {
+        width: 75%;
+        height: 75%;
+    }
 }
 
 .button:hover {
     box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $secondary-colour;
 }
 
-.button img {
-    width: 75%;
-    height: 75%;
-}
+// .button img {
+//     width: 75%;
+//     height: 75%;
+// }
 
 .even-button {
     background-color: $main-colour;
@@ -826,6 +831,7 @@ span {
         margin: 10vh auto;
         text-align: center;
         padding: 0 0;
+        padding-top: 2rem;
         // padding-bottom: 30vh;
     }
 
@@ -905,6 +911,7 @@ span {
         height: 6vh;
         width: auto;
         border: none;
+        padding: 1em;
         background: none;
         border-radius: 8px;
         font-weight: bolder;
@@ -912,6 +919,7 @@ span {
 
         img {
             width: 10%;
+            padding: 0;
         }
     }
 
