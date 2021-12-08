@@ -30,9 +30,19 @@ var Skin = 'dino2';
 function preload ()
 {
     SkinChecker();
+    this.load.bitmapFont('atari', '../assets/cyberDino/Fonts/atari-classic.png', '../assets/cyberDino/Fonts/atari-classic.xml');
     this.load.image('ground', '../assets/cyberDino/png/Tiles/BGTile (1).png');
     this.load.image('Floor', '../assets/cyberDino/sprites/Floor.png');
-    this.load.image('tree' , "../assets/cyberDino/png/Objects/Crate.png");
+    this.load.image('tree1' , "../assets/cyberDino/sprites/Tree1.png"); 
+    this.load.image('tree2' , "../assets/cyberDino/sprites/Tree2.png"); 
+    this.load.image('tree3' , "../assets/cyberDino/sprites/Tree3.png"); 
+    this.load.image('Block1' , "../assets/cyberDino/sprites/Block1.png"); 
+    this.load.image('Block2' , "../assets/cyberDino/sprites/Block2.png"); 
+    this.load.image('Block3' , "../assets/cyberDino/sprites/Block3.png");
+    this.load.image('Drone1' , "../assets/cyberDino/sprites/Drone1.png");
+    this.load.image('Drone2' , "../assets/cyberDino/sprites/Drone2.png"); 
+    this.load.image('Drone3' , "../assets/cyberDino/sprites/Drone3.png"); 
+
     this.load.spritesheet('dino2', 
         `../assets/cyberDino/Skins/dino2.png`,
         { frameWidth: 109, frameHeight: 120}
@@ -76,7 +86,8 @@ var score, scoreText;
 var MiddleText;
 var HighScore = 0;
 var HighScoreText;
-var tree1, tree2, tree3, tree4, Bird;
+var tree1, tree2, tree3, tree4, Bird ,Bird2, Bird3;
+var Box1, Box2;
 var SpawnX , SpawnY, DespawnX, SpawnYBird;
 var Framerate;
 var pause;
@@ -93,9 +104,6 @@ function create ()
     //set default variables
     SetDefaultVariables();
 
-    //params set center point 
-    //BG = this.add.tileSprite(config.width/2, config.height/3, 0, 0, 'background').setScale(1);
-
     BG1 = this.add.tileSprite(config.width/2, config.height/2, 0 ,0, 'BG1');
     BG2 = this.add.tileSprite(config.width/2, config.height/2, 0 ,0, 'BG2');
     BG3 = this.add.tileSprite(config.width/2, config.height/2, 0 ,0, 'BG3');
@@ -111,17 +119,17 @@ function create ()
     platforms.create(config.width * 1.05, config.height* 0.985, 'ground').setVisible(false);
 
     floor = this.add.tileSprite(config.width * 0.45, config.height* 0.946, 1200 , 230, "Floor");
-    // //var g = this.physics.add.sprite(50, 50 ,'TS').setScale(5);
-
-    // floor = this.add.tileSprite(config.width * 0.45, config.height* 0.946, 1200 , 280, 'TS');
-    // floor.frame = 1;
 
     //Creating trees    
-    tree1 = this.physics.add.sprite(SpawnX, SpawnY, 'tree').setScale(0.6); tree1.setBounce(0);
-    tree2 = this.physics.add.sprite(SpawnX, SpawnY, 'tree').setScale(0.6); tree2.setBounce(0);
-    tree3 = this.physics.add.sprite(SpawnX, SpawnY, 'tree').setScale(0.6); tree3.setBounce(0);
-    tree4 = this.physics.add.sprite(SpawnX, SpawnY, 'tree').setScale(0.6); tree4.setBounce(0);
-    Bird = this.physics.add.sprite(SpawnX, SpawnY, 'tree').setScale(0.6); tree4.setBounce(0);
+    tree1 = this.physics.add.sprite(SpawnX, SpawnY, 'tree1').setScale(1.2); tree1.setBounce(0);
+    tree2 = this.physics.add.sprite(SpawnX, SpawnY, 'tree2').setScale(1.2); tree2.setBounce(0);
+    tree3 = this.physics.add.sprite(SpawnX, SpawnY, 'tree3').setScale(1.2); tree3.setBounce(0);
+    tree4 = this.physics.add.sprite(SpawnX, SpawnY, 'Block1').setScale(1.6); tree4.setBounce(0);
+    Box1 = this.physics.add.sprite(SpawnX, SpawnY, 'Block2').setScale(1.6); tree4.setBounce(0);
+    Box2 = this.physics.add.sprite(SpawnX, SpawnY, 'Block2').setScale(1.6); tree4.setBounce(0);
+    Bird = this.physics.add.sprite(SpawnX, SpawnY, 'Drone1').setScale(1.5); tree4.setBounce(0);
+    Bird2 = this.physics.add.sprite(SpawnX, SpawnY, 'Drone2').setScale(1.5); tree4.setBounce(0);
+    Bird3 = this.physics.add.sprite(SpawnX, SpawnY, 'Drone3').setScale(1.5); tree4.setBounce(0);
 
     //create sfx
     SFX = this.sound;
@@ -133,14 +141,10 @@ function create ()
     player.body.setSize(65, 110 );
 
     //Create Score Text
-    scoreText = this.add.text(config.width - config.width, config.height - config.height, 'score: 0', { fontSize: '32px', fill: '#fff' }).setOrigin(0); //might change to relative coordinates
-    scoreText.setStroke('#fff' , 2);
-    scoreText.setShadow(2, 2, "333333", 2, true, true);
+    scoreText = this.add.bitmapText(config.width - config.width, config.height - config.height, 'atari', 'score: 0').setScale(0.35);
     scoreText.setTint(0xba1298, 0xba1298, 0xba1298, 0xba1298);
 
-    HighScoreText = this.add.text(config.width, scoreText.height, '', { fontSize: '32px', fill: '#fff' }).setOrigin(1); 
-    HighScoreText.setStroke('#250dbf' , 2);
-    HighScoreText.setShadow(2, 2, "33333", 2, true, true);
+    HighScoreText = this.add.bitmapText(config.width /1.82, 0,'atari', '').setScale(0.35);
     HighScoreText.setTint(0x250dbf, 0x250dbf, 0x250dbf, 0x250dbf);
 
     MiddleText = this.add.text(config.width / 2 , config.height / 2, 'Click to play', { fontSize: '32px', fill: '#fff' , align: 'center' }).setOrigin(0.5);
@@ -154,8 +158,14 @@ function create ()
     this.physics.add.collider(tree2, platforms); this.physics.add.overlap(player, tree2, GameOver, null, this);
     this.physics.add.collider(tree3, platforms); this.physics.add.overlap(player, tree3, GameOver, null, this);
     this.physics.add.collider(tree4, platforms); this.physics.add.overlap(player, tree4, GameOver, null, this);
+    this.physics.add.collider(Box1, platforms); this.physics.add.overlap(player, Box1, GameOver, null, this);
+    this.physics.add.collider(Box2, platforms); this.physics.add.overlap(player, Box2, GameOver, null, this);
     this.physics.add.collider(Bird, platforms); this.physics.add.overlap(player, Bird, GameOverBird, null, this);
+    this.physics.add.collider(Bird2, platforms); this.physics.add.overlap(player, Bird2, GameOverBird, null, this);
+    this.physics.add.collider(Bird3, platforms); this.physics.add.overlap(player, Bird3, GameOverBird, null, this);
     Bird.body.allowGravity = false;
+    Bird2.body.allowGravity = false;
+    Bird3.body.allowGravity = false;
 
     cursors = this.input.keyboard.createCursorKeys();
 
@@ -232,6 +242,7 @@ var interval;
 var DTime;
 var PlayerState; //player state 0 = running, 1 = jumping, 2 = crouching
 var LastTime;
+var DeadTime = 0;
 
 //runs 60 times a second
 function update (time , delta)
@@ -256,8 +267,10 @@ function update (time , delta)
     {
         if(score <= 2000)
             GetNextTree(Phaser.Math.Between(1, 4));
+        else if(score <= 4000)
+            GetNextTree(Phaser.Math.Between(1, 6));
         else
-            GetNextTree(Phaser.Math.Between(1, 5));
+            GetNextTree(Phaser.Math.Between(1, 9));
         console.log("Interval");
         DTime = 0;
     }
@@ -295,8 +308,11 @@ function update (time , delta)
    }
    else{ 
     this.physics.pause(); 
-    if(cursors.up.isDown || cursors.space.isDown)
+    DeadTime += delta;
+    if(cursors.up.isDown && DeadTime > 500 || cursors.space.isDown && DeadTime > 500){
         onClickScreen();
+        DeadTime = 0;
+    }
     }
 }
 
@@ -314,8 +330,8 @@ function HighScoreUpdate()
 
 function MoveFloor()
 {  
-    floor.tilePositionX += treeVelocity / 60; //todo figure out value connection between crate movement and floor movement
-    //BG.tilePositionX += treeVelocity / 240;
+    floor.tilePositionX += treeVelocity / 60;
+
     BG5.tilePositionX += treeVelocity / 5000;
     BG4.tilePositionX += treeVelocity / 10000;
     BG3.tilePositionX += treeVelocity / 15000;
@@ -346,7 +362,7 @@ function SetDefaultVariables()
     score = 0;
     SpawnX = config.width * 1.1;
     SpawnY = config.height* 0.65;
-    SpawnYBird = config.height * 0.52;
+    SpawnYBird = config.height * 0.62;
     DespawnX = -(config.width * 0.1);
     Framerate = 6;
     spawned = 0;
@@ -393,11 +409,35 @@ function GetNextTree(randomNumber)
             break;
         case 5:
                 if(Bird.x == SpawnX){
-                    Bird.setVelocityX(-treeVelocity);                    
+                    Bird.setVelocityX(-treeVelocity);  
+                    spawned++;                  
                 }
                 SpeedUp();                
             break;
-
+        case 6:
+                if(Box1.x == SpawnX){
+                    Box1.setVelocityX(-treeVelocity);
+                    spawned++;
+                }
+            break; 
+        case 7:
+                if(Box2.x == SpawnX){
+                    Box2.setVelocityX(-treeVelocity);
+                    spawned++;
+                }
+            break;
+        case 8:
+                if(Bird2.x == SpawnX){
+                    Bird2.setVelocityX(-treeVelocity);
+                    spawned++;
+                }
+            break;
+        case 9:
+                if(Bird3.x == SpawnX){
+                    Bird3.setVelocityX(-treeVelocity);
+                    spawned++;
+                }
+            break;        
     }
     console.log("spawnTree");
 }
@@ -419,7 +459,12 @@ function deSpawn()
     if(tree2.x < DespawnX){ tree2.setVelocityX(0); tree2.x = SpawnX; tree2.y = SpawnY; spawned--; }
     if(tree3.x < DespawnX){ tree3.setVelocityX(0); tree3.x = SpawnX; tree3.y = SpawnY; spawned--; }
     if(tree4.x < DespawnX){ tree4.setVelocityX(0); tree4.x = SpawnX; tree4.y = SpawnY; spawned--; }
-    if(Bird.x < DespawnX){ Bird.setVelocityX(0); Bird.x = SpawnX; Bird.y = SpawnYBird;}
+    if(Box1.x < DespawnX){ Box1.setVelocityX(0); Box1.x = SpawnX; Box1.y = SpawnY; spawned--; }
+    if(Box2.x < DespawnX){ Box2.setVelocityX(0); Box2.x = SpawnX; Box2.y = SpawnY; spawned--; }
+    if(Bird.x < DespawnX){ Bird.setVelocityX(0); Bird.x = SpawnX; Bird.y = SpawnYBird; spawned--;}
+    if(Bird2.x < DespawnX){ Bird2.setVelocityX(0); Bird2.x = SpawnX; Bird2.y = SpawnYBird; spawned--;}
+    if(Bird3.x < DespawnX){ Bird3.setVelocityX(0); Bird3.x = SpawnX; Bird3.y = SpawnYBird; spawned--;}
+
 }
 
 function GameOver(player)
@@ -446,12 +491,21 @@ function ResetGame()
     tree2.setVelocityX(0);
     tree3.setVelocityX(0);
     tree4.setVelocityX(0);
+    Box2.setVelocityX(0);
+    Box1.setVelocityX(0);
     Bird.setVelocityX(0);
+    Bird2.setVelocityX(0);
+    Bird3.setVelocityX(0);
     tree1.x = SpawnX; tree1.y = SpawnY;
     tree2.x = SpawnX; tree2.y = SpawnY;
     tree3.x = SpawnX; tree3.y = SpawnY;
     tree4.x = SpawnX; tree4.y = SpawnY;
+    Box1.x = SpawnX; Box1.y = SpawnY;
+    Box2.x = SpawnX; Box2.y = SpawnY;
     Bird.x = SpawnX; Bird.y = SpawnYBird;
+    Bird2.x = SpawnX; Bird2.y = SpawnYBird;
+    Bird3.x = SpawnX; Bird3.y = SpawnYBird;
+
 }
 
 // ----------------------------------------------------------------------------------------------------------------
@@ -498,7 +552,7 @@ for(let i = 0; i < auctionsRaw.length - 1; i++){
     loadPlayer(Skin);
 
     // After loading the skin
-    addPhaser();
+    //addPhaser();
 }
 
 function CheckSkinAvailable(tokenId)
