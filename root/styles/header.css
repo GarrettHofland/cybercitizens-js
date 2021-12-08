@@ -35,7 +35,7 @@
   padding: 6px 26px;
   width: 12vw !important;
   height: 6vh !important;
-  box-shadow: 2px 2px 1px #a02161;
+  box-shadow: 2px 2px 1px black;
 }
 
 .link-button-header:hover {

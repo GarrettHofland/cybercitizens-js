@@ -27,6 +27,13 @@ if(document.querySelector("#explorer")){
     }
 }
 
+
+if(document.querySelector("#game")){
+    document.querySelector("#game").onclick = function(event) {
+        window.location = "pages/cyberdinos.html";
+    }
+}
+
 function exitMenuOnLinkClick() {
     navLinks.classList.toggle("open");
     links.forEach(link => {

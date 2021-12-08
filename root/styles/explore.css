@@ -106,7 +106,8 @@ html, body {
   margin: 0 auto;
 }
 .search-container .button {
-  width: 100%;
+  width: 30%;
+  margin: 0 auto;
 }
 
 .search-container:hover .button {
@@ -154,7 +155,11 @@ html, body {
     width: 80%;
   }
   .auction-card-modal img {
-    width: 80%;
+    width: 100%;
+  }
+
+  .search-container button {
+    width: 50%;
   }
 }
 

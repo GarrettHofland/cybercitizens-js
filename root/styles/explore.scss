@@ -123,7 +123,8 @@ html, body {
     margin: 0 auto;
 
     .button {
-        width: 100%;
+        width: 30%;
+        margin: 0 auto;
     }
 }
 
@@ -178,7 +179,13 @@ html, body {
         width: 80%;
 
         img {
-            width: 80%;
+            width: 100%;
+        }
+    }
+
+    .search-container {
+        button {
+            width: 50%;
         }
     }
 }
