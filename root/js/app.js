@@ -30,7 +30,7 @@ if(document.querySelector("#explorer")){
 
 if(document.querySelector("#game")){
     document.querySelector("#game").onclick = function(event) {
-        window.location = "pages/cyberdinos.html";
+        window.location = "pages/cyberdinos-game.html";
     }
 }
 

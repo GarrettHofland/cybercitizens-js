@@ -469,7 +469,7 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 
 //Skin Vars
 //TODO: move to json file
-const BonesID = 1, GoldID = 2, FutureID = 3, RobotID = 4;
+const BonesID = "3277ccd6af2b96be22cf23e067934ecc640f75dcce67439939d5364147c8a83d", GoldID = 2, FutureID = 3, RobotID = 4; // For testing only
 
 
 function SkinChecker() {
@@ -492,15 +492,18 @@ function buildAuctions() {
 for(let i = 0; i < auctionsRaw.length - 1; i++){
         auctionsRaw[i].assets.forEach((i) => {
             //CheckSkinAvailable(4); 
-            CheckSkinAvailable(i.tockenId);
+            CheckSkinAvailable(i.tokenId);
         });
     }
     loadPlayer(Skin);
+
+    // After loading the skin
+    addPhaser();
 }
 
-function CheckSkinAvailable(tockenId)
+function CheckSkinAvailable(tokenId)
 {
-    switch(tockenId)
+    switch(tokenId)
     {
         case BonesID:
             Skin = "bones";
@@ -529,4 +532,12 @@ function getActiveAuctions(addr) {
 // Function for appending requests to the exploreAPI URL
 function getRequest(url, api = explorerApi) {
     return fetch(api + url).then(res => res.json())
+}
+
+// Async test function to load assets before game load -> Move to another js file
+
+function addPhaser() {
+    var gameFrame = document.createElement('iframe');
+    gameFrame.src = "link"; // Link to the CyberDinos.html
+    document.getElementsByTagName('body').appendChild(script);
 }
