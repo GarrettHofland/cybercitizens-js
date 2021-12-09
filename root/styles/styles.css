@@ -41,6 +41,7 @@ html, body {
 }
 
 .up-button:hover {
+  background-color: #f711f7;
   border: 2px #f71184 solid;
   box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #258ae8;
 }
@@ -67,7 +68,6 @@ a {
 
 .s1 {
   margin-bottom: 20vh;
-  background-color: transparent;
 }
 
 .s2 {
@@ -107,7 +107,6 @@ main {
   margin: 2% auto 0 auto;
   max-width: 80%;
   padding-bottom: 0;
-  border-bottom: 6px solid #258ae8;
 }
 
 @keyframes glow {
@@ -333,9 +332,10 @@ span {
 }
 
 .area {
+  z-index: -1;
   width: 100%;
   min-height: 100vh;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
 }
@@ -736,7 +736,6 @@ span {
 
   html {
     background-color: #231742;
-    background-image: none;
     overflow-x: hidden;
   }
 
