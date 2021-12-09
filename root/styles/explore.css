@@ -17,11 +17,9 @@ html, body {
   max-width: 70%;
   height: auto;
   margin: 0 auto;
-  z-index: 20;
 }
 
 .auction-card-modal {
-  z-index: 2;
   width: 60%;
   height: auto;
   margin: 20vh auto;
@@ -50,7 +48,6 @@ html, body {
   box-shadow: 10px 10px 5px black;
   transition: 1s ease-out;
   cursor: pointer;
-  z-index: 20;
 }
 .auction-card img {
   margin: 0 auto;
@@ -63,10 +60,6 @@ html, body {
 .auction-card h2 {
   color: #f71184;
   text-shadow: 1px 1px #258ae8;
-}
-
-#search-result {
-  z-index: 20;
 }
 
 .auction-card:hover {
@@ -94,7 +87,6 @@ html, body {
   gap: 1em;
   border: none;
   margin: 1em auto;
-  z-index: 20;
 }
 .search-card img {
   max-width: 30%;
@@ -109,15 +101,10 @@ html, body {
   text-shadow: 4px 4px #258ae8;
 }
 
-#searchButton {
-  z-index: 20;
-}
-
 .search-container {
   display: flex;
   flex-direction: column;
   max-width: 70%;
-  z-index: 40;
   margin: 0 auto;
 }
 .search-container .button {
@@ -127,12 +114,10 @@ html, body {
 
 .search-container:hover .button {
   color: white;
-  background-color: #f711f7;
 }
 
 .explore-content {
   margin-bottom: 4em;
-  z-index: 20;
 }
 
 .attribute-container {
@@ -147,7 +132,6 @@ html, body {
 input[type=text], textarea {
   background-color: #231742;
   color: #f71184;
-  z-index: 20;
 }
 
 input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
