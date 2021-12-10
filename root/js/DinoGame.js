@@ -1,5 +1,5 @@
 var config = {
-    type: Phaser.AUTO,
+    //type: Phaser.AUTO,
     width: 800,
     height: 600,
     backgroundColor: '#53cbea',
@@ -9,7 +9,7 @@ var config = {
       arcade: 
       {
         gravity: { y: 3500 },
-        debug: false
+        debug: true
       }
     },
     scene: 
@@ -42,6 +42,8 @@ function preload ()
     this.load.image('Drone1' , "../assets/cyberDino/sprites/Drone1.png");
     this.load.image('Drone2' , "../assets/cyberDino/sprites/Drone2.png"); 
     this.load.image('Drone3' , "../assets/cyberDino/sprites/Drone3.png"); 
+    this.load.image('PauseBtn', "../assets/cyberDino/sprites/PauseBTN.png");
+    this.load.image('PlayBtn', "../assets/cyberDino/sprites/PlayBTN.png");
 
     this.load.spritesheet('dino2', 
         `../assets/cyberDino/Skins/dino2.png`,
@@ -96,6 +98,7 @@ var spawned;
 var SFX;
 var floor;
 var BG, BG1, BG2, BG3, BG4, BG5;
+var PauseBTN, PlayBTN;
 
 
 function create ()
@@ -127,9 +130,18 @@ function create ()
     tree4 = this.physics.add.sprite(SpawnX, SpawnY, 'Block1').setScale(1.6); tree4.setBounce(0);
     Box1 = this.physics.add.sprite(SpawnX, SpawnY, 'Block2').setScale(1.6); tree4.setBounce(0);
     Box2 = this.physics.add.sprite(SpawnX, SpawnY, 'Block2').setScale(1.6); tree4.setBounce(0);
-    Bird = this.physics.add.sprite(SpawnX, SpawnY, 'Drone1').setScale(1.5); tree4.setBounce(0);
-    Bird2 = this.physics.add.sprite(SpawnX, SpawnY, 'Drone2').setScale(1.5); tree4.setBounce(0);
-    Bird3 = this.physics.add.sprite(SpawnX, SpawnY, 'Drone3').setScale(1.5); tree4.setBounce(0);
+    Bird = this.physics.add.sprite(SpawnX, SpawnYBird, 'Drone1').setScale(1.5); tree4.setBounce(0);Bird.body.setSize(55, 80); Bird.body.setOffset(2, -30);
+    Bird2 = this.physics.add.sprite(SpawnX, SpawnYBird, 'Drone2').setScale(1.5); tree4.setBounce(0);Bird2.body.setSize(55, 80); Bird2.body.setOffset(2, -30);
+    Bird3 = this.physics.add.sprite(SpawnX, SpawnYBird, 'Drone3').setScale(1.5); tree4.setBounce(0);Bird3.body.setSize(55, 80); Bird3.body.setOffset(2, -30);
+
+    //pasuse button
+    PauseBTN = this.physics.add.sprite(config.width / 2.8 , config.height / 2.1, 'PauseBtn').setScale(0.6);
+    PauseBTN.setVisible(false);
+    PauseBTN.body.allowGravity = false;
+
+    PlayBTN = this.physics.add.sprite(config.width / 2.8 , config.height / 2.1, 'PlayBtn').setScale(0.6);
+    PlayBTN.setVisible(true);
+    PlayBTN.body.allowGravity = false;
 
     //create sfx
     SFX = this.sound;
@@ -147,10 +159,8 @@ function create ()
     HighScoreText = this.add.bitmapText(config.width /1.82, 0,'atari', '').setScale(0.35);
     HighScoreText.setTint(0x250dbf, 0x250dbf, 0x250dbf, 0x250dbf);
 
-    MiddleText = this.add.text(config.width / 2 , config.height / 2, 'Click to play', { fontSize: '32px', fill: '#fff' , align: 'center' }).setOrigin(0.5);
-    MiddleText.setStroke('#fe2af7' , 2);
-    MiddleText.setShadow(2, 2, "33333", 2, true, true);
-    MiddleText.setTint(0xfe2af7, 0xfe2af7, 0xfe2af7, 0xfe2af7);
+    MiddleText = this.add.bitmapText(config.width / 2.5 , config.height / 2.2, 'atari' ,'Click to play').setScale(0.35);
+    MiddleText.setTint(0xfe2af7, 0xfe2af7, 0x250dbf, 0xfe2af7);
 
     //add physics
     this.physics.add.collider(player , platforms);
@@ -173,6 +183,8 @@ function create ()
     this.input.on('pointerdown', function () {
         onClickScreen();
     });
+
+    loadPlayer(Skin);
 
     console.log("Create complete!");
 
@@ -208,6 +220,7 @@ function onClickScreen()
     {
         case 0:
             MiddleText.setText("");
+            PlayBTN.setVisible(false);
             GameState = 1;
             pause = !pause;
             break;
@@ -218,6 +231,7 @@ function onClickScreen()
             // save high score and start new game
             if(score > HighScore) HighScore = score;
             MiddleText.setText("");
+            PlayBTN.setVisible(false);
             ResetGame();
             pause = false;
             break;
@@ -228,10 +242,12 @@ function Pause()
 {
     if (pause)
     {
+        PauseBTN.setVisible(false);
         MiddleText.setText("");
     }
     else
     {
+        PauseBTN.setVisible(true);
         MiddleText.setText("Paused");
     }
     pause = !pause;
@@ -265,13 +281,12 @@ function update (time , delta)
     DTime += delta;
     if(DTime >= interval)
     {
-        if(score <= 2000)
+        if(score <= 1000)
             GetNextTree(Phaser.Math.Between(1, 4));
-        else if(score <= 4000)
+        else if(score <= 3500)
             GetNextTree(Phaser.Math.Between(1, 6));
         else
             GetNextTree(Phaser.Math.Between(1, 9));
-        console.log("Interval");
         DTime = 0;
     }
 
@@ -309,10 +324,10 @@ function update (time , delta)
    else{ 
     this.physics.pause(); 
     DeadTime += delta;
-    if(cursors.up.isDown && DeadTime > 500 || cursors.space.isDown && DeadTime > 500){
-        onClickScreen();
-        DeadTime = 0;
-    }
+    if(cursors.up.isDown && DeadTime > 800 || cursors.space.isDown && DeadTime > 800){
+            DeadTime = 0;
+            onClickScreen();
+        }
     }
 }
 
@@ -362,27 +377,27 @@ function SetDefaultVariables()
     score = 0;
     SpawnX = config.width * 1.1;
     SpawnY = config.height* 0.65;
-    SpawnYBird = config.height * 0.62;
+    SpawnYBird = config.height * 0.58;
     DespawnX = -(config.width * 0.1);
     Framerate = 6;
     spawned = 0;
     pause = true;
     GameState = 0;
-    speed = 600;//jump speed
+    speed = 630;//jump speed
     interval = 2000;
     DTime = 0;
     PlayerState = 0; 
     treeIndex = 0;
     treeVelocity = 500;
     LastTime = 0;
+    DeadTime = 0;
 }
 
 //Moves the Appropriate tree forward when called
 function GetNextTree(randomNumber)
 {
-    if(spawned < 2){
-    switch(randomNumber){
-        
+    if(spawned < 3){
+    switch(randomNumber){    
         case 1:
                 if(tree1.x == SpawnX){
                     tree1.setVelocityX(-treeVelocity);
@@ -412,7 +427,7 @@ function GetNextTree(randomNumber)
                     Bird.setVelocityX(-treeVelocity);  
                     spawned++;                  
                 }
-                SpeedUp();                
+                //SpeedUp();                
             break;
         case 6:
                 if(Box1.x == SpawnX){
@@ -439,13 +454,11 @@ function GetNextTree(randomNumber)
                 }
             break;        
     }
-    console.log("spawnTree");
 }
 }
 
 function SpeedUp()
 {
-    console.log("Speed UP!!!");
     player.anims.setTimeScale(player.anims.getTimeScale() + 0.1);
     player.anims.setDuration
     treeVelocity += 40;
@@ -470,6 +483,7 @@ function deSpawn()
 function GameOver(player)
 {
     MiddleText.setText("Play again?");
+    PlayBTN.setVisible(true);
     GameState = 2;
     pause = true;
 }
@@ -512,23 +526,19 @@ function ResetGame()
 // NFT section
 // ----------------------------------------------------------------------------------------------------------------
 
-let mrPixel = "9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT";
-auctionAddress = `5t19JGogcry9DRipPNcLs4mSnHYXQoqazPDMXXcdMixeH2mkgzMvWXjENsHRJzfHAFnTL5FBDHQCzBcnYg4CU1LcJZMmUXAaDcsKdgfBk4sE9BDbLt6Yxkjh6ow65HGCgxkwNAEArMAz8tqZL7GzKx4AvYVkqG3ExKggwDyVrvx7YzN8xeFtEUcnVkDKM8ow7YWW8eee2EidfYArPRd8fxQr5EuZVEiQbzKZ6m4xgtHfhsEptE3pNdt69F94gkytpounxBYpJPqfeZ8hVxLk8qaXTGFiJTDTt2p9D5ue4skZf4AGSLJyuzpMkjdifczQNc784ic1nbTAcjL3FKGHqnkaVwnCxU7go45X9ZFHwdpc6v67vFDoHzAAqypax4UFF1ux84X5G4xK5NFFjMZtvPyjqn2ErNXVgHBs2AkpngBPjnVRiN4sWkhR66NfBNpigU8PaTiB4Rim2FMZSXuyhRySCA1BV8ydVxz45T9VHqHA6WYkXp2ppAHmc29F8MrHX5Ew2x6amraFgvsdgAB3XiiEqEjRc83mhZVL1QgKi5CdeeGNYiXeCkxaRhG3j6r1JdAgzGDAQfN8sdRcEc1aYxbPfbqM1s81NFm7K1UmMUxrfCUp73poGAfV8FvQa2akyascKBaSCqvwuHW2ZP4oMoJHjZjTAgQjQF8cBNF9YLo6wXEtMQT5FYc3bHSgd4xZXCk2oHYjUSACW1Z5e7KZ3Qw1Sa2UvpMdWhbZ5Ncu99WT7v6nHFLJvHEPM7evr41nhCe9Yt3pAq4ee4rKCtEer4vQWq2b5UJSDXDj5VkVepQ5tmeXfXrBc42Yqucy6VeQSE7W66o4hQjwW1iN3yipmdTmpaAEASmbXwCxRSm7g4sNkfA969xo14PZQpBY3QUGqgCWoqJJVFWMhfvD53rzfgJpA4JH5B1fvY99q5iwbsAKdJfZi4fxub9QWZSNQfht4JqXMDmc6XTkWLE4VCxBRQYzF44H2E6mdf5EbZHUrpXj5c2VfC6PZGg9qmrz14aZjafM4M7kRTqMwVB8R9r7kXM1FWidGoprp2fRoJUALAKxKDSTVHX8ejT8zkSKJ5W45dSQjMe3WUDTeKhiy6Fqio2ukV8THaizTp6yZWxMVdu3a15pGBv1kmXZJEnLN9BsxyhnW2iGM7tvwK1jAneXeBH1uVdusR59j5ubCGKeoaS5ToC8Ky6wZ2iCyb2JF5CTvR4sMUg2ksmUm1dk8EoRjJ9i5gkqY`;
-auctionAddresses = [auctionAddress];
-let auctions = [];
-
 //Explorer Vars
-explorerApi = 'https://api.ergoplatform.com/api/v0'
-explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
+var explorerApi = 'https://api.ergoplatform.com/api/v0';
+var explorerApiV1 = 'https://api.ergoplatform.com/api/v1';
+var auctionsRaw;
 
 //Skin Vars
-//TODO: move to json file
 const BonesID = "3277ccd6af2b96be22cf23e067934ecc640f75dcce67439939d5364147c8a83d", GoldID = 2, FutureID = 3, RobotID = 4; // For testing only
+import { ConectedAddress } from './DinoConnector.js';
 
 
 function SkinChecker() {
     console.log("Loading Address");
-    getAuctionsRaw(mrPixel);
+    getAuctionsRaw(ConectedAddress);
   }
 
 
@@ -545,14 +555,10 @@ function getAuctionsRaw(walletAddress) {
 function buildAuctions() {
 for(let i = 0; i < auctionsRaw.length - 1; i++){
         auctionsRaw[i].assets.forEach((i) => {
-            //CheckSkinAvailable(4); 
             CheckSkinAvailable(i.tokenId);
         });
     }
     loadPlayer(Skin);
-
-    // After loading the skin
-    //addPhaser();
 }
 
 function CheckSkinAvailable(tokenId)
@@ -588,10 +594,3 @@ function getRequest(url, api = explorerApi) {
     return fetch(api + url).then(res => res.json())
 }
 
-// Async test function to load assets before game load -> Move to another js file
-
-function addPhaser() {
-    var gameFrame = document.createElement('iframe');
-    gameFrame.src = "link"; // Link to the CyberDinos.html
-    document.getElementsByTagName('body').appendChild(script);
-}
