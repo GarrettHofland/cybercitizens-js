@@ -217,7 +217,7 @@ span {
 
 .button-group {
     display: flex;
-    width: 100%;
+    max-width: 100%;
     column-gap: 2%;
 }
 
@@ -769,9 +769,11 @@ span {
 }
 
 @media all and (max-width : 60em) {
+
     .columns {
         flex-direction: column;
     }
+
     #ergopixel-img {
         display: inline-block;
         width: 60%;
@@ -791,7 +793,7 @@ span {
     html {
         background-color: #231742;
         // background-image: none;
-        overflow-x: hidden;
+        // overflow-x: hidden;
     }
 
     .container {
@@ -801,21 +803,16 @@ span {
 
     .section {
         height: auto;
-        width: 100vw;
+        max-width: 100vw;
         margin: 10vh auto;
         text-align: center;
-        padding: 1em 1em;
+        // padding: 1em 1em;
     }
 
     .s1 {
         min-height: 100vh;
     }
 
-    .columns {
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-    }
 
     .main-header {
         border: none;
@@ -827,7 +824,7 @@ span {
 
     .sub-header {
         font-size: 2.5rem;
-        width: 100vw;
+        max-width: 90%;
         margin-bottom: 5%;
         margin: 0 auto;
     }
@@ -925,7 +922,6 @@ span {
         width: 10%;
         height: 5%;
         border: 2px $secondary-colour solid;
-        border-radius: 4px;
         background-color: $main-colour;
         transition: ease-out 1s;
 
@@ -936,8 +932,17 @@ span {
         }
     }
 
+
+    .columns {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        gap: 2em;
+    }
+
     .column {
-        width: 100vw;
+        width: 100% !important;
+        margin: 0 auto;
     }
 
 
