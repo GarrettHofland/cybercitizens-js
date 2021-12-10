@@ -244,14 +244,14 @@ span {
 }
 
 .faq-header {
-  font-size: 4rem;
+  font-size: clamp(1.5rem, 2rem + 1vw, 3rem);
   margin: 0 auto;
   color: #f71184;
   text-shadow: 2px 2px #258ae8;
 }
 
 .faq-answer {
-  font-size: 2rem;
+  font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
   text-align: center;
   width: 80%;
   margin: 2vh auto;
@@ -725,7 +725,7 @@ span {
 
   .section {
     height: auto;
-    max-width: 100vw;
+    width: 90% !important;
     margin: 10vh auto;
     text-align: center;
   }
@@ -738,8 +738,9 @@ span {
     border: none;
     display: inline-block;
     margin: 5% auto;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     border-bottom: 2px solid #258ae8;
+    text-align: center;
   }
 
   .sub-header {
@@ -821,12 +822,10 @@ span {
   .faq-header {
     margin-top: 10%;
     width: 80%;
-    font-size: clamp(1.5rem, 2rem + 1vw, 3rem);
   }
 
   .faq-answer {
     width: 80%;
-    font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
     margin-bottom: 10%;
   }
 
@@ -840,6 +839,7 @@ span {
     border: 2px #f711f7 solid;
     background-color: #f71184;
     transition: ease-out 1s;
+    border-radius: 20px;
   }
   .up-button .up-img {
     width: 60%;
@@ -906,6 +906,7 @@ span {
   .placeholder-header {
     margin: 0 auto;
     width: 90%;
+    font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
   }
 
   .placeholder-content {
