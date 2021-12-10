@@ -733,7 +733,7 @@ span {
   }
 
   .s1 {
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .columns {
@@ -794,22 +794,28 @@ span {
 
   .button-group {
     display: flex;
-    flex-direction: row;
-    width: 90%;
-    column-gap: 2%;
+    flex-direction: column;
+    max-width: 80%;
     margin: 0 auto;
     margin-top: 5%;
+    gap: 1em;
   }
 
   .button {
     height: 6vh;
     width: auto;
-    padding: 0;
     border: none;
     background: none;
     border-radius: 8px;
     font-weight: bolder;
     font-size: 1rem;
+  }
+  .button img {
+    width: 10%;
+  }
+
+  #auctions, #explorer, #game {
+    padding: 2%;
   }
 
   .even-button {

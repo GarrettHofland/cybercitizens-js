@@ -110,10 +110,12 @@ html, body {
 .search-container .button {
   width: 30%;
   margin: 0 auto;
+  color: black;
+  background-color: grey;
 }
 
 .search-container:hover .button {
-  color: white;
+  box-shadow: none;
 }
 
 .explore-content {
@@ -135,7 +137,7 @@ input[type=text], textarea {
 }
 
 input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
-  border: 2px #f711f7 solid;
+  border: 2px grey solid;
 }
 
 .attribute {

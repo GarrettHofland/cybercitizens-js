@@ -127,13 +127,16 @@ html, body {
     .button {
         width: 30%;
         margin: 0 auto;
+        color: black;
+        background-color: grey;
     }
 }
 
 .search-container:hover {
     .button {
-        color: white;
+        // color: white;
         // background-color: $secondary-colour;
+        box-shadow: none;
     }
 }
 
@@ -153,11 +156,13 @@ html, body {
 
 input[type="text"], textarea {
     background-color: $background-colour;
+    // background-color: grey;
     color: $main-colour;
 }
 
 input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hover {
-    border: 2px $secondary-colour solid;
+    // border: 2px $secondary-colour solid;
+    border: 2px grey solid;
 }
 
 .attribute {
