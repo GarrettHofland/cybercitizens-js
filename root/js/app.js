@@ -27,6 +27,12 @@ if(document.querySelector("#explorer")){
     }
 }
 
+if(document.querySelector("#wallet")){
+    document.getElementById("wallet").disabled = "true";
+    document.getElementById("wallet").style.backgroundColor = "grey";
+    document.getElementById("wallet").style.borderColor = "darkgrey";
+}
+
 
 if(document.querySelector("#game")){
     document.querySelector("#game").onclick = function(event) {
