@@ -7,17 +7,18 @@ $secondary-colour: #f711f7;
 $secondary-hover: #8c1d8c;
 $highlight-colour: #258ae8;
 $header-background-colour: #322554;
+$text-colour: $main-colour;
 
 $main-colour-gradient: linear-gradient(to bottom, #f71184 0%, #f711f7 100%);
 
 html {
     scroll-behavior: smooth;
     background-color: $background-colour;
-    // background-image: url("../assets/neonslide.png");
-    // background-repeat: no-repeat;
-    // background-attachment: fixed;
-    // background-position: left;
-    // background-size: cover;
+    background-image: url("../assets/neonslide-no-highlight.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 body {
@@ -42,7 +43,7 @@ html, body {
     width: 5%;
     height: 5%;
     border: 4px $secondary-colour solid;
-    border-radius: 4px;
+    border-radius: 24px;
     background-color: $main-colour;
     transition: ease-out 1s;
 
@@ -54,7 +55,7 @@ html, body {
 }
 
 .up-button:hover {
-    // background-color: $highlight-colour;
+    background-color: $secondary-colour;
     border: 2px $main-colour solid;
     box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $highlight-colour;
 }
@@ -82,14 +83,7 @@ a {
 
 .s1 {
     margin-bottom: 20vh;
-    background-color: transparent;
-}
-
-.s2 {
-    display: block;
-}
-
-.s7 {
+    // background-color: transparent;
 }
 
 main {
@@ -120,8 +114,9 @@ main {
 
 
 .main-header {
-    color: $main-colour;
-    text-shadow: 2px 2px $highlight-colour;
+    // color: $main-colour;
+    color: $text-colour;
+    text-shadow: 4px 4px $highlight-colour;
     letter-spacing: 6px;
 
     font-size: clamp(6rem, 8rem + 2vw, 10rem);
@@ -131,7 +126,7 @@ main {
     max-width: 80%;
     padding-bottom: 0;
 
-    border-bottom: 6px solid $highlight-colour;
+    // border-bottom: 6px solid $highlight-colour;
 }
 
 @keyframes glow {
@@ -147,7 +142,7 @@ main {
 .sub-header {
     font-size: clamp(2rem, 2rem + 3vw, 4rem);
     margin-bottom: 0;
-    color: $main-colour;
+    color: $text-colour;
     text-shadow: 1px 1px $highlight-colour;
 }
 
@@ -156,7 +151,7 @@ main {
     margin-top: 0;
     margin-bottom: 0;
     width: 70%;
-    color: $main-colour;
+    color: $text-colour;
     text-shadow: 1px 1px $highlight-colour;
 }
 
@@ -223,7 +218,7 @@ span {
 
 .button-group {
     display: flex;
-    width: 100%;
+    max-width: 100%;
     column-gap: 2%;
     padding: 2% 2%;
 }
@@ -284,14 +279,14 @@ span {
 }
 
 .faq-header {
-    font-size: 4rem;
+    font-size: clamp(1.5rem, 2rem + 1vw, 3rem);
     margin: 0 auto;
     color: $main-colour;
     text-shadow: 2px 2px $highlight-colour;
 }
 
 .faq-answer {
-    font-size: 2rem;
+    font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
     text-align: center;
     width: 80%;
     margin: 2vh auto;
@@ -301,7 +296,7 @@ span {
     font-size: 4rem;
     margin: 0 auto;
     color: $highlight-colour;
-    text-shadow: 1px 1px $main-colour;
+    text-shadow: 2px 2px $main-colour;
     border-bottom: $highlight-colour 2px solid;
 
 }
@@ -374,7 +369,7 @@ span {
 
 // Animation for main page
 .area {
-    z-index: -100;
+    z-index: -1;
     width: 100%;
     min-height: 100vh;
     position: fixed;
@@ -711,40 +706,26 @@ span {
 
 // Roadmap 
 .roadmap {
-    width: min(600px, 80%);
+    max-width: 80%;
     text-align: left;
     margin: 0 auto;
-    font-size: clamp(2rem, 3vw, 5rem);
 }
 
-.roadmap-number {
-    width: 10%;
-    background: green;
-    border: 4px green solid;
-    border-radius: 50%;
-    text-align: center;
-    right: 100px;
-    display: none;
-}
 
 .roadmap-title {
     padding-top: 1em;
+    padding-left: 0;
     color: $main-colour;
+    text-shadow: 2px 2px $highlight-colour;
+    font-size: clamp(1.5rem, 2rem + 1vw, 3rem);
 }
 
 .roadmap-content {
     padding-bottom: 1em;
     margin-bottom: 1em;
+    font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
 }
 
-.roadmap-title, .roadmap-content {
-    padding-left: 2em;
-    border-left: 8px yellow solid;
-}
-
-.roadmap-passed {
-    border-color: green;
-}
 
 /*
     Yoroi Wallet Purchasing Section
@@ -795,9 +776,11 @@ span {
 }
 
 @media all and (max-width : 60em) {
+
     .columns {
         flex-direction: column;
     }
+
     #ergopixel-img {
         display: inline-block;
         width: 60%;
@@ -816,8 +799,8 @@ span {
 
     html {
         background-color: #231742;
-        background-image: none;
-        overflow-x: hidden;
+        // background-image: none;
+        // overflow-x: hidden;
     }
 
     .container {
@@ -827,41 +810,35 @@ span {
 
     .section {
         height: auto;
-        width: 100vw;
+        width: 90% !important;
         margin: 10vh auto;
         text-align: center;
-        padding: 0 0;
-        padding-top: 2rem;
-        // padding-bottom: 30vh;
+        // padding: 1em 1em;
     }
 
     .s1 {
         min-height: 100vh;
     }
 
-    .columns {
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-    }
 
     .main-header {
         border: none;
         display: inline-block;
         margin: 5% auto;
-        font-size: 3rem;
+        font-size: 2.2rem;
         border-bottom: 2px solid $highlight-colour;
+        text-align: center;
     }
 
     .sub-header {
-        font-size: 2.5rem;
-        width: 100vw;
+        font-size: 2rem;
+        max-width: 90%;
         margin-bottom: 5%;
         margin: 0 auto;
     }
 
     .tag-line-header {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin: 0 auto;
         margin-bottom: 5%;
     }
@@ -900,11 +877,11 @@ span {
     .button-group {
         display: flex;
         flex-direction: column;
-        width: 90%;
-        gap: 1em;
-        column-gap: 2%;
+        // flex-wrap: wrap;
+        max-width: 80%;
         margin: 0 auto;
         margin-top: 5%;
+        gap: 1em;
     }
 
     .button {
@@ -919,8 +896,11 @@ span {
 
         img {
             width: 10%;
-            padding: 0;
         }
+    }
+
+    #auctions, #explorer, #game {
+        padding: 2%;
     }
 
     .even-button {
@@ -934,12 +914,10 @@ span {
     .faq-header {
         margin-top: 10%;
         width: 80%;
-        font-size: 3rem;
     }
 
     .faq-answer {
         width: 80%;
-        font-size: 2rem;
         margin-bottom: 10%;
     }
 
@@ -951,9 +929,9 @@ span {
         width: 10%;
         height: 5%;
         border: 2px $secondary-colour solid;
-        border-radius: 4px;
         background-color: $main-colour;
         transition: ease-out 1s;
+        border-radius: 20px;
 
         .up-img {
             width: 60%;
@@ -962,8 +940,17 @@ span {
         }
     }
 
+
+    .columns {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        gap: 2em;
+    }
+
     .column {
-        width: 100vw;
+        width: 100% !important;
+        margin: 0 auto;
     }
 
 
@@ -1023,6 +1010,7 @@ span {
     .placeholder-header {
         margin: 0 auto;
         width: 90%;
+        font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
     }
 
     .placeholder-content {

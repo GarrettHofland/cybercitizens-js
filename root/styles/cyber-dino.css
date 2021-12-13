@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#dino-game {
+  text-align: center;
+  width: 90% !important;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#loading-message {
+  color: white;
+  text-shadow: 2px 2px #f71184;
+  font-size: clamp(2rem, 3rem + 2vw, 4rem);
+  max-width: 90%;
+  margin: 2em auto;
+}
+
+.main-header {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 90% !important;
+}
+
+canvas {
+  display: block;
+  max-width: 800px !important;
+  margin: 0 auto;
+  border: 1px #f71184 solid;
+  border-radius: 12px;
+}
+
+/*# sourceMappingURL=cyber-dino.css.map */

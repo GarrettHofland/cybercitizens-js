@@ -1,7 +1,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #231742;
   background-image: none;
 }
 
@@ -41,6 +40,7 @@ html, body {
 .auction-card {
   height: auto;
   max-width: 40%;
+  background-color: #231742;
   color: #a02161;
   text-align: center;
   border: 3px solid #8c1d8c;
@@ -110,10 +110,12 @@ html, body {
 .search-container .button {
   width: 30%;
   margin: 0 auto;
+  color: black;
+  background-color: grey;
 }
 
 .search-container:hover .button {
-  color: white;
+  box-shadow: none;
 }
 
 .explore-content {
@@ -124,9 +126,18 @@ html, body {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 2%;
   width: 80%;
   margin: 1em auto;
+}
+
+input[type=text], textarea {
+  background-color: #231742;
+  color: #f71184;
+}
+
+input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
+  border: 2px grey solid;
 }
 
 .attribute {

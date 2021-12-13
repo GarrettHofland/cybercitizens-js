@@ -9,7 +9,7 @@ $highlight-colour: #258ae8;
 html, body {
     margin: 0;
     padding: 0;
-    background-color: $background-colour;
+    // background-color: $background-colour;
     background-image: none;
 }
 
@@ -51,7 +51,7 @@ html, body {
 .auction-card {
     height: auto;
     max-width: 40%;
-    // margin: 0 auto;
+    background-color: $background-colour;
     color: $main-hover;
     text-align: center;
     border: 3px solid $secondary-hover;
@@ -59,6 +59,7 @@ html, body {
     box-shadow: 10px 10px 5px black;
     transition: 1s ease-out;
     cursor: pointer;
+
 
     img {
         margin: 0 auto;
@@ -121,18 +122,21 @@ html, body {
     display: flex;
     flex-direction: column;
     max-width: 70%;
-
     margin: 0 auto;
 
     .button {
         width: 30%;
         margin: 0 auto;
+        color: black;
+        background-color: grey;
     }
 }
 
 .search-container:hover {
     .button {
-        color: white;
+        // color: white;
+        // background-color: $secondary-colour;
+        box-shadow: none;
     }
 }
 
@@ -144,10 +148,21 @@ html, body {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 2%;
 
     width: 80%;
     margin: 1em auto;
+}
+
+input[type="text"], textarea {
+    background-color: $background-colour;
+    // background-color: grey;
+    color: $main-colour;
+}
+
+input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hover {
+    // border: 2px $secondary-colour solid;
+    border: 2px grey solid;
 }
 
 .attribute {
