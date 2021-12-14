@@ -185,6 +185,7 @@ function create ()
     });
 
     loadPlayer(Skin);
+    LoginAndGetHighScore();
 
     console.log("Create complete!");
 
@@ -234,6 +235,7 @@ function onClickScreen()
             PlayBTN.setVisible(false);
             ResetGame();
             pause = false;
+            LoginAndSetHighScore();
             break;
     }
 }
@@ -485,7 +487,7 @@ function GameOver(player)
     MiddleText.setText("Play again?");
     PlayBTN.setVisible(true);
     GameState = 2;
-    pause = true;
+    pause = true;   
 }
 
 function GameOverBird(player)
@@ -538,7 +540,8 @@ import { ConectedAddress } from './DinoConnector.js';
 
 function SkinChecker() {
     console.log("Loading Address");
-    getAuctionsRaw(ConectedAddress);
+    if(ConectedAddress != "N/A")
+        getAuctionsRaw(ConectedAddress);
   }
 
 
@@ -594,3 +597,86 @@ function getRequest(url, api = explorerApi) {
     return fetch(api + url).then(res => res.json())
 }
 
+// ----------------------------------------------------------------------------------------------------------------
+// LeaderBoard Section
+// ----------------------------------------------------------------------------------------------------------------
+
+//send HS 
+function LoginAndSetHighScore(){
+    PlayFab.settings.titleId = "9EBCA";
+    
+    var loginRequest = {
+        TitleId: PlayFab.settings.titleId,
+        CustomId: ConectedAddress,
+        CreateAccount: true,
+    };
+
+    PlayFabClientSDK.LoginWithCustomID(loginRequest, UpdateStats);
+}
+
+function UpdateStats()
+{
+    var updateStatsRequest = {
+        Statistics: [{ StatisticName: "HighScore", Value: HighScore }]
+    };
+    PlayFabClientSDK.UpdatePlayerStatistics(updateStatsRequest, updateStatsCallback);
+}
+
+
+var updateStatsCallback = function (result, error) {
+    if (result !== null) {
+        console.log("Highscore Updated");
+    } 
+    else if (error !== null) {
+        console.log("Something went wrong Fetching the Leaderboard.");
+        console.log("Here's some debug information:");
+        console.log(CompileErrorReport(error));
+    }
+};
+
+
+//todo: get HS and set current hs to it
+
+function LoginAndGetHighScore(){
+    PlayFab.settings.titleId = "9EBCA";
+    
+    var loginRequest = {
+        TitleId: PlayFab.settings.titleId,
+        CustomId: ConectedAddress,
+        CreateAccount: true,
+    };
+
+    PlayFabClientSDK.LoginWithCustomID(loginRequest, GetHighscore);
+}
+
+function GetHighscore()
+{
+    var HighscoreRequest = {
+        PlayFabId: ConectedAddress,
+        StatisticNames: ["HighScore"]
+    }
+    PlayFabClientSDK.GetPlayerStatistics(HighscoreRequest, GetHighscoreStats)
+}
+
+var GetHighscoreStats = function (result, error) {
+    if (result !== null) {
+        HighScore = result.data.Statistics[0].Value;
+        console.log("The HighScore is: "+ JSON.stringify(result.data.Statistics[0].Value));
+    } 
+    else if (error !== null) {
+        console.log("Something went wrong Fetching the Leaderboard.");
+        console.log("Here's some debug information:");
+        console.log(CompileErrorReport(error));
+    }
+};
+
+//error msg
+function CompileErrorReport(error) {
+    if (error === null)
+       return "";
+    var fullErrors = error.errorMessage;
+    for (var paramName in error.errorDetails)
+       for (var msgIdx in error.errorDetails[paramName])
+            fullErrors += "\n" + paramName + ": " + error.errorDetails[paramName][msgIdx];
+    return fullErrors;
+}
