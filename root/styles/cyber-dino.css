@@ -4,6 +4,13 @@
   padding: 0;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 #dino-game {
   text-align: center;
   width: 90% !important;
@@ -32,6 +39,61 @@ canvas {
   margin: 0 auto;
   border: 1px #f71184 solid;
   border-radius: 12px;
+}
+
+#leaderboard {
+  color: #f71184;
+  text-shadow: 2px 2px #258ae8;
+  width: 50% !important;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  padding: 6%;
+  border-radius: 20px;
+  background: #231742;
+}
+
+#leaderboard-header {
+  font-size: 4rem;
+}
+
+.leaderboard-button {
+  border: 2px #f71184 solid;
+  border-radius: 18px;
+  color: white;
+  background-color: #f71184;
+  text-shadow: 2px 2px #258ae8;
+  font-weight: 600;
+  padding: 2px;
+  margin: 2% auto;
+  width: 50%;
+  transition: ease-in 1s;
+  font-size: 1.5rem;
+}
+
+.leaderboard-button:hover {
+  background-color: #f711f7;
+  border-color: #f711f7;
+  box-shadow: 5px 5px 2px #f71184;
+}
+
+input[type=text], textarea {
+  background-color: #231742;
+  color: #f71184;
+  border-radius: 18px;
+  width: 50%;
+  font-size: 1.5rem;
+  transition: ease-in 1s;
+  margin: 2% auto;
+}
+
+input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
+  border: 2px #f711f7 solid;
+}
+
+.row {
+  font-size: 2.5rem;
 }
 
 /*# sourceMappingURL=cyber-dino.css.map */

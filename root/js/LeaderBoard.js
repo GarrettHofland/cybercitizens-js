@@ -3,15 +3,16 @@ import { ConectedAddress } from './DinoConnector.js';
 let leaderboard = document.getElementById("leaderboard");
 let scores = [];
 let NoDisplayed = 10; //number of entries to display
-var refreshBTN = document.createElement("input"); refreshBTN.type = "button"; refreshBTN.value = "Refresh Leaderboard"; 
-var DNBTN = document.createElement("input"); DNBTN.type = "button"; DNBTN.value = "Set Name"; 
-var DNInput = document.createElement("input"); DNInput.type = "text"; DNInput.value = ""; DNInput.id = "Display-Name";
-
+var refreshBTN = document.createElement("input"); refreshBTN.type = "button"; refreshBTN.value = "Refresh Leaderboard"; refreshBTN.classList.add("leaderboard-button"); 
+var DNBTN = document.createElement("input"); DNBTN.type = "button"; DNBTN.value = "Set Name";  DNBTN.classList.add("leaderboard-button"); 
+var DNInput = document.createElement("input"); DNInput.type = "text"; DNInput.value = ""; DNInput.id = "display-name"; 
+var header = document.createElement("h1"); header.innerText = "Leaderboard"; header.id = "leaderboard-header";
 
 
 LoginAndSetLeaderBoard();
 
-function createButtons(){
+function createInterface(){
+    leaderboard.appendChild(header);
     leaderboard.appendChild(DNInput);
     leaderboard.appendChild(DNBTN);
     leaderboard.appendChild(refreshBTN);
@@ -27,7 +28,7 @@ function updateLeaderboardView() {
     for(let i=0; i<scores.length; i++) {
         let name = document.createElement("div");
         name.classList.add("name");
-        name.innerText = scores[i].name + " : " + scores[i].score;//Text Displayed on leaderboard
+        name.innerText = i+1 + ". " + scores[i].name + " : " + scores[i].score; //Text Displayed on leaderboard
 
         let scoreRow = document.createElement("div");
         scoreRow.classList.add("row");
@@ -77,7 +78,7 @@ var UpdateLeaderBoard = function (result, error) {
             scores.push({name: element.DisplayName , score: element.StatValue})
         });
         leaderboard.innerHTML = "";
-        createButtons();
+        createInterface();
         updateLeaderboardView();
     } 
     else if (error !== null) {
@@ -104,7 +105,7 @@ function SetDisplayName()
 function UpdateDisplayName()
     {
         var GetDNameRequest = {
-            DisplayName: document.getElementById("Display-Name").value
+            DisplayName: document.getElementById("display-name").value
         }
 
         PlayFabClientSDK.UpdateUserTitleDisplayName(GetDNameRequest, UpdateName);

@@ -12,6 +12,13 @@ $header-background-colour: #322554;
     padding: 0;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 #dino-game {
     text-align: center;
 
@@ -46,4 +53,79 @@ canvas {
 
     border: 1px $main-colour solid;
     border-radius: 12px;
+}
+
+#leaderboard {
+    // position: fixed;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    color: $main-colour;
+    text-shadow: 2px 2px $highlight-colour;
+
+    width: 50% !important;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+
+    margin: 0 auto;
+    padding: 6%;
+
+    border-radius: 20px;
+    background: $background-colour;
+}
+
+#leaderboard-header {
+    font-size: clamp(3rem, 4rem, 6rem);
+}
+
+.leaderboard-button {
+    border: 2px $main-colour solid;
+    border-radius: 18px;
+
+    color: white;
+    background-color: $main-colour;
+    text-shadow: 2px 2px $highlight-colour;
+
+    font-weight: 600;
+
+    padding: 2px;
+    margin: 2% auto;
+
+    width: 50%;
+
+    transition: ease-in 1s;
+
+    font-size: clamp(1rem, 1.5rem, 2rem);
+}
+
+
+.leaderboard-button:hover {
+    background-color: $secondary-colour;
+    border-color: $secondary-colour;
+    box-shadow: 5px 5px 2px $main-colour;
+}
+
+input[type="text"], textarea {
+    background-color: $background-colour;
+    color: $main-colour;
+
+    border-radius: 18px;
+
+    width: 50%;
+    font-size: clamp(1rem, 1.5rem, 2rem);
+
+    transition: ease-in 1s;
+
+    margin: 2% auto;
+}
+
+input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hover {
+    border: 2px $secondary-colour solid;
+}
+
+.row {
+    font-size: clamp(2rem, 2.5rem, 3rem);;
 }
