@@ -1,6 +1,7 @@
 import { ConectedAddress } from './DinoConnector.js';
 
-let leaderboard = document.getElementById("leaderboard");
+let leaderboard = document.createElement('div'); leaderboard.id = "leaderboard";
+let leaderboardContainer = document.getElementById("leaderboard-container");
 let scores = [];
 let NoDisplayed = 10; //number of entries to display
 var refreshBTN = document.createElement("input"); refreshBTN.type = "button"; refreshBTN.value = "Refresh Leaderboard"; refreshBTN.classList.add("leaderboard-button"); 
@@ -9,15 +10,15 @@ var DNInput = document.createElement("input"); DNInput.type = "text"; DNInput.va
 var header = document.createElement("h1"); header.innerText = "Leaderboard"; header.id = "leaderboard-header";
 var toggle = document.getElementById("leaderboard-toggle");
 
-if(toggle) {
-    toggle.addEventListener('click', toggleLeaderboard());
-}
-
-// LoginAndSetLeaderBoard();
+toggle.addEventListener('click', toggleLeaderboard());
 
 function toggleLeaderboard() {
+    console.log("toggle leaderboard");
     LoginAndSetLeaderBoard();
-    document.getElementById("leaderboard").style.display = "flex";
+    createInterface();
+    leaderboard.style.display = "flex";
+    leaderboardContainer.style.display = "block";
+    leaderboardContainer.append(leaderboard);
 }
 
 function createInterface(){
@@ -79,7 +80,7 @@ function GetLeaderboard()
 
 }
 
-//updates scores variable and calls updateleaderboardview
+// updates scores variable and calls updateleaderboardview
 var UpdateLeaderBoard = function (result, error) {
     if (result !== null){
         scores = [];
@@ -91,9 +92,7 @@ var UpdateLeaderBoard = function (result, error) {
         updateLeaderboardView();
     } 
     else if (error !== null) {
-        console.log("Something went wrong Fetching the Leaderboard.");
-        console.log("Here's some debug information:");
-        console.log(CompileErrorReport(error));
+        console.error(CompileErrorReport(error));
     }
 };
 
@@ -131,7 +130,6 @@ function UpdateDisplayName()
 
 function RefreshLB()
 {
-    console.log("Leaderboard refreshed");
     LoginAndSetLeaderBoard();
 }
 

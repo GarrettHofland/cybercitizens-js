@@ -10,6 +10,7 @@ $header-background-colour: #322554;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    overflow-y: visible;
 }
 
 input:focus,
@@ -53,6 +54,10 @@ canvas {
 
     border: 1px $main-colour solid;
     border-radius: 12px;
+}
+
+#leaderboard-container {
+    display: none;
 }
 
 #leaderboard {

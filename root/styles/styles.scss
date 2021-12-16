@@ -279,14 +279,14 @@ span {
 }
 
 .faq-header {
-    font-size: clamp(1.5rem, 2rem + 1vw, 3rem);
+    font-size: clamp(1.5rem, 2.5rem, 3rem);
     margin: 0 auto;
     color: $main-colour;
     text-shadow: 2px 2px $highlight-colour;
 }
 
 .faq-answer {
-    font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
+    font-size: clamp(1rem, 2rem, 2.5rem);
     text-align: center;
     width: 80%;
     margin: 2vh auto;

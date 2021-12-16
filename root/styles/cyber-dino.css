@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-y: visible;
 }
 
 input:focus,
@@ -39,6 +40,10 @@ canvas {
   margin: 0 auto;
   border: 1px #f71184 solid;
   border-radius: 12px;
+}
+
+#leaderboard-container {
+  display: none;
 }
 
 #leaderboard {
