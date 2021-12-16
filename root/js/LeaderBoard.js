@@ -12,6 +12,10 @@ var toggle = document.getElementById("leaderboard-toggle");
 
 toggle.addEventListener('click', toggleLeaderboard());
 
+document.querySelector("#gameToHome").onclick = function(event) {
+    window.location = "../index.html";
+}
+
 function toggleLeaderboard() {
     console.log("toggle leaderboard");
     LoginAndSetLeaderBoard();

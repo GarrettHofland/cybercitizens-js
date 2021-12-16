@@ -30,7 +30,7 @@ button:focus {
 
 .main-header {
   text-align: center;
-  margin: 0 auto;
+  margin: 1em auto;
   max-width: 90% !important;
 }
 
@@ -54,7 +54,7 @@ canvas {
   color: #f71184;
   text-shadow: 2px 2px #258ae8;
   min-width: 40% !important;
-  display: none;
+  display: flex;
   flex-direction: column;
   text-align: center;
   margin: 0 auto;
@@ -120,6 +120,11 @@ input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
 #leaderboard-toggle:hover {
   box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #f711f7;
   color: white;
+}
+
+.footer-image {
+  width: 60%;
+  background: red;
 }
 
 /*# sourceMappingURL=cyber-dino.css.map */

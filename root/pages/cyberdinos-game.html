@@ -1,27 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/cyber-dino.css">
+    <link rel="stylesheet" href="../styles/header.css">
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
     <title>CyberDinos</title>
     <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
 </head>
-<body>
-        
-    <div id="dino-game">
-        <h1 class="main-header">CyberDino</h1>
-        <h2 id="loading-message">Please wait while the game is loaded...</h2>
-        <button id="leaderboard-toggle">Show Leaderboard</button>
-    </div>
-    
-    <script type="module" src="../js/DinoConnector.js"></script>
 
-    <div id="leaderboard-container" class="container">
-    </div>
+<body>
+    <header>
+        <div class="navMenu">
+            <div class="left">
+                <div class="logo-container">
+                    <img class="logo" src="../assets/logo-transparent-bg.png" />
+                </div>
+            </div>
+            <div class="right">
+                <nav>
+                    <div on-click="toggleOpen()" class="hamburger">
+                        <div class="line">&nbsp;</div>
+                        <div class="line">&nbsp;</div>
+                        <div class="line">&nbsp;</div>
+                    </div>
+                    <ul class="nav-links">
+                        <li id="gameToHome()"><a class="link-button-header odd-button">Home</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="dino-game">
+            <h1 class="main-header">CyberDino</h1>
+            <h2 id="loading-message">Please wait while the game is loaded...</h2>
+            <button id="leaderboard-toggle">Show Leaderboard</button>
+        </div>
+
+        <script type="module" src="../js/DinoConnector.js"></script>
+
+        <div id="leaderboard-container" class="container">
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+        <div class="footer-text">
+            CyberCitizens is an NFT project by the ERGOPixels Team.
+        </div>
+    </footer>
 </body>
+
 </html>
