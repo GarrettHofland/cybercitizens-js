@@ -7,9 +7,18 @@ var refreshBTN = document.createElement("input"); refreshBTN.type = "button"; re
 var DNBTN = document.createElement("input"); DNBTN.type = "button"; DNBTN.value = "Set Name";  DNBTN.classList.add("leaderboard-button"); 
 var DNInput = document.createElement("input"); DNInput.type = "text"; DNInput.value = ""; DNInput.id = "display-name"; 
 var header = document.createElement("h1"); header.innerText = "Leaderboard"; header.id = "leaderboard-header";
+var toggle = document.getElementById("leaderboard-toggle");
 
+if(toggle) {
+    toggle.addEventListener('click', toggleLeaderboard());
+}
 
-LoginAndSetLeaderBoard();
+// LoginAndSetLeaderBoard();
+
+function toggleLeaderboard() {
+    LoginAndSetLeaderBoard();
+    document.getElementById("leaderboard").style.display = "flex";
+}
 
 function createInterface(){
     leaderboard.appendChild(header);

@@ -42,15 +42,19 @@ canvas {
 }
 
 #leaderboard {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #f71184;
   text-shadow: 2px 2px #258ae8;
-  width: 50% !important;
-  display: flex;
+  min-width: 40% !important;
+  display: none;
   flex-direction: column;
   text-align: center;
   margin: 0 auto;
-  padding: 6%;
-  border-radius: 20px;
+  padding: 1em;
+  border-radius: 28px;
   background: #231742;
 }
 
@@ -59,23 +63,22 @@ canvas {
 }
 
 .leaderboard-button {
-  border: 2px #f71184 solid;
+  border: none;
   border-radius: 18px;
-  color: white;
-  background-color: #f71184;
-  text-shadow: 2px 2px #258ae8;
+  background: #f71184;
   font-weight: 600;
-  padding: 2px;
-  margin: 2% auto;
-  width: 50%;
-  transition: ease-in 1s;
   font-size: 1.5rem;
+  box-shadow: 2px 2px 1px black;
+  transition: 1s ease-out;
+  min-width: 50%;
+  padding: 1%;
+  margin: 2% auto;
 }
 
 .leaderboard-button:hover {
-  background-color: #f711f7;
-  border-color: #f711f7;
-  box-shadow: 5px 5px 2px #f71184;
+  box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #f711f7;
+  color: white;
+  text-shadow: 2px 2px #f71184;
 }
 
 input[type=text], textarea {
@@ -94,6 +97,24 @@ input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
 
 .row {
   font-size: 2.5rem;
+}
+
+#leaderboard-toggle {
+  border: none;
+  border-radius: 18px;
+  background: #f71184;
+  font-weight: 600;
+  font-size: 1.5rem;
+  box-shadow: 2px 2px 1px black;
+  transition: 1s ease-out;
+  max-width: 50%;
+  padding: 1em;
+  margin: 2% auto;
+}
+
+#leaderboard-toggle:hover {
+  box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #f711f7;
+  color: white;
 }
 
 /*# sourceMappingURL=cyber-dino.css.map */

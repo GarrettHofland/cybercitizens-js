@@ -56,24 +56,25 @@ canvas {
 }
 
 #leaderboard {
-    // position: fixed;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: $main-colour;
     text-shadow: 2px 2px $highlight-colour;
 
-    width: 50% !important;
+    min-width: 40% !important;
 
-    display: flex;
+    // display: flex;
+    display: none;
     flex-direction: column;
 
     text-align: center;
 
     margin: 0 auto;
-    padding: 6%;
+    padding: 1em;
 
-    border-radius: 20px;
+    border-radius: 28px;
     background: $background-colour;
 }
 
@@ -82,30 +83,28 @@ canvas {
 }
 
 .leaderboard-button {
-    border: 2px $main-colour solid;
+    border: none;
     border-radius: 18px;
 
-    color: white;
-    background-color: $main-colour;
-    text-shadow: 2px 2px $highlight-colour;
-
+    background: $main-colour;
+    
     font-weight: 600;
-
-    padding: 2px;
-    margin: 2% auto;
-
-    width: 50%;
-
-    transition: ease-in 1s;
-
     font-size: clamp(1rem, 1.5rem, 2rem);
+
+    box-shadow: 2px 2px 1px black;
+
+    transition: 1s ease-out;
+
+    min-width: 50%;
+    padding: 1%;
+    margin: 2% auto;
 }
 
 
 .leaderboard-button:hover {
-    background-color: $secondary-colour;
-    border-color: $secondary-colour;
-    box-shadow: 5px 5px 2px $main-colour;
+    box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $secondary-colour;
+    color: white;
+    text-shadow: 2px 2px $main-colour;
 }
 
 input[type="text"], textarea {
@@ -128,4 +127,27 @@ input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hov
 
 .row {
     font-size: clamp(2rem, 2.5rem, 3rem);;
+}
+
+#leaderboard-toggle {
+    border: none;
+    border-radius: 18px;
+
+    background: $main-colour;
+    
+    font-weight: 600;
+    font-size: clamp(1rem, 1.5rem, 2rem);
+
+    box-shadow: 2px 2px 1px black;
+
+    transition: 1s ease-out;
+
+    max-width: 50%;
+    padding: 1em;
+    margin: 2% auto;
+}
+
+#leaderboard-toggle:hover {
+    box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $secondary-colour;
+    color: white;
 }
