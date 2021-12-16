@@ -1,6 +1,7 @@
 var config = {
     //type: Phaser.AUTO,
-    width: 800,
+    parent: "dino-game",
+    width: 900,
     height: 600,
     backgroundColor: '#53cbea',
     physics: 

@@ -33,8 +33,8 @@ window.onload = function(){
 export {ConectedAddress};
 
 function addPhaser() {   
-    DinoContainer.appendChild(script);
-    document.body.appendChild(LBScript);
+    document.getElementById("dino-game").appendChild(script);
+    document.head.appendChild(LBScript);
     document.getElementById("loading-message").style.display = "none";
 }
 
