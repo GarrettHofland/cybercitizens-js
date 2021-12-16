@@ -185,7 +185,8 @@ function create ()
     });
 
     loadPlayer(Skin);
-    LoginAndGetHighScore();
+
+    LoginAndGetHighScore();//Fetches the current high score
 
     console.log("Create complete!");
 
@@ -660,8 +661,10 @@ function GetHighscore()
 
 var GetHighscoreStats = function (result, error) {
     if (result !== null) {
-        HighScore = result.data.Statistics[0].Value;
-        console.log("The HighScore is: "+ JSON.stringify(result.data.Statistics[0].Value));
+        if(ConectedAddress != "N/A"){
+            HighScore = result.data.Statistics[0].Value;
+            console.log("The HighScore is: "+ JSON.stringify(result.data.Statistics[0].Value));
+        }
     } 
     else if (error !== null) {
         console.log("Something went wrong Fetching the Leaderboard.");
