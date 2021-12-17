@@ -10,8 +10,10 @@ const clear = document.getElementById("clear");
 const finish = document.getElementById("finish");
 const walletInput = document.getElementById("user-address");
 
-finish.disabled = true;
-finish.style.backgroundColor = "grey";
+if(finish) {
+    finish.disabled = true;
+    finish.style.backgroundColor = "grey";
+}
 
 var images = ["assets/cybercitizens/0.png", "assets/cybercitizens/3.png", "assets/cybercitizens/590.png", "assets/cybercitizens/1873.png"];
 var x = 0;
