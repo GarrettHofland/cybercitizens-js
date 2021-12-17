@@ -98,6 +98,8 @@ function clearWalletAddress() {
     walletOutput.textContent = "Wallet information cleared.";
     walletOutput.style.color = "green";
     walletInput.value = "";
+    finish.disabled = true;
+    finish.backgroundColor = "grey";
 }
 
 function setWalletAddress() {
