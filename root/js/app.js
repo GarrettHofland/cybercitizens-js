@@ -2,6 +2,8 @@ const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li');
 const menu = document.getElementsByClassName("navLinks");
+const walletButton = document.getElementsById("wallet");
+const walletMenu = document.getElementsById("wallet-connector");
 
 var images = ["assets/cybercitizens/0.png", "assets/cybercitizens/3.png", "assets/cybercitizens/590.png", "assets/cybercitizens/1873.png"];
 var x = 0;
@@ -51,6 +53,10 @@ hamburger.addEventListener('click', () => {
     links.forEach(link => {
         link.addEventListener('click', exitMenuOnLinkClick);
     });
+});
+
+walletButton.addEventListener('click', () => {
+    walletMenu.classList.toggle("open");
 });
 
 function displayNextImage() {

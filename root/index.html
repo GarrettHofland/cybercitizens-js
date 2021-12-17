@@ -1,116 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="styles/styles.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="styles/header.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="styles/footer.css" media="screen" />
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Cybercitizens</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" type="text/css" href="styles/styles.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="styles/header.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="styles/footer.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="styles/wallet.css" media="screen" />
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cybercitizens</title>
 </head>
+
 <body>
-    <!-- Header Start -->
-    <header>
+  <!-- Header Start -->
+  <header>
     <div class="navMenu">
-        <div class="left">
-          <div class="logo-container">
-            <img class="logo" src="assets/logo-transparent-bg.png"/>
-          </div>
+      <div class="left">
+        <div class="logo-container">
+          <img class="logo" src="assets/logo-transparent-bg.png" />
         </div>
-        <div class="right">
-          <nav>
+      </div>
+      <div class="right">
+        <nav>
           <div on-click="toggleOpen()" class="hamburger">
             <div class="line">&nbsp;</div>
             <div class="line">&nbsp;</div>
             <div class="line">&nbsp;</div>
           </div>
           <ul class="nav-links">
-              <!-- <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#mint" routerLink="." fragment="mint">Mint</a></li> -->
-              <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#team" routerLink="." fragment="team">Team</a></li>
-              <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#roadmap" routerLink="." fragment="roadmap">Roadmap</a></li>
-              <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#faq" routerLink="." fragment="faq">F.A.Q</a></li>
-              <li><a class="link-button-header odd-button" id="wallet">Wallet</a></li>
+            <!-- <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#mint" routerLink="." fragment="mint">Mint</a></li> -->
+            <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#team" routerLink="."
+                fragment="team">Team</a></li>
+            <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#roadmap" routerLink="."
+                fragment="roadmap">Roadmap</a></li>
+            <li><a class="link-button-header odd-button" on-click="toggleOpen()" href="#faq" routerLink="."
+                fragment="faq">F.A.Q</a></li>
+            <li><a class="link-button-header odd-button" id="wallet">Wallet</a></li>
           </ul>
-          </nav>
-        </div>
+        </nav>
+      </div>
     </div>
   </header>
-    <!-- Header End -->
+  <!-- Header End -->
 
-    <!-- Start -->
-<main>
-<button on-click="scrollToTop()" class="up-button"><img class="up-img" src="assets/up.svg"/></button>
-<div class="container">
-
-  <section class="section s1 animate__animated animate__fadeIn animate__delay-2s" id="home">
-    <!-- <div class="header-container"> -->
-      <h1 class="main-header animate__animated animate__fadeIn"><span>Cyber</span>Citizens</h1>
-    <!-- </div> -->
-    <div class="columns">
-      <div class="column">
-        <h2 class="sub-header animate__animated animate__fadeInTopLeft animate__delay-1s">Introducing the  <span>CyberCitizens NFT Collection</span>,</h2>
-        <h3 class="tag-line-header animate__animated animate__fadeInTopRight animate__delay-1s"><span>2080 UNIQUELY GENERATED </span>CYBERCITIZENS LIVING ON THE ERGO BLOCKCHAIN.</h3>
-        <p class="tag-line animate__animated animate__fadeInRight animate__delay-1s">
-          WELCOME TO THE CITY,<br>
-          When you buy a CyberCitizen, you're not just buying an NFT. 
-          Your CyberCitizen gives you membership to an exclusive city.
-        </p>
-        <div class="button-group">
-          <button class="button even-button animate__animated animate__fadeIn animate__delay-2s" id="auctions"><a href="https://ergoauctions.org/#/auction/active?type=all&searchValue=ErgoPixels">Auctions</a></button>
-          <button class="button odd-button animate__animated animate__fadeIn animate__delay-2s" id="explorer">Explore</button>
-          <button class="button odd-button animate__animated animate__fadeIn animate__delay-2s" id="game">CyberDinos</button>
-          <button class="button odd-button animate__animated animate__fadeIn animate__delay-2s"><a href="https://twitter.com/ErgoPixels"><img src="assets/logo-twitter.svg"></a></button>
-          <button class="button odd-button animate__animated animate__fadeIn animate__delay-2s"><a href="https://discord.com/invite/7FcEFKcKJ7"><img src="assets/logo-discord.svg"></a></button>
-        </div>
-        <div class="address-container">
-          <p on-click="copyAddress()" class="address animate__animated animate__fadeInUp animate__delay-1s"><span class="address-span">Address:</span>9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT</p>
-        </div>
-      </div>
-      <div class="column img-column">
-          <img id="ergopixel-img" class="animate__animated animate__fadeInRight animate__delay-1s" src="assets/cybercitizens/0.png" />
-      </div>
+  <!-- Wallet Start -->
+  <div id="wallet-connector">
+    <p>To use your ERG on our website please connect your wallet and you can use any wallet that you prefer.</p>
+    <p>We will be using your wallet to send any prizes, rewards, or airdrops, as well as in the future allow the ability
+      to purchase new CyberCitizens and bid on CyberCitizen auctions. </p>
+    <p>Address</p>
+    <input type="text" name="address" id="user-address" class="invalid">
+    <p id="wallet-output"></p>
+    <div id="wallet-buttons">
+      <button>Clear</button>
+      <button>Exit</button>
+      <button>Finish</button>
     </div>
+  </div>
+  <!-- Wallet End -->
 
-  </section> 
+  <!-- Start -->
+  <main>
+    <button on-click="scrollToTop()" class="up-button"><img class="up-img" src="assets/up.svg" /></button>
+    <div class="container">
 
-  <section class="section s2" id="team">
-    <div class="section-header-container">
-      <h2 class="section-header">Our Team</h2>
-    </div>
-    <div class="team-container">
-        <div class="team-column">
+      <section class="section s1 animate__animated animate__fadeIn animate__delay-2s" id="home">
+        <!-- <div class="header-container"> -->
+        <h1 class="main-header animate__animated animate__fadeIn"><span>Cyber</span>Citizens</h1>
+        <!-- </div> -->
+        <div class="columns">
+          <div class="column">
+            <h2 class="sub-header animate__animated animate__fadeInTopLeft animate__delay-1s">Introducing the
+              <span>CyberCitizens NFT Collection</span>,</h2>
+            <h3 class="tag-line-header animate__animated animate__fadeInTopRight animate__delay-1s"><span>2080 UNIQUELY
+                GENERATED </span>CYBERCITIZENS LIVING ON THE ERGO BLOCKCHAIN.</h3>
+            <p class="tag-line animate__animated animate__fadeInRight animate__delay-1s">
+              WELCOME TO THE CITY,<br>
+              When you buy a CyberCitizen, you're not just buying an NFT.
+              Your CyberCitizen gives you membership to an exclusive city.
+            </p>
+            <div class="button-group">
+              <button class="button even-button animate__animated animate__fadeIn animate__delay-2s" id="auctions"><a
+                  href="https://ergoauctions.org/#/auction/active?type=all&searchValue=ErgoPixels">Auctions</a></button>
+              <button class="button odd-button animate__animated animate__fadeIn animate__delay-2s"
+                id="explorer">Explore</button>
+              <button class="button odd-button animate__animated animate__fadeIn animate__delay-2s"
+                id="game">CyberDinos</button>
+              <button class="button odd-button animate__animated animate__fadeIn animate__delay-2s"><a
+                  href="https://twitter.com/ErgoPixels"><img src="assets/logo-twitter.svg"></a></button>
+              <button class="button odd-button animate__animated animate__fadeIn animate__delay-2s"><a
+                  href="https://discord.com/invite/7FcEFKcKJ7"><img src="assets/logo-discord.svg"></a></button>
+            </div>
+            <div class="address-container">
+              <p on-click="copyAddress()" class="address animate__animated animate__fadeInUp animate__delay-1s"><span
+                  class="address-span">Address:</span>9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT</p>
+            </div>
+          </div>
+          <div class="column img-column">
+            <img id="ergopixel-img" class="animate__animated animate__fadeInRight animate__delay-1s"
+              src="assets/cybercitizens/0.png" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section s2" id="team">
+        <div class="section-header-container">
+          <h2 class="section-header">Our Team</h2>
+        </div>
+        <div class="team-container">
+          <div class="team-column">
             <img class="team-member-image" src="assets/cybercitizens/346.png">
             <h3 class="team-member-name">PIXEL</h3>
             <p class="team-member-description">LOVER OF the CYBERPUNK theme and pixels</p>
-        </div>
-        <div class="team-column">
+          </div>
+          <div class="team-column">
             <img class="team-member-image" src="assets/cybercitizens/374.png">
             <h3 class="team-member-name">BREEHZE</h3>
             <p class="team-member-description">HE GENERATEs stuff</p>
-        </div>
-        <div class="team-column">
+          </div>
+          <div class="team-column">
             <img class="team-member-image" src="assets/cybercitizens/1962.png">
             <h3 class="team-member-name">CURSE</h3>
             <p class="team-member-description">he's not really cursed, he knows html and css</p>
-        </div>
-        <div class="team-column">
+          </div>
+          <div class="team-column">
             <img class="team-member-image" src="assets/cybercitizens/1852.png">
             <h3 class="team-member-name">AGRO</h3>
             <p class="team-member-description">HE KNOWS HOW PHOTOSHOP WORKS</p>
+          </div>
+          <div class="team-column">
+            <img class="team-member-image" src="assets/cybercitizens/1881.png">
+            <h3 class="team-member-name">chicken</h3>
+            <p class="team-member-description">HE'S A FULL-STACK DEVELOPER</p>
+          </div>
         </div>
-        <div class="team-column">
-          <img class="team-member-image" src="assets/cybercitizens/1881.png">
-          <h3 class="team-member-name">chicken</h3>
-          <p class="team-member-description">HE'S A FULL-STACK DEVELOPER</p>
-      </div>
-    </div>
-  </section>
-<!-- 
+      </section>
+      <!-- 
   <section class="section s2" id="mint">
     <div class="section-header-container">
       <h2 class="section-header">Purchase ERGOPixels</h2>
@@ -123,119 +153,132 @@
     </div>
   </section> -->
 
-  <section class="section s3" id="roadmap">
-    <div class="section-header-container">
-      <h2 class="section-header">Roadmap</h2>
+      <section class="section s3" id="roadmap">
+        <div class="section-header-container">
+          <h2 class="section-header">Roadmap</h2>
+        </div>
+
+        <div class="roadmap">
+          <div class="roadmap-title roadmap-passed">Quiz event - <span>ONGOING</span></div>
+          <div class="roadmap-content roadmap-passed">Every week to two weeks there will be a quiz regarding ERG,
+            ERGONFTs and CryptoCurrency.
+            The top 3 winners picked each week and will be given rewards (ERG/NFTs)</div>
+
+          <div class="roadmap-title">Activity Rewards – <span>ONGOING</span></div>
+          <div class="roadmap-content">Top 3 participants who have been the most active every week will receive ERG!
+            Activity is reset every Sunday!</div>
+
+          <div class="roadmap-title">Treasure Hunt – <span>TO BE COMPLETED</span></div>
+          <div class="roadmap-content">A treasure hunt after the CyberCitizens drop is planned to happen, solve the
+            puzzle and receive ERG!</div>
+
+          <div class="roadmap-title">CyberCitizens AirDrop –
+            <span>TO BE COMPLETED</span></div>
+          <div class="roadmap-content">Community members who hold an ErgoPixel will receive a CyberCitizen NFT, for
+            every ErgoPixel you own you will receive one CyberCitizen NFT! </div>
+
+          <div class="roadmap-title">CyberCitizens Drop – <span>TO BE COMPLETED</span></div>
+          <div class="roadmap-content">1821 CyberCitizens will be available for minting, date will be announced very
+            soon!</div>
+
+          <div class="roadmap-title">Website Update – <span>TO BE COMPLETED</span></div>
+          <div class="roadmap-content">New, custom built website to support a wider variety of functionality and
+            integrations. Yoroi wallet integration is also being developed to
+            place bids and view auctions from the site. An on-site marketplace is being worked on as well.</div>
+
+          <div class="roadmap-title">Website Game – <span>IN DEVELOPMENT</span></div>
+          <div class="roadmap-content">The website will also have a game based on a collab we have been working on! More
+            details will be released shortly!</div>
+
+          <div class="roadmap-title">Community Wallet – <span>AFTER THE DROP</span></div>
+          <div class="roadmap-content">After the CyberCitizens drop concludes, a community wallet will be created and
+            funded,
+            the purpose of this wallet is solely for giveaways and the allocation of funds to activities we host.</div>
+
+          <div class="roadmap-title">Cartoon NFT Airdrop – <span>TO BE COMPLETED</span></div>
+          <div class="roadmap-content">We still plan to airdrop cartoon versions of our NFT’s to holders, sit tight for
+            more information!</div>
+
+          <div class="roadmap-title">CyberCity Token – <span>EARLY STAGES</span></div>
+          <div class="roadmap-content">Plans to create a token to be used to purchase/sell/upgrade your NFT, with other
+            functionalities being brainstormed.</div>
+        </div>
+      </section>
+
+
+      <section class="section s4" id="map">
+        <div class="section-header-container">
+          <h2 class="section-header">Map of CyberCity</h2>
+        </div>
+        <h3 class="placeholder-header">The map of the CyberCity will be after the Gen2 drop!</h3>
+      </section>
+
+
+      <section class="section s5" id="airdrop">
+        <div class="section-header-container">
+          <h2 class="section-header">Cyber Airdrop</h2>
+        </div>
+        <h3 class="placeholder-header">Every CyberCitizen holder will recieve a 1/1 cartoon NFT.</h3>
+        <h3 class="placeholder-content">More details, more attributes.</h3>
+      </section>
+
+
+      <section class="section s6" id="faq">
+        <div class="section-header-container">
+          <h2 class="section-header">F.A.Q</h2>
+        </div>
+        <h2 class="faq-header">1.) What are cybercitizens?</h2>
+        <p class="faq-answer">
+          CyberCitizens are 2080 unique, randomly generated pixel and cartoon nfts living on the ergo blockchain.
+          Each of the cybercitizens have attributes that make them unique according to a defined rarity system.
+        </p>
+        <h2 class="faq-header">2.) How do I know my NFT is unique?</h2>
+        <p class="faq-answer">
+          2080 cybercitizens were minted, each having different attributes and varying in rarity.
+          A full list of trait rarities can be found here (insert the link later)
+        </p>
+        <h2 class="faq-header">3.) How can I mint cybercitizen?</h2>
+        <p class="faq-answer">
+          Your citizen can be minted on this website.
+        </p>
+        <h2 class="faq-header">4.) Why cybercitizens?</h2>
+        <p class="faq-answer">
+          Cybercitizens was created with a commitment to futuristic concepts and each one is carefully inspected to
+          ensure they pass our "standards". Holders of CyberCitizens will be eligible to receive special airdrops.
+          Finally, We also aim to create collectible NFTs that can retain and possibly increase in value for
+          participating
+          community members.
+          There will be both pixel and cartoon variants.
+        </p>
+        <h2 class="faq-header">5.) How can I see my NFTs?</h2>
+        <p class="faq-answer">
+          Visit this url: https://www.ergonfts.org/, Enter your desired wallet address to view tokens on that address.
+        </p>
+        <h2 class="faq-header">6.) When is the next drop?</h2>
+        <p class="faq-answer">
+          the DROP WILL BE Announced AFTER the AUCTIONHOUSE V2 update.
+        </p>
+        <h2 class="faq-header">7.) WHAT WILL THE AIRDROP CONTAIN?</h2>
+        <p class="faq-answer">
+          The airdrop will contain a cartoon version of your pixel nft.
+        </p>
+      </section>
+
     </div>
-
-    <div class="roadmap">
-    <div class="roadmap-title roadmap-passed">Quiz event - <span>ONGOING</span></div>
-    <div class="roadmap-content roadmap-passed">Every week to two weeks there will be a quiz regarding ERG, ERGONFTs and CryptoCurrency. 
-      The top 3 winners picked each week and will be given rewards (ERG/NFTs)</div>
-
-    <div class="roadmap-title">Activity Rewards – <span>ONGOING</span></div>
-    <div class="roadmap-content">Top 3 participants who have been the most active every week will receive ERG! Activity is reset every Sunday!</div>
-
-    <div class="roadmap-title">Treasure Hunt – <span>TO BE COMPLETED</span></div>
-    <div class="roadmap-content">A treasure hunt after the CyberCitizens drop is planned to happen, solve the puzzle and receive ERG!</div>
-
-    <div class="roadmap-title">CyberCitizens AirDrop – 
-      <span>TO BE COMPLETED</span></div>
-    <div class="roadmap-content">Community members who hold an ErgoPixel will receive a CyberCitizen NFT, for every ErgoPixel you own you will receive one CyberCitizen NFT! </div>
-
-    <div class="roadmap-title">CyberCitizens Drop – <span>TO BE COMPLETED</span></div>
-    <div class="roadmap-content">1821 CyberCitizens will be available for minting, date will be announced very soon!</div>
-
-    <div class="roadmap-title">Website Update – <span>TO BE COMPLETED</span></div>
-    <div class="roadmap-content">New, custom built website to support a wider variety of functionality and integrations. Yoroi wallet integration is also being developed to 
-      place bids and view auctions from the site. An on-site marketplace is being worked on as well.</div>
-
-    <div class="roadmap-title">Website Game – <span>IN DEVELOPMENT</span></div>
-    <div class="roadmap-content">The website will also have a game based on a collab we have been working on! More details will be released shortly!</div>
-
-    <div class="roadmap-title">Community Wallet – <span>AFTER THE DROP</span></div>
-    <div class="roadmap-content">After the CyberCitizens drop concludes, a community wallet will be created and funded, 
-      the purpose of this wallet is solely for giveaways and the allocation of funds to activities we host.</div>
-
-    <div class="roadmap-title">Cartoon NFT Airdrop – <span>TO BE COMPLETED</span></div>
-    <div class="roadmap-content">We still plan to airdrop cartoon versions of our NFT’s to holders, sit tight for more information!</div>
-
-    <div class="roadmap-title">CyberCity Token – <span>EARLY STAGES</span></div>
-    <div class="roadmap-content">Plans to create a token to be used to purchase/sell/upgrade your NFT, with other functionalities being brainstormed.</div>
-  </div>
-  </section>
-
-
-  <section class="section s4" id="map">
-    <div class="section-header-container">
-      <h2 class="section-header">Map of CyberCity</h2>
+  </main>
+  <footer>
+    <div class="footer-links">
+      <a href="https://twitter.com/ErgoPixels"><img class="footer-image" src="assets/logo-twitter.svg"></a>
+      <a href="https://discord.com/invite/7FcEFKcKJ7"><img class="footer-image" src="assets/logo-discord.svg"></a>
+      <a href="https://github.com/FrisianCA/cybercitizens-js/tree/main/root"><img class="footer-image"
+          src="assets/logo-github.svg"></a>
     </div>
-    <h3 class="placeholder-header">The map of the CyberCity will be after the Gen2 drop!</h3>
-  </section>
-
-
-  <section class="section s5" id="airdrop">
-    <div class="section-header-container">
-      <h2 class="section-header">Cyber Airdrop</h2>
+    <div class="footer-text">
+      CyberCitizens is an NFT project by the ERGOPixels Team.
     </div>
-    <h3 class="placeholder-header">Every CyberCitizen holder will recieve a 1/1 cartoon NFT.</h3>
-    <h3 class="placeholder-content">More details, more attributes.</h3>
-  </section>
-
-
-  <section class="section s6" id="faq">
-    <div class="section-header-container">
-      <h2 class="section-header">F.A.Q</h2>
-    </div>
-    <h2 class="faq-header">1.) What are cybercitizens?</h2>
-    <p class="faq-answer">
-      CyberCitizens are 2080 unique, randomly generated pixel and cartoon nfts living on the ergo blockchain. 
-      Each of the cybercitizens have attributes that make them unique according to a defined rarity system.
-    </p>
-    <h2 class="faq-header">2.) How do I know my NFT is unique?</h2>
-    <p class="faq-answer">
-      2080 cybercitizens were minted, each having different attributes and varying in rarity. 
-      A full list of trait rarities can be found here (insert the link later)
-    </p>
-    <h2 class="faq-header">3.) How can I mint cybercitizen?</h2>
-    <p class="faq-answer">
-      Your citizen can be minted on this website.
-    </p>
-    <h2 class="faq-header">4.) Why cybercitizens?</h2>
-    <p class="faq-answer">
-      Cybercitizens was created with a commitment to futuristic concepts and each one is carefully inspected to
-       ensure they pass our "standards". Holders of CyberCitizens will be eligible to receive special airdrops. 
-       Finally, We also aim to create collectible NFTs that can retain and possibly increase in value for participating 
-       community members. 
-      There will be both pixel and cartoon variants.
-    </p>
-    <h2 class="faq-header">5.) How can I see my NFTs?</h2>
-    <p class="faq-answer">
-      Visit this url: https://www.ergonfts.org/, Enter your desired wallet address to view tokens on that address.
-    </p>
-    <h2 class="faq-header">6.) When is the next drop?</h2>
-    <p class="faq-answer">
-      the DROP WILL BE Announced AFTER the AUCTIONHOUSE V2 update.
-    </p>
-    <h2 class="faq-header">7.) WHAT WILL THE AIRDROP CONTAIN?</h2>
-    <p class="faq-answer">
-      The airdrop will contain a cartoon version of your pixel nft.
-    </p>
-  </section>
-
-</div>
-</main>
-<footer>
-  <div class="footer-links">
-    <a href="https://twitter.com/ErgoPixels"><img class="footer-image" src="assets/logo-twitter.svg"></a>
-    <a href="https://discord.com/invite/7FcEFKcKJ7"><img class="footer-image" src="assets/logo-discord.svg"></a>
-    <a href="https://github.com/FrisianCA/cybercitizens-js/tree/main/root"><img class="footer-image" src="assets/logo-github.svg"></a>
-  </div>
-  <div class="footer-text">
-    CyberCitizens is an NFT project by the ERGOPixels Team.
-  </div>
-</footer>
-    <!-- End -->
-    <script src="js/app.js"></script>
+  </footer>
+  <!-- End -->
+  <script src="js/app.js"></script>
 </body>
+
 </html>

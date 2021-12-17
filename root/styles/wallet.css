@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-y: visible;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+#wallet-connector {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 50%;
+  min-height: 30%;
+  padding: 1em;
+  background-color: black;
+}
+#wallet-connector p {
+  padding-bottom: 2%;
+  font-size: 2rem;
+}
+#wallet-connector input {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+#wallet-connector.open {
+  z-index: 100;
+  background-color: red;
+}
+
+#wallet-buttons {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=wallet.css.map */

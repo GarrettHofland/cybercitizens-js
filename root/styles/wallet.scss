@@ -1,0 +1,62 @@
+$background-colour: #231742;
+$main-colour: #f71184;
+$main-hover: #a02161;
+$secondary-colour: #f711f7;
+$secondary-hover: #8c1d8c;
+$highlight-colour: #258ae8;
+$header-background-colour: #322554;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-y: visible;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+#wallet-connector {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 50%;
+    min-height: 30%;
+
+    padding: 1em;
+
+    background-color: black;
+
+    p {
+        padding-bottom: 2%;
+        font-size: clamp(1.5rem, 2rem, 3.5rem);
+    }
+
+    input {
+        width: 90%;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5rem, 2rem);
+    }
+}
+
+#wallet-connector.open {
+    z-index: 100;
+    background-color: red;
+}
+
+#wallet-buttons {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#wallet-output {
+
+}
