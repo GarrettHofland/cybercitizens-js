@@ -127,14 +127,16 @@ ul li {
   }
 
   .nav-links {
+    margin: 0;
+    padding: 0;
     position: fixed;
     left: 0;
     top: 0;
     background-color: #322554;
-    height: 100vh;
     width: 100%;
     flex-direction: column;
     pointer-events: auto !important;
+    justify-content: start;
     /* Making mask to show/hide the navigation on mobile */
     clip-path: circle(10px at 90% -10%);
     /* Better support for clippath with webkit */
@@ -156,17 +158,11 @@ ul li {
     pointer-events: all;
     opacity: 1;
     color: white;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    pointer-events: none;
-    justify-content: space-evenly;
+    padding-top: 8vh;
   }
   .nav-links.open li {
     opacity: 1;
-    margin: 0 auto;
-    text-align: center;
+    text-align: right;
   }
 
   .logo {
