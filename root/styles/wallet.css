@@ -21,6 +21,7 @@ button:focus {
   min-height: 30%;
   padding: 1em;
   background-color: black;
+  border-radius: 20px;
 }
 #wallet-connector p {
   padding-bottom: 2%;
@@ -34,7 +35,8 @@ button:focus {
 
 #wallet-connector.open {
   z-index: 100;
-  background-color: red;
+  background-color: #231742;
+  border: 2px #f71184 solid;
 }
 
 #wallet-buttons {
@@ -42,6 +44,15 @@ button:focus {
   justify-content: end;
   width: 100%;
   margin: 0 auto;
+}
+
+#wallet-output {
+  padding-top: 2%;
+  color: red;
+}
+
+.wallet-button {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=wallet.css.map */
