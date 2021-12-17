@@ -22,6 +22,7 @@ button:focus {
   padding: 1em;
   background-color: black;
   border-radius: 20px;
+  display: none;
 }
 #wallet-connector p {
   padding-bottom: 2%;
@@ -37,6 +38,7 @@ button:focus {
   z-index: 100;
   background-color: #231742;
   border: 2px #f71184 solid;
+  display: block;
 }
 
 #wallet-output {

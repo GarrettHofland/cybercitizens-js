@@ -4,6 +4,10 @@ const links = document.querySelectorAll('.nav-links li');
 const menu = document.getElementsByClassName("navLinks");
 const walletButton = document.getElementById("wallet");
 const walletMenu = document.getElementById("wallet-connector");
+const walletOutput = document.getElementById("wallet-output");
+const exit = document.getElementById("exit");
+const clear = document.getElementById("clear");
+const finish = document.getElementById("finish");
 
 var images = ["assets/cybercitizens/0.png", "assets/cybercitizens/3.png", "assets/cybercitizens/590.png", "assets/cybercitizens/1873.png"];
 var x = 0;
@@ -30,20 +34,10 @@ if(document.querySelector("#explorer")){
 }
 
 if(document.querySelector("#game")){
-    // document.querySelector("#game").onclick = function(event) {
-    //     window.location = "pages/cyberdinos-game.html";
-    // }
     document.getElementById("game").disabled = "true";
     document.getElementById("game").style.color ="black";
     document.getElementById("game").style.backgroundColor ="grey";
 }
-
-function exitMenuOnLinkClick() {
-    navLinks.classList.toggle("open");
-    links.forEach(link => {
-        link.classList.toggle("fade");
-    });
-};
 
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle("open");
@@ -55,9 +49,19 @@ hamburger.addEventListener('click', () => {
     });
 });
 
+exit.addEventListener('click', closeWalletMenu);
+clear.addEventListener('click', clearWalletAddress);
+
 walletButton.addEventListener('click', () => {
     walletMenu.classList.toggle("open");
 });
+
+function exitMenuOnLinkClick() {
+    navLinks.classList.toggle("open");
+    links.forEach(link => {
+        link.classList.toggle("fade");
+    });
+};
 
 function displayNextImage() {
     x = (x === images.length - 1) ? 0 : x + 1;
@@ -66,4 +70,15 @@ function displayNextImage() {
 
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text);
+}
+
+function closeWalletMenu() {
+    walletMenu.classList.toggle("open");
+    walletOutput.textContent = "Invalid wallet address.";
+    walletOutput.style.color = "red";
+}
+
+function clearWalletAddress() {
+    walletOutput.textContent = "Wallet information cleared.";
+    walletOutput.style.color = "green";
 }

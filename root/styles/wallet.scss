@@ -35,6 +35,8 @@ button:focus {
 
     border-radius: 20px;
 
+    display: none;
+
     p {
         padding-bottom: 2%;
         font-size: clamp(1.5rem, 2rem, 3.5rem);
@@ -52,6 +54,8 @@ button:focus {
     background-color: $background-colour;
 
     border: 2px $main-colour solid;
+
+    display: block;
 }
 
 #wallet-output {
