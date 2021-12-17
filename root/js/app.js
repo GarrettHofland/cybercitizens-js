@@ -89,6 +89,7 @@ function closeWalletMenu() {
     if(getWalletAddress() == null) {
         walletOutput.textContent = "Invalid wallet address.";
         walletOutput.style.color = "red";
+        walletInput.value = "";
     }
 }
 

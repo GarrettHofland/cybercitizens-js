@@ -58,6 +58,10 @@ button:focus {
     display: block;
 }
 
+#wallet-address-text {
+    font-weight: 100;
+}
+
 #wallet-output {
     padding-top: 2%;
     color: red;
@@ -135,5 +139,6 @@ input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hov
 
     .wallet-button {
         border-radius: 12px;
+        padding: 2%;
     }
  }
