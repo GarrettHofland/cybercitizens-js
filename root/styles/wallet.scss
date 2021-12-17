@@ -41,7 +41,7 @@ button:focus {
     }
 
     input {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         font-size: clamp(1rem, 1.5rem, 2rem);
     }
@@ -54,18 +54,67 @@ button:focus {
     border: 2px $main-colour solid;
 }
 
-#wallet-buttons {
-    display: flex;
-    justify-content: end;
-    width: 100%;
-    margin: 0 auto;
-}
-
 #wallet-output {
     padding-top: 2%;
     color: red;
 }
 
+#wallet-buttons {
+    display: flex;
+    justify-content: end;
+    gap: 1em;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .wallet-button {
-    max-width: 100%;
+    all: unset;
+
+    min-width: 10%;
+
+    background-color: $main-colour;
+    color: black;
+    border: 2px $main-colour solid;
+
+    text-align: center;
+    font-size: clamp(1rem, 1.5rem, 2rem);
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: ease-in 0.2s;
+}
+
+.wallet-button:hover {
+    border: 2px $highlight-colour solid;
+}
+
+#exit {
+
+}
+
+#clear {
+
+}
+
+#finish {
+    background-color: $highlight-colour;
+    border: 2px $highlight-colour solid;
+}
+
+#finish:hover {
+    border: 2px $main-colour solid;
+}
+
+input[type="text"], textarea {
+    border: 2px $secondary-colour solid;
+    background-color: $header-background-colour;
+    border-radius: 20px;
+    color: $main-colour;
+}
+
+input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hover {
+    // border: 2px $secondary-colour solid;
+    border: 2px $main-colour solid;
 }
