@@ -123,6 +123,7 @@ ul {
         z-index: 2;
         position: absolute;
         right: 1%;
+        top: $mobile-nav-height;
         top: 10%;
         bottom: 10%;
         transform: translate(-5%, -50%);
@@ -149,18 +150,24 @@ ul {
     }
 
     .nav-links {
+        margin: 0;
+        padding-bottom: 1em;
         position: fixed;
         left: 0;
         top: 0;
-        background-color: $header-background-colour;
-        height: 100vh;
+
+        background-color: $background-colour;
+        border-bottom: 1px $main-colour solid;
+
         width: 100%;
+
         flex-direction: column;
+        justify-content: start;
+
         pointer-events: auto !important;
 
         /* Making mask to show/hide the navigation on mobile */
         clip-path: circle(10px at 90% -10%);
-        /* Better support for clippath with webkit */
         -webkit-clip-path: circle(10px at 90% -10%);
         transition: all 1s ease-out;
 
@@ -180,18 +187,12 @@ ul {
         pointer-events: all;
         opacity: 1;
         color: white;
-        height: 100vh;
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        pointer-events: none;
-        justify-content: space-evenly;
-
+        padding-top: $mobile-nav-height;
 
         li {
             opacity: 1;
-            margin: 0 auto;
-            text-align: center;
+            // margin: 0 auto;
+            text-align: right;
         }
     }
 
