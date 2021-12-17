@@ -91,4 +91,18 @@ input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
   border: 2px #f71184 solid;
 }
 
+@media all and (max-width: 40em) {
+  #wallet-connector {
+    width: 90% !important;
+    max-height: 90%;
+  }
+  #wallet-connector p {
+    font-size: 1.5rem;
+  }
+
+  .wallet-button {
+    border-radius: 12px;
+  }
+}
+
 /*# sourceMappingURL=wallet.css.map */

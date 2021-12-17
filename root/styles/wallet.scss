@@ -122,3 +122,18 @@ input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hov
     // border: 2px $secondary-colour solid;
     border: 2px $main-colour solid;
 }
+
+@media all and (max-width : 40em) {
+    #wallet-connector {
+        width: 90% !important;
+        max-height: 90%;
+
+        p {
+            font-size: clamp(1rem, 1.5rem, 2rem);
+        }
+    }
+
+    .wallet-button {
+        border-radius: 12px;
+    }
+ }
