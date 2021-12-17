@@ -104,6 +104,7 @@ ul li {
     z-index: 2;
     position: absolute;
     right: 1%;
+    top: 8vh;
     top: 10%;
     bottom: 10%;
     transform: translate(-5%, -50%);
@@ -128,18 +129,18 @@ ul li {
 
   .nav-links {
     margin: 0;
-    padding: 0;
+    padding-bottom: 1em;
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #322554;
+    background-color: #231742;
+    border-bottom: 1px #f71184 solid;
     width: 100%;
     flex-direction: column;
-    pointer-events: auto !important;
     justify-content: start;
+    pointer-events: auto !important;
     /* Making mask to show/hide the navigation on mobile */
     clip-path: circle(10px at 90% -10%);
-    /* Better support for clippath with webkit */
     -webkit-clip-path: circle(10px at 90% -10%);
     transition: all 1s ease-out;
   }
