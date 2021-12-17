@@ -33,6 +33,7 @@ html, body {
   border-radius: 24px;
   background-color: #f71184;
   transition: ease-out 1s;
+  cursor: pointer;
 }
 .up-button .up-img {
   width: 50%;
@@ -62,13 +63,14 @@ a {
   min-height: 50vh;
   margin: 0 auto 10vh auto;
   background-color: rgba(50, 37, 84, 0.99);
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 1em 1em;
   border: 1px linear-gradient(to bottom, #f71184 0%, #f711f7 100%) solid;
 }
 
 .s1 {
   margin-bottom: 20vh;
+  background-color: transparent;
 }
 
 main {
@@ -77,11 +79,13 @@ main {
 
 .columns {
   display: flex;
+  flex-direction: column;
   gap: 2%;
 }
 
 .column {
   margin: 0 auto;
+  text-align: center;
 }
 
 .img-column > * {
@@ -97,13 +101,14 @@ main {
 }
 
 .main-header {
-  color: #f71184;
-  text-shadow: 4px 4px #258ae8;
+  color: white;
+  text-shadow: 4px 4px black;
   letter-spacing: 6px;
   font-size: clamp(6rem, 8rem + 2vw, 10rem);
   margin: 2% auto 0 auto;
   max-width: 80%;
   padding-bottom: 0;
+  border-bottom: 6px solid #258ae8;
 }
 
 @keyframes glow {
@@ -117,28 +122,27 @@ main {
 .sub-header {
   font-size: clamp(2rem, 2rem + 3vw, 4rem);
   margin-bottom: 0;
-  color: #f71184;
-  text-shadow: 1px 1px #258ae8;
+  color: white;
+  text-shadow: 2px 2px #258ae8;
 }
 
 .tag-line-header {
   font-size: clamp(1rem, 1rem + 3vw, 3rem);
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto;
   width: 70%;
-  color: #f71184;
-  text-shadow: 1px 1px #258ae8;
+  color: white;
+  text-shadow: 3px 3px black;
 }
 
 .tag-line {
   margin-top: 0;
   font-size: clamp(1rem, 2rem + 1vw, 3rem);
-  color: #f71184;
-  text-shadow: 1px 1px #258ae8;
+  color: white;
+  text-shadow: 3px 3px black;
 }
 
 span {
-  color: #258ae8;
+  color: white;
   text-shadow: 2px 2px #f71184;
   font-weight: bolder;
 }
@@ -165,6 +169,7 @@ span {
   display: flex;
   gap: 12px;
   max-width: 80%;
+  margin: 0 auto;
 }
 
 .address-span {
@@ -179,6 +184,8 @@ span {
   transition: ease-out 1s;
   inline-size: min-content;
   cursor: copy;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .address:hover {
@@ -302,7 +309,7 @@ span {
 
 #ergopixel-img {
   display: inline-block;
-  width: 80%;
+  width: 25%;
   height: auto;
   border: 6px solid #f71184;
   margin: 0 auto;
