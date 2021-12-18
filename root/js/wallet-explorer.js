@@ -507,6 +507,7 @@ function showNFTModal(image, name, metadata) {
   searchContainer.style.display = "none";
   searchResult.style.display = "none";
   footer.style.display = "none";
+  loadMore.style.display = "none";
 
   while (modal.firstChild)
     modal.removeChild(modal.firstChild);
@@ -538,6 +539,7 @@ function showNFTModal(image, name, metadata) {
     searchContainer.style.display = "flex";
     searchResult.style.display = "flex";
     footer.style.display = "flex";
+    loadMore.style.display = "block";
   }
 
 }
