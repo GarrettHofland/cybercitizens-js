@@ -45,6 +45,13 @@ if (document.querySelector("#game")) {
     document.getElementById("game").style.backgroundColor = "grey";
 }
 
+if (exit && clear && finish && wallet) {
+    exit.addEventListener('click', closeWalletMenu);
+    clear.addEventListener('click', clearWalletAddress);
+    finish.addEventListener('click', setWalletAddress);
+    walletInput.addEventListener('change', validateWalletAddress);
+}
+
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle("open");
     links.forEach(link => {
@@ -55,20 +62,17 @@ hamburger.addEventListener('click', () => {
     });
 });
 
-exit.addEventListener('click', closeWalletMenu);
-clear.addEventListener('click', clearWalletAddress);
-finish.addEventListener('click', setWalletAddress);
-walletInput.addEventListener('change', validateWalletAddress);
-
-walletButton.addEventListener('click', () => {
-    console.log(getWalletAddress());
-    if(getWalletAddress() != null) {
-        walletInput.value = getWalletAddress();
-        walletOutput.textContent = "Wallet set."
-        walletOutput.style.color = "green";
-    }
-    walletMenu.classList.toggle("open");
-});
+if(walletButton) {
+    walletButton.addEventListener('click', () => {
+        console.log(getWalletAddress());
+        if(getWalletAddress() != null) {
+            walletInput.value = getWalletAddress();
+            walletOutput.textContent = "Wallet set."
+            walletOutput.style.color = "green";
+        }
+        walletMenu.classList.toggle("open");
+    });
+}
 
 function exitMenuOnLinkClick() {
     navLinks.classList.toggle("open");
