@@ -1,0 +1,2 @@
+let url = "https://paymentportal.ergo.ga/pay.html?address=9ep7QhRWxW1meuqbAYWm1AqQv4qQY4smu2nL3ryqUNrbf3zHHmK&currency=ERG&amount=0.2&ref=CyberCitizens_Test_Pay";
+let payment_address = "9ep7QhRWxW1meuqbAYWm1AqQv4qQY4smu2nL3ryqUNrbf3zHHmK";
