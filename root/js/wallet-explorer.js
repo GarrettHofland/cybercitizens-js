@@ -297,6 +297,7 @@ const rarities = [{
 
 
 let mrPixel = "9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT";
+let newAddr = "9hfNCyqJsCSku8HXrV17Y6AaQciCAwkwx4M49imdWjRaTX22Mvz";
 let randomTestAddr = "9fTuHJtqaaNYJAsTUJyBvM4xNVXGUGp8dYgHucKHHTDdbx24jLD";
 let auctionAddress = `5t19JGogcry9DRipPNcLs4mSnHYXQoqazPDMXXcdMixeH2mkgzMvWXjENsHRJzfHAFnTL5FBDHQCzBcnYg4CU1LcJZMmUXAaDcsKdgfBk4sE9BDbLt6Yxkjh6ow65HGCgxkwNAEArMAz8tqZL7GzKx4AvYVkqG3ExKggwDyVrvx7YzN8xeFtEUcnVkDKM8ow7YWW8eee2EidfYArPRd8fxQr5EuZVEiQbzKZ6m4xgtHfhsEptE3pNdt69F94gkytpounxBYpJPqfeZ8hVxLk8qaXTGFiJTDTt2p9D5ue4skZf4AGSLJyuzpMkjdifczQNc784ic1nbTAcjL3FKGHqnkaVwnCxU7go45X9ZFHwdpc6v67vFDoHzAAqypax4UFF1ux84X5G4xK5NFFjMZtvPyjqn2ErNXVgHBs2AkpngBPjnVRiN4sWkhR66NfBNpigU8PaTiB4Rim2FMZSXuyhRySCA1BV8ydVxz45T9VHqHA6WYkXp2ppAHmc29F8MrHX5Ew2x6amraFgvsdgAB3XiiEqEjRc83mhZVL1QgKi5CdeeGNYiXeCkxaRhG3j6r1JdAgzGDAQfN8sdRcEc1aYxbPfbqM1s81NFm7K1UmMUxrfCUp73poGAfV8FvQa2akyascKBaSCqvwuHW2ZP4oMoJHjZjTAgQjQF8cBNF9YLo6wXEtMQT5FYc3bHSgd4xZXCk2oHYjUSACW1Z5e7KZ3Qw1Sa2UvpMdWhbZ5Ncu99WT7v6nHFLJvHEPM7evr41nhCe9Yt3pAq4ee4rKCtEer4vQWq2b5UJSDXDj5VkVepQ5tmeXfXrBc42Yqucy6VeQSE7W66o4hQjwW1iN3yipmdTmpaAEASmbXwCxRSm7g4sNkfA969xo14PZQpBY3QUGqgCWoqJJVFWMhfvD53rzfgJpA4JH5B1fvY99q5iwbsAKdJfZi4fxub9QWZSNQfht4JqXMDmc6XTkWLE4VCxBRQYzF44H2E6mdf5EbZHUrpXj5c2VfC6PZGg9qmrz14aZjafM4M7kRTqMwVB8R9r7kXM1FWidGoprp2fRoJUALAKxKDSTVHX8ejT8zkSKJ5W45dSQjMe3WUDTeKhiy6Fqio2ukV8THaizTp6yZWxMVdu3a15pGBv1kmXZJEnLN9BsxyhnW2iGM7tvwK1jAneXeBH1uVdusR59j5ubCGKeoaS5ToC8Ky6wZ2iCyb2JF5CTvR4sMUg2ksmUm1dk8EoRjJ9i5gkqY`;
 let auctionAddresses = [auctionAddress];
@@ -304,19 +305,19 @@ let auctions = [];
 var nftStartIndex = 0;
 var nftEndIndex = 4;
 let loadMore = document.createElement("button");
-loadMore.innerText = "Load More";
-loadMore.classList.add("button");
-loadMore.classList.add("even-button");
+loadMore.innerText = "More";
+loadMore.classList.add("button", "even-button");
+loadMore.id = "load-more";
+// loadMore.classList.add("even-button");
 
 //Explorer Vars
 explorerApi = 'https://api.ergoplatform.com/api/v0'
 explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 
 window.onload = function () {
-  getRarities();
-  getAuctionsRaw(mrPixel);
-  document.getElementById('searchBar').disabled = "true";
-  document.getElementById('searchButton').disabled = "true";
+  getAuctionsRaw(newAddr);
+  // document.getElementById('searchBar').disabled = "true";
+  // document.getElementById('searchButton').disabled = "true";
 }
 
 document.querySelector("#explorerToHome").onclick = function (event) {
@@ -365,7 +366,8 @@ async function buildAuctions() {
 }
 
 function displaySearchResults(token) {
-  //04ebbd14f9dcf138ef11f037743abb5f21a70f804107eaacee807d0657864e34
+  //00e1d1829103ebd7f875c07a8da8934583d1914fbf22960ff165019638a81def
+  //c64c63c47c34a93f27fb2df2d79ed5df80b0a3e60e83269340bc1ade78442a66
 
   let container = document.getElementById("search-result");
 
@@ -383,45 +385,22 @@ function displaySearchResults(token) {
   let assetName = document.createElement('h2');
   let assetImage = document.createElement('img');
   let assetMetaData = JSON.parse(token.description[0].slice(1, token.description[0].length));
-  // console.log(assetMetaData);
 
-  let attributeContainer = document.createElement('div');
-  let background = "Background: " + assetMetaData['721']['0']['traits:']['Background'];
-  let clothes = "Clothes: " + assetMetaData['721']['0']['traits:']['Clothes'];
-  let eyes = "Eyes: " + assetMetaData['721']['0']['traits:']['Eyes'];
-  let gender = "Gender: " + assetMetaData['721']['0']['traits:']['Gender'];
-  let neck = "Neck: " + assetMetaData['721']['0']['traits:']['Neck'];
-  let skintone = "Skintone: " + assetMetaData['721']['0']['traits:']['Skintone'];
+  let citizenNumber = Object.keys(assetMetaData['721']);
+  let attributesRaw = assetMetaData['721'][citizenNumber]['traits'];
+  let attributesKeys = Object.keys(assetMetaData['721'][citizenNumber]['traits']);
+  let attributesComplete = [];
+
+  attributes = buildAttributeArray(attributesKeys, attributesRaw);
+
+  let attributeContainer = buildAttributeDisplay(attributes);
+
+  console.log(attributes);
 
   assetImage.src = token.image;
   assetName.innerText = token.name;
 
-  getRarities();
-
-  let backgroundEl = document.createElement('div');
-  let clothesEl = document.createElement('div');
-  let eyesEl = document.createElement('div');
-  let genderEl = document.createElement('div');
-  let neckEl = document.createElement('div');
-  let skintoneEl = document.createElement('div');
-
-  backgroundEl.classList.add("attribute");
-  clothesEl.classList.add("attribute");
-  eyesEl.classList.add("attribute");
-  genderEl.classList.add("attribute");
-  neckEl.classList.add("attribute");
-  skintoneEl.classList.add("attribute");
-
-  backgroundEl.innerHTML = background;
-  clothesEl.innerHTML = clothes;
-  eyesEl.innerHTML = eyes;
-  genderEl.innerHTML = gender;
-  neckEl.innerHTML = neck;
-  skintoneEl.innerHTML = skintone;
-
-  attributeContainer.append(backgroundEl, clothesEl, eyesEl, genderEl, neckEl, skintoneEl);
-
-  attributeContainer.classList.add("attribute-container");
+  attributeContainer.classList.add("attribute-container"); // Add attribute class to individual attribute
 
   // resultCard.classList.add("auction-card");
   resultCard.classList.add("search-card");
@@ -432,11 +411,46 @@ function displaySearchResults(token) {
   container.append(resultCard);
 }
 
-// Get the rarities of the attributes bg, clothes, eyes, gender, neck, skintone
-function getRarities() {
-  let traits = rarities[0]['traits'];
-  attributesString = JSON.stringify(rarities);
+function buildAttributeDisplay(attributes) {
+  let container = document.createElement('div');
 
+  attributes.forEach(att => {
+    let attr = document.createElement('div');
+    let content = document.createElement('p');
+
+    if (att.rarity == undefined) att.rarity = "Not found";
+
+    content.innerText = att.name + ":\n" + att.value + "\n(" + att.rarity + ")";
+
+    attr.classList.add('attribute');
+    attr.append(content);
+
+    container.append(attr);
+  });
+
+  return container;
+}
+
+function buildAttributeArray(keys, values) {
+  let arr = [];
+  keys.forEach(key => {
+    arr.push(createAttribute(key, values[key]));
+  });
+  return arr;
+}
+
+function createAttribute(key, value) {
+  let rarity = getRarity(key, value);
+  return {
+    "name": key,
+    "value": value,
+    "rarity": rarity
+  }
+}
+
+// Get the rarities of the attributes bg, clothes, eyes, gender, neck, skintone
+function getRarity(field, trait) {
+  return rarities['0']['traits'][field][trait];
 }
 
 // Build the html
@@ -474,9 +488,9 @@ function buildPage() {
       showNFTModal(auctions[i].image, auctions[i].name, auctions[i].description);
     }
   }
-if(nftEndIndex != auctions.length) {
-  nftStartIndex = nftEndIndex;
-  nftEndIndex = nftStartIndex + 2;
+  if (nftEndIndex != auctions.length) {
+    nftStartIndex = nftEndIndex;
+    nftEndIndex = nftStartIndex + 2;
 
     container.append(loadMore);
     loadMore.addEventListener('click', loadMoreExplore);

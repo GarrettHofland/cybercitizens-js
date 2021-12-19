@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background-image: none;
@@ -11,7 +12,7 @@ button:focus {
   outline: none;
 }
 
-#nft-container > * {
+#nft-container > .auction-card {
   flex-basis: 50%;
 }
 
@@ -88,7 +89,7 @@ button:focus {
 
 .search-card {
   margin-top: 1em;
-  width: 80% !important;
+  width: 100% !important;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -96,12 +97,13 @@ button:focus {
   margin: 1em auto;
 }
 .search-card img {
-  max-width: 30%;
+  max-width: 20%;
   border: 2px #f71184 solid;
   border-radius: 5%;
   margin: 0 auto;
 }
 .search-card h2 {
+  margin-top: 0;
   font-size: clamp(2rem, 2rem + 3vw, 5rem);
   margin-bottom: 0;
   color: #f71184;
@@ -111,50 +113,59 @@ button:focus {
 .search-container {
   display: flex;
   flex-direction: column;
-  max-width: 70%;
   margin: 0 auto;
 }
 .search-container .button {
-  width: 30%;
   margin: 0 auto;
-  color: black;
-  background-color: grey;
+}
+.search-container input {
+  max-width: 70%;
+  margin: 0 auto;
+  border-radius: 20px;
 }
 
 .search-container:hover .button {
-  box-shadow: none;
+  box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #f711f7;
 }
 
 .explore-content {
   margin-bottom: 4em;
 }
 
+.attribute-container > * {
+  flex-basis: 50%;
+}
+
 .attribute-container {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
   gap: 2%;
-  width: 80%;
+  width: 90% !important;
   margin: 1em auto;
 }
 
-input[type=text], textarea {
-  background-color: #231742;
-  color: #f71184;
-}
-
-input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
-  border: 2px grey solid;
-}
-
 .attribute {
-  background: #f71184;
-  min-width: 50%;
+  background-color: #231742;
+  box-shadow: 10px 10px 5px black;
   color: white;
+  text-shadow: 4px 4px #258ae8;
   border: 2px #f71184 solid;
   border-radius: 12px;
   font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
-  text-shadow: 4px 4px #258ae8;
+}
+
+input[type=text],
+textarea {
+  background-color: #231742;
+  color: #f71184;
+  transition: ease-in 0.5s;
+}
+
+input[type=text]:focus,
+textarea:focus,
+input[type=text]:hover,
+textarea:hover {
+  border: 2px #f711f7 solid;
+  box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #f711f7;
 }
 
 @media all and (max-width: 40em) {
@@ -181,6 +192,21 @@ input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
   .search-container button {
     width: 50%;
     padding: 2%;
+  }
+  .search-container input {
+    width: 100%;
+  }
+
+  .attribute-container {
+    flex-direction: column;
+  }
+
+  .attribute {
+    margin-top: 5%;
+  }
+
+  #load-more {
+    width: 100% !important;
   }
 }
 
