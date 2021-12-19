@@ -313,7 +313,6 @@ explorerApi = 'https://api.ergoplatform.com/api/v0'
 explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 
 window.onload = function () {
-  getRarities();
   getAuctionsRaw(mrPixel);
   // document.getElementById('searchBar').disabled = "true";
   // document.getElementById('searchButton').disabled = "true";
@@ -385,19 +384,25 @@ function displaySearchResults(token) {
   let assetImage = document.createElement('img');
   let attributeContainer = document.createElement('div');
   let assetMetaData = JSON.parse(token.description[0].slice(1, token.description[0].length));
+
   let citizenNumber = Object.keys(assetMetaData['721']);
   let attributesRaw = assetMetaData['721'][citizenNumber]['traits'];
   let attributesKeys = Object.keys(assetMetaData['721'][citizenNumber]['traits']);
+  let attributesComplete = [];
+
   console.log(attributesRaw);
   console.log(attributesKeys);
   console.log(attributesRaw[attributesKeys[0]]);
 
+  attributes = buildAttributeArray(attributesKeys, attributesRaw);
+
+
+  console.log(attributes);
+
   assetImage.src = token.image;
   assetName.innerText = token.name;
 
-  // getRarities();
-
-  attributeContainer.classList.add("attribute-container");
+  attributeContainer.classList.add("attribute-container");// Add attribute class to individual attribute
 
   // resultCard.classList.add("auction-card");
   resultCard.classList.add("search-card");
@@ -408,15 +413,26 @@ function displaySearchResults(token) {
   container.append(resultCard);
 }
 
+function buildAttributeArray(keys, values) {
+  let arr = [];
+  keys.forEach(key => {
+    arr.push(createAttribute(key, values[key]));
+  });
+  return arr;
+}
+
 function createAttribute(key, value) {
-  let rarity = getRarities(key, value);
+  let rarity = getRarity(key, value);
+  return {
+    "name" : key,
+    "value" : value,
+    "rarity" : rarity
+  }
 }
 
 // Get the rarities of the attributes bg, clothes, eyes, gender, neck, skintone
-function getRarities(field, trait) {
-  let traits = rarities[0]['traits'];
-  attributesString = JSON.stringify(rarities);
-
+function getRarity(field, trait) {
+  return rarities['0']['traits'][field][trait];
 }
 
 // Build the html
