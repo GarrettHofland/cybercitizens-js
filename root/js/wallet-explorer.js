@@ -382,7 +382,6 @@ function displaySearchResults(token) {
   let resultCard = document.createElement('div');
   let assetName = document.createElement('h2');
   let assetImage = document.createElement('img');
-  let attributeContainer = document.createElement('div');
   let assetMetaData = JSON.parse(token.description[0].slice(1, token.description[0].length));
 
   let citizenNumber = Object.keys(assetMetaData['721']);
@@ -390,12 +389,9 @@ function displaySearchResults(token) {
   let attributesKeys = Object.keys(assetMetaData['721'][citizenNumber]['traits']);
   let attributesComplete = [];
 
-  console.log(attributesRaw);
-  console.log(attributesKeys);
-  console.log(attributesRaw[attributesKeys[0]]);
-
   attributes = buildAttributeArray(attributesKeys, attributesRaw);
 
+  let attributeContainer = buildAttributeDisplay(attributes);
 
   console.log(attributes);
 
@@ -411,6 +407,26 @@ function displaySearchResults(token) {
   // resultCard.append(assetImage);
   // resultCard.append(assetMetaData);
   container.append(resultCard);
+}
+
+function buildAttributeDisplay(attributes) {
+  let container = document.createElement('div');
+
+  attributes.forEach(att => {
+    let attr = document.createElement('div');
+    let content = document.createElement('p');
+
+    if(att.rarity == undefined) att.rarity = "Not found";
+
+    content.innerText = att.name + ": " + att.value + " (" + att.rarity + ")";
+
+    attr.classList.add('attribute');
+    attr.append(content);
+
+    container.append(attr);
+  });
+
+  return container;
 }
 
 function buildAttributeArray(keys, values) {
