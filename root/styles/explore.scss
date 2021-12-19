@@ -6,7 +6,8 @@ $secondary-hover: #8c1d8c;
 $highlight-colour: #258ae8;
 
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     // background-color: $background-colour;
@@ -20,7 +21,7 @@ button:focus {
     outline: none;
 }
 
-#nft-container > .auction-card {
+#nft-container>.auction-card {
     flex-basis: 50%;
 }
 
@@ -31,7 +32,8 @@ button:focus {
     justify-content: center;
     flex-wrap: wrap;
     gap: 2em;
-    max-width: 70%;;
+    max-width: 70%;
+    ;
     height: auto;
     margin: 0 auto;
 }
@@ -154,7 +156,7 @@ button:focus {
     margin-bottom: 4em;
 }
 
-.attribute-container > * {
+.attribute-container>* {
     flex-basis: 50%;
 }
 
@@ -179,14 +181,18 @@ button:focus {
 }
 
 
-input[type="text"], textarea {
+input[type="text"],
+textarea {
     background-color: $background-colour;
     // background-color: grey;
     color: $main-colour;
     transition: ease-in 0.5s;
 }
 
-input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hover {
+input[type="text"]:focus,
+textarea:focus,
+input[type="text"]:hover,
+textarea:hover {
     border: 2px $secondary-colour solid;
     box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $secondary-colour;
     // border: 2px grey solid;
@@ -211,7 +217,6 @@ input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hov
 
     .auction-card-modal {
         width: 80%;
-
         img {
             width: 100%;
         }
@@ -237,7 +242,8 @@ input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hov
     }
 
 
-#load-more {
-    width: 50% !important;
-}
+    #load-more {
+        width: 100% !important;
+        // padding: 1em;
+    }
 }

@@ -305,7 +305,7 @@ let auctions = [];
 var nftStartIndex = 0;
 var nftEndIndex = 4;
 let loadMore = document.createElement("button");
-loadMore.innerText = "Load More";
+loadMore.innerText = "More";
 loadMore.classList.add("button", "even-button");
 loadMore.id = "load-more";
 // loadMore.classList.add("even-button");
