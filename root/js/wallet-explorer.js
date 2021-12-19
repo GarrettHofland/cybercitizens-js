@@ -365,7 +365,8 @@ async function buildAuctions() {
 }
 
 function displaySearchResults(token) {
-  //04ebbd14f9dcf138ef11f037743abb5f21a70f804107eaacee807d0657864e34
+  //00e1d1829103ebd7f875c07a8da8934583d1914fbf22960ff165019638a81def
+  //c64c63c47c34a93f27fb2df2d79ed5df80b0a3e60e83269340bc1ade78442a66
 
   let container = document.getElementById("search-result");
 
@@ -382,44 +383,17 @@ function displaySearchResults(token) {
   let resultCard = document.createElement('div');
   let assetName = document.createElement('h2');
   let assetImage = document.createElement('img');
-  let assetMetaData = JSON.parse(token.description[0].slice(1, token.description[0].length));
-  // console.log(assetMetaData);
-
   let attributeContainer = document.createElement('div');
-  let background = "Background: " + assetMetaData['721']['0']['traits:']['Background'];
-  let clothes = "Clothes: " + assetMetaData['721']['0']['traits:']['Clothes'];
-  let eyes = "Eyes: " + assetMetaData['721']['0']['traits:']['Eyes'];
-  let gender = "Gender: " + assetMetaData['721']['0']['traits:']['Gender'];
-  let neck = "Neck: " + assetMetaData['721']['0']['traits:']['Neck'];
-  let skintone = "Skintone: " + assetMetaData['721']['0']['traits:']['Skintone'];
+  let assetMetaData = JSON.parse(token.description[0].slice(1, token.description[0].length));
+  // let attributes = Object.keys(assetMetaData["0"]);
+  console.log(attributes);
+
+
 
   assetImage.src = token.image;
   assetName.innerText = token.name;
 
-  getRarities();
-
-  let backgroundEl = document.createElement('div');
-  let clothesEl = document.createElement('div');
-  let eyesEl = document.createElement('div');
-  let genderEl = document.createElement('div');
-  let neckEl = document.createElement('div');
-  let skintoneEl = document.createElement('div');
-
-  backgroundEl.classList.add("attribute");
-  clothesEl.classList.add("attribute");
-  eyesEl.classList.add("attribute");
-  genderEl.classList.add("attribute");
-  neckEl.classList.add("attribute");
-  skintoneEl.classList.add("attribute");
-
-  backgroundEl.innerHTML = background;
-  clothesEl.innerHTML = clothes;
-  eyesEl.innerHTML = eyes;
-  genderEl.innerHTML = gender;
-  neckEl.innerHTML = neck;
-  skintoneEl.innerHTML = skintone;
-
-  attributeContainer.append(backgroundEl, clothesEl, eyesEl, genderEl, neckEl, skintoneEl);
+  // getRarities();
 
   attributeContainer.classList.add("attribute-container");
 
