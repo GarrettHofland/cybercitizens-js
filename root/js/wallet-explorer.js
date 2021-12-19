@@ -315,8 +315,8 @@ explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 window.onload = function () {
   getRarities();
   getAuctionsRaw(mrPixel);
-  document.getElementById('searchBar').disabled = "true";
-  document.getElementById('searchButton').disabled = "true";
+  // document.getElementById('searchBar').disabled = "true";
+  // document.getElementById('searchButton').disabled = "true";
 }
 
 document.querySelector("#explorerToHome").onclick = function (event) {
