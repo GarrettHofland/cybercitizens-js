@@ -103,7 +103,7 @@ button:focus {
 
 .search-card {
     margin-top: 1em;
-    width: 80% !important;
+    width: 100% !important;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -128,7 +128,6 @@ button:focus {
 .search-container {
     display: flex;
     flex-direction: column;
-    max-width: 70%;
     margin: 0 auto;
 
     .button {
@@ -136,6 +135,12 @@ button:focus {
         margin: 0 auto;
         color: black;
         background-color: grey;
+    }
+
+    input {
+        max-width: 70%;
+        margin: 0 auto;
+        border-radius: 20px;
     }
 }
 
@@ -151,14 +156,26 @@ button:focus {
     margin-bottom: 4em;
 }
 
+.attribute-container > * {
+    flex-basis: 50%;
+}
+
 .attribute-container {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
     gap: 2%;
 
-    width: 80%;
+    width: 90% !important;
     margin: 1em auto;
+}
+
+.attribute {
+    // background: $main-colour;
+    // min-width: 50%;
+    color: white;
+    border: 2px $main-colour solid;
+    border-radius: 12px;
+    font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
+    text-shadow: 4px 4px $highlight-colour;
 }
 
 input[type="text"], textarea {
@@ -170,16 +187,6 @@ input[type="text"], textarea {
 input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hover {
     // border: 2px $secondary-colour solid;
     border: 2px grey solid;
-}
-
-.attribute {
-    background: $main-colour;
-    min-width: 50%;
-    color: white;
-    border: 2px $main-colour solid;
-    border-radius: 12px;
-    font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
-    text-shadow: 4px 4px $highlight-colour;
 }
 
 
@@ -212,5 +219,17 @@ input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hov
             width: 50%;
             padding: 2%;
         }
+
+        input {
+            width: 100%;
+        }
+    }
+
+    .attribute-container {
+        flex-direction: column;
+    }
+
+    .attribute {
+        margin-top: 5%;
     }
 }

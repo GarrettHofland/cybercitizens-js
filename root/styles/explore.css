@@ -88,7 +88,7 @@ button:focus {
 
 .search-card {
   margin-top: 1em;
-  width: 80% !important;
+  width: 100% !important;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -111,7 +111,6 @@ button:focus {
 .search-container {
   display: flex;
   flex-direction: column;
-  max-width: 70%;
   margin: 0 auto;
 }
 .search-container .button {
@@ -119,6 +118,11 @@ button:focus {
   margin: 0 auto;
   color: black;
   background-color: grey;
+}
+.search-container input {
+  max-width: 70%;
+  margin: 0 auto;
+  border-radius: 20px;
 }
 
 .search-container:hover .button {
@@ -129,13 +133,23 @@ button:focus {
   margin-bottom: 4em;
 }
 
+.attribute-container > * {
+  flex-basis: 50%;
+}
+
 .attribute-container {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
   gap: 2%;
-  width: 80%;
+  width: 90% !important;
   margin: 1em auto;
+}
+
+.attribute {
+  color: white;
+  border: 2px #f71184 solid;
+  border-radius: 12px;
+  font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
+  text-shadow: 4px 4px #258ae8;
 }
 
 input[type=text], textarea {
@@ -145,16 +159,6 @@ input[type=text], textarea {
 
 input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
   border: 2px grey solid;
-}
-
-.attribute {
-  background: #f71184;
-  min-width: 50%;
-  color: white;
-  border: 2px #f71184 solid;
-  border-radius: 12px;
-  font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
-  text-shadow: 4px 4px #258ae8;
 }
 
 @media all and (max-width: 40em) {
@@ -181,6 +185,17 @@ input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
   .search-container button {
     width: 50%;
     padding: 2%;
+  }
+  .search-container input {
+    width: 100%;
+  }
+
+  .attribute-container {
+    flex-direction: column;
+  }
+
+  .attribute {
+    margin-top: 5%;
   }
 }
 
