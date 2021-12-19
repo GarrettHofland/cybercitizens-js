@@ -385,10 +385,12 @@ function displaySearchResults(token) {
   let assetImage = document.createElement('img');
   let attributeContainer = document.createElement('div');
   let assetMetaData = JSON.parse(token.description[0].slice(1, token.description[0].length));
-  // let attributes = Object.keys(assetMetaData["0"]);
-  console.log(attributes);
-
-
+  let citizenNumber = Object.keys(assetMetaData['721']);
+  let attributesRaw = assetMetaData['721'][citizenNumber]['traits'];
+  let attributesKeys = Object.keys(assetMetaData['721'][citizenNumber]['traits']);
+  console.log(attributesRaw);
+  console.log(attributesKeys);
+  console.log(attributesRaw[attributesKeys[0]]);
 
   assetImage.src = token.image;
   assetName.innerText = token.name;
@@ -406,8 +408,12 @@ function displaySearchResults(token) {
   container.append(resultCard);
 }
 
+function createAttribute(key, value) {
+  let rarity = getRarities(key, value);
+}
+
 // Get the rarities of the attributes bg, clothes, eyes, gender, neck, skintone
-function getRarities() {
+function getRarities(field, trait) {
   let traits = rarities[0]['traits'];
   attributesString = JSON.stringify(rarities);
 
