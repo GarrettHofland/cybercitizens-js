@@ -470,13 +470,9 @@ function buildPage() {
     let auctionCard = document.createElement('div');
     let assetName = document.createElement('h2');
     let assetImage = document.createElement('img');
-    // let assetMetaData = auctions[i].description;
-    // let assetMetaData = document.createElement('p');
-    // let assetMetaData = JSON.parse(token.description[0].slice(1, token.description[0].length));
-  // toUtf8String(token.additionalRegisters.R5).substr(2);
+
     let metadata = "";
     getMetaDataForPopup(auctions[i].tokenId[0]).then(res => {
-      console.log(toUtf8String(popupObj[0].additionalRegisters.R5).substr(2));
       document.querySelector(".popupNFT" + i).onclick = function () {
         showNFTModal(auctions[i].image, auctions[i].name, toUtf8String(popupObj[0].additionalRegisters.R5).substr(2));
       }
@@ -542,11 +538,13 @@ function showNFTModal(image, name, metadata) {
   // console.log(JSON.parse(metadata.slice(1, metadata.length - 1)));
 
   // This is where ________________________________
-  // let citizenNumber = Object.keys(metadata['721']);
-  // let attributesRaw = metadata['721'][citizenNumber]['traits'];
-  // let attributesKeys = Object.keys(metadata['721'][citizenNumber]['traits']);
-  // console.log(attributesKeys);
-  // console.log(attributesRaw);
+  
+  metadata = JSON.parse(metadata.slice(1, metadata.length));
+  let citizenNumber = Object.keys(metadata['721']);
+  let attributesRaw = metadata['721'][citizenNumber]['traits'];
+  let attributesKeys = Object.keys(metadata['721'][citizenNumber]['traits']);
+  console.log(attributesKeys);
+  console.log(attributesRaw);
 
   exploreHeader.style.display = "none";
   searchContainer.style.display = "none";
