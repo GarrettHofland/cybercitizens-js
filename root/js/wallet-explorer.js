@@ -61,13 +61,13 @@ const rarities = [{
       "Left": "3.8%",
       "Right": "3.22%"
     },
-    "Left earing": {
+    "Left earring": {
       "None": "76.31%",
       "Silver": "12.30%",
       "Gold": "7.64%",
       "Diamond": "3.75%"
     },
-    "Right earing": {
+    "Right earring": {
       "None": "74.58%",
       "Silver": "12.78%",
       "Gold": "8.41%",
@@ -546,6 +546,10 @@ function showNFTModal(image, name, metadata) {
   console.log(attributesKeys);
   console.log(attributesRaw);
 
+  let attributes = buildAttributeArray(attributesKeys, attributesRaw);
+
+  let attributeContainer = buildAttributeDisplay(attributes);
+
   exploreHeader.style.display = "none";
   searchContainer.style.display = "none";
   searchResult.style.display = "none";
@@ -568,6 +572,7 @@ function showNFTModal(image, name, metadata) {
 
   auctionCard.append(assetName);
   auctionCard.append(assetImage);
+  auctionCard.append(attributeContainer);
   // auctionCard.append(assetMetadata);
 
   modal.append(auctionCard);
