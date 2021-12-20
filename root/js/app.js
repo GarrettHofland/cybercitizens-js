@@ -10,7 +10,7 @@ const clear = document.getElementById("clear");
 const finish = document.getElementById("finish");
 const walletInput = document.getElementById("user-address");
 
-if(finish) {
+if (finish) {
     finish.disabled = true;
     finish.style.backgroundColor = "grey";
 }
@@ -62,10 +62,10 @@ hamburger.addEventListener('click', () => {
     });
 });
 
-if(walletButton) {
+if (walletButton) {
     walletButton.addEventListener('click', () => {
         console.log(getWalletAddress());
-        if(getWalletAddress() != null) {
+        if (getWalletAddress() != null) {
             walletInput.value = getWalletAddress();
             walletOutput.textContent = "Wallet set."
             walletOutput.style.color = "green";
@@ -92,7 +92,7 @@ function copyToClipboard(text) {
 
 function closeWalletMenu() {
     walletMenu.classList.toggle("open");
-    if(getWalletAddress() == null) {
+    if (getWalletAddress() == null) {
         walletOutput.textContent = "Invalid wallet address.";
         walletOutput.style.color = "red";
         walletInput.value = "";
@@ -105,7 +105,8 @@ function clearWalletAddress() {
     walletOutput.style.color = "green";
     walletInput.value = "";
     finish.disabled = true;
-    finish.backgroundColor = "grey";
+    finish.style.backgroundColor = "grey";
+    console.log(finish.disabled);
 }
 
 function setWalletAddress() {
@@ -129,8 +130,7 @@ function validateWalletAddress() {
         walletOutput.style.color = "green";
         finish.disabled = false;
         finish.style.backgroundColor = "#258ae8";
-    }
-    else {
+    } else {
         walletOutput.textContent = "Invalid wallet address.";
         walletOutput.style.color = "red";
         finish.disabled = true;

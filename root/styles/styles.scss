@@ -115,7 +115,6 @@ main {
     }
 }
 
-
 .main-header {
     // color: $main-colour;
     color: $text-colour;
@@ -202,7 +201,8 @@ span {
 }
 
 .address {
-    color: $secondary-colour;
+    color: white;
+    text-shadow: 2px 2px $highlight-colour;
     font-size: 2rem;
     transition: ease-out 1s;
     inline-size: min-content;
@@ -212,9 +212,9 @@ span {
 }
 
 .address:hover {
-    color: white;
+    color: $highlight-colour;
     
-    text-shadow: 2px 2px $main-colour;
+    text-shadow: 2px 2px white;
 }
 
 .button-group>* {
@@ -231,7 +231,7 @@ span {
 .button {
     height: 4vh;
     width: 12vw;
-    // padding: 1em;
+    color: white;
     border: none;
     background: none;
     border-radius: 18px;
@@ -239,20 +239,20 @@ span {
     box-shadow: 2px 2px 1px black;
     transition: 1s ease-out;
 
+    a {
+        color: white;
+    }
+
     img {
         width: 75%;
         height: 75%;
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(263deg) brightness(101%) contrast(102%);
     }
 }
 
 .button:hover {
     box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $secondary-colour;
 }
-
-// .button img {
-//     width: 75%;
-//     height: 75%;
-// }
 
 .even-button {
     background-color: $main-colour;
@@ -281,6 +281,14 @@ span {
 .odd-button:hover {
     background-color: $secondary-colour;
     color: white;
+}
+
+#discord {
+    background: #7289da;
+}
+
+#twitter {
+    background: #1DA1F2;
 }
 
 .faq-header {
