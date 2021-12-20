@@ -126,7 +126,7 @@ main {
     // margin: 0 auto;
 
     margin: 2% auto 0 auto;
-    max-width: 80%;
+    max-width: 90%;
     padding-bottom: 0;
 
     border-bottom: 6px solid $highlight-colour;
@@ -780,22 +780,8 @@ span {
     padding-right: 1em;
 }
 
+
 @media all and (max-width : 60em) {
-
-    .columns {
-        flex-direction: column;
-    }
-
-    #ergopixel-img {
-        display: inline-block;
-        width: 60%;
-        height: auto;
-        margin: 0 auto;
-    }
- }
-
-
-@media all and (max-width : 40em) {
     * {
         margin: 0;
         padding: 0;
@@ -830,7 +816,7 @@ span {
         border: none;
         display: inline-block;
         margin: 5% auto;
-        font-size: 2.2rem;
+        font-size: clamp(2rem, 2.5rem, 3rem);
         border-bottom: 2px solid $highlight-colour;
         text-align: center;
     }
