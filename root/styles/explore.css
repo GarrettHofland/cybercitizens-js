@@ -144,6 +144,7 @@ button:focus {
 }
 
 .attribute {
+  display: block;
   background-color: #231742;
   box-shadow: 10px 10px 5px black;
   color: white;
@@ -151,6 +152,22 @@ button:focus {
   border: 2px #f71184 solid;
   border-radius: 12px;
   font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
+}
+
+.auction-attribute-container > .attribute {
+  flex-basis: 50%;
+}
+
+.auction-attribute-container {
+  padding: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+.auction-attribute-container .attribute {
+  max-width: 40%;
 }
 
 input[type=text],

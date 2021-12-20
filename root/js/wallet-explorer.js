@@ -73,6 +73,14 @@ const rarities = [{
       "Gold": "8.41%",
       "Diamond": "4.23%"
     },
+    "Lipstick": {
+      'None': 270, 
+      'Cotton candy': 60, 
+      'Purple': 57, 
+      'Dark pink': 56, 
+      'Pink': 53, 
+      'Red': 53
+    },
     "Robotic face": {
       "None": "78.14%",
       "Left half Silver": "5.39%",
@@ -451,7 +459,12 @@ function createAttribute(key, value) {
 
 // Get the rarities of the attributes bg, clothes, eyes, gender, neck, skintone
 function getRarity(field, trait) {
-  return rarities['0']['traits'][field][trait];
+  try {
+    return rarities['0']['traits'][field][trait];
+  }
+  catch {
+    return undefined;
+  }
 }
 
 // Build the html
@@ -569,6 +582,7 @@ function showNFTModal(image, name, metadata) {
   // assetMetadata.innerText = metadata;
 
   auctionCard.classList.add("auction-card-modal");
+  attributeContainer.classList.add("auction-attribute-container")
 
   auctionCard.append(assetName);
   auctionCard.append(assetImage);

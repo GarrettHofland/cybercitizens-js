@@ -33,7 +33,6 @@ button:focus {
     flex-wrap: wrap;
     gap: 2em;
     max-width: 70%;
-    ;
     height: auto;
     margin: 0 auto;
 }
@@ -179,6 +178,22 @@ button:focus {
     border-radius: 12px;
 
     font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
+}
+
+.auction-attribute-container > .attribute {
+    flex-basis: 50%;
+}
+
+.auction-attribute-container {
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    .attribute {
+        max-width: 40%;
+    }
 }
 
 
