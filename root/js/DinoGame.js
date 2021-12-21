@@ -237,7 +237,6 @@ function onClickScreen()
             PlayBTN.setVisible(false);
             ResetGame();
             pause = false;
-            LoginAndSetHighScore();
             break;
     }
 }
@@ -487,7 +486,8 @@ function deSpawn()
 function GameOver(player)
 {
     MiddleText.setText("Play again?");
-    PlayBTN.setVisible(true);
+    PlayBTN.setVisible(true);    
+    LoginAndSetHighScore();
     GameState = 2;
     pause = true;   
 }
@@ -638,9 +638,6 @@ var updateStatsCallback = function (result, error) {
         console.log(CompileErrorReport(error));
     }
 };
-
-
-//todo: get HS and set current hs to it
 
 function LoginAndGetHighScore(){
     PlayFab.settings.titleId = "9EBCA";
