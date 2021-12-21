@@ -1,7 +1,7 @@
 var config = {
     //type: Phaser.AUTO,
     parent: "dino-game",
-    width: 900,
+    width: 800,
     height: 600,
     backgroundColor: '#53cbea',
     physics: 
@@ -314,7 +314,7 @@ function update (time , delta)
     }
 
     //SpeedUp
-    if(LastTime + 1000 < score)
+    if(LastTime + 1000 < score && score < 12000)
     {
         LastTime = score;
         SpeedUp();
@@ -605,15 +605,18 @@ function getRequest(url, api = explorerApi) {
 
 //send HS 
 function LoginAndSetHighScore(){
-    PlayFab.settings.titleId = "9EBCA";
-    
-    var loginRequest = {
-        TitleId: PlayFab.settings.titleId,
-        CustomId: ConectedAddress,
-        CreateAccount: true,
-    };
+    if(ConectedAddress != "N/A")
+    {
+        PlayFab.settings.titleId = "9EBCA";
+        
+        var loginRequest = {
+            TitleId: PlayFab.settings.titleId,
+            CustomId: ConectedAddress,
+            CreateAccount: true,
+        };
 
-    PlayFabClientSDK.LoginWithCustomID(loginRequest, UpdateStats);
+        PlayFabClientSDK.LoginWithCustomID(loginRequest, UpdateStats);
+    }
 }
 
 function UpdateStats()
