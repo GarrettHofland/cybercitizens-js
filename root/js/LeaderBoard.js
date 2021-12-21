@@ -17,9 +17,9 @@ toggle.onclick = function(element){
 }
 
 // Causing errors
-// document.querySelector("#gameToHome").onClick = function(event) {
-//     window.location = "../index.html";
-// }
+document.querySelector("#gameToHome").onClick = function(event) {
+    window.location = "../index.html";
+}
 
 window.addEventListener('click', function(e){   
     if (!leaderboardContainer.contains(e.target)){
