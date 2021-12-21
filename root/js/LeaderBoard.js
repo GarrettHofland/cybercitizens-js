@@ -51,8 +51,10 @@ function toggleLeaderboard() {
 
 function createInterface(){
     leaderboard.appendChild(header);
-    leaderboard.appendChild(DNInput);
-    leaderboard.appendChild(DNBTN);
+    if(ConectedAddress != "N/A"){
+        leaderboard.appendChild(DNInput);
+        leaderboard.appendChild(DNBTN);
+    }
     leaderboard.appendChild(leaderboardData);
     leaderboard.appendChild(refreshBTN);
     DNBTN.onclick = function(){SetDisplayName()};
