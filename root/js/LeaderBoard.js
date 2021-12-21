@@ -26,7 +26,6 @@ window.addEventListener('click', function(e){
     if (!leaderboardContainer.contains(e.target)){
         if(toggleActive)
         {
-            console.log("outside the box");
             toggleLeaderboard();
             toggleActive = !toggleActive;
         }
