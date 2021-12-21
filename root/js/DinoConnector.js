@@ -6,28 +6,13 @@ let DinoContainer = document.getElementById("dino-game");
 
 
 window.onload = function(){ 
-    try{ 
-        ergo_request_read_access().then(access => {
-            if(access) {
-                ergo.get_used_addresses().then(addresses => {
-                        addresses.forEach(addr => {
-                            ConectedAddress = addr;
-                    })
-                }).then(addr => {
-                    addPhaser();
-                });
-            }
-            else {
-                ConectedAddress = "N/A";
-                console.log("Access not Granted");
-            }
-        });
-    }
-    catch(e)
-    {
+    if(getWalletAddress() != null) {
+        ConectedAddress = getWalletAddress();
+      }
+      else {
         ConectedAddress = "N/A";
-        addPhaserNoAddress();
-    }
+      }
+      addPhaser();
 }   
 
 export {ConectedAddress};
@@ -38,8 +23,6 @@ function addPhaser() {
     document.getElementById("loading-message").style.display = "none";
 }
 
-//loads phaser without the leaderboard
-function addPhaserNoAddress() {   
-    DinoContainer.appendChild(script);
-    document.getElementById("loading-message").style.display = "none";
+function getWalletAddress() {
+    return localStorage.getItem("userWallet");
 }

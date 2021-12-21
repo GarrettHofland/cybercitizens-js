@@ -1,6 +1,7 @@
 import { ConectedAddress } from './DinoConnector.js';
 
 let leaderboard = document.createElement('div'); leaderboard.id = "leaderboard";
+let leaderboardData = document.createElement('div'); leaderboardData.id = "leaderboardData";
 let leaderboardContainer = document.getElementById("leaderboard-container");
 let scores = [];
 let NoDisplayed = 10; //number of entries to display
@@ -9,26 +10,50 @@ var DNBTN = document.createElement("input"); DNBTN.type = "button"; DNBTN.value 
 var DNInput = document.createElement("input"); DNInput.type = "text"; DNInput.value = ""; DNInput.id = "display-name"; 
 var header = document.createElement("h1"); header.innerText = "Leaderboard"; header.id = "leaderboard-header";
 var toggle = document.getElementById("leaderboard-toggle");
+var toggleActive = false;
 
-toggle.addEventListener('click', toggleLeaderboard());
-
-document.querySelector("#gameToHome").onclick = function(event) {
-    window.location = "../index.html";
+toggle.onclick = function(element){
+    toggleLeaderboard();
 }
 
+// Causing errors
+// document.querySelector("#gameToHome").onClick = function(event) {
+//     window.location = "../index.html";
+// }
+
+window.addEventListener('click', function(e){   
+    if (!leaderboardContainer.contains(e.target)){
+        if(toggleActive)
+        {
+            console.log("outside the box");
+            toggleLeaderboard();
+            toggleActive = !toggleActive;
+        }
+        else{
+            toggleActive = !toggleActive;
+        }
+    }
+});
+
 function toggleLeaderboard() {
-    console.log("toggle leaderboard");
-    LoginAndSetLeaderBoard();
-    createInterface();
-    leaderboard.style.display = "flex";
-    leaderboardContainer.style.display = "block";
-    leaderboardContainer.append(leaderboard);
+    if(!toggleActive){
+        console.log("toggle leaderboard");
+        LoginAndSetLeaderBoard();
+        createInterface();
+        leaderboard.style.display = "flex";
+        leaderboardContainer.style.display = "block";
+        leaderboardContainer.append(leaderboard);
+    }
+    else{
+        leaderboardContainer.style.display = "none";
+    }
 }
 
 function createInterface(){
     leaderboard.appendChild(header);
     leaderboard.appendChild(DNInput);
     leaderboard.appendChild(DNBTN);
+    leaderboard.appendChild(leaderboardData);
     leaderboard.appendChild(refreshBTN);
     DNBTN.onclick = function(){SetDisplayName()};
     refreshBTN.onclick = function(){RefreshLB();};
@@ -47,7 +72,7 @@ function updateLeaderboardView() {
         let scoreRow = document.createElement("div");
         scoreRow.classList.add("row");
         scoreRow.appendChild(name);
-        leaderboard.appendChild(scoreRow);
+        leaderboardData.appendChild(scoreRow);
 
         elements.push(scoreRow);
     }
@@ -91,7 +116,7 @@ var UpdateLeaderBoard = function (result, error) {
         result.data.Leaderboard.forEach(element => {
             scores.push({name: element.DisplayName , score: element.StatValue})
         });
-        leaderboard.innerHTML = "";
+        leaderboardData.innerHTML = "";
         createInterface();
         updateLeaderboardView();
     } 
@@ -102,16 +127,18 @@ var UpdateLeaderBoard = function (result, error) {
 
 function SetDisplayName()
 {
-    PlayFab.settings.titleId = "9EBCA";
-    
-    var loginRequest = {
-        TitleId: PlayFab.settings.titleId,
-        CustomId: ConectedAddress,
-        CreateAccount: true,
-    };
+    if(ConectedAddress != "N/A")
+    {
+        PlayFab.settings.titleId = "9EBCA";
+        
+        var loginRequest = {
+            TitleId: PlayFab.settings.titleId,
+            CustomId: ConectedAddress,
+            CreateAccount: true,
+        };
 
-    PlayFabClientSDK.LoginWithCustomID(loginRequest, UpdateDisplayName);
-
+        PlayFabClientSDK.LoginWithCustomID(loginRequest, UpdateDisplayName);
+    }
 }
 
 function UpdateDisplayName()
