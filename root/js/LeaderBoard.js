@@ -5,7 +5,7 @@ let leaderboardData = document.createElement('div'); leaderboardData.id = "leade
 let leaderboardContainer = document.getElementById("leaderboard-container");
 let scores = [];
 let NoDisplayed = 10; //number of entries to display
-var refreshBTN = document.createElement("input"); refreshBTN.type = "button"; refreshBTN.value = "Refresh Leaderboard"; refreshBTN.classList.add("leaderboard-button"); 
+var refreshBTN = document.createElement("input"); refreshBTN.type = "button"; refreshBTN.value = "Refresh"; refreshBTN.classList.add("leaderboard-button"); 
 var DNBTN = document.createElement("input"); DNBTN.type = "button"; DNBTN.value = "Set Name";  DNBTN.classList.add("leaderboard-button"); 
 var DNInput = document.createElement("input"); DNInput.type = "text"; DNInput.value = ""; DNInput.id = "display-name"; 
 var header = document.createElement("h1"); header.innerText = "Leaderboard"; header.id = "leaderboard-header";
@@ -25,9 +25,9 @@ window.addEventListener('click', function(e){
     if (!leaderboardContainer.contains(e.target)){
         if(toggleActive)
         {
-            console.log("outside the box");
             toggleLeaderboard();
             toggleActive = !toggleActive;
+            console.log("outside the box");
         }
         else{
             toggleActive = !toggleActive;
