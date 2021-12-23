@@ -121,13 +121,20 @@ ul {
         position: relative;
     }
 
+
+    .right {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 0;
+    }
+
     .hamburger {
         display: inline;
         z-index: 2;
         position: absolute;
-        right: 1%;
         top: 5%;
-        // transform: translate(-5%, -50%);
+        transform: translate(-5%, -50%);
+        right: 0;
         transition: ease-out 1s;
 
         
@@ -220,9 +227,5 @@ ul {
 
     .nav {
         height: 8vh;
-    }
-
-    .right {
-        margin-right: 0;
     }
 }
