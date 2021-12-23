@@ -11,14 +11,15 @@ var DNInput = document.createElement("input"); DNInput.type = "text"; DNInput.va
 var header = document.createElement("h1"); header.innerText = "Leaderboard"; header.id = "leaderboard-header";
 var toggle = document.getElementById("leaderboard-toggle");
 var toggleActive = false;
+var homepage = document.getElementById("gameToHome");
+
+homepage.onclick = function(element)
+{
+    window.location = "../index.html";
+}
 
 toggle.onclick = function(element){
     toggleLeaderboard();
-}
-
-// Causing errors
-document.querySelector("#gameToHome").onClick = function(event) {
-    window.location = "../index.html";
 }
 
 window.addEventListener('click', function(e){   
