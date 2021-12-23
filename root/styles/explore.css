@@ -222,10 +222,11 @@ textarea:hover {
 
   .attribute-container {
     flex-direction: column;
+    justify-content: center;
   }
 
   .attribute {
-    margin-top: 5%;
+    margin: 0 auto;
   }
 
   #load-more {
