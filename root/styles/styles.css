@@ -752,6 +752,10 @@ span {
     text-align: center;
   }
 
+  #ergopixel-img {
+    width: 50%;
+  }
+
   .sub-header {
     font-size: 2rem;
     max-width: 90%;

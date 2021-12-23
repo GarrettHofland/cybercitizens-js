@@ -28,13 +28,17 @@ button:focus {
 // Explore page css
 #nft-container {
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 2em;
-    max-width: 70%;
+    max-width: 90%;
     height: auto;
     margin: 0 auto;
+}
+
+#nft-container > * {
+    flex-basis: 1 1 100%;
 }
 
 .auction-card-modal {
@@ -58,7 +62,7 @@ button:focus {
 
 .auction-card {
     height: auto;
-    max-width: 40%;
+    max-width: 20%;
     background-color: $background-colour;
     color: $main-hover;
     text-align: center;

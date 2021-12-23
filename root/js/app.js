@@ -28,7 +28,7 @@ document.querySelector(".up-button").onclick = function (event) {
 
 if (document.querySelector(".address")) {
     document.querySelector(".address").onclick = function () {
-        copyToClipboard("9iPtqBeeTMuAX4rkQqpHti2BKyd8ZXYRUuqynWJm3ShNpoSyowT");
+        copyToClipboard("9hfNCyqJsCSku8HXrV17Y6AaQciCAwkwx4M49imdWjRaTX22Mvz");
         alert("Address copied to clipboard!");
     }
 }
