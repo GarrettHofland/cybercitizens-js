@@ -74,11 +74,11 @@ const rarities = [{
       "Diamond": "4.23%"
     },
     "Lipstick": {
-      'None': 270, 
-      'Cotton candy': 60, 
-      'Purple': 57, 
-      'Dark pink': 56, 
-      'Pink': 53, 
+      'None': 270,
+      'Cotton candy': 60,
+      'Purple': 57,
+      'Dark pink': 56,
+      'Pink': 53,
       'Red': 53
     },
     "Robotic face": {
@@ -461,8 +461,7 @@ function createAttribute(key, value) {
 function getRarity(field, trait) {
   try {
     return rarities['0']['traits'][field][trait];
-  }
-  catch {
+  } catch {
     return undefined;
   }
 }
@@ -487,7 +486,7 @@ function buildPage() {
     let metadata = "";
     getMetaDataForPopup(auctions[i].tokenId[0]).then(res => {
       document.querySelector(".popupNFT" + i).onclick = function () {
-        showNFTModal(auctions[i].image, auctions[i].name, toUtf8String(popupObj[0].additionalRegisters.R5).substr(2));
+        showNFTModal(auctions[i].image, auctions[i].name, auctions[i].tokenId);
       }
     });
 
@@ -521,9 +520,8 @@ function loadMoreExplore() {
 }
 
 // Show a popup of the NFT
-function showNFTModal(image, name, metadata) {
-  if (metadata === undefined)
-    metadata = "No metadata available.";
+function showNFTModal(image, name, tokenId) {
+  let rawData;
 
   var modal = document.getElementById("explorerModal");
   let auctionCard = document.createElement("div");
@@ -537,73 +535,65 @@ function showNFTModal(image, name, metadata) {
   let userY = window.screenY;
   let userX = window.screenX;
 
-  /**
-   *   let citizenNumber = Object.keys(assetMetaData['721']);
-  let attributesRaw = assetMetaData['721'][citizenNumber]['traits'];
-  let attributesKeys = Object.keys(assetMetaData['721'][citizenNumber]['traits']);
-  let attributesComplete = [];
-
-  attributes = buildAttributeArray(attributesKeys, attributesRaw);
-
-  let attributeContainer = buildAttributeDisplay(attributes);
-   */
-  //  let assetMetaData = JSON.parse(token.description[0].slice(1, token.description[0].length));
-  // console.log(JSON.parse(metadata.slice(1, metadata.length - 1)));
-
   // This is where ________________________________
-  
-  metadata = JSON.parse(metadata.slice(1, metadata.length));
-  let citizenNumber = Object.keys(metadata['721']);
-  let attributesRaw = metadata['721'][citizenNumber]['traits'];
-  let attributesKeys = Object.keys(metadata['721'][citizenNumber]['traits']);
-  console.log(attributesKeys);
-  console.log(attributesRaw);
 
-  let attributes = buildAttributeArray(attributesKeys, attributesRaw);
+  getMetaDataForPopup(tokenId).then(() => {
+    console.log(popupObj);
+    rawData = toUtf8String(popupObj[0].additionalRegisters.R5).substr(2);
 
-  let attributeContainer = buildAttributeDisplay(attributes);
+    let metadata = JSON.parse(rawData.slice(1, rawData.length));
+    let citizenNumber = Object.keys(metadata['721']);
+    let attributesRaw = metadata['721'][citizenNumber]['traits'];
+    let attributesKeys = Object.keys(metadata['721'][citizenNumber]['traits']);
+    console.log(attributesKeys);
+    console.log(attributesRaw);
 
-  exploreHeader.style.display = "none";
-  searchContainer.style.display = "none";
-  searchResult.style.display = "none";
-  footer.style.display = "none";
-  loadMore.style.display = "none";
+    let attributes = buildAttributeArray(attributesKeys, attributesRaw);
 
-  while (modal.firstChild)
-    modal.removeChild(modal.firstChild);
+    let attributeContainer = buildAttributeDisplay(attributes);
 
-  for (let i = 0; i < otherCards.length; i++) {
-    otherCards.item(i).style.display = "none";
-  }
+    exploreHeader.style.display = "none";
+    searchContainer.style.display = "none";
+    searchResult.style.display = "none";
+    footer.style.display = "none";
+    loadMore.style.display = "none";
 
+    while (modal.firstChild)
+      modal.removeChild(modal.firstChild);
 
-  assetImage.src = image;
-  assetName.innerText = name;
-  // assetMetadata.innerText = metadata;
-
-  auctionCard.classList.add("auction-card-modal");
-  attributeContainer.classList.add("auction-attribute-container")
-
-  auctionCard.append(assetName);
-  auctionCard.append(assetImage);
-  auctionCard.append(attributeContainer);
-  // auctionCard.append(assetMetadata);
-
-  modal.append(auctionCard);
-
-  modal.style.display = "block";
-
-  modal.onclick = function () {
-    modal.style.display = "none";
     for (let i = 0; i < otherCards.length; i++) {
-      otherCards.item(i).style.display = "block";
+      otherCards.item(i).style.display = "none";
     }
-    exploreHeader.style.display = "block";
-    searchContainer.style.display = "flex";
-    searchResult.style.display = "flex";
-    footer.style.display = "flex";
-    loadMore.style.display = "block";
-  }
+
+
+    assetImage.src = image;
+    assetName.innerText = name;
+    // assetMetadata.innerText = metadata;
+
+    auctionCard.classList.add("auction-card-modal");
+    attributeContainer.classList.add("auction-attribute-container")
+
+    auctionCard.append(assetName);
+    auctionCard.append(assetImage);
+    auctionCard.append(attributeContainer);
+
+    modal.append(auctionCard);
+
+    modal.style.display = "block";
+
+    modal.onclick = function () {
+      modal.style.display = "none";
+      for (let i = 0; i < otherCards.length; i++) {
+        otherCards.item(i).style.display = "block";
+      }
+      exploreHeader.style.display = "block";
+      searchContainer.style.display = "flex";
+      searchResult.style.display = "flex";
+      footer.style.display = "flex";
+      loadMore.style.display = "block";
+    }
+  });
+
 
 }
 
@@ -637,11 +627,11 @@ async function getMetaDataAll(tokenId) {
 
 async function getMetaDataForPopup(tokenId) {
   await fetch(`https://api.ergoplatform.com/api/v0/assets/${tokenId}/issuingBox`)
-  .then(res => res.json())
-  .then(res => {
-    popupObj = res;
-  })
-  .catch(error => console.log(error));
+    .then(res => res.json())
+    .then(res => {
+      popupObj = res;
+    })
+    .catch(error => console.log(error));
 }
 
 // Get the NFT's metadata by using the ergoplatform explorer API
