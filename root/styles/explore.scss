@@ -165,7 +165,9 @@ button:focus {
 
 .attribute-container {
     display: flex;
-    gap: 2%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
 
     width: 90% !important;
     margin: 1em auto;
@@ -180,6 +182,8 @@ button:focus {
 
     border: 2px $main-colour solid;
     border-radius: 12px;
+
+    max-width: 25%;
 
     font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
 }
@@ -216,6 +220,10 @@ textarea:hover {
     border: 2px $secondary-colour solid;
     box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $secondary-colour;
     // border: 2px grey solid;
+}
+
+@media all and (max-width: 60em) {
+
 }
 
 

@@ -141,7 +141,9 @@ button:focus {
 
 .attribute-container {
   display: flex;
-  gap: 2%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
   width: 90% !important;
   margin: 1em auto;
 }
@@ -154,6 +156,7 @@ button:focus {
   text-shadow: 4px 4px #258ae8;
   border: 2px #f71184 solid;
   border-radius: 12px;
+  max-width: 25%;
   font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
 }
 
