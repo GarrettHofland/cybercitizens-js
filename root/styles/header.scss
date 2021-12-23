@@ -6,7 +6,7 @@ $secondary-hover: #8c1d8c;
 $highlight-colour: #258ae8;
 
 $nav-height: 12vh;
-$mobile-nav-height: 8vh;
+$mobile-nav-height: 6vh;
 $nav-width: 100%;
 $mobile-nav-width: 100vw;
 $header-background-colour: #322554;
@@ -112,9 +112,12 @@ ul {
     }
 }
 
-@media all and (max-width : 40em) {
-       // Header scss
-       nav {
+
+
+@media all and (max-width : 80em) {
+
+    // Header scss
+    nav {
         position: relative;
     }
 
@@ -123,12 +126,11 @@ ul {
         z-index: 2;
         position: absolute;
         right: 1%;
-        top: $mobile-nav-height;
-        top: 10%;
-        bottom: 10%;
-        transform: translate(-5%, -50%);
+        top: 5%;
+        // transform: translate(-5%, -50%);
         transition: ease-out 1s;
-        background-color: red;
+
+        
     }
 
     .hamburger:hover {
@@ -206,6 +208,21 @@ ul {
         color: $main-colour;
         padding: 6px 26px;
         background: transparent;
-        box-shadow:none;
+        box-shadow: none;
+    }
+}
+
+@media all and (max-width : 40em) { 
+    .hamburger {
+        transform: translate(-5%, -50%);
+        right: 0;
+    }
+
+    .nav {
+        height: 8vh;
+    }
+
+    .right {
+        margin-right: 0;
     }
 }

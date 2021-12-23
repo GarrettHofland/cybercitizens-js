@@ -311,7 +311,8 @@ let auctionAddress = `5t19JGogcry9DRipPNcLs4mSnHYXQoqazPDMXXcdMixeH2mkgzMvWXjENs
 let auctionAddresses = [auctionAddress];
 let auctions = [];
 var nftStartIndex = 0;
-var nftEndIndex = 8;
+var nftEndIndex = 12;
+var loadMoreStep = 8;
 let loadMore = document.createElement("button");
 let popupObj;
 loadMore.innerText = "More";
@@ -507,7 +508,7 @@ function buildPage() {
   }
   if (nftEndIndex != auctions.length) {
     nftStartIndex = nftEndIndex;
-    nftEndIndex = nftStartIndex + 8;
+    nftEndIndex = nftStartIndex + loadMoreStep;
 
     container.append(loadMore);
     loadMore.addEventListener('click', loadMoreExplore);

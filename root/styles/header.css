@@ -94,7 +94,7 @@ ul li {
   list-style-type: none;
 }
 
-@media all and (max-width: 40em) {
+@media all and (max-width: 80em) {
   nav {
     position: relative;
   }
@@ -104,12 +104,8 @@ ul li {
     z-index: 2;
     position: absolute;
     right: 1%;
-    top: 8vh;
-    top: 10%;
-    bottom: 10%;
-    transform: translate(-5%, -50%);
+    top: 5%;
     transition: ease-out 1s;
-    background-color: red;
   }
 
   .hamburger:hover .line {
@@ -124,7 +120,7 @@ ul li {
   }
 
   .navMenu {
-    height: 8vh;
+    height: 6vh;
   }
 
   .nav-links {
@@ -159,7 +155,7 @@ ul li {
     pointer-events: all;
     opacity: 1;
     color: white;
-    padding-top: 8vh;
+    padding-top: 6vh;
   }
   .nav-links.open li {
     opacity: 1;
@@ -177,6 +173,20 @@ ul li {
     padding: 6px 26px;
     background: transparent;
     box-shadow: none;
+  }
+}
+@media all and (max-width: 40em) {
+  .hamburger {
+    transform: translate(-5%, -50%);
+    right: 0;
+  }
+
+  .nav {
+    height: 8vh;
+  }
+
+  .right {
+    margin-right: 0;
   }
 }
 
