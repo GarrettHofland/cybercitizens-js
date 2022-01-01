@@ -40,12 +40,12 @@ if (document.querySelector("#explorer")) {
 }
 
 if (document.querySelector("#game")) {
-    // document.getElementById("game").disabled = "true";
-    // document.getElementById("game").style.color = "black";
-    // document.getElementById("game").style.backgroundColor = "grey";
-        document.querySelector("#game").onclick = function (event) {
-        window.location = "pages/cyberdinos-game.html";
-    }
+    document.getElementById("game").disabled = "true";
+    document.getElementById("game").style.color = "black";
+    document.getElementById("game").style.backgroundColor = "grey";
+    //     document.querySelector("#game").onclick = function (event) {
+    //     window.location = "pages/cyberdinos-game.html";
+    // }
 }
 
 if (exit && clear && finish && wallet) {
