@@ -10,9 +10,11 @@ const finish = document.getElementById("finish");
 const walletInput = document.getElementById("user-address");
 const scrollUp = document.getElementById("scrollTop");
 
-scrollUp.addEventListener('click', () => {
-    window.scrollTo(0,0);
-});
+if(scrollUp) {
+    scrollUp.addEventListener('click', () => {
+        window.scrollTo(0,0);
+    });
+}
 
 const faders = document.querySelectorAll(".fade-in");
 

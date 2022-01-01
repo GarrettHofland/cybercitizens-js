@@ -504,7 +504,7 @@ function buildPage() {
 
     // console.log(auctions[i]);
     assetImage.src = auctions[i].image;
-    assetName.innerText = auctions[i].name;
+    assetName.innerText = auctions[i].name.slice(12, auctions[i].name.length - 1);
 
     auctionCard.classList.add("auction-card");
     auctionCard.classList.add("popupNFT" + i);
@@ -585,6 +585,7 @@ function showNFTModal(image, name, tokenId) {
     auctionCard.classList.add("auction-card-modal");
     attributeContainer.classList.add("auction-attribute-container")
 
+    console.log(assetName);
     auctionCard.append(assetName);
     auctionCard.append(assetImage);
     auctionCard.append(attributeContainer);
