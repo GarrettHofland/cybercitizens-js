@@ -1,0 +1,264 @@
+/* Main Styling */
+
+:root {
+    --yellow: #F7FC19;
+    --pink: #EE2DFF;
+    --blue: #0B0029;
+    --bg: var(--blue);
+
+    --red: #FF0000;
+    --purple: #811CB0;
+    --teal: #2fa388;
+    --blue-purple: #2f4aa3;
+    --light-red: #a32f4a;
+    --dark-yellow: #a3882f;
+    --black: #000000;
+    --white: #FFFFFF;
+    --grey: #92a5ce;
+    --bg-header: rgba(46, 42, 59, .90);
+    --nav-hover: var(--teal);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white)
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    color: var(--white);
+    font-family: alaska, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    overflow-x: hidden;
+
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    word-wrap: break-word;
+
+    background-color: var(--bg);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    background-color: var(--bg-header);
+    width: 100vw;
+
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+}
+
+.nav-links {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.25rem;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+}
+
+.logo {
+    grid-column: 1 / 2;
+    cursor: initial;
+    padding-left: 1em;
+}
+
+nav {
+    grid-column: 3 / 5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2em;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav a {
+    margin-left: 3em;
+    margin-bottom: 0;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--nav-hover);
+}
+
+nav a::before{
+    content: '';
+    display: block;
+    height: 5px;
+    background: var(--nav-hover);
+    position: absolute;
+    top: -1em;
+    left: 0;
+    right: 0;
+
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+}
+
+nav a:hover::before {
+    transform: scale(1, 1);
+}
+
+.fade-in {
+    opacity: 0;
+    transition: 250ms ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}
+
+.s1 {
+    min-height: 100vh;
+    background-color: var(--black);
+}
+
+@media all and (max-width : 60em) {
+    header {
+        display: block;
+        text-align: center;
+        z-index: 999;
+        min-width: 10vh;
+    }
+
+    .logo {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        font-size: 2rem;
+    }
+
+    /* Look for any nav as a preceding sibling */
+    .nav-toggle:checked ~ nav {
+        transform: scale(1, 1);
+    }
+
+    .nav-toggle:checked ~ nav .nav-links li a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 350ms;
+    }
+    
+    .nav-toggle-label {
+        position: absolute;
+        top: 0;
+        left:0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 1em;
+    }
+
+    /* Create hamburger */
+    .nav-toggle-label>span,
+    .nav-toggle-label>span::before,
+    .nav-toggle-label>span::after {
+        display: block;
+        background: var(--white);
+        height: 2px;
+        width: 2em;
+        border-radius: 2px;
+        position: relative;
+    }
+
+    /* Make sure the pseudo-elements have content so they display */
+    .nav-toggle-label>span::before,
+    .nav-toggle-label>span::after {
+        content: '';
+        position: absolute;
+    }
+
+    /* Move the before pseudo-element down */
+    .nav-toggle-label>span::before {
+        bottom: 7px;
+    }
+
+    /* Move the after pseudo-element up */
+    .nav-toggle-label>span::after {
+        top: 7px;
+    }
+
+    nav {
+        position: absolute;
+        text-align: left;
+        top: 100%;
+        left: 0;
+        background-color: var(--bg-header);
+
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: transform 400ms ease-in-out;
+    }
+    
+    nav ul {
+        display: block;
+    }
+
+    nav a {
+        margin-left: 0;
+    }
+
+    nav a::before {
+        display: none;
+    }
+
+    .nav-links {
+        padding-top: 1em;
+        width: 100vw;
+        border-bottom: 2px solid var(--grey);
+    }
+
+    .nav-links>li {
+        margin-bottom: 1em;
+        margin-left: 1em;
+    }
+
+    .nav-links>li>a {
+        opacity: 0;
+        transition: opacity 100ms ease-in-out ;
+    }
+
+    .nav-links>li>a:hover {
+        color:  var(--nav-hover);
+    }
+}
+
+@media all and (max-width : 40em) {
+    .nav-links {
+        font-size: 1rem;
+    }
+}
