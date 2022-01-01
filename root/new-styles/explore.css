@@ -1,0 +1,42 @@
+.explore-section-header {
+    padding-top: 8rem;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    margin: 0 auto;
+    gap: 2em;
+}
+
+.token-search, #searchButton {
+    font-size: 1.5rem;
+}
+
+.token-search {
+    border: 2px solid var(--pink);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--yellow);
+    font-family: pixelFont;
+}
+
+#searchButton {
+    height: 4vh;
+    max-width: 20%;
+    margin: 0 auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: transparent;
+    color: var(--yellow);
+    border: 2px solid var(--pink);
+    border-radius: 12px;
+    font-family: pixelFont;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    color: var(--pink);
+}
+
