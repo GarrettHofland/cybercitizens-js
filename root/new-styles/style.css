@@ -383,6 +383,80 @@ li h4 {
     border: none;
 }
 
+#ergopixel-img {
+    border: 3px solid var(--pink);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-container a {
+    border: none;
+}
+
+.footer-logo {
+    width: 10%;
+    margin-top: 1em;
+    padding-bottom: 1em;
+}
+
+.footer-logo-container {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--pink);
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.svg-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.svg-container a {
+    width: 50%;
+    text-align: center;
+}
+
+.discord, .twitter {
+    max-width: 50%;
+}
+
+.footer-text {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.svg-container {
+    justify-content: center;
+    margin: auto auto;
+    min-width: 50%;
+}
+
+.svg-container a {
+    margin: 0;
+    gap: 0;
+}
+
+.svg-container a img {
+    padding-top: 1em;
+    width: 40%;
+}
+
+.footer-logo {
+    width: 10%;
+}
+
+.footer-text {
+    padding: 1em;
+}
+
+.twitter, .discord {
+    filter: invert(98%) sepia(95%) saturate(6%) hue-rotate(306deg) brightness(103%) contrast(100%);
+}
+
 @media all and (max-width : 60em) {
     header {
         display: block;
@@ -559,6 +633,10 @@ li h4 {
     .team-column {
         min-width: 90%;
     }
+
+.footer-logo {
+    width: 40%;
+}
 }
 
 @media all and (max-width : 40em) {
@@ -580,5 +658,13 @@ li h4 {
 
     .faq-answer {
         word-wrap: break-word;
+    }
+
+    .footer-logo {
+        width: 40%;
+    }
+
+    .footer-text {
+        font-size: 1rem;
     }
 }
