@@ -1,4 +1,3 @@
-const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li');
 const menu = document.getElementsByClassName("navLinks");
@@ -10,6 +9,32 @@ const clear = document.getElementById("clear");
 const finish = document.getElementById("finish");
 const walletInput = document.getElementById("user-address");
 
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -200px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver( function(
+    entries,
+    displayOnScroll
+) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add("appear");
+            appearOnScroll.unobserve(entry.target);
+        }
+    });
+}, 
+appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+
 if (finish) {
     finish.disabled = true;
     finish.style.backgroundColor = "grey";
@@ -19,11 +44,7 @@ var images = ["assets/cybercitizens/0.png", "assets/cybercitizens/3.png", "asset
 var x = 0;
 
 if (document.querySelector("#ergopixel-img")) {
-    setInterval(displayNextImage, 3000);
-}
-
-document.querySelector(".up-button").onclick = function (event) {
-    window.scrollTo(0, 0);
+    setInterval(displayNextImage, 1000);
 }
 
 if (document.querySelector(".address")) {
@@ -55,17 +76,8 @@ if (exit && clear && finish && wallet) {
     walletInput.addEventListener('change', validateWalletAddress);
 }
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle("open");
-    links.forEach(link => {
-        link.classList.toggle("fade");
-    });
-    links.forEach(link => {
-        link.addEventListener('click', exitMenuOnLinkClick);
-    });
-});
-
 if (walletButton) {
+    console.log("Wallet button exists");
     walletButton.addEventListener('click', () => {
         console.log(getWalletAddress());
         if (getWalletAddress() != null) {

@@ -19,7 +19,7 @@
     --black: #000000;
     --white: #FFFFFF;
     --grey: #92a5ce;
-    --bg-header: rgba(46, 42, 59, .90);
+    --bg-header: rgba(0, 0, 0, 0.9);
     --nav-hover: var(--pink);
 
     --step-0: clamp(1.31rem, 1.24rem + 0.37vw, 1.50rem);
@@ -414,7 +414,7 @@ li h4 {
     .nav-toggle-label>span::before,
     .nav-toggle-label>span::after {
         display: block;
-        background: var(--white);
+        background: var(--pink);
         height: 2px;
         width: 2em;
         border-radius: 2px;
@@ -466,7 +466,7 @@ li h4 {
     .nav-links {
         padding-top: 1em;
         width: 100vw;
-        border-bottom: 2px solid var(--grey);
+        border-bottom: 2px solid var(--pink);
     }
 
     .nav-links>li {
