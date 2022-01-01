@@ -375,6 +375,10 @@ li h4 {
     margin-bottom: 1em;
 }
 
+.faq-links {
+    border: none;
+}
+
 @media all and (max-width : 60em) {
     header {
         display: block;
