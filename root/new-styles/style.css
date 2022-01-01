@@ -147,18 +147,24 @@ nav a:hover::before {
 
 h2 {
     text-align: center;
+    text-transform: uppercase;
+    color: var(--pink);
 }
 
 section {
-    min-height: 50vh;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 4px solid var(--pink);
 }
 
 .s1 {
-    display: flex;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
-    min-height: 100vh;
     background-color: var(--black);
 }
 
@@ -181,6 +187,15 @@ section {
     flex-direction: column;
     max-width: 40%;
     margin: 0 auto;
+}
+
+.container-mint h3 {
+    color: var(--yellow);
+    margin-bottom: 0;
+}
+
+.container-mint p {
+    margin-top: 0.5em;
 }
 
 .container-mint h2 {
@@ -217,6 +232,10 @@ section {
 
 }
 
+.roadmap-title {
+    color: var(--pink);
+}
+
 ul {
     padding: 0;
 }
@@ -248,16 +267,39 @@ li h4 {
 }
 
 .team-member-name {
-
+    text-transform: uppercase;
+    color: var(--yellow);
 }
 
 .team-member-description {
-    
+        text-transform: uppercase;
 }
 
 .team-member-image {
     max-width: 60%;
     border-radius: 12px;
+}
+
+.flex-container-faq {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    gap: 0;
+}
+
+.faq-header, .faq-answer {
+    text-align: center;
+    margin: 0;
+}
+
+.faq-header {
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 0.25rem;
+}
+
+.faq-answer {
+    margin-bottom: 1em;
 }
 
 @media all and (max-width : 60em) {
