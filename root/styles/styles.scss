@@ -616,10 +616,10 @@ span {
 
 // Our team css
 .team-container>* {
-    flex-basis: 100%;
+    flex: 1 1 100%;
 }
 
-.team-container {
+.container-team {
     width: 100%;
     margin: 0 auto;
     display: flex;

@@ -34,7 +34,8 @@ button:focus {
 
 a {
     text-decoration: none;
-    color: var(--white)
+    color: var(--white);
+    text-transform: uppercase;
 }
 
 html {
@@ -144,9 +145,119 @@ nav a:hover::before {
     opacity: 1;
 }
 
+h2 {
+    text-align: center;
+}
+
+section {
+    min-height: 50vh;
+}
+
 .s1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     min-height: 100vh;
     background-color: var(--black);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: capitalize;
+    padding-bottom: 4em;
+}
+
+.flex-container-mint {
+    display: flex;
+    max-width: 90%;
+    margin: 6em auto;
+}
+
+.container-mint {
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    margin: 0 auto;
+}
+
+.container-mint h2 {
+    text-align: left;
+}
+
+.container-mint-img {
+    gap: 1em;
+}
+
+.container-mint-img a {
+    text-align: center;
+}
+
+.container-mint img {
+    width: auto;
+    height: auto;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.flex-container-roadmap {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    gap: 3em;
+}
+
+.container-r1, .container-r2 {
+    flex-basis: 50%;
+}
+
+.container-r1 h3, .container-r2 h3 {
+
+}
+
+ul {
+    padding: 0;
+}
+
+.container-r1 li, .container-r2 li {
+    list-style-type: none;
+}
+
+li h4 {
+    text-transform: uppercase;
+    color: var(--yellow);
+}
+
+.flex-container-team > * {
+    flex-basis: 20%;
+}
+
+.flex-container-team {
+    display: flex;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+}
+
+.team-column {
+    max-width: 20%;
+    text-align: center;
+}
+
+.team-member-name {
+
+}
+
+.team-member-description {
+    
+}
+
+.team-member-image {
+    max-width: 60%;
+    border-radius: 12px;
 }
 
 @media all and (max-width : 60em) {
