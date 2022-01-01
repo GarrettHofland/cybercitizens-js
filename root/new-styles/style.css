@@ -145,10 +145,29 @@ nav a:hover::before {
     opacity: 1;
 }
 
+h1 {
+    font-size: clamp(1rem, 2vw + 1rem, 2rem);
+    line-height: 1;
+    padding: 2rem;
+}
+
+.mint-title {
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
+}
+
 h2 {
+    font-size: clamp(1rem, 2vw + 1rem, 4rem);
     text-align: center;
     text-transform: uppercase;
     color: var(--pink);
+}
+
+h3 {
+    font-size: clamp(1rem, 2vw + 1rem, 4rem);
+}
+
+h4 {
+    font-size: clamp(1rem, 1vw + 1rem, 4rem);
 }
 
 section {
@@ -281,8 +300,10 @@ li h4 {
 }
 
 .team-member-name {
+    font-size: clamp(1rem, 1vw + 1rem, 4rem);
     text-transform: uppercase;
     color: var(--yellow);
+    margin-bottom: 2%;
 }
 
 .team-member-description {
@@ -312,6 +333,7 @@ li h4 {
     text-transform: uppercase;
     color: var(--yellow);
     margin-bottom: 0.25rem;
+    font-size: clamp(1rem, 1vw + 1rem, 4rem);
 }
 
 .faq-answer {
