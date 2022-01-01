@@ -108,8 +108,12 @@ header {
 .logo {
     grid-column: 1 / 2;
     cursor: initial;
-    padding-left: 1em;
-    margin: 0;
+    padding: 1em;
+}
+
+.logo img {
+    max-width: 40%;
+    cursor: pointer;
 }
 
 nav {

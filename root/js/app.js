@@ -8,6 +8,11 @@ const exit = document.getElementById("exit");
 const clear = document.getElementById("clear");
 const finish = document.getElementById("finish");
 const walletInput = document.getElementById("user-address");
+const scrollUp = document.getElementById("scrollTop");
+
+scrollUp.addEventListener('click', () => {
+    window.scrollTo(0,0);
+});
 
 const faders = document.querySelectorAll(".fade-in");
 
@@ -40,7 +45,15 @@ if (finish) {
     finish.style.backgroundColor = "grey";
 }
 
-var images = ["assets/cybercitizens/0.png", "assets/cybercitizens/3.png", "assets/cybercitizens/590.png", "assets/cybercitizens/1873.png"];
+var images = ["assets/cybercitizens/0.png",
+ "assets/cybercitizens/3.png",
+ "assets/cybercitizens/590.png", 
+ "assets/cybercitizens/1873.png",
+ "assets/cybercitizens/1852.png",
+ "assets/cybercitizens/3.png",
+ "assets/cybercitizens/7.png",
+ "assets/cybercitizens/590.png",
+];
 var x = 0;
 
 if (document.querySelector("#ergopixel-img")) {
