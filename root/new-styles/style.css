@@ -326,11 +326,11 @@ ul {
 li h4 {
     text-transform: uppercase;
     color: var(--yellow);
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 li p {
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 .flex-container-team>* {
@@ -386,7 +386,7 @@ li p {
     text-transform: uppercase;
     color: var(--yellow);
     margin-bottom: 0.25rem;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .faq-answer {
