@@ -20,13 +20,30 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="../index-remake.html">Home</a></li>
-                <li><a href="#wallet">Wallet</a></li>
+                <li><a id="wallet">Wallet</a></li>
             </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">
             <span></span>
         </label>
     </header>
+    <!-- Wallet Start -->
+    <div id="wallet-connector">
+        <p>To use your wallet on CyberCitizens, please copy your receiving address into the input below and press enter.
+        </p>
+        <p>Your recieving address will be used for prizes, rewards and airdrops. In the future, your address will be
+            able to
+            be used to place bids on our auctions.</p>
+        <p id="wallet-address-text">Address</p>
+        <input type="text" name="address" id="user-address" class="invalid">
+        <p id="wallet-output">Invalid wallet address.</p>
+        <div id="wallet-buttons">
+            <button class="wallet-button" id="clear">Clear</button>
+            <button class="wallet-button" id="exit">Exit</button>
+            <button class="wallet-button" id="finish">Finish</button>
+        </div>
+    </div>
+    <!-- Wallet End -->
     <main>
         <div class="explore-content">
             <h2 id="explore-header" class="section-header explore-section-header">GEN2 Search</h2>
