@@ -59,7 +59,7 @@ var images = ["assets/cybercitizens/0.png",
 var x = 0;
 
 if (document.querySelector("#ergopixel-img")) {
-    setInterval(displayNextImage, 1000);
+    setInterval(displayNextImage, 500);
 }
 
 if (document.querySelector(".address")) {
