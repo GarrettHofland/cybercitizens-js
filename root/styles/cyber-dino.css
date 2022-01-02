@@ -1,3 +1,7 @@
+@font-face {
+  font-family: pixelFont;
+  src: url("../assets/fonts/Mechfire_Bold.otf") format("opentype");
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,7 +26,7 @@ button:focus {
 
 #loading-message {
   color: white;
-  text-shadow: 2px 2px #f71184;
+  text-shadow: 2px 2px #0B0029;
   font-size: clamp(2rem, 3rem + 2vw, 4rem);
   max-width: 90%;
   margin: 2em auto;
@@ -32,6 +36,8 @@ button:focus {
   text-align: center;
   margin: 1em auto;
   margin-bottom: 0;
+  font-size: 6rem;
+  text-shadow: 2px 2px #2f4aa3;
   max-width: 90% !important;
 }
 
@@ -39,7 +45,7 @@ canvas {
   display: block;
   max-width: 800px !important;
   margin: 0 auto;
-  border: 1px #f71184 solid;
+  border: 1px #0B0029 solid;
   border-radius: 12px;
 }
 
@@ -52,7 +58,7 @@ canvas {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #f71184;
+  color: #0B0029;
   text-shadow: 2px 2px #258ae8;
   min-width: 40% !important;
   display: flex;
@@ -61,7 +67,9 @@ canvas {
   margin: 0 auto;
   padding: 1em;
   border-radius: 28px;
-  background: #231742;
+  background: #0B0029;
+  border: 2px solid #EE2DFF;
+  font-family: pixelFont;
 }
 
 #leaderboard-header {
@@ -71,25 +79,28 @@ canvas {
 .leaderboard-button {
   border: none;
   border-radius: 18px;
-  background: #f71184;
+  background: #0B0029;
   font-weight: 600;
   font-size: 1.5rem;
-  box-shadow: 2px 2px 1px black;
+  border: 2px solid #EE2DFF;
   transition: 1s ease-out;
   min-width: 50%;
   padding: 1%;
   margin: 2% auto;
+  color: #F7FC19;
+  text-shadow: 2px 2px #2f4aa3;
+  font-family: pixelFont;
 }
 
 .leaderboard-button:hover {
-  box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #f711f7;
-  color: white;
-  text-shadow: 2px 2px #f71184;
+  color: #EE2DFF;
+  text-shadow: 2px 2px #0B0029;
 }
 
 input[type=text], textarea {
-  background-color: #231742;
-  color: #f71184;
+  background-color: #0B0029;
+  color: #F7FC19;
+  text-shadow: 2px 2px #2f4aa3;
   border-radius: 18px;
   width: 50%;
   font-size: 1.5rem;
@@ -98,7 +109,7 @@ input[type=text], textarea {
 }
 
 input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
-  border: 2px #f711f7 solid;
+  border: 2px #EE2DFF solid;
 }
 
 .row {
@@ -108,19 +119,22 @@ input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
 #leaderboard-toggle {
   border: none;
   border-radius: 18px;
-  background: #f71184;
+  font-size: 1.125rem;
+  background: #0B0029;
   font-weight: 600;
   font-size: 1.5rem;
-  box-shadow: 2px 2px 1px black;
+  border: 2px solid #EE2DFF;
+  color: #F7FC19;
+  text-shadow: 2px 2px #2f4aa3;
   transition: 1s ease-out;
   max-width: 50%;
-  padding: 1em;
+  padding: 1%;
   margin: 2% auto;
+  font-family: pixelFont;
 }
 
 #leaderboard-toggle:hover {
-  box-shadow: 0 4px 8px 0 #f71184, 0 6px 20px 0 #f711f7;
-  color: white;
+  color: #EE2DFF;
 }
 
 .footer-image {
@@ -130,6 +144,11 @@ input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
 
 button {
   color: white;
+}
+
+.name {
+  color: #F7FC19;
+  text-shadow: 1px 1px #2f4aa3;
 }
 
 /*# sourceMappingURL=cyber-dino.css.map */

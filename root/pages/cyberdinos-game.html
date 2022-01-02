@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../new-styles/style.css">
     <link rel="stylesheet" href="../styles/cyber-dino.css">
-    <link rel="stylesheet" href="../styles/header.css">
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
     <title>CyberDinos</title>
     <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
@@ -17,26 +15,37 @@
 
 <body>
     <header>
-        <div class="navMenu">
-            <div class="left">
-                <div class="logo-container">
-                    <img class="logo" src="../assets/logo-transparent-bg.png" />
-                </div>
-            </div>
-            <div class="right">
-                <nav>
-                    <div on-click="toggleOpen()" class="hamburger">
-                        <div class="line">&nbsp;</div>
-                        <div class="line">&nbsp;</div>
-                        <div class="line">&nbsp;</div>
-                    </div>
-                    <ul class="nav-links">
-                        <li id="gameToHome"><a class="link-button-header odd-button">Home</a></li>
-                    </ul>
-                </nav>
+        <div class="logo">
+            <img id="explorerToHome" id="scrollTop" src="../assets/logo-name.png" alt="">
+        </div>
+        <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index-remake.html">Home</a></li>
+                <li><a id="wallet">Wallet</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>
+        <!-- Wallet Start -->
+        <div id="wallet-connector">
+            <p>To use your wallet on CyberCitizens, please copy your receiving address into the input below and press enter.
+            </p>
+            <p>Your recieving address will be used for prizes, rewards and airdrops. In the future, your address will be
+                able to
+                be used to place bids on our auctions.</p>
+            <p id="wallet-address-text">Address</p>
+            <input type="text" name="address" id="user-address" class="invalid">
+            <p id="wallet-output">Invalid wallet address.</p>
+            <div id="wallet-buttons">
+                <button class="wallet-button" id="clear">Clear</button>
+                <button class="wallet-button" id="exit">Exit</button>
+                <button class="wallet-button" id="finish">Finish</button>
             </div>
         </div>
-    </header>
+        <!-- Wallet End -->
     <main>
         <div id="dino-game">
             <h1 class="main-header">CyberDino</h1>

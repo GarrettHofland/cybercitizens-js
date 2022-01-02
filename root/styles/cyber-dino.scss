@@ -1,10 +1,26 @@
-$background-colour: #231742;
-$main-colour: #f71184;
-$main-hover: #a02161;
-$secondary-colour: #f711f7;
+$background-colour: #0B0029;
+$main-colour: #0B0029;
+$pink: #EE2DFF;
+$yellow: #F7FC19;
+$blue: #2f4aa3;
 $secondary-hover: #8c1d8c;
 $highlight-colour: #258ae8;
 $header-background-colour: #322554;
+$border-colour: #EE2DFF;
+
+// --yellow: #F7FC19;
+// --pink: #EE2DFF;
+// --blue: #0B0029;
+// --bg: var(--blue);
+
+// --red: #FF0000;
+// --purple: #811CB0;
+// --teal: #2fa388;
+// --blue-purple: #2f4aa3;
+@font-face {
+    font-family: pixelFont;
+    src: url("../assets/fonts/Mechfire_Bold.otf") format("opentype");
+}
 
 * {
     box-sizing: border-box;
@@ -42,9 +58,11 @@ button:focus {
 
 .main-header {
     text-align: center;
-
     margin: 1em auto;
     margin-bottom: 0;
+
+    font-size: 6rem;
+    text-shadow: 2px 2px $blue;
 
     max-width: 90% !important;
 }
@@ -83,6 +101,10 @@ canvas {
 
     border-radius: 28px;
     background: $background-colour;
+
+    border: 2px solid $pink;
+
+    font-family: pixelFont;
 }
 
 #leaderboard-header {
@@ -98,25 +120,30 @@ canvas {
     font-weight: 600;
     font-size: clamp(1rem, 1.5rem, 2rem);
 
-    box-shadow: 2px 2px 1px black;
+    border: 2px solid $pink;
 
     transition: 1s ease-out;
 
     min-width: 50%;
     padding: 1%;
     margin: 2% auto;
+
+    color: $yellow;
+    text-shadow: 2px 2px $blue;
+
+    font-family: pixelFont;
 }
 
 
 .leaderboard-button:hover {
-    box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $secondary-colour;
-    color: white;
+    color: $pink;
     text-shadow: 2px 2px $main-colour;
 }
 
 input[type="text"], textarea {
     background-color: $background-colour;
-    color: $main-colour;
+    color: $yellow;
+    text-shadow: 2px 2px $blue;
 
     border-radius: 18px;
 
@@ -129,7 +156,7 @@ input[type="text"], textarea {
 }
 
 input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hover {
-    border: 2px $secondary-colour solid;
+    border: 2px $pink solid;
 }
 
 .row {
@@ -139,24 +166,30 @@ input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hov
 #leaderboard-toggle {
     border: none;
     border-radius: 18px;
+    font-size: 1.125rem;
+
 
     background: $main-colour;
     
     font-weight: 600;
     font-size: clamp(1rem, 1.5rem, 2rem);
 
-    box-shadow: 2px 2px 1px black;
+    border: 2px solid $border-colour;
+
+    color: $yellow;
+    text-shadow: 2px 2px $blue;
 
     transition: 1s ease-out;
 
     max-width: 50%;
-    padding: 1em;
+    padding: 1%;
     margin: 2% auto;
+
+    font-family: pixelFont;
 }
 
 #leaderboard-toggle:hover {
-    box-shadow: 0 4px 8px 0 $main-colour, 0 6px 20px 0 $secondary-colour;
-    color: white;
+    color: $pink;
 }
 
 .footer-image {
@@ -166,4 +199,9 @@ input[type="text"]:focus, textarea:focus, input[type="text"]:hover, textarea:hov
 
 button {
     color: white;
+}
+
+.name {
+    color: $yellow;
+    text-shadow: 1px 1px $blue;
 }

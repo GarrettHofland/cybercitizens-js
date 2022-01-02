@@ -184,7 +184,8 @@ h1 {
 .address-p2k {
     font-size: 1rem;
     max-width: 90%;
-    word-wrap: break-word
+    word-wrap: break-word;
+    cursor: pointer;
 }
 
 h2 {
@@ -474,6 +475,10 @@ li p {
     filter: invert(98%) sepia(95%) saturate(6%) hue-rotate(306deg) brightness(103%) contrast(100%);
 }
 
+#wallet {
+    cursor: pointer;
+}
+
 #wallet-connector {
     position: fixed;
     top: 50%;
@@ -580,7 +585,7 @@ li #dino-image {
 #dino-image {
     width: auto;
     height: auto;
-    max-width: 30px;
+    max-width: 25px;
     max-height: 20px;
 }
 
