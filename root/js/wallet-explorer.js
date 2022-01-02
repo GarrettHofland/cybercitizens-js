@@ -504,7 +504,7 @@ function buildPage() {
 
     // console.log(auctions[i]);
     assetImage.src = auctions[i].image;
-    assetName.innerText = auctions[i].name.slice(12, auctions[i].name.length - 1);
+    assetName.innerText = auctions[i].name;
 
     auctionCard.classList.add("auction-card");
     auctionCard.classList.add("popupNFT" + i);

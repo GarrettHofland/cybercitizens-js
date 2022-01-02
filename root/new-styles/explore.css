@@ -245,13 +245,34 @@ h2 {
     color: var(--pink);
 }
 
+.auction-card-modal h2{
+    color: var(--yellow);
+    text-shadow: 1px 1px #258ae8;
+}
+
+.auction-card-modal .attribute p{
+    color: var(--yellow);
+    text-shadow: 1px 1px #258ae8;
+}
+
+.auction-card h2 {
+    font-size: 1.25vw;
+    color: var(--yellow);
+    text-shadow: 1px 1px #258ae8;
+}
+
+.attribute p {
+    font-size: 1.25vw;
+    word-wrap: break-word;
+}
+
 @media all and (max-width : 60em) {
     .search-container {
         width: 90%;
     }
 
     .auction-card h2 {
-        font-size: 1.5rem;
+        font-size: 1.5vw;
     }
 
     #searchButton {
@@ -271,11 +292,14 @@ h2 {
         max-width: 90%;
         width: 90%;
     }
+
+
 }
 
 @media all and (max-width : 40em) {
     .auction-card h2 {
-        font-size: 1rem;
+        font-size: 4vw;
+        text-align: center;
     }
 
     #searchButton {
@@ -284,5 +308,20 @@ h2 {
 
     .button {
         width: 80%;
+    }   
+
+    .nft-container > * {
+        flex: 1 1 100%;
+    }
+    
+    .nft-container {
+        margin: 0 auto;
+    }
+
+    .auction-card {
+        margin: 0 auto;
+        width: 90%;
+        max-width: 100%;
+        min-width: 50%;
     }
 }
