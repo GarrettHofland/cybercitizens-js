@@ -571,11 +571,16 @@ textarea:hover {
     display: none;
 }
 
-#dino-desktop {
+li #dino-image {
+    flex-grow: 0;
+    flex-basis: 10%;
+}
+
+#dino-image {
     width: auto;
     height: auto;
-    max-width: 15%;
-    max-height: 15%;
+    max-width: 30px;
+    max-height: 20px;
 }
 
 @media all and (max-width : 60em) {
