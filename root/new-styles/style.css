@@ -217,7 +217,16 @@ section {
     gap: 3rem;
     align-items: center;
 
-    border-bottom: 4px solid var(--pink);
+    /* border-glow-here */
+    background: hsla(295, 100%, 59%, 1);
+
+background: linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1 );
 }
 
 section h2 {
@@ -242,6 +251,8 @@ section h2 {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+
+    
 }
 
 .flex-container {
