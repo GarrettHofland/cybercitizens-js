@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="new-styles/style.css">
     <title>CyberCitizens</title>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -16,7 +18,8 @@
         <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
         <nav>
             <ul class="nav-links">
-                <li><a href="#dino">dino</a></li>
+                <li><a id="dino-desktop" href="#dino"><img id="dino-image" src="./assets/dino-yellow.png" alt="dino image"></a></li>
+                <li><a id="dino-mobile" href="#dino">Dino</a></li>
                 <li><a href="#mint">Mint</a></li>
                 <li><a href="#roadmap">Roadmap</a></li>
                 <li><a href="#team">Team</a></li>
@@ -28,6 +31,23 @@
             <span></span>
         </label>
     </header>
+    <!-- Wallet Start -->
+    <div id="wallet-connector">
+        <p>To use your wallet on CyberCitizens, please copy your receiving address into the input below and press enter.
+        </p>
+        <p>Your recieving address will be used for prizes, rewards and airdrops. In the future, your address will be
+            able to
+            be used to place bids on our auctions.</p>
+        <p id="wallet-address-text">Address</p>
+        <input type="text" name="address" id="user-address" class="invalid">
+        <p id="wallet-output">Invalid wallet address.</p>
+        <div id="wallet-buttons">
+            <button class="wallet-button" id="clear">Clear</button>
+            <button class="wallet-button" id="exit">Exit</button>
+            <button class="wallet-button" id="finish">Finish</button>
+        </div>
+    </div>
+    <!-- Wallet End -->
     <main>
         <section class="s1 section fade-in">
             <div class="flex-container">
@@ -68,20 +88,23 @@
                         </li>
                         <li>
                             <h4>dino mini game</h4>
-                            <p>Our website will also have a game based on a collab we have been working on! More details will
+                            <p>Our website will also have a game based on a collab we have been working on! More details
+                                will
                                 be released shortly!
                             </p>
                         </li>
                         <li>
                             <h4>community wallet</h4>
-                            <p>After the CyberCitizens drop concludes, a community wallet will be created and funded, the purpose of this
+                            <p>After the CyberCitizens drop concludes, a community wallet will be created and funded,
+                                the purpose of this
                                 wallet is solely for giveaways and the allocation of funds to activities we host.
                             </p>
                         </li>
                         <li>
                             <h4>website update</h4>
-                            <p>New, custom built website to support a wider variety of functionality and integrations. 
-                                Yoroi wallet integration is also being developed to place bids and view auctions from the site.
+                            <p>New, custom built website to support a wider variety of functionality and integrations.
+                                Yoroi wallet integration is also being developed to place bids and view auctions from
+                                the site.
                                 An on-site marketplace is being worked on as well.
                             </p>
                         </li>
@@ -102,68 +125,73 @@
             <h2>TEAM</h2>
             <div class="flex-container-team">
                 <div class="team-column">
-                  <img class="team-member-image" src="assets/cybercitizens/346.png">
-                  <h3 class="team-member-name">Mr. Pixel</h3>
-                  <p class="team-member-description">Pixel Artist, Project Lead</p>
+                    <img class="team-member-image" src="assets/cybercitizens/346.png">
+                    <h3 class="team-member-name">Mr. Pixel</h3>
+                    <p class="team-member-description">Pixel Artist, Project Lead</p>
                 </div>
                 <div class="team-column">
-                  <img class="team-member-image" src="assets/cybercitizens/374.png">
-                  <h3 class="team-member-name">BREEHZE</h3>
-                  <p class="team-member-description">Programmer, Generation of NFTs</p>
+                    <img class="team-member-image" src="assets/cybercitizens/374.png">
+                    <h3 class="team-member-name">BREEHZE</h3>
+                    <p class="team-member-description">Programmer, Generation of NFTs</p>
                 </div>
                 <div class="team-column">
-                  <img class="team-member-image" src="assets/cybercitizens/1962.png">
-                  <h3 class="team-member-name">CURSE</h3>
-                  <p class="team-member-description">Community Manager, Administrative Duties</p>
+                    <img class="team-member-image" src="assets/cybercitizens/1962.png">
+                    <h3 class="team-member-name">CURSE</h3>
+                    <p class="team-member-description">Community Manager, Administrative Duties</p>
                 </div>
                 <div class="team-column">
-                  <img class="team-member-image" src="assets/cybercitizens/1852.png">
-                  <h3 class="team-member-name">Chicken</h3>
-                  <p class="team-member-description">Website developer</p>
+                    <img class="team-member-image" src="assets/cybercitizens/1852.png">
+                    <h3 class="team-member-name">Chicken</h3>
+                    <p class="team-member-description">Website developer</p>
                 </div>
                 <div class="team-column">
-                  <img class="team-member-image" src="assets/cybercitizens/1881.png">
-                  <h3 class="team-member-name">Kuku</h3>
-                  <p class="team-member-description">Game Developer</p>
+                    <img class="team-member-image" src="assets/cybercitizens/1881.png">
+                    <h3 class="team-member-name">Kuku</h3>
+                    <p class="team-member-description">Game Developer</p>
                 </div>
-              </div>
+            </div>
         </section>
         <section class="s5 section fade-in" id="faq">
             <h2>F.A.Q</h2>
             <div class="flex-container-faq">
-            <h3 class="faq-header">1.) What are cybercitizens?</h3>
-            <p class="faq-answer">
-              CyberCitizens are 2080 unique, randomly generated pixel and cartoon nfts living on the ergo blockchain.
-              Each of the cybercitizens have attributes that make them unique according to a defined rarity system.
-            </p>
-            <h3 class="faq-header">2.) How do I know my NFT is unique?</h3>
-            <p class="faq-answer">
-              2080 cybercitizens were minted, each having different attributes and varying in rarity.
-              A full list of the traits and rarities your citizen has can be found <a
-              class="faq-links"  href="pages/explore.html"><span>here.</span></a>
-            </p>
-            <h3 class="faq-header">3.) How can I mint cybercitizen?</h3>
-            <p class="faq-answer">
-              Your citizen can be minted on this website.
-            </p>
-            <h3 class="faq-header">4.) Why cybercitizens?</h3>
-            <p class="faq-answer">
-              Cybercitizens was created with a commitment to futuristic concepts and each one is carefully inspected to
-              ensure they pass our "standards". Holders of CyberCitizens will be eligible to receive special airdrops.
-              Finally, We also aim to create collectible NFTs that can retain and possibly increase in value for
-              participating
-              community members.
-              There will be both pixel and cartoon variants.
-            </p>
-            <h3 class="faq-header">5.) How can I see my NFTs?</h3>
-            <p class="faq-answer">
-              Visit this url: <a class="faq-links" href="https://www.ergonfts.org/">https://www.ergonfts.org/</a>, Enter your desired wallet address to view tokens on that address.
-            </p>
-            <h3 class="faq-header">6.) When is Roadmap 2.0 being announced?</h3>
-            <p class="faq-answer">
-              The new and bigger roadmap will be announced in early 2022. BE READY!
-            </p>
-        </div>
+                <h3 class="faq-header">1.) What are cybercitizens?</h3>
+                <p class="faq-answer">
+                    CyberCitizens are 2080 unique, randomly generated pixel and cartoon nfts living on the ergo
+                    blockchain.
+                    Each of the cybercitizens have attributes that make them unique according to a defined rarity
+                    system.
+                </p>
+                <h3 class="faq-header">2.) How do I know my NFT is unique?</h3>
+                <p class="faq-answer">
+                    2080 cybercitizens were minted, each having different attributes and varying in rarity.
+                    A full list of the traits and rarities your citizen has can be found <a class="faq-links"
+                        href="pages/explore.html"><span>here.</span></a>
+                </p>
+                <h3 class="faq-header">3.) How can I mint cybercitizen?</h3>
+                <p class="faq-answer">
+                    Your citizen can be minted on this website.
+                </p>
+                <h3 class="faq-header">4.) Why cybercitizens?</h3>
+                <p class="faq-answer">
+                    Cybercitizens was created with a commitment to futuristic concepts and each one is carefully
+                    inspected to
+                    ensure they pass our "standards". Holders of CyberCitizens will be eligible to receive special
+                    airdrops.
+                    Finally, We also aim to create collectible NFTs that can retain and possibly increase in value for
+                    participating
+                    community members.
+                    There will be both pixel and cartoon variants.
+                </p>
+                <h3 class="faq-header">5.) How can I see my NFTs?</h3>
+                <p class="faq-answer">
+                    Visit this url: <a class="faq-links" href="https://www.ergonfts.org/">https://www.ergonfts.org/</a>,
+                    Enter your desired wallet address to view tokens on that address.
+                </p>
+                <h3 class="faq-header">6.) When is Roadmap 2.0 being announced?</h3>
+                <p class="faq-answer">
+                    The new and bigger roadmap will be announced in early 2022. BE READY!
+                </p>
+            </div>
         </section>
     </main>
     <footer>
@@ -182,4 +210,5 @@
     </footer>
     <script src="js/app.js"></script>
 </body>
+
 </html>

@@ -567,6 +567,17 @@ textarea:hover {
     border: 2px var(--pink) solid;
 }
 
+#dino-mobile {
+    display: none;
+}
+
+#dino-desktop {
+    width: auto;
+    height: auto;
+    max-width: 15%;
+    max-height: 15%;
+}
+
 @media all and (max-width : 60em) {
     header {
         display: block;
@@ -764,6 +775,14 @@ textarea:hover {
       .wallet-button {
           font-size: 1.125rem;
       }
+
+      #dino-desktop {
+          display: none;
+      }
+
+      #dino-mobile {
+          display: inline-block;
+      }
 }
 
 @media all and (max-width : 40em) {
@@ -787,12 +806,41 @@ textarea:hover {
         font-size: 1rem;
     }
 
+    h2 {
+        font-size: 1.5rem;
+    }
+
     h3 {
         font-size: 1rem;
     }
 
+    .flex-container-faq {
+        max-width: 90%;
+    }
+
+    li h4 {
+        font-size: 1.5rem;
+    }
+
+    li p {
+        font-size: 1.25rem;
+    }
+
+    .team-member-name {
+        font-size: 1.5rem;
+    }
+
+    .team-member-description {
+        font-size: 1.25rem;
+    }
+
+    .faq-header {
+        font-size: 1.5rem;
+    }
+
     .faq-answer {
         word-wrap: break-word;
+        font-size: 1.25rem;
     }
 
     .footer-logo {
