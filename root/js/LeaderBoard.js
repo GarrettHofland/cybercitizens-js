@@ -12,6 +12,10 @@ var header = document.createElement("h1"); header.innerText = "Leaderboard"; hea
 var toggle = document.getElementById("leaderboard-toggle");
 var toggleActive = false;
 
+document.getElementById("explorerToHome").addEventListener('click', () => {
+    window.location = "../index.html";
+});
+
 toggle.onclick = function(element){
     toggleLeaderboard();
 }

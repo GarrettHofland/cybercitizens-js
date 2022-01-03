@@ -47,6 +47,12 @@ if (finish) {
     finish.style.backgroundColor = "grey";
 }
 
+if(document.getElementById("dino-desktop") && document.getElementById("dino-mobile")) {
+    console.log("Disabling dino game");
+    document.getElementById("dino-desktop").href = "javascript:void(0)";
+    document.getElementById("dino-mobile").href = "javascript:void(0)";
+}
+
 var images = ["assets/cybercitizens/0.png",
  "assets/cybercitizens/3.png",
  "assets/cybercitizens/590.png", 
