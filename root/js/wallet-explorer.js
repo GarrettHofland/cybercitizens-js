@@ -74,12 +74,12 @@ const rarities = [{
       "Diamond": "4.23%"
     },
     "Lipstick": {
-      'None': 270,
-      'Cotton candy': 60,
-      'Purple': 57,
-      'Dark pink': 56,
-      'Pink': 53,
-      'Red': 53
+      'None': "12.9%",
+      'Cotton candy': "2.8%",
+      'Purple': "2.7%",
+      'Dark pink': "2.6%",
+      'Pink': "2.5%",
+      'Red': "2.5%"
     },
     "Robotic face": {
       "None": "78.14%",
@@ -268,7 +268,7 @@ const rarities = [{
       "Space blue T-shirt": "3.41%",
       "Space blue tank top": "3.32%",
       "Dark blue T-shirt": "3.32%",
-      "Green off shoulder t-shirt": "68",
+      "Green off shoulder t-shirt ": "3.2%",
       "Dark purple T-shirt": "3.17%",
       "Turquoise T-shirt": "3.12%",
       "Black tank top": "3.08%",
@@ -416,7 +416,7 @@ function displaySearchResults(token) {
 
   let attributeContainer = buildAttributeDisplay(attributes);
 
-  // console.log(attributes);
+  console.log(attributes);
 
   assetImage.src = token.image;
   assetName.innerText = token.name;
@@ -550,7 +550,7 @@ function showNFTModal(image, name, tokenId) {
   // This is where ________________________________
 
   getMetaDataForPopup(tokenId).then(() => {
-    console.log(popupObj);
+    // console.log(popupObj);
     rawData = toUtf8String(popupObj[0].additionalRegisters.R5).substr(2);
 
     let metadata = JSON.parse(rawData.slice(1, rawData.length));
@@ -585,7 +585,7 @@ function showNFTModal(image, name, tokenId) {
     auctionCard.classList.add("auction-card-modal");
     attributeContainer.classList.add("auction-attribute-container")
 
-    console.log(assetName);
+    // console.log(assetName);
     auctionCard.append(assetName);
     auctionCard.append(assetImage);
     auctionCard.append(attributeContainer);

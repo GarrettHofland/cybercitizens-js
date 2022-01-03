@@ -16,6 +16,12 @@ if(scrollUp) {
     });
 }
 
+if(document.getElementById("mint")) {
+    console.log("exists");
+    document.getElementById("mint").href = "javascript:void(0)";
+    console.log(document.getElementById("mint").href);
+}
+
 const faders = document.querySelectorAll(".fade-in");
 
 const appearOptions = {
