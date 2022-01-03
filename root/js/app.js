@@ -48,7 +48,7 @@ if (finish) {
 }
 
 if(document.getElementById("dino-desktop") && document.getElementById("dino-mobile")) {
-    console.log("Disabling dino game");
+    // console.log("Disabling dino game");
     document.getElementById("dino-desktop").href = "javascript:void(0)";
     document.getElementById("dino-mobile").href = "javascript:void(0)";
 }
@@ -98,9 +98,9 @@ if (exit && clear && finish && wallet) {
 }
 
 if (walletButton) {
-    console.log("Wallet button exists");
+    // console.log("Wallet button exists");
     walletButton.addEventListener('click', () => {
-        console.log(getWalletAddress());
+        // console.log(getWalletAddress());
         if (getWalletAddress() != null) {
             walletInput.value = getWalletAddress();
             walletOutput.textContent = "Wallet set."
@@ -142,7 +142,7 @@ function clearWalletAddress() {
     walletInput.value = "";
     finish.disabled = true;
     finish.style.backgroundColor = "grey";
-    console.log(finish.disabled);
+    // console.log(finish.disabled);
 }
 
 function setWalletAddress() {
@@ -160,7 +160,7 @@ function getWalletAddress() {
 }
 
 function validateWalletAddress() {
-    console.log("Validate firing");
+    // console.log("Validate firing");
     if (walletInput.value.match(/^9[A-Za-z0-9]{50}/)) {
         walletOutput.textContent = "Wallet address valid.";
         walletOutput.style.color = "green";
