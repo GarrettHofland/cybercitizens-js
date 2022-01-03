@@ -1,0 +1,10 @@
+{
+    "BaseDino":{
+        "Name" : "base" ,
+        "ID": "0"
+    },
+    "GoldDino":{
+        "Name": "Gold",
+        "ID" : "1"
+    }
+}
