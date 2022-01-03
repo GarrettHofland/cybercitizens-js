@@ -185,7 +185,7 @@ function create ()
         onClickScreen();
     });
 
-    loadPlayer(Skin);
+    loadPlayer();
 
     LoginAndGetHighScore();//Fetches the current high score
 
@@ -193,7 +193,7 @@ function create ()
 
 }
 
-function loadPlayer(text)
+function loadPlayer()
 {
     player.setTexture(Skin);
 
