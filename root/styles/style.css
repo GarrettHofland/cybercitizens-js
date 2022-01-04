@@ -188,6 +188,10 @@ h1 {
     cursor: pointer;
 }
 
+.address-p2k:hover {
+    color: var(--yellow);
+}
+
 h2 {
     text-align: center;
     text-transform: uppercase;
