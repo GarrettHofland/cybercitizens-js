@@ -416,7 +416,7 @@ function displaySearchResults(token) {
 
   let attributeContainer = buildAttributeDisplay(attributes);
 
-  console.log(attributes);
+  // console.log(attributes);
 
   assetImage.src = token.image;
   assetName.innerText = token.name;
@@ -557,8 +557,8 @@ function showNFTModal(image, name, tokenId) {
     let citizenNumber = Object.keys(metadata['721']);
     let attributesRaw = metadata['721'][citizenNumber]['traits'];
     let attributesKeys = Object.keys(metadata['721'][citizenNumber]['traits']);
-    console.log(attributesKeys);
-    console.log(attributesRaw);
+    // console.log(attributesKeys);
+    // console.log(attributesRaw);
 
     let attributes = buildAttributeArray(attributesKeys, attributesRaw);
 

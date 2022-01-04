@@ -396,12 +396,12 @@ li p {
     text-transform: uppercase;
     color: var(--yellow);
     margin-bottom: 0.25rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .faq-answer {
     margin-bottom: 1em;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .faq-links {
@@ -596,6 +596,19 @@ li #dino-image {
     height: auto;
     max-width: 25px;
     max-height: 20px;
+}
+
+.benefits-list {
+    padding-left: 4%;
+}
+
+.benefit-title {
+    color: var(--yellow);
+    font-size: 1.3rem;
+}
+
+.benefit {
+    font-size: 1.25rem;
 }
 
 @media all and (max-width : 60em) {
@@ -840,6 +853,18 @@ li #dino-image {
 
     li h4 {
         font-size: 1.5rem;
+    }
+
+    .benefits-list {
+        padding-left: 4%;
+    }
+
+    .benefit-title {
+        font-size: 1.3rem;
+    }
+
+    .benefit {
+        font-size: 1.125rem;
     }
 
     li p {
