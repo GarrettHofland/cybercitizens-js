@@ -603,8 +603,8 @@ li #dino-image {
 }
 
 .benefit-title {
-    color: var(--yellow);
     font-size: 1.3rem;
+    color: var(--pink);
 }
 
 .benefit {
