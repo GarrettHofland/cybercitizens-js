@@ -1,5 +1,7 @@
-var skin = "base";
-var skinPath = "../assets/cyberDino/Skins/dino2.png"
+// var Skin = "base";
+// var SkinPath = "../assets/cyberDino/Skins/dino2.png"
+var Skin = "Robot";
+var SkinPath = "../assets/cyberDino/Skins/robot.png"
 var Myjson;
 
 var explorerApi = 'https://api.ergoplatform.com/api/v0';
@@ -7,6 +9,9 @@ var explorerApiV1 = 'https://api.ergoplatform.com/api/v1';
 var auctionsRaw;
 
 import { ConectedAddress } from './DinoConnector.js';
+export {SkinPath, Skin};
+let SkinContainer = document.getElementById("Skins");
+
 
 
 CreateSkinList();
@@ -20,25 +25,32 @@ function CreateSkinList (){
                 Myjson.push({
                     Name: item.Name,
                     ID: item.ID,
-                    Path: item.Path
+                    Path: item.Path,
+                    Icon: item.Icon
                 });            
             }
         }
-        // compare to wallet addresses to see if it contains each skin
+        CreateSkinSelectIcon(Myjson[0]);//Test
+        CreateSkinSelectIcon(Myjson[1]);//Test
+        CreateSkinSelectIcon(Myjson[2]);//Test
         SkinChecker();
-        // create buttons for each matching address
     });
 }
 
-//Todo: create clickable icons on page for dino skins based on avaiable in wallet
-
-
-//ToDo: when icon is selected make button to reload iframe for dino game and set correct skin
-
 function CreateSkinSelectIcon(FoundSkin){
     //create a skin select image to add to website
-    skin == FoundSkin.Name;
-    skinPath == FoundSkin.Path;
+
+    var btn = document.createElement("BUTTON");
+    btn.innerHTML = `<img src="${FoundSkin.Icon}" />`//onclick="OnClickSetSkin(${FoundSkin.Name}, ${FoundSkin.Path})"/>`
+    btn.addEventListener('click', function()
+    {
+        //Sets the Skin And path variables to the selected skin
+        console.log(`Name: ${FoundSkin.Name}, Path: ${FoundSkin.Path}`);
+        Skin = FoundSkin.Name;
+        SkinPath = FoundSkin.Path;
+    });
+    console.log("Test: " +FoundSkin.Name);
+    SkinContainer.appendChild(btn);
 }
 
 function SkinChecker() {
@@ -63,7 +75,6 @@ for(let i = 0; i < auctionsRaw.length - 1; i++){
             CheckSkinAvailable(i.tokenId);
         });
     }
-    loadPlayer(Skin);
 }
 
 function CheckSkinAvailable(tokenId){

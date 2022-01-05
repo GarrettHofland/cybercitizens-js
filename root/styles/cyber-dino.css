@@ -137,6 +137,27 @@ input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
   color: #EE2DFF;
 }
 
+#Select-Skin {
+  border: none;
+  border-radius: 18px;
+  font-size: 1.125rem;
+  background: #0B0029;
+  font-weight: 600;
+  font-size: 1.5rem;
+  border: 2px solid #EE2DFF;
+  color: #F7FC19;
+  text-shadow: 2px 2px #2f4aa3;
+  transition: 1s ease-out;
+  max-width: 50%;
+  padding: 1%;
+  margin: 2% auto;
+  font-family: pixelFont;
+}
+
+#Select-Skin:hover {
+  color: #EE2DFF;
+}
+
 .footer-image {
   width: 60%;
   background: red;
