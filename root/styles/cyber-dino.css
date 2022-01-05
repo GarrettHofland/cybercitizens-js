@@ -24,6 +24,23 @@ button:focus {
   flex-direction: column;
 }
 
+#Skin-Selection{
+  text-align: center;
+  width: 90% !important;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#Skins{
+  display: grid;
+  width: 90% !important;
+  grid-template-columns: 75px 75px 75px 75px 75px 75px 75px 75px 75px;
+  grid-gap: 12px;
+  align-self: center;
+  justify-content: center;
+}
+
 #loading-message {
   color: white;
   text-shadow: 2px 2px #0B0029;

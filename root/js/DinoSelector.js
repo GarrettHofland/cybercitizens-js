@@ -1,7 +1,5 @@
-// var Skin = "base";
-// var SkinPath = "../assets/cyberDino/Skins/dino2.png"
-var Skin = "Robot";
-var SkinPath = "../assets/cyberDino/Skins/robot.png"
+var Skin = "base";
+var SkinPath = "../assets/cyberDino/Skins/dino2.png"
 var Myjson;
 
 var explorerApi = 'https://api.ergoplatform.com/api/v0';
@@ -30,9 +28,12 @@ function CreateSkinList (){
                 });            
             }
         }
+        for(var i = 0; i < 1; i++){
         CreateSkinSelectIcon(Myjson[0]);//Test
         CreateSkinSelectIcon(Myjson[1]);//Test
         CreateSkinSelectIcon(Myjson[2]);//Test
+        CreateSkinSelectIcon(Myjson[4]);//Test
+        }
         SkinChecker();
     });
 }
@@ -40,7 +41,7 @@ function CreateSkinList (){
 function CreateSkinSelectIcon(FoundSkin){
     //create a skin select image to add to website
     var btn = document.createElement("BUTTON");
-    btn.innerHTML = `<img src="${FoundSkin.Icon}" width="70" height="60" />`//onclick="OnClickSetSkin(${FoundSkin.Name}, ${FoundSkin.Path})"/>`
+    btn.innerHTML = `<img src="${FoundSkin.Icon}" width="70" height="60" />`
     btn.addEventListener('click', function()
     {
         //Sets the Skin And path variables to the selected skin
