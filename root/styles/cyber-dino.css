@@ -158,6 +158,10 @@ input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
   color: #EE2DFF;
 }
 
+.Highlight {
+  background: yellow;
+}
+
 .footer-image {
   width: 60%;
   background: red;

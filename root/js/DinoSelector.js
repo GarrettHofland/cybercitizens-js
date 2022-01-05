@@ -39,12 +39,13 @@ function CreateSkinList (){
 
 function CreateSkinSelectIcon(FoundSkin){
     //create a skin select image to add to website
-
     var btn = document.createElement("BUTTON");
-    btn.innerHTML = `<img src="${FoundSkin.Icon}" />`//onclick="OnClickSetSkin(${FoundSkin.Name}, ${FoundSkin.Path})"/>`
+    btn.innerHTML = `<img src="${FoundSkin.Icon}" width="70" height="60" />`//onclick="OnClickSetSkin(${FoundSkin.Name}, ${FoundSkin.Path})"/>`
     btn.addEventListener('click', function()
     {
         //Sets the Skin And path variables to the selected skin
+        $(".Highlight").removeClass("Highlight");
+        $(btn).addClass("Highlight");
         console.log(`Name: ${FoundSkin.Name}, Path: ${FoundSkin.Path}`);
         Skin = FoundSkin.Name;
         SkinPath = FoundSkin.Path;
