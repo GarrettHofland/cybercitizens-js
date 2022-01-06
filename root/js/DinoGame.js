@@ -55,9 +55,10 @@ function preload ()
     this.load.spritesheet(Skin, SkinPath,
         { frameWidth: 109, frameHeight: 120}
     );
-    console.log("Loading: " + Skin);
 
     this.load.audio('jumpsfx',['../assets/cyberDino/sfx/Jump1.wav']);
+    this.load.audio('Checkpointsfx', ['../assets/cyberDino/sfx/CheckPoint1.wav']);
+    this.load.audio('Deathsfx', ['../assets/cyberDino/sfx/Death1.wav']);
 
     this.load.image('BG1' , '../assets/cyberDino/sprites/back 1.png');
     this.load.image('BG2' , '../assets/cyberDino/sprites/back 2.png');
@@ -320,6 +321,7 @@ function update (time , delta)
     //SpeedUp
     if(LastTime + 1000 < score && score < 12000)
     {
+        SFX.play('Checkpointsfx');
         LastTime = score;
         SpeedUp();
     }
@@ -490,6 +492,7 @@ function deSpawn()
 
 function GameOver(player)
 {
+    SFX.play('Deathsfx');
     MiddleText.setText("Play again?");
     PlayBTN.setVisible(true);    
     LoginAndSetHighScore();
