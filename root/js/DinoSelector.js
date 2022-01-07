@@ -28,6 +28,7 @@ function CreateSkinList (){
                 });            
             }
         }
+        var x = 0;
         CreateSkinSelectIcon(Myjson[0]);//First skin entry
         SkinChecker();
     });

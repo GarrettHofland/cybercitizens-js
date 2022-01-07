@@ -1,5 +1,5 @@
 var config = {
-    //type: Phaser.AUTO,
+    type: Phaser.AUTO,
     parent: "dino-game",
     width: 800,
     height: 600,
@@ -50,7 +50,8 @@ function preload ()
     this.load.image('Drone3' , "../assets/cyberDino/sprites/Drone3.png"); 
     this.load.image('PauseBtn', "../assets/cyberDino/sprites/PauseBTN.png");
     this.load.image('PlayBtn', "../assets/cyberDino/sprites/PlayBTN.png");
-
+    this.load.image('MuteBtn', "../assets/cyberDino/sprites/Mute.png");
+    this.load.image('UnmuteBtn', "../assets/cyberDino/sprites/Unmuted.png"); 
 
     this.load.spritesheet(Skin, SkinPath,
         { frameWidth: 109, frameHeight: 120}
@@ -91,9 +92,8 @@ var spawned;
 var SFX;
 var floor;
 var BG, BG1, BG2, BG3, BG4, BG5;
-var PauseBTN, PlayBTN;
-
-
+var PauseBTN, PlayBTN, MuteBTN, MBTN;
+var mute, MuteTXT;
 
 function create ()
 {
@@ -141,6 +141,10 @@ function create ()
     PlayBTN.setVisible(true);
     PlayBTN.body.allowGravity = false;
 
+    MuteBTN = this.add.sprite(config.width/1.05, config.height/10, 'UnmuteBtn').setScale(0.5);
+    MuteTXT = this.add.bitmapText(config.width/1.15, config.height/12,'atari', 'M:').setScale(0.3);
+    MuteTXT.setTint(0xba1298, 0xba1298, 0xba1298, 0xba1298);
+
     //create sfx
     SFX = this.sound;
 
@@ -180,7 +184,9 @@ function create ()
     //pause Function
     this.input.on('pointerdown', function () {
         onClickScreen();
-    });
+    });    
+
+    MBTN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);
 
     loadPlayer();
 
@@ -307,7 +313,7 @@ function update (time , delta)
     {       
         PlayerState = 1;
         player.setVelocityY(-(speed * 2));
-        SFX.play('jumpsfx');
+        if(!mute)SFX.play('jumpsfx');
     }
     else if(player.body.touching.down && !cursors.down.isDown) 
     {
@@ -318,10 +324,22 @@ function update (time , delta)
         PlayerState = 2;       
     }
 
+    if (Phaser.Input.Keyboard.JustDown(MBTN))
+    {
+        if(mute){
+            MuteBTN.setTexture('UnmuteBtn');
+        }
+        else{
+            MuteBTN.setTexture('MuteBtn');
+            
+        }
+        mute = !mute;
+    }
+
     //SpeedUp
     if(LastTime + 1000 < score && score < 12000)
     {
-        SFX.play('Checkpointsfx');
+        if(!mute)SFX.play('Checkpointsfx');
         LastTime = score;
         SpeedUp();
     }
@@ -401,6 +419,7 @@ function SetDefaultVariables()
     treeVelocity = 500;
     LastTime = 0;
     DeadTime = 0;
+    mute = false;
 }
 
 //Moves the Appropriate tree forward when called
@@ -492,7 +511,7 @@ function deSpawn()
 
 function GameOver(player)
 {
-    SFX.play('Deathsfx');
+    if(!mute)SFX.play('Deathsfx');
     MiddleText.setText("Play again?");
     PlayBTN.setVisible(true);    
     LoginAndSetHighScore();
