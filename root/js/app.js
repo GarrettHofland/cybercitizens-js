@@ -53,8 +53,11 @@ if (finish) {
     finish.style.backgroundColor = "grey";
 }
 
+if(document.getElementById("unsold")) {
+    getUnsold();
+}
+
 if(document.getElementById("dino-desktop") && document.getElementById("dino-mobile")) {
-    // console.log("Disabling dino game");
     document.getElementById("dino-desktop").href = "javascript:void(0)";
     document.getElementById("dino-mobile").href = "javascript:void(0)";
 }
@@ -113,6 +116,17 @@ if (walletButton) {
             walletOutput.style.color = "green";
         }
         walletMenu.classList.toggle("open");
+    });
+}
+
+async function getUnsold() {
+    await fetch(`https://ergnomes-server.net/api/checkUnsold`)
+    .then(res => res.json())
+    .then(res => {
+      document.getElementById("unsold").innerHTML = "<span>" + res["count"]  + "</span> ready to sell!";
+    })
+    .catch(error => {
+      console.log(error);
     });
 }
 

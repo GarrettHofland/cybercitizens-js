@@ -88,6 +88,10 @@ header {
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
 }
 
+span {
+    color: var(--pink);
+}
+
 .nav-links {
     text-transform: uppercase;
     margin: 0;
@@ -210,7 +214,8 @@ h4 {
 p {}
 
 #mint,
-#explore {
+#explore,
+.unsold {
     font-size: 1.5rem;
 }
 
@@ -306,6 +311,11 @@ section h2 {
     max-width: 50%;
     margin: 0 auto;
     border-radius: 12px;
+}
+
+.unsold {
+    text-align: center;
+    color: var(--yellow);
 }
 
 .flex-container-roadmap {
