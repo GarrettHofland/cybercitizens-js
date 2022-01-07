@@ -24,6 +24,23 @@ button:focus {
   flex-direction: column;
 }
 
+#Skin-Selection{
+  text-align: center;
+  width: 90% !important;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#Skins{
+  display: grid;
+  width: 90% !important;
+  grid-template-columns: 75px 75px 75px 75px 75px 75px 75px 75px 75px;
+  grid-gap: 12px;
+  align-self: center;
+  justify-content: center;
+}
+
 #loading-message {
   color: white;
   text-shadow: 2px 2px #0B0029;
@@ -135,6 +152,31 @@ input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
 
 #leaderboard-toggle:hover {
   color: #EE2DFF;
+}
+
+#Select-Skin {
+  border: none;
+  border-radius: 18px;
+  font-size: 1.125rem;
+  background: #0B0029;
+  font-weight: 600;
+  font-size: 1.5rem;
+  border: 2px solid #EE2DFF;
+  color: #F7FC19;
+  text-shadow: 2px 2px #2f4aa3;
+  transition: 1s ease-out;
+  max-width: 50%;
+  padding: 1%;
+  margin: 2% auto;
+  font-family: pixelFont;
+}
+
+#Select-Skin:hover {
+  color: #EE2DFF;
+}
+
+.Highlight {
+  background: yellow;
 }
 
 .footer-image {
