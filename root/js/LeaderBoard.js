@@ -3,6 +3,7 @@ import { ConectedAddress } from './DinoConnector.js';
 let leaderboard = document.createElement('div'); leaderboard.id = "leaderboard";
 let leaderboardData = document.createElement('div'); leaderboardData.id = "leaderboardData";
 let leaderboardContainer = document.getElementById("leaderboard-container");
+let headerElement = document.getElementsByTagName("header")[0];
 let scores = [];
 let NoDisplayed = 10; //number of entries to display
 var refreshBTN = document.createElement("input"); refreshBTN.type = "button"; refreshBTN.value = "Refresh"; refreshBTN.classList.add("leaderboard-button"); 
@@ -11,19 +12,17 @@ var DNInput = document.createElement("input"); DNInput.type = "text"; DNInput.va
 var header = document.createElement("h1"); header.innerText = "Leaderboard"; header.id = "leaderboard-header";
 var toggle = document.getElementById("leaderboard-toggle");
 var toggleActive = false;
-var homepage = document.getElementById("gameToHome");
 
-homepage.onclick = function(element)
-{
+document.getElementById("explorerToHome").addEventListener('click', () => {
     window.location = "../index.html";
-}
+});
 
 toggle.onclick = function(element){
     toggleLeaderboard();
 }
 
 window.addEventListener('click', function(e){   
-    if (!leaderboardContainer.contains(e.target)){
+    if (!leaderboardContainer.contains(e.target) && !headerElement.contains(e.target)){
         if(toggleActive)
         {
             toggleLeaderboard();
@@ -70,6 +69,7 @@ function updateLeaderboardView() {
     for(let i=0; i<scores.length; i++) {
         let name = document.createElement("div");
         name.classList.add("name");
+        if(scores[i].name == null) scores[i].name = "Anonymous";
         name.innerText = i+1 + ". " + scores[i].name + " : " + scores[i].score; //Text Displayed on leaderboard
 
         let scoreRow = document.createElement("div");

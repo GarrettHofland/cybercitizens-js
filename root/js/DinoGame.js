@@ -1,5 +1,5 @@
 var config = {
-    //type: Phaser.AUTO,
+    type: Phaser.AUTO,
     parent: "dino-game",
     width: 800,
     height: 600,
@@ -26,11 +26,16 @@ var config = {
 };
 
 var game = new Phaser.Game(config);
-var Skin = 'dino2';
+import { Skin, SkinPath } from './DinoSelector.js';
+import { ConectedAddress } from './DinoConnector.js';
+var LoadBtn = document.getElementById("Select-Skin");
+var reset = false;
+
 
 function preload ()
 {
-    SkinChecker();
+    reset = false;
+
     this.load.bitmapFont('atari', '../assets/cyberDino/Fonts/atari-classic.png', '../assets/cyberDino/Fonts/atari-classic.xml');
     this.load.image('ground', '../assets/cyberDino/png/Tiles/BGTile (1).png');
     this.load.image('Floor', '../assets/cyberDino/sprites/Floor.png');
@@ -45,28 +50,16 @@ function preload ()
     this.load.image('Drone3' , "../assets/cyberDino/sprites/Drone3.png"); 
     this.load.image('PauseBtn', "../assets/cyberDino/sprites/PauseBTN.png");
     this.load.image('PlayBtn', "../assets/cyberDino/sprites/PlayBTN.png");
+    this.load.image('MuteBtn', "../assets/cyberDino/sprites/Mute.png");
+    this.load.image('UnmuteBtn', "../assets/cyberDino/sprites/Unmuted.png"); 
 
-    this.load.spritesheet('dino2', 
-        `../assets/cyberDino/Skins/dino2.png`,
+    this.load.spritesheet(Skin, SkinPath,
         { frameWidth: 109, frameHeight: 120}
     );
-    this.load.spritesheet('bones', 
-        `../assets/cyberDino/Skins/bones.png`,
-        { frameWidth: 109, frameHeight: 120}
-    );
-    this.load.spritesheet('gold', 
-        `../assets/cyberDino/Skins/gold.png`,
-        { frameWidth: 109, frameHeight: 120}
-    );
-    this.load.spritesheet('newdino', 
-        `../assets/cyberDino/Skins/newdino.png`,
-        { frameWidth: 109, frameHeight: 120}
-    );
-    this.load.spritesheet('robot', 
-        `../assets/cyberDino/Skins/robot.png`,
-        { frameWidth: 109, frameHeight: 120}
-    );
+
     this.load.audio('jumpsfx',['../assets/cyberDino/sfx/Jump1.wav']);
+    this.load.audio('Checkpointsfx', ['../assets/cyberDino/sfx/CheckPoint1.wav']);
+    this.load.audio('Deathsfx', ['../assets/cyberDino/sfx/Death1.wav']);
 
     this.load.image('BG1' , '../assets/cyberDino/sprites/back 1.png');
     this.load.image('BG2' , '../assets/cyberDino/sprites/back 2.png');
@@ -99,11 +92,15 @@ var spawned;
 var SFX;
 var floor;
 var BG, BG1, BG2, BG3, BG4, BG5;
-var PauseBTN, PlayBTN;
-
+var PauseBTN, PlayBTN, MuteBTN, MBTN;
+var mute, MuteTXT;
 
 function create ()
 {
+    LoadBtn.addEventListener('click', function()
+    {
+        reset = true;
+    });
 
     //set default variables
     SetDefaultVariables();
@@ -144,11 +141,15 @@ function create ()
     PlayBTN.setVisible(true);
     PlayBTN.body.allowGravity = false;
 
+    MuteBTN = this.add.sprite(config.width/1.05, config.height/10, 'UnmuteBtn').setScale(0.5);
+    MuteTXT = this.add.bitmapText(config.width/1.15, config.height/12,'atari', 'M:').setScale(0.3);
+    MuteTXT.setTint(0xba1298, 0xba1298, 0xba1298, 0xba1298);
+
     //create sfx
     SFX = this.sound;
 
     //create player
-    player = this.physics.add.sprite(config.width * 0.2, config.height * 0.58, 'dino2').setScale(1);
+    player = this.physics.add.sprite(config.width * 0.2, config.height * 0.58, Skin).setScale(1);
     player.setBounce(0.1);
     player.setCollideWorldBounds(true); //sets border of the screen to be bounds
     player.body.setSize(65, 110 );
@@ -183,9 +184,11 @@ function create ()
     //pause Function
     this.input.on('pointerdown', function () {
         onClickScreen();
-    });
+    });    
 
-    loadPlayer(Skin);
+    MBTN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);
+
+    loadPlayer();
 
     LoginAndGetHighScore();//Fetches the current high score
 
@@ -193,9 +196,12 @@ function create ()
 
 }
 
-function loadPlayer(text)
+function loadPlayer()
 {
     player.setTexture(Skin);
+    game.anims.remove('Run');
+    game.anims.remove('Jump');
+    game.anims.remove('Crouch');
 
     game.anims.create({
         key: 'Run',
@@ -266,6 +272,12 @@ var DeadTime = 0;
 //runs 60 times a second
 function update (time , delta)
 {    
+    if(reset)
+    {
+        this.registry.destroy(); // destroy registry
+        this.events.off();
+        this.scene.restart();
+    }
     if(!pause){
 
     this.physics.resume();
@@ -301,7 +313,7 @@ function update (time , delta)
     {       
         PlayerState = 1;
         player.setVelocityY(-(speed * 2));
-        SFX.play('jumpsfx');
+        if(!mute)SFX.play('jumpsfx');
     }
     else if(player.body.touching.down && !cursors.down.isDown) 
     {
@@ -312,9 +324,22 @@ function update (time , delta)
         PlayerState = 2;       
     }
 
+    if (Phaser.Input.Keyboard.JustDown(MBTN))
+    {
+        if(mute){
+            MuteBTN.setTexture('UnmuteBtn');
+        }
+        else{
+            MuteBTN.setTexture('MuteBtn');
+            
+        }
+        mute = !mute;
+    }
+
     //SpeedUp
     if(LastTime + 1000 < score && score < 12000)
     {
+        if(!mute)SFX.play('Checkpointsfx');
         LastTime = score;
         SpeedUp();
     }
@@ -394,6 +419,7 @@ function SetDefaultVariables()
     treeVelocity = 500;
     LastTime = 0;
     DeadTime = 0;
+    mute = false;
 }
 
 //Moves the Appropriate tree forward when called
@@ -485,6 +511,7 @@ function deSpawn()
 
 function GameOver(player)
 {
+    if(!mute)SFX.play('Deathsfx');
     MiddleText.setText("Play again?");
     PlayBTN.setVisible(true);    
     LoginAndSetHighScore();
@@ -524,79 +551,6 @@ function ResetGame()
     Bird2.x = SpawnX; Bird2.y = SpawnYBird;
     Bird3.x = SpawnX; Bird3.y = SpawnYBird;
 
-}
-
-// ----------------------------------------------------------------------------------------------------------------
-// NFT section
-// ----------------------------------------------------------------------------------------------------------------
-
-//Explorer Vars
-var explorerApi = 'https://api.ergoplatform.com/api/v0';
-var explorerApiV1 = 'https://api.ergoplatform.com/api/v1';
-var auctionsRaw;
-
-//Skin Vars
-const BonesID = "3277ccd6af2b96be22cf23e067934ecc640f75dcce67439939d5364147c8a83d", GoldID = 2, FutureID = 3, RobotID = 4; // For testing only
-import { ConectedAddress } from './DinoConnector.js';
-
-
-function SkinChecker() {
-    console.log("Loading Address");
-    if(ConectedAddress != "N/A")
-        getAuctionsRaw(ConectedAddress);
-  }
-
-
-// Get every NFT able to be auctioned from the wallet 
-function getAuctionsRaw(walletAddress) {
-    getActiveAuctions(walletAddress)
-    .then(res => {
-      auctionsRaw = res;
-      buildAuctions();
-    });
-}
-
-// Build the list of NFTs currently able to be auctioned from the wallet, from the raw wallet data
-function buildAuctions() {
-for(let i = 0; i < auctionsRaw.length - 1; i++){
-        auctionsRaw[i].assets.forEach((i) => {
-            CheckSkinAvailable(i.tokenId);
-        });
-    }
-    loadPlayer(Skin);
-}
-
-function CheckSkinAvailable(tokenId)
-{
-    switch(tokenId)
-    {
-        case BonesID:
-            Skin = "bones";
-            break;
-        case GoldID:
-            Skin = "gold";
-            break;
-        case FutureID:
-            Skin = "newdino";
-            break;
-        case RobotID:
-            Skin = "robot";
-            break;
-        default:
-            console.log("notFound");
-    }
-}
-
-// Get active auctions from supplied address
-function getActiveAuctions(addr) {
-    return getRequest(`/boxes/unspent/byAddress/${addr}?limit=500`, explorerApiV1)
-        .then(res => res.items)
-        .then((boxes) => boxes.filter((box) => box.assets.length > 0));
-}
-
-// Function for appending requests to the exploreAPI URL
-function getRequest(url, api = explorerApi) {
-    return fetch(api + url).then(res => res.json())
 }
 
 // ----------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,33 @@
+{
+    "BaseDino":{
+        "Name" : "Base" ,
+        "ID": "0",
+        "Path": "../assets/cyberDino/Skins/dino2.png",
+        "Icon": "../assets/cyberDino/Icons/dinoIcon.png"
+    },
+    "BoneDino":{
+        "Name" : "Bone" ,
+        "ID": "3277ccd6af2b96be22cf23e067934ecc640f75dcce67439939d5364147c8a83d",
+        "Path": "../assets/cyberDino/Skins/bones.png",
+        "Icon": "../assets/cyberDino/Icons/bonesIcon.png"
+
+    },
+    "GoldDino":{
+        "Name": "Gold",
+        "ID" : "2",
+        "Path": "../assets/cyberDino/Skins/gold.png",
+        "Icon": "../assets/cyberDino/Icons/goldIcon.png"
+    },
+    "NewDino":{
+        "Name" : "New" ,
+        "ID": "3",
+        "Path": "../assets/cyberDino/Skins/newdino.png",
+        "Icon": "../assets/cyberDino/Skins/newdino.png"
+    },
+    "RobotDino":{
+        "Name" : "Robot" ,
+        "ID": "4",
+        "Path": "../assets/cyberDino/Skins/robot.png",
+        "Icon": "../assets/cyberDino/Icons/robotIcon.png"
+    }
+}

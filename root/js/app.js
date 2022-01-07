@@ -1,4 +1,3 @@
-const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li');
 const menu = document.getElementsByClassName("navLinks");
@@ -9,21 +8,73 @@ const exit = document.getElementById("exit");
 const clear = document.getElementById("clear");
 const finish = document.getElementById("finish");
 const walletInput = document.getElementById("user-address");
+const scrollUp = document.getElementById("scrollTop");
+
+if(scrollUp) {
+    scrollUp.addEventListener('click', () => {
+        window.scrollTo(0,0);
+    });
+}
+
+if(document.getElementById("mint")) {
+    console.log("exists");
+    document.getElementById("mint").href = "javascript:void(0)";
+    console.log(document.getElementById("mint").href);
+}
+
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -200px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver( function(
+    entries,
+    displayOnScroll
+) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add("appear");
+            appearOnScroll.unobserve(entry.target);
+        }
+    });
+}, 
+appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
 
 if (finish) {
     finish.disabled = true;
     finish.style.backgroundColor = "grey";
 }
 
-var images = ["assets/cybercitizens/0.png", "assets/cybercitizens/3.png", "assets/cybercitizens/590.png", "assets/cybercitizens/1873.png"];
+if(document.getElementById("unsold")) {
+    getUnsold();
+}
+
+if(document.getElementById("dino-desktop") && document.getElementById("dino-mobile")) {
+    // document.getElementById("dino-desktop").href = "javascript:void(0)";
+    // document.getElementById("dino-mobile").href = "javascript:void(0)";
+}
+
+var images = ["assets/cybercitizens/0.png",
+ "assets/cybercitizens/3.png",
+ "assets/cybercitizens/590.png", 
+ "assets/cybercitizens/1873.png",
+ "assets/cybercitizens/1852.png",
+ "assets/cybercitizens/3.png",
+ "assets/cybercitizens/7.png",
+ "assets/cybercitizens/590.png",
+];
 var x = 0;
 
 if (document.querySelector("#ergopixel-img")) {
-    setInterval(displayNextImage, 3000);
-}
-
-document.querySelector(".up-button").onclick = function (event) {
-    window.scrollTo(0, 0);
+    setInterval(displayNextImage, 500);
 }
 
 if (document.querySelector(".address")) {
@@ -55,25 +106,27 @@ if (exit && clear && finish && wallet) {
     walletInput.addEventListener('change', validateWalletAddress);
 }
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle("open");
-    links.forEach(link => {
-        link.classList.toggle("fade");
-    });
-    links.forEach(link => {
-        link.addEventListener('click', exitMenuOnLinkClick);
-    });
-});
-
 if (walletButton) {
+    // console.log("Wallet button exists");
     walletButton.addEventListener('click', () => {
-        console.log(getWalletAddress());
+        // console.log(getWalletAddress());
         if (getWalletAddress() != null) {
             walletInput.value = getWalletAddress();
             walletOutput.textContent = "Wallet set."
             walletOutput.style.color = "green";
         }
         walletMenu.classList.toggle("open");
+    });
+}
+
+async function getUnsold() {
+    await fetch(`https://ergnomes-server.net/api/checkUnsold`)
+    .then(res => res.json())
+    .then(res => {
+      document.getElementById("unsold").innerHTML = "<span>" + res["count"]  + "</span> ready to sell!";
+    })
+    .catch(error => {
+      console.log(error);
     });
 }
 
@@ -109,7 +162,7 @@ function clearWalletAddress() {
     walletInput.value = "";
     finish.disabled = true;
     finish.style.backgroundColor = "grey";
-    console.log(finish.disabled);
+    // console.log(finish.disabled);
 }
 
 function setWalletAddress() {
@@ -127,7 +180,7 @@ function getWalletAddress() {
 }
 
 function validateWalletAddress() {
-    console.log("Validate firing");
+    // console.log("Validate firing");
     if (walletInput.value.match(/^9[A-Za-z0-9]{50}/)) {
         walletOutput.textContent = "Wallet address valid.";
         walletOutput.style.color = "green";
