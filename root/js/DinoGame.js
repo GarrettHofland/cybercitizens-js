@@ -419,7 +419,6 @@ function SetDefaultVariables()
     treeVelocity = 500;
     LastTime = 0;
     DeadTime = 0;
-    mute = false;
 }
 
 //Moves the Appropriate tree forward when called
