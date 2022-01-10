@@ -2,8 +2,8 @@ var Skin = "base";
 var SkinPath = "../assets/cyberDino/Skins/dino2.png"
 var Myjson;
 
-var explorerApi = 'https://api.ergoplatform.com/api/v0';
-var explorerApiV1 = 'https://api.ergoplatform.com/api/v1';
+var explorerApi = 'https://api.ergoplatform.com/api/v0'
+var explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 var auctionsRaw;
 
 import { ConectedAddress } from './DinoConnector.js';
@@ -28,9 +28,8 @@ function CreateSkinList (){
                 });            
             }
         }
-        var x = 0;
         CreateSkinSelectIcon(Myjson[0]);//First skin entry
-        SkinChecker();
+        SkinChecker(Myjson);
     });
 }
 
@@ -43,40 +42,37 @@ function CreateSkinSelectIcon(FoundSkin){
         //Sets the Skin And path variables to the selected skin
         $(".Highlight").removeClass("Highlight");
         $(btn).addClass("Highlight");
-        console.log(`Name: ${FoundSkin.Name}, Path: ${FoundSkin.Path}`);
         Skin = FoundSkin.Name;
         SkinPath = FoundSkin.Path;
     });
-    console.log("Test: " +FoundSkin.Name);
     SkinContainer.appendChild(btn);
 }
 
-function SkinChecker() {
-    console.log("Loading Address");
+function SkinChecker(arraya) {
     if(ConectedAddress != "N/A")
-        getAuctionsRaw(ConectedAddress);
+        getAuctionsRaw(ConectedAddress , arraya);
 }
 
 // Get every NFT able to be auctioned from the wallet 
-function getAuctionsRaw(walletAddress) {
+function getAuctionsRaw(walletAddress , arraya) {
     getActiveAuctions(walletAddress)
     .then(res => {
       auctionsRaw = res;
-      buildAuctions();
+      buildAuctions(arraya);
     });
 }
 
 // Build the list of NFTs currently able to be auctioned from the wallet, from the raw wallet data
-function buildAuctions() {
+function buildAuctions(arraya) {
 for(let i = 0; i < auctionsRaw.length - 1; i++){
         auctionsRaw[i].assets.forEach((i) => {
-            CheckSkinAvailable(i.tokenId);
+            CheckSkinAvailable(i.tokenId, arraya);
         });
     }
 }
 
-function CheckSkinAvailable(tokenId){
-   var FoundSkin = Myjson.find(element => element.ID == tokenId);
+function CheckSkinAvailable(tokenId, arraya){
+   var FoundSkin = arraya.find(element => element.ID == tokenId);
    if (FoundSkin != null)
     CreateSkinSelectIcon(FoundSkin);
 }

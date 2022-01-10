@@ -616,8 +616,10 @@ function GetHighscore()
 var GetHighscoreStats = function (result, error) {
     if (result !== null) {
         if(ConectedAddress != "N/A"){
+            if(result.data.Statistics[0] != null){
             HighScore = result.data.Statistics[0].Value;
             console.log("The HighScore is: "+ JSON.stringify(result.data.Statistics[0].Value));
+            }
         }
     } 
     else if (error !== null) {
