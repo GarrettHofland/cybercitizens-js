@@ -244,6 +244,11 @@
         "ID": "149082c03c2a1cea6a642d5ced6f8aed26b5bc68813315602f0b2bce4bc463db",
         "Path": "../assets/cyberDino/Skins/40.png",
         "Icon": "../assets/cyberDino/Icons/40.png"
+    },
+    "41":{
+        "Name" : "Gold" ,
+        "ID": "701d6f0845be0fdd12938d7a6b4aa6548f4f64f135fa4a3de895088718eb0a8e",
+        "Path": "../assets/cyberDino/Skins/gold.png",
+        "Icon": "../assets/cyberDino/Icons/goldIcon.png"
     }
-    
 }
