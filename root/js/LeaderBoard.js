@@ -79,12 +79,6 @@ function updateLeaderboardView() {
 
         elements.push(scoreRow);
     }
-
-    //Create colors for 1st, 2nd and 3rd
-    let colors = ["gold", "silver", "#cd7f32"];
-    for(let i=0; i < 3; i++) {
-        elements[i].style.color = colors[i];
-    }
 }
 
 function LoginAndSetLeaderBoard(){
