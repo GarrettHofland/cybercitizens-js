@@ -1,33 +1,249 @@
 {
-    "BaseDino":{
+    "0":{
         "Name" : "Base" ,
         "ID": "0",
         "Path": "../assets/cyberDino/Skins/dino2.png",
         "Icon": "../assets/cyberDino/Icons/dinoIcon.png"
     },
-    "BoneDino":{
-        "Name" : "Bone" ,
-        "ID": "3277ccd6af2b96be22cf23e067934ecc640f75dcce67439939d5364147c8a83d",
-        "Path": "../assets/cyberDino/Skins/bones.png",
-        "Icon": "../assets/cyberDino/Icons/bonesIcon.png"
-
+    "1":{
+        "Name" : "1" ,
+        "ID": "947d6645baaf84ca8868baedd4cbb53a06f238903191d0479eea1118546da07a",
+        "Path": "../assets/cyberDino/Skins/1.png",
+        "Icon": "../assets/cyberDino/Icons/1.png"
     },
-    "GoldDino":{
-        "Name": "Gold",
-        "ID" : "2",
-        "Path": "../assets/cyberDino/Skins/gold.png",
-        "Icon": "../assets/cyberDino/Icons/goldIcon.png"
+    "2":{
+        "Name" : "8890c466a3d53a3ac982ba739b6ba5433df7deb2d2de77bce23c645cb8963ea6" ,
+        "ID": "8890c466a3d53a3ac982ba739b6ba5433df7deb2d2de77bce23c645cb8963ea6",
+        "Path": "../assets/cyberDino/Skins/2.png",
+        "Icon": "../assets/cyberDino/Icons/2.png"
     },
-    "NewDino":{
-        "Name" : "New" ,
-        "ID": "3",
-        "Path": "../assets/cyberDino/Skins/newdino.png",
-        "Icon": "../assets/cyberDino/Skins/newdino.png"
+    "3":{
+        "Name" : "3" ,
+        "ID": "b11ba313c450243401a89e4811a18e34d84d1c397662002f5519350fcb04895e",
+        "Path": "../assets/cyberDino/Skins/3.png",
+        "Icon": "../assets/cyberDino/Icons/3.png"
     },
-    "RobotDino":{
-        "Name" : "Robot" ,
-        "ID": "4",
-        "Path": "../assets/cyberDino/Skins/robot.png",
-        "Icon": "../assets/cyberDino/Icons/robotIcon.png"
+    "4":{
+        "Name" : "4" ,
+        "ID": "d0b91adf5781026ad1f3f1fdef8329ab48911cc6fa0c33fb8eb6aad11aaf853c",
+        "Path": "../assets/cyberDino/Skins/4.png",
+        "Icon": "../assets/cyberDino/Icons/4.png"
+    },
+    "5":{
+        "Name" : "5" ,
+        "ID": "4b1722b3911279e4f1adad26c192a0da716332a3d57c7fa97f1489a40df89d1f",
+        "Path": "../assets/cyberDino/Skins/5.png",
+        "Icon": "../assets/cyberDino/Icons/5.png"
+    },
+    "6":{
+        "Name" : "6" ,
+        "ID": "998fa30dafd683388a27639df6083b31cf56d129d3e88b97924f127b12cd5569",
+        "Path": "../assets/cyberDino/Skins/6.png",
+        "Icon": "../assets/cyberDino/Icons/6.png"
+    },
+    "7":{
+        "Name" : "7" ,
+        "ID": "ac12407bbe89b9b393ef6e846a4ad78a01f681d6f115509cad02ab9f3b4ec33b",
+        "Path": "../assets/cyberDino/Skins/7.png",
+        "Icon": "../assets/cyberDino/Icons/7.png"
+    },
+    "8":{
+        "Name" : "8" ,
+        "ID": "641b2a2f1b6be712396fdc599f8bfa92e3e0ad523973ebc48f5ea1f581629602",
+        "Path": "../assets/cyberDino/Skins/8.png",
+        "Icon": "../assets/cyberDino/Icons/8.png"
+    },
+    "9":{
+        "Name" : "9" ,
+        "ID": "6aa243c292a5735c73a8d270d3eb1ec9e55fb861b1ef94a8d3a13e85b9a9d3aa",
+        "Path": "../assets/cyberDino/Skins/9.png",
+        "Icon": "../assets/cyberDino/Icons/9.png"
+    },
+    "10":{
+        "Name" : "10" ,
+        "ID": "97749b364eaa6ad5d353fe9e3b776e738b83b1ac3250a5c835e85a3b53fae8ac",
+        "Path": "../assets/cyberDino/Skins/10.png",
+        "Icon": "../assets/cyberDino/Icons/10.png"
+    },
+    "11":{
+        "Name" : "11" ,
+        "ID": "91b352652d098266b229f4dca70b45122b67b730cf3013dd1f2680e9bc327687",
+        "Path": "../assets/cyberDino/Skins/11.png",
+        "Icon": "../assets/cyberDino/Icons/11.png"
+    },
+    "12":{
+        "Name" : "12" ,
+        "ID": "751c605319781cbc9b0c94ea0238553c966693fa0174ba9a8a886c7956592224",
+        "Path": "../assets/cyberDino/Skins/12.png",
+        "Icon": "../assets/cyberDino/Icons/12.png"
+    },
+    "13":{
+        "Name" : "13" ,
+        "ID": "a7d88b0e09cb14fadfa07d8eea1823073038f82108c8725cf33c47ba5aa21386",
+        "Path": "../assets/cyberDino/Skins/13.png",
+        "Icon": "../assets/cyberDino/Icons/13.png"
+    },
+    "14":{
+        "Name" : "14" ,
+        "ID": "5cde759fdd1e6d3844243075ece3c8d010ce97b9d3e217593f517836e3bbeba8",
+        "Path": "../assets/cyberDino/Skins/14.png",
+        "Icon": "../assets/cyberDino/Icons/14.png"
+    },
+    "15":{
+        "Name" : "15" ,
+        "ID": "0831a4aeecc028764363f1accb88e40721057272b0106a44109a4bf0eda9d561",
+        "Path": "../assets/cyberDino/Skins/15.png",
+        "Icon": "../assets/cyberDino/Icons/15.png"
+    },
+    "16":{
+        "Name" : "16" ,
+        "ID": "ac44b8cce4e9deccccc44d9f8cac6686194453d988dabc45cb1d42b9bd32ea51",
+        "Path": "../assets/cyberDino/Skins/16.png",
+        "Icon": "../assets/cyberDino/Icons/16.png"
+    },
+    "17":{
+        "Name" : "17" ,
+        "ID": "64be7867622fa3629dae78ea63b6b4f544485f76992a6e378352f3eb5e1f77ad",
+        "Path": "../assets/cyberDino/Skins/17.png",
+        "Icon": "../assets/cyberDino/Icons/17.png"
+    },
+    "18":{
+        "Name" : "18" ,
+        "ID": "f748d01cc3c454fcba604f95cfa011ca4cf37bb547138b056f424cd00012e9b3",
+        "Path": "../assets/cyberDino/Skins/18.png",
+        "Icon": "../assets/cyberDino/Icons/18.png"
+    },
+    "19":{
+        "Name" : "19" ,
+        "ID": "d24418047a184e1bb8f09194a2786df962a46829954bc8d03451075681f4670b",
+        "Path": "../assets/cyberDino/Skins/19.png",
+        "Icon": "../assets/cyberDino/Icons/19.png"
+    },
+    "20":{
+        "Name" : "20" ,
+        "ID": "4df2dce06741461c3f0ace81128387bca36d1d940cbc0a44523c3e7231adbf97",
+        "Path": "../assets/cyberDino/Skins/20.png",
+        "Icon": "../assets/cyberDino/Icons/20.png"
+    },
+    "21":{
+        "Name" : "21" ,
+        "ID": "4a281653d32d222cebba0e31ab1100ed6e07fc268357cea94c37e94ffcefe319",
+        "Path": "../assets/cyberDino/Skins/21.png",
+        "Icon": "../assets/cyberDino/Icons/21.png"
+    },
+    "22":{
+        "Name" : "22" ,
+        "ID": "2064aa2f21d7b7f5b1c79efe041fb53c2628883943eb4f4bbdb601a876615231",
+        "Path": "../assets/cyberDino/Skins/22.png",
+        "Icon": "../assets/cyberDino/Icons/22.png"
+    },
+    "23":{
+        "Name" : "23" ,
+        "ID": "768c17ec2ded9ef8904d785f31769aa8cd578606ba419b9222b92435caa67a08",
+        "Path": "../assets/cyberDino/Skins/23.png",
+        "Icon": "../assets/cyberDino/Icons/23.png"
+    },
+    "24":{
+        "Name" : "24" ,
+        "ID": "0a21f1124dc2e6250b67cbe35e16bb7388f9ee8faf8b567ac6b7d08ea67b6f3f",
+        "Path": "../assets/cyberDino/Skins/24.png",
+        "Icon": "../assets/cyberDino/Icons/24.png"
+    },
+    "25":{
+        "Name" : "25" ,
+        "ID": "a35971271861e904c20ecb7efb7f506f9470a1d481cd0e9efcfe3f6fa93bd909",
+        "Path": "../assets/cyberDino/Skins/25.png",
+        "Icon": "../assets/cyberDino/Icons/25.png"
+    },
+    "26":{
+        "Name" : "26" ,
+        "ID": "789a0ef0ad861090688a48e08e8adca7da236f2e6489a67961c31564968f0589",
+        "Path": "../assets/cyberDino/Skins/26.png",
+        "Icon": "../assets/cyberDino/Icons/26.png"
+    },
+    "27":{
+        "Name" : "27" ,
+        "ID": "20ca8d4b704ac7d98ec2e01a09bfa3cabf5656210a98aa0bfec23c75ff158de9",
+        "Path": "../assets/cyberDino/Skins/27.png",
+        "Icon": "../assets/cyberDino/Icons/27.png"
+    },
+    "28":{
+        "Name" : "28" ,
+        "ID": "bf47bbe26e1c649b38661d30eee9c93dd153f4bbb71b4c1d1b7ddabeb11d7117",
+        "Path": "../assets/cyberDino/Skins/28.png",
+        "Icon": "../assets/cyberDino/Icons/28.png"
+    },
+    "29":{
+        "Name" : "29" ,
+        "ID": "f12f0fd6ca0b22803b37003151ca697cab4a8a7a1b82cf7221318cb9a2973484",
+        "Path": "../assets/cyberDino/Skins/29.png",
+        "Icon": "../assets/cyberDino/Icons/29.png"
+    },
+    "30":{
+        "Name" : "30" ,
+        "ID": "57d9599b09acc68292b8219e835cfcfcaf9629dba2338caace5c44deeab6d703",
+        "Path": "../assets/cyberDino/Skins/30.png",
+        "Icon": "../assets/cyberDino/Icons/30.png"
+    },
+    "31":{
+        "Name" : "31" ,
+        "ID": "c17a3d9aa192f6010bbe73e533a3bbb910782318ab05d3c312f728785dac08cc",
+        "Path": "../assets/cyberDino/Skins/31.png",
+        "Icon": "../assets/cyberDino/Icons/31.png"
+    },
+    "32":{
+        "Name" : "32" ,
+        "ID": "1cc8ec569c21c7b41167bdd8db1e9f965aba282b8243c01798eed11ed1217fa0",
+        "Path": "../assets/cyberDino/Skins/32.png",
+        "Icon": "../assets/cyberDino/Icons/32.png"
+    },
+    "33":{
+        "Name" : "33" ,
+        "ID": "8bdd97f3a3d5f60bf207aafc1979238d9046812ed1b482c1de8587637e0d0d05",
+        "Path": "../assets/cyberDino/Skins/33.png",
+        "Icon": "../assets/cyberDino/Icons/33.png"
+    },
+    "34":{
+        "Name" : "34" ,
+        "ID": "064ea6a0fba7c7ede5920a8c0c2a10a92fd45af092d3c35bfc92c5057a7b4cc7",
+        "Path": "../assets/cyberDino/Skins/34.png",
+        "Icon": "../assets/cyberDino/Icons/34.png"
+    },
+    "35":{
+        "Name" : "35" ,
+        "ID": "f0dcc5bc9a326c4c200df98bd11c1ee7453789ca5ff6169ac8b1847a9976b1ea",
+        "Path": "../assets/cyberDino/Skins/35.png",
+        "Icon": "../assets/cyberDino/Icons/35.png"
+    },
+    "36":{
+        "Name" : "36" ,
+        "ID": "4c401a906ba42fc80e7dcef48538fe0876ca4abe7b756fd0cca97e6b36bc5c74",
+        "Path": "../assets/cyberDino/Skins/36.png",
+        "Icon": "../assets/cyberDino/Icons/36.png"
+    },
+    "37":{
+        "Name" : "37" ,
+        "ID": "96868b29d43c35003f7553632ee2a97e8357ec4b3fc8d775c9f27f3281532ae7",
+        "Path": "../assets/cyberDino/Skins/37.png",
+        "Icon": "../assets/cyberDino/Icons/37.png"
+    },
+    "38":{
+        "Name" : "38" ,
+        "ID": "0549ee8fb71b564ad36e49c67ec29400134909a7a1f3bc4fd30cb195d0918c5f",
+        "Path": "../assets/cyberDino/Skins/38.png",
+        "Icon": "../assets/cyberDino/Icons/38.png"
+    },
+    "39":{
+        "Name" : "39" ,
+        "ID": "126928721c93830b64d42cadbcefcdd31a2ee0ff072023ea6177665bab8fb245",
+        "Path": "../assets/cyberDino/Skins/39.png",
+        "Icon": "../assets/cyberDino/Icons/39.png"
+    },
+    "40":{
+        "Name" : "40" ,
+        "ID": "149082c03c2a1cea6a642d5ced6f8aed26b5bc68813315602f0b2bce4bc463db",
+        "Path": "../assets/cyberDino/Skins/40.png",
+        "Icon": "../assets/cyberDino/Icons/40.png"
     }
+    
 }

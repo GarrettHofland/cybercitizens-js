@@ -54,7 +54,7 @@ function preload ()
     this.load.image('UnmuteBtn', "../assets/cyberDino/sprites/Unmuted.png"); 
 
     this.load.spritesheet(Skin, SkinPath,
-        { frameWidth: 109, frameHeight: 120}
+        { frameWidth: 127, frameHeight: 132}
     );
 
     this.load.audio('jumpsfx',['../assets/cyberDino/sfx/Jump1.wav']);
@@ -113,7 +113,7 @@ function create ()
 
     platforms = this.physics.add.staticGroup();
 
-    //create platforms //TODO replace with a singe platform
+    //create platforms
     platforms.create(config.width * 0.15, config.height * 0.985, 'ground').setVisible(false);
     platforms.create(config.width * 0.45, config.height* 0.985, 'ground').setVisible(false);
     platforms.create(config.width * 0.75, config.height* 0.985, 'ground').setVisible(false);
@@ -149,7 +149,7 @@ function create ()
     SFX = this.sound;
 
     //create player
-    player = this.physics.add.sprite(config.width * 0.2, config.height * 0.58, Skin).setScale(1);
+    player = this.physics.add.sprite(config.width * 0.2, config.height * 0.58, Skin);
     player.setBounce(0.1);
     player.setCollideWorldBounds(true); //sets border of the screen to be bounds
     player.body.setSize(65, 110 );
