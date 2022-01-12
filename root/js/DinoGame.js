@@ -91,7 +91,7 @@ var GameState; //0 = new Game, 1 = in game, 2 = play again
 var spawned;
 var SFX;
 var floor;
-var BG, BG1, BG2, BG3, BG4, BG5;
+var BG1, BG2, BG3, BG4, BG5;
 var PauseBTN, PlayBTN, MuteBTN, MBTN;
 var mute, MuteTXT;
 
@@ -122,15 +122,15 @@ function create ()
     floor = this.add.tileSprite(config.width * 0.45, config.height* 0.946, 1200 , 230, "Floor");
 
     //Creating trees    
-    tree1 = this.physics.add.sprite(SpawnX, SpawnY, 'tree1').setScale(1.2); tree1.setBounce(0);
-    tree2 = this.physics.add.sprite(SpawnX, SpawnY, 'tree2').setScale(1.2); tree2.setBounce(0);
-    tree3 = this.physics.add.sprite(SpawnX, SpawnY, 'tree3').setScale(1.2); tree3.setBounce(0);
-    tree4 = this.physics.add.sprite(SpawnX, SpawnY, 'Block1').setScale(1.6); tree4.setBounce(0);
-    Box1 = this.physics.add.sprite(SpawnX, SpawnY, 'Block2').setScale(1.6); tree4.setBounce(0);
-    Box2 = this.physics.add.sprite(SpawnX, SpawnY, 'Block2').setScale(1.6); tree4.setBounce(0);
-    Bird = this.physics.add.sprite(SpawnX, SpawnYBird, 'Drone1').setScale(1.5); tree4.setBounce(0);Bird.body.setSize(55, 80); Bird.body.setOffset(2, -30);
-    Bird2 = this.physics.add.sprite(SpawnX, SpawnYBird, 'Drone2').setScale(1.5); tree4.setBounce(0);Bird2.body.setSize(55, 80); Bird2.body.setOffset(2, -30);
-    Bird3 = this.physics.add.sprite(SpawnX, SpawnYBird, 'Drone3').setScale(1.5); tree4.setBounce(0);Bird3.body.setSize(55, 80); Bird3.body.setOffset(2, -30);
+    tree1 = this.physics.add.sprite(SpawnX, SpawnY, 'tree1').setScale(1.2); tree1.setBounce(0); tree1.setFrictionX(1);
+    tree2 = this.physics.add.sprite(SpawnX, SpawnY, 'tree2').setScale(1.2); tree2.setBounce(0); tree2.setFrictionX(1);
+    tree3 = this.physics.add.sprite(SpawnX, SpawnY, 'tree3').setScale(1.2); tree3.setBounce(0); tree3.setFrictionX(1);
+    tree4 = this.physics.add.sprite(SpawnX, SpawnY, 'Block1').setScale(1.6); tree4.setBounce(0); tree4.setFrictionX(1);
+    Box1 = this.physics.add.sprite(SpawnX, SpawnY, 'Block2').setScale(1.6); Box1.setBounce(0); Box1.setFrictionX(1);
+    Box2 = this.physics.add.sprite(SpawnX, SpawnY, 'Block2').setScale(1.6); Box2.setBounce(0); Box2.setFrictionX(1);
+    Bird = this.physics.add.sprite(SpawnX, SpawnYBird, 'Drone1').setScale(1.5); Bird.setBounce(0);Bird.body.setSize(55, 80); Bird.body.setOffset(2, -30);
+    Bird2 = this.physics.add.sprite(SpawnX, SpawnYBird, 'Drone2').setScale(1.5); Bird2.setBounce(0);Bird2.body.setSize(55, 80); Bird2.body.setOffset(2, -30);
+    Bird3 = this.physics.add.sprite(SpawnX, SpawnYBird, 'Drone3').setScale(1.5); Bird3.setBounce(0);Bird3.body.setSize(55, 80); Bird3.body.setOffset(2, -30);
 
     //pasuse button
     PauseBTN = this.physics.add.sprite(config.width / 2.8 , config.height / 2.1, 'PauseBtn').setScale(0.6);
@@ -152,7 +152,7 @@ function create ()
     player = this.physics.add.sprite(config.width * 0.2, config.height * 0.58, Skin);
     player.setBounce(0.1);
     player.setCollideWorldBounds(true); //sets border of the screen to be bounds
-    player.body.setSize(65, 110 );
+    player.body.setSize(65, 135);
 
     //Create Score Text
     scoreText = this.add.bitmapText(config.width - config.width, config.height - config.height, 'atari', 'score: 0').setScale(0.35);
@@ -267,94 +267,101 @@ var interval;
 var DTime;
 var PlayerState; //player state 0 = running, 1 = jumping, 2 = crouching
 var LastTime;
-var DeadTime = 0;
+var DeadTime;
+var frameTime;
 
 //runs 60 times a second
 function update (time , delta)
-{    
-    if(reset)
-    {
-        this.registry.destroy(); // destroy registry
-        this.events.off();
-        this.scene.restart();
-    }
-    if(!pause){
+{   
+    frameTime += delta
+    //Fixes the framerate to 60 frames per second
+    if (frameTime > 16.5) {  
+        frameTime = 0;
 
-    this.physics.resume();
-    
-    //updates highscore
-    HighScoreUpdate();
-
-    //updates Score
-    score += 1;
-    scoreText.setText('Score: ' + score);
-
-    //Move The Floor
-    MoveFloor();
-
-    //Spawns a new tree based on time
-    DTime += delta;
-    if(DTime >= interval)
-    {
-        if(score <= 1000)
-            GetNextTree(Phaser.Math.Between(1, 4));
-        else if(score <= 3500)
-            GetNextTree(Phaser.Math.Between(1, 6));
-        else
-            GetNextTree(Phaser.Math.Between(1, 9));
-        DTime = 0;
-    }
-
-    // Despawns Trees
-    deSpawn();
-
-    //Move the player
-    if (cursors.up.isDown && player.body.touching.down || cursors.space.isDown && player.body.touching.down)
-    {       
-        PlayerState = 1;
-        player.setVelocityY(-(speed * 2));
-        if(!mute)SFX.play('jumpsfx');
-    }
-    else if(player.body.touching.down && !cursors.down.isDown) 
-    {
-        PlayerState = 0;
-    }
-    else if( cursors.down.isDown && player.body.touching.down)
-    {
-        PlayerState = 2;       
-    }
-
-    if (Phaser.Input.Keyboard.JustDown(MBTN))
-    {
-        if(mute){
-            MuteBTN.setTexture('UnmuteBtn');
+        if(reset)
+        {
+            this.registry.destroy(); // destroy registry
+            this.events.off();
+            this.scene.restart();
         }
-        else{
-            MuteBTN.setTexture('MuteBtn');
-            
+        if(!pause){
+
+        this.physics.resume();
+        
+        //updates highscore
+        HighScoreUpdate();
+
+        //updates Score
+        score += 1;
+        scoreText.setText('Score: ' + score);
+
+        //Move The Floor
+        MoveFloor();
+
+        //Spawns a new tree based on time
+        DTime += delta;
+        if(DTime >= interval)
+        {
+            if(score <= 1000)
+                GetNextTree(Phaser.Math.Between(1, 4));
+            else if(score <= 3500)
+                GetNextTree(Phaser.Math.Between(1, 6));
+            else
+                GetNextTree(Phaser.Math.Between(1, 9));
+            DTime = 0;
         }
-        mute = !mute;
-    }
 
-    //SpeedUp
-    if(LastTime + 1000 < score && score < 12000)
-    {
-        if(!mute)SFX.play('Checkpointsfx');
-        LastTime = score;
-        SpeedUp();
-    }
+        // Despawns Trees
+        deSpawn();
 
-    //Keep Player Velocity at 0
-    player.setVelocityX(0);
-    
-    CheckState();
-   }
-   else{ 
-    this.physics.pause(); 
-    DeadTime += delta;
-    if(cursors.up.isDown && DeadTime > 800 || cursors.space.isDown && DeadTime > 800){
-            DeadTime = 0;
-            onClickScreen();
+        //Move the player
+        if (cursors.up.isDown && player.body.touching.down || cursors.space.isDown && player.body.touching.down)
+        {       
+            PlayerState = 1;
+            player.setVelocityY(-(speed * 2));
+            if(!mute)SFX.play('jumpsfx');
+        }
+        else if(player.body.touching.down && !cursors.down.isDown) 
+        {
+            PlayerState = 0;
+        }
+        else if( cursors.down.isDown && player.body.touching.down)
+        {
+            PlayerState = 2;       
+        }
+
+        if (Phaser.Input.Keyboard.JustDown(MBTN))
+        {
+            if(mute){
+                MuteBTN.setTexture('UnmuteBtn');
+            }
+            else{
+                MuteBTN.setTexture('MuteBtn');
+                
+            }
+            mute = !mute;
+        }
+
+        //SpeedUp
+        if(LastTime + 1000 < score && score < 12000)
+        {
+            if(!mute)SFX.play('Checkpointsfx');
+            LastTime = score;
+            SpeedUp();
+        }
+
+        //Keep Player Velocity at 0
+        player.setVelocityX(0);
+        
+        CheckState();
+    }
+    else{ 
+        this.physics.pause(); 
+        DeadTime += delta;
+        if(cursors.up.isDown && DeadTime > 800 || cursors.space.isDown && DeadTime > 800){
+                DeadTime = 0;
+                onClickScreen();
+            }
         }
     }
 }
@@ -373,7 +380,7 @@ function HighScoreUpdate()
 
 function MoveFloor()
 {  
-    floor.tilePositionX += treeVelocity / 60;
+    floor.tilePositionX += treeVelocity / 60; //----------------------------------------------------------- divided by 60
 
     BG5.tilePositionX += treeVelocity / 5000;
     BG4.tilePositionX += treeVelocity / 10000;
@@ -419,6 +426,7 @@ function SetDefaultVariables()
     treeVelocity = 500;
     LastTime = 0;
     DeadTime = 0;
+    frameTime = 0;
 }
 
 //Moves the Appropriate tree forward when called
