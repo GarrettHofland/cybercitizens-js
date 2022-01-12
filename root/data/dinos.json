@@ -250,5 +250,11 @@
         "ID": "701d6f0845be0fdd12938d7a6b4aa6548f4f64f135fa4a3de895088718eb0a8e",
         "Path": "../assets/cyberDino/Skins/gold.png",
         "Icon": "../assets/cyberDino/Icons/goldIcon.png"
+    },
+    "Collab":{
+        "Name" : "Collab" ,
+        "ID": "3f677d5490b6c787969395c1242c63eb7d95aa30a2148498ef2d2e31f608a94d",
+        "Path": "../assets/cyberDino/Skins/0.png",
+        "Icon": "../assets/cyberDino/Icons/0Icon.png"
     }
 }

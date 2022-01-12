@@ -54,7 +54,7 @@ function preload ()
     this.load.image('UnmuteBtn', "../assets/cyberDino/sprites/Unmuted.png"); 
 
     this.load.spritesheet(Skin, SkinPath,
-        { frameWidth: 127, frameHeight: 132}
+        { frameWidth: 160, frameHeight: 135}
     );
 
     this.load.audio('jumpsfx',['../assets/cyberDino/sfx/Jump1.wav']);
@@ -380,7 +380,7 @@ function HighScoreUpdate()
 
 function MoveFloor()
 {  
-    floor.tilePositionX += treeVelocity / 60; //----------------------------------------------------------- divided by 60
+    floor.tilePositionX += treeVelocity / 60;
 
     BG5.tilePositionX += treeVelocity / 5000;
     BG4.tilePositionX += treeVelocity / 10000;
