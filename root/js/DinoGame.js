@@ -153,6 +153,7 @@ function create ()
     player.setBounce(0.1);
     player.setCollideWorldBounds(true); //sets border of the screen to be bounds
     player.body.setSize(65, 135);
+    player.body.setOffset(10, 0);
 
     //Create Score Text
     scoreText = this.add.bitmapText(config.width - config.width, config.height - config.height, 'atari', 'score: 0').setScale(0.35);
@@ -343,7 +344,7 @@ function update (time , delta)
         }
 
         //SpeedUp
-        if(LastTime + 1000 < score && score < 12000)
+        if(LastTime + 1000 < score && score < 25000)
         {
             if(!mute)SFX.play('Checkpointsfx');
             LastTime = score;
@@ -423,7 +424,7 @@ function SetDefaultVariables()
     DTime = 0;
     PlayerState = 0; 
     treeIndex = 0;
-    treeVelocity = 500;
+    treeVelocity = 700;
     LastTime = 0;
     DeadTime = 0;
     frameTime = 0;
