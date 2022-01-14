@@ -60,6 +60,7 @@ function preload ()
     this.load.audio('jumpsfx',['../assets/cyberDino/sfx/Jump1.wav']);
     this.load.audio('Checkpointsfx', ['../assets/cyberDino/sfx/CheckPoint1.wav']);
     this.load.audio('Deathsfx', ['../assets/cyberDino/sfx/Death1.wav']);
+    this.load.audio('BGM', ['../assets/cyberDino/sfx/dno1.mp3']);
 
     this.load.image('BG1' , '../assets/cyberDino/sprites/back 1.png');
     this.load.image('BG2' , '../assets/cyberDino/sprites/back 2.png');
@@ -93,7 +94,7 @@ var SFX;
 var floor;
 var BG1, BG2, BG3, BG4, BG5;
 var PauseBTN, PlayBTN, MuteBTN, MBTN;
-var mute, MuteTXT;
+var mute, MuteTXT, BGM;
 
 function create ()
 {
@@ -147,6 +148,9 @@ function create ()
 
     //create sfx
     SFX = this.sound;
+    BGM = SFX.add('BGM', {loop: true});
+    BGM.play();
+    
 
     //create player
     player = this.physics.add.sprite(config.width * 0.2, config.height * 0.58, Skin);
@@ -192,6 +196,8 @@ function create ()
     loadPlayer();
 
     LoginAndGetHighScore();//Fetches the current high score
+
+    //SFX.play('BGM');
 
     console.log("Create complete!");
 
@@ -285,6 +291,21 @@ function update (time , delta)
             this.events.off();
             this.scene.restart();
         }
+
+        //mute
+        if (Phaser.Input.Keyboard.JustDown(MBTN))
+        {
+            if(mute){
+                MuteBTN.setTexture('UnmuteBtn');
+                BGM.play();
+            }
+            else{
+                MuteBTN.setTexture('MuteBtn');
+                BGM.stop();                
+            }
+            mute = !mute;
+        }
+
         if(!pause){
 
         this.physics.resume();
@@ -329,18 +350,6 @@ function update (time , delta)
         else if( cursors.down.isDown && player.body.touching.down)
         {
             PlayerState = 2;       
-        }
-
-        if (Phaser.Input.Keyboard.JustDown(MBTN))
-        {
-            if(mute){
-                MuteBTN.setTexture('UnmuteBtn');
-            }
-            else{
-                MuteBTN.setTexture('MuteBtn');
-                
-            }
-            mute = !mute;
         }
 
         //SpeedUp
