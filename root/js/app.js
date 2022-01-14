@@ -58,8 +58,8 @@ if(document.getElementById("unsold")) {
 }
 
 if(document.getElementById("dino-desktop") && document.getElementById("dino-mobile")) {
-    // document.getElementById("dino-desktop").href = "javascript:void(0)";
-    // document.getElementById("dino-mobile").href = "javascript:void(0)";
+    document.getElementById("dino-desktop").href = "javascript:void(0)";
+    document.getElementById("dino-mobile").href = "javascript:void(0)";
 }
 
 var images = ["assets/cybercitizens/0.png",
