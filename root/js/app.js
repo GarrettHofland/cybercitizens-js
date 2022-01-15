@@ -58,8 +58,8 @@ if(document.getElementById("unsold")) {
 }
 
 if(document.getElementById("dino-desktop") && document.getElementById("dino-mobile")) {
-    document.getElementById("dino-desktop").href = "javascript:void(0)";
-    document.getElementById("dino-mobile").href = "javascript:void(0)";
+    // document.getElementById("dino-desktop").href = "javascript:void(0)";
+    // document.getElementById("dino-mobile").href = "javascript:void(0)";
 }
 
 var images = ["assets/cybercitizens/0.png",
@@ -103,7 +103,7 @@ if (exit && clear && finish && wallet) {
     exit.addEventListener('click', closeWalletMenu);
     clear.addEventListener('click', clearWalletAddress);
     finish.addEventListener('click', setWalletAddress);
-    walletInput.addEventListener('change', validateWalletAddress);
+    walletInput.addEventListener('input', validateWalletAddress);
 }
 
 if (walletButton) {
@@ -169,6 +169,7 @@ function setWalletAddress() {
     localStorage.setItem("userWallet", walletInput.value);
     walletOutput.textContent = "Wallet set.";
     walletOutput.style.color = "green";
+    setTimeout(window.location.reload(true), 0.5)
 }
 
 function removeWalletAddress() {
