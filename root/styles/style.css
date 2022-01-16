@@ -626,6 +626,20 @@ li #dino-image {
     font-size: 1.25rem;
 }
 
+.container-r1,
+.container-r2 {
+    margin: 0 auto;
+}
+
+#roadmap-switch {
+    margin-bottom: 4em;
+    cursor: pointer;
+}
+
+.container-r2 {
+    display: none;
+}
+
 @media all and (max-width : 60em) {
     header {
         display: block;
