@@ -9,18 +9,6 @@ const clear = document.getElementById("clear");
 const finish = document.getElementById("finish");
 const walletInput = document.getElementById("user-address");
 const scrollUp = document.getElementById("scrollTop");
-let r1 = null;
-let r2 = null;
-
-if(document.querySelector(".container-r1") && document.querySelector(".container-r2")) {
-    r1 = document.querySelector(".container-r1");
-    r2 = document.querySelector(".container-r2");
-    r2.style.display = "none";
-}
-
-if(document.getElementById("roadmap-switch")) {
-    document.getElementById("roadmap-switch").addEventListener('click', switchRoadmap);
-}
 
 if(scrollUp) {
     scrollUp.addEventListener('click', () => {
@@ -130,19 +118,19 @@ if (walletButton) {
     });
 }
 
-function switchRoadmap() {
-    if(r2.style.display == "none") {
-        r1.style.display = "none";
-        r2.style.display = "block";
-        document.getElementById("roadmap-switch").innerText = "Roadmap 1.0";
-    } else {
-        r1.style.display = "block";
-        r2.style.display = "none";
-        document.getElementById("roadmap-switch").innerText = "Roadmap 2.0";
-    }
+// function switchRoadmap() {
+//     if(r2.style.display == "none") {
+//         r1.style.display = "none";
+//         r2.style.display = "block";
+//         document.getElementById("roadmap-switch").innerText = "Roadmap 1.0";
+//     } else {
+//         r1.style.display = "block";
+//         r2.style.display = "none";
+//         document.getElementById("roadmap-switch").innerText = "Roadmap 2.0";
+//     }
 
-    document.getElementById("roadmap").scrollIntoView();
-};
+//     document.getElementById("roadmap").scrollIntoView();
+// };
 
 async function getUnsold() {
     await fetch(`https://ergnomes-server.net/api/checkUnsold`)
