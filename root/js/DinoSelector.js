@@ -64,8 +64,9 @@ function getAuctionsRaw(walletAddress , arraya) {
 
 // Build the list of NFTs currently able to be auctioned from the wallet, from the raw wallet data
 function buildAuctions(arraya) {
-for(let i = 0; i < auctionsRaw.length - 1; i++){
+for(let i = 0; i < auctionsRaw.length; i++){
         auctionsRaw[i].assets.forEach((i) => {
+            //console.log("Token is: " + i.tokenId);
             CheckSkinAvailable(i.tokenId, arraya);
         });
     }
