@@ -4,7 +4,7 @@ const menu = document.getElementsByClassName("navLinks");
 const scrollUp = document.getElementById("scrollTop");
 const mintButton = document.getElementById("mint-button");
 const auctionLink = document.getElementById("auction-link");
-const auctionUrl = "https://ergoauctions.org/#/auction/active?type=picture&artist=9hfNCyqJsCSku8HXrV17Y6AaQciCAwkwx4M49imdWjRaTX22Mvz";
+const auctionUrl = "https://ergoauctions.org/#/auction/active?type=picture&artist=9hfNCyqJsCSku8HXrV17Y6AaQciCAwkwx4M49imdWjRaTX22Mvz,9gtwnExhbN5dBtgTZSstrJhtgLQJt7v8RxrhajpbwcVxfZkCwqW,9g1yghpf5q1X4xBB3Q7HKzj5QqcdTLQPYUGTU9M6QZHDxMLSdhV";
 let openMint = false;
 const images = ["assets/cybercitizens/0.png",
     "assets/cybercitizens/3.png",
