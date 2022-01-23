@@ -198,6 +198,12 @@ h1 {
     color: var(--yellow);
 }
 
+.auctions-text{
+    font-size: 1rem;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
 h2 {
     text-align: center;
     text-transform: uppercase;

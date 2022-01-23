@@ -3,6 +3,8 @@ const links = document.querySelectorAll('.nav-links li');
 const menu = document.getElementsByClassName("navLinks");
 const scrollUp = document.getElementById("scrollTop");
 const mintButton = document.getElementById("mint-button");
+const auctionLink = document.getElementById("auction-link");
+const auctionUrl = "https://ergoauctions.org/#/auction/active?type=picture&artist=9hfNCyqJsCSku8HXrV17Y6AaQciCAwkwx4M49imdWjRaTX22Mvz";
 let openMint = false;
 const images = ["assets/cybercitizens/0.png",
     "assets/cybercitizens/3.png",
@@ -97,5 +99,10 @@ const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
 }
 
+const setAuctionLink = (link) => {
+    auctionLink.href = link;
+}
+
 getUnsold();
+setAuctionLink(auctionUrl);
 setInterval(displayNextImage, 500);
