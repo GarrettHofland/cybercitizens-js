@@ -1,14 +1,18 @@
 const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li');
 const menu = document.getElementsByClassName("navLinks");
-const walletButton = document.getElementById("wallet");
-const walletMenu = document.getElementById("wallet-connector");
-const walletOutput = document.getElementById("wallet-output");
-const exit = document.getElementById("exit");
-const clear = document.getElementById("clear");
-const finish = document.getElementById("finish");
-const walletInput = document.getElementById("user-address");
 const scrollUp = document.getElementById("scrollTop");
+const images = ["assets/cybercitizens/0.png",
+ "assets/cybercitizens/3.png",
+ "assets/cybercitizens/590.png", 
+ "assets/cybercitizens/1873.png",
+ "assets/cybercitizens/1852.png",
+ "assets/cybercitizens/3.png",
+ "assets/cybercitizens/7.png",
+ "assets/cybercitizens/590.png",
+];
+
+let x = 0;
 
 if(scrollUp) {
     scrollUp.addEventListener('click', () => {
@@ -48,30 +52,15 @@ faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
 
-if (finish) {
-    finish.disabled = true;
-    finish.style.backgroundColor = "grey";
-}
-
 if(document.getElementById("unsold")) {
     getUnsold();
 }
 
-if(document.getElementById("dino-desktop") && document.getElementById("dino-mobile")) {
-    // document.getElementById("dino-desktop").href = "javascript:void(0)";
-    // document.getElementById("dino-mobile").href = "javascript:void(0)";
-}
+// if(document.getElementById("dino-desktop") && document.getElementById("dino-mobile")) {
+//     // document.getElementById("dino-desktop").href = "javascript:void(0)";
+//     // document.getElementById("dino-mobile").href = "javascript:void(0)";
+// }
 
-var images = ["assets/cybercitizens/0.png",
- "assets/cybercitizens/3.png",
- "assets/cybercitizens/590.png", 
- "assets/cybercitizens/1873.png",
- "assets/cybercitizens/1852.png",
- "assets/cybercitizens/3.png",
- "assets/cybercitizens/7.png",
- "assets/cybercitizens/590.png",
-];
-var x = 0;
 
 if (document.querySelector("#ergopixel-img")) {
     setInterval(displayNextImage, 500);
@@ -99,39 +88,6 @@ if (document.querySelector("#game")) {
     // }
 }
 
-if (exit && clear && finish && wallet) {
-    exit.addEventListener('click', closeWalletMenu);
-    clear.addEventListener('click', clearWalletAddress);
-    finish.addEventListener('click', setWalletAddress);
-    walletInput.addEventListener('input', validateWalletAddress);
-}
-
-if (walletButton) {
-    // console.log("Wallet button exists");
-    walletButton.addEventListener('click', () => {
-        if (getWalletAddress() != null) {
-            walletInput.value = getWalletAddress();
-            walletOutput.textContent = "Wallet set."
-            walletOutput.style.color = "green";
-        }
-        walletMenu.classList.toggle("open");
-    });
-}
-
-// function switchRoadmap() {
-//     if(r2.style.display == "none") {
-//         r1.style.display = "none";
-//         r2.style.display = "block";
-//         document.getElementById("roadmap-switch").innerText = "Roadmap 1.0";
-//     } else {
-//         r1.style.display = "block";
-//         r2.style.display = "none";
-//         document.getElementById("roadmap-switch").innerText = "Roadmap 2.0";
-//     }
-
-//     document.getElementById("roadmap").scrollIntoView();
-// };
-
 async function getUnsold() {
     await fetch(`https://ergnomes-server.net/api/checkUnsold`)
     .then(res => res.json())
@@ -157,53 +113,4 @@ function displayNextImage() {
 
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text);
-}
-
-function closeWalletMenu() {
-    walletMenu.classList.toggle("open");
-    if (getWalletAddress() == null) {
-        walletOutput.textContent = "Invalid wallet address.";
-        walletOutput.style.color = "red";
-        walletInput.value = "";
-    }
-}
-
-function clearWalletAddress() {
-    removeWalletAddress();
-    walletOutput.textContent = "Wallet information cleared.";
-    walletOutput.style.color = "green";
-    walletInput.value = "";
-    finish.disabled = true;
-    finish.style.backgroundColor = "grey";
-    // console.log(finish.disabled);
-}
-
-function setWalletAddress() {
-    localStorage.setItem("userWallet", walletInput.value);
-    walletOutput.textContent = "Wallet set.";
-    walletOutput.style.color = "green";
-    setTimeout(window.location.reload(true), 0.5)
-}
-
-function removeWalletAddress() {
-    localStorage.removeItem("userWallet");
-}
-
-function getWalletAddress() {
-    return localStorage.getItem("userWallet");
-}
-
-function validateWalletAddress() {
-    // console.log("Validate firing");
-    if (walletInput.value.match(/^9[A-Za-z0-9]{50}/)) {
-        walletOutput.textContent = "Wallet address valid.";
-        walletOutput.style.color = "green";
-        finish.disabled = false;
-        finish.style.backgroundColor = "#258ae8";
-    } else {
-        walletOutput.textContent = "Invalid wallet address.";
-        walletOutput.style.color = "red";
-        finish.disabled = true;
-        finish.style.backgroundColor = "grey";
-    }
 }

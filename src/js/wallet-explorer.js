@@ -354,14 +354,12 @@ const scrollToTop = () => {
 const getNFTsRaw = async (walletAddress) => {
   await getActiveAuctions(walletAddress)
     .then(res => {
-      // console.log(res);
       nftsRaw = res;
       buildNFTList();
     });
 }
 
 // Get every single NFT that is currently able to be auctioned
-// async function getAllnftsRaw() {
 const getAllNFTsRaw = async () => {
   await getAllActiveAuctions()
     .then(res => {
@@ -422,7 +420,7 @@ const displaySearchResults = (token) => {
   container.append(resultCard);
 }
 
-function buildAttributeDisplay(attributes) {
+const buildAttributeDisplay = (attributes) => {
   let container = document.createElement('div');
 
   attributes.forEach(att => {
@@ -442,7 +440,7 @@ function buildAttributeDisplay(attributes) {
   return container;
 }
 
-function buildAttributeArray(keys, values) {
+const buildAttributeArray = (keys, values) => {
   let arr = [];
   keys.forEach(key => {
     arr.push(createAttribute(key, values[key]));
@@ -450,7 +448,7 @@ function buildAttributeArray(keys, values) {
   return arr;
 }
 
-function createAttribute(key, value) {
+const createAttribute = (key, value) => {
   let rarity = getRarity(key, value);
   return {
     "name": key,
@@ -460,7 +458,7 @@ function createAttribute(key, value) {
 }
 
 // Get the rarities of the attributes bg, clothes, eyes, gender, neck, skintone
-function getRarity(field, trait) {
+const getRarity = (field, trait) => {
   try {
     return rarities['0']['traits'][field][trait];
   } catch {
@@ -469,7 +467,7 @@ function getRarity(field, trait) {
 }
 
 // Build the html
-function buildPage() {
+const buildPage = () => {
   let container = document.getElementById("nft-container");
 
   if (container.contains(loadMore)) {
@@ -492,7 +490,6 @@ function buildPage() {
       }
     });
 
-    // console.log(auctions[i]);
     assetImage.src = auctions[i].image;
     assetName.innerText = auctions[i].name;
 
@@ -503,9 +500,6 @@ function buildPage() {
     auctionCard.append(assetImage);
     container.append(auctionCard);
 
-    // document.querySelector(".popupNFT" + i).onclick = function () {
-    //   showNFTModal(auctions[i].image, auctions[i].name, auctions[i].description);
-    // }
   }
   if (nftEndIndex != auctions.length) {
     nftStartIndex = nftEndIndex;
@@ -517,12 +511,12 @@ function buildPage() {
 }
 
 // Load the next section of NFTs
-function loadMoreExplore() {
+const loadMoreExplore = () => {
   buildPage(nftStartIndex, nftEndIndex);
 }
 
 // Show a popup of the NFT
-function showNFTModal(image, name, tokenId) {
+const showNFTModal = (image, name, tokenId) => {
   let rawData;
 
   var modal = document.getElementById("explorerModal");
@@ -537,18 +531,13 @@ function showNFTModal(image, name, tokenId) {
   let userY = window.screenY;
   let userX = window.screenX;
 
-  // This is where ________________________________
-
   getMetaDataForPopup(tokenId).then(() => {
-    // console.log(popupObj);
     rawData = toUtf8String(popupObj[0].additionalRegisters.R5).substr(2);
 
     let metadata = JSON.parse(rawData.slice(1, rawData.length));
     let citizenNumber = Object.keys(metadata['721']);
     let attributesRaw = metadata['721'][citizenNumber]['traits'];
     let attributesKeys = Object.keys(metadata['721'][citizenNumber]['traits']);
-    // console.log(attributesKeys);
-    // console.log(attributesRaw);
 
     let attributes = buildAttributeArray(attributesKeys, attributesRaw);
 
@@ -570,12 +559,10 @@ function showNFTModal(image, name, tokenId) {
 
     assetImage.src = image;
     assetName.innerText = name;
-    // assetMetadata.innerText = metadata;
 
     auctionCard.classList.add("auction-card-modal");
     attributeContainer.classList.add("auction-attribute-container")
 
-    // console.log(assetName);
     auctionCard.append(assetName);
     auctionCard.append(assetImage);
     auctionCard.append(attributeContainer);
@@ -596,12 +583,10 @@ function showNFTModal(image, name, tokenId) {
       loadMore.style.display = "block";
     }
   });
-
-
 }
 
 // Build an object from the res, used to clean up the getMetaData function
-function createNFTObject(res) {
+const createNFTObject = (res) => {
   return {
     "image": res.map((token) => {
       return resolveIpfs(toUtf8String(token.additionalRegisters.R9).substr(2));
@@ -619,7 +604,7 @@ function createNFTObject(res) {
 }
 
 // Get the NFTs' metadata by using the ergoplatform explorer API
-async function getMetaDataAll(tokenId) {
+const getMetaDataAll = async (tokenId) => {
   await fetch(`https://api.ergoplatform.com/api/v0/assets/${tokenId}/issuingBox`)
     .then(res => res.json())
     .then(res => {
@@ -628,7 +613,7 @@ async function getMetaDataAll(tokenId) {
     .catch(error => console.log(error));
 }
 
-async function getMetaDataForPopup(tokenId) {
+const getMetaDataForPopup = async (tokenId) => {
   await fetch(`https://api.ergoplatform.com/api/v0/assets/${tokenId}/issuingBox`)
     .then(res => res.json())
     .then(res => {
@@ -638,7 +623,7 @@ async function getMetaDataForPopup(tokenId) {
 }
 
 // Get the NFT's metadata by using the ergoplatform explorer API
-async function getMetaData(tokenId) {
+const getMetaData = async (tokenId) => {
   await fetch(`https://api.ergoplatform.com/api/v0/assets/${tokenId}/issuingBox`)
     .then(res => res.json())
     .then(res => {
@@ -651,14 +636,14 @@ async function getMetaData(tokenId) {
 }
 
 // Get the NFT's image from ipfs
-function resolveIpfs(url) {
+const resolveIpfs = (url) => {
   const ipfsPrefix = 'ipfs://'
   if (!url.startsWith(ipfsPrefix)) return url
   else return url.replace(ipfsPrefix, 'https://cloudflare-ipfs.com/ipfs/')
 }
 
 // Convert hex to utf8
-function toUtf8String(hex) {
+const toUtf8String = (hex) => {
   if (!hex) {
     hex = ''
   }
@@ -670,14 +655,14 @@ function toUtf8String(hex) {
 }
 
 // Get active auctions from supplied address
-function getActiveAuctions(addr) {
+const getActiveAuctions = (addr) => {
   return getRequest(`/boxes/unspent/byAddress/${addr}?limit=500`, explorerApiV1)
     .then(res => res.items)
     .then((boxes) => boxes.filter((box) => box.assets.length > 0));
 }
 
 // Get all active auctions from the supplied address
-async function getAllActiveAuctions() {
+const getAllActiveAuctions = async () => {
   const spending = (await getUnconfirmedTxsFor(auctionAddress)).filter((s) => s.inputs.length > 1)
   let idToNew = {};
   spending.forEach((s) => {
@@ -697,13 +682,12 @@ async function getAllActiveAuctions() {
 }
 
 // Get the unspent box
-function getUnconfirmedTxsFor(addr) {
+const getUnconfirmedTxsFor = (addr) => {
   return getRequest(
     `/mempool/transactions/byAddress/${addr}`, explorerApiV1
   ).then((res) => res.items);
 }
 
-// Function for appending requests to the exploreAPI URL
-function getRequest(url, api = explorerApi) {
+const getRequest = (url, api = explorerApi) => {
   return fetch(api + url).then(res => res.json())
 }
