@@ -2,6 +2,8 @@ const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li');
 const menu = document.getElementsByClassName("navLinks");
 const scrollUp = document.getElementById("scrollTop");
+const mintButton = document.getElementById("mint-button");
+let openMint = false;
 const images = ["assets/cybercitizens/0.png",
     "assets/cybercitizens/3.png",
     "assets/cybercitizens/590.png",
@@ -18,12 +20,6 @@ if (scrollUp) {
     scrollUp.addEventListener('click', () => {
         window.scrollTo(0, 0);
     });
-}
-
-if (document.getElementById("mint")) {
-    console.log("exists");
-    document.getElementById("mint").href = "javascript:void(0)";
-    console.log(document.getElementById("mint").href);
 }
 
 const faders = document.querySelectorAll(".fade-in");
@@ -52,12 +48,6 @@ faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
 
-// if(document.getElementById("dino-desktop") && document.getElementById("dino-mobile")) {
-//     // document.getElementById("dino-desktop").href = "javascript:void(0)";
-//     // document.getElementById("dino-mobile").href = "javascript:void(0)";
-// }
-
-
 document.querySelector(".address").onclick = function () {
     copyToClipboard("9hfNCyqJsCSku8HXrV17Y6AaQciCAwkwx4M49imdWjRaTX22Mvz");
     alert("Address copied to clipboard!");
@@ -67,11 +57,28 @@ const getUnsold = async () => {
     await fetch(`https://ergnomes-server.net/api/checkUnsold`)
         .then(res => res.json())
         .then(res => {
-            document.getElementById("unsold").innerHTML = "<span>" + res["count"] + "</span> ready to sell!";
+            setupMint(res["count"]);
         })
         .catch(error => {
             console.log(error);
         });
+}
+
+const setupMint = (number) => {
+    let numLeftWave;
+    if (openMint) {
+        numLeftWave = (number - 500);
+        document.getElementById("unsold").innerHTML = "<span>" + numLeftWave + "</span> left in the current wave!";
+    } else {
+        numLeftWave = number % 500;
+        if (numLeftWave != 0 || openMint) {
+            document.getElementById("unsold").innerHTML = "<span>" + numLeftWave + "</span> left in the current wave!";
+        } else {
+            document.getElementById("unsold").innerHTML = "Wave sold out!";
+            mintButton.innerText = "Mint Closed";
+            mintButton.href = "javascript:void(0);";
+        }
+    }
 }
 
 const exitMenuOnLinkClick = () => {
