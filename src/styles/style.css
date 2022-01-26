@@ -123,16 +123,18 @@ span {
 }
 
 nav {
-    grid-column: 3 / 5;
+    grid-column: 2 / 5;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding-right: 2em;
+    gap: 2em;
 }
 
 nav ul {
     display: flex;
     justify-content: flex-end;
+    min-width: 100%;
 }
 
 nav a {
@@ -161,6 +163,25 @@ nav a::before {
 
 nav a:hover::before {
     transform: scale(1, 1);
+}
+
+#discord-desktop,
+#twitter-desktop {
+    margin-right: 10px;
+    border: none;
+}
+
+#discord-desktop {
+    filter: invert(65%) sepia(79%) saturate(2780%) hue-rotate(199deg) brightness(90%) contrast(88%);
+}
+
+#twitter-desktop {
+    filter: invert(68%) sepia(75%) saturate(2575%) hue-rotate(179deg) brightness(99%) contrast(88%);
+}
+
+#discord-desktop::before,
+#twitter-desktop::before {
+    display: none;
 }
 
 .fade-in {
@@ -198,7 +219,7 @@ h1 {
     color: var(--yellow);
 }
 
-.auctions-text{
+.auctions-text {
     font-size: 1rem;
     max-width: 90%;
     word-wrap: break-word;
@@ -237,13 +258,13 @@ section {
     /* border-glow-here */
     background: hsla(295, 100%, 59%, 1);
 
-background: linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+    background: linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
 
-background: -moz-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
 
-background: -webkit-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
 
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1 );
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
 }
 
 section h2 {
@@ -567,10 +588,10 @@ li p {
     all: unset;
     min-width: 10%;
     background-color: var(--pink);
-    border: 2px var(--pink) solid;
+    border: 1px var(--pink) solid;
     text-align: center;
     font-size: 1.5rem;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     transition: ease-in 0.2s;
     padding: 1%;
@@ -607,7 +628,9 @@ textarea:hover {
     border: 2px var(--pink) solid;
 }
 
-#dino-mobile {
+#dino-mobile,
+#twitter-mobile,
+#discord-mobile {
     display: none;
 }
 
@@ -621,6 +644,19 @@ li #dino-image {
     height: auto;
     max-width: 25px;
     max-height: 20px;
+}
+
+li #header-image {
+    flex-grow: 1;
+    flex-basis: 10%;
+}
+
+#header-image {
+    width: auto;
+    height: auto;
+    max-width: 30px;
+    max-height: 25px;
+    border-color: red;;
 }
 
 .benefits-list {
@@ -836,23 +872,29 @@ li #dino-image {
     #wallet-connector p {
         padding-bottom: 2%;
         font-size: 1.25rem;
-      }
-      #wallet-connector input {
+    }
+
+    #wallet-connector input {
         width: 100%;
         margin: 0 auto;
         font-size: 1.125rem;
-      }
-      .wallet-button {
-          font-size: 1.125rem;
-      }
+    }
 
-      #dino-desktop {
-          display: none;
-      }
+    .wallet-button {
+        font-size: 1.125rem;
+    }
 
-      #dino-mobile {
-          display: inline-block;
-      }
+    #dino-desktop,
+    #discord-desktop,
+    #twitter-desktop {
+        display: none;
+    }
+
+    #dino-mobile,
+    #twitter-mobile,
+    #discord-mobile {
+        display: inline-block;
+    }
 }
 
 @media all and (max-width : 40em) {
@@ -941,13 +983,15 @@ li #dino-image {
     #wallet-connector p {
         padding-bottom: 2%;
         font-size: 1rem;
-      }
-      #wallet-connector input {
+    }
+
+    #wallet-connector input {
         width: 100%;
         margin: 0 auto;
         font-size: 1rem;
-      }
-      .wallet-button {
-          font-size: 1rem;
-      }
+    }
+
+    .wallet-button {
+        font-size: 1rem;
+    }
 }
