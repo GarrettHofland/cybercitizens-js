@@ -245,7 +245,7 @@
         "Path": "../assets/cyberDino/Skins/40.png",
         "Icon": "../assets/cyberDino/Icons/40.png"
     },
-    "41":{
+    "Gold":{
         "Name" : "Gold" ,
         "ID": "701d6f0845be0fdd12938d7a6b4aa6548f4f64f135fa4a3de895088718eb0a8e",
         "Path": "../assets/cyberDino/Skins/gold.png",
@@ -256,5 +256,41 @@
         "ID": "3f677d5490b6c787969395c1242c63eb7d95aa30a2148498ef2d2e31f608a94d",
         "Path": "../assets/cyberDino/Skins/0.png",
         "Icon": "../assets/cyberDino/Icons/0Icon.png"
+    },
+    "41":{
+        "Name" : "41" ,
+        "ID": "70104c323cd8f2e3ef2bed8d518e6b67f8517fe718e489e27cb6ac62beaba72c",
+        "Path": "../assets/cyberDino/Skins/41.png",
+        "Icon": "../assets/cyberDino/Icons/41.png"
+    },
+    "42":{
+        "Name" : "42" ,
+        "ID": "3709741e1cbac3a24a9b666a1ef96d63e930c6e54e8eeadd2a71280504c40565",
+        "Path": "../assets/cyberDino/Skins/42.png",
+        "Icon": "../assets/cyberDino/Icons/42.png"
+    },
+    "43":{
+        "Name" : "43" ,
+        "ID": "80340d88c0f1ca5ea6ea7535bce46edd270d45182ddd6ebca5334bfa7f47c0d7",
+        "Path": "../assets/cyberDino/Skins/43.png",
+        "Icon": "../assets/cyberDino/Icons/43.png"
+    },
+    "44":{
+        "Name" : "44" ,
+        "ID": "2951e0fab76e5efb80dc039ed1fa01c5e63973b481916a3668b59ffed39c37d7",
+        "Path": "../assets/cyberDino/Skins/44.png",
+        "Icon": "../assets/cyberDino/Icons/44.png"
+    },
+    "45":{
+        "Name" : "45" ,
+        "ID": "3b53ac906f34634e7637466050fc37d0595f1f00993b97b0a7be164488c22de8",
+        "Path": "../assets/cyberDino/Skins/45.png",
+        "Icon": "../assets/cyberDino/Icons/45.png"
+    },
+    "46":{
+        "Name" : "46" ,
+        "ID": "89c2ce25e960332e618e20bcd4f3c422f2bbd1971953bd5aab62d5459dc29ba2",
+        "Path": "../assets/cyberDino/Skins/46.png",
+        "Icon": "../assets/cyberDino/Icons/46.png"
     }
 }

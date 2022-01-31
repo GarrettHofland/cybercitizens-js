@@ -29,6 +29,7 @@ function CreateSkinList (){
             }
         }
         CreateSkinSelectIcon(Myjson[0]);//First skin entry
+        //for(var i = 0; i < Myjson.length; i++){ CreateSkinSelectIcon(Myjson[i]);} //skin tester code
         SkinChecker(Myjson);
     });
 }
