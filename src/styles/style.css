@@ -390,6 +390,8 @@ li p {
 #cybercity-map {
     max-width: 40%;
     margin: 0 auto;
+    border: 2px solid var(--pink);
+    border-radius: 12px;
 }
 
 .flex-container-team>* {
