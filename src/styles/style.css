@@ -387,6 +387,11 @@ li p {
     font-family: 'Montserrat', sans-serif;
 }
 
+#cybercity-map {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
 .flex-container-team>* {
     flex-basis: 20%;
 }
@@ -696,6 +701,11 @@ li #header-image {
         padding-top: 0.5em;
         padding-bottom: 0.5em;
         font-size: 2rem;
+    }
+
+    #cybercity-map {
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     /* Look for any nav as a preceding sibling */
