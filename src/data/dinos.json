@@ -292,5 +292,11 @@
         "ID": "89c2ce25e960332e618e20bcd4f3c422f2bbd1971953bd5aab62d5459dc29ba2",
         "Path": "../assets/cyberDino/Skins/46.png",
         "Icon": "../assets/cyberDino/Icons/46.png"
+    },
+    "47":{
+        "Name" : "Pup" ,
+        "ID": "1",
+        "Path": "../assets/cyberDino/Skins/Pup.png",
+        "Icon": "../assets/cyberDino/Icons/Pup.png"
     }
 }
