@@ -530,8 +530,9 @@ function GameOver(player)
 {
     if(!mute)SFX.play('Deathsfx');
     MiddleText.setText("Play again?");
-    PlayBTN.setVisible(true);    
+    PlayBTN.setVisible(true);  
     LoginAndSetHighScore();
+    HighScoreUpdate();  
     GameState = 2;
     pause = true;   
 }
