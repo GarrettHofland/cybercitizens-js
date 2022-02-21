@@ -376,7 +376,7 @@ const buildNFTList = async () => {
     });
   }
   nftsLoaded = true;
-  setTimeout(buildPage, 1000);
+  setTimeout(buildPage, 3000);
 }
 
 const displaySearchResults = (token) => {
