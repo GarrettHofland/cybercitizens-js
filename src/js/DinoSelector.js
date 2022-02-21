@@ -1,5 +1,5 @@
-var Skin = "base";
-var SkinPath = "../assets/cyberDino/Skins/dino2.png"
+var Skin = "Pup";
+var SkinPath = "../assets/cyberDino/Skins/Pup.png"
 var Myjson;
 
 var explorerApi = 'https://api.ergoplatform.com/api/v0'
@@ -29,6 +29,7 @@ function CreateSkinList (){
             }
         }
         CreateSkinSelectIcon(Myjson[0]);//First skin entry
+        CreateSkinSelectIcon(Myjson[47]);//Colab skin entry
         //for(var i = 0; i < Myjson.length; i++){ CreateSkinSelectIcon(Myjson[i]);} //skin tester code
         SkinChecker(Myjson);
     });
