@@ -117,6 +117,9 @@ h2 {
     word-wrap: break-word;
     color: var(--yellow);
     text-shadow: 1px 1px #258ae8;
+    cursor: pointer;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .auction-card {
@@ -425,6 +428,10 @@ h2 {
         width: 90%;
     }
 
+    .auction-card-modal img {
+        width: 60%;
+    }
+
     .auction-card h2 {
         font-size: 1.5vw;
     }
@@ -456,10 +463,6 @@ h2 {
     .auction-card h2 {
         font-size: 4vw;
         text-align: center;
-    }
-
-    .auction-card-modal img {
-        width: 60%;
     }
 
     #searchButton {

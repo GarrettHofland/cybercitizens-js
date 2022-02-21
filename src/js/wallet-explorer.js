@@ -579,6 +579,10 @@ const showNFTModal = (image, name, tokenId) => {
 
     modal.style.display = "block";
 
+    nftTokenId.onclick = () => {
+      copyToClipboard(tokenId);
+    }
+
     exitButton.onclick = function () {
       modal.style.display = "none";
       for (let i = 0; i < otherCards.length; i++) {
@@ -698,4 +702,9 @@ const getUnconfirmedTxsFor = (addr) => {
 
 const getRequest = (url, api = explorerApi) => {
   return fetch(api + url).then(res => res.json())
+}
+
+const copyToClipboard = toCopy => {
+  navigator.clipboard.writeText(toCopy);
+  alert("Token ID copied to clipboard!");
 }
