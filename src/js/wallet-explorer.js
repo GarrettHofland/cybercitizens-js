@@ -579,7 +579,7 @@ const showNFTModal = (image, name, tokenId) => {
 
     modal.style.display = "block";
 
-    modal.onclick = function () {
+    exitButton.onclick = function () {
       modal.style.display = "none";
       for (let i = 0; i < otherCards.length; i++) {
         otherCards.item(i).style.display = "block";
