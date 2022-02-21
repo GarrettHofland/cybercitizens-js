@@ -906,6 +906,12 @@ li #header-image {
     #twitter-mobile,
     #discord-mobile {
         display: inline-block;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    .desktop-li {
+        display: none;
     }
 }
 
