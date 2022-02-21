@@ -527,6 +527,8 @@ const showNFTModal = (image, name, tokenId) => {
   let exploreHeader = document.getElementById("explore-header");
   let searchContainer = document.querySelector(".search-container");
   let searchResult = document.querySelector("#search-result");
+  let nftTokenId = document.createElement('h3');
+  let exitButton = document.createElement('button');
   let footer = document.querySelector('footer');
   let userY = window.screenY;
   let userX = window.screenX;
@@ -559,13 +561,19 @@ const showNFTModal = (image, name, tokenId) => {
 
     assetImage.src = image;
     assetName.innerText = name;
+    nftTokenId.innerText = tokenId;
+    exitButton.innerText = "Close";
+    exitButton.classList.add("button");
+    exitButton.classList.add("exitButton");
 
     auctionCard.classList.add("auction-card-modal");
     attributeContainer.classList.add("auction-attribute-container")
 
     auctionCard.append(assetName);
     auctionCard.append(assetImage);
+    auctionCard.append(nftTokenId);
     auctionCard.append(attributeContainer);
+    auctionCard.append(exitButton);
 
     modal.append(auctionCard);
 
