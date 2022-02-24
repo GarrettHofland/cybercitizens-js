@@ -12,6 +12,7 @@ var LastFacing = 0;
 var Bill1, Bill2, LightsOn, LightsOff;
 var Walls, ApartmentDoor, ApartmentOpen = false;
 var offsetX = 0, offsetY = 0;
+import { ConectedAddress, hasApt, AptInfo } from './CityConnector.js';
 
 export class CityScene extends Phaser.Scene
 {
@@ -26,29 +27,29 @@ export class CityScene extends Phaser.Scene
         offsetY = (config.height - 700)/2;
 
         //Map Loading
-        this.load.image('Water', './assets/Map/1Water.png');
-        this.load.image('Roads', './assets/Map/2Roads.png');
-        this.load.image('Island', './assets/Map/3Island.png');
-        this.load.image('Outline', './assets/Map/4outline.png');
-        this.load.image('5', './assets/Map/5.png');
-        this.load.image('6', './assets/Map/6.png');
-        this.load.image('7', './assets/Map/7.png');
-        this.load.image('Hydrants', './assets/Map/8Hydra.png');
-        this.load.image('Box', './assets/Map/9Box.png');
-        this.load.image('VM', './assets/Map/10vm.png');
-        this.load.image('Trash', './assets/Map/11Clouds.png');
-        this.load.image('Arrows', './assets/Map/12Arrow.png');
-        this.load.image('LightOff', './assets/Map/LampsOff.png');
-        this.load.image('LightsOn', './assets/Map/15Lights.png');
-        this.load.image('BuildBack', './assets/Map/BuildingBacks.png');
-        this.load.image('BuildFront', './assets/Map/BuildingTops.png');
-        this.load.image('Signs', './assets/Map/13Signs.png');
+        this.load.image('Water', '../assets/cyberCity//Map/1Water.png');
+        this.load.image('Roads', '../assets/cyberCity/Map/2Roads.png');
+        this.load.image('Island', '../assets/cyberCity/Map/3Island.png');
+        this.load.image('Outline', '../assets/cyberCity/Map/4outline.png');
+        this.load.image('5', '../assets/cyberCity/Map/5.png');
+        this.load.image('6', '../assets/cyberCity/Map/6.png');
+        this.load.image('7', '../assets/cyberCity/Map/7.png');
+        this.load.image('Hydrants', '../assets/cyberCity/Map/8Hydra.png');
+        this.load.image('Box', '../assets/cyberCity/Map/9Box.png');
+        this.load.image('VM', '../assets/cyberCity/Map/10vm.png');
+        this.load.image('Trash', '../assets/cyberCity/Map/11Clouds.png');
+        this.load.image('Arrows', '../assets/cyberCity/Map/12Arrow.png');
+        this.load.image('LightOff', '../assets/cyberCity/Map/LampsOff.png');
+        this.load.image('LightsOn', '../assets/cyberCity/Map/15Lights.png');
+        this.load.image('BuildBack', '../assets/cyberCity/Map/BuildingBacks.png');
+        this.load.image('BuildFront', '../assets/cyberCity/Map/BuildingTops.png');
+        this.load.image('Signs', '../assets/cyberCity/Map/13Signs.png');
 
         //Gifs
-        this.load.spritesheet('Bill1', './assets/Gifs/Bill1.png',
+        this.load.spritesheet('Bill1', '../assets/cyberCity/Gifs/Bill1.png',
             {frameWidth: 96, frameHeight: 30}
         );
-        this.load.spritesheet('Bill2', './assets/Gifs/Bill2.png',
+        this.load.spritesheet('Bill2', '../assets/cyberCity/Gifs/Bill2.png',
             {frameWidth: 96, frameHeight: 30}
         );
 
@@ -58,12 +59,12 @@ export class CityScene extends Phaser.Scene
         // );
 
         //load player
-        this.load.spritesheet('Player', './assets/Player/Char 2.png',
+        this.load.spritesheet('Player', '../assets/cyberCity/Player/Char 2.png',
             { frameWidth: 16, frameHeight: 32}
         );
 
         //Load Walls
-        this.load.spritesheet('Wall', './assets/Map/Wall.png',
+        this.load.spritesheet('Wall', '../assets/cyberCity/Map/Wall.png',
             { frameWidth: 10, frameHeight: 10}
         );
 
@@ -78,7 +79,8 @@ export class CityScene extends Phaser.Scene
         Walls = this.physics.add.staticGroup();
         CreateWalls();
 
-        ApartmentDoor = this.physics.add.sprite(-50 + offsetX, -80 + offsetY,'Wall').setScale(15);//TODO: change to actual location
+        if(hasApt)
+            ApartmentDoor = this.physics.add.sprite(-50 + offsetX, -80 + offsetY,'Wall').setScale(15);//TODO: change to actual location
 
         Water = this.add.sprite(config.width/2, config.height/2, "Water").setScale(scale * 1.3);
         this.add.sprite(config.width/2,config.height/2,'Roads').setScale(scale);
@@ -128,10 +130,16 @@ export class CityScene extends Phaser.Scene
         MoveWater();
         OpenApartment();
         
-        if(ApartmentOpen && keySpace.isDown)
-                this.scene.start('RoomScene');
+        if(ApartmentOpen && keySpace.isDown){
+            switch(AptInfo[0].Size)//replace switch data with selected apt to load
+            {
+                case "N":
+                    this.scene.start('RoomScene');
+                    break;
+            }    
+        }
 
-        console.log("x: " + Player.x + " y: " + Player.y);
+        //console.log("x: " + Player.x + " y: " + Player.y);
     }    
 }
 
@@ -191,13 +199,13 @@ function Movement()
 
 function OpenApartment()
 {
-    //check if apartment is available in address listed
-    //if true set open apt to true, if false set open apt to false
     //ADD visual indicator to press space to enter apt
-    if(CheckOverlap(Player, ApartmentDoor)) // && if apt is within database
-        ApartmentOpen = true;
-    else
-        ApartmentOpen = false;
+    if(hasApt){
+        if(CheckOverlap(Player, ApartmentDoor)) // && if apt is within database
+            ApartmentOpen = true;
+        else
+            ApartmentOpen = false;
+    }
 
 }
 
