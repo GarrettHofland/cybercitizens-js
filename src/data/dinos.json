@@ -298,5 +298,53 @@
         "ID": "1",
         "Path": "../assets/cyberDino/Skins/Pup.png",
         "Icon": "../assets/cyberDino/Icons/Pup.png"
+    },
+    "48":{
+        "Name" : "48" ,
+        "ID": "8fb6b7de0f2343d1edf77781bb0d792b17e71bc7b803656aea4072479c6a11fa",
+        "Path": "../assets/cyberDino/Skins/47.png",
+        "Icon": "../assets/cyberDino/Icons/47.png"
+    },
+    "49":{
+        "Name" : "49" ,
+        "ID": "29f31d20efa60297cc6c6412c991bdd145e930b7ce86f997c9b32cef6346cea6",
+        "Path": "../assets/cyberDino/Skins/48.png",
+        "Icon": "../assets/cyberDino/Icons/48.png"
+    },
+    "50":{
+        "Name" : "50" ,
+        "ID": "29f31d20efa60297cc6c6412c991bdd145e930b7ce86f997c9b32cef6346cea6",
+        "Path": "../assets/cyberDino/Skins/49.png",
+        "Icon": "../assets/cyberDino/Icons/49.png"
+    },
+    "51":{
+        "Name" : "51" ,
+        "ID": "29f31d20efa60297cc6c6412c991bdd145e930b7ce86f997c9b32cef6346cea6",
+        "Path": "../assets/cyberDino/Skins/50.png",
+        "Icon": "../assets/cyberDino/Icons/50.png"
+    },
+    "52":{
+        "Name" : "52" ,
+        "ID": "29f31d20efa60297cc6c6412c991bdd145e930b7ce86f997c9b32cef6346cea6",
+        "Path": "../assets/cyberDino/Skins/51.png",
+        "Icon": "../assets/cyberDino/Icons/51.png"
+    },
+    "53":{
+        "Name" : "53" ,
+        "ID": "29f31d20efa60297cc6c6412c991bdd145e930b7ce86f997c9b32cef6346cea6",
+        "Path": "../assets/cyberDino/Skins/52.png",
+        "Icon": "../assets/cyberDino/Icons/52.png"
+    },
+    "54":{
+        "Name" : "54" ,
+        "ID": "6f657e336ac9920df794c3ec5c802d26b5e5f2d1baf4dda5074f3538fc751bb0",
+        "Path": "../assets/cyberDino/Skins/53.png",
+        "Icon": "../assets/cyberDino/Icons/53.png"
+    },
+    "55":{
+        "Name" : "55" ,
+        "ID": "6f657e336ac9920df794c3ec5c802d26b5e5f2d1baf4dda5074f3538fc751bb0",
+        "Path": "../assets/cyberDino/Skins/54.png",
+        "Icon": "../assets/cyberDino/Icons/54.png"
     }
 }
