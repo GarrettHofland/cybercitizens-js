@@ -101,14 +101,25 @@ h2 {
     border: 3px solid #8c1d8c;
     border-radius: 6px;
     background-color: #231742;
+    display: flex;
+    flex-direction: column;
 }
 
 .auction-card-modal img {
     border: 3px solid #8c1d8c;
     border-radius: 6px;
     margin: 0 auto;
-    width: 50%;
+    width: 20%;
     height: auto;
+}
+
+.auction-card-modal h3 {
+    word-wrap: break-word;
+    color: var(--yellow);
+    text-shadow: 1px 1px #258ae8;
+    cursor: pointer;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .auction-card {
@@ -207,25 +218,27 @@ h2 {
     border: 4px var(--pink) solid;
     border-radius: 12px;
     max-width: 25%;
-    font-size: clamp(1rem, 1.5rem + 1vw, 2rem);
+    font-size: clamp(1rem, 1.25rem + 1vw, 1.5rem);
 }
 
 .auction-attribute-container>.attribute {
-    flex-basis: 50%;
+    /* flex-basis: 25%; */
+    flex: 1 1 25%;
 }
 
 .auction-attribute-container {
-    padding: 5%;
+    padding: 1%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 0.25em;
 }
 
 .auction-attribute-container .attribute {
     max-width: 40%;
 }
+
 
 .button {
     height: 4vh;
@@ -240,6 +253,11 @@ h2 {
     font-family: pixelFont;
     cursor: pointer;
     font-size: 1.25rem;
+}
+
+.exitButton {
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .button:hover {
@@ -263,7 +281,7 @@ h2 {
 }
 
 .attribute p {
-    font-size: 1.25vw;
+    font-size: clamp(1rem, 1rem + 1vw, 1.25rem);
     word-wrap: break-word;
 }
 
@@ -408,6 +426,10 @@ h2 {
 @media all and (max-width : 60em) {
     .search-container {
         width: 90%;
+    }
+
+    .auction-card-modal img {
+        width: 60%;
     }
 
     .auction-card h2 {
