@@ -11,8 +11,9 @@ var Camera;
 var LastFacing = 0;
 var Bill1, Bill2, LightsOn, LightsOff;
 var Walls, ApartmentDoor, ApartmentOpen = false;
-var offsetX = 0, offsetY = 0;
+var offsetX = -56, offsetY = 5;
 import { ConectedAddress, hasApt, AptInfo } from './CityConnector.js';
+var AnimNames = [];
 
 export class CityScene extends Phaser.Scene
 {
@@ -23,17 +24,13 @@ export class CityScene extends Phaser.Scene
 
     preload ()
     {
-        offsetX = (config.width - 1200)/2;
-        offsetY = (config.height - 700)/2;
+        //offsetX = ((config.width - 1200)/2 + offsetX);
+        //offsetY = ((config.height - 700)/2 + offsetY);
 
         //Map Loading
         this.load.image('Water', '../assets/cyberCity//Map/1Water.png');
         this.load.image('Roads', '../assets/cyberCity/Map/2Roads.png');
-        this.load.image('Island', '../assets/cyberCity/Map/3Island.png');
         this.load.image('Outline', '../assets/cyberCity/Map/4outline.png');
-        this.load.image('5', '../assets/cyberCity/Map/5.png');
-        this.load.image('6', '../assets/cyberCity/Map/6.png');
-        this.load.image('7', '../assets/cyberCity/Map/7.png');
         this.load.image('Hydrants', '../assets/cyberCity/Map/8Hydra.png');
         this.load.image('Box', '../assets/cyberCity/Map/9Box.png');
         this.load.image('VM', '../assets/cyberCity/Map/10vm.png');
@@ -84,29 +81,25 @@ export class CityScene extends Phaser.Scene
 
         Water = this.add.sprite(config.width/2, config.height/2, "Water").setScale(scale * 1.3);
         this.add.sprite(config.width/2,config.height/2,'Roads').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'Island').setScale(scale);
         this.add.sprite(config.width/2,config.height/2,'Outline').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'5').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'6').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'7').setScale(scale);
         this.add.sprite(config.width/2,config.height/2,'BuildBack').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'Hydrants').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'Box').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'VM').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'Trash').setScale(scale);
+        //this.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Hydrants').setScale(scale);
+        //this.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Box').setScale(scale);
+        //this.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'VM').setScale(scale);
+        //this.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Trash').setScale(scale);
 
         //Car1 = this.physics.add.sprite(300,210,'Cars');
 
         //TODO : Load Player in this section 
-        Player = this.physics.add.sprite(config.width/2,config.height/2,'Player').setScale(1.8);
+        Player = this.physics.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Player').setScale(1.8);
         Player.body.allowGravity = false; Player.setFrictionX(0); Player.setFrictionY(0);
         
-        this.add.sprite(config.width/2,config.height/2,'Arrows').setScale(scale);
-        LightsOn = this.add.sprite(config.width/2,config.height/2,'LightsOn').setScale(scale); //LightsOn.setVisible(true);
+        //this.add.sprite(config.width/2,config.height/2,'Arrows').setScale(scale);
+        LightsOn = this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'LightsOn').setScale(scale); //LightsOn.setVisible(true);
         //LightsOff = this.add.sprite(config.width/2,config.height/2,'LightsOn').setScale(scale); LightsOff.setVisible(false);
 
         this.add.sprite(config.width/2,config.height/2,'BuildFront').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'Signs').setScale(scale);
+        //this.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Signs').setScale(scale);
 
 
         Bill1 = this.add.sprite(-1310 + offsetX, -90 + offsetY, 'Bill1').setScale(scale);
@@ -134,6 +127,7 @@ export class CityScene extends Phaser.Scene
             switch(AptInfo[0].Size)//replace switch data with selected apt to load
             {
                 case "N":
+                    RemoveAnims();
                     this.scene.start('RoomScene');
                     break;
             }    
@@ -241,12 +235,14 @@ function CreateAnims()
         frameRate: 15,
         repeat: true
     });
+    AnimNames.push('Bill1');
     game.anims.create({
         key: 'Bill2',
         frames: game.anims.generateFrameNumbers( 'Bill2' , { start: 0, end: 297 }),
         frameRate: 20,
         repeat: true
-    });
+    });    
+    AnimNames.push('Bill2');
 
     game.anims.create({
         key: 'WalkD',
@@ -254,47 +250,62 @@ function CreateAnims()
         frameRate: 6,
         repeat: true
     });
+    AnimNames.push('WalkD');
     game.anims.create({
         key: 'WalkR',
         frames: game.anims.generateFrameNumbers( 'Player' , { start: 3, end: 5 }),
         frameRate: 6,
         repeat: true
     });
+    AnimNames.push('WalkR');
     game.anims.create({
         key: 'WalkU',
         frames: game.anims.generateFrameNumbers( 'Player' , { start: 6, end: 8 }),
         frameRate: 6,
         repeat: true
     });
+    AnimNames.push('WalkU');
     game.anims.create({
         key: 'WalkL',
         frames: game.anims.generateFrameNumbers( 'Player' , { start: 9, end: 11 }),
         frameRate: 6,
         repeat: true
-    });        
+    }); 
+    AnimNames.push('WalkL');       
     game.anims.create({
         key: 'StandD',
         frames: game.anims.generateFrameNumbers( 'Player' , { start: 1, end: 1 }),
         frameRate: 6,
         repeat: true
     });
+    AnimNames.push('StandD');
     game.anims.create({
         key: 'StandR',
         frames: game.anims.generateFrameNumbers( 'Player' , { start: 4, end: 4 }),
         frameRate: 6,
         repeat: true
     });
+    AnimNames.push('StandR');
     game.anims.create({
         key: 'StandU',
         frames: game.anims.generateFrameNumbers( 'Player' , { start: 7, end: 7 }),
         frameRate: 6,
         repeat: true
     });
+    AnimNames.push('StandU');
     game.anims.create({
         key: 'StandL',
         frames: game.anims.generateFrameNumbers( 'Player' , { start: 10, end: 10 }),
         frameRate: 6,
         repeat: true
+    });
+    AnimNames.push('StandL');
+}
+
+function RemoveAnims()
+{
+    AnimNames.forEach(element => {
+        game.anims.remove(element);
     });
 }
 
