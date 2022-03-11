@@ -421,7 +421,7 @@ function CreateWalls()
     //Bottom right  
     Walls.create(3040 + offsetX, 1020 + offsetY,'Wall').setSize(30 * scale, 55 * scale);// Water 1
     Walls.create(3088 + offsetX, 1141 + offsetY,'Wall').setSize(20 * scale, 65 * scale);// water 2
-    Walls.create(3040 + offsetX, 1280 + offsetY,'Wall').setSize(30 * scale, 139 * scale);// Water 3
+    Walls.create(3040 + offsetX, 1280 + offsetY,'Wall').setSize(30 * scale, 130 * scale);// Water 3
     Walls.create(3088 + offsetX, 1570 + offsetY,'Wall').setSize(25 * scale, 20 * scale);// water 4
     Walls.create(3143 + offsetX, 1614 + offsetY,'Wall').setSize(20 * scale, 90 * scale);// water 5
     Walls.create(3088 + offsetX, 1820 + offsetY,'Wall').setSize(25 * scale, 20 * scale);// water 6
@@ -465,7 +465,6 @@ function CreateWalls()
     Walls.create(-1146 + offsetX, 2590 + offsetY,'Wall').setSize(500 * scale, 80 * scale);// containers 5
     Walls.create(-625 + offsetX, 2390 + offsetY,'Wall').setSize(42 * scale, 7 * scale);// container 6
     Walls.create(-225 + offsetX, 2390 + offsetY,'Wall').setSize(358 * scale, 300 * scale);// bottom building
-
 }
 
 //Creating The Keys Needed
