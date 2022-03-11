@@ -97,7 +97,7 @@ export class CityScene extends Phaser.Scene
         Player = this.physics.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Player').setScale(1.8);
         Player.body.allowGravity = false; Player.setFrictionX(0); Player.setFrictionY(0); 
         Player.body.setSize(20, 32);
-        Player.body.setOffset(-2, -2.5);
+        Player.body.setOffset(-2, -2.5); //blank
         
         //this.add.sprite(config.width/2,config.height/2,'Arrows').setScale(scale);
         LightsOn = this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'LightsOn').setScale(scale); //LightsOn.setVisible(true);
