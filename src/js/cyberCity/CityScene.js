@@ -3,15 +3,15 @@ import { config } from "./CyberCity.js";
 import { game } from "./CyberCity.js";
 
 var cursors;
-var Water;
+var Water, Boats;
 var scale = 2.2;
-var speed = 130; //1000; //130
+var speed = 130;//1000; //130
 var Player;
 var Camera;
 var LastFacing = 0;
-var Bill1, Bill2, LightsOn, LightsOff;
+var LightsOn, LightsOff;
 var Walls, ApartmentDoor, ApartmentOpen = false;
-var offsetX = -56, offsetY = 5;
+var offsetX = -56, offsetY = 1.5;
 import { ConectedAddress, hasApt, AptInfo } from './CityConnector.js';
 var AnimNames = [];
 
@@ -24,9 +24,6 @@ export class CityScene extends Phaser.Scene
 
     preload ()
     {
-        //offsetX = ((config.width - 1200)/2 + offsetX);
-        //offsetY = ((config.height - 700)/2 + offsetY);
-
         //Map Loading
         this.load.image('Water', '../assets/cyberCity//Map/1Water.png');
         this.load.image('Roads', '../assets/cyberCity/Map/2Roads.png');
@@ -41,14 +38,9 @@ export class CityScene extends Phaser.Scene
         this.load.image('BuildBack', '../assets/cyberCity/Map/BuildingBacks.png');
         this.load.image('BuildFront', '../assets/cyberCity/Map/BuildingTops.png');
         this.load.image('Signs', '../assets/cyberCity/Map/13Signs.png');
+        this.load.image('Boats', '../assets/cyberCity/Map/Boats.png');
 
-        //Gifs
-        this.load.spritesheet('Bill1', '../assets/cyberCity/Gifs/Bill1.png',
-            {frameWidth: 96, frameHeight: 30}
-        );
-        this.load.spritesheet('Bill2', '../assets/cyberCity/Gifs/Bill2.png',
-            {frameWidth: 96, frameHeight: 30}
-        );
+        LoadBillboards(this);
 
         //Load Cars
         // this.load.spritesheet('Cars', './assets/Temp/CAR2.png',
@@ -76,8 +68,6 @@ export class CityScene extends Phaser.Scene
         Walls = this.physics.add.staticGroup();
         CreateWalls();
 
-        
-
         if(hasApt)
             ApartmentDoor = this.physics.add.sprite(-50 + offsetX, -80 + offsetY,'Wall').setScale(15);//TODO: change to actual location
 
@@ -85,12 +75,11 @@ export class CityScene extends Phaser.Scene
         this.add.sprite(config.width/2,config.height/2,'Roads').setScale(scale);
         this.add.sprite(config.width/2,config.height/2,'Outline').setScale(scale);
         this.add.sprite(config.width/2,config.height/2,'BuildBack').setScale(scale);
-        //this.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Hydrants').setScale(scale);
-        //this.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Box').setScale(scale);
-        //this.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'VM').setScale(scale);
-        //this.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Trash').setScale(scale);
-
-       
+        Boats = this.add.sprite(config.width/2,config.height/2,'Boats').setScale(scale);
+        this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Hydrants').setScale(scale);
+        //this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Box').setScale(scale);
+        //this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'VM').setScale(scale);
+        this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Trash').setScale(scale);
 
         //Car1 = this.physics.add.sprite(300,210,'Cars');
 
@@ -99,16 +88,15 @@ export class CityScene extends Phaser.Scene
         Player.body.setSize(20, 32);
         Player.body.setOffset(-2, -2.5); //blank
         
-        //this.add.sprite(config.width/2,config.height/2,'Arrows').setScale(scale);
+        //this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Arrows').setScale(scale);
         LightsOn = this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'LightsOn').setScale(scale); //LightsOn.setVisible(true);
         //LightsOff = this.add.sprite(config.width/2,config.height/2,'LightsOn').setScale(scale); LightsOff.setVisible(false);
 
         this.add.sprite(config.width/2,config.height/2,'BuildFront').setScale(scale);
-        //this.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Signs').setScale(scale);
+        this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25).setScale(scale);
 
-        Bill1 = this.add.sprite(-1310 + offsetX, -90 + offsetY, 'Bill1').setScale(scale);
-        Bill2 = this.add.sprite(-235 + offsetX, 1755 + offsetY, 'Bill2').setScale(scale);
 
+        CreateBillboards(this);
         CreateAnims();
 
         this.cameras.main.startFollow(Player);
@@ -137,15 +125,15 @@ export class CityScene extends Phaser.Scene
             }    
         }
 
-        //console.log("x: " + Player.x + " y: " + Player.y);
+        console.log("x: " + (Player.x + offsetX) + " y: " + (Player.y + offsetY));
     }    
 }
 
+//#region Movement
 function Movement()
 {
     Player.setVelocityY(0); 
     Player.setVelocityX(0); 
-
 
     if (cursors.up.isDown || keyW.isDown)
     {
@@ -190,11 +178,12 @@ function Movement()
 
         }
     }
-    Bill1.anims.play('Bill1' , true); 
-    Bill2.anims.play('Bill2' , true); 
 
+    PlayBillAnims();
 }
+//#endregion
 
+//#region Player Interaction
 function OpenApartment()
 {
     //ADD visual indicator to press space to enter apt
@@ -206,7 +195,9 @@ function OpenApartment()
     }
 
 }
+//#endregion
 
+//#region Waves and water
 var wave = 0;
 var invertWave = false;
 
@@ -221,33 +212,24 @@ function MoveWater()
     {
         Water.x += 0.1;
         Water.y -= 0.1;
+        Boats.x -= 0.008;
+        Boats.y -= 0.01;
         wave += 1;
     }
     else
     {
         Water.x -= 0.1;
         Water.y += 0.1;
+        Boats.x += 0.008;
+        Boats.y += 0.01;
         wave += 1;
     }
 }
+//#endregion
 
+//#region Animations
 function CreateAnims()
 {
-    game.anims.create({
-        key: 'Bill1',
-        frames: game.anims.generateFrameNumbers( 'Bill1' , { start: 0, end: 181 }),
-        frameRate: 15,
-        repeat: true
-    });
-    AnimNames.push('Bill1');
-    game.anims.create({
-        key: 'Bill2',
-        frames: game.anims.generateFrameNumbers( 'Bill2' , { start: 0, end: 297 }),
-        frameRate: 20,
-        repeat: true
-    });    
-    AnimNames.push('Bill2');
-
     game.anims.create({
         key: 'WalkD',
         frames: game.anims.generateFrameNumbers( 'Player' , { start: 0, end: 2 }),
@@ -312,10 +294,178 @@ function RemoveAnims()
         game.anims.remove(element);
     });
 }
+//#endregion
 
+//#region Inputs
+var keyA, keyS, keyD, keyW, keySpace;
+
+function CreateKeys(T)
+{
+    keyA = T.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+    keyS = T.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+    keyD = T.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    keyW = T.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
+    keySpace = T.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+}
+//#endregion
+
+//#region Billboards
+var Bill1, Bill2, Bill3, Bill3a, Bill4, Bill4a, Bill4b;
+var Bill5, Bill5a, Bill5b, Bill5c, Bill6, Bill6a, Bill6b;
+var Bill7, Bill7a, Bill7b, Bill7c, Bill8, Bill8a, Bill8b, Bill8c;
+
+function LoadBillboards(scene)
+{
+    scene.load.spritesheet('Bill1', '../assets/cyberCity/Gifs/Bill1.png',
+        {frameWidth: 96, frameHeight: 30}
+    );
+    scene.load.spritesheet('Bill2', '../assets/cyberCity/Gifs/Bill2.png',
+        {frameWidth: 96, frameHeight: 30}
+    );
+    scene.load.spritesheet('Bill3', '../assets/cyberCity/Gifs/Bill3.png',
+        {frameWidth: 244, frameHeight: 934}
+    );
+    scene.load.spritesheet('Bill4', '../assets/cyberCity/Gifs/Bill4.png',
+        {frameWidth: 1200, frameHeight: 520}
+    );
+    scene.load.spritesheet('Bill5', '../assets/cyberCity/Gifs/Bill5.png',
+        {frameWidth: 1200, frameHeight: 940}
+    );
+    scene.load.spritesheet('Bill6', '../assets/cyberCity/Gifs/Bill6.png',
+        {frameWidth: 258, frameHeight: 623}
+    );
+    scene.load.spritesheet('Bill7', '../assets/cyberCity/Gifs/Bill7.png',
+        {frameWidth: 165, frameHeight: 630}
+    );
+    scene.load.spritesheet('Bill8', '../assets/cyberCity/Gifs/Bill8.png',
+        {frameWidth: 1032, frameHeight: 645}
+    );
+    
+}
+
+function CreateBillboards(scene)
+{
+    Bill1 = scene.add.sprite(-1309 + offsetX, -89 + offsetY, 'Bill1').setScale(scale);
+    Bill2 = scene.add.sprite(-239 + offsetX, 1774 + offsetY, 'Bill2').setScale(scale);
+    Bill3 = scene.add.sprite(-960 + offsetX, 516 + offsetY, 'Bill3').setScale(0.1);
+    Bill3a = scene.add.sprite(1470 + offsetX, -1313 + offsetY, 'Bill3').setScale(0.1);
+    Bill4 = scene.add.sprite(-1207 + offsetX, -1106 + offsetY, 'Bill4').setScale(0.09);
+    Bill4a = scene.add.sprite(-778 + offsetX, -1106 + offsetY, 'Bill4').setScale(0.09);
+    Bill4b = scene.add.sprite(923 + offsetX, 432 + offsetY, 'Bill4').setScale(0.09);
+    Bill5 = scene.add.sprite(212 + offsetX, -155 + offsetY, 'Bill5').setScale(0.08);
+    Bill5a = scene.add.sprite(305 + offsetX, 570 + offsetY, 'Bill5').setScale(0.08);
+    Bill5b = scene.add.sprite(1520 + offsetX, 377 + offsetY, 'Bill5').setScale(0.08);
+    Bill5c = scene.add.sprite(280 + offsetX, 1765 + offsetY, 'Bill5').setScale(0.09);
+    Bill6 = scene.add.sprite(370 + offsetX, -1410 + offsetY, 'Bill6').setScale(0.2);
+    Bill6a = scene.add.sprite(872 + offsetX, 745.8 + offsetY, 'Bill6').setScale(0.2);
+    Bill6b = scene.add.sprite(1600 + offsetX, 1958 + offsetY, 'Bill6').setScale(0.2);
+    Bill7 = scene.add.sprite(-1570 + offsetX, -1670 + offsetY, 'Bill7').setScale(0.15);
+    Bill7a = scene.add.sprite(-370 + offsetX, 1850 + offsetY, 'Bill7').setScale(0.15);
+    Bill7b = scene.add.sprite(-106 + offsetX, 1850 + offsetY, 'Bill7').setScale(0.15);
+    Bill7c = scene.add.sprite(1840 + offsetX, 941 + offsetY, 'Bill7').setScale(0.2);
+    Bill8 = scene.add.sprite(1093 + offsetX, 2130 + offsetY, 'Bill8').setScale(0.1);
+    Bill8a = scene.add.sprite(-882 + offsetX, 440 + offsetY, 'Bill8').setScale(0.1);
+    Bill8b = scene.add.sprite(300 + offsetX, 1460 + offsetY, 'Bill8').setScale(0.1);
+    Bill8c = scene.add.sprite(2825 + offsetX, 905 + offsetY, 'Bill8').setScale(0.1);
+
+
+
+    CreateBillAnims();
+}
+
+function CreateBillAnims()
+{
+    game.anims.create({
+        key: 'Bill1',
+        frames: game.anims.generateFrameNumbers( 'Bill1' , { start: 0, end: 181 }),
+        frameRate: 15,
+        repeat: true
+    });
+    AnimNames.push('Bill1');
+    game.anims.create({
+        key: 'Bill2',
+        frames: game.anims.generateFrameNumbers( 'Bill2' , { start: 0, end: 297 }),
+        frameRate: 15,
+        repeat: true
+    });    
+    AnimNames.push('Bill2');
+    game.anims.create({
+        key: 'Bill3',
+        frames: game.anims.generateFrameNumbers( 'Bill3' , { start: 0, end: 76 }),
+        frameRate: 10,
+        repeat: true
+    });    
+    AnimNames.push('Bill3');
+    game.anims.create({
+        key: 'Bill4',
+        frames: game.anims.generateFrameNumbers( 'Bill4' , { start: 0, end: 82 }),
+        frameRate: 15,
+        repeat: true
+    });    
+    AnimNames.push('Bill4');
+    game.anims.create({
+        key: 'Bill5',
+        frames: game.anims.generateFrameNumbers( 'Bill5' , { start: 0, end: 58 }),
+        frameRate: 10,
+        repeat: true
+    });    
+    AnimNames.push('Bill5');
+    game.anims.create({
+        key: 'Bill6',
+        frames: game.anims.generateFrameNumbers( 'Bill6' , { start: 0, end: 102 }),
+        frameRate: 10,
+        repeat: true
+    });    
+    AnimNames.push('Bill6');
+    game.anims.create({
+        key: 'Bill7',
+        frames: game.anims.generateFrameNumbers( 'Bill7' , { start: 0, end: 75 }),
+        frameRate: 7,
+        repeat: true
+    });    
+    AnimNames.push('Bill7');
+    game.anims.create({
+        key: 'Bill8',
+        frames: game.anims.generateFrameNumbers( 'Bill8' , { start: 0, end: 94 }),
+        frameRate: 10,
+        repeat: true
+    });    
+    AnimNames.push('Bill8');
+}
+
+function PlayBillAnims()
+{
+    Bill1.anims.play('Bill1' , true); 
+    Bill2.anims.play('Bill2' , true); 
+    Bill3.anims.play('Bill3' , true); 
+    Bill3a.anims.play('Bill3' , true); 
+    Bill4.anims.play('Bill4' , true); 
+    Bill4a.anims.play('Bill4' , true); 
+    Bill4b.anims.play('Bill4' , true); 
+    Bill5.anims.play('Bill5' , true); 
+    Bill5a.anims.play('Bill5' , true); 
+    Bill5b.anims.play('Bill5' , true);
+    Bill5c.anims.play('Bill5' , true); 
+    Bill6.anims.play('Bill6' , true);
+    Bill6a.anims.play('Bill6' , true); 
+    Bill6b.anims.play('Bill6' , true); 
+    Bill7.anims.play('Bill7' , true); 
+    Bill7a.anims.play('Bill7' , true); 
+    Bill7b.anims.play('Bill7' , true); 
+    Bill7c.anims.play('Bill7' , true); 
+    Bill8.anims.play('Bill8' , true); 
+    Bill8a.anims.play('Bill8' , true); 
+    Bill8b.anims.play('Bill8' , true); 
+    Bill8c.anims.play('Bill8' , true); 
+
+
+
+}
+//#endregion
+
+//#region Create Walls & Bonuds
 function CreateWalls()
 {
-
     //Plaza Left of starting point
     Walls.create(-340 + offsetX, 280 + offsetY,'Wall').setSize(390 * scale, 70 * scale); // Top Building
     Walls.create(-340 + offsetX, 420 + offsetY,'Wall').setSize(80 * scale, 270 * scale); // left building
@@ -368,7 +518,6 @@ function CreateWalls()
     Walls.create( 2610 + offsetX, 1328  + offsetY,'Wall').setSize(20 * scale, 85 * scale); //Pink Sign Building edge
     Walls.create( 1920 + offsetX, 1444  + offsetY,'Wall').setSize(85 * scale, 60 * scale); //Pink Sign Building Stairs
 
-
     //Collab Shop and casino 
     Walls.create( 355 + offsetX, -837  + offsetY,'Wall').setSize(92 * scale, 98 * scale); //Collab Left Part
     Walls.create( 560 + offsetX, -837  + offsetY,'Wall').setSize(148 * scale, 65 * scale); //Collab Central Part
@@ -409,7 +558,6 @@ function CreateWalls()
     Walls.create(210 + offsetX, -2150 + offsetY,'Wall').setSize(50 * scale, 55 * scale);// water right of center building
     Walls.create(320 + offsetX, -2222 + offsetY,'Wall').setSize(285 * scale, 65 * scale);// big hotel water behind
     Walls.create(455 + offsetX, -1960 + offsetY,'Wall').setSize(240 * scale, 105 * scale);// big hotel building
-
 
     //Top right Bounds
     Walls.create(947 + offsetX, -2260 + offsetY,'Wall').setSize(160 * scale, 10  * scale);// Bottom water of boat
@@ -460,31 +608,21 @@ function CreateWalls()
     Walls.create(-1146 + offsetX, 1590 + offsetY,'Wall').setSize(240 * scale, 110 * scale);// pier top building
     Walls.create(-1146 + offsetX, 1590 + offsetY,'Wall').setSize(95 * scale, 600 * scale);// pier
     Walls.create(-1146 + offsetX, 1590 + offsetY,'Wall').setSize(120 * scale, 128 * scale);// pier block
-    Walls.create(-1146 + offsetX, 1940 + offsetY,'Wall').setSize(225 * scale, 40 * scale);// containers 1
+    Walls.create(-1146 + offsetX, 1940 + offsetY,'Wall').setSize(225 * scale, 200 * scale);// containers 1
     Walls.create(-1146 + offsetX, 2140 + offsetY,'Wall').setSize(210 * scale, 55 * scale);// containers 2
-    Walls.create(-1146 + offsetX, 2365 + offsetY,'Wall').setSize(210 * scale, 60 * scale);// containers 3
+    Walls.create(-1146 + offsetX, 2385 + offsetY,'Wall').setSize(500 * scale, 60 * scale);// containers 3
     Walls.create(-1146 + offsetX, 2365 + offsetY,'Wall').setSize(130 * scale, 80 * scale);// containers 4
     Walls.create(-1146 + offsetX, 2590 + offsetY,'Wall').setSize(500 * scale, 80 * scale);// containers 5
     Walls.create(-625 + offsetX, 2390 + offsetY,'Wall').setSize(42 * scale, 7 * scale);// container 6
-    Walls.create(-225 + offsetX, 2390 + offsetY,'Wall').setSize(358 * scale, 300 * scale);// bottom building
+    Walls.create(-225 + offsetX, 2385 + offsetY,'Wall').setSize(358 * scale, 300 * scale);// bottom building
 }
+//#endregion
 
-//Creating The Keys Needed
-var keyA, keyS, keyD, keyW, keySpace;
-
-function CreateKeys(T)
-{
-    keyA = T.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
-    keyS = T.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
-    keyD = T.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
-    keyW = T.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
-    keySpace = T.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-
-}
-
+//#region Helper Classes
 function CheckOverlap(SpriteA, SpriteB)
 {
     var boundsA = SpriteA.getBounds();
     var boundsB = SpriteB.getBounds();
     return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);
 }
+//#endregion
