@@ -141,7 +141,7 @@ const getTxLink = (tx) => {
 };
 
 const setupWalletForGame = async () => {
-    let access = checkWalletAccess();
+    let access = await checkWalletAccess();
 
     if(access) {
         await connect();
