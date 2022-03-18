@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack /src/js/auctions.js /dist/auctions-bundle.js"
+    "build": "webpack /src/js/wallet-nautilus.js /dist/wallet-nautilus.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "buffer": "^6.0.3"
+    "buffer": "^6.0.3",
+    "ergo-lib-wasm-browser": "^0.15.0"
   }
 }
