@@ -388,7 +388,7 @@ li p {
 }
 
 #cybercity-map {
-    max-width: 40%;
+    max-width: 80vw;
     margin: 0 auto;
     border: 2px solid var(--pink);
     border-radius: 12px;
