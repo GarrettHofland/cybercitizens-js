@@ -18,15 +18,12 @@ const connect = async () => {
     const readAccess = await ergo_request_read_access();
 
     if (readAccess) {
+        await saveChangeAddress();
         return await ergo_check_read_access();
     }
 
     return false;
 };
-
-const checkWalletAccess = async () => {
-    return await ergo_check_read_access();
-}
 
 /**
  * 
@@ -141,21 +138,28 @@ const getTxLink = (tx) => {
 };
 
 const setupWalletForGame = async () => {
-    let access = await checkWalletAccess();
+    console.log(checkChangeAddressSaved());
 
-    if(access) {
+    if(!checkChangeAddressSaved()) {
+        console.log("Wallet not null!");
         await connect();
-        let addr = await getAddress();
-        localStorage.setItem('userWallet', addr);
-        console.log(localStorage.getItem('userWallet'));
     }
     else { // User has not already accepted, so we don't want to send a popup
         console.log("Wallet not yet registered");
+        return;
     }
 
-    return;
 }
 
-setupWalletForGame();
+const saveChangeAddress = async () => {
+    let addr = await getAddress();
+    localStorage.setItem('userWallet', addr);
+};
+
+const checkChangeAddressSaved = () => {
+    return ('userWallet' in localStorage);
+};
+
+await setupWalletForGame();
 
 document.getElementById('wallet').addEventListener('click', connect);
