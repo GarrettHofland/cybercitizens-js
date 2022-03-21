@@ -7,13 +7,16 @@ let DinoContainer = document.getElementById("dino-game");
 
 
 window.onload = function(){ 
-    if(getWalletAddress() != null) {
+  ergo_request_read_access();
+    //if(getWalletAddress() != null) {
+      if(ergo_check_read_access()){
         ConectedAddress = getWalletAddress();
+        addPhaser();
       }
       else {
         ConectedAddress = "N/A";
+        addPhaser();
       }
-      addPhaser();
 }   
 
 export {ConectedAddress};
@@ -27,4 +30,6 @@ function addPhaser() {
 
 function getWalletAddress() {
     return localStorage.getItem("userWallet");
+    //return "9hJJksEkDcAznbezGWZ8qjNnqq46HNWHMyuj18BQpavatKJqRFY";
+
 }
