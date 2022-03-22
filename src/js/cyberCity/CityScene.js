@@ -49,7 +49,7 @@ export class CityScene extends Phaser.Scene
 
         //load player
         this.load.spritesheet('Player', '../assets/cyberCity/Player/Char 2.png',
-            { frameWidth: 16, frameHeight: 32}
+            { frameWidth: 32, frameHeight: 48}
         );
 
         //Load Walls
@@ -83,7 +83,7 @@ export class CityScene extends Phaser.Scene
 
         //Car1 = this.physics.add.sprite(300,210,'Cars');
 
-        Player = this.physics.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Player').setScale(1.8);
+        Player = this.physics.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Player').setScale(1.4);
         Player.body.allowGravity = false; Player.setFrictionX(0); Player.setFrictionY(0); 
         Player.body.setSize(20, 32);
         Player.body.setOffset(-2, -2.5); //blank
@@ -246,14 +246,14 @@ function CreateAnims()
     AnimNames.push('WalkR');
     game.anims.create({
         key: 'WalkU',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 6, end: 8 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 9, end: 11 }),
         frameRate: 6,
         repeat: true
     });
     AnimNames.push('WalkU');
     game.anims.create({
         key: 'WalkL',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 9, end: 11 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 6, end: 8 }),
         frameRate: 6,
         repeat: true
     }); 
@@ -274,14 +274,14 @@ function CreateAnims()
     AnimNames.push('StandR');
     game.anims.create({
         key: 'StandU',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 7, end: 7 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 10, end: 10 }),
         frameRate: 6,
         repeat: true
     });
     AnimNames.push('StandU');
     game.anims.create({
         key: 'StandL',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 10, end: 10 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 7, end: 7 }),
         frameRate: 6,
         repeat: true
     });

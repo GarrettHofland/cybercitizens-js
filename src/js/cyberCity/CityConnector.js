@@ -6,7 +6,10 @@ var AptInfo = [];
 
 
 window.onload = function(){ 
-    if(getWalletAddress() != null) {
+    ergo_request_read_access();
+
+    //if(getWalletAddress() != null) {
+    if(ergo_check_read_access()){
         ConectedAddress = getWalletAddress();
         LoadAvailableBuildings()
       }
