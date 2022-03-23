@@ -16,7 +16,7 @@ export var config = {
         debug: 0
       }
     },
-    scene: [CityScene , RoomScene ], //add all imported scenes here
+    scene: [CityScene, RoomScene], //add all imported scenes here
     audio:
     {
         disableWebAudio: true

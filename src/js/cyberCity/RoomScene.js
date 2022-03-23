@@ -4,7 +4,7 @@ import { game } from "./CyberCity.js";
 
 var cursors;
 var Player, Camera;
-var scale = 1.8;
+var scale = 0.4;
 var LastFacing = 0;
 var speed = 150;//1000; //130
 var offsetX = 0, offsetY = 0;
