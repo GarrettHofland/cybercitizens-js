@@ -1,0 +1,17 @@
+{
+    "0":{
+        "ID": "0",
+        "Path": "../assets/cyberCity/Chars/0.png",
+        "Icon": "../assets/cyberCity/CharIcons/0.png"
+    },
+    "1":{
+        "ID": "947d6645baaf84ca8868baedd4cbb53a06f238903191d0479eea1118546da07a",
+        "Path": "../assets/cyberCity/Chars/1.png",
+        "Icon": "../assets/cyberCity/CharIcons/1.png"
+    },
+    "2":{
+        "ID": "9hhww12121239aji98889a7632hhuuaojnahskjaksjdjhhhakiuhskuakjsukac",
+        "Path": "../assets/cyberCity/Chars/2.png",
+        "Icon": "../assets/cyberCity/CharIcons/2.png"
+    }
+}

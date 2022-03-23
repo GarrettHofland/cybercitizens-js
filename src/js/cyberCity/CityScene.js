@@ -14,6 +14,7 @@ var Walls, ApartmentDoor, ApartmentOpen = false;
 var offsetX = -56, offsetY = 1.5;
 import { ConectedAddress, hasApt, AptInfo } from './CityConnector.js';
 var AnimNames = [];
+var AptTxt;
 
 export class CityScene extends Phaser.Scene
 {
@@ -24,6 +25,9 @@ export class CityScene extends Phaser.Scene
 
     preload ()
     {
+        
+        this.load.bitmapFont('atari', '../assets/cyberDino/Fonts/atari-classic.png', '../assets/cyberDino/Fonts/atari-classic.xml');
+
         //Map Loading
         this.load.image('Water', '../assets/cyberCity//Map/1Water.png');
         this.load.image('Roads', '../assets/cyberCity/Map/2Roads.png');
@@ -67,9 +71,9 @@ export class CityScene extends Phaser.Scene
         //create bounds
         Walls = this.physics.add.staticGroup();
         CreateWalls();
-
+        
         if(hasApt)
-            ApartmentDoor = this.physics.add.sprite(-50 + offsetX, -80 + offsetY,'Wall').setScale(15);//TODO: change to actual location
+            ApartmentDoor = this.physics.add.sprite(700 + offsetX, -1800 + offsetY,'Wall').setScale(40);//.setSize(450, 200);
 
         Water = this.add.sprite(config.width/2, config.height/2, "Water").setScale(scale * 1.3);
         this.add.sprite(config.width/2,config.height/2,'Roads').setScale(scale);
@@ -83,10 +87,11 @@ export class CityScene extends Phaser.Scene
 
         //Car1 = this.physics.add.sprite(300,210,'Cars');
 
+        //create Player
         Player = this.physics.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Player').setScale(1.4);
         Player.body.allowGravity = false; Player.setFrictionX(0); Player.setFrictionY(0); 
-        Player.body.setSize(20, 32);
-        Player.body.setOffset(-2, -2.5); //blank
+        Player.body.setSize(28, 41);
+        Player.body.setOffset(1.5, 2);
         
         //this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Arrows').setScale(scale);
         LightsOn = this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'LightsOn').setScale(scale); //LightsOn.setVisible(true);
@@ -99,6 +104,10 @@ export class CityScene extends Phaser.Scene
         CreateBillboards(this);
         CreateAnims();
 
+        AptTxt = this.add.bitmapText(370 + offsetX, -1750 + offsetY,'atari', 'Press Space to Open Appartment').setScale(0.3);
+        AptTxt.setTint(0xba1298, 0xba1298, 0xba1298, 0xba1298);
+        AptTxt.visible = false;
+
         this.cameras.main.startFollow(Player);
 
         this.physics.add.collider(Player , Walls);
@@ -110,7 +119,7 @@ export class CityScene extends Phaser.Scene
     }  
 
     update ()
-    {        
+    {       
         Movement();
         MoveWater();
         OpenApartment();
@@ -125,7 +134,7 @@ export class CityScene extends Phaser.Scene
             }    
         }
 
-        console.log("x: " + (Player.x + offsetX) + " y: " + (Player.y + offsetY));
+        //console.log("x: " + (Player.x + offsetX) + " y: " + (Player.y + offsetY));
     }    
 }
 
@@ -189,9 +198,14 @@ function OpenApartment()
     //ADD visual indicator to press space to enter apt
     if(hasApt){
         if(CheckOverlap(Player, ApartmentDoor)) // && if apt is within database
+        {
             ApartmentOpen = true;
-        else
+            AptTxt.visible = true;
+        }
+        else{
             ApartmentOpen = false;
+            AptTxt.visible = false;
+        }
     }
 
 }
@@ -467,50 +481,50 @@ function PlayBillAnims()
 function CreateWalls()
 {
     //Plaza Left of starting point
-    Walls.create(-340 + offsetX, 280 + offsetY,'Wall').setSize(390 * scale, 70 * scale); // Top Building
-    Walls.create(-340 + offsetX, 420 + offsetY,'Wall').setSize(80 * scale, 270 * scale); // left building
-    Walls.create(260 + offsetX, 440 + offsetY,'Wall').setSize(122.3 * scale, 165 * scale); // Right building
-    Walls.create(200 + offsetX, 820 + offsetY,'Wall').setSize(150 * scale, 80 * scale); // right bottom building
-    Walls.create(-165 + offsetX, 430 + offsetY,'Wall').setSize(50 * scale, 15 * scale); // staircase
-    Walls.create(-165 + offsetX, 550 + offsetY,'Wall').setSize(60 * scale, 210 * scale); // second left building
+    CreateWall(-340, 280 ,390 , 70);  // Top Building
+    CreateWall(-340, 420, 80 , 270); // left building
+    CreateWall(260, 440, 122.3, 165); // Right building
+    CreateWall(200, 820, 150 ,80); // right bottom building
+    CreateWall(-165, 430, 50, 15); // staircase
+    CreateWall(-165, 550, 60, 210); // second left building
 
     //plaza with Bill2 
-    Walls.create(-350 + offsetX, 1280 + offsetY,'Wall').setSize(102 * scale, 368 * scale); //left building 1
-    Walls.create(-157.5 + offsetX, 1280 + offsetY,'Wall').setSize(87.5 * scale, 355 * scale); // left building 2
-    Walls.create( 36 + offsetX, 1472 + offsetY,'Wall').setSize(20 * scale, 267.5 * scale); //left building inside extenstion
-    Walls.create( 80 + offsetX, 1715 + offsetY,'Wall').setSize(67 * scale, 158  * scale); // bottom right building
-    Walls.create( 80 + offsetX, 1715 + offsetY,'Wall').setSize(207 * scale, 80  * scale); // bottom right building
-    Walls.create( 227 + offsetX, 1970 + offsetY,'Wall').setSize(22 * scale, 42  * scale); // bottom right building
-    Walls.create( 330 + offsetX, 1715 + offsetY,'Wall').setSize(93.4 * scale, 158  * scale); // bottom right building
-    Walls.create( 225 + offsetX, 1567 + offsetY,'Wall').setSize(139 * scale, 65 * scale); //right middle building
-    Walls.create( 160 + offsetX, 1280 + offsetY,'Wall').setSize(169 * scale, 130 * scale);//right top building 
+    CreateWall(-350, 1280,102, 368); //left building 1
+    CreateWall(-157.5, 1280, 87.5, 355); // left building 2
+    CreateWall( 36, 1472, 20, 267.5); //left building inside extenstion
+    CreateWall( 80, 1715, 67, 158); // bottom right building
+    CreateWall( 80, 1715, 207, 80); // bottom right building
+    CreateWall( 227, 1970, 22, 42); // bottom right building
+    CreateWall( 330, 1715, 93.4, 158); // bottom right building
+    CreateWall( 225, 1567, 139, 65); //right middle building
+    CreateWall( 160, 1280, 169, 130);//right top building 
 
     //Right of starting point
-    Walls.create( 810 + offsetX, 278 + offsetY,'Wall').setSize(545 * scale, 90 * scale); //while street of Building
+    CreateWall( 810, 278, 545, 90); //while street of Building
     
     //street abouve starting point
-    Walls.create( -320 + offsetX, -305 + offsetY,'Wall').setSize(358 * scale, 113 * scale); //Fist Building
-    Walls.create( 335 + offsetX, -260 + offsetY,'Wall').setSize(362 * scale, 100 * scale); //second building
-    Walls.create( 667 + offsetX, -305 + offsetY,'Wall').setSize(605 * scale, 113 * scale); //third building
-    Walls.create( -345 + offsetX, -1520 + offsetY,'Wall').setSize(100 * scale, 240 * scale); //Above Building left edge
-    Walls.create( -245 + offsetX, -1520 + offsetY,'Wall').setSize(110 * scale, 395 * scale); //Top building
-    Walls.create( -100 + offsetX, -1520 + offsetY,'Wall').setSize(75 * scale, 130 * scale); //Top building Edge
+    CreateWall( -320, -305, 358, 113); //Fist Building
+    CreateWall( 335, -260, 362, 100); //second building
+    CreateWall( 667, -305, 605, 113); //third building
+    CreateWall( -345, -1520, 100, 240); //Above Building left edge
+    CreateWall( -245, -1520, 110, 395); //Top building
+    CreateWall( -100, -1520, 75, 130); //Top building Edge
 
     //Bottom right of starting point     
-    Walls.create( 839 + offsetX, 800 + offsetY,'Wall').setSize(130 * scale, 100 * scale); //First Building
-    Walls.create( 1105 + offsetX, 800 + offsetY,'Wall').setSize(160 * scale, 62 * scale); //Second Building
-    Walls.create( 1445 + offsetX, 800 + offsetY,'Wall').setSize(172 * scale, 100 * scale); //Third Building
-    Walls.create( 1823.4 + offsetX, 800 + offsetY,'Wall').setSize(20 * scale, 85 * scale); //Ergo sign
-    Walls.create( 1867.4 + offsetX, 800 + offsetY,'Wall').setSize(70 * scale, 100 * scale); //left-most Building    
+    CreateWall( 839, 800, 130, 100); //First Building
+    CreateWall( 1105, 800, 160, 62); //Second Building
+    CreateWall( 1445, 800, 172, 100); //Third Building
+    CreateWall( 1823.4, 800, 20, 85); //Ergo sign
+    CreateWall( 1867.4, 800, 70, 100); //left-most Building    
     
     //Building Below Street above ^      
-    Walls.create( 820 + offsetX, 1330 + offsetY,'Wall').setSize( 113 * scale, 170 * scale); //First Building Above
-    Walls.create( 845 + offsetX, 2020 + offsetY,'Wall').setSize(140 * scale, 96 * scale); //Below First Building
-    Walls.create( 1157.4 + offsetX, 2075 + offsetY,'Wall').setSize(17 * scale, 71 * scale); //Below First Building stairs
-    Walls.create( 1194.8 + offsetX, 2020 + offsetY,'Wall').setSize(115 * scale, 96 * scale); //Second Building Below 
-    Walls.create( 1365 + offsetX, 1710 + offsetY,'Wall').setSize(125 * scale, 237 * scale); //Third Building Below
-    Walls.create( 1345 + offsetX, 1332 + offsetY,'Wall').setSize(140 * scale, 125 * scale); //Second Building Above
-    Walls.create( 1450 + offsetX, 1619 + offsetY,'Wall').setSize(90 * scale, 42 * scale); //Second Building Above connection
+    CreateWall( 820, 1330, 113, 170); //First Building Above
+    CreateWall( 845, 2020, 140, 96); //Below First Building
+    CreateWall( 1157.4, 2075,17, 71); //Below First Building stairs
+    CreateWall( 1194.8, 2020, 115, 96); //Second Building Below 
+    CreateWall( 1365, 1710, 125, 237); //Third Building Below
+    CreateWall( 1345, 1332, 140, 125); //Second Building Above
+    CreateWall( 1450, 1619,90, 42); //Second Building Above connection
      
     //Green Ergo Sign And PINK cy Ci Sign ( Bottom Right )  
     Walls.create( 1920 + offsetX, 1860  + offsetY,'Wall').setSize(147 * scale, 96.3 * scale); //solo building with pink highlights
@@ -624,5 +638,10 @@ function CheckOverlap(SpriteA, SpriteB)
     var boundsA = SpriteA.getBounds();
     var boundsB = SpriteB.getBounds();
     return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);
+}
+
+function CreateWall(A, B , C , D)
+{
+    Walls.create(A + offsetX, B + offsetY,'Wall').setSize(C * scale, D * scale);
 }
 //#endregion

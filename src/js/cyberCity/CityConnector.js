@@ -1,32 +1,35 @@
 var accessGranted = false;
 var ConectedAddress;
 var script = document.createElement("script"); script.type = "module"; script.src = "../js/cyberCity/CyberCity.js";
-var hasApt = false;
+var hasApt = true; //Should be false
 var AptInfo = [];
 
 
 window.onload = function(){ 
-    ergo_request_read_access();
 
-    //if(getWalletAddress() != null) {
-    if(ergo_check_read_access()){
-        ConectedAddress = getWalletAddress();
-        LoadAvailableBuildings()
-      }
-      else {
-        ConectedAddress = "N/A";
-      }
+    loadGameInfo();
 }   
+
+const loadGameInfo = async () => {
+    await ergo_request_read_access();
+    ergo_check_read_access();
+  
+    if(ergo_check_read_access()){
+      ConectedAddress = await ergo.get_change_address();
+      //ConectedAddress = "9hJJksEkDcAznbezGWZ8qjNnqq46HNWHMyuj18BQpavatKJqRFY";
+      LoadAvailableBuildings();
+    }
+    else {
+      ConectedAddress = "N/A";
+    }
+  
+  }
 
 export {ConectedAddress , hasApt , AptInfo};
 
 function addPhaser() {   
     document.getElementById("city-game").appendChild(script);
     document.getElementById("loading-message").style.display = "none";
-}
-
-function getWalletAddress() {
-    return localStorage.getItem("userWallet");
 }
 
 //############################################## Json Loading ###############################################################
@@ -51,6 +54,7 @@ function LoadAvailableBuildings()
                 });            
             }
         }
+        AptInfo.push(Myjson[0]); // ------------------------------ For Testing Only ----------------------------------
         getAuctionsRaw(ConectedAddress , Myjson);
     });
 }
