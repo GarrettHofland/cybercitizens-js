@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack /src/js/wallet-nautilus.js /dist/wallet-nautilus.js"
+    "build": "npx webpack"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "buffer": "^6.0.3",
-    "ergo-lib-wasm-browser": "^0.15.0"
+    "ergo-lib-wasm-browser": "^0.15.0",
+    "lodash": "^4.17.21"
   }
 }

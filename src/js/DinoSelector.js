@@ -10,8 +10,6 @@ import { ConectedAddress } from './DinoConnector.js';
 export {SkinPath, Skin};
 let SkinContainer = document.getElementById("Skins");
 
-
-
 CreateSkinList();
 
 function CreateSkinList (){

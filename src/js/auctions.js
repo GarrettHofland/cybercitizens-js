@@ -8,21 +8,21 @@ const explorerApiV1 = 'https://api.ergoplatform.com/api/v1'
 const btn = document.getElementById("testButton");
 
 const getRequest = (url, api = explorerApi) => {
-    console.log(api+url);
+    console.log(api + url);
     return fetch(api + url).then(res => res.json());
 };
 
 const currentHeight = async () => {
     getRequest('/blocks?limit=1')
-    .then(res => {
-        return res.items[0].height;
-    })
+        .then(res => {
+            return res.items[0].height;
+        })
 };
 
 const getUnconfirmedTxs = (addr) => {
     return getRequest(
         `/mempool/transactions/byAddress/${addr}`, explorerApiV1
-      ).then((res) => res.items);
+    ).then((res) => res.items);
 };
 
 const getActiveAuctions = (addr) => {
@@ -30,6 +30,7 @@ const getActiveAuctions = (addr) => {
         .then(res => res.items)
         .then((boxes) => boxes.filter((box) => box.assets.length > 0));
 }
+
 const getAllActiveAuctions = async () => {
     const spending = (await getUnconfirmedTxs(auctionAddress)).filter(s => s.inputs.length > 1)
     let idToNew = {}
