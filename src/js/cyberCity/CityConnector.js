@@ -86,6 +86,7 @@ function buildAuctions(arraya) {
             auctionsRaw[i].assets.forEach((i) => {
                 //console.log("Token is: " + i.tokenId);
                 CheckAptAvailable(i.tokenId, arraya);
+                //Check Available characters here
             });
         }        
     addPhaser();
