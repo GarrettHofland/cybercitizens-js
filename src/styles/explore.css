@@ -37,6 +37,7 @@ h2 {
 .token-search,
 #searchButton {
     font-size: 1.5rem;
+    transition: 0.5s ease-in;
 }
 
 .token-search {
@@ -159,6 +160,10 @@ h2 {
     border: 2px solid #258ae8;
 }
 
+.auction-card img:hover {
+    transform: scale(1.05);
+}
+
 .Loading-text {
     width: 100%;
     height: auto;
@@ -222,17 +227,17 @@ h2 {
 }
 
 .auction-attribute-container>.attribute {
-    /* flex-basis: 25%; */
-    flex: 1 1 25%;
+    flex-basis: 50%;
 }
 
 .auction-attribute-container {
     padding: 1%;
     display: flex;
+    flex: 1 1 20%;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.25em;
+    gap: 0.5em;
 }
 
 .auction-attribute-container .attribute {
@@ -253,6 +258,8 @@ h2 {
     font-family: pixelFont;
     cursor: pointer;
     font-size: 1.25rem;
+
+    transition: 0.5s ease-in;
 }
 
 .exitButton {
