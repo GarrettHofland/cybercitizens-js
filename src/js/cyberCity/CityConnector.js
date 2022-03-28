@@ -85,8 +85,7 @@ function buildAuctions(arraya) {
     for(let i = 0; i < auctionsRaw.length; i++){
             auctionsRaw[i].assets.forEach((i) => {
                 //console.log("Token is: " + i.tokenId);
-                CheckAptAvailable(i.tokenId, arraya);
-                //Check Available characters here
+                CheckAptAvailable(i.tokenId, arraya);               
             });
         }        
     addPhaser();
@@ -100,3 +99,5 @@ function CheckAptAvailable(tokenId, arraya){
         AptInfo.push(FoundSkin);
     }   
  }
+
+ 
