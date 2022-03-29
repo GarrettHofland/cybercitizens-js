@@ -76,13 +76,11 @@ export class CityScene extends Phaser.Scene
             ApartmentDoor = this.physics.add.sprite(700 + offsetX, -1800 + offsetY,'Wall').setScale(40);//.setSize(450, 200);
 
         Water = this.add.sprite(config.width/2, config.height/2, "Water").setScale(scale * 1.3);
-        this.add.sprite(config.width/2,config.height/2,'Roads').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'Outline').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'BuildBack').setScale(scale);
-        Boats = this.add.sprite(config.width/2,config.height/2,'Boats').setScale(scale);
+        this.add.sprite(config.width/2,config.height/2,'Roads');//.setScale(0.33);
+        this.add.sprite(config.width/2,config.height/2,'Outline');//.setScale(0.33);
+        this.add.sprite(config.width/2,config.height/2,'BuildBack');//.setScale(0.33);
+        Boats = this.add.sprite(config.width/2,config.height/2,'Boats');//.setScale(0.33);
         this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Hydrants').setScale(scale);
-        //this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Box').setScale(scale);
-        //this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'VM').setScale(scale);
         this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Trash').setScale(scale);
 
         //Car1 = this.physics.add.sprite(300,210,'Cars');

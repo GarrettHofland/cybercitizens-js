@@ -13,7 +13,7 @@ export var config = {
       arcade: 
       {
         gravity: { y: 0 },
-        debug: 0
+        debug: 1
       }
     },
     scene: [CityScene, RoomScene], //add all imported scenes here
