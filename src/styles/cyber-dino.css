@@ -102,7 +102,7 @@ canvas {
   border: 2px solid #EE2DFF;
   transition: 1s ease-out;
   min-width: 50%;
-  padding: 1%;
+  padding: 1em;
   margin: 2% auto;
   color: #F7FC19;
   text-shadow: 2px 2px #2f4aa3;
@@ -145,7 +145,7 @@ input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
   text-shadow: 2px 2px #2f4aa3;
   transition: 1s ease-out;
   max-width: 50%;
-  padding: 1%;
+  padding: 10px;
   margin: 2% auto;
   font-family: pixelFont;
 }
@@ -191,6 +191,17 @@ button {
 .name {
   color: #F7FC19;
   text-shadow: 1px 1px #2f4aa3;
+}
+
+#wallet {
+  margin-inline: 1em;
+  width: 60%;
+  /* background-color: var(--yellow); */
+  filter: brightness(0) saturate(100%) invert(92%) sepia(63%) saturate(1285%) hue-rotate(341deg) brightness(113%) contrast(97%);
+}
+
+#wallet:hover {
+  filter: brightness(0) saturate(100%) invert(15%) sepia(47%) saturate(5490%) hue-rotate(274deg) brightness(106%) contrast(100%);
 }
 
 /*# sourceMappingURL=cyber-dino.css.map */

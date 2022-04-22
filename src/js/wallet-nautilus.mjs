@@ -158,7 +158,10 @@ const saveChangeAddress = async () => {
 const checkChangeAddressSaved = () => {
     return ('userWallet' in localStorage);
 };
-
+console.log("Setting up wallet for game...");
 await setupWalletForGame();
 
-document.getElementById('wallet').addEventListener('click', connect);
+document.getElementById('wallet').addEventListener('click', () => {
+    connect();
+    console.log("Connecting test");
+});
