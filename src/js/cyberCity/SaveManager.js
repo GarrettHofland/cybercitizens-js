@@ -1,0 +1,28 @@
+export var AptSave = {
+    BedBed: '../assets/cyberCity/Apts/Bedroom/Bed/Style1.png',
+    BedChair: '../assets/cyberCity/Apts/Bedroom/Chair/Style1.png', 
+    BedDesk: '../assets/cyberCity/Apts/Bedroom/Desk/Style1.png', 
+    BedFloor: '../assets/cyberCity/Apts/Bedroom/Floor/Style1.png', 
+    BedLeftSide: '../assets/cyberCity/Apts/Bedroom/LeftSideFurniture/Style1.png', 
+    BedWall: '../assets/cyberCity/Apts/Bedroom/Wall/Style1.png',
+    BathFloor: '../assets/cyberCity/Apts/Bathroom/Floor/Style1.png',
+    BathWall: '../assets/cyberCity/Apts/Bathroom/Wall/Style1.png', 
+    KitBin: '../assets/cyberCity/Apts/Kitchen/Bin/Style1.png', 
+    KitCounter: '../assets/cyberCity/Apts/Kitchen/Counter/Style1.png', 
+    KitTable: '../assets/cyberCity/Apts/Kitchen/DinnerTable/Style1.png', 
+    KitFloor: '../assets/cyberCity/Apts/Kitchen/Floor/Style1.png', 
+    KitFridge: '../assets/cyberCity/Apts/Kitchen/Fridge/Style1.png', 
+    KitThingsOnTable: '../assets/cyberCity/Apts/Kitchen/ThingsOnDinnerTable/Style1.png', 
+    KitWall: '../assets/cyberCity/Apts/Kitchen/Wall/Style1.png',
+    LivCouch: '../assets/cyberCity/Apts/Living Room/Couch/Style1.png', 
+    LivFloor: '../assets/cyberCity/Apts/Living Room/Floor/Style1.png', 
+    LivFurn: '../assets/cyberCity/Apts/Living Room/FurnitureOnLeftWindow/Style1.png', 
+    LivMiniCouch: '../assets/cyberCity/Apts/Living Room/MiniCouch/Style1.png', 
+    LivMiniTable: '../assets/cyberCity/Apts/Living Room/MiniTable/Style1.png', 
+    LivRightWindow: '../assets/cyberCity/Apts/Living Room/PlantsThingsNextToCouchRigtWindow/Style1.png',
+    LivStuffMiniTable: '../assets/cyberCity/Apts/Living Room/StuffOnMiniTable/Style1.png', 
+    LivTvTable: '../assets/cyberCity/Apts/Living Room/TableUnderTV/Style1.png', 
+    LivTv: '../assets/cyberCity/Apts/Living Room/TV/Style1.png', 
+    LivWall: '../assets/cyberCity/Apts/Living Room/Wall/Style1.png'
+}
+

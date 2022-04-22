@@ -5,14 +5,15 @@ import { game } from "./CyberCity.js";
 var cursors;
 var Water, Boats;
 var scale = 2.2;
-var speed = 130;//1000; //130
+var speed = 1300; //130
 var Player;
 var Camera;
 var LastFacing = 0;
 var LightsOn, LightsOff;
 var Walls, ApartmentDoor, ApartmentOpen = false;
 var offsetX = -56, offsetY = 1.5;
-import { ConectedAddress, hasApt, AptInfo } from './CityConnector.js';
+//import { ConectedAddress, hasApt, AptInfo } from './CityConnector.js';
+import { Info } from './CityConnector.js';
 var AnimNames = [];
 var AptTxt;
 
@@ -72,14 +73,14 @@ export class CityScene extends Phaser.Scene
         Walls = this.physics.add.staticGroup();
         CreateWalls();
         
-        if(hasApt)
-            ApartmentDoor = this.physics.add.sprite(700 + offsetX, -1800 + offsetY,'Wall').setScale(40);//.setSize(450, 200);
+        ApartmentDoor = this.physics.add.sprite(700 + offsetX, -1800 + offsetY,'Wall').setScale(40);//.setSize(450, 200);
+        ApartmentDoor.disableInteractive();
 
         Water = this.add.sprite(config.width/2, config.height/2, "Water").setScale(scale * 1.3);
-        this.add.sprite(config.width/2,config.height/2,'Roads');//.setScale(0.33);
-        this.add.sprite(config.width/2,config.height/2,'Outline');//.setScale(0.33);
-        this.add.sprite(config.width/2,config.height/2,'BuildBack');//.setScale(0.33);
-        Boats = this.add.sprite(config.width/2,config.height/2,'Boats');//.setScale(0.33);
+        this.add.sprite(config.width/2,config.height/2,'Roads').setScale(scale);
+        this.add.sprite(config.width/2,config.height/2,'Outline').setScale(scale);
+        this.add.sprite(config.width/2,config.height/2,'BuildBack').setScale(scale);
+        Boats = this.add.sprite(config.width/2,config.height/2,'Boats').setScale(scale);
         this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Hydrants').setScale(scale);
         this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Trash').setScale(scale);
 
@@ -123,7 +124,7 @@ export class CityScene extends Phaser.Scene
         OpenApartment();
         
         if(ApartmentOpen && keySpace.isDown){
-            switch(AptInfo[0].Size)//replace switch data with selected apt to load
+            switch(Info.AptInfo[0].Size)//replace switch data with selected apt to load
             {
                 case "N":
                     RemoveAnims();
@@ -193,8 +194,7 @@ function Movement()
 //#region Player Interaction
 function OpenApartment()
 {
-    //ADD visual indicator to press space to enter apt
-    if(hasApt){
+    if(Info.hasApt){
         if(CheckOverlap(Player, ApartmentDoor)) // && if apt is within database
         {
             ApartmentOpen = true;
@@ -525,21 +525,21 @@ function CreateWalls()
     CreateWall( 1450, 1619,90, 42); //Second Building Above connection
      
     //Green Ergo Sign And PINK cy Ci Sign ( Bottom Right )  
-    Walls.create( 1920 + offsetX, 1860  + offsetY,'Wall').setSize(147 * scale, 96.3 * scale); //solo building with pink highlights
-    Walls.create( 1950 + offsetX, 1328  + offsetY,'Wall').setSize(300 * scale, 100 * scale); //Pink Sign Building
-    Walls.create( 2610 + offsetX, 1328  + offsetY,'Wall').setSize(20 * scale, 85 * scale); //Pink Sign Building edge
-    Walls.create( 1920 + offsetX, 1444  + offsetY,'Wall').setSize(85 * scale, 60 * scale); //Pink Sign Building Stairs
+    CreateWall( 1920, 1860 ,147, 96.3); //solo building with pink highlights
+    CreateWall( 1950, 1328 ,300, 100); //Pink Sign Building
+    CreateWall( 2610, 1328 ,20 , 85); //Pink Sign Building edge
+    CreateWall( 1920, 1444 ,85 , 60); //Pink Sign Building Stairs
 
     //Collab Shop and casino 
-    Walls.create( 355 + offsetX, -837  + offsetY,'Wall').setSize(92 * scale, 98 * scale); //Collab Left Part
-    Walls.create( 560 + offsetX, -837  + offsetY,'Wall').setSize(148 * scale, 65 * scale); //Collab Central Part
-    Walls.create( 888 + offsetX, -837  + offsetY,'Wall').setSize(84 * scale, 98 * scale); //Collab Right Part
-    Walls.create( 1500 + offsetX, -1290  + offsetY,'Wall').setSize(430 * scale, 265 * scale); //Cassino
-    Walls.create( 1500 + offsetX, -1360  + offsetY,'Wall').setSize(280 * scale, 36 * scale); //Cassino top left
-    Walls.create( 2180 + offsetX, -1360  + offsetY,'Wall').setSize(120.5 * scale, 36 * scale); //Cassino top left
-    Walls.create( 340 + offsetX, -1360 + offsetY ,'Wall').setSize(127 * scale, 100 * scale); //Building Above Collab Left
-    Walls.create( 615 + offsetX, -1360 + offsetY ,'Wall').setSize(125 * scale, 55 * scale); //Building Above Collab Middle
-    Walls.create( 890 + offsetX, -1360 + offsetY ,'Wall').setSize(80 * scale, 100 * scale); //Building Above Collab right
+    CreateWall( 355, -837 ,92 , 98); //Collab Left Part
+    CreateWall( 560, -837 ,148, 65); //Collab Central Part
+    CreateWall( 888, -837 ,84, 98); //Collab Right Part
+    CreateWall( 1500, -1290 ,430, 265); //Cassino
+    CreateWall( 1500, -1360 ,280, 36); //Cassino top left
+    CreateWall( 2180, -1360 ,120.5 , 36); //Cassino top left
+    CreateWall( 340, -1360 ,127, 100); //Building Above Collab Left
+    CreateWall( 615, -1360 ,125, 55); //Building Above Collab Middle
+    CreateWall( 890, -1360 ,80, 100); //Building Above Collab right
 
     //Mining GPU & Buildings Around Bill 1 
     Walls.create( -1325 + offsetX, -1255  + offsetY,'Wall').setSize(305 * scale, 75 * scale); //Mining GPU building
@@ -633,6 +633,8 @@ function CreateWalls()
 //#region Helper Classes
 function CheckOverlap(SpriteA, SpriteB)
 {
+    if(SpriteA == null || SpriteB == null)
+        return false;
     var boundsA = SpriteA.getBounds();
     var boundsB = SpriteB.getBounds();
     return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);

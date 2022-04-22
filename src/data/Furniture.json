@@ -1,0 +1,443 @@
+{
+    "0":{
+        "ID": "0",
+        "Type": "BedBed",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Bed/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style1Bed.png"
+    },
+    "1":{
+        "ID": "1",
+        "Type": "BedBed",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Bed/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style2Bed.png"
+    },
+    "2":{
+        "ID": "2",
+        "Type": "BedBed",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Bed/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style3Bed.png"
+    },
+    "3":{
+        "ID": "3",
+        "Type": "BedChair",
+        "Room": "Ch",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Chair/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ch/Style1GamingChair.png"
+    },
+    "4":{
+        "ID": "4",
+        "Type": "BedChair",
+        "Room": "Ch",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Chair/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ch/Style2GamingChair.png"
+    },
+    "5":{
+        "ID": "5",
+        "Type": "BedChair",
+        "Room": "Ch",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Chair/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ch/Style3GamingChair.png"
+    },
+    "6":{
+        "ID": "6",
+        "Type": "BedDesk",
+        "Room": "De",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Desk/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ch/Style1.png"
+    },
+    "7":{
+        "ID": "7",
+        "Type": "BedFloor",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Floor/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Floor/Bedroom/Style1.png"
+    },
+    "8":{
+        "ID": "8",
+        "Type": "BedFloor",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Floor/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Floor/Bedroom/Style2.png"
+    },
+    "9":{
+        "ID": "9",
+        "Type": "BedLeftSide",
+        "Room": "Cl",
+        "Path": "../assets/cyberCity/Apts/Bedroom/LeftSideFurniture/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Fl/Style1LeftSideFurniture.png"
+    },
+    "10":{
+        "ID": "10",
+        "Type": "BedLeftSide",
+        "Room": "Cl",
+        "Path": "../assets/cyberCity/Apts/Bedroom/LeftSideFurniture/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Cl/Style2LeftSideFurniture.png"
+    },
+    "11":{
+        "ID": "11",
+        "Type": "BedLeftSide",
+        "Room": "Fl",
+        "Path": "../assets/cyberCity/Apts/Bedroom/LeftSideFurniture/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Fl/Style3LeftSideFurniture.png"
+    },
+    "12":{
+        "ID": "12",
+        "Type": "BedWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Wall/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Bedroom/Style1.png"
+    },
+    "13":{
+        "ID": "13",
+        "Type": "BedWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Wall/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Bedroom/Style2.png"
+    },
+    "14":{
+        "ID": "14",
+        "Type": "BedWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Wall/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Bedroom/Style3.png"
+    },
+    "15":{
+        "ID": "15",
+        "Type": "BedWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Wall/Style4.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Bedroom/Style4.png"
+    },
+    "16":{
+        "ID": "16",
+        "Type": "BathFloor",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Floor/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Floor/Bathroom/Style1.png"
+    },
+    "17":{
+        "ID": "17",
+        "Type": "BathFloor",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Floor/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Floor/Bathroom/Style2.png"
+    },
+    "18":{
+        "ID": "18",
+        "Type": "BathWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Wall/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Bathroom/Style1.png"
+    },
+    "19":{
+        "ID": "19",
+        "Type": "BathWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Wall/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Bathroom/Style2.png"
+    },
+    "20":{
+        "ID": "20",
+        "Type": "BathWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Wall/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Bathroom/Style3.png"
+    },
+    "21":{
+        "ID": "21",
+        "Type": "BathWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Wall/Style4.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Bathroom/Style4.png"
+    },
+    "22":{
+        "ID": "22",
+        "Type": "LivCouch",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts/Living Room/Couch/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style1.png"
+    },
+    "23":{
+        "ID": "23",
+        "Type": "LivCouch",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts/Living Room/Couch/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style2.png"
+    },
+    "24":{
+        "ID": "24",
+        "Type": "LivCouch",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts/Living Room/Couch/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style3.png"
+    },
+    "25":{
+        "ID": "25",
+        "Type": "LivFloor",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Living Room/Floor/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Floor/Livingroom/Style1.png"
+    },
+    "26":{
+        "ID": "26",
+        "Type": "LivFloor",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Living Room/Floor/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Floor/Livingroom/Style2.png"
+    },
+    "27":{
+        "ID": "27",
+        "Type": "LivFurn",
+        "Room": "Cl",
+        "Path": "../assets/cyberCity/Apts/Living Room/FurnitureOnLeftWindow/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style1FurnitureOnLeftWindow.png"
+    },
+    "28":{
+        "ID": "28",
+        "Type": "LivFurn",
+        "Room": "Cl",
+        "Path": "../assets/cyberCity/Apts/Living Room/FurnitureOnLeftWindow/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style2FurnitureOnLeftWindow.png"
+    },
+    "29":{
+        "ID": "29",
+        "Type": "LivFurn",
+        "Room": "Cl",
+        "Path": "../assets/cyberCity/Apts/Living Room/FurnitureOnLeftWindow/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style3FurnitureOnLeftWindow.png"
+    },
+    "30":{
+        "ID": "30",
+        "Type": "LivMiniCouch",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts/Living Room/Couch/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style1MiniCouch.png"
+    },
+    "31":{
+        "ID": "31",
+        "Type": "LivMiniCouch",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts/Living Room/Couch/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style2MiniCouch.png"
+    },
+    "32":{
+        "ID": "32",
+        "Type": "LivMiniCouch",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts/Living Room/Couch/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style3MiniCouch.png"
+    },
+    "33":{
+        "ID": "33",
+        "Type": "LivMiniTable",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts//Living Room/MiniTable/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style1MiniTable.png"
+    },
+    "34":{
+        "ID": "34",
+        "Type": "LivMiniTable",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts//Living Room/MiniTable/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style2MiniTable.png"
+    },
+    "35":{
+        "ID": "35",
+        "Type": "LivRightWindow",
+        "Room": "Fl",
+        "Path": "../assets/cyberCity/Apts/Living Room/PlantsThingsNextToCouchRigtWindow/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style1ThingsNextToCouchRigtWindow.png"
+    },
+    "36":{
+        "ID": "36",
+        "Type": "LivRightWindow",
+        "Room": "Fl",
+        "Path": "../assets/cyberCity/Apts/Living Room/PlantsThingsNextToCouchRigtWindow/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style2ThingsNextToCouchRigtWindow.png"
+    },
+    "37":{
+        "ID": "37",
+        "Type": "LivRightWindow",
+        "Room": "Fl",
+        "Path": "../assets/cyberCity/Apts/Living Room/PlantsThingsNextToCouchRigtWindow/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style3ThingsNextToCouchRigtWindow.png"
+    },
+    "38":{
+        "ID": "38",
+        "Type": "LivRightWindow",
+        "Room": "Fl",
+        "Path": "../assets/cyberCity/Apts/Living Room/PlantsThingsNextToCouchRigtWindow/Style4.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style4ThingsNextToCouchRigtWindow.png"
+    },
+    "39":{
+        "ID": "39",
+        "Type": "LivStuffMiniTable",
+        "Room": "Fl",
+        "Path": "../assets/cyberCity/Apts/Living Room/StuffOnMiniTable/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style3ThingsNextToCouchRigtWindow.png"
+    },
+    "40":{
+        "ID": "40",
+        "Type": "LivTv",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts/Living Room/TV/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style1TV.png"
+    },
+    "41":{
+        "ID": "41",
+        "Type": "LivTv",
+        "Room": "Co",
+        "Path": "../assets/cyberCity/Apts/Living Room/TV/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Co/Style2TV.png"
+    },
+    "42":{
+        "ID": "42",
+        "Type": "LivWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Living Room/Wall/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Livingroom/Style1.png"
+    },
+    "43":{
+        "ID": "43",
+        "Type": "LivWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Living Room/Wall/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Livingroom/Style2.png"
+    },
+    "44":{
+        "ID": "44",
+        "Type": "LivWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Living Room/Wall/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Livingroom/Style3.png"
+    },
+    "45":{
+        "ID": "45",
+        "Type": "LivWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Living Room/Wall/Style4.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Livingroom/Style4.png"
+    },
+    "46":{
+        "ID": "46",
+        "Type": "KitBin",
+        "Room": "Ki",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Bin/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/Bin/Style1.png"
+    },
+    "47":{
+        "ID": "47",
+        "Type": "KitBin",
+        "Room": "Ki",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Bin/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/Bin/Style2.png"
+    },
+    "48":{
+        "ID": "48",
+        "Type": "KitCounter",
+        "Room": "Ki",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Counter/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/Counter/Style1.png"
+    },
+    "49":{
+        "ID": "49",
+        "Type": "KitCounter",
+        "Room": "Ki",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Counter/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/Counter/Style2.png"
+    },
+    "50":{
+        "ID": "50",
+        "Type": "KitCounter",
+        "Room": "Ki",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Counter/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/Counter/Style3.png"
+    },
+    "51":{
+        "ID": "51",
+        "Type": "KitTable",
+        "Room": "Ki",
+        "Path": "../assets/cyberCity/Apts/Kitchen/DinnerTable/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/Style1DinnerTable.png"
+    },
+    "52":{
+        "ID": "52",
+        "Type": "KitTable",
+        "Room": "Ki",
+        "Path": "../assets/cyberCity/Apts/Kitchen/DinnerTable/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/Style3DinnerTable.png"
+    },
+    "53":{
+        "ID": "53",
+        "Type": "KitFloor",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Floor/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Floor/Kitchen/Style1.png"
+    },
+    "54":{
+        "ID": "54",
+        "Type": "KitFloor",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Floor/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Floor/Kitchen/Style2.png"
+    },
+    "55":{
+        "ID": "55",
+        "Type": "KitFridge",
+        "Room": "Ki",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Fridge/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/Fridge/Style1.png"
+    },
+    "56":{
+        "ID": "56",
+        "Type": "KitFridge",
+        "Room": "Ki",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Fridge/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/Fridge/Style2.png"
+    },
+    "57":{
+        "ID": "57",
+        "Type": "KitFridge",
+        "Room": "Ki",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Fridge/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/Fridge/Style3.png"
+    },
+    "58":{
+        "ID": "58",
+        "Type": "KitThingsOnTable",
+        "Room": "Fl",
+        "Path": "../assets/cyberCity/Apts/Kitchen/ThingsOnDinnerTable/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/flowers/Style1.png"
+    },
+    "59":{
+        "ID": "59",
+        "Type": "KitThingsOnTable",
+        "Room": "Fl",
+        "Path": "../assets/cyberCity/Apts/Kitchen/ThingsOnDinnerTable/Style12.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ki/flowers/Style2.png"
+    },
+    "60":{
+        "ID": "60",
+        "Type": "KitWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Wall/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Kitchen/Style1.png"
+    },
+    "61":{
+        "ID": "61",
+        "Type": "KitWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Wall/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Kitchen/Style2.png"
+    },
+    "62":{
+        "ID": "62",
+        "Type": "KitWall",
+        "Room": "Pa",
+        "Path": "../assets/cyberCity/Apts/Kitchen/Wall/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Kitchen/Style3.png"
+    }
+}
