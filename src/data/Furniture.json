@@ -213,21 +213,21 @@
         "ID": "30",
         "Type": "LivMiniCouch",
         "Room": "Co",
-        "Path": "../assets/cyberCity/Apts/Living Room/Couch/Style1.png",
+        "Path": "../assets/cyberCity/Apts/Living Room/MiniCouch/Style1.png",
         "Icon": "../assets/cyberCity/Apts/Icons/Co/Style1MiniCouch.png"
     },
     "31":{
         "ID": "31",
         "Type": "LivMiniCouch",
         "Room": "Co",
-        "Path": "../assets/cyberCity/Apts/Living Room/Couch/Style2.png",
+        "Path": "../assets/cyberCity/Apts/Living Room/MiniCouch/Style2.png",
         "Icon": "../assets/cyberCity/Apts/Icons/Co/Style2MiniCouch.png"
     },
     "32":{
         "ID": "32",
         "Type": "LivMiniCouch",
         "Room": "Co",
-        "Path": "../assets/cyberCity/Apts/Living Room/Couch/Style3.png",
+        "Path": "../assets/cyberCity/Apts/Living Room/MiniCouch/Style3.png",
         "Icon": "../assets/cyberCity/Apts/Icons/Co/Style3MiniCouch.png"
     },
     "33":{
@@ -416,7 +416,7 @@
         "ID": "59",
         "Type": "KitThingsOnTable",
         "Room": "Fl",
-        "Path": "../assets/cyberCity/Apts/Kitchen/ThingsOnDinnerTable/Style12.png",
+        "Path": "../assets/cyberCity/Apts/Kitchen/ThingsOnDinnerTable/Style2.png",
         "Icon": "../assets/cyberCity/Apts/Icons/Ki/flowers/Style2.png"
     },
     "60":{

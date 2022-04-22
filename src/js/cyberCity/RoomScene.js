@@ -50,6 +50,7 @@ export class RoomScene extends Phaser.Scene
         //Create Computer
         Computer = this.physics.add.sprite(1170, -350,'Wall').setScale(20);
         Computer.disableInteractive();
+        Computer.depth = -10;
         
         CreateRoomAssets(this);
 
@@ -58,6 +59,7 @@ export class RoomScene extends Phaser.Scene
         Player.body.allowGravity = false; Player.setFrictionX(0); Player.setFrictionY(0); 
         Player.body.setSize(20, 35);
         Player.body.setOffset(5.5, 6.5);
+        Player.depth = 1;
         orderGroup.add(Player);
 
         CreateRoomAssetsTopLayer(this);
@@ -102,23 +104,19 @@ function DepthSorting()
 {
     if(Player.y > -105)
     {
-        Player.depth = 1;
-
         orderGroup.children.each(function(item){
             if(item != Player)
             {
-                item.depth = 0;
+                item.depth = -1;
             }
         });
     }
     else
     {
-        Player.depth = 0;
-
         orderGroup.children.each(function(item){
             if(item != Player)
             {
-                item.depth = 1;
+                item.depth = 2;
             }
         });
     }
@@ -367,6 +365,7 @@ function Movement()
 var BedBed, BedChair, BedDesk, BedFloor, BedLeftSide, BedWall;
 var BathFloor, BathWall, KitBin, KitCounter, KitTable, KitFloor, KitFridge, KitThingsOnTable, KitWall;
 var LivCouch, LivFloor, LivFurn, LivMiniCouch, LivMiniTable, LivRightWindow, LivStuffMiniTable, LivTvTable, LivTv, LivWall;
+var Scraps;
 
 function LoadRoomAssets(T)
 {
@@ -445,13 +444,15 @@ function CreateItemGroups(T)
     LivTvTable = T.add.group();
     LivTv  = T.add.group();
     LivWall = T.add.group();
+    Scraps = T.add.group();
 }
 
 function CreateRoomAssets(T)
 {
     CreateItemGroups(T);
 
-    T.add.sprite((config.width/2),(config.height/2),'BackGround').setScale(1);
+    var bg = T.add.sprite((config.width/2),(config.height/2),'BackGround').setScale(1);
+    bg.depth = -2;
 
     BedFloor.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BedFloor').setScale(scale));
     BedWall.add(T.add.sprite((config.width/2) + offsetX ,(config.height/2) + offsetY,'BedWall').setScale(scale));
@@ -472,24 +473,24 @@ function CreateRoomAssets(T)
     LivWall.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivWall').setScale(scale));
     LivFurn.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivFurn').setScale(scale));
 
-    T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'29').setScale(scale);
+    Scraps.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'29').setScale(scale));
 
     LivCouch.add(T.add.sprite((config.width/2)+ offsetX,(config.height/2) + offsetY,'LivCouch').setScale(scale));
     LivMiniCouch.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivMiniCouch').setScale(scale));
     LivMiniTable.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivMiniTable').setScale(scale));
     LivRightWindow.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivRightWindow').setScale(scale));
     LivStuffMiniTable.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivStuffMiniTable').setScale(scale));
-    
 
-    T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathBack').setScale(scale);
-    
-    T.add.sprite((config.width/2),(config.height/2),'10').setScale(1);
-    T.add.sprite((config.width/2),(config.height/2),'9').setScale(1);
-    T.add.sprite((config.width/2),(config.height/2),'8').setScale(1);
-    T.add.sprite((config.width/2),(config.height/2),'6').setScale(1);
-    T.add.sprite((config.width/2),(config.height/2),'5').setScale(1);
-    T.add.sprite((config.width/2),(config.height/2),'4').setScale(1);
-    T.add.sprite((config.width/2),(config.height/2),'2').setScale(1);
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'2').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'4').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'5').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'6').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'8').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'9').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'10').setScale(1));
+
+
+    Scraps.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathBack').setScale(scale));
 
 }
 
@@ -702,17 +703,24 @@ function CreateComputerAssets(T)
         var Ty = Info.FurnitureInfo[i].Type;
         var index =  i;
         onIconClick(Ty, index, Item);
-        Item.depth = 3;
+        Item.depth = 4;
     }
-    
+    SetItemDepthAndVisibility();
+}
+
+function SetItemDepthAndVisibility()
+{
     LivMiniCouch.children.each(function(item){
         orderGroup.add(item);
+        item.depth = -1;
     });
     LivMiniTable.children.each(function(item){
         orderGroup.add(item);
+        item.depth = -1;
     });
     LivStuffMiniTable.children.each(function(item){
         orderGroup.add(item);
+        item.depth = -1;
     });
 
     AssetList.children.each(function(item){
@@ -720,34 +728,88 @@ function CreateComputerAssets(T)
     });
 
     Icons.children.each(function(item){
-        item.depth = 3;
+        item.depth = 4;
         item.visible = false;
     });
 
     ComputerIcons.children.each(function(item){
-        item.depth = 3;
+        item.depth = 4;
         item.visible = false;
     });
 
+    Scraps.children.each(function(item){
+        item.depth = -1;
+    });
     BedBed.children.each(function(item){
         item.depth = 2;
+    });
+    BedChair.children.each(function(item){
+        item.depth = 0;
+    });
+    BedDesk.children.each(function(item){
+        item.depth = -1;
+    });
+    BedFloor.children.each(function(item){
+        item.depth = -3;
+    });
+    BedLeftSide.children.each(function(item){
+        item.depth = -1;
+    });
+    BedWall.children.each(function(item){
+        item.depth = -2;
+    });
+    BathFloor.children.each(function(item){
+        item.depth = -3;
+    });
+    BathWall.children.each(function(item){
+        item.depth = -2;
+    });
+    KitBin.children.each(function(item){
+        item.depth = 2;
+    });
+    KitCounter.children.each(function(item){
+        item.depth = -1;
     });
     KitTable.children.each(function(item){
         item.depth = 2;
     });
-    KitThingsOnTable.children.each(function(item){
-        item.depth = 2;
+    KitFloor.children.each(function(item){
+        item.depth = -3;
     });
-    KitBin.children.each(function(item){
-        item.depth = 2;
+    KitFridge.children.each(function(item){
+        item.depth = -1;
+    });
+    KitThingsOnTable.children.each(function(item){
+        item.depth = 3;
+    });
+    KitWall.children.each(function(item){
+        item.depth = -2;
+    });
+    LivCouch.children.each(function(item){
+        item.depth = -1;
+    });
+    LivFloor.children.each(function(item){
+        item.depth = -3;
+    });
+    LivFurn.children.each(function(item){
+        item.depth = -1;
+    });
+    LivRightWindow.children.each(function(item){
+        item.depth = -1;
     });
     LivTvTable.children.each(function(item){
         item.depth = 2;
     });
     LivTv.children.each(function(item){
-        item.depth = 2;
+        item.depth = 3;
     });
-
+    LivWall.children.each(function(item){
+        item.depth = -2;
+    });
+    Walls.children.each(function(item){
+        item.depth = -10;
+    });
+    
 }
 
 function CloseIcons()
@@ -1007,183 +1069,80 @@ function onMailClick()
 }
 
 //#region editRoomOnClicks
-function PlaceFurnitureTile(item, i)
+function PlaceFurnitureTile(item, i , x , y)
 {
-    switch(i)
-    {
-        case 0:
-            item.x = Player.x -188; item.y = Player.y - 184;
-            break;
-        case 1:
-            item.x = Player.x; item.y = Player.y - 184;
-            break;
-        case 2:
-            item.x = Player.x + 188; item.y = Player.y - 184;
-            break;
-        case 3:
-            item.x = Player.x - 188; item.y = Player.y;
-            break;
-        case 4:
-            item.x = Player.x; item.y = Player.y;
-            break;
-        case 5:
-            item.x = Player.x + 188; item.y = Player.y;
-            break;
-        case 6:
-            item.x = Player.x - 188; item.y = Player.y + 184;
-            break;
-        case 7:
-            item.x = Player.x; item.y = Player.y + 184; 
-            break;
-        case 8:
-            item.x = Player.x + 188; item.y = Player.y + 184;
-            break;
-    }
+    item.x = (Player.x -250) + (iconVariationX * x); item.y = (Player.y - 260) + (iconVariationY * y);
     item.visible = true;
+}
+
+var iconVariationX = 110;
+var iconVariationY = 120;
+
+function openListOnClick(List)
+{
+    Icons.children.each(function(item){
+        item.visible = false;
+    });
+
+    var x = 0;
+    var y = 0;
+    var i = 0;
+    List.children.each(function(item)
+    {
+
+        if(x > 5){
+            x = 0;
+            y += 1;
+        }
+        PlaceFurnitureTile(item, i , x , y);
+        i++;
+        x++;
+    });
 }
 
 function onChairClick()
 {
-    Icons.children.each(function(item){
-        item.visible = false;
-    });
-
-    var i = 0;
-    ChairGroup.children.each(function(item)
-    {
-        if(i < 8){
-            PlaceFurnitureTile(item, i);
-            i++;
-        }
-    });
+    openListOnClick(ChairGroup);
 }
 
 function onDeskClick()
 {
-    Icons.children.each(function(item){
-        item.visible = false;
-    });
-
-    var i = 0;
-    DeskGroup.children.each(function(item)
-    {
-        if(i < 8){
-            PlaceFurnitureTile(item, i);
-            i++;
-        }
-    });
+    openListOnClick(DeskGroup);
 }
 
 function onBathClick()
 {
-    Icons.children.each(function(item){
-        item.visible = false;
-    });
-
-    var i = 0;
-    BathGroup.children.each(function(item)
-    {
-        if(i < 8){
-            PlaceFurnitureTile(item, i);
-            i++;
-        }
-    });
+    openListOnClick(BathGroup);
 }
 
 function onClosetClick()
 {
-    Icons.children.each(function(item){
-        item.visible = false;
-    });
-
-    var i = 0;
-    ClosetGroup.children.each(function(item)
-    {
-        if(i < 8){
-            PlaceFurnitureTile(item, i);
-            i++;
-        }
-    });
+    openListOnClick(ClosetGroup);
 }
 
 function onCouchClick()
 {
-    Icons.children.each(function(item){
-        item.visible = false;
-    });
-
-    var i = 0;
-    CouchGroup.children.each(function(item)
-    {
-        if(i < 8){
-            PlaceFurnitureTile(item, i);
-            i++;
-        }
-    });
+    openListOnClick(CouchGroup);
 }
 
 function onPCClick()
 {
-    Icons.children.each(function(item){
-        item.visible = false;
-    });
-
-    var i = 0;
-    PcGroup.children.each(function(item)
-    {
-        if(i < 8){
-            PlaceFurnitureTile(item, i);
-            i++;
-        }
-    });
+    openListOnClick(PcGroup);
 }
 
 function onFlowerClick()
 {
-    Icons.children.each(function(item){
-        item.visible = false;
-    });
-
-    var i = 0;
-    FlowerGroup.children.each(function(item)
-    {
-        if(i < 8){
-            PlaceFurnitureTile(item, i);
-            i++;
-        }
-    });
+    openListOnClick(FlowerGroup);
 }
 
 function onKitchenClick()
 {
-    Icons.children.each(function(item){
-        item.visible = false;
-    });
-
-    var i = 0;
-    KitchenGroup.children.each(function(item)
-    {
-        if(i < 8){
-            PlaceFurnitureTile(item, i);
-            i++;
-        }
-    });
+    openListOnClick(KitchenGroup);
 }
 
 function onPaintClick()
 {
-    Icons.children.each(function(item){
-        item.visible = false;
-    });
-
-    var i = 0;
-    PaintGroup.children.each(function(item)
-    {
-        if(i < 8){
-            PlaceFurnitureTile(item, i);
-            i++;
-        }
-    });
+    openListOnClick(PaintGroup);
 }
 //#endregion
 //#endregion
