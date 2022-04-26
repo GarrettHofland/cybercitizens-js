@@ -5,7 +5,7 @@ import { game } from "./CyberCity.js";
 var cursors;
 var Water, Boats;
 var scale = 2.2;
-var speed = 130; //130
+var speed = 1300; //130
 var Player;
 var Camera;
 var LastFacing = 0;

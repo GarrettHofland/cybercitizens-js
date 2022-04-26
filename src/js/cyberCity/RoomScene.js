@@ -84,7 +84,6 @@ export class RoomScene extends Phaser.Scene
         cursors = this.input.keyboard.createCursorKeys();
         CreateKeys(this);
         console.log("Room Scene Created");
-
     }  
 
     update ()
@@ -100,6 +99,7 @@ export class RoomScene extends Phaser.Scene
 
     }
 }
+
 function DepthSorting()
 {
     if(Player.y > -105)
@@ -110,6 +110,10 @@ function DepthSorting()
                 item.depth = -1;
             }
         });
+
+        LivStuffMiniTable.children.each(function(item){
+            item.depth = 0;
+        });
     }
     else
     {
@@ -118,6 +122,10 @@ function DepthSorting()
             {
                 item.depth = 2;
             }
+        });
+
+        LivStuffMiniTable.children.each(function(item){
+            item.depth = 3;
         });
     }
 }
@@ -401,16 +409,16 @@ function LoadRoomAssets(T)
 
     T.load.image('BathBack', '../assets/cyberCity/Apts/SeperatedBathroom2.png');
     T.load.image('BathFront', '../assets/cyberCity/Apts/SeperatedBathroom.png');
-    T.load.image('29', '../assets/cyberCity/Apts/29.png');
-    T.load.image('24', '../assets/cyberCity/Apts/24.png');
-    T.load.image('25', '../assets/cyberCity/Apts/25.png');
-    T.load.image('10', '../assets/cyberCity/Apts/10.png');
-    T.load.image('9', '../assets/cyberCity/Apts/9.png');
-    T.load.image('8', '../assets/cyberCity/Apts/8.png');
-    T.load.image('6', '../assets/cyberCity/Apts/6.png');
-    T.load.image('5', '../assets/cyberCity/Apts/5.png');
-    T.load.image('4', '../assets/cyberCity/Apts/4.png');
-    T.load.image('2', '../assets/cyberCity/Apts/2.png');
+    T.load.image('29S', '../assets/cyberCity/Apts/29.png');
+    T.load.image('24S', '../assets/cyberCity/Apts/24.png');
+    T.load.image('25S', '../assets/cyberCity/Apts/25.png');
+    T.load.image('10S', '../assets/cyberCity/Apts/10.png');
+    T.load.image('9S', '../assets/cyberCity/Apts/9.png');
+    T.load.image('8S', '../assets/cyberCity/Apts/8.png');
+    T.load.image('6S', '../assets/cyberCity/Apts/6.png');
+    T.load.image('5S', '../assets/cyberCity/Apts/5.png');
+    T.load.image('4S', '../assets/cyberCity/Apts/4.png');
+    T.load.image('2S', '../assets/cyberCity/Apts/2.png');
 
     T.load.spritesheet('Wall', '../assets/cyberCity/Map/Wall.png',
         { frameWidth: 10, frameHeight: 10}
@@ -473,7 +481,7 @@ function CreateRoomAssets(T)
     LivWall.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivWall').setScale(scale));
     LivFurn.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivFurn').setScale(scale));
 
-    Scraps.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'29').setScale(scale));
+    Scraps.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'29S').setScale(scale));
 
     LivCouch.add(T.add.sprite((config.width/2)+ offsetX,(config.height/2) + offsetY,'LivCouch').setScale(scale));
     LivMiniCouch.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivMiniCouch').setScale(scale));
@@ -481,13 +489,13 @@ function CreateRoomAssets(T)
     LivRightWindow.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivRightWindow').setScale(scale));
     LivStuffMiniTable.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivStuffMiniTable').setScale(scale));
 
-    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'2').setScale(1));
-    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'4').setScale(1));
-    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'5').setScale(1));
-    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'6').setScale(1));
-    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'8').setScale(1));
-    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'9').setScale(1));
-    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'10').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'2S').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'4S').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'5S').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'6S').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'8S').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'9S').setScale(1));
+    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'10S').setScale(1));
 
 
     Scraps.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathBack').setScale(scale));
@@ -505,8 +513,8 @@ function CreateRoomAssetsTopLayer(T)
 
     LivTvTable.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivTvTable').setScale(scale));
     LivTv.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivTv').setScale(scale));
-    var a = T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'24').setScale(scale);
-    var b = T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'25').setScale(scale);
+    var a = T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'24S').setScale(scale);
+    var b = T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'25S').setScale(scale);
 
     var c = T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathFront').setScale(scale);
 
@@ -705,6 +713,7 @@ function CreateComputerAssets(T)
         onIconClick(Ty, index, Item);
         Item.depth = 4;
     }
+    
     SetItemDepthAndVisibility();
 }
 
@@ -720,7 +729,7 @@ function SetItemDepthAndVisibility()
     });
     LivStuffMiniTable.children.each(function(item){
         orderGroup.add(item);
-        item.depth = -1;
+        item.depth = 0;
     });
 
     AssetList.children.each(function(item){

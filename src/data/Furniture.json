@@ -46,7 +46,7 @@
         "Type": "BedDesk",
         "Room": "De",
         "Path": "../assets/cyberCity/Apts/Bedroom/Desk/Style1.png",
-        "Icon": "../assets/cyberCity/Apts/Icons/Ch/Style1.png"
+        "Icon": "../assets/cyberCity/Apts/Icons/De/Style1.png"
     },
     "7":{
         "ID": "7",
@@ -67,7 +67,7 @@
         "Type": "BedLeftSide",
         "Room": "Cl",
         "Path": "../assets/cyberCity/Apts/Bedroom/LeftSideFurniture/Style1.png",
-        "Icon": "../assets/cyberCity/Apts/Icons/Fl/Style1LeftSideFurniture.png"
+        "Icon": "../assets/cyberCity/Apts/Icons/Cl/Style1LeftSideFurniture.png"
     },
     "10":{
         "ID": "10",
