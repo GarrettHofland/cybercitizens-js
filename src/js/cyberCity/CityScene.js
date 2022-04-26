@@ -2,10 +2,10 @@
 import { config } from "./CyberCity.js";
 import { game } from "./CyberCity.js";
 
-var cursors;
+var cursors, frameTime = 0;
 var Water, Boats;
 var scale = 2.2;
-var speed = 1300; //130
+var speed = 130; //130
 var Player;
 var Camera;
 var LastFacing = 0;
@@ -117,24 +117,31 @@ export class CityScene extends Phaser.Scene
 
     }  
 
-    update ()
-    {       
-        Movement();
-        MoveWater();
-        OpenApartment();
+    update (time, delta)
+    {
+        frameTime += delta
         
-        if(ApartmentOpen && keySpace.isDown){
-            switch(Info.AptInfo[0].Size)//replace switch data with selected apt to load
-            {
-                case "N":
-                    RemoveAnims();
-                    this.scene.start('RoomScene');
-                    break;
-            }    
-        }
+        //Fixes the framerate to 60 frames per second
+        if (frameTime > 16.5) {  
+            frameTime = 0;
 
-        //console.log("x: " + (Player.x + offsetX) + " y: " + (Player.y + offsetY));
-    }    
+            Movement();
+            MoveWater();
+            OpenApartment();
+            
+            if(ApartmentOpen && keySpace.isDown){
+                switch(Info.AptInfo[0].Size)//replace switch data with selected apt to load
+                {
+                    case "N":
+                        RemoveAnims();
+                        this.scene.start('RoomScene');
+                        break;
+                }    
+            }
+
+            //console.log("x: " + (Player.x + offsetX) + " y: " + (Player.y + offsetY));
+        }    
+    }
 }
 
 //#region Movement

@@ -15,6 +15,7 @@ var intOffsetX = 0, intOffsetY = -40;
 var AnimNames = [];
 var Computer, ComputerOpen = false, CompInterface;
 var orderGroup;
+var frameTime = 0;
 
 
 export class RoomScene extends Phaser.Scene
@@ -86,17 +87,21 @@ export class RoomScene extends Phaser.Scene
         console.log("Room Scene Created");
     }  
 
-    update ()
+    update (time, delta)
     {
-        OpenComputer();
+        frameTime += delta
+        //Fixes the framerate to 60 frames per second
+        if (frameTime > 16.5) {  
+            frameTime = 0;
+            OpenComputer();
 
-        if(!StopMovement){
-            Movement();
+            if(!StopMovement){
+                Movement();
+            }
+
+            DepthSorting();
+            //console.log("x: " + (Player.x + offsetX) + " y: " + (Player.y));
         }
-
-        DepthSorting();
-        //console.log("x: " + (Player.x + offsetX) + " y: " + (Player.y));
-
     }
 }
 
