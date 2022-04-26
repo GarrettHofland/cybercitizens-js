@@ -12,15 +12,15 @@ div.gen1skins {
 div#gen1rarity-backgrounds {
     display:inline-flex;
     flex-direction:row;
-  border:1px solid purple;
+  border:1px solid var(--pink);
     width:auto;
 }
 div#gen1rarity-backgrounds:hover {
-    border:1px solid yellow;
+    border:1px solid var(--yellow)
 }
 
 div.gen1skincontainer {
-    border:1px solid purple;
+    border:1px solid var(--pink)
 }
 section#search {
     margin-top:5%;
@@ -34,7 +34,7 @@ body {
     text-align:center;
 }
 p {
-    color:rgba(239, 45, 254, 1)
+    color:var(--pink)
 }
 h3 {
     color:var(--yellow)
@@ -59,7 +59,7 @@ h4#prism {
 margin-top:3%;
 text-align:center;
     margin-bottom: 12px; /* Add some space below the input */
-    color:rgba(239, 45, 254, 1)
+    color:var(--pink)
     
   }
 
@@ -75,14 +75,14 @@ text-align:center;
 
   
   #myUL li a:hover:not(.header) {
-    border:1px solid yellow; /* Add a hover effect to all links, except for headers */
+    border:1px solid var(--yellow) /* Add a hover effect to all links, except for headers */
   }
 
 
 
 
 ::placeholder{
-    color:rgba(239, 45, 254, 1)
+    color:var(--purple)
 }
 
 
