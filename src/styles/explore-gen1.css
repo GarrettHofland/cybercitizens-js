@@ -8,6 +8,7 @@ body {
 div.gen1skins {
     display:inline;
 }
+
 div#gen1rarity-backgrounds {
     display:inline-flex;
     flex-direction:row;
@@ -36,7 +37,7 @@ p {
     color:rgba(239, 45, 254, 1)
 }
 h3 {
-    color:yellow;
+    color:var(--yellow)
 }
 h4#blue {
     color:rgb(156, 216, 236)
@@ -94,6 +95,7 @@ overflow:auto;
 
 
   }
+  /* display search in rows */
 div.gen1 {
     display:inline-flex;
     flex-direction:row;
@@ -110,7 +112,7 @@ overflow:auto;
     
     
   }
-
+  /* display search in rows */
   #myUL li a {
     margin-top: -1px; /* Prevent double borders */
     background-color: transparent; /* Grey background color */
