@@ -23,10 +23,10 @@ div.gen1skincontainer {
   border: 1px solid var(--pink);
 }
 
-/* space between search bar and next section */
+
 section#search {
-  margin-top: 5%;
   background: transparent;
+
 }
 
 /* img formatting  */
@@ -75,7 +75,7 @@ h4#prism {
   border: 1px solid var(--yellow);
 }
 ::placeholder {
-  color: var(--purple);
+  color: var(--pink);
 }
 div.scrollyboi {
   overflow: auto;
