@@ -68,6 +68,9 @@ h4#prism {
 :-webkit-scrollbar {
     display: none;
 } 
+#myUL li {
+    display:none;
+}
 #myUL li a:hover:not(.header) {
     border:1px solid var(--yellow) 
   }
