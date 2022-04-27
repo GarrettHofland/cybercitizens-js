@@ -73,7 +73,7 @@ h4#prism {
 ::placeholder{
     color:var(--purple)
 }
-  div.scrollyboi {
+div.scrollyboi {
     overflow:auto;
     height:100vh;
     width:100vh;
