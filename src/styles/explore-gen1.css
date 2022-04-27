@@ -26,6 +26,7 @@ div.gen1skincontainer {
 /* space between search bar and next section */
 section#search {
     margin-top:5%;
+    background:transparent;
 }
 
 /* img formatting  */
