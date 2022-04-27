@@ -7,7 +7,7 @@ body {
 }
 
 /* skins/background descriptions formatting */
-div.gen1skins {
+div#gen1skins {
   display: inline;
 }
 div#gen1rarity-backgrounds {
@@ -19,7 +19,7 @@ div#gen1rarity-backgrounds {
 div#gen1rarity-backgrounds:hover {
   border: 1px solid var(--yellow);
 }
-div.gen1skincontainer {
+div#gen1skincontainer {
   border: 1px solid var(--pink);
 }
 
@@ -85,7 +85,7 @@ div.scrollyboi {
   margin-bottom: 3%;
 }
 /* display search in rows */
-div.gen1 {
+div#gen1 {
   display: inline-flex;
   flex-direction: row;
   overflow: auto;
@@ -106,8 +106,14 @@ div.gen1 {
   flex-direction: column;
   background-color: transparent;
 }
+/* footer elongation*/
+div.footer-logo-container {
+  width: 100%;
+}
+
 
 /* animation */
+
 .area {
   z-index: -1;
   width: 100%;
@@ -232,6 +238,54 @@ div.gen1 {
   }
 }
 
-div.footer-logo-container {
-  width: 100%;
+
+@media (max-width: 767px) { 
+div#gen1{
+  width:25%;
+  margin-left:17.5%;
+  }
+  ul#gen1ul{
+    display:block;
+    width:75%;
+    margin-left:12.5%;
+  }
+  div#gen1rarity-backgrounds{
+    display:block;
+    width:75%;
+    margin-left:12.5%;
+  }
+  h2, p {
+    width:50%
+    margin-left:12.5%;
+  }
 }
+@media (min-width: 768px)  { 
+  div#gen1{
+    width:50%;
+    }
+    ul#gen1ul{
+    display:block;
+    width:50%;
+    margin-left:25%;
+  }
+  h2, p {
+    width:75%;
+    margin-left:12.5%;
+  }
+  div#gen1rarity-backgrounds{
+    display:block;
+    width:75%;
+    margin-left:12.5%;
+  }
+  }
+  @media (max-width: 1025px) {
+    div#gen1 {
+      width:60%;
+    }
+  }
+
+  @media (min-width: 1026px) {
+    div#gen1 {
+      width:100%;
+    }
+  }
