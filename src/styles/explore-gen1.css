@@ -255,8 +255,8 @@ div#gen1{
     margin-left:12.5%;
   }
   h2, p {
-    width:50%
-    margin-left:12.5%;
+    width:50%;
+    margin-left:25%;
   }
 }
 @media (min-width: 768px)  { 
