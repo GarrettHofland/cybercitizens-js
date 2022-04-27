@@ -41,7 +41,7 @@ export class RoomScene extends Phaser.Scene
     
     create ()
     {
-        Camera = this.camera;
+        Camera = this.cameras.main;
 
         //create bounds
         Walls = this.physics.add.staticGroup();
@@ -78,7 +78,7 @@ export class RoomScene extends Phaser.Scene
         // }, this);
 
 
-        this.cameras.main.startFollow(Player);
+        Camera.startFollow(Player);
 
         this.physics.add.collider(Player , Walls);
 
@@ -197,7 +197,7 @@ function OpenComputer()
         ComputerOpen = false;
     }
 
-    if(ComputerOpen){
+    if(ComputerOpen || EditingRoom){
         if(keySpace.isDown)
         {
           OpenComputerInterface();
@@ -215,15 +215,15 @@ function OpenComputerInterface()
     CompInterface.x = Player.x + intOffsetX; CompInterface.y = Player.y + intOffsetY;
     CompInterface.visible = true;
 
-    ChairIcon.x = Player.x -188; ChairIcon.y = Player.y - 184;
-    DeskIcon.x = Player.x ; DeskIcon.y = Player.y - 184;
-    BathIcon.x = Player.x + 188; BathIcon.y = Player.y - 184;
-    closetIcon.x = Player.x - 188; closetIcon.y = Player.y;
-    couchIcon.x = Player.x ; couchIcon.y = Player.y;
-    PCIcon.x = Player.x + 188; PCIcon.y = Player.y;
-    FlowerIcon.x = Player.x - 188; FlowerIcon.y = Player.y + 184;
-    KitchenIcon.x = Player.x ; KitchenIcon.y = Player.y + 184;
-    PaintIcon.x = Player.x + 188; PaintIcon.y = Player.y +184;
+    //ChairIcon.x = Player.x -188; ChairIcon.y = Player.y - 184;
+    closetIcon.x = Player.x - 240; closetIcon.y = Player.y - 50;
+    //DeskIcon.x = Player.x ; DeskIcon.y = Player.y - 184;
+    BathIcon.x = Player.x - 80; BathIcon.y = Player.y - 50;
+    couchIcon.x = Player.x + 80; couchIcon.y = Player.y - 50;
+    //PCIcon.x = Player.x + 188; PCIcon.y = Player.y;
+    //FlowerIcon.x = Player.x - 188; FlowerIcon.y = Player.y + 184;
+    KitchenIcon.x = Player.x + 240; KitchenIcon.y = Player.y - 50;
+    //PaintIcon.x = Player.x + 188; PaintIcon.y = Player.y +184;
 
     Icons.children.each(function(item){
         item.visible = false;
@@ -238,6 +238,10 @@ function OpenComputerInterface()
 
 function CloseComputerInterface()
 {
+    Camera.setZoom(1);
+    Player.x = PlayerOldx; Player.y = PlayerOldy;
+    Player.visible = true;
+    EditingRoom = false;
     CloseIcons();
     CompInterface.visible = false;
     ComputerIcons.children.each(function(item){
@@ -676,35 +680,35 @@ function CreateComputerAssets(T)
     ComputerIcons.add(BalanceIcon);
     ComputerIcons.add(FurnitureIcon);
 
-    ChairIcon = T.physics.add.sprite(Player.x , Player.y, 'ChairIcon').setInteractive(); ChairIcon.setScale(2);
-    DeskIcon = T.physics.add.sprite(Player.x , Player.y, 'DeskIcon').setInteractive(); DeskIcon.setScale(2);
-    BathIcon = T.physics.add.sprite(Player.x , Player.y, 'BathIcon').setInteractive(); BathIcon.setScale(2);
+    //ChairIcon = T.physics.add.sprite(Player.x , Player.y, 'ChairIcon').setInteractive(); ChairIcon.setScale(2);
     closetIcon = T.physics.add.sprite(Player.x , Player.y, 'closetIcon').setInteractive(); closetIcon.setScale(2);
+    //DeskIcon = T.physics.add.sprite(Player.x , Player.y, 'DeskIcon').setInteractive(); DeskIcon.setScale(2);
+    BathIcon = T.physics.add.sprite(Player.x , Player.y, 'BathIcon').setInteractive(); BathIcon.setScale(2);
     couchIcon = T.physics.add.sprite(Player.x , Player.y, 'couchIcon').setInteractive(); couchIcon.setScale(2);
-    PCIcon = T.physics.add.sprite(Player.x , Player.y, 'PCIcon').setInteractive(); PCIcon.setScale(2);
-    FlowerIcon = T.physics.add.sprite(Player.x , Player.y, 'FlowerIcon').setInteractive(); FlowerIcon.setScale(2);
+    //PCIcon = T.physics.add.sprite(Player.x , Player.y, 'PCIcon').setInteractive(); PCIcon.setScale(2);
+    //FlowerIcon = T.physics.add.sprite(Player.x , Player.y, 'FlowerIcon').setInteractive(); FlowerIcon.setScale(2);
     KitchenIcon = T.physics.add.sprite(Player.x , Player.y, 'KitchenIcon').setInteractive(); KitchenIcon.setScale(2);
-    PaintIcon = T.physics.add.sprite(Player.x , Player.y, 'PaintIcon').setInteractive(); PaintIcon.setScale(2);
+    //PaintIcon = T.physics.add.sprite(Player.x , Player.y, 'PaintIcon').setInteractive(); PaintIcon.setScale(2);
     
-    ChairIcon.on('pointerdown', onChairClick);
-    DeskIcon.on('pointerdown', onDeskClick);
-    BathIcon.on('pointerdown', onBathClick);
+    //ChairIcon.on('pointerdown', onChairClick);
     closetIcon.on('pointerdown', onClosetClick);
+    //DeskIcon.on('pointerdown', onDeskClick);
+    BathIcon.on('pointerdown', onBathClick);
     couchIcon.on('pointerdown', onCouchClick);
-    PCIcon.on('pointerdown', onPCClick);
-    FlowerIcon.on('pointerdown', onFlowerClick);
+    //PCIcon.on('pointerdown', onPCClick);
+    //FlowerIcon.on('pointerdown', onFlowerClick);
     KitchenIcon.on('pointerdown', onKitchenClick);
-    PaintIcon.on('pointerdown', onPaintClick);
+    //PaintIcon.on('pointerdown', onPaintClick);
 
-    Icons.add(ChairIcon);
-    Icons.add(DeskIcon);
+    //Icons.add(ChairIcon);
+    // Icons.add(DeskIcon);
     Icons.add(BathIcon);
     Icons.add(closetIcon);
     Icons.add(couchIcon);
-    Icons.add(PCIcon);
-    Icons.add(FlowerIcon);
-    Icons.add(KitchenIcon);
-    Icons.add(PaintIcon);
+    //Icons.add(PCIcon);
+    // Icons.add(FlowerIcon);
+     Icons.add(KitchenIcon);
+    // Icons.add(PaintIcon);
 
     for (var i = 0; i < Info.FurnitureInfo.length; i++) {
         var Item;
@@ -859,36 +863,53 @@ function CloseIcons()
 
 function AddToFurnitureGroup(item, room)
 {
+
     switch(room)
     {
-        case "Ch":
-             ChairGroup.add(item);
-            break;
-        case "De":
-             DeskGroup.add(item);
-            break;
         case "Ba":
             BathGroup.add(item);
             break;
-        case "Cl":
+        case "Be":
             ClosetGroup.add(item);
             break;
-        case "Co":
+        case "Li":
             CouchGroup.add(item);
-            break;
-        case "Pc":
-            PcGroup.add(item);
-            break;
-        case "Fl":
-            FlowerGroup.add(item);
             break;
         case "Ki":
             KitchenGroup.add(item);
             break;
-        case "Pa":
-            PaintGroup.add(item);
-            break;  
     }
+
+    // switch(room)
+    // {
+    //     case "Ch":
+    //          ChairGroup.add(item);
+    //         break;
+    //     case "De":
+    //          DeskGroup.add(item);
+    //         break;
+    //     case "Ba":
+    //         BathGroup.add(item);
+    //         break;
+    //     case "Cl":
+    //         ClosetGroup.add(item);
+    //         break;
+    //     case "Co":
+    //         CouchGroup.add(item);
+    //         break;
+    //     case "Pc":
+    //         PcGroup.add(item);
+    //         break;
+    //     case "Fl":
+    //         FlowerGroup.add(item);
+    //         break;
+    //     case "Ki":
+    //         KitchenGroup.add(item);
+    //         break;
+    //     case "Pa":
+    //         PaintGroup.add(item);
+    //         break;  
+    // }
 }
 
 function CreateGroups(T)
@@ -1085,18 +1106,29 @@ function onMailClick()
 //#region editRoomOnClicks
 function PlaceFurnitureTile(item, i , x , y)
 {
-    item.x = (Player.x -250) + (iconVariationX * x); item.y = (Player.y - 260) + (iconVariationY * y);
+    //item.x = (Player.x -250) + (iconVariationX * x); 
+    //item.y = (Player.y - 260) + (iconVariationY * y);
+    item.x = (Player.x - 950) + (iconVariationX * x); 
+    item.y = (Player.y - 500) + (iconVariationY * y);
     item.visible = true;
 }
 
 var iconVariationX = 110;
 var iconVariationY = 120;
+var PlayerOldx, PlayerOldy, EditingRoom = false;
 
 function openListOnClick(List)
 {
     Icons.children.each(function(item){
         item.visible = false;
     });
+    CompInterface.visible = false;  
+    Camera.setZoom(0.7);
+    Player.visible = false;
+    PlayerOldx = Player.x;
+    PlayerOldy = Player.y;
+    Player.x = 550; Player.y = 0;
+    EditingRoom = true;
 
     var x = 0;
     var y = 0;
@@ -1104,7 +1136,7 @@ function openListOnClick(List)
     List.children.each(function(item)
     {
 
-        if(x > 5){
+        if(x > 11){
             x = 0;
             y += 1;
         }
