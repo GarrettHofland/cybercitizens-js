@@ -536,7 +536,7 @@ function CreateRoomAssetsTopLayer(T)
 
 function LoadComputerAssets(T)
 {
-    T.load.image('CompInterface', '../assets/cyberCity/ComputerAssets/Desktop.png');
+    T.load.image('CompInterface', '../assets/cyberCity/ComputerAssets/Background.png');
     T.load.image('BarIcon', '../assets/cyberCity/ComputerAssets/BarIcon.png');
     T.load.image('MailIcon', '../assets/cyberCity/ComputerAssets/MailIcon.png');
     T.load.image('GameIcon', '../assets/cyberCity/ComputerAssets/GameIcon.png');
