@@ -6,7 +6,7 @@ function searchgen1() {
   ul = document.getElementById("myUL");
   li = ul.getElementsByTagName("li");
 
-  // Loop through all list items, and hide those who don't match the search query
+  // Loop through all list items, hide search display until input, display as block after user enters an input
   for (i = 0; i < li.length; i++) {
     a = li[i].getElementsByTagName("a")[0];
     txtValue = a.textContent || a.innerText;
