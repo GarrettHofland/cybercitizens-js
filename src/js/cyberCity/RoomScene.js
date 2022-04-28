@@ -6,10 +6,11 @@ import { AptSave } from './SaveManager.js';
 
 var cursors, Walls;
 var Player, Camera, StopMovement = false;
-var scale = 3;
+var scale = 1;
 var LastFacing = 0;
 var speed = 500; //150
-var offsetX = 50, offsetY = -425;
+var offsetXScrap = 50, offsetYScrap = -425;
+var offsetX = 0, offsetY = 0;
 var offsetXWall = 0, offsetYWall = 0;
 var intOffsetX = 0, intOffsetY = -40;
 var AnimNames = [];
@@ -490,7 +491,7 @@ function CreateRoomAssets(T)
     LivWall.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivWall').setScale(scale));
     LivFurn.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivFurn').setScale(scale));
 
-    Scraps.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'29S').setScale(scale));
+    Scraps.add(T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'29S').setScale(3));
 
     LivCouch.add(T.add.sprite((config.width/2)+ offsetX,(config.height/2) + offsetY,'LivCouch').setScale(scale));
     LivMiniCouch.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivMiniCouch').setScale(scale));
@@ -507,7 +508,7 @@ function CreateRoomAssets(T)
     Scraps.add(T.add.sprite((config.width/2),(config.height/2),'10S').setScale(1));
 
 
-    Scraps.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathBack').setScale(scale));
+    Scraps.add(T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'BathBack').setScale(3));
 
 }
 
@@ -522,10 +523,10 @@ function CreateRoomAssetsTopLayer(T)
 
     LivTvTable.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivTvTable').setScale(scale));
     LivTv.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivTv').setScale(scale));
-    var a = T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'24S').setScale(scale);
-    var b = T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'25S').setScale(scale);
+    var a = T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'24S').setScale(3);
+    var b = T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'25S').setScale(3);
 
-    var c = T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathFront').setScale(scale);
+    var c = T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'BathFront').setScale(3);
 
     a.depth = 2;
     b.depth = 2;
