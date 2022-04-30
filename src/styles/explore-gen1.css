@@ -6,30 +6,64 @@ body {
   text-align: center;
 }
 
-/* skins/background descriptions formatting */
-div#gen1skins {
+h2 {
+  text-align: center;
+}
+
+#gen1skins {
   display: inline;
 }
-div#gen1rarity-backgrounds {
+
+.background-container {
+  width: 90%;
+  margin-inline: auto;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+}
+
+.gen1rarity-backgrounds {
   display: inline-flex;
   flex-direction: row;
+
   border: 1px solid var(--pink);
+  border-radius: 12px;
+
   width: auto;
+
+  cursor: default;
+
 }
-div#gen1rarity-backgrounds:hover {
+
+.smallimg {
+  border-radius: 12px;
+}
+
+.gen1rarity-backgrounds:hover {
   border: 1px solid var(--yellow);
 }
-div#gen1skincontainer {
-  border: 1px solid var(--pink);
+
+.gen1skincontainer {
+  /* border: 1px solid var(--pink); */
+
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25em;
 }
 
 /*make background animation show up*/
 section#search {
   background: transparent;
-
 }
 
-/* img formatting  */
 img {
   max-width: 150px;
   max-height: 150px;
@@ -39,34 +73,48 @@ img {
 p {
   color: var(--pink);
 }
+
 h3 {
   color: var(--yellow);
 }
-h4#blue {
+
+#blue {
   color: rgb(156, 216, 236);
+  padding: 1em;
+  cursor: default;
+  min-width: 20vw;
 }
-h4#wine {
+
+#wine {
   color: red;
+  padding: 1em;
+  cursor: default;
+  min-width: 20vw;
 }
-h4#prism {
+
+#prism {
   color: #c0b8ee;
+  padding: 1em;
+  cursor: default;
+  min-width: 20vw;
 }
 
 /* search */
 #myInput {
-  background-position: 10px 12px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
   background-color: transparent;
-  width: 100%; /* Full-width */
-  font-size: 25px; /* Increase font-size */
-  margin-top: 3%;
+
+  margin-top: 1em;
+  margin-bottom: 12px; 
+  margin-inline: auto;
+
   text-align: center;
-  margin-bottom: 12px; /* Add some space below the input */
+  font-size: 1rem; 
+  
   color: var(--pink);
-}
-/* Hide scrollbar for Chrome, Safari and Opera */
-:-webkit-scrollbar {
-  display: none;
+
+  width: 30%;
+
+  border: 1px solid var(--pink);
 }
 
 /*hide search until input*/
@@ -75,11 +123,12 @@ h4#prism {
 }
 
 #myUL li a:hover:not(.header) {
-  border: 1px solid var(--yellow);
+  border: 2px solid var(--yellow);
 }
 ::placeholder {
   color: var(--pink);
 }
+
 div.searchresults {
   overflow: auto;
   height: 100vh;
@@ -89,12 +138,20 @@ div.searchresults {
 }
 
 /* display for search container*/
-div#gen1 {
-  display: inline-flex;
+#gen1 {
+  display: flex;
   flex-direction: row;
-  overflow: auto;
-  width: 100%;
   flex-wrap: wrap;
+  justify-content: center;
+
+  width: 90%;
+  margin: auto;
+
+  gap: 1em;
+}
+
+#gen1 a {
+  margin-top: 1em;
 }
 
 #myUL {
@@ -102,6 +159,12 @@ div#gen1 {
   list-style-type: none;
   margin: 0;
 }
+
+.search-container {
+  max-width: 90%;
+  margin-inline: auto;
+}
+
 /* display search in rows */
 #myUL li a {
   margin-top: -1px; /* Prevent double borders */
@@ -110,13 +173,20 @@ div#gen1 {
   display: flex;
   flex-direction: column;
   background-color: transparent;
+  padding: 1em;
+
+  font-size: 1rem;
+
+  word-wrap: break-word;
 }
+
 /* footer elongation*/
 div.footer-logo-container {
   width: 100%;
 }
-a#search {
-  visibility:hidden;
+
+#search {
+  /* visibility: hidden; */
 }
 
 /* animation */
@@ -244,54 +314,45 @@ a#search {
   }
 }
 
-/*mobile queries*/
-@media (max-width: 767px) { 
-div#gen1{
-  width:25%;
-  margin-left:17.5%;
-  }
-  ul#gen1ul{
-    display:block;
-    width:75%;
-    margin-left:12.5%;
-  }
-  div#gen1rarity-backgrounds{
-    display:block;
-    width:75%;
-    margin-left:12.5%;
-  }
-  h2, p {
-    width:50%;
-    margin-left:25%;
-  }
-}
-@media (min-width: 768px)  { 
-  div#gen1{
-    width:50%;
-    }
-    ul#gen1ul{
-    display:block;
-    width:50%;
-    margin-left:25%;
-  }
-  h2, p {
-    width:75%;
-    margin-left:12.5%;
-  }
-  div#gen1rarity-backgrounds{
-    display:block;
-    width:75%;
-    margin-left:12.5%;
-  }
-  }
-  @media (max-width: 1025px) {
-    div#gen1 {
-      width:60%;
-    }
+@media all and (max-width : 60em) {
+  div#gen1 {
+    width: 60%;
   }
 
-  @media (min-width: 1026px) {
-    div#gen1 {
-      width:100%;
-    }
+  #myInput {
+    width: 90%;
   }
+
+  .background-container {
+    flex-direction: column;
+  }
+
+  #blue,
+  #wine,
+  #prism {
+    min-width: 90vw;
+  }
+}
+
+@media all and (max-width : 40em) {
+  div#gen1 {
+    width: 25%;
+    margin-inline: auto;
+  }
+  ul#gen1ul {
+    display: block;
+    max-width: 75%;
+    margin-inline: auto;
+  }
+  div#gen1rarity-backgrounds {
+    display: block;
+    max-width: 70%;
+    margin-inline: auto;
+  }
+  h2,
+  p {
+    max-width: 70%;
+    margin-inline: auto;
+  }
+}
+
