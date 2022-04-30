@@ -17,3 +17,7 @@ function searchgen1() {
     }
   }
 }
+
+document.getElementById('explorerToHome').onclick = (event) => {
+  window.location='../index.html';
+}
