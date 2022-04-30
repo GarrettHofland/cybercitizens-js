@@ -59,7 +59,6 @@ const getAllUtxos = async () => {
             return null;
         }
     }
-    console.log(parsed);
     return parsed;
 };
 
@@ -136,7 +135,6 @@ const getTxLink = (tx) => {
 };
 
 const setupWalletForGame = async () => {
-    console.log(checkChangeAddressSaved());
 
     if(!checkChangeAddressSaved()) {
         await connect();
@@ -154,7 +152,6 @@ const saveChangeAddress = async () => {
 const checkChangeAddressSaved = () => {
     return ('userWallet' in localStorage);
 };
-
 await setupWalletForGame();
 
 document.getElementById('wallet').addEventListener('click', () => {

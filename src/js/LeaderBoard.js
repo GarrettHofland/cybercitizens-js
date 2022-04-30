@@ -27,7 +27,6 @@ window.addEventListener('click', function(e){
         {
             toggleLeaderboard();
             toggleActive = !toggleActive;
-            console.log("outside the box");
         }
         else{
             toggleActive = !toggleActive;
@@ -37,7 +36,6 @@ window.addEventListener('click', function(e){
 
 function toggleLeaderboard() {
     if(!toggleActive){
-        console.log("toggle leaderboard");
         LoginAndSetLeaderBoard();
         createInterface();
         leaderboard.style.display = "flex";

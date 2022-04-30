@@ -73,7 +73,6 @@ function preload ()
         { frameWidth: 25, frameHeight: 25}
     );
 
-    console.log("preload Complete!");  
 }
 
 var platforms;
@@ -199,7 +198,6 @@ function create ()
 
     //SFX.play('BGM');
 
-    console.log("Create complete!");
 
 }
 
@@ -602,7 +600,6 @@ function UpdateStats()
 
 var updateStatsCallback = function (result, error) {
     if (result !== null) {
-        console.log("Highscore Updated");
     } 
     else if (error !== null) {
         console.log("Something went wrong Fetching the Leaderboard.");
@@ -637,7 +634,6 @@ var GetHighscoreStats = function (result, error) {
         if(ConectedAddress != "N/A"){
             if(result.data.Statistics[0] != null){
             HighScore = result.data.Statistics[0].Value;
-            console.log("The HighScore is: "+ JSON.stringify(result.data.Statistics[0].Value));
             }
         }
     } 

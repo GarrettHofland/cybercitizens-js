@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/js/wallet-nautilus.mjs',
+  entry: './src/js/wallet-nautilus.js',
   output: {
     publicPath: '',
     filename: 'wallet-dist.js',
