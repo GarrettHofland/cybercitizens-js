@@ -1,40 +1,55 @@
 section#welcome {
-padding-top:5%;
-display:block;
+  padding-top: 5%;
+  display: block;
 }
 
 /* add to styles*/
 div.flex-container-estates {
-   width:40%;
-    display:inline-block;
-    padding-left:25%;
-    padding-bottom:10%;    
+  width: 40%;
+  display: inline-block;
+  padding-left: 25%;
+  padding-bottom: 10%;
 }
 div.flex-container-pictures {
-    display:inline-block;
+  display: inline-block;
 }
-
-
-
 
 a#estatemint {
-  margin-right:1%;
-}
-    
-body {
-    text-align:center;
-}
-li {
-    list-style-type:none;
+  margin-right: 1%;
 }
 
-img{
-    padding:5%;
-    max-width:500px;
-    max-height:500px;
+body {
+  text-align: center;
+}
+li {
+  list-style-type: none;
+}
+
+img {
+  padding: 5%;
+  max-width: 500px;
+  max-height: 500px;
 }
 img#estate-img {
-    max-width:750px;
-    max-height:750px;
-    display:inline;
+  max-width: 750px;
+  max-height: 750px;
+  display: inline;
+}
+
+/*slide show*/
+.cyberia-content {
+  border: 3px solid blue;
+  width: 525px;
+  height: 375px;
+}
+
+img#estate-imgs {
+  max-height: 525px;
+  max-width: 375px;
+}
+
+#second,
+#third,
+#fourth {
+  display: none;
 }
