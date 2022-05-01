@@ -33,23 +33,56 @@ img {
 img#estate-img {
   max-width: 750px;
   max-height: 750px;
-  display: inline;
+  display: inline-block;
 }
 
 /*slide show*/
 .cyberia-content {
   border: 3px solid blue;
-  width: 525px;
-  height: 375px;
+  width: 625px;
+  height: 475px;
+  margin:0 auto;
+
 }
 
 img#estate-imgs {
   max-height: 525px;
   max-width: 375px;
 }
-
+div.flex-container-mint {
+    width:auto;
+}
 #second,
 #third,
 #fourth {
   display: none;
+}
+
+
+  
+section#info {
+    display:block;
+}
+
+div.container-estate-btns {
+    width:50%;
+    display:inline-block;
+    margin: 0;
+    padding:1%;
+  
+   
+}
+.estate-size {
+ background-color:transparent;
+ color:var(--pink);
+ border:1px solid var(--pink);
+    display: inline-block;
+    width:50%;
+    padding:3%;
+
+  
+}
+.estate-size:hover {
+    border:1px solid yellow;
+    color:var(--yellow)
 }
