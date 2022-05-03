@@ -381,7 +381,9 @@ function Movement()
 }
 
 var BedBed, BedChair, BedDesk, BedFloor, BedLeftSide, BedWall;
-var BathFloor, BathWall, KitBin, KitCounter, KitTable, KitFloor, KitFridge, KitThingsOnTable, KitWall;
+var BathFloor, BathWall, BathPlants, BathTub, BathBin, BathMir, BathShowe, BathToil, BathTowel, BathBasin, Bathmachine;
+// BathPlants, BathTub, BathBin, BathMir, BathShowe, BathToil, BathTowel, BathBasin, Bathmachine
+var KitBin, KitCounter, KitTable, KitFloor, KitFridge, KitThingsOnTable, KitWall;
 var LivCouch, LivFloor, LivFurn, LivMiniCouch, LivMiniTable, LivRightWindow, LivStuffMiniTable, LivTvTable, LivTv, LivWall;
 var Scraps;
 
@@ -397,7 +399,16 @@ function LoadRoomAssets(T)
     
     T.load.image('BathFloor', AptSave.BathFloor);
     T.load.image('BathWall', AptSave.BathWall);
-
+    T.load.image('BathPlants', AptSave.BathPlants);
+    T.load.image('BathTub', AptSave.BathTub);
+    T.load.image('BathBin', AptSave.BathBin);
+    T.load.image('BathMir', AptSave.BathMir);
+    T.load.image('BathShowe', AptSave.BathShowe);
+    T.load.image('BathToil', AptSave.BathToil);
+    T.load.image('BathTowel', AptSave.BathTowel);
+    T.load.image('BathBasin', AptSave.BathBasin);
+    T.load.image('Bathmachine', AptSave.Bathmachine);
+    
     T.load.image('KitFloor', AptSave.KitFridge);
     T.load.image('KitWall', AptSave.KitWall);
     T.load.image('KitCounter', AptSave.KitCounter);
@@ -417,8 +428,8 @@ function LoadRoomAssets(T)
     T.load.image('LivTvTable', AptSave.LivTvTable);
     T.load.image('LivTv', AptSave.LivTv);
 
-    T.load.image('BathBack', '../assets/cyberCity/Apts/SeperatedBathroom2.png');
-    T.load.image('BathFront', '../assets/cyberCity/Apts/SeperatedBathroom.png');
+    //T.load.image('BathBack', '../assets/cyberCity/Apts/SeperatedBathroom2.png');
+    //T.load.image('BathFront', '../assets/cyberCity/Apts/SeperatedBathroom.png');
     T.load.image('29S', '../assets/cyberCity/Apts/29.png');
     T.load.image('24S', '../assets/cyberCity/Apts/24.png');
     T.load.image('25S', '../assets/cyberCity/Apts/25.png');
@@ -428,7 +439,7 @@ function LoadRoomAssets(T)
     T.load.image('6S', '../assets/cyberCity/Apts/6.png');
     T.load.image('5S', '../assets/cyberCity/Apts/5.png');
     T.load.image('4S', '../assets/cyberCity/Apts/4.png');
-    T.load.image('2S', '../assets/cyberCity/Apts/2.png');
+    //T.load.image('2S', '../assets/cyberCity/Apts/2.png');
 
     T.load.spritesheet('Wall', '../assets/cyberCity/Map/Wall.png',
         { frameWidth: 10, frameHeight: 10}
@@ -445,6 +456,15 @@ function CreateItemGroups(T)
     BedWall = T.add.group();
     BathFloor = T.add.group();
     BathWall = T.add.group();
+    BathPlants = T.add.group();
+    BathTub = T.add.group();
+    BathBin = T.add.group();
+    BathMir = T.add.group();
+    BathShowe = T.add.group();
+    BathToil = T.add.group();
+    BathTowel = T.add.group(); 
+    BathBasin = T.add.group();
+    Bathmachine = T.add.group();  
     KitBin = T.add.group();
     KitCounter = T.add.group();
     KitTable = T.add.group();
@@ -470,7 +490,7 @@ function CreateRoomAssets(T)
     CreateItemGroups(T);
 
     var bg = T.add.sprite((config.width/2),(config.height/2),'BackGround').setScale(1);
-    bg.depth = -2;
+    bg.depth = -5;
 
     BedFloor.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BedFloor').setScale(scale));
     BedWall.add(T.add.sprite((config.width/2) + offsetX ,(config.height/2) + offsetY,'BedWall').setScale(scale));
@@ -480,6 +500,14 @@ function CreateRoomAssets(T)
 
     BathFloor.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathFloor').setScale(scale));
     BathWall.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathWall').setScale(scale));
+
+    BathPlants.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathPlants').setScale(scale));
+    BathMir.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathMir').setScale(scale));
+    BathShowe.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathShowe').setScale(scale));
+    BathToil.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathToil').setScale(scale));
+    BathTowel.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathTowel').setScale(scale));
+    BathBasin.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathBasin').setScale(scale));
+
 
     KitFloor.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'KitFloor').setScale(scale));
     KitWall.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'KitWall').setScale(scale));
@@ -499,7 +527,7 @@ function CreateRoomAssets(T)
     LivRightWindow.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivRightWindow').setScale(scale));
     LivStuffMiniTable.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivStuffMiniTable').setScale(scale));
 
-    Scraps.add(T.add.sprite((config.width/2),(config.height/2),'2S').setScale(1));
+    //Scraps.add(T.add.sprite((config.width/2),(config.height/2),'2S').setScale(1));
     Scraps.add(T.add.sprite((config.width/2),(config.height/2),'4S').setScale(1));
     Scraps.add(T.add.sprite((config.width/2),(config.height/2),'5S').setScale(1));
     Scraps.add(T.add.sprite((config.width/2),(config.height/2),'6S').setScale(1));
@@ -508,7 +536,7 @@ function CreateRoomAssets(T)
     Scraps.add(T.add.sprite((config.width/2),(config.height/2),'10S').setScale(1));
 
 
-    Scraps.add(T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'BathBack').setScale(3));
+    //Scraps.add(T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'BathBack').setScale(3));
 
 }
 
@@ -521,16 +549,21 @@ function CreateRoomAssetsTopLayer(T)
     KitThingsOnTable.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'KitThingsOnTable').setScale(scale));
     KitBin.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'KitBin').setScale(scale));    
 
+    
+    BathTub.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathTub').setScale(scale));
+    BathBin.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'BathBin').setScale(scale));
+    Bathmachine.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'Bathmachine').setScale(scale));
+
     LivTvTable.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivTvTable').setScale(scale));
     LivTv.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivTv').setScale(scale));
     var a = T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'24S').setScale(3);
     var b = T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'25S').setScale(3);
 
-    var c = T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'BathFront').setScale(3);
+    //var c = T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'BathFront').setScale(3);
 
     a.depth = 2;
     b.depth = 2;
-    c.depth = 2;
+    //c.depth = 2;
 
 }
 
@@ -590,6 +623,33 @@ function AddToGroup(type , item)
             break;
         case "BathWall":
             BathWall.add(item);
+            break;
+        case "BathPlants":
+            BathPlants.add(item);
+            break;
+        case "BathTub":
+            BathTub.add(item);
+            break;
+        case "BathBin":
+            BathBin.add(item);
+            break;
+        case "BathMir":
+            BathMir.add(item);
+            break;
+        case "BathShowe":
+            BathShowe.add(item);
+            break;
+        case "BathToil":
+            BathToil.add(item);
+            break;
+        case "BathTowel":
+            BathTowel.add(item);
+            break;
+        case "BathBasin":
+            BathBasin.add(item);
+            break;
+        case "Bathmachine":
+            Bathmachine.add(item);
             break;
         case "KitBin":
             KitBin.add(item);
@@ -681,35 +741,20 @@ function CreateComputerAssets(T)
     ComputerIcons.add(BalanceIcon);
     ComputerIcons.add(FurnitureIcon);
 
-    //ChairIcon = T.physics.add.sprite(Player.x , Player.y, 'ChairIcon').setInteractive(); ChairIcon.setScale(2);
     closetIcon = T.physics.add.sprite(Player.x , Player.y, 'closetIcon').setInteractive(); closetIcon.setScale(2);
-    //DeskIcon = T.physics.add.sprite(Player.x , Player.y, 'DeskIcon').setInteractive(); DeskIcon.setScale(2);
     BathIcon = T.physics.add.sprite(Player.x , Player.y, 'BathIcon').setInteractive(); BathIcon.setScale(2);
     couchIcon = T.physics.add.sprite(Player.x , Player.y, 'couchIcon').setInteractive(); couchIcon.setScale(2);
-    //PCIcon = T.physics.add.sprite(Player.x , Player.y, 'PCIcon').setInteractive(); PCIcon.setScale(2);
-    //FlowerIcon = T.physics.add.sprite(Player.x , Player.y, 'FlowerIcon').setInteractive(); FlowerIcon.setScale(2);
     KitchenIcon = T.physics.add.sprite(Player.x , Player.y, 'KitchenIcon').setInteractive(); KitchenIcon.setScale(2);
-    //PaintIcon = T.physics.add.sprite(Player.x , Player.y, 'PaintIcon').setInteractive(); PaintIcon.setScale(2);
     
-    //ChairIcon.on('pointerdown', onChairClick);
     closetIcon.on('pointerdown', onClosetClick);
-    //DeskIcon.on('pointerdown', onDeskClick);
     BathIcon.on('pointerdown', onBathClick);
     couchIcon.on('pointerdown', onCouchClick);
-    //PCIcon.on('pointerdown', onPCClick);
-    //FlowerIcon.on('pointerdown', onFlowerClick);
     KitchenIcon.on('pointerdown', onKitchenClick);
-    //PaintIcon.on('pointerdown', onPaintClick);
 
-    //Icons.add(ChairIcon);
-    // Icons.add(DeskIcon);
     Icons.add(BathIcon);
     Icons.add(closetIcon);
     Icons.add(couchIcon);
-    //Icons.add(PCIcon);
-    // Icons.add(FlowerIcon);
      Icons.add(KitchenIcon);
-    // Icons.add(PaintIcon);
 
     for (var i = 0; i < Info.FurnitureInfo.length; i++) {
         var Item;
@@ -783,6 +828,37 @@ function SetItemDepthAndVisibility()
     BathWall.children.each(function(item){
         item.depth = -2;
     });
+
+// BathPlants, BathTub, BathBin, BathMir, BathShowe, BathToil, BathTowel, BathBasin, Bathmachine
+    BathPlants.children.each(function(item){
+        item.depth = -1;
+    });
+    BathTub.children.each(function(item){
+        item.depth = 2;
+    });
+    BathBin.children.each(function(item){
+        item.depth = 2;
+    });
+    BathMir.children.each(function(item){
+        item.depth = -1;
+    });
+    BathShowe.children.each(function(item){
+        item.depth = -1;
+    });
+    BathToil.children.each(function(item){
+        item.depth = -1;
+    });
+    BathTowel.children.each(function(item){
+        item.depth = -1;
+    });
+    BathBasin.children.each(function(item){
+        item.depth = -1;
+    });
+    Bathmachine.children.each(function(item){
+        item.depth = 2;
+    });
+
+
     KitBin.children.each(function(item){
         item.depth = 2;
     });
@@ -975,6 +1051,51 @@ function onIconClick(type , index, Item)
                 HideAndSearch(index, BathWall);
             });
             break;
+        case "BathPlants":
+            Item.on('pointerdown', function() {
+                HideAndSearch(index, BathPlants);
+            });
+            break;
+        case "BathTub":
+            Item.on('pointerdown', function() {
+                HideAndSearch(index, BathTub);
+            });
+            break;
+        case "BathBin":
+            Item.on('pointerdown', function() {
+                HideAndSearch(index, BathBin);
+            });
+            break;
+        case "BathMir":
+            Item.on('pointerdown', function() {
+                HideAndSearch(index, BathMir);
+            });
+            break;
+        case "BathShowe":
+            Item.on('pointerdown', function() {
+                HideAndSearch(index, BathShowe);
+            });
+            break;
+        case "BathToil":
+            Item.on('pointerdown', function() {
+                HideAndSearch(index, BathToil);
+            });
+            break;
+        case "BathTowel":
+            Item.on('pointerdown', function() {
+                HideAndSearch(index, BathTowel);
+            });
+            break;
+        case "BathBasin":
+            Item.on('pointerdown', function() {
+                HideAndSearch(index, BathBasin);
+            });
+            break;
+        case "Bathmachine":
+            Item.on('pointerdown', function() {
+                HideAndSearch(index, Bathmachine);
+            });
+            break;
         case "KitBin":
             Item.on('pointerdown', function() {
                 HideAndSearch(index, KitBin);
@@ -1107,8 +1228,6 @@ function onMailClick()
 //#region editRoomOnClicks
 function PlaceFurnitureTile(item, i , x , y)
 {
-    //item.x = (Player.x -250) + (iconVariationX * x); 
-    //item.y = (Player.y - 260) + (iconVariationY * y);
     item.x = (Player.x - 950) + (iconVariationX * x); 
     item.y = (Player.y - 500) + (iconVariationY * y);
     item.visible = true;

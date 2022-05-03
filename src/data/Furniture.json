@@ -373,7 +373,7 @@
     "53":{
         "ID": "53",
         "Type": "KitFloor",
-        "Room": "Pa",
+        "Room": "Ki",
         "Path": "../assets/cyberCity/Apts/Kitchen/Floor/Style1.png",
         "Icon": "../assets/cyberCity/Apts/Icons/Pa/Floor/Kitchen/Style1.png"
     },
@@ -439,5 +439,175 @@
         "Room": "Ki",
         "Path": "../assets/cyberCity/Apts/Kitchen/Wall/Style3.png",
         "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Kitchen/Style3.png"
+    },
+    "63":{
+        "ID": "63",
+        "Type": "BathPlants",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Bathroomplants/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/2.png"
+    },
+    "64":{
+        "ID": "64",
+        "Type": "BathPlants",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Bathroomplants/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/1.png"
+    },
+    "65":{
+        "ID": "65",
+        "Type": "BathTub",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Bathtub/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/3.png"
+    },
+    "66":{
+        "ID": "66",
+        "Type": "BathTub",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Bathtub/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/4.png"
+    },
+    "67":{
+        "ID": "67",
+        "Type": "BathTub",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Bathtub/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/5.png"
+    },
+    "68":{
+        "ID": "68",
+        "Type": "BathTub",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Bathtub/Style4.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/6.png"
+    },
+    "69":{
+        "ID": "69",
+        "Type": "BathBin",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Bin/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/8.png"
+    },
+    "70":{
+        "ID": "70",
+        "Type": "BathBin",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Bin/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/7.png"
+    },
+    "71":{
+        "ID": "71",
+        "Type": "BathMir",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Mirror/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/9.png"
+    },
+    "72":{
+        "ID": "72",
+        "Type": "BathMir",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Mirror/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/10.png"
+    },
+    "73":{
+        "ID": "73",
+        "Type": "BathShowe",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Shower/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/12.png"
+    },
+    "74":{
+        "ID": "74",
+        "Type": "BathShowe",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Shower/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/11.png"
+    },
+    "75":{
+        "ID": "75",
+        "Type": "BathToil",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Toilet/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/14.png"
+    },
+    "76":{
+        "ID": "76",
+        "Type": "BathToil",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Toilet/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/15.png"
+    },
+    "77":{
+        "ID": "77",
+        "Type": "BathToil",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Toilet/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/13.png"
+    },
+    "78":{
+        "ID": "78",
+        "Type": "BathTowel",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Towel/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/17.png"
+    },
+    "79":{
+        "ID": "79",
+        "Type": "BathTowel",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/Towel/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/16.png"
+    },
+    "80":{
+        "ID": "80",
+        "Type": "BathBasin",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/WashBasin/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/22.png"
+    },
+    "81":{
+        "ID": "81",
+        "Type": "BathBasin",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/WashBasin/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/24.png"
+    },
+    "82":{
+        "ID": "82",
+        "Type": "BathBasin",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/WashBasin/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/23.png"
+    },
+    "83":{
+        "ID": "83",
+        "Type": "Bathmachine",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/WashingMachine/Style1.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/25.png"
+    },
+    "84":{
+        "ID": "84",
+        "Type": "Bathmachine",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/WashingMachine/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/26.png"
+    },
+    "85":{
+        "ID": "85",
+        "Type": "Bathmachine",
+        "Room": "Ba",
+        "Path": "../assets/cyberCity/Apts/Bathroom/WashingMachine/Style3.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/Ba/27.png"
+    },
+    "86":{
+        "ID": "86",
+        "Type": "BedDesk",
+        "Room": "Be",
+        "Path": "../assets/cyberCity/Apts/Bedroom/Desk/Style2.png",
+        "Icon": "../assets/cyberCity/Apts/Icons/De/Style2.png"
     }
+
+
 }

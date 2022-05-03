@@ -23,6 +23,17 @@ export var AptSave = {
     LivStuffMiniTable: '../assets/cyberCity/Apts/Living Room/StuffOnMiniTable/Style1.png', 
     LivTvTable: '../assets/cyberCity/Apts/Living Room/TableUnderTV/Style1.png', 
     LivTv: '../assets/cyberCity/Apts/Living Room/TV/Style1.png', 
-    LivWall: '../assets/cyberCity/Apts/Living Room/Wall/Style1.png'
+    LivWall: '../assets/cyberCity/Apts/Living Room/Wall/Style1.png',
+
+    BathPlants: '../assets/cyberCity/Apts/Bathroom/Bathroomplants/Style1.png',
+    BathTub: '../assets/cyberCity/Apts/Bathroom/Bathtub/Style1.png',
+    BathBin: '../assets/cyberCity/Apts/Bathroom/Bin/Style1.png',
+    BathMir: '../assets/cyberCity/Apts/Bathroom/Mirror/Style1.png',
+    BathShowe: '../assets/cyberCity/Apts/Bathroom/Shower/Style1.png',
+    BathToil: '../assets/cyberCity/Apts/Bathroom/Toilet/Style1.png',
+    BathTowel: '../assets/cyberCity/Apts/Bathroom/Towel/Style1.png',
+    BathBasin: '../assets/cyberCity/Apts/Bathroom/WashBasin/Style1.png',
+    Bathmachine: '../assets/cyberCity/Apts/Bathroom/WashingMachine/Style1.png'
+
 }
 
