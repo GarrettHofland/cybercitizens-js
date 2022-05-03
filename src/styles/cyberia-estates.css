@@ -1,9 +1,19 @@
+body {
+  text-align: center;
+  margin: 0 auto;
+}
+
 section#welcome {
   padding-top: 5%;
   display: block;
 }
+div.flex-container-mint {
+  width: auto;
+}
+a#estatemint {
+  margin-right: 1%;
+}
 
-/* add to styles*/
 div.flex-container-estates {
   width: 40%;
   display: inline-block;
@@ -13,76 +23,95 @@ div.flex-container-estates {
 div.flex-container-pictures {
   display: inline-block;
 }
-
-a#estatemint {
-  margin-right: 1%;
+p#apt-description {
+  margin: -10%;
 }
 
-body {
-  text-align: center;
-}
 li {
   list-style-type: none;
 }
-
-img {
-  padding: 5%;
-  max-width: 500px;
-  max-height: 500px;
-}
-img#estate-img {
-  max-width: 750px;
-  max-height: 750px;
-  display: inline-block;
-}
-
 /*slide show*/
 .cyberia-content {
   border: 3px solid blue;
   width: 625px;
   height: 475px;
-  margin:0 auto;
-
+  margin: 0 auto;
+  display: block;
 }
+
+div#apartment-description {
+  display: block;
+}
+
+div#benefits-container {
+  display: inline-block;
+  padding: 2%;
+}
+/* benefits area styling*/
+div#benefits-desc-long-additional,
+div#benefits-desc-long-ownership,
+div#benefits-desc-long-customization,
+div#benefits-desc-long-utility {
+  display: none;
+}
+img#benefits-imgs-additional,
+img#benefits-imgs-ownership,
+img#benefits-imgs-customization,
+img#benefits-imgs-utility {
+  display: inline-block;
+  border: 1px solid blue;
+}
+h4#benefits-descriptions {
+  color: var(--yellow);
+}
+img#benefits-imgs-additional:hover,
+img#benefits-imgs-ownership:hover,
+img#benefits-imgs-customization:hover,
+img#benefits-imgs-utility:hover {
+  border: 1px solid yellow;
+  zoom: 200%;
+}
+div#benefits-icon-description {
+  display: inline-block;
+}
+
 
 img#estate-imgs {
-  max-height: 525px;
-  max-width: 375px;
+  display: inline-block;
+  width: 575px;
+  height: 425px;
+  padding-bottom: 12%;
 }
-div.flex-container-mint {
-    width:auto;
-}
+
 #second,
 #third,
 #fourth {
   display: none;
 }
 
-
-  
 section#info {
-    display:block;
+  display: block;
+}
+section#benefits {
+  display: block;
+  width: 100%;
 }
 
 div.container-estate-btns {
-    width:50%;
-    display:inline-block;
-    margin: 0;
-    padding:1%;
-  
-   
+  width: 50%;
+  display: inline-block;
+  margin: 0;
+  padding: 1%;
 }
 .estate-size {
- background-color:transparent;
- color:var(--pink);
- border:1px solid var(--pink);
-    display: inline-block;
-    width:50%;
-    padding:3%;
-
-  
+  background-color: transparent;
+  color: var(--pink);
+  border: 1px solid var(--pink);
+  display: inline-block;
+  width: 50%;
+  padding: 3%;
 }
 .estate-size:hover {
-    border:1px solid yellow;
-    color:var(--yellow)
+  border: 1px solid yellow;
+  color: var(--yellow);
 }
