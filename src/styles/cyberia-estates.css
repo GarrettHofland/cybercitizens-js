@@ -52,7 +52,7 @@ div#benefits-desc-long-additional,
 div#benefits-desc-long-ownership,
 div#benefits-desc-long-customization,
 div#benefits-desc-long-utility {
-  display: none;
+  display: inline;
 }
 img#benefits-imgs-additional,
 img#benefits-imgs-ownership,

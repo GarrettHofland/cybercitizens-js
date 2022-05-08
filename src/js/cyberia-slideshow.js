@@ -17,40 +17,40 @@ const customization = document.getElementById("benefits-imgs-customization");
 const utility = document.getElementById("benefits-imgs-utility");
 
 // ownership show description on hover
-ownership.addEventListener("mouseover", function handleMouseOver() {
-  ownershipdescription.style.display = "table-row-group";
-});
+//ownership.addEventListener("mouseover", function handleMouseOver() {
+  //ownershipdescription.style.display = "table-row-group";
+//z});
 //hide on mouse out
-ownership.addEventListener("mouseout", function handleMouseOut() {
-  ownershipdescription.style.display = "none";
-});
+//ownership.addEventListener("mouseout", function handleMouseOut() {
+  //ownershipdescription.style.display = "none";
+//});
 
 // additional benefits description show on hover of pic
-additional.addEventListener("mouseover", function handleMouseOver() {
-  additionaldescription.style.display = "table-row-group";
-});
+//additional.addEventListener("mouseover", function handleMouseOver() {
+  //additionaldescription.style.display = "table-row-group";
+//});
 // hide on mouse out
-additional.addEventListener("mouseout", function handleMouseOut() {
-  additionaldescription.style.display = "none";
-});
+//additional.addEventListener("mouseout", function handleMouseOut() {
+  //additionaldescription.style.display = "none";
+//});
 
 // customization benefits description show on hover of pic
-customization.addEventListener("mouseover", function handleMouseOver() {
-  customizationdescription.style.display = "table-row-group";
-});
+//customization.addEventListener("mouseover", function handleMouseOver() {
+  //customizationdescription.style.display = "table-row-group";
+//});
 // hide on mouse out
-customization.addEventListener("mouseout", function handleMouseOut() {
-  customizationdescription.style.display = "none";
-});
+//customization.addEventListener("mouseout", function handleMouseOut() {
+  //customizationdescription.style.display = "none";
+//});
 
 //utility benefits description show on hover of pic
-utility.addEventListener("mouseover", function handleMouseOver() {
-  utilitydescription.style.display = "table-row-group";
-});
+//utility.addEventListener("mouseover", function handleMouseOver() {
+  //utilitydescription.style.display = "table-row-group";
+//});
 // hide on mouse out
-utility.addEventListener("mouseout", function handleMouseOut() {
-  utilitydescription.style.display = "none";
-});
+//utility.addEventListener("mouseout", function handleMouseOut() {
+  //utilitydescription.style.display = "none";
+//});
 
 // show apts on btn click
 const showsmallestate = () => {
