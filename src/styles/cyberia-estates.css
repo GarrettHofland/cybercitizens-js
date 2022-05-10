@@ -11,16 +11,14 @@ section#welcome {
   display: block;
 
 }
-div.flex-container-mint {
-  width: auto;
 
-}
 a#estatemint {
   margin-right: 1%;
 }
 div.background-image-cyberia {
   background-image:url("../assets/newMap.png");
-  background-position: top;
+  background-position:center;
+ 
   background-size:cover;
   background-repeat: no-repeat;
 
@@ -30,8 +28,14 @@ div.background-image-cyberia {
   
 
 }
-section#info {
-  background:none;
+img#estate-img{
+  border:1px solid var(--yellow);
+ border-radius:20%;
+ min-width:fit-content;
+
+}
+div.benefits-desc {
+  display:inline-block;
 }
 div.flex-container-estates {
   width: 40%;
@@ -64,7 +68,7 @@ li {
 }
 section.divider {
   min-height:10px;
-
+width:100%;
   border:5px solid var(--pink);
  
 }
@@ -120,7 +124,9 @@ img#estate-imgs {
   display: none;
 }
 
-
+section#info{
+  background:transparent;
+}
 section#benefits {
   display: block;
   width: 100%;
@@ -129,20 +135,22 @@ section#benefits {
 
 
 div.container-estate-btns {
-  width: 50%;
-  display: inline-block;
-  margin: 0;
-  padding: 1%;
+margin:0 auto;
+display:inline-block;
+width:auto;
+margin:0 auto;
 }
 .estate-size {
-  background-color: transparent;
-  color: var(--pink);
-  border: 1px solid var(--pink);
-  display: inline-block;
-  width: 50%;
-  padding: 3%;
+background-color:transparent;
+opacity:0.8;
+color:var(--yellow);
+display:inline;
+
+
 }
 .estate-size:hover {
   border: 1px solid yellow;
-  color: var(--yellow);
+  color: var(--pink);
+  zoom:115%;
+  opacity:1;
 }
