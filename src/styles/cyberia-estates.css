@@ -31,7 +31,10 @@ div.background-image-cyberia {
 img#estate-img{
   border:1px solid var(--yellow);
  border-radius:20%;
- min-width:fit-content;
+ display:block;
+ margin-top:50%;
+
+
 
 }
 div.benefits-desc {
@@ -133,7 +136,6 @@ section#benefits {
   background:none;
 }
 
-
 div.container-estate-btns {
 margin:0 auto;
 display:inline-block;
@@ -153,4 +155,19 @@ display:inline;
   color: var(--pink);
   zoom:115%;
   opacity:1;
+}
+div.container-mint-desc{
+  width:45%;
+  display:inline;
+  position:relative;
+}
+div.container-mint {
+  display:inline;
+  position:relative;
+ 
+
+}
+a#mint-button {
+
+display:inline-block;
 }
