@@ -18,11 +18,11 @@ a#estatemint {
 div.background-image-cyberia {
   background-image:url("../assets/newMapblur.png");
   background-position:top;
- animation-name:bgimage;
- animation-duration:360s;
+animation-name:bgimage;
  animation-direction:alternate;
+ animation-duration:120s;
  animation-iteration-count:infinite;
-  background-size:auto;
+  background-size:140%;
   height:max-content;
   width:100%;
   background-repeat: no-repeat;
@@ -202,21 +202,22 @@ height:275px;
 }
 
 @keyframes bgimage {
-  0% {background-size:100%;}
-  6.25% {background-size:105%;}
- 12.5%  {background-size:110%;}
- 18.75% {background-size:115%;}
- 25%  {background-size:120%;}
- 31.25% {background-size:125%;}
- 37.5%  {background-size:130%;}
- 43.75% {background-size:135%;}
+  0% {background-size:180%; filter: brightness(2.5)}
+  1% {filter:brightness(1)}
+  6.25% {background-size:175%;}
+ 12.5%  {background-size:170%;}
+ 18.75% {background-size:165%;}
+ 25%  {background-size:160%;}
+ 31.25% {background-size:155%;}
+ 37.5%  {background-size:150%;}
+ 43.75% {background-size:145%;}
  50%  {background-size:140%;}
- 56.25% {background-size: 135%}
- 62.5%  {background-size:130%;}
- 68.75%{background-size: 125%}
- 75%  {background-size:120%;}
- 81.25% {background-size: 115%}
- 87.5%  {background-size:110%;}
- 93.75% {background-size: 105%}
- 100% {background-size:100%;}
+ 56.25% {background-size: 142%}
+ 62.5%  {background-size:144%;}
+ 68.75%{background-size: 146%}
+ 75%  {background-size:148%;}
+ 81.25% {background-size: 150%}
+ 87.5%  {background-size:145%;}
+ 93.75% {background-size: 142.5%}
+ 100% {background-size:140%;}
 }
