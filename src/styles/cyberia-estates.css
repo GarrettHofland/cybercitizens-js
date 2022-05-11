@@ -19,12 +19,14 @@ div.background-image-cyberia {
   background-image:url("../assets/newMapblur.png");
   background-position:top;
  animation-name:bgimage;
- animation-duration:240s;
+ animation-duration:360s;
+ animation-direction:alternate;
+ animation-iteration-count:infinite;
   background-size:auto;
   height:max-content;
   width:100%;
   background-repeat: no-repeat;
-position:relative;
+
 
 
 
@@ -200,13 +202,21 @@ height:275px;
 }
 
 @keyframes bgimage {
-  0%   { background-size:100%; }
-  12.5% {background-size:125%;}
-25% {background-size:150%}
-37.5% { background-size:175%;}
-50% {background-size:200%;}
-62.5% {background-size:175%}
-75% {background-size:150%}
-87.5% {background-size:125%;}
-100% {background-size:100%;}
+  0% {background-size:100%;}
+  6.25% {background-size:105%;}
+ 12.5%  {background-size:110%;}
+ 18.75% {background-size:115%;}
+ 25%  {background-size:120%;}
+ 31.25% {background-size:125%;}
+ 37.5%  {background-size:130%;}
+ 43.75% {background-size:135%;}
+ 50%  {background-size:140%;}
+ 56.25% {background-size: 135%}
+ 62.5%  {background-size:130%;}
+ 68.75%{background-size: 125%}
+ 75%  {background-size:120%;}
+ 81.25% {background-size: 115%}
+ 87.5%  {background-size:110%;}
+ 93.75% {background-size: 105%}
+ 100% {background-size:100%;}
 }
