@@ -21,12 +21,13 @@ div.background-image-cyberia {
   background-position:top;
 animation-name:bgimage;
  animation-direction:alternate;
- animation-duration:120s;
+ animation-duration:50s;
  animation-iteration-count:infinite;
-  background-size:140%;
+  background-size:contain;
   height:max-content;
   width:100%;
   background-repeat: no-repeat;
+  
 
 
 
@@ -129,7 +130,7 @@ img#estate-imgs {
 }
 
 section#info{
-  background:transparent;
+
   display:block;
 
 }
@@ -137,7 +138,8 @@ section#benefits {
   display: block;
   width: 100%;
   min-height:15vh;
-  background:none;
+  background:transparent;
+  
 }
 
 div.container-estate-btns {
@@ -196,32 +198,78 @@ display:inline-block;
 }
 
 div.flex-container-roadmap {
-  display:block;
+  display:flex;
+  overflow-x:hidden;
+  width:100%
 }
 div.roadmap-item-frame {
-  display:inline-block;;
+  display:inline-flex;;
   border: 3px solid var(--purple);
-width:275px;
-height:275px;
+width: 500px;
+height:500px;
 }
 
 @keyframes bgimage {
-  0% {background-size:180%;}
+  0% {background-size:98%;}
+
+
+
+ 18.75% {background-size:105%;}
+
+ 31.25% {background-size:107%;}
+ 37.5%  {background-size:110%;background-position:top}
+
+ 50%  {background-size:95%; }
+ 56.25% {background-size:100%; }
+
+ 68.75%{background-size: 110%}
+ 75%  {background-size:112%;}
+ 81.25% {background-size: 100%;}
+
+ 93.75% {background-size: 98.5%;}
+ 100% {background-size:98%;}
+}
+
+div#itemframe1, div#itemframe2, div#itemframe3, div#itemframe4, div#itemframe5 {
+  display:none;
+  margin:0 auto;
+}
+
+button#goal1btn{
+
+  display:inline;
+  padding:1.0%;
+  border:1px solid var(--pink);
  
-  6.25% {background-size:175%;}
- 12.5%  {background-size:170%;}
- 18.75% {background-size:165%;}
- 25%  {background-size:160%;}
- 31.25% {background-size:155%;}
- 37.5%  {background-size:150%;}
- 43.75% {background-size:145%;}
- 50%  {background-size:140%;}
- 56.25% {background-size: 142%}
- 62.5%  {background-size:144%;}
- 68.75%{background-size: 146%}
- 75%  {background-size:148%;}
- 81.25% {background-size: 150%}
- 87.5%  {background-size:145%;}
- 93.75% {background-size: 142.5%}
- 100% {background-size:140%;}
+
+
+background-color:transparent;
+color:var(--yellow)
+}
+button#goal1btn:hover{
+
+  display:inline;
+
+  border:1px solid var(--purple);
+ 
+
+
+background-color:transparent;
+color:var(--yellow)
+}
+p#goal-subtitle {
+  font-weight:bolder;
+  color:var(--pink)
+}
+div#roadmap-goal-1{
+  display:block;
+}
+div.roadmap-button-container{
+  display:block;
+width:100%;
+  
+}
+p#goal-desc {
+  font-family:pixelFont;
+  font-size:75%;
 }

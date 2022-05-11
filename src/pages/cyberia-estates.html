@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/cyberia-estates.css" />
     
+    
     <title>Cyberia Real-estate</title>
   </head>
 
@@ -74,7 +75,7 @@
        
         </section>
      
-        <section class="divider"></section>
+<section class="divider"></section>
       <section  class="fade-in" id="benefits">
         <h2>Benefits</h2>
         <div id="benefits-container">
@@ -143,26 +144,44 @@ Customization</div>
 </section>
 <section class ="fade-in" id="roadmap">
   <h2>Roadmap</h2>
+  <div class="roadmap-button-container">
+  <button class="roadmap-buttons" id="goal1btn" onClick="showgoal1()">Goal 1</button>
+  <button class="roadmap-buttons" id="goal1btn" onClick="showgoal2()">Goal 2</button>
+  <button class="roadmap-buttons" id="goal1btn" onClick="showgoal3()">Goal 3</button>
+  <button class="roadmap-buttons" id="goal1btn" onClick="showgoal4()">Goal 4</button>
+  <button class="roadmap-buttons" id="goal1btn" onClick="showgoal5()">Goal 5</button>
+</div>
   <div class="flex-container-roadmap">
 
-<div class="roadmap-item-frame">
-<div class="roadmap-goal-1">Goal #1!</div>
+
+<div class="roadmap-item-frame" id="itemframe1">
+<div class="roadmap-goal-1" id="goal1"><h3>Goal #1!</h3></div>
+<div class="goal-descriptions">
+ <ul>
+  <p id="goal-subtitle">Goals to accomplish:</p>
+  <p id="goal-desc"><li>-> blablblabalbal</li>
+    <li>->  blahlablahal</li>
+</p>
+  <p id="goal-subtitle">Estimated completion</p>
+  <li><p id="goal-desc">time/date</p></li>
+</ul> 
+</div>
 </div>
 
-<div class="roadmap-item-frame">
-  <div class="roadmap-goal-1">Goal #2!</div>
+<div class="roadmap-item-frame" id="itemframe2">
+  <div class="roadmap-goal-1"id="goal2"><h3>Goal #2!</h3></div>
   </div>
 
-  <div class="roadmap-item-frame">
-    <div class="roadmap-goal-1">Goal #3!</div>
+  <div class="roadmap-item-frame" id="itemframe3">
+    <div class="roadmap-goal-1"id="goal3"><h3>Goal #3!</h3></div>
     </div>
     
-  <div class="roadmap-item-frame">
-    <div class="roadmap-goal-1">Goal #4!</div>
+  <div class="roadmap-item-frame" id="itemframe4">
+    <div class="roadmap-goal-1"id="goal4"><h3>Goal #4!</h3></div>
     </div>
     
-  <div class="roadmap-item-frame">
-    <div class="roadmap-goal-1">Goal #5!</div>
+  <div class="roadmap-item-frame" id="itemframe5">
+    <div class="roadmap-goal-1"id="goal5"><h3>Goal #5!</h3></div>
     </div>
 
   </div>

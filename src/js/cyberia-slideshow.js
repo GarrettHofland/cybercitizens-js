@@ -79,3 +79,66 @@ const showpenthouse = () => {
   document.getElementById("third").style.display = "none";
   document.getElementById("fourth").style.display = "block";
 };
+
+const showgoal1 = () => {
+  document.getElementById("goal1").style.display = "block";
+  document.getElementById("itemframe1").style.display = "block";
+  document.getElementById("itemframe2").style.display = "none";
+  document.getElementById("goal2").style.display = "none";
+
+  
+}
+
+const showgoal2 = () => {
+  document.getElementById("goal2").style.display = "block";
+
+  document.getElementById("goal1").style.display = "none";
+  document.getElementById("itemframe1").style.display = "none";
+  document.getElementById("itemframe2").style.display = "block";
+  document.getElementById("goal3").style.display = "none";
+  document.getElementById("itemframe3").style.display = "none";
+  document.getElementById("goal4").style.display = "none";
+  document.getElementById("itemframe4").style.display = "none";
+  document.getElementById("goal5").style.display = "none";
+  document.getElementById("itemframe5").style.display = "none";
+}
+
+const showgoal3 = () => {
+  document.getElementById("itemframe2").style.display = "none";
+  document.getElementById("goal1").style.display = "none";
+  document.getElementById("itemframe1").style.display = "none";
+  document.getElementById("goal2").style.display = "none";
+  document.getElementById("goal3").style.display = "block";
+  document.getElementById("itemframe3").style.display = "block";
+  document.getElementById("goal4").style.display = "none";
+  document.getElementById("itemframe4").style.display = "none";
+  document.getElementById("goal5").style.display = "none";
+  document.getElementById("itemframe5").style.display = "none";
+  
+}
+
+const showgoal4 = () => {
+  document.getElementById("itemframe2").style.display = "none";
+  document.getElementById("goal1").style.display = "none";
+  document.getElementById("itemframe1").style.display = "none";
+  document.getElementById("goal2").style.display = "none";
+  document.getElementById("goal3").style.display = "none";
+  document.getElementById("itemframe3").style.display = "none";
+  document.getElementById("goal4").style.display = "block";
+  document.getElementById("itemframe4").style.display = "block";
+  document.getElementById("goal5").style.display = "none";
+  document.getElementById("itemframe5").style.display = "none";
+  
+}
+const showgoal5 = () => {
+  document.getElementById("itemframe2").style.display = "none";
+  document.getElementById("goal1").style.display = "none";
+  document.getElementById("itemframe1").style.display = "none";
+  document.getElementById("goal2").style.display = "none";
+  document.getElementById("goal3").style.display = "none";
+  document.getElementById("itemframe3").style.display = "none";
+  document.getElementById("goal4").style.display = "none";
+  document.getElementById("itemframe4").style.display = "none";
+  document.getElementById("goal5").style.display = "block";
+  document.getElementById("itemframe5").style.display = "block";
+}
