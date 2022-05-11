@@ -202,8 +202,8 @@ height:275px;
 }
 
 @keyframes bgimage {
-  0% {background-size:180%; filter: brightness(2.5)}
-  1% {filter:brightness(1)}
+  0% {background-size:180%;}
+ 
   6.25% {background-size:175%;}
  12.5%  {background-size:170%;}
  18.75% {background-size:165%;}
