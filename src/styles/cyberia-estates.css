@@ -175,6 +175,13 @@ display:inline
 
 
 }
+li {
+  font-family:pixelFont;
+}
+#copy-address{
+  background-color:transparent;
+}
+
 .estate-size:hover {
   border: 1px solid yellow;
   color: var(--pink);
@@ -192,11 +199,53 @@ div.container-mint {
  
 
 }
-a#mint-button {
+a#mint-estate {
 
 display:inline-block;
 }
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgba(161, 118, 118, 0.5); /* Black w/ opacity */
+}
 
+/* Modal Content/Box */
+.modal-content {
+
+  margin: 15% auto; /* 15% from the top and centered */
+  background-color: rgba(216, 192, 192, 0.7); /* Black w/ opacity */
+  padding: 20px;
+  border: 1px solid var(--pink);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+h2#price {
+  text-align:center;
+}
+/* The Close Button */
+.close {
+  color: var(--pink);
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+}
+ul#modal-content-estate {
+  color:black;
+
+text-align:center;
+}
+.close:hover,
+.close:focus {
+  color: var(--purple);
+  text-decoration: none;
+  cursor: pointer;
+}
 div.flex-container-roadmap {
   display:flex;
   overflow-x:hidden;
@@ -233,6 +282,31 @@ height:500px;
 div#itemframe1, div#itemframe2, div#itemframe3, div#itemframe4, div#itemframe5 {
   display:none;
   margin:0 auto;
+}
+a#copy-address {
+  display:inline;
+  background-color:transparent;
+border:none;
+  border-radius:25%;
+  font-family:pixelFont;
+
+}
+p#copy {
+  font-family:pixelFont;
+}
+button#copy-address{
+  border:none;
+}
+a#copy-address{
+  border:1px solid var(--pink);
+  border-radius:25%;
+  display:block;
+  margin-top:15px;
+}
+a#copy-address:hover  {
+  border:1px solid var(--purple);
+
+
 }
 
 button#goal1btn{
