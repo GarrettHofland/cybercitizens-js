@@ -192,7 +192,8 @@ button#copy-address {
 }
 input#mint-address {
   font-size:150%;
-  width:95%;
+text-align:center;
+width:95%;
 
 
 }
