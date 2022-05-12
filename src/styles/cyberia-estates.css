@@ -175,6 +175,8 @@ display:inline
 
 
 }
+h3#waittime
+{ color:red;}
 i {
 background:transparent;
 color:var(--yellow)
