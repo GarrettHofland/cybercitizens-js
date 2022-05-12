@@ -175,11 +175,30 @@ display:inline
 
 
 }
+i {
+background:transparent;
+color:var(--yellow)
+}
+i:hover {
+  color:var(--pink);
+}
+button#copy-address {
+  background-color:transparent;
+  border:none;
+  display:inline;
+  
+}
+input#mint-address {
+  font-size:150%;
+  width:95%;
+
+
+}
+button#copy-address:hover {
+  color:var(--pink)
+}
 li {
   font-family:pixelFont;
-}
-#copy-address{
-  background-color:transparent;
 }
 
 .estate-size:hover {
@@ -213,14 +232,14 @@ display:inline-block;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: hidden; /* Enable scroll if needed */
-  background-color: rgba(161, 118, 118, 0.5); /* Black w/ opacity */
+  background-color: rgba(0, 0, 2, 0.94) /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
 
   margin: 15% auto; /* 15% from the top and centered */
-  background-color: rgba(216, 192, 192, 0.7); /* Black w/ opacity */
+  background-color: rgba(31, 35, 53, 0.894);/* Black w/ opacity */
   padding: 20px;
   border: 1px solid var(--pink);
   width: 80%; /* Could be more or less, depending on screen size */
@@ -283,32 +302,20 @@ div#itemframe1, div#itemframe2, div#itemframe3, div#itemframe4, div#itemframe5 {
   display:none;
   margin:0 auto;
 }
-a#copy-address {
-  display:inline;
-  background-color:transparent;
-border:none;
-  border-radius:25%;
-  font-family:pixelFont;
 
-}
 p#copy {
   font-family:pixelFont;
 }
-button#copy-address{
-  border:none;
-}
-a#copy-address{
-  border:1px solid var(--pink);
-  border-radius:25%;
-  display:block;
-  margin-top:15px;
-}
-a#copy-address:hover  {
-  border:1px solid var(--purple);
 
 
-}
 
+h3#modaltitle {
+  font-size:150%;
+  color:var(--pink)
+}
+h4#send {
+  color:white;
+}
 button#goal1btn{
 
   display:inline;
