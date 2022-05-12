@@ -197,6 +197,10 @@ width:95%;
 
 
 }
+img#roadmapimage{
+ max-width: 75%;
+ max-height:75%;
+}
 button#copy-address:hover {
   color:var(--pink)
 }
@@ -226,20 +230,11 @@ a#mint-estate {
 display:inline-block;
 }
 div.stage-outline {
-width:fit-content;
-  display:block;
-  margin:0 auto;
+display:block;
+width:100%;
 
 }
-div#stage1, div#stage2, div#stage3, div#tbd{
- display:inline-block;;
-  background-color:rgba(31, 32, 52, 0.894);
-width:15%;
 
-min-height:75%;
-
-   border:1px solid rgba(166, 39, 150, 0.98);
-}
 li#list {
   list-style-position:inside;
   list-style-type:disc;
