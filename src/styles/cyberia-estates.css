@@ -75,7 +75,7 @@ h2.address-title {
   text-align:center;
   font-size:200%;
 }
-li {
+li#list {
   list-style-type: none;
 }
 /*slide show*/
@@ -224,6 +224,31 @@ a#mint-estate {
 
 display:inline-block;
 }
+div.stage-outline {
+width:fit-content;
+  display:block;
+  margin:0 auto;
+
+}
+div#stage1, div#stage2, div#stage3, div#tbd{
+ display:inline-block;;
+  background-color:rgba(31, 32, 52, 0.894);
+width:15%;
+
+min-height:75%;
+
+   border:1px solid rgba(166, 39, 150, 0.98);
+}
+li#list {
+  list-style-position:inside;
+  list-style-type:disc;
+  padding-top:2%;
+  padding-bottom:2%;
+  color:rgba(211, 210, 214, 0.976)
+}
+li#resizer {
+  list-style-type:none;
+}
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -277,6 +302,20 @@ div.roadmap-item-frame {
   border: 3px solid var(--purple);
 width: 500px;
 height:500px;
+}
+h3#stagetitle {
+  color:var(--yellow);
+}
+div.questionmark{
+background-image:url("../assets/cyberia/Icons/benefiticon.png");
+background-repeat:no-repeat;
+background-size:100%;
+padding-bottom:25%;
+display:block;
+
+}
+ul#tbdfade {
+  opacity:0.5;
 }
 
 @keyframes bgimage {
@@ -356,3 +395,4 @@ p#goal-desc {
   font-family:pixelFont;
   font-size:75%;
 }
+
