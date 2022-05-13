@@ -254,21 +254,30 @@ li#resizer {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: hidden; /* Enable scroll if needed */
+  overflow:scroll; /* Enable scroll if needed */
   background-color: rgba(0, 0, 2, 0.94) /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
 
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 7.5% auto; /* from the top and centered */
   background-color: rgba(31, 35, 53, 0.894);/* Black w/ opacity */
   padding: 20px;
   border: 1px solid var(--pink);
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 30%; /* Could be more or less, depending on screen size */
+  height:fit-content;
 }
 h2#price {
   text-align:center;
+}
+
+img#qrcode {
+  border:1px solid var(--pink);
+
+}
+img#qrcode:hover {
+zoom:200%;
 }
 /* The Close Button */
 .close {
