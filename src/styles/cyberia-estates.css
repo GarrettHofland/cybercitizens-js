@@ -16,26 +16,7 @@ section#welcome {
 a#estatemint {
   margin-right: 1%;
 }
-div.background-image-cyberia {
-  background-image:url("../assets/newMapblur.png");
-  background-position:top;
-animation-name:bgimage;
- animation-direction:alternate;
- animation-duration:50s;
- animation-iteration-count:infinite;
-  background-size:contain;
-  height:max-content;
-  width:100%;
-  background-repeat: no-repeat;
-  
 
-
-
-
-
-  
-
-}
 img#estate-img{
   border:1px solid var(--yellow);
  border-radius:20%;
@@ -87,9 +68,16 @@ li#list {
 display:inline;
 }
 section.divider {
-  min-height:10px;
-width:100%;
-  border:5px solid var(--pink);
+  background: hsla(295, 100%, 59%, 1);
+
+border:1px solid var(--pink);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
+  min-height: 0.5vh;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  
  
 }
 
@@ -133,12 +121,13 @@ section#info{
 
   display:block;
 
+
 }
 section#benefits {
   display: block;
   width: 100%;
   min-height:15vh;
-  background:transparent;
+  background:none;
   
 }
 
@@ -147,6 +136,7 @@ float:left;
 margin-left:15%;
 width:min-content;
 height:fit-content;
+width:15%;
 
 
 
@@ -156,20 +146,17 @@ div#spacer {
   padding-top:10%;
 }
 button.estate-size {
-background-color:transparent;
+  background-color:rgba(8, 8, 19, 1);
 border:2px solid var(--purple);
 font-family:pixelFont;
-font-size:large;
+font-size:larger;
 border-radius:20%;
-width:250px;
+width:225px;
+height:65px;
 
 color:var(--yellow);
 margin-bottom:10%;
-
-
-padding:10%;
 text-align:center;
-
 display:inline
 
 
@@ -185,7 +172,7 @@ i:hover {
   color:var(--pink);
 }
 button#copy-address {
-  background-color:transparent;
+
   border:none;
   display:inline;
   
@@ -322,26 +309,30 @@ display:block;
 ul#tbdfade {
   opacity:0.5;
 }
+div.background-image-cyberia {
+  background-image:url("../assets/newMapblur.png");
+  background-position:inherit;
 
+animation-name:bgimage;
+animation-duration:45s;
+animation-fill-mode:forwards;
+  background-size:150%;
+  height:max-content;
+  width:100%;
+  background-repeat: no-repeat;
+
+}
 @keyframes bgimage {
-  0% {background-size:120%;}
+  0% {background-size:150%; }
+  10% {background-size:140%; }
+ 
+20% {background-size:130%; }
+30% {background-size:120%; }
 
 
+100%{background-position: top;background-size:120%;}
 
- 18.75% {background-size:125%;}
 
- 31.25% {background-size:130%;}
- 37.5%  {background-size:135%;background-position:top}
-
- 50%  {background-size:145%; }
- 56.25% {background-size:140%; }
-
- 68.75%{background-size: 135%}
-
- 81.25% {background-size: 130%;}
-
- 93.75% {background-size: 125%;}
- 100% {background-size:120%;}
 }
 
 div#itemframe1, div#itemframe2, div#itemframe3, div#itemframe4, div#itemframe5 {
