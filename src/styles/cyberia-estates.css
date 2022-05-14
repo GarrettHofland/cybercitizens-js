@@ -213,10 +213,21 @@ i:hover {
 }
 button#copy-address {
 
-  border:none;
+  border:1px solid var(--pink);
+  background-color:transparent;
   display:inline;
+  border-radius:20%;
+  color:yellow;
+  font-family:pixelFont;
+  
   
 }
+
+
+
+  
+  
+
 input#mint-address {
   font-size:150%;
 text-align:center;
@@ -479,5 +490,15 @@ div.flex-container {
 }
 div.background-image-cyberia {
  background:var(--bg);
+ animation:none;
+}
+.modal {
+  width:100%;
+  display:block;
+  margin-inline:auto;
+  padding-top:50px;
+}
+.modal-content {
+  width:fit-content;
 }
 }
