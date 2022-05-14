@@ -17,6 +17,17 @@ div#centertext {
 }
 
 
+img#estate-imgs{
+  border:1px solid var(--yellow);
+ border-radius:20%;
+ display:block;
+width:375px;
+height:375px;
+
+
+
+
+}
 img#estate-img{
   border:1px solid var(--yellow);
  border-radius:20%;
@@ -54,7 +65,7 @@ div.flex-container-pictures {
   background:transparent;
 }
 p#apt-description {
-  margin: -10%;
+  margin: 5%;
 }
 h2.address-title {
   text-align:center;
@@ -66,12 +77,14 @@ li#list {
 /*slide show*/
 .cyberia-content {
 
-  width: 625px;
-  height: 475px;
+
 
   
-  
+  margin:10%;
 display:inline;
+}
+div.flex-container-estates {
+padding:25%;
 }
 section.divider {
   background: hsla(295, 100%, 59%, 1);
@@ -115,8 +128,8 @@ div#estate-main {
 
 img#estate-imgs {
   display: inline-block;
-  width: 575px;
-  height: 425px;
+  width: 350px;
+  height: 350px;
   padding-bottom: 12%;
 }
 
@@ -157,6 +170,7 @@ margin-left:15%;
 width:min-content;
 height:fit-content;
 width:15%;
+
 
 
 
@@ -209,6 +223,11 @@ text-align:center;
 width:95%;
 
 
+}
+section#roadmap {
+  display:block;
+ padding-bottom:3%;
+  
 }
 img#roadmapimage{
  max-width: 75%;
@@ -408,6 +427,7 @@ button#goal1btn:hover{
 background-color:transparent;
 color:var(--yellow)
 }
+
 p#goal-subtitle {
   font-weight:bolder;
   color:var(--pink)
@@ -425,3 +445,39 @@ p#goal-desc {
   font-size:75%;
 }
 
+@media all and (max-width : 40em) {
+ div#apartment-description {
+   margin-inline:auto;
+    display:block;
+width:50%;
+}
+  section#info {
+    display:block;
+    margin-inline:auto;
+  }
+section#roadmap {
+display:block;
+width:100%;
+margin-inline:auto;
+background:transparent;
+padding-top:90%;
+}
+p#apt-description {
+  margin-inline:auto;
+  display:block;
+
+}
+img#estate-imgs {
+  display:block;
+margin-inline:auto;
+height:100%;
+width:100%
+
+}
+div.flex-container {
+  display:inline-block;
+}
+div.background-image-cyberia {
+ background:var(--bg);
+}
+}
