@@ -2,20 +2,20 @@
 body {
   text-align: center;
   margin: 0 auto;
+
   
 }
 section#mint {
-  background:transparent;
+background:transparent !important ;
+background-color:transparent;
+
 }
-section#welcome {
-  padding-top: 5%;
-  display: block;
+div#centertext {
+  position:relative;
+
 
 }
 
-a#estatemint {
-  margin-right: 1%;
-}
 
 img#estate-img{
   border:1px solid var(--yellow);
@@ -26,11 +26,15 @@ img#estate-img{
 
 
 }
+
 div.flex-container-aptinfo {
   position:relative;
   display:inline;
+
+ 
  
 }
+
 div.benefits-desc {
   display:inline-block;
   margin-bottom:5%;
@@ -64,6 +68,8 @@ li#list {
 
   width: 625px;
   height: 475px;
+
+  
   
 display:inline;
 }
@@ -72,10 +78,10 @@ section.divider {
 
 border:1px solid var(--pink);
   filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
-  min-height: 0.5vh;
+  min-height: 0.05vh;
   display: flex;
   flex-direction: column;
-
+width:100%;
   align-items: center;
   
  
@@ -84,6 +90,7 @@ border:1px solid var(--pink);
 div#apartment-description {
   display: inline-block;
   width:55%;
+background:initial;
 }
 
 
@@ -102,7 +109,9 @@ height:225px;
 
 }
 
-
+div#estate-main {
+  background:transparent;
+}
 
 img#estate-imgs {
   display: inline-block;
@@ -120,14 +129,25 @@ img#estate-imgs {
 section#info{
 
   display:block;
+width:100%;
+height:25vh;
+
+background:unset;
+
+padding-top:15px;;
 
 
+}
+div.opacity-layer {
+  background:rgba(4, 4, 8, 0.3) !important;
+  height:7in
 }
 section#benefits {
   display: block;
   width: 100%;
-  min-height:15vh;
-  background:none;
+  min-height:15vh !important;
+
+background:rgba(17, 17, 39, 0.3) !important
   
 }
 
@@ -146,21 +166,27 @@ div#spacer {
   padding-top:10%;
 }
 button.estate-size {
-  background-color:rgba(8, 8, 19, 1);
-border:2px solid var(--purple);
-font-family:pixelFont;
-font-size:larger;
-border-radius:20%;
-width:225px;
-height:65px;
+  background-color:transparent;
+  border:none;
 
-color:var(--yellow);
+
+
+width:15%;
+height:65px;
+width:225px;
+
+
 margin-bottom:10%;
-text-align:center;
+
 display:inline
 
 
 
+}
+img#estatebtn{
+  width:225px;
+  height:65px;
+  display:inline;
 }
 h3#waittime
 { color:red;}
@@ -196,7 +222,6 @@ li {
 }
 
 .estate-size:hover {
-  border: 1px solid yellow;
   color: var(--pink);
   zoom:115%;
   opacity:1;
@@ -205,6 +230,7 @@ div.container-mint-desc{
   width:45%;
   display:inline;
   position:relative;
+ 
 }
 div.container-mint {
   display:inline;
@@ -215,10 +241,16 @@ div.container-mint {
 a#mint-estate {
 
 display:inline-block;
+margin-top:5%;
+}
+img#mint-estate-png {
+  width:225px;
+  height:225px;
 }
 div.stage-outline {
 display:block;
 width:100%;
+margin-bottom:5%;
 
 }
 
@@ -311,29 +343,30 @@ ul#tbdfade {
 }
 div.background-image-cyberia {
   background-image:url("../assets/newMapblur.png");
-  background-position:inherit;
+
 
 animation-name:bgimage;
-animation-duration:45s;
+animation-duration:15s;
 animation-fill-mode:forwards;
-  background-size:150%;
+background-size:120%;
   height:max-content;
-  width:100%;
+background-position:top;
   background-repeat: no-repeat;
 
 }
 @keyframes bgimage {
-  0% {background-size:150%; }
-  10% {background-size:140%; }
+  0% { background-size:120%; }
+  25% {background-size:130%;}
+  50% {background-size:140%;}
+  100% { background-size:145%; background-position:top;;;}
  
-20% {background-size:130%; }
-30% {background-size:120%; }
 
 
-100%{background-position: top;background-size:120%;}
+
 
 
 }
+
 
 div#itemframe1, div#itemframe2, div#itemframe3, div#itemframe4, div#itemframe5 {
   display:none;
