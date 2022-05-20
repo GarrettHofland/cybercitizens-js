@@ -1,4 +1,7 @@
+import {ConectedAddress} from "./CityConnector.js";
+
 export var AptSave = {
+
     BedBed: '../assets/cyberCity/Apts/Bedroom/Bed/Style1.png',
     BedChair: '../assets/cyberCity/Apts/Bedroom/Chair/Style1.png', 
     BedDesk: '../assets/cyberCity/Apts/Bedroom/Desk/Style1.png', 
@@ -37,3 +40,96 @@ export var AptSave = {
 
 }
 
+window.onload = function(){ 
+    console.log("hi");
+    LoginAndGetAptData();
+}  
+
+function LoginAndGetAptData(){
+    PlayFab.settings.titleId = "9EBCA";
+    
+    var loginRequest = {
+        TitleId: PlayFab.settings.titleId,
+        CustomId: ConectedAddress,
+        CreateAccount: true,
+    };
+
+    PlayFabClientSDK.LoginWithCustomID(loginRequest, GetHighscore);
+}
+
+function GetHighscore()
+{
+    var HighscoreRequest = {
+        PlayFabId: ConectedAddress,
+        StatisticNames: ["AptSave"]
+    }
+    PlayFabClientSDK.GetPlayerStatistics(HighscoreRequest, GetHighscoreStats)
+}
+
+var GetHighscoreStats = function (result, error) {
+    if (result !== null) {
+        if(ConectedAddress != "N/A"){
+            if(result.data.Statistics[0] != null){
+            AptSave = result.data.Statistics[0].Value;
+            //console.log("The HighScore is: "+ JSON.stringify(result.data.Statistics[0].Value));
+            }
+            else{
+                console.log("apt save is: "+ JSON.stringify(result.data.Statistics[0].Value));
+            }
+        }
+    } 
+    else if (error !== null) {
+        console.log("Something went wrong Fetching the Leaderboard.");
+        console.log("Here's some debug information:");
+        console.log(CompileErrorReport(error));
+    }
+};
+
+//send HS 
+// function LoginAndGetAptData(){
+//     if(ConectedAddress != "N/A")
+//     {
+//         PlayFab.settings.titleId = "9EBCA";
+        
+//         var loginRequest = {
+//             TitleId: PlayFab.settings.titleId,
+//             CustomId: ConectedAddress,
+//             CreateAccount: true,
+//         };
+
+//         PlayFabClientSDK.LoginWithCustomID(loginRequest, UpdateStats);
+//     }
+// }
+
+// function UpdateStats()
+// {
+//     var updateStatsRequest = {
+//         Statistics: [{ StatisticName: "HighScore", Value: HighScore }]
+//     };
+//     PlayFabClientSDK.UpdatePlayerStatistics(updateStatsRequest, updateStatsCallback);
+// }
+
+
+// var updateStatsCallback = function (result, error) {
+//     if (result !== null) {
+//         console.log("Highscore Updated");
+//     } 
+//     else if (error !== null) {
+//         console.log("Something went wrong Fetching the Leaderboard.");
+//         console.log("Here's some debug information:");
+//         console.log(CompileErrorReport(error));
+//     }
+// };
+
+
+
+//error msg
+function CompileErrorReport(error) {
+    if (error === null)
+       return "";
+    var fullErrors = error.errorMessage;
+    for (var paramName in error.errorDetails)
+       for (var msgIdx in error.errorDetails[paramName])
+            fullErrors += "\n" + paramName + ": " + error.errorDetails[paramName][msgIdx];
+    return fullErrors;
+}

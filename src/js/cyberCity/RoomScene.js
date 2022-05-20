@@ -33,7 +33,7 @@ export class RoomScene extends Phaser.Scene
         LoadComputerAssets(this);
 
         //load player
-        this.load.spritesheet('Player', '../assets/cyberCity/Player/Char 2.png',
+        this.load.spritesheet('Player', Info.skin,
             { frameWidth: 32, frameHeight: 48}
         );
 
@@ -267,57 +267,57 @@ function CreateAnims()
 {
     game.anims.create({
         key: 'WalkD',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 0, end: 2 }),
-        frameRate: 6,
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 0, end: 4 }),
+        frameRate: 10,
         repeat: true
     });
     AnimNames.push('WalkD');
     game.anims.create({
         key: 'WalkR',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 3, end: 5 }),
-        frameRate: 6,
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 10, end: 14 }),
+        frameRate: 10,
         repeat: true
     });
     AnimNames.push('WalkR');
     game.anims.create({
         key: 'WalkU',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 9, end: 11 }),
-        frameRate: 6,
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 15, end: 19 }),
+        frameRate: 10,
         repeat: true
     });
     AnimNames.push('WalkU');
     game.anims.create({
         key: 'WalkL',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 6, end: 8 }),
-        frameRate: 6,
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 5, end: 9 }),
+        frameRate: 10,
         repeat: true
     }); 
     AnimNames.push('WalkL');       
     game.anims.create({
         key: 'StandD',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 1, end: 1 }),
-        frameRate: 6,
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 2, end: 2 }),
+        frameRate: 10,
         repeat: true
     });
     AnimNames.push('StandD');
     game.anims.create({
         key: 'StandR',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 4, end: 4 }),
-        frameRate: 6,
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 12, end: 12 }),
+        frameRate: 10,
         repeat: true
     });
     AnimNames.push('StandR');
     game.anims.create({
         key: 'StandU',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 10, end: 10 }),
-        frameRate: 6,
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 17, end: 17 }),
+        frameRate: 10,
         repeat: true
     });
     AnimNames.push('StandU');
     game.anims.create({
         key: 'StandL',
         frames: game.anims.generateFrameNumbers( 'Player' , { start: 7, end: 7 }),
-        frameRate: 6,
+        frameRate: 10,
         repeat: true
     });
     AnimNames.push('StandL');
