@@ -6,7 +6,7 @@ var Info = {
     AptInfo: [],
     CitizenInfo: [],
     FurnitureInfo: [],
-    skin: '../assets/cyberCity/Player/626.png'
+    skin: '../assets/cyberCity/Player/NChar 2.png'
 }
 export var AptSave = {
 

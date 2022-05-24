@@ -251,56 +251,56 @@ function CreateAnims()
 {
     game.anims.create({
         key: 'WalkD',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 0, end: 4 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 0, end: 3 }),
         frameRate: 10,
         repeat: true
     });
     AnimNames.push('WalkD');
     game.anims.create({
         key: 'WalkR',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 10, end: 14 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 10, end: 13 }),
         frameRate: 10,
         repeat: true
     });
     AnimNames.push('WalkR');
     game.anims.create({
         key: 'WalkU',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 15, end: 19 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 15, end: 18 }),
         frameRate: 10,
         repeat: true
     });
     AnimNames.push('WalkU');
     game.anims.create({
         key: 'WalkL',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 5, end: 9 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 5, end: 8 }),
         frameRate: 10,
         repeat: true
     }); 
     AnimNames.push('WalkL');       
     game.anims.create({
         key: 'StandD',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 2, end: 2 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 4, end: 4 }),
         frameRate: 10,
         repeat: true
     });
     AnimNames.push('StandD');
     game.anims.create({
         key: 'StandR',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 12, end: 12 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 14, end: 14 }),
         frameRate: 10,
         repeat: true
     });
     AnimNames.push('StandR');
     game.anims.create({
         key: 'StandU',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 17, end: 17 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 19, end: 19 }),
         frameRate: 10,
         repeat: true
     });
     AnimNames.push('StandU');
     game.anims.create({
         key: 'StandL',
-        frames: game.anims.generateFrameNumbers( 'Player' , { start: 7, end: 7 }),
+        frames: game.anims.generateFrameNumbers( 'Player' , { start: 9, end: 9 }),
         frameRate: 10,
         repeat: true
     });
