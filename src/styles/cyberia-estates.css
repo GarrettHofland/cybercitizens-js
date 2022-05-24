@@ -42,8 +42,8 @@ width:100%;
 /* IMAGES */
 /* this one is for the apt sizes */
 img#estate-imgs{
-  border:1px solid var(--yellow);
- border-radius:20%;
+ 
+ 
   display: inline-block;
   width: 350px;
   height: 350px;
@@ -140,10 +140,20 @@ div.flex-container-pictures {
   background-image:none;
   background:transparent;
 }
-div#apartment-description {
+div.flex-container {
   display: inline-block;
   width:55%;
 background:initial;
+
+
+}
+div.flex-container-estate {
+  display: inline-block;
+  width:55%;
+  background:rgba(4, 4, 8, 0.55) ;
+  border:1px solid rgb(21, 21, 158)
+
+
 }
 /* layer of color over benefits section to make it match bg */
 div.opacity-layer {
