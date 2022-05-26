@@ -47,11 +47,6 @@ export class CityScene extends Phaser.Scene
 
         LoadBillboards(this);
 
-        //Load Cars
-        // this.load.spritesheet('Cars', './assets/Temp/CAR2.png',
-        //     {frameWidth: 80, frameHeight: 60}
-        // );
-
         //load player
         this.load.spritesheet('Player', Info.skin,
             { frameWidth: 32, frameHeight: 48}
@@ -83,8 +78,6 @@ export class CityScene extends Phaser.Scene
         Boats = this.add.sprite(config.width/2,config.height/2,'Boats').setScale(scale);
         this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Hydrants').setScale(scale);
         this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Trash').setScale(scale);
-
-        //Car1 = this.physics.add.sprite(300,210,'Cars');
 
         //create Player
         Player = this.physics.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Player').setScale(1.4);
@@ -387,8 +380,6 @@ function CreateBillboards(scene)
     Bill8b = scene.add.sprite(300 + offsetX, 1460 + offsetY, 'Bill8').setScale(0.1);
     Bill8c = scene.add.sprite(2825 + offsetX, 905 + offsetY, 'Bill8').setScale(0.1);
 
-
-
     CreateBillAnims();
 }
 
@@ -476,9 +467,6 @@ function PlayBillAnims()
     Bill8a.anims.play('Bill8' , true); 
     Bill8b.anims.play('Bill8' , true); 
     Bill8c.anims.play('Bill8' , true); 
-
-
-
 }
 //#endregion
 
