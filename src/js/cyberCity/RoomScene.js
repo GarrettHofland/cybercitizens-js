@@ -216,15 +216,10 @@ function OpenComputerInterface()
     CompInterface.x = Player.x + intOffsetX; CompInterface.y = Player.y + intOffsetY;
     CompInterface.visible = true;
 
-    //ChairIcon.x = Player.x -188; ChairIcon.y = Player.y - 184;
     closetIcon.x = Player.x - 240; closetIcon.y = Player.y - 50;
-    //DeskIcon.x = Player.x ; DeskIcon.y = Player.y - 184;
     BathIcon.x = Player.x - 80; BathIcon.y = Player.y - 50;
     couchIcon.x = Player.x + 80; couchIcon.y = Player.y - 50;
-    //PCIcon.x = Player.x + 188; PCIcon.y = Player.y;
-    //FlowerIcon.x = Player.x - 188; FlowerIcon.y = Player.y + 184;
     KitchenIcon.x = Player.x + 240; KitchenIcon.y = Player.y - 50;
-    //PaintIcon.x = Player.x + 188; PaintIcon.y = Player.y +184;
 
     Icons.children.each(function(item){
         item.visible = false;
@@ -382,7 +377,6 @@ function Movement()
 
 var BedBed, BedChair, BedDesk, BedFloor, BedLeftSide, BedWall;
 var BathFloor, BathWall, BathPlants, BathTub, BathBin, BathMir, BathShowe, BathToil, BathTowel, BathBasin, Bathmachine;
-// BathPlants, BathTub, BathBin, BathMir, BathShowe, BathToil, BathTowel, BathBasin, Bathmachine
 var KitBin, KitCounter, KitTable, KitFloor, KitFridge, KitThingsOnTable, KitWall;
 var LivCouch, LivFloor, LivFurn, LivMiniCouch, LivMiniTable, LivRightWindow, LivStuffMiniTable, LivTvTable, LivTv, LivWall;
 var Scraps;
@@ -428,8 +422,6 @@ function LoadRoomAssets(T)
     T.load.image('LivTvTable', AptSave.LivTvTable);
     T.load.image('LivTv', AptSave.LivTv);
 
-    //T.load.image('BathBack', '../assets/cyberCity/Apts/SeperatedBathroom2.png');
-    //T.load.image('BathFront', '../assets/cyberCity/Apts/SeperatedBathroom.png');
     T.load.image('29S', '../assets/cyberCity/Apts/29.png');
     T.load.image('24S', '../assets/cyberCity/Apts/24.png');
     T.load.image('25S', '../assets/cyberCity/Apts/25.png');
@@ -439,7 +431,6 @@ function LoadRoomAssets(T)
     T.load.image('6S', '../assets/cyberCity/Apts/6.png');
     T.load.image('5S', '../assets/cyberCity/Apts/5.png');
     T.load.image('4S', '../assets/cyberCity/Apts/4.png');
-    //T.load.image('2S', '../assets/cyberCity/Apts/2.png');
 
     T.load.spritesheet('Wall', '../assets/cyberCity/Map/Wall.png',
         { frameWidth: 10, frameHeight: 10}
@@ -527,16 +518,12 @@ function CreateRoomAssets(T)
     LivRightWindow.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivRightWindow').setScale(scale));
     LivStuffMiniTable.add(T.add.sprite((config.width/2) + offsetX,(config.height/2) + offsetY,'LivStuffMiniTable').setScale(scale));
 
-    //Scraps.add(T.add.sprite((config.width/2),(config.height/2),'2S').setScale(1));
     Scraps.add(T.add.sprite((config.width/2),(config.height/2),'4S').setScale(1));
     Scraps.add(T.add.sprite((config.width/2),(config.height/2),'5S').setScale(1));
     Scraps.add(T.add.sprite((config.width/2),(config.height/2),'6S').setScale(1));
     Scraps.add(T.add.sprite((config.width/2),(config.height/2),'8S').setScale(1));
     Scraps.add(T.add.sprite((config.width/2),(config.height/2),'9S').setScale(1));
     Scraps.add(T.add.sprite((config.width/2),(config.height/2),'10S').setScale(1));
-
-
-    //Scraps.add(T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'BathBack').setScale(3));
 
 }
 
@@ -559,11 +546,8 @@ function CreateRoomAssetsTopLayer(T)
     var a = T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'24S').setScale(3);
     var b = T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'25S').setScale(3);
 
-    //var c = T.add.sprite((config.width/2) + offsetXScrap,(config.height/2) + offsetYScrap,'BathFront').setScale(3);
-
     a.depth = 2;
     b.depth = 2;
-    //c.depth = 2;
 
 }
 
@@ -828,8 +812,6 @@ function SetItemDepthAndVisibility()
     BathWall.children.each(function(item){
         item.depth = -2;
     });
-
-// BathPlants, BathTub, BathBin, BathMir, BathShowe, BathToil, BathTowel, BathBasin, Bathmachine
     BathPlants.children.each(function(item){
         item.depth = -1;
     });
@@ -857,8 +839,6 @@ function SetItemDepthAndVisibility()
     Bathmachine.children.each(function(item){
         item.depth = 2;
     });
-
-
     KitBin.children.each(function(item){
         item.depth = 2;
     });
@@ -956,37 +936,6 @@ function AddToFurnitureGroup(item, room)
             KitchenGroup.add(item);
             break;
     }
-
-    // switch(room)
-    // {
-    //     case "Ch":
-    //          ChairGroup.add(item);
-    //         break;
-    //     case "De":
-    //          DeskGroup.add(item);
-    //         break;
-    //     case "Ba":
-    //         BathGroup.add(item);
-    //         break;
-    //     case "Cl":
-    //         ClosetGroup.add(item);
-    //         break;
-    //     case "Co":
-    //         CouchGroup.add(item);
-    //         break;
-    //     case "Pc":
-    //         PcGroup.add(item);
-    //         break;
-    //     case "Fl":
-    //         FlowerGroup.add(item);
-    //         break;
-    //     case "Ki":
-    //         KitchenGroup.add(item);
-    //         break;
-    //     case "Pa":
-    //         PaintGroup.add(item);
-    //         break;  
-    // }
 }
 
 function CreateGroups(T)

@@ -43,7 +43,7 @@ export class CityScene extends Phaser.Scene
         this.load.image('BuildBack', '../assets/cyberCity/Map/BuildingBacks.png');
         this.load.image('BuildFront', '../assets/cyberCity/Map/BuildingTops.png');
         this.load.image('Signs', '../assets/cyberCity/Map/13Signs.png');
-        this.load.image('Boats', '../assets/cyberCity/Map/Boats.png');
+        this.load.image('Boats', '../assets/cyberCity/Map/boats.png');
 
         LoadBillboards(this);
 

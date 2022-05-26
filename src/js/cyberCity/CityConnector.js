@@ -49,8 +49,8 @@ export var AptSave = {
 }
 
 window.onload = function(){ 
-    addPhaser();
     loadGameInfo();
+    addPhaser();
 }   
 
 const loadGameInfo = async () => {
