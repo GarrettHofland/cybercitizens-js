@@ -298,28 +298,28 @@
         "Type": "LivWall",
         "Room": "Li",
         "Path": "../assets/cyberCity/Apts/Living Room/Wall/Style1.png",
-        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Livingroom/Style1.png"
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/LivingRoom/Style1.png"
     },
     "43":{
         "ID": "43",
         "Type": "LivWall",
         "Room": "Li",
         "Path": "../assets/cyberCity/Apts/Living Room/Wall/Style2.png",
-        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Livingroom/Style2.png"
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/LivingRoom/Style2.png"
     },
     "44":{
         "ID": "44",
         "Type": "LivWall",
         "Room": "Li",
         "Path": "../assets/cyberCity/Apts/Living Room/Wall/Style3.png",
-        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Livingroom/Style3.png"
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/LivingRoom/Style3.png"
     },
     "45":{
         "ID": "45",
         "Type": "LivWall",
         "Room": "Li",
         "Path": "../assets/cyberCity/Apts/Living Room/Wall/Style4.png",
-        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/Livingroom/Style4.png"
+        "Icon": "../assets/cyberCity/Apts/Icons/Pa/Wall/LivingRoom/Style4.png"
     },
     "46":{
         "ID": "46",
