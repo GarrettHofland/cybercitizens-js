@@ -45,9 +45,9 @@ img#estate-imgs{
  
  
   display: inline-block;
-  width: 350px;
-  height: 350px;
-  padding-bottom: 12%;
+  width: 50%;
+  height: fit-content;
+ 
 }
 /* this one is for the mint img will be replaced with trailer */
 img#estate-img{
@@ -100,6 +100,13 @@ background-size:120%;
   height:max-content;
 background-position:top;
   background-repeat: no-repeat;
+
+}
+div.trailer-area {
+  border:1px double  yellow;
+border-radius:20%;
+  width:750px;
+  height:750px;
 
 }
 div.flex-container-aptinfo {
@@ -230,7 +237,7 @@ div.modal-content {
 /* other styling */
   /* p, h3, h2, a */
 p#apt-description {
-  margin: 5%;
+  margin: 1.5%;
 }
 p#copy {
   font-family:pixelFont;
@@ -258,6 +265,7 @@ h4#send {
 a#mint-estate {
   display:inline-block;
   margin-top:5%;
+  margin-left:5%;
   }
   /* li, ul */
 li {
