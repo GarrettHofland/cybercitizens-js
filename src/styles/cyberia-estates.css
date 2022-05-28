@@ -13,7 +13,7 @@ section#info{
   display:block;
 width:100%;
 height:25vh;
-background:unset;
+background:transparent;
 padding-top:15px;;
 }
 section#benefits {
@@ -25,6 +25,9 @@ background:rgba(17, 17, 39, 0.3) !important
 section#roadmap {
   display:block;
  padding-bottom:3%;
+ background:rgba(31, 1, 1, 0.79) !important;
+ background-color:rgba(15, 2, 2, 0.79) !important
+
 }
 /* neon area divider for non fade in section */
 section.divider {
@@ -237,7 +240,7 @@ div.modal-content {
 /* other styling */
   /* p, h3, h2, a */
 p#apt-description {
-  margin: 1.5%;
+  margin-bottom:2%;
 }
 p#copy {
   font-family:pixelFont;
