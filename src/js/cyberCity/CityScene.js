@@ -3,15 +3,15 @@ import { config } from "./CyberCity.js";
 import { game } from "./CyberCity.js";
 
 var cursors, frameTime = 0;
-var Water, Boats;
-var scale = 2.2;
-var speed = 130; //130
+var Water, Boats, BoatsAlt;
+var scale = 2.2, BuildScale = 0.74;
+var speed = 1300; //130
 var Player;
 var Camera;
 var LastFacing = 0;
 var LightsOn, LightsOff;
 var Walls, ApartmentDoor, ApartmentOpen = false;
-var offsetX = -56, offsetY = 1.5;
+var offsetX = -60, offsetY = 1.5;
 //import { ConectedAddress, hasApt, AptInfo } from './CityConnector.js';
 import { Info } from './CityConnector.js';
 var AnimNames = [];
@@ -31,8 +31,19 @@ export class CityScene extends Phaser.Scene
 
         //Map Loading
         this.load.image('Water', '../assets/cyberCity//Map/1Water.png');
-        this.load.image('Roads', '../assets/cyberCity/Map/2Roads.png');
-        this.load.image('Outline', '../assets/cyberCity/Map/4outline.png');
+
+        //this.load.image('Roads', '../assets/cyberCity/Map/2Roads.png');
+        this.load.image('Roads1', '../assets/cyberCity/Map/Tiles/RoadRow1.png');
+        this.load.image('Roads2', '../assets/cyberCity/Map/Tiles/RoadRow2.png');
+        this.load.image('Roads3', '../assets/cyberCity/Map/Tiles/RoadRow3.png');
+        this.load.image('Roads4', '../assets/cyberCity/Map/Tiles/RoadRow4.png');
+
+        //this.load.image('Outline', '../assets/cyberCity/Map/4outline.png');
+        this.load.image('Outline1', '../assets/cyberCity/Map/Tiles/GroundRow1.png');
+        this.load.image('Outline2', '../assets/cyberCity/Map/Tiles/GroundRow2.png');
+        this.load.image('Outline3', '../assets/cyberCity/Map/Tiles/GroundRow3.png');
+        this.load.image('Outline4', '../assets/cyberCity/Map/Tiles/GroundRow4.png');
+
         this.load.image('Hydrants', '../assets/cyberCity/Map/8Hydra.png');
         this.load.image('Box', '../assets/cyberCity/Map/9Box.png');
         this.load.image('VM', '../assets/cyberCity/Map/10vm.png');
@@ -40,10 +51,26 @@ export class CityScene extends Phaser.Scene
         this.load.image('Arrows', '../assets/cyberCity/Map/12Arrow.png');
         this.load.image('LightOff', '../assets/cyberCity/Map/LampsOff.png');
         this.load.image('LightsOn', '../assets/cyberCity/Map/15Lights.png');
+
         this.load.image('BuildBack', '../assets/cyberCity/Map/BuildingBacks.png');
-        this.load.image('BuildFront', '../assets/cyberCity/Map/BuildingTops.png');
+        this.load.image('BuildBack1', '../assets/cyberCity/Map/Tiles/WallsRow1.png');
+        this.load.image('BuildBack2', '../assets/cyberCity/Map/Tiles/WallsRow2.png');
+        this.load.image('BuildBack3', '../assets/cyberCity/Map/Tiles/WallsRow3.png');
+        this.load.image('BuildBack4', '../assets/cyberCity/Map/Tiles/WallsRow4.png');
+
+        //this.load.image('BuildFront', '../assets/cyberCity/Map/BuildingTops.png');
+        this.load.image('BuildFront1', '../assets/cyberCity/Map/Tiles/RoofRow1.png');
+        this.load.image('BuildFront2', '../assets/cyberCity/Map/Tiles/RoofRow2.png');
+        this.load.image('BuildFront3', '../assets/cyberCity/Map/Tiles/RoofRow3.png');
+        this.load.image('BuildFront4', '../assets/cyberCity/Map/Tiles/RoofRow4.png');
+
         this.load.image('Signs', '../assets/cyberCity/Map/13Signs.png');
-        this.load.image('Boats', '../assets/cyberCity/Map/boats.png');
+
+        //this.load.image('Boats', '../assets/cyberCity/Map/boats.png');
+        this.load.image('Boats1', '../assets/cyberCity/Map/Tiles/BoatRow1.png');
+        this.load.image('Boats2', '../assets/cyberCity/Map/Tiles/BoatRow2.png');
+        this.load.image('Boats3', '../assets/cyberCity/Map/Tiles/BoatRow3.png');
+        this.load.image('Boats4', '../assets/cyberCity/Map/Tiles/BoatRow4.png');
 
         LoadBillboards(this);
 
@@ -72,24 +99,54 @@ export class CityScene extends Phaser.Scene
         ApartmentDoor.disableInteractive();
 
         Water = this.add.sprite(config.width/2, config.height/2, "Water").setScale(scale * 1.3);
-        this.add.sprite(config.width/2,config.height/2,'Roads').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'Outline').setScale(scale);
-        this.add.sprite(config.width/2,config.height/2,'BuildBack').setScale(scale);
-        Boats = this.add.sprite(config.width/2,config.height/2,'Boats').setScale(scale);
+        //this.add.sprite(config.width/2,config.height/2,'Roads').setScale(scale);
+        this.add.sprite(config.width/2, -2598 ,'Roads1').setScale(BuildScale);
+        this.add.sprite(config.width/2, -600,'Roads2').setScale(BuildScale);
+        this.add.sprite(config.width/2, 1398,'Roads3').setScale(BuildScale);
+        this.add.sprite(config.width/2, 3396,'Roads4').setScale(BuildScale);
+
+    
+        //this.add.sprite(config.width/2,config.height/2,'Outline').setScale(scale);
+        this.add.sprite(config.width/2, -2598 ,'Outline1').setScale(BuildScale);
+        this.add.sprite(config.width/2, -600,'Outline2').setScale(BuildScale);
+        this.add.sprite(config.width/2, 1398,'Outline3').setScale(BuildScale);
+        this.add.sprite(config.width/2, 3396,'Outline4').setScale(BuildScale);
+
+
+        //this.add.sprite(config.width/2,config.height/2,'BuildBack').setScale(scale);
+        this.add.sprite(config.width/2, -2598 ,'BuildBack1').setScale(BuildScale);
+        this.add.sprite(config.width/2, -600,'BuildBack2').setScale(BuildScale);
+        this.add.sprite(config.width/2, 1398,'BuildBack3').setScale(BuildScale);
+        this.add.sprite(config.width/2, 3396,'BuildBack4').setScale(BuildScale);
+
+
+        //this.add.sprite(config.width/2, -2598 ,'Boats1').setScale(BuildScale);
+        //this.add.sprite(config.width/2, -600,'Boats2').setScale(BuildScale);
+        Boats = this.add.sprite(config.width/2, 1398,'Boats3').setScale(BuildScale);
+        BoatsAlt = this.add.sprite(config.width/2, 3396,'Boats4').setScale(BuildScale);
+
+
         this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Hydrants').setScale(scale);
         this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Trash').setScale(scale);
 
         //create Player
         Player = this.physics.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Player').setScale(1.4);
         Player.body.allowGravity = false; Player.setFrictionX(0); Player.setFrictionY(0); 
-        Player.body.setSize(28, 41);
-        Player.body.setOffset(1.5, 2);
+        Player.body.setSize(28, 45);
+        Player.body.setOffset(2, 7);
         
         //this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Arrows').setScale(scale);
         LightsOn = this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'LightsOn').setScale(scale); //LightsOn.setVisible(true);
         //LightsOff = this.add.sprite(config.width/2,config.height/2,'LightsOn').setScale(scale); LightsOff.setVisible(false);
 
-        this.add.sprite(config.width/2,config.height/2,'BuildFront').setScale(scale);
+        //this.add.sprite(config.width/2,config.height/2,'BuildFront').setScale(scale);
+        this.add.sprite(config.width/2, -2598 ,'BuildFront1').setScale(BuildScale);
+        this.add.sprite(config.width/2, -600,'BuildFront2').setScale(BuildScale);
+        this.add.sprite(config.width/2, 1398,'BuildFront3').setScale(BuildScale);
+        this.add.sprite(config.width/2, 3396,'BuildFront4').setScale(BuildScale);
+
+
+        
         this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25).setScale(scale);
 
 
@@ -226,6 +283,8 @@ function MoveWater()
         Water.y -= 0.1;
         Boats.x -= 0.008;
         Boats.y -= 0.01;
+        BoatsAlt.x -= 0.008;
+        BoatsAlt.y -= 0.01;
         wave += 1;
     }
     else
@@ -234,6 +293,8 @@ function MoveWater()
         Water.y += 0.1;
         Boats.x += 0.008;
         Boats.y += 0.01;
+        BoatsAlt.x += 0.008;
+        BoatsAlt.y += 0.01;
         wave += 1;
     }
 }
