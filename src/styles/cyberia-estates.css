@@ -47,9 +47,9 @@ width:100%;
 img#estate-imgs{
  
  
-  display: inline-block;
+  display: inline;
   width: 50%;
-  height: fit-content;
+  height: 100%;
  
 }
 /* this one is for the mint img will be replaced with trailer */
@@ -106,8 +106,8 @@ background-position:top;
 
 }
 div.trailer-area {
-  border:1px double  yellow;
-border-radius:20%;
+  
+
   width:750px;
   height:750px;
 
@@ -128,11 +128,13 @@ div.flex-container-estates {
   width: 40%;
   display: inline-block;
 padding:25%;
+
 }
 /* this one is the images beside the buttons for apt sizes */
 div.cyberia-content {
-margin:10%;
-display:inline;
+margin-left:30%;
+display:block;
+margin-top:8%;
 }
 div.flex-container-roadmap {
   display:flex;
@@ -351,7 +353,11 @@ width:95%;
 
 }
 
-
+div#apartment-description {
+margin-left:25%;
+   display:block;
+width:50%;
+}
 
 
 
