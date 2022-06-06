@@ -20,13 +20,14 @@ section#benefits {
   display: block;
   width: 100%;
   min-height:15vh !important;
-background:rgba(17, 17, 39, 0.3) !important
+background:rgba(7, 7, 15, 0.3) !important
 }
 section#roadmap {
   display:block;
  padding-bottom:3%;
- background:rgba(31, 1, 1, 0.79) !important;
- background-color:rgba(15, 2, 2, 0.79) !important
+ padding-top:2.4%;
+ background:rgba(7, 7, 15, 0.79) !important;
+ background-color:rgba(7, 7, 15, 0.79) !important
 
 }
 /* neon area divider for non fade in section */
@@ -48,7 +49,7 @@ img#estate-imgs{
  
  
   display: inline;
-  width: 50%;
+  width: 75%;
   height: 100%;
  
 }
@@ -119,17 +120,12 @@ div.flex-container-aptinfo {
 }
 div.benefits-desc {
   display:inline-block;
-  margin-bottom:5%;
+  margin-bottom:15%;
   color:var(--yellow);
   margin-right:5%;
 
 }
-div.flex-container-estates {
-  width: 40%;
-  display: inline-block;
-padding:25%;
 
-}
 /* this one is the images beside the buttons for apt sizes */
 div.cyberia-content {
 margin-left:30%;
@@ -161,15 +157,15 @@ background:initial;
 }
 div.flex-container-estate {
   display: inline-block;
-  width:55%;
-  background:rgba(4, 4, 8, 0.55) ;
+ 
+  background:rgba(7, 7, 15, 0.55) ;
   border:1px solid rgb(21, 21, 158)
 
 
 }
 /* layer of color over benefits section to make it match bg */
 div.opacity-layer {
-  background:rgba(4, 4, 8, 0.3) !important;
+  background:rgba(7, 7, 15, 0.3) !important;
   height:7in
 }
 div#estate-main {
@@ -241,9 +237,7 @@ div.modal-content {
 
 /* other styling */
   /* p, h3, h2, a */
-p#apt-description {
-  margin-bottom:2%;
-}
+
 p#copy {
   font-family:pixelFont;
 }
