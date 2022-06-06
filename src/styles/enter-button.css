@@ -1,4 +1,5 @@
 a#enter-estate {
+  display:flex;
     text-align:center;
     background-image:url("../assets/enter-estate-background.png");
     background-size:125%;
@@ -13,6 +14,11 @@ a#enter-estate {
 a#enter-estate:hover {
     zoom:115%;
     -webkit-text-stroke: 1px var(--yellow);
+}
+div#enter-estate-container {
+
+margin-left:75%;
+margin-bottom:20%;
 }
 /* animations for background image */
 @-webkit-keyframes pulseBox {
