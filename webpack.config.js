@@ -1,11 +1,11 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/js/wallet-nautilus.js',
+  entry: './src/js/wallet-nautilus.mjs',
   output: {
     publicPath: '',
-    filename: 'wallet-dist.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: './js/wallet-dist.js',
+    path: path.resolve(__dirname, 'src'),
   },
   experiments: {
       topLevelAwait: true,
