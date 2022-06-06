@@ -101,6 +101,19 @@ const getWalletBalance = () => {
 
 /**
  * 
+ * @param {*} erg 
+ * @returns amount of ERG from nanoERG
+ */
+const nanoToERG = (nanoErg) => {
+  try {
+    return nanoErg / NANO_ERG
+  } catch (err) {
+    return err;
+  }
+}
+
+/**
+ * 
  * @param {*} txToSign 
  * @returns a signed transaction
  * @remarks a signed transaction is an off-chain transaction that has been approved by the wallet to be spent (eUTXO model)
