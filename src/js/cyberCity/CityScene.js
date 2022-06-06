@@ -185,10 +185,8 @@ export class CityScene extends Phaser.Scene
         UI = this.add.group();
         UIBG = this.physics.add.sprite((config.width/2 + offsetX) - 550, (config.height/2 +offsetY) - 300, 'UIBackground').setScale(0.3);
         UI.add(UIBG);
-        ergo = this.add.text(0 , 0, 'ERGO', { fontFamily: 'pixelFont', }).setScale(1);
+        ergo = this.add.text(0 , 0, 'Ergo', { fontFamily: 'pixelFont', }).setScale(1);
         cypx = this.add.text(0, 0 , 'CYPX', { fontFamily: 'pixelFont', }).setScale(1);
-        //UI.add(ergo);
-        //UI.add(cypx);
 
 
         this.cameras.main.startFollow(Player);
@@ -211,6 +209,7 @@ export class CityScene extends Phaser.Scene
 
             Movement();
             MoveWater();
+            updateUI();
             OpenApartment();
             
             if(ApartmentOpen && keySpace.isDown){
@@ -228,6 +227,12 @@ export class CityScene extends Phaser.Scene
     }
 }
 
+function updateUI()
+{
+    ergo.setText(Info.ergAmount);
+    cypx.setText(Info.cypxAmount);
+}
+
 //#region Movement
 function Movement()
 {
@@ -237,8 +242,8 @@ function Movement()
         item.setVelocityY(0);
         item.setVelocityX(0);
     });
-    ergo.x = UIBG.x - 15; ergo.y = UIBG.y - 30;
-    cypx.x = UIBG.x - 15; cypx.y = UIBG.y + 5;
+    cypx.x = UIBG.x - 50; cypx.y = UIBG.y - 30;
+    ergo.x = UIBG.x - 50; ergo.y = UIBG.y + 5;
 
 
     if (cursors.up.isDown || keyW.isDown)

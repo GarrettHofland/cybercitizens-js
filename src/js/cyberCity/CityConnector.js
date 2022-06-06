@@ -9,6 +9,8 @@ var Info = {
   CitizenInfo: [],
   FurnitureInfo: [],
   skin: "../assets/cyberCity/Player/NChar 2.png",
+  ergAmount: 0,
+  cypxAmount: 0,
 };
 export var AptSave = {
   BedBed: "../assets/cyberCity/Apts/Bedroom/Bed/Style1.png",
@@ -65,11 +67,8 @@ const loadGameInfo = async () => {
     ConectedAddress = await ergo.get_change_address();
     //ConectedAddress = "9hJJksEkDcAznbezGWZ8qjNnqq46HNWHMyuj18BQpavatKJqRFY";
     //LoginAndGetAptData();
-    //var b;
-    let b = getWalletBalance();
-    //console.log(b);               //------------------------------------ Test Remove -----------------------------------------------------------------------------
+    getWalletBalance();
 
-    console.log(b);
     LoadAvailableFurniture();
     LoadAvailableBuildings();
     LoadAvailableCitizens();
@@ -314,13 +313,19 @@ document.querySelector("#cityToHome").onclick = function (event) {
  *
  * @returns balance of ERG of the connected wallet
  */
-const getWalletBalance = () => {
-  return ergo.get_balance();
+async function getWalletBalance()
+{
+  let a = await ergo.get_balance();
+  let b = nanoToERG(a);
+  Info.ergAmount = b;
+  return b;
 };
 
-const nanoToERG = (nanoErg) => {
+function nanoToERG(nanoErg)
+{
   try {
-    return nanoErg / NANO_ERG;
+    let a = nanoErg / 1000000000;
+    return a;
   } catch (err) {
     return err;
   }
