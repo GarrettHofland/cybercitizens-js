@@ -61,14 +61,15 @@ img#estate-img{
  margin-top:50%;
 }
 /* benefits area styling*/
-img#benefits-imgs-additional,
-img#benefits-imgs-ownership,
-img#benefits-imgs-customization,
-img#benefits-imgs-utility {
-  display: inline;
-  margin:5%;
-  padding:1%;
-height:225px;
+
+img#benefits-imgs
+
+ {
+  display:block;
+margin-inline:auto;
+ max-width:75%;
+ max-height:100%;
+
 }
 img#estatebtn{
   width:225px;
