@@ -54,19 +54,19 @@ function LoginAndGetAptData(){
         CreateAccount: true,
     };
 
-    PlayFabClientSDK.LoginWithCustomID(loginRequest, GetHighscore);
+    PlayFabClientSDK.LoginWithCustomID(loginRequest, GetAptSave);
 }
 
-function GetHighscore()
+function GetAptSave()
 {
     var HighscoreRequest = {
         PlayFabId: ConectedAddress,
         StatisticNames: ["AptSave"]
     }
-    PlayFabClientSDK.GetPlayerStatistics(HighscoreRequest, GetHighscoreStats)
+    PlayFabClientSDK.GetPlayerStatistics(HighscoreRequest, GetAptStats)
 }
 
-var GetHighscoreStats = function (result, error) {
+var GetAptStats = function (result, error) {
     if (result !== null) {
         if(ConectedAddress != "N/A"){
             if(result.data.Statistics[0] != null){

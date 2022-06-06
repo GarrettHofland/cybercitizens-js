@@ -8,7 +8,7 @@ var cursors, Walls;
 var Player, Camera, StopMovement = false;
 var scale = 1;
 var LastFacing = 0;
-var speed = 500; //150
+var speed = 250; //250
 var offsetXScrap = 50, offsetYScrap = -425;
 var offsetX = 0, offsetY = 0;
 var offsetXWall = 0, offsetYWall = 0;
@@ -59,7 +59,7 @@ export class RoomScene extends Phaser.Scene
         //create Player
         Player = this.physics.add.sprite(config.width/7 + offsetXWall,config.height/15 + offsetYWall,'Player').setScale(2.5);
         Player.body.allowGravity = false; Player.setFrictionX(0); Player.setFrictionY(0); 
-        Player.body.setSize(20, 35);
+        Player.body.setSize(22, 40);
         Player.body.setOffset(5.5, 6.5);
         Player.depth = 1;
         orderGroup.add(Player);
@@ -229,7 +229,6 @@ function OpenComputerInterface()
         item.x = CompInterface.x; item.y = CompInterface.y;
         item.visible = true;
     });
-    console.log("comp opened");
 }
 
 function CloseComputerInterface()

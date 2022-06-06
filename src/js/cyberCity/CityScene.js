@@ -6,10 +6,9 @@ var cursors, frameTime = 0;
 var Water, Boats, BoatsAlt;
 var scale = 2.2, BuildScale = 0.74;
 var speed = 130; //130
-var Player;
+var Player, UI, UIBG, ergo, cypx;
 var Camera;
 var LastFacing = 0;
-var LightsOn, LightsOff;
 var Walls, ApartmentDoor, ApartmentOpen = false;
 var offsetX = -60, offsetY = 1.5;
 //import { ConectedAddress, hasApt, AptInfo } from './CityConnector.js';
@@ -66,11 +65,25 @@ export class CityScene extends Phaser.Scene
 
         this.load.image('Signs', '../assets/cyberCity/Map/13Signs.png');
 
-        //this.load.image('Boats', '../assets/cyberCity/Map/boats.png');
-        this.load.image('Boats1', '../assets/cyberCity/Map/Tiles/BoatRow1.png');
-        this.load.image('Boats2', '../assets/cyberCity/Map/Tiles/BoatRow2.png');
         this.load.image('Boats3', '../assets/cyberCity/Map/Tiles/BoatRow3.png');
         this.load.image('Boats4', '../assets/cyberCity/Map/Tiles/BoatRow4.png');
+
+        
+
+        //Load AfterEffects
+        //this.load.image('GlowLayer11', '../assets/cyberCity/Map/Tiles/GlowRow11.png');
+        //this.load.image('GlowLayer12', '../assets/cyberCity/Map/Tiles/GlowRow12.png');
+        // //this.load.image('GlowLayer2', '../assets/cyberCity/Map/Tiles/GlowRow2.png');
+        //this.load.image('GlowLayer3', '../assets/cyberCity/Map/Tiles/GlowRow3.png');
+        //this.load.image('GlowLayer4', '../assets/cyberCity/Map/Tiles/GlowRow4.png');
+
+        //this.load.image('ShadeLayer1', '../assets/cyberCity/Map/Tiles/ShadeRow1.png');
+        //this.load.image('ShadeLayer2', '../assets/cyberCity/Map/Tiles/ShadeRow2.png');
+        //this.load.image('ShadeLayer3', '../assets/cyberCity/Map/Tiles/ShadeRow2.png');
+        //this.load.image('ShadeLayer4', '../assets/cyberCity/Map/Tiles/ShadeRow4.png');
+
+        this.load.image('UIBackground', '../assets/cybercity/UI/MainMapUI.png');
+
 
         LoadBillboards(this);
 
@@ -100,34 +113,31 @@ export class CityScene extends Phaser.Scene
 
         Water = this.add.sprite(config.width/2, config.height/2, "Water").setScale(scale * 1.3);
         //this.add.sprite(config.width/2,config.height/2,'Roads').setScale(scale);
-        this.add.sprite(config.width/2, -2598 ,'Roads1').setScale(BuildScale);
-        this.add.sprite(config.width/2, -600,'Roads2').setScale(BuildScale);
-        this.add.sprite(config.width/2, 1398,'Roads3').setScale(BuildScale);
-        this.add.sprite(config.width/2, 3396,'Roads4').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, -2598 ,'Roads1').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, -600,'Roads2').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, 1398,'Roads3').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, 3396,'Roads4').setScale(BuildScale);
 
     
         //this.add.sprite(config.width/2,config.height/2,'Outline').setScale(scale);
-        this.add.sprite(config.width/2, -2598 ,'Outline1').setScale(BuildScale);
-        this.add.sprite(config.width/2, -600,'Outline2').setScale(BuildScale);
-        this.add.sprite(config.width/2, 1398,'Outline3').setScale(BuildScale);
-        this.add.sprite(config.width/2, 3396,'Outline4').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, -2598 ,'Outline1').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, -600,'Outline2').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, 1398,'Outline3').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, 3396,'Outline4').setScale(BuildScale);
 
 
         //this.add.sprite(config.width/2,config.height/2,'BuildBack').setScale(scale);
-        this.add.sprite(config.width/2, -2598 ,'BuildBack1').setScale(BuildScale);
-        this.add.sprite(config.width/2, -600,'BuildBack2').setScale(BuildScale);
-        this.add.sprite(config.width/2, 1398,'BuildBack3').setScale(BuildScale);
-        this.add.sprite(config.width/2, 3396,'BuildBack4').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, -2598 ,'BuildBack1').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, -600,'BuildBack2').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, 1398,'BuildBack3').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, 3396,'BuildBack4').setScale(BuildScale);
 
-
-        //this.add.sprite(config.width/2, -2598 ,'Boats1').setScale(BuildScale);
-        //this.add.sprite(config.width/2, -600,'Boats2').setScale(BuildScale);
         Boats = this.add.sprite(config.width/2, 1398,'Boats3').setScale(BuildScale);
         BoatsAlt = this.add.sprite(config.width/2, 3396,'Boats4').setScale(BuildScale);
 
 
-        this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Hydrants').setScale(scale);
-        this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Trash').setScale(scale);
+        //this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Hydrants').setScale(scale);
+        this.physics.add.staticSprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Trash').setScale(scale);
 
         //create Player
         Player = this.physics.add.sprite(config.width/2 + offsetX,config.height/2 + offsetY,'Player').setScale(1.4);
@@ -136,26 +146,50 @@ export class CityScene extends Phaser.Scene
         Player.body.setOffset(2, 7);
         
         //this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'Arrows').setScale(scale);
-        LightsOn = this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'LightsOn').setScale(scale); //LightsOn.setVisible(true);
+        this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25,'LightsOn').setScale(scale); //LightsOn.setVisible(true);
         //LightsOff = this.add.sprite(config.width/2,config.height/2,'LightsOn').setScale(scale); LightsOff.setVisible(false);
 
         //this.add.sprite(config.width/2,config.height/2,'BuildFront').setScale(scale);
-        this.add.sprite(config.width/2, -2598 ,'BuildFront1').setScale(BuildScale);
-        this.add.sprite(config.width/2, -600,'BuildFront2').setScale(BuildScale);
-        this.add.sprite(config.width/2, 1398,'BuildFront3').setScale(BuildScale);
-        this.add.sprite(config.width/2, 3396,'BuildFront4').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, -2598 ,'BuildFront1').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, -600,'BuildFront2').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, 1398,'BuildFront3').setScale(BuildScale);
+        this.physics.add.staticSprite(config.width/2, 3396,'BuildFront4').setScale(BuildScale);
 
+        //Create AfterEffects
+        //this.add.sprite(config.width/2, -2598 ,'GlowLayer11').setScale(BuildScale);
+        //this.add.sprite(config.width/2, -1599 ,'GlowLayer12').setScale(BuildScale);
+        //this.add.sprite(config.width/2, -600,'GlowLayer2').setScale(BuildScale);
+        //this.add.sprite(config.width/2, 1398,'GlowLayer3').setScale(BuildScale);
+        //this.add.sprite(config.width/2, 3396,'GlowLayer4').setScale(BuildScale);
+
+        //this.physics.add.staticSprite(config.width/2, -2598 ,'ShadeLayer1').setScale(BuildScale);
+        //this.physics.add.staticSprite(config.width/2, -600,'ShadeLayer2').setScale(BuildScale);
+        //this.physics.add.staticSprite(config.width/2, 1398,'ShadeLayer3').setScale(BuildScale);
+        //this.physics.add.staticSprite(config.width/2, 3396,'ShadeLayer4').setScale(BuildScale);
 
         
-        this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25).setScale(scale);
-
+        //this.add.sprite((config.width/2 + offsetX) - 165,(config.height/2 + offsetY) - 25).setScale(scale);
+        
 
         CreateBillboards(this);
         CreateAnims();
 
-        AptTxt = this.add.bitmapText(370 + offsetX, -1750 + offsetY,'atari', 'Press Space to Open Appartment').setScale(0.3);
-        AptTxt.setTint(0xba1298, 0xba1298, 0xba1298, 0xba1298);
+       
+
+        //AptTxt = this.add.bitmapText(370 + offsetX, -1750 + offsetY,'atari', 'Press Space to Open Appartment').setScale(0.3);
+        AptTxt = this.add.text(500 + offsetX, -1700 + offsetY, 'Press Space to Enter the Appartment', { fontFamily: 'pixelFont', }).setScale(1);
+        //AptTxt.setTint(0xba1298, 0xba1298, 0xba1298, 0xba1298);
         AptTxt.visible = false;
+
+        //UI
+        UI = this.add.group();
+        UIBG = this.physics.add.sprite((config.width/2 + offsetX) - 550, (config.height/2 +offsetY) - 300, 'UIBackground').setScale(0.3);
+        UI.add(UIBG);
+        ergo = this.add.text(0 , 0, 'ERGO', { fontFamily: 'pixelFont', }).setScale(1);
+        cypx = this.add.text(0, 0 , 'CYPX', { fontFamily: 'pixelFont', }).setScale(1);
+        //UI.add(ergo);
+        //UI.add(cypx);
+
 
         this.cameras.main.startFollow(Player);
 
@@ -199,30 +233,49 @@ function Movement()
 {
     Player.setVelocityY(0); 
     Player.setVelocityX(0); 
+    UI.children.each(function(item){
+        item.setVelocityY(0);
+        item.setVelocityX(0);
+    });
+    ergo.x = UIBG.x - 15; ergo.y = UIBG.y - 30;
+    cypx.x = UIBG.x - 15; cypx.y = UIBG.y + 5;
+
 
     if (cursors.up.isDown || keyW.isDown)
     {
         Player.anims.play('WalkU' , true); 
         Player.setVelocityY(-speed);    
         LastFacing = 2;
+        UI.children.each(function(item){
+            item.setVelocityY(-speed)
+        });
     }
     else if (cursors.down.isDown || keyS.isDown)
     {
         Player.anims.play('WalkD' , true);
         Player.setVelocityY(speed);  
         LastFacing = 0;
+        UI.children.each(function(item){
+            item.setVelocityY(speed);  
+        });
     }
     else if(cursors.left.isDown || keyA.isDown)
     {
         Player.anims.play('WalkL' , true);  
         Player.setVelocityX(-speed); 
         LastFacing = 3;
+        UI.children.each(function(item){
+            item.setVelocityX(-speed);
+        });
     }
     else if(cursors.right.isDown || keyD.isDown)
     {
         Player.anims.play('WalkR' , true);  
         Player.setVelocityX(speed); 
         LastFacing = 1;
+        UI.children.each(function(item){
+            item.setVelocityX(speed); 
+        });
     }
 
     if(Player.body.velocity.x == 0 && Player.body.velocity.y == 0)

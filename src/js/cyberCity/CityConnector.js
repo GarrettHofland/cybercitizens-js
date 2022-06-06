@@ -61,6 +61,9 @@ const loadGameInfo = async () => {
       ConectedAddress = await ergo.get_change_address();
       //ConectedAddress = "9hJJksEkDcAznbezGWZ8qjNnqq46HNWHMyuj18BQpavatKJqRFY";
       //LoginAndGetAptData();
+      //var b;
+      //b = await ergo.get_balance();
+      //console.log(b);               //------------------------------------ Test Remove -----------------------------------------------------------------------------
       LoadAvailableFurniture();
       LoadAvailableBuildings();
       LoadAvailableCitizens();

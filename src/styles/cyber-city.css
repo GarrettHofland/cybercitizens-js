@@ -1,0 +1,89 @@
+@font-face {
+    font-family: pixelFont;
+    src: url("../assets/fonts/Mechfire_Bold.otf") format("opentype");
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-y: visible;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
+  
+  #city-game {
+    text-align: center;
+    width: 90% !important;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #loading-message {
+    color: white;
+    text-shadow: 2px 2px #0B0029;
+    font-size: clamp(2rem, 3rem + 2vw, 4rem);
+    max-width: 90%;
+    margin: 2em auto;
+  }
+  
+  .main-header {
+    text-align: center;
+    margin: 1em auto;
+    margin-bottom: 0;
+    font-size: 6rem;
+    text-shadow: 2px 2px #2f4aa3;
+    max-width: 90% !important;
+  }
+  
+  canvas {
+    display: block;
+    margin: 0 auto;
+    border: 1px #0B0029 solid;
+    border-radius: 12px;
+  }
+  
+  input[type=text], textarea {
+    background-color: #0B0029;
+    color: #F7FC19;
+    text-shadow: 2px 2px #2f4aa3;
+    border-radius: 18px;
+    width: 50%;
+    font-size: 1.5rem;
+    transition: ease-in 1s;
+    margin: 2% auto;
+  }
+  
+  input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
+    border: 2px #EE2DFF solid;
+  }
+  
+  .row {
+    font-size: 2.5rem;
+  }
+  
+  .Highlight {
+    background: yellow;
+  }
+  
+  .footer-image {
+    width: 60%;
+    background: red;
+  }
+  
+  button {
+    color: white;
+  }
+  
+  .name {
+    color: #F7FC19;
+    text-shadow: 1px 1px #2f4aa3;
+  }
+  
+  /*# sourceMappingURL=cyber-dino.css.map */
+  
