@@ -370,8 +370,8 @@ input#mint-address {
     width: 100%;
   }
   img#estatebtn {
-    height:200%;
-    width:200%;
+    height:175%;
+    width:175%;
    
   }
   div.trailer-area {
@@ -394,8 +394,8 @@ input#mint-address {
   }
 
   div.container-estate-btns {
-    display: inline-block;
-    width: 25%;
-    margin-left:28%;
+    display: inline;
+    width: 20vh;
+   
   }
 }
