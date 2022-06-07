@@ -364,7 +364,7 @@ input#mint-address {
     display: inline;
   }
   img#estate-imgs {
-    display: inline;
+    display: inline-block;
     margin-inline: auto;
     height: 100%;
     width: 100%;
@@ -395,7 +395,7 @@ input#mint-address {
 
   div.container-estate-btns {
     display: inline-block;
-    width: 100%;
+    width: 25%;
     margin-left:28%;
   }
 }
