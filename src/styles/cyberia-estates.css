@@ -31,7 +31,9 @@ section#roadmap, section#faq {
  background-color:rgba(7, 7, 15, 0.79) !important
 
 }
-
+h2#benefits-title {
+  margin:-.03%;
+}
 /* neon area divider for non fade in section */
 section.divider {
   background: hsla(295, 100%, 59%, 1);
