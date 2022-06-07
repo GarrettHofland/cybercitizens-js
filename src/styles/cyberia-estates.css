@@ -41,22 +41,23 @@ img#roadmap-image{
       
     }
     img#estate-imgs {
-      display: inline-block;
+      display: inline;
       margin-inline: auto;
       height: 100%;
-      width: 100%;
+      width: 75%
     }
     img#estatebtn {
     height:15%;
-    width:25vh;
-    margin:2%;
+  width:20rem;
+
+    
+    
      
     }
   
   div.cyberia-content {
       display:inline;
-      max-width:50%;
-      max-height:50%;
+      margin-inline:auto;
   }
   p#apt-description {
       text-align:center;
@@ -68,9 +69,15 @@ img#roadmap-image{
   margin-bottom:1rem;
   background: rgba(7, 7, 15, 0.79) !important;
   background-color: rgba(7, 7, 15, 0.79) !important;
+ 
   }
   button.estate-size:hover {
       color: var(--pink);
       zoom: 115%;
       opacity: 1;
     }
+    @media all and (max-width: 40em) {
+    div.container-estate-btns {
+      
+width:20rem;
+    }}
