@@ -11,6 +11,7 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
 /*img stylings*/
 img#roadmap-image {
   max-width: 100%;
@@ -30,6 +31,7 @@ img#estatebtn {
   height: 15%;
   width: 20rem;
 }
+
 /*div stylings*/
 div.flex-container-estate {
   text-align: center;
@@ -69,6 +71,7 @@ div.modal-content {
   width: 30%;
   height: fit-content;
 }
+
 /*buttons and links styling*/
 button.estate-size {
   background-color: transparent;
@@ -87,6 +90,7 @@ a#mint-estate {
   pointer-events: none;
   opacity: 0.5;
 }
+
 /* other styling*/
 p#apt-description {
   text-align: center;
@@ -94,6 +98,7 @@ p#apt-description {
 p.auctions-text {
   text-align:center;
 }
+
 /* animations for background image */
 @keyframes bgimage {
   0% {
