@@ -260,8 +260,9 @@ h4#send {
 
 a#mint-estate {
   display:inline-block;
-
+pointer-events:none;
   margin-left:5%;
+  opacity:0.5;
   }
   /* li, ul */
 li {
@@ -418,8 +419,8 @@ div.background-image-cyberia {
 }
 
 div.container-estate-btns {
-  display:block;
-  width:100%;
+  display:inline-block;
+  width:20%;
   
 }
 }
