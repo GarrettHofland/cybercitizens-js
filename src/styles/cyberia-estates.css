@@ -119,4 +119,10 @@ p.auctions-text {
   div.container-estate-btns {
     width: 20rem;
   }
+  .s1-estates {
+animation:none;
+background-size:contain;
+
+background-color: rgba(7, 7, 15, 0.79) !important;
+  }
 }
