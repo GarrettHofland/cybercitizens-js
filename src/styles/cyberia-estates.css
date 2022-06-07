@@ -106,12 +106,7 @@ background-position:top;
   background-repeat: no-repeat;
 
 }
-div.trailer-area {
-  
 
-
-
-}
 div.flex-container-aptinfo {
   position:relative;
   display:inline;
@@ -335,7 +330,10 @@ text-align:center;
 width:95%;
 
 }
-
+iframe#trailer-cyberia {
+  width:750px;
+  height:400px;
+}
 
 /* animations for background image */
 @keyframes bgimage {
@@ -351,7 +349,12 @@ margin-left:25%;
    display:block;
 width:50%;
 }
-
+h3#faq-question {
+  color:var(--yellow)
+}
+h2#sizestitle {
+  text-align:center;
+}
 
 
 
@@ -363,11 +366,7 @@ width:50%;
 
 /* mobile styling */ 
 @media all and (max-width : 40em) {
- div#apartment-description {
-   margin-inline:auto;
-    display:block;
-width:50%;
-}
+
   section#info {
     display:block;
     margin-inline:auto;
@@ -377,23 +376,30 @@ display:block;
 width:100%;
 margin-inline:auto;
 background:transparent;
-padding-top:90%;
+padding-top:30%;
 }
-p#apt-description {
-  margin-inline:auto;
-  display:block;
 
+iframe#trailer-cyberia {
+  width:auto;
+  height:auto;
+}
+
+div.cyberia-content {
+  display:inline
 }
 img#estate-imgs {
-  display:block;
+  display:inline;
 margin-inline:auto;
 height:100%;
 width:100%
 
 }
-div.flex-container-estate {
-  display:inline-block;
+div.trailer-area{
+  min-width:fit-content;
+  display:inline;
 }
+
+
 div.background-image-cyberia {
  background:var(--bg);
  animation:none;
@@ -407,4 +413,8 @@ div.background-image-cyberia {
 .modal-content {
   width:fit-content;
 }
+}
+div.container-estate-btns {
+  display:block;
+  
 }
