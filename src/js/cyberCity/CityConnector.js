@@ -9,6 +9,8 @@ var Info = {
   CitizenInfo: [],
   FurnitureInfo: [],
   skin: "../assets/cyberCity/Player/NChar 2.png",
+  ergAmount: 0,
+  cypxAmount: 0,
 };
 export var AptSave = {
   BedBed: "../assets/cyberCity/Apts/Bedroom/Bed/Style1.png",
@@ -64,10 +66,10 @@ const loadGameInfo = async () => {
   if (ergo_check_read_access()) {
     ConectedAddress = await ergo.get_change_address();
     //ConectedAddress = "9hJJksEkDcAznbezGWZ8qjNnqq46HNWHMyuj18BQpavatKJqRFY";
+    getWalletBalance();
+    //let a = await getUtxos();
+    //console.log(a);
     //LoginAndGetAptData();
-    //var b;
-    let b = getWalletBalance();
-    //console.log(b);               //------------------------------------ Test Remove -----------------------------------------------------------------------------
 
     console.log(b);
     let utxos = getUtxos();
@@ -255,6 +257,55 @@ const getActiveAuctions = async (addr) => {
 const getRequest = async (url, api = explorerApi) => {
   return fetch(api + url).then((res) => res.json());
 };
+
+document.querySelector("#cityToHome").onclick = function (event) {
+  window.location = "../index.html";
+};
+
+/**
+ *
+ * @returns balance of ERG of the connected wallet
+ */
+async function getWalletBalance()
+{
+  let a = await ergo.get_balance();
+  let b = nanoToERG(a);
+  Info.ergAmount = b;
+  return b;
+};
+
+function nanoToERG(nanoErg)
+{
+  try {
+    let a = nanoErg / 1000000000;
+    return a;
+  } catch (err) {
+    return err;
+  }
+};
+
+/**
+* 
+* @returns parse json of the tokens owned by the connected wallet
+* @remarks useful for getting sigmaUSD stablecoins to complete a transaction isntead of ERG
+*/
+const getAllUtxos = async () =>
+{
+  const parsed = [];
+  const utxos = await ergo.get_utxos();
+  for (const utxo of utxos) {
+      try {
+          wasm.ErgoBox.from_json(JSONBigInt.stringify(utxo));
+          parsed.push(utxo);
+      } catch (err) {
+          console.error(err);
+          return null;
+      }
+  }
+  console.log(parsed);
+  return parsed;
+};
+
 
 //--------------------------------------------------------------------- Save Data -----------------------------------------------------------
 

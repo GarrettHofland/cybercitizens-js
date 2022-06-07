@@ -1,0 +1,85 @@
+a#enter-estate {
+  display: flex;
+  text-align: center;
+  background-image: url("../assets/enter-estate-background.png");
+  background-size: 125%;
+  background-position: bottom;
+  color: rgba(0, 0, 0, 0.2);
+  -webkit-text-stroke: 1px var(--pink);
+  border: 1px solid var(--pink);
+  border-radius: 25%;
+  background-repeat: no-repeat;
+}
+a#enter-estate:hover {
+  zoom: 115%;
+  -webkit-text-stroke: 1px var(--yellow);
+}
+div#enter-estate-container {
+  margin-left: 75%;
+  margin-bottom: 12%;
+}
+/* animations for background image */
+@-webkit-keyframes pulseBox {
+  0% {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(225, 0, 255, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(225, 0, 255, 1);
+  }
+}
+@-moz-keyframes pulseBox {
+  0% {
+    -moz-box-shadow: 0px 0px 10px 0px rgba(225, 0, 255, 0.3);
+  }
+  100% {
+    -moz-box-shadow: 0px 0px 18px 0px rgba(225, 0, 255, 1);
+  }
+}
+@-o-keyframes pulseBox {
+  0% {
+    -o-box-shadow: 0px 0px 10px 0px rgba(225, 0, 255, 0.3);
+  }
+  100% {
+    -o-box-shadow: 0px 0px 18px 0px rgba(225, 0, 255, 1);
+  }
+}
+@keyframes pulseBox {
+  0% {
+    box-shadow: 0px 0px 10px 0px rgba(225, 0, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0px 0px 18px 0px rgba(225, 0, 255, 1);
+  }
+}
+
+.pulseBox {
+  -webkit-animation-name: pulseBox;
+  -moz-animation-name: pulseBox;
+  -o-animation-name: pulseBox;
+  animation-name: pulseBox;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -moz-animation-direction: alternate;
+  -o-animation-direction: alternate;
+  animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  border: 0px;
+}
+
+@media all and (max-width: 40em) {
+  a#enter-estate {
+margin-right:37vh;
+margin-bottom:15vh;
+width:60%;
+  }
+}

@@ -1,4 +1,4 @@
-import {ConectedAddress} from "./CityConnector.js";
+//import {ConectedAddress} from "./CityConnector.js";
 
 export var AptSave = {
 
@@ -40,11 +40,6 @@ export var AptSave = {
 
 }
 
-window.onload = function(){ 
-    console.log("hi");
-    LoginAndGetAptData();
-}  
-
 function LoginAndGetAptData(){
     PlayFab.settings.titleId = "9EBCA";
     
@@ -54,7 +49,7 @@ function LoginAndGetAptData(){
         CreateAccount: true,
     };
 
-    PlayFabClientSDK.LoginWithCustomID(loginRequest, GetAptSave);
+    //PlayFabClientSDK.LoginWithCustomID(loginRequest, GetAptSave);
 }
 
 function GetAptSave()
