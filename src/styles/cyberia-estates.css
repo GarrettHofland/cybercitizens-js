@@ -109,8 +109,7 @@ background-position:top;
 div.trailer-area {
   
 
-  width:750px;
-  height:750px;
+
 
 }
 div.flex-container-aptinfo {
@@ -263,7 +262,7 @@ h4#send {
 
 a#mint-estate {
   display:inline-block;
-  margin-top:5%;
+
   margin-left:5%;
   }
   /* li, ul */
