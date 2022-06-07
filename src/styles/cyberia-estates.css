@@ -352,7 +352,7 @@ input#mint-address {
     width: 100%;
     margin-inline: auto;
     background: transparent;
-    padding-top: 60%;
+    padding-top: 20%;
   }
 
   iframe#trailer-cyberia {
@@ -362,6 +362,7 @@ input#mint-address {
 
   div.cyberia-content {
     display: inline;
+   
   }
   img#estate-imgs {
     display: inline-block;
@@ -398,5 +399,9 @@ input#mint-address {
     display: inline;
     width: 20vh;
    
+  }
+  section#benefits {
+  min-height:5vh;
+  max-height:5vh;
   }
 }
