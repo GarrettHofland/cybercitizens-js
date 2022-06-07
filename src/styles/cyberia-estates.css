@@ -1,7 +1,29 @@
+
+a#mint-estate {
+  pointer-events:none;
+  opacity:0.5;
+}
+.s1-estates {
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: rgba(7, 7, 15, 0.79) !important;
+animation-name:bgimage;
+animation-duration:30s;
+animation-fill-mode: forwards;
+  background-image: url("../assets/Cyberia/newMap.png") !important;
+
+  background-position: center;
+  
+  background-repeat: no-repeat;
+ 
+  
+}
+
 img#roadmap-image{
   max-width:100%
   }
-  
+
   div.modal {
       display: none; /* Hidden by default */
       position: fixed; /* Stay in place */
@@ -76,6 +98,23 @@ img#roadmap-image{
       zoom: 115%;
       opacity: 1;
     }
+
+    /* animations for background image */
+@keyframes bgimage {
+  0% {
+    background-size: 120%;
+  }
+  25% {
+    background-size: 130%;
+  }
+  50% {
+    background-size: 140%;
+  }
+  100% {
+    background-size: 145%;
+    background-position: top;
+  }
+}
     @media all and (max-width: 40em) {
     div.container-estate-btns {
       
