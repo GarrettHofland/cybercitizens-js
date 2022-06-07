@@ -19,8 +19,8 @@ padding-top:15px;;
 section#benefits {
   display: block;
   width: 100%;
-  min-height:45vh;
-  max-height:45vh !important;
+  min-height:23vh;
+  max-height:23vh !important;
 background:rgba(7, 7, 15, 0.3) !important
 }
 section#roadmap, section#faq {
