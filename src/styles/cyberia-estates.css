@@ -395,7 +395,7 @@ input#mint-address {
 
   div.container-estate-btns {
     display: inline-block;
-    width: 20%;
+    width: 100%;
     margin-left:28%;
   }
 }
