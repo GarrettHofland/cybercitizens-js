@@ -2,7 +2,7 @@
 import { config } from "./CyberCity.js";
 import { game } from "./CyberCity.js";
 import { Info } from './CityConnector.js';
-import { AptSave } from './SaveManager.js';
+import { AptSave } from './CityConnector.js';
 
 var cursors, Walls;
 var Player, Camera, StopMovement = false;
