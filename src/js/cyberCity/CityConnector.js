@@ -70,6 +70,8 @@ const loadGameInfo = async () => {
     //console.log(b);               //------------------------------------ Test Remove -----------------------------------------------------------------------------
 
     console.log(b);
+    let utxos = getUtxos();
+    console.log(utxos);
     LoadAvailableFurniture();
     LoadAvailableBuildings();
     LoadAvailableCitizens();
@@ -324,4 +326,8 @@ const nanoToERG = (nanoErg) => {
   } catch (err) {
     return err;
   }
+};
+
+const getUtxos = async () => {
+    return await ergo.get_utxos();
 };
