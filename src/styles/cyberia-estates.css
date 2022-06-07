@@ -91,6 +91,9 @@ a#mint-estate {
 p#apt-description {
   text-align: center;
 }
+p.auctions-text {
+  text-align:center;
+}
 /* animations for background image */
 @keyframes bgimage {
   0% {
