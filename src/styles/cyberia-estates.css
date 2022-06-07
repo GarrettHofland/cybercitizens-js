@@ -1,107 +1,97 @@
-
-a#mint-estate {
-  pointer-events:none;
-  opacity:0.5;
-}
+/*section styling for different bg images*/
 .s1-estates {
   min-height: 100vh;
   flex-direction: column;
   justify-content: flex-end;
   background-color: rgba(7, 7, 15, 0.79) !important;
-  animation-name:bgimage;
-  animation-duration:30s;
+  animation-name: bgimage;
+  animation-duration: 30s;
   animation-fill-mode: forwards;
   background-image: url("../assets/Cyberia/newMap.png") !important;
   background-position: center;
   background-repeat: no-repeat;
- 
-  
+}
+/*img stylings*/
+img#roadmap-image {
+  max-width: 100%;
+}
+img#benefits-image {
+  max-width: 50%;
+  margin-inline: auto;
 }
 
-img#roadmap-image{
-  max-width:100%
-  }
-
-  img#benefits-image{
-    max-width:50%;
-    margin-inline:auto;
-    }
-  div.modal {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: scroll; /* Enable scroll if needed */
-      background-color: rgba(0, 0, 2, 0.94); /* Black w/ opacity */
-      text-align:center;
-    }
-    /* Modal Content/Box */
-    div.modal-content {
-      margin: 7.5% auto; /* from the top and centered */
-      background-color: rgba(31, 35, 53, 0.894); /* Black w/ opacity */
-      padding: 20px;
-      border: 1px solid var(--pink);
-      width: 30%;
-      height: fit-content;
-    }
-  
-  div#second,
-  div#third,
-  div#fourth {
-    display: none;
-  
-  }
-  
-  button.estate-size {
-      background-color: transparent;
-      border: none;
-    margin-inline:auto;
-      height: auto;
-      width: auto;
-   
-      
-    }
-    img#estate-imgs {
-      display: inline;
-      margin-inline: auto;
-      height: 100%;
-      width: 75%
-    }
-    img#estatebtn {
-    height:15%;
-  width:20rem;
-
-    
-    
-     
-    }
-  
-  div.cyberia-content {
-      display:inline;
-      margin-inline:auto;
-  }
-  p#apt-description {
-      text-align:center;
-  }
-  div.flex-container-estate{
-  text-align:center;
-  border:2px solid var(--pink);
-  border-radius:5%;
-  margin-bottom:1rem;
+img#estate-imgs {
+  display: inline;
+  margin-inline: auto;
+  height: 100%;
+  width: 75%;
+}
+img#estatebtn {
+  height: 15%;
+  width: 20rem;
+}
+/*div stylings*/
+div.flex-container-estate {
+  text-align: center;
+  border: 2px solid var(--pink);
+  border-radius: 5%;
+  margin-bottom: 1rem;
   background: rgba(7, 7, 15, 0.79) !important;
   background-color: rgba(7, 7, 15, 0.79) !important;
- 
-  }
-  button.estate-size:hover {
-      color: var(--pink);
-      zoom: 115%;
-      opacity: 1;
-    }
-
-    /* animations for background image */
+}
+div.cyberia-content {
+  display: inline;
+  margin-inline: auto;
+}
+div#second,
+div#third,
+div#fourth {
+  display: none;
+}
+div.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: scroll; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 2, 0.94); /* Black w/ opacity */
+  text-align: center;
+}
+/* Modal Content/Box */
+div.modal-content {
+  margin: 7.5% auto; /* from the top and centered */
+  background-color: rgba(31, 35, 53, 0.894); /* Black w/ opacity */
+  padding: 20px;
+  border: 1px solid var(--pink);
+  width: 30%;
+  height: fit-content;
+}
+/*buttons and links styling*/
+button.estate-size {
+  background-color: transparent;
+  border: none;
+  margin-inline: auto;
+  height: auto;
+  width: auto;
+}
+button.estate-size:hover {
+  color: var(--pink);
+  zoom: 115%;
+  opacity: 1;
+}
+/* remove pointer-events none and opacity for when mint opens */
+a#mint-estate {
+  pointer-events: none;
+  opacity: 0.5;
+}
+/* other styling*/
+p#apt-description {
+  text-align: center;
+}
+/* animations for background image */
 @keyframes bgimage {
   0% {
     background-size: 120%;
@@ -117,8 +107,8 @@ img#roadmap-image{
     background-position: top;
   }
 }
-    @media all and (max-width: 40em) {
-    div.container-estate-btns {
-      
-width:20rem;
-    }}
+@media all and (max-width: 40em) {
+  div.container-estate-btns {
+    width: 20rem;
+  }
+}
