@@ -82,7 +82,7 @@ export class CityScene extends Phaser.Scene
         //this.load.image('ShadeLayer3', '../assets/cyberCity/Map/Tiles/ShadeRow2.png');
         //this.load.image('ShadeLayer4', '../assets/cyberCity/Map/Tiles/ShadeRow4.png');
 
-        this.load.image('UIBackground', '../assets/cybercity/UI/MainMapUI.png');
+        this.load.image('UIBackground', '../assets/cyberCity/UI/MainMapUI.png');
 
 
         LoadBillboards(this);
@@ -229,8 +229,8 @@ export class CityScene extends Phaser.Scene
 
 function updateUI()
 {
-    ergo.setText(Info.ergAmount);
-    cypx.setText(Info.cypxAmount);
+    ergo.setText(Math.round(Info.ergAmount * 100) / 100);
+    cypx.setText(Math.round(Info.cypxAmount * 100) / 100);
 }
 
 //#region Movement
