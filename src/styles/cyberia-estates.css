@@ -117,4 +117,12 @@ animation:none;
 background-size:contain;
 background-color: rgba(7, 7, 15, 0.79) !important;
   }
+  img#roadmap-image {
+height:auto;
+width:auto;
+  }
+  img#benefits-image {
+height:auto;
+width:auto;
+  }
 }
