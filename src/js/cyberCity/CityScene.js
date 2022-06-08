@@ -239,48 +239,35 @@ function Movement()
     Player.setVelocityY(0); 
     Player.setVelocityX(0); 
     UI.children.each(function(item){
-        item.setVelocityY(0);
-        item.setVelocityX(0);
-    });
+        item.x = Player.x - 550;
+        item.y = Player.y - 300;
+    });    
     cypx.x = UIBG.x - 50; cypx.y = UIBG.y - 30;
     ergo.x = UIBG.x - 50; ergo.y = UIBG.y + 5;
-
 
     if (cursors.up.isDown || keyW.isDown)
     {
         Player.anims.play('WalkU' , true); 
         Player.setVelocityY(-speed);    
         LastFacing = 2;
-        UI.children.each(function(item){
-            item.setVelocityY(-speed)
-        });
     }
     else if (cursors.down.isDown || keyS.isDown)
     {
         Player.anims.play('WalkD' , true);
         Player.setVelocityY(speed);  
         LastFacing = 0;
-        UI.children.each(function(item){
-            item.setVelocityY(speed);  
-        });
     }
     else if(cursors.left.isDown || keyA.isDown)
     {
         Player.anims.play('WalkL' , true);  
         Player.setVelocityX(-speed); 
         LastFacing = 3;
-        UI.children.each(function(item){
-            item.setVelocityX(-speed);
-        });
     }
     else if(cursors.right.isDown || keyD.isDown)
     {
         Player.anims.play('WalkR' , true);  
         Player.setVelocityX(speed); 
         LastFacing = 1;
-        UI.children.each(function(item){
-            item.setVelocityX(speed); 
-        });
     }
 
     if(Player.body.velocity.x == 0 && Player.body.velocity.y == 0)
@@ -300,7 +287,7 @@ function Movement()
                 break;  
 
         }
-    }
+    }   
 
     PlayBillAnims();
 }
