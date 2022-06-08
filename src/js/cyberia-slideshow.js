@@ -54,21 +54,21 @@ const utility = document.getElementById("benefits-imgs-utility");
 
 // show apts on btn click
 const showsmallestate = () => {
-  document.getElementById("first").style.display = "block";
+  document.getElementById("first").style.display = "inline";
   document.getElementById("second").style.display = "none";
   document.getElementById("third").style.display = "none";
   document.getElementById("fourth").style.display = "none";
 };
 
 const showmediumestate = () => {
-  document.getElementById("second").style.display = "block";
+  document.getElementById("second").style.display = "inline";
   document.getElementById("first").style.display = "none";
   document.getElementById("third").style.display = "none";
   document.getElementById("fourth").style.display = "none";
 };
 
 const showlargeestate = () => {
-  document.getElementById("third").style.display = "block";
+  document.getElementById("third").style.display = "inline";
   document.getElementById("first").style.display = "none";
   document.getElementById("second").style.display = "none";
   document.getElementById("fourth").style.display = "none";
@@ -77,7 +77,7 @@ const showpenthouse = () => {
   document.getElementById("first").style.display = "none";
   document.getElementById("second").style.display = "none";
   document.getElementById("third").style.display = "none";
-  document.getElementById("fourth").style.display = "block";
+  document.getElementById("fourth").style.display = "inline";
 };
 
 // Get the modal
