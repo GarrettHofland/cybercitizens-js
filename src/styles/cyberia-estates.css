@@ -118,11 +118,13 @@ background-size:contain;
 background-color: rgba(7, 7, 15, 0.79) !important;
   }
   img#roadmap-image {
-height:auto;
-width:auto;
-  }
-  img#benefits-image {
-height:auto;
-width:auto;
-  }
+    object-fit:contain;
+    height:100%;
+    max-width:100%;
+      }
+      img#benefits-image {
+    object-fit:contain;
+    height:100%;
+    max-width:100%
+      }
 }
