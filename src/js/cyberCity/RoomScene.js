@@ -215,7 +215,7 @@ function OpenComputer()
     }
 
     if(ComputerOpen || EditingRoom){
-        if(keySpace.isDown)
+        if(keySpace.isDown && !EditingRoom)
         {
           OpenComputerInterface();
         }
