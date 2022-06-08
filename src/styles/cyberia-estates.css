@@ -89,6 +89,9 @@ a#mint-estate {
   pointer-events: none;
   opacity: 0.5;
 }
+a#faqhome {
+  border:none;
+}
 
 /* other styling*/
 p#apt-description {
