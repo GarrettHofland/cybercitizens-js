@@ -271,7 +271,7 @@ const getCryptoAmounts = async () =>
             var i = item[Key0];
             if(i.tokenId == CypxTokenId)
             {
-              Info.cypxAmount = i.amount;//nanoToERG(i.amount);
+              Info.cypxAmount = i.amount / 100;//nanoToERG(i.amount);
             }
           }
         }
