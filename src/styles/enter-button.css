@@ -9,15 +9,16 @@ a#enter-estate {
   border: 1px solid var(--pink);
   border-radius: 25%;
   background-repeat: no-repeat;
+  width:100%;
 }
 a#enter-estate:hover {
   zoom: 115%;
   -webkit-text-stroke: 1px var(--yellow);
 }
-div#enter-estate-container {
-  margin-left: 75%;
-  margin-bottom: 12%;
+div.enter-estate-container { 
+ margin-top:2rem;
 }
+
 /* animations for background image */
 @-webkit-keyframes pulseBox {
   0% {
@@ -51,7 +52,7 @@ div#enter-estate-container {
     box-shadow: 0px 0px 18px 0px rgba(225, 0, 255, 1);
   }
 }
-
+/* class pulsebox for glowing border */
 .pulseBox {
   -webkit-animation-name: pulseBox;
   -moz-animation-name: pulseBox;
@@ -76,10 +77,3 @@ div#enter-estate-container {
   border: 0px;
 }
 
-@media all and (max-width: 40em) {
-  a#enter-estate {
-margin-right:37vh;
-margin-bottom:15vh;
-width:60%;
-  }
-}
