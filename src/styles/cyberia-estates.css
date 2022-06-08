@@ -109,22 +109,19 @@ p#apt-description, p.auctions-text, h2#sizestitle {
 
 /*mobile styling*/ 
 @media all and (max-width: 40em) {
-  div.container-estate-btns {
-    width: 20rem;
-  }
-  .s1-estates {
-animation:none;
-background-size:contain;
-background-color: rgba(7, 7, 15, 0.79) !important;
-  }
-  img#roadmap-image {
-    object-fit:contain;
-    height:100%;
-    max-width:100%;
+      .s1-estates {
+        animation:none;
+        background-size:contain;
+        background-color: rgba(7, 7, 15, 0.79) !important;
       }
-      img#benefits-image {
-    object-fit:contain;
-    height:100%;
-    max-width:100%
+      img#estate-imgs{
+        margin-top:1rem;
       }
+      img#benefits-image, image#roadmap-image {
+        min-width:100%;
+      }
+      section#roadmap, section#benefits{
+        min-height:15vh;
+      }
+ 
 }
