@@ -21,14 +21,9 @@ img#benefits-image {
   margin-inline: auto;
 }
 img#estate-imgs {
-  display: inline;
-  margin-inline: auto;
-  height: 100%;
-  width: 75%;
-}
-img#estatebtn {
-  height: 15%;
-  width: 20rem;
+height:75%;
+width:75%;
+margin-inline:auto;
 }
 
 /*div stylings*/
@@ -39,10 +34,6 @@ div.flex-container-estate {
   margin-bottom: 1rem;
   background: rgba(7, 7, 15, 0.79) !important;
   background-color: rgba(7, 7, 15, 0.79) !important;
-}
-div.cyberia-content {
-  display: inline;
-  margin-inline: auto;
 }
 div#second,
 div#third,
@@ -94,12 +85,10 @@ a#faqhome {
 }
 
 /* other styling*/
-p#apt-description {
+p#apt-description, p.auctions-text, h2#sizestitle {
   text-align: center;
 }
-p.auctions-text {
-  text-align:center;
-}
+
 
 /* animations for background image */
 @keyframes bgimage {
