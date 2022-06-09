@@ -119,6 +119,7 @@ p#apt-description, p.auctions-text, h2#sizestitle {
       }
       img#benefits-image, image#roadmap-image {
         min-width:100%;
+        height:100%
       }
       section#roadmap, section#benefits{
         min-height:15vh;
