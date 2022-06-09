@@ -121,6 +121,10 @@ p#apt-description, p.auctions-text, h2#sizestitle {
         width:100%;
         max-height:95%;
       }
+ 
+      p.cyberia-info {
+        text-align:center;
+      }
    
  
 }
