@@ -21,9 +21,9 @@ img#benefits-image {
   margin-inline: auto;
 }
 img#estate-imgs {
-height:75%;
-width:75%;
-margin-inline:auto;
+  height: 75%;
+  width: 75%;
+  margin-inline: auto;
 }
 
 /*div stylings*/
@@ -61,7 +61,14 @@ div.modal-content {
   width: 30%;
   height: fit-content;
 }
-
+/* mobile layout hidden on desktop*/
+div.flex-container-benefits {
+  display: flex;
+  justify-content: center;
+}
+div.flex-container-benefits-mobile {
+  display: none;
+}
 /*buttons and links styling*/
 button.estate-size {
   background-color: transparent;
@@ -81,14 +88,15 @@ a#mint-estate {
   opacity: 0.5;
 }
 a#faqhome {
-  border:none;
+  border: none;
 }
 
 /* other styling*/
-p#apt-description, p.auctions-text, h2#sizestitle {
+p#apt-description,
+p.auctions-text,
+h2#sizestitle {
   text-align: center;
 }
-
 
 /* animations for background image */
 @keyframes bgimage {
@@ -106,25 +114,39 @@ p#apt-description, p.auctions-text, h2#sizestitle {
     background-position: top;
   }
 }
-
-/*mobile styling*/ 
+/*mobile styling*/
 @media all and (max-width: 40em) {
-      .s1-estates {
-        animation:none;
-        background-size:contain;
-        background-color: rgba(7, 7, 15, 0.79) !important;
-      }
-      img#estate-imgs{
-        margin-top:1rem;
-      }
-      img#benefits-image, img#roadmap-image {
-        width:100%;
-        max-height:95%;
-      }
- 
-      p.cyberia-info {
-        text-align:center;
-      }
-   
- 
+  .s1-estates {
+    animation: none;
+    background-size: contain;
+    background-color: rgba(7, 7, 15, 0.79) !important;
+  }
+  img#estate-imgs {
+    margin-top: 1rem;
+  }
+  /*desktop layout hidden on mobile */
+  div.flex-container-benefits {
+    display: none;
+  }
+  div.flex-container-benefits-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  img#benefits-image-mobile {
+    width: 20%;
+    height: 20%;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    margin-inline: auto;
+  }
+  img#roadmap-image-mobile {
+    width: 75%;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    margin-inline: auto;
+  }
+  p#auctions-text {
+    text-align: Center;
+  }
 }
