@@ -15,7 +15,7 @@ var offsetXWall = 0, offsetYWall = 0;
 var intOffsetX = 0, intOffsetY = -40;
 var AnimNames = [];
 var Computer, ComputerOpen = false, CompInterface;
-var orderGroup;
+var orderGroup, UI, UIBG, ergo, cypx;;
 var frameTime = 0;
 
 
@@ -36,6 +36,9 @@ export class RoomScene extends Phaser.Scene
         this.load.spritesheet('Player', Info.skin,
             { frameWidth: 32, frameHeight: 48}
         );
+
+        this.load.image('UIBackground', '../assets/cyberCity/UI/MainMapUI.png');
+
 
         console.log("Room Scene preLoaded");
     }
@@ -78,6 +81,12 @@ export class RoomScene extends Phaser.Scene
 
         // }, this);
 
+        //UI
+        UI = this.add.group();
+        UIBG = this.physics.add.sprite((config.width/2 + offsetX) - 550, (config.height/2 +offsetY) - 300, 'UIBackground').setScale(0.3);
+        UI.add(UIBG);
+        ergo = this.add.text(0 , 0, 'Ergo', { fontFamily: 'pixelFont', }).setScale(1);
+        cypx = this.add.text(0, 0 , 'CYPX', { fontFamily: 'pixelFont', }).setScale(1);
 
         Camera.startFollow(Player);
 
@@ -95,6 +104,7 @@ export class RoomScene extends Phaser.Scene
         if (frameTime > 16.5) {  
             frameTime = 0;
             OpenComputer();
+            updateUI();
 
             if(!StopMovement){
                 Movement();
@@ -104,6 +114,12 @@ export class RoomScene extends Phaser.Scene
             //console.log("x: " + (Player.x + offsetX) + " y: " + (Player.y));
         }
     }
+}
+
+function updateUI()
+{
+    ergo.setText(Math.round(Info.ergAmount * 100) / 100);
+    cypx.setText(Math.round(Info.cypxAmount * 100) / 100);
 }
 
 function DepthSorting()
@@ -199,7 +215,7 @@ function OpenComputer()
     }
 
     if(ComputerOpen || EditingRoom){
-        if(keySpace.isDown)
+        if(keySpace.isDown && !EditingRoom)
         {
           OpenComputerInterface();
         }
@@ -328,6 +344,12 @@ function Movement()
 {
     Player.setVelocityY(0); 
     Player.setVelocityX(0); 
+    UI.children.each(function(item){
+        item.x = Player.x - 550;
+        item.y = Player.y - 300;
+    });    
+    cypx.x = UIBG.x - 50; cypx.y = UIBG.y - 30;
+    ergo.x = UIBG.x - 50; ergo.y = UIBG.y + 5;
 
     if (cursors.up.isDown || keyW.isDown)
     {
@@ -371,7 +393,8 @@ function Movement()
                 break;  
 
         }
-    }
+    }   
+
 }
 
 var BedBed, BedChair, BedDesk, BedFloor, BedLeftSide, BedWall;

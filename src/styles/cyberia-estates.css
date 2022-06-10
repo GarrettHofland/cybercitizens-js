@@ -1,204 +1,45 @@
-body {
-  text-align: center;
-  margin: 0 auto;
+/*section styling for different bg images*/
+.s1-estates {
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: rgba(7, 7, 15, 0.79) !important;
+  animation-name: bgimage;
+  animation-duration: 30s;
+  animation-fill-mode: forwards;
+  background-image: url("../assets/Cyberia/newMap.png") !important;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* sections */
-section#mint {
-  background: transparent !important ;
-  background-color: transparent;
+/*img stylings*/
+img#roadmap-image {
+  max-width: 100%;
 }
-section#info {
-  display: block;
-  width: 100%;
-  height: 25vh;
-  background: transparent;
-  padding-top: 15px;
+img#benefits-image {
+  max-width: 50%;
+  margin-inline: auto;
 }
-section#benefits {
-  display: block;
-  width: 100%;
-  min-height: 23vh;
-  max-height: 23vh !important;
-  background: rgba(7, 7, 15, 0.3) !important;
+img#estate-imgs {
+height:75%;
+width:75%;
+margin-inline:auto;
 }
-section#roadmap,
-section#faq {
-  display: block;
-  padding-bottom: 3%;
-  padding-top: 2.4%;
+
+/*div stylings*/
+div.flex-container-estate {
+  text-align: center;
+  border: 2px solid var(--pink);
+  border-radius: 5%;
+  margin-bottom: 1rem;
   background: rgba(7, 7, 15, 0.79) !important;
   background-color: rgba(7, 7, 15, 0.79) !important;
 }
-h2#benefits-title {
-  margin: -0.03%;
-}
-/* neon area divider for non fade in section */
-section.divider {
-  background: hsla(295, 100%, 59%, 1);
-  border: 1px solid var(--pink);
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
-  min-height: 0.05vh;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-}
-
-/* IMAGES and other media */
-/* this one is for the apt sizes */
-img#estate-imgs {
-  display: inline;
-  width: 75%;
-  height: 100%;
-}
-/* this one is for the mint img will be replaced with trailer */
-img#estate-img {
-  border: 1px solid var(--yellow);
-  border-radius: 20%;
-  display: block;
-  margin-top: 50%;
-}
-/* benefits area styling*/
-img#benefits-imgs {
-  display: block;
-  margin-inline: auto;
-
-  height: 50%;
-  width: 50%;
-}
-img#estatebtn {
-  width: 100%;
-  height: 100%;;
-  display: inline;
-}
-img#roadmapimage {
-  max-width: 75%;
-  max-height: 75%;
-}
-img#mint-estate-png {
-  width: 225px;
-  height: 225px;
-}
-img#qrcode {
-  border: 1px solid var(--pink);
-}
-img#qrcode:hover {
-  zoom: 200%;
-}
-iframe#trailer-cyberia {
-  width: 750px;
-  height: 400px;
-}
-
-/* div stylings */
-/* bg image */
-div.background-image-cyberia {
-  background-image: url("../assets/newMapblur.png");
-  animation-name: bgimage;
-  animation-duration: 15s;
-  animation-fill-mode: forwards;
-  background-size: 120%;
-  height: max-content;
-  background-position: top;
-  background-repeat: no-repeat;
-}
-
-div.flex-container-aptinfo {
-  position: relative;
-  display: inline;
-}
-div.benefits-desc {
-  display: inline-block;
-  margin-bottom: 15%;
-  color: var(--yellow);
-  margin-right: 5%;
-}
-
-/* this one is the images beside the buttons for apt sizes */
-div.cyberia-content {
-  margin-left: 30%;
-  display: block;
-  margin-top: 8%;
-}
-div.flex-container-roadmap {
-  display: flex;
-  overflow-x: hidden;
-  width: 100%;
-}
-div.roadmap-item-frame {
-  display: inline-flex;
-  border: 3px solid var(--purple);
-  width: 500px;
-  height: 500px;
-}
-div.flex-container-pictures {
-  display: inline-block;
-  background-image: none;
-  background: transparent;
-}
-div.flex-container {
-  display: inline-block;
-  width: 55%;
-  background: initial;
-}
-div.flex-container-estate {
-  display: inline-block;
-
-  background: rgba(7, 7, 15, 0.55);
-  border: 1px solid rgb(21, 21, 158);
-}
-/* layer of color over benefits section to make it match bg */
-div.opacity-layer {
-  background: rgba(7, 7, 15, 0.3) !important;
-  height: 7in;
-}
-div#estate-main {
-  background: transparent;
-}
-div.questionmark {
-  background-image: url("../assets/cyberia/Icons/benefiticon.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  padding-bottom: 25%;
-  display: block;
-}
-/* for hiding apt sizes until buttons are clicked */
 div#second,
 div#third,
 div#fourth {
   display: none;
 }
-div.container-estate-btns {
-  float: left;
-  margin-left: 15%;
-  width: min-content;
-  height: fit-content;
-  width: 15%;
-}
-div#apartment-description {
-  margin-left: 25%;
-  display: block;
-  width: 50%;
-}
-div#spacer {
-  padding-top: 10%;
-}
-div.container-mint-desc {
-  width: 45%;
-  display: inline;
-  position: relative;
-}
-div.container-mint {
-  display: inline;
-  position: relative;
-}
-div.stage-outline {
-  display: block;
-  width: 100%;
-  margin-bottom: 5%;
-}
-/* The Modal (background) */
 div.modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -209,6 +50,7 @@ div.modal {
   height: 100%; /* Full height */
   overflow: scroll; /* Enable scroll if needed */
   background-color: rgba(0, 0, 2, 0.94); /* Black w/ opacity */
+  text-align: center;
 }
 /* Modal Content/Box */
 div.modal-content {
@@ -220,109 +62,33 @@ div.modal-content {
   height: fit-content;
 }
 
-/* other styling */
-/* p, h3, h2, a */
-
-p#copy {
-  font-family: pixelFont;
-}
-h2.address-title {
-  text-align: center;
-  font-size: 200%;
-}
-h2#price {
-  text-align: center;
-}
-h3#waittime {
-  color: red;
-}
-h3#stagetitle {
-  color: var(--yellow);
-}
-h3#modaltitle {
-  font-size: 150%;
-  color: var(--pink);
-}
-h4#send {
-  color: white;
-}
-h3#faq-question {
-  color: var(--yellow);
-}
-
-/* to enable mint remove pointer-events:none and remove opacity:0.5 */
-a#mint-estate {
-  display: inline-block;
-  pointer-events: none;
-  margin-left: 5%;
-  opacity: 0.5;
-}
-/* li, ul */
-li {
-  font-family: pixelFont;
-}
-li#list {
-  list-style-position: inside;
-  list-style-type: none;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  color: rgba(211, 210, 214, 0.976);
-}
-li#resizer {
-  list-style-type: none;
-}
-ul#modal-content-estate {
-  color: black;
-  text-align: center;
-}
-
-/* buttons */
+/*buttons and links styling*/
 button.estate-size {
   background-color: transparent;
   border: none;
-
+  margin-inline: auto;
   height: auto;
   width: auto;
-  margin-bottom: 10%;
-  display: inline;
 }
-button#copy-address {
-  border: 1px solid var(--pink);
-  background-color: transparent;
-  display: inline;
-  border-radius: 20%;
-  color: yellow;
-  font-family: pixelFont;
-}
-/* The Close Button for modal */
-button.close {
-  color: var(--pink);
-  float: left;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-button.close:hover,
-button.close:focus {
-  color: var(--purple);
-  text-decoration: none;
-}
-
-button#copy-address:hover {
-  color: var(--pink);
-}
-
 button.estate-size:hover {
   color: var(--pink);
   zoom: 115%;
   opacity: 1;
 }
-/* area where address to send funds to */
-input#mint-address {
-  font-size: 150%;
-  text-align: center;
-  width: 95%;
+/* remove pointer-events none and opacity for when mint opens */
+a#mint-estate {
+  pointer-events: none;
+  opacity: 0.5;
 }
+a#faqhome {
+  border:none;
+}
+
+/* other styling*/
+p#apt-description, p.auctions-text, h2#sizestitle {
+  text-align: center;
+}
+
 
 /* animations for background image */
 @keyframes bgimage {
@@ -341,62 +107,24 @@ input#mint-address {
   }
 }
 
-/* mobile styling */
+/*mobile styling*/ 
 @media all and (max-width: 40em) {
-  section#info {
-    display: block;
-    margin-inline: auto;
-  }
-  section#roadmap {
-    display: block;
-    width: 100%;
-    margin-inline: auto;
-    background: transparent;
-    padding-top: 60%;
-  }
-
-  iframe#trailer-cyberia {
-    width: auto;
-    height: auto;
-  }
-
-  div.cyberia-content {
-    display: inline;
-  }
-  img#estate-imgs {
-    display: inline-block;
-    margin-inline: auto;
-    height: 100%;
-    width: 100%;
-  }
-  img#estatebtn {
-  height:15%;
-  width:25vh;
-  margin:2%;
+      .s1-estates {
+        animation:none;
+        background-size:contain;
+        background-color: rgba(7, 7, 15, 0.79) !important;
+      }
+      img#estate-imgs{
+        margin-top:1rem;
+      }
+      img#benefits-image, img#roadmap-image {
+        width:100%;
+        max-height:95%;
+      }
+ 
+      p.cyberia-info {
+        text-align:center;
+      }
    
-  }
-  div.trailer-area {
-    min-width: fit-content;
-    display: inline;
-  }
-
-  div.background-image-cyberia {
-    background: var(--bg);
-    animation: none;
-  }
-  .modal {
-    width: 100%;
-    display: block;
-    margin-inline: auto;
-    padding-top: 50px;
-  }
-  .modal-content {
-    width: fit-content;
-  }
-
-  div.container-estate-btns {
-    display: inline;
-    width: 20vh;
-   
-  }
+ 
 }

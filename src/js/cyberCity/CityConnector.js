@@ -1,4 +1,5 @@
 var accessGranted = false;
+var CypxTokenId = '863b62d8734dd8693337e042bc167da87e5f79ec6539a0e831f75535e33bafd0';
 var ConectedAddress;
 var script = document.createElement("script");
 script.type = "module";
@@ -66,9 +67,7 @@ const loadGameInfo = async () => {
   if (ergo_check_read_access()) {
     ConectedAddress = await ergo.get_change_address();
     //ConectedAddress = "9hJJksEkDcAznbezGWZ8qjNnqq46HNWHMyuj18BQpavatKJqRFY";
-    getWalletBalance();
-    //let a = await getUtxos();
-    //console.log(a);
+    getCryptoAmounts();
     //LoginAndGetAptData();
 
     console.log(b);
@@ -262,50 +261,44 @@ document.querySelector("#cityToHome").onclick = function (event) {
   window.location = "../index.html";
 };
 
-/**
- *
- * @returns balance of ERG of the connected wallet
- */
-async function getWalletBalance()
+const getCryptoAmounts = async () =>
 {
-  let a = await ergo.get_balance();
-  let b = nanoToERG(a);
-  Info.ergAmount = b;
-  return b;
-};
-
-function nanoToERG(nanoErg)
-{
-  try {
-    let a = nanoErg / 1000000000;
-    return a;
-  } catch (err) {
-    return err;
-  }
-};
-
-/**
-* 
-* @returns parse json of the tokens owned by the connected wallet
-* @remarks useful for getting sigmaUSD stablecoins to complete a transaction isntead of ERG
-*/
-const getAllUtxos = async () =>
-{
-  const parsed = [];
-  const utxos = await ergo.get_utxos();
-  for (const utxo of utxos) {
-      try {
-          wasm.ErgoBox.from_json(JSONBigInt.stringify(utxo));
-          parsed.push(utxo);
-      } catch (err) {
-          console.error(err);
-          return null;
+    getWalletBalance();
+    let raws = await getUtxos();
+    for (var key in raws) {
+      if (raws.hasOwnProperty(key)) {
+        var item = raws[key].assets;
+        for(var Key0 in item){
+          if(item.hasOwnProperty(Key0))
+          {
+            var i = item[Key0];
+            if(i.tokenId == CypxTokenId)
+            {
+              Info.cypxAmount = i.amount / 100;//nanoToERG(i.amount);
+            }
+          }
+        }
       }
-  }
-  console.log(parsed);
-  return parsed;
-};
+    }
+} 
 
+ async function getWalletBalance()
+ {
+   let a = await ergo.get_balance();
+   let b = nanoToERG(a);
+   Info.ergAmount = b;
+   return b;
+ };
+ 
+ function nanoToERG(nanoErg)
+ {
+   try {
+     let a = nanoErg / 1000000000;
+     return a;
+   } catch (err) {
+     return err;
+   }
+ };
 
 //--------------------------------------------------------------------- Save Data -----------------------------------------------------------
 
