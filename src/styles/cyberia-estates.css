@@ -103,6 +103,7 @@ button.estate-size:hover {
 a#mint-estate {
   pointer-events: none;
   opacity: 0.5;
+  display:block;
 }
 a#faqhome {
   border: none;
