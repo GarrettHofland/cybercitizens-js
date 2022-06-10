@@ -11,7 +11,10 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-
+iframe#trailer-cyberia {
+  height:25rem;
+  width:35rem;
+}
 /*img stylings*/
 img#roadmap-image {
   max-width: 100%;
@@ -175,6 +178,9 @@ div.divider {
   p#auctions-text {
     text-align: Center;
   }
-
+  iframe#trailer-cyberia {
+    height:20%;
+    width:100%
+  }
    
 }
