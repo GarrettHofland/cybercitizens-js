@@ -19,6 +19,7 @@ iframe#trailer-cyberia {
 img#roadmap-image {
   max-width: 100%;
   margin-bottom:2rem;
+  height:20rem
 }
 img#benefits-image {
   max-width: 50%;
@@ -73,6 +74,9 @@ div.flex-container-benefits {
 div.flex-container-benefits-mobile {
   display: none;
 }
+div.container-mint  {
+  display:inline;
+  }
 div.divider {
   border: 1px solid  hsla(295, 100%, 59%, 1);
   background: hsla(295, 100%, 59%, 1);
@@ -103,9 +107,7 @@ a#mint-estate {
 a#faqhome {
   border: none;
 }
-div.container-mint  {
-display:inline;
-}
+
 /* other styling*/
 p#apt-description,
 p.auctions-text,
@@ -120,11 +122,9 @@ display:block;
 text-align:center;
 margin-bottom:1rem;
 }
-
 p#rarity {
   color:blue;
 }
-
 p#rarity2 { color:brown;}
 p#rarity3 {color:silver;}
 p#rarity4 {color:gold;}
