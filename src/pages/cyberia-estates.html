@@ -49,17 +49,18 @@
         </section>
 
 <!-- Information/mint section-->
+<div class="divider"></div>
         <section class="s2 section fade-in" id="info">
 
             <div class="flex-container-mint">
                 <div class="container-mint container-mint-img">
-                  <iframe src="https://player.vimeo.com/video/717726674?h=991484b3d4" id="trailer-cyberia" width="100%" height="" frameborder="1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe title="vimeo-player" src="https://player.vimeo.com/video/718121472?h=b9ca9cdf16" width="100%" height="" frameborder="1" allowfullscreen id="trailer-cyberia"></iframe>
                    
                     <a id="mint-estate">Coming Soon</a>
                 </div>
 
                 <div class="container-mint">
-                    <h2>Cyberia Virtual real-estate is the first of many purchasable areas within Cyberia.
+                    <h2 class="cyberia-main-description">Cyberia Virtual real-estate is the first of many purchasable areas within Cyberia.
                             We are proud to present the first ever condominiums for sale within Cyberia, ranging in size from small, medium, large and penthouse suites!
                     </h2>
                     <p class="cyberia-info"> The exact date of release will be published shortly! 
@@ -95,17 +96,27 @@
         </section>
 
 <!--benefits section-->
+<div class="divider"></div>
         <section class="s3 section fade-in" id="benefits">
 
           <h2>Benefits</h2>
-          <div class="flex-container-team">
+          <div class="flex-container-benefits">
 
             <img src="../assets/Cyberia/Icons/benefits-new.png" id="benefits-image">
 
         </div>
+<!-- benefits mobile section (hidden on desktop)-->        
+        <div class="flex-container-benefits-mobile">
+
+            <img src="../assets/Cyberia/Icons/ownership-mobile.png" id="benefits-image-mobile">
+            <img src="../assets/Cyberia/Icons/customization-mobile.png" id="benefits-image-mobile">
+            <img src="../assets/Cyberia/Icons/utility-mobile.png" id="benefits-image-mobile">
+            <img src="../assets/Cyberia/Icons/additional-benefits-mobile.png" id="benefits-image-mobile">
+            </div>
       </section>
 
 <!-- apt sizes section-->
+<div class="divider"></div>
         <section class="s4 section fade-in" id="sizes">
 
             <div class="flex-container-mint">
@@ -118,37 +129,48 @@
                 <button class="estate-size" onClick="showpenthouse()"><img id="estatebtn" src="../assets/Cyberia/button-penthouse.png"></button>
                 </div>
 
-                <div id="first"><div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/small-realestate.png"/> </img>
+                <div id="first">
+                    <div class="rarity-container"><p id="rarity">Supply:40</p></div> 
+                    <div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/small-realestate.png"/> </img>
                         </div>
-                <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
-                  <ul>Bathroom(s): 1 </ul>
-                     <ul>Kitchen(s): 1</ul>
-                     <ul>Living Room(s): 1</ul> 
+                     
+                <div class="flex-container-estate" id="apartment-description"><p id="apt-description">
+                  
+                  <ul>Bathroom: 1 </ul>
+                     <ul>Kitchen: 1</ul>
+                     <ul>Living Room: 1</ul> 
                      <ul>Extra Room: 1</ul>           </p></div>
+                    
                     </div>
-                <div id="second"><div class="flex-container" id="apartment-description"><img id="estate-imgs"src="../assets/Cyberia/apartment-blueprints/medium-realestate.png"/>
+                <div id="second">
+                    <div class="rarity-container"><p id="rarity2">Supply:24</p></div> 
+                    <div class="flex-container" id="apartment-description"><img id="estate-imgs"src="../assets/Cyberia/apartment-blueprints/medium-realestate.png"/>
                         </div>
                  <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
-                  <ul>Bathroom(s): 1 </ul>
-                  <ul>Kitchen(s): 1</ul>
-                  <ul>Living Room(s): 1</ul> 
-                  <ul>Extra Room(s): 2</ul>          </p></div>
+                  <ul>Bathroom: 1 </ul>
+                  <ul>Kitchen: 1</ul>
+                  <ul>Living Room: 1</ul> 
+                  <ul>Extra Rooms: 2</ul>          </p></div>
                     </div>
-                <div id="third"><div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/large-realestate.png"/> 
+                <div id="third">
+                    <div class="rarity-container"><p id="rarity3">Supply:10</p></div> 
+                    <div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/large-realestate.png"/> 
                         </div>
                 <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
-                  <ul>Bathroom(s): 1 </ul>
-                  <ul>Kitchen(s): 1</ul>
-                  <ul>Living Room(s): 1</ul> 
-                  <ul>Extra Room(s): 4</ul>          </p></div>
+                  <ul>Bathroom: 1 </ul>
+                  <ul>Kitchen: 1</ul>
+                  <ul>Living Room: 1</ul> 
+                  <ul>Extra Rooms: 4</ul>          </p></div>
                     </div>
-                <div id="fourth"><div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/penthouse-realestate.png"/> 
+                <div id="fourth">
+                    <div class="rarity-container"><p id="rarity4">Supply:1</p></div> 
+                    <div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/penthouse-realestate.png"/> 
                         </div>
                 <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
-                  <ul>Bathroom(s): 1 </ul>
-                  <ul>Kitchen(s): 1</ul>
-                  <ul>Living Room(s): 1</ul> 
-                  <ul>Extra Room(s): 6</ul>          </p></div>
+                  <ul>Bathroom: 1 </ul>
+                  <ul>Kitchen: 1</ul>
+                  <ul>Living Room: 1</ul> 
+                  <ul>Extra Roomss: 6</ul>          </p></div>
                     </div>
 
               </div>
@@ -156,45 +178,61 @@
         </section>
 
 <!-- roadmap section-->
+<div class="divider"></div>
         <section class="s5 section fade-in" id="roadmap">
 
             <h2>Roadmap</h2>
 
-            <div class="flex-container-team">
+            <div class="flex-container-benefits">
 
                 <img src="../assets/Cyberia/roadmap-cyberia.png" id="roadmap-image">
+
+            </div>
+<!-- roadmap mobile section, hidden on desktop-->            
+            <div class="flex-container-benefits-mobile">
+                <img src="../assets/Cyberia/roadmap-mobile-stage1.png" id="roadmap-image-mobile">
+                <img src="../assets/Cyberia/roadmap-mobile-stage2.png" id="roadmap-image-mobile">
+                <img src="../assets/Cyberia/roadmap-mobile-stage3.png" id="roadmap-image-mobile">
+                <img src="../assets/Cyberia/roadmap-mobile-tbd.png" id="roadmap-image-mobile">
 
             </div>
         </section>
 
 <!-- faq section-->
+<div class="divider"></div>
         <section class="s6 section fade-in" id="faq">
           
             <h2>F.A.Q</h2>
 
             <div class="flex-container-faq">
 
-                <h3 class="faq-header">1.) What is the mint price?</h3>
+                <h3 class="faq-header">1.) How many NFTs are available?</h3>
                     <p class="faq-answer">
-                35 ERG
+                As a first drop we plan to drop an initial supply of 75 apartments! Although we plan to continually drop apartments as we continue development of Cyberia.
                     </p>
 
-                <h3 class="faq-header">2.) How do I mint my apartment?</h3>
+                    <h3 class="faq-header">2.) What is the mint price?</h3>
+                    <p class="faq-answer">
+                Coming soon
+                    </p>
+
+                <h3 class="faq-header">3.) How do I mint my apartment?</h3>
                 <p class="faq-answer">
-                    For this drop we will be using our old method, simply send 30 ERG to the indicated address and you will receive your NFT shortly!
+                    For this drop we will be using our old method, simply send X ERG to the indicated address and you will receive your NFT shortly!
                     </p>
 
-                <h3 class="faq-header">3.) Is there a whitelist?</h3>
+                <h3 class="faq-header">4.) Is there a whitelist?</h3>
                     <p class="faq-answer">
                     Yes, we have seen the interest by our community for a whitelist. To qualify for a whitelist you must hold atleast 2 CyberCitizens + verify your address in our discord whitelist channel!
+                    The whitelist will be ending June 12, 2022 at 10 PM UTC  
                     </p>
 
-                <h3 class="faq-header">4.) What are CyberCitizen NFTs?</h3>
+                <h3 class="faq-header">5.) What are CyberCitizen NFTs?</h3>
                     <p class="faq-answer">
                     CyberCitizens are playable NFT characters in our upcoming game, learn more by visiting the<a id="faqhome" href="../index.html#faq">F.A.Q</a> on our home-page!
                     </p>
 
-                <h3 class="faq-header">5.) What are our plans for the future of Cyberia Real-Estate</h3>
+                <h3 class="faq-header">6.) What are our plans for the future of Cyberia Real-Estate</h3>
                     <p class="faq-answer">
                     What you are seeing in the clip above is just the early stage of what we want to accomplish. 
                     We plan to expand heavily with our plans such as adding NFT furniture, businesses, lands and much more! 

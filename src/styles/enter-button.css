@@ -15,10 +15,17 @@ a#enter-estate:hover {
   zoom: 115%;
   -webkit-text-stroke: 1px var(--yellow);
 }
-div.enter-estate-container { 
- margin-top:2rem;
-}
+div.enter-estate-container-mobile { 
 
+ display:none;
+}
+div.enter-estate-container { 
+
+  display:block;
+ margin-left:75%;
+ margin-bottom:20%;
+ }
+ 
 /* animations for background image */
 @-webkit-keyframes pulseBox {
   0% {
@@ -76,4 +83,14 @@ div.enter-estate-container {
   animation-timing-function: ease-in-out;
   border: 0px;
 }
+
+@media all and (max-width: 40em) {
+  div.enter-estate-container-mobile { 
+    margin-top:2rem;
+    display:flex;
+  }
+    div.enter-estate-container {
+      display:none;
+    }
+   }
 
