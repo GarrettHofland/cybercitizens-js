@@ -73,6 +73,15 @@ div.flex-container-benefits {
 div.flex-container-benefits-mobile {
   display: none;
 }
+div.divider {
+  border: 1px solid  hsla(295, 100%, 59%, 1);
+  background: hsla(295, 100%, 59%, 1);
+  background: linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+  background: -moz-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
+  display:none;
+}
 /*buttons and links styling*/
 button.estate-size {
   background-color: transparent;
@@ -101,19 +110,8 @@ p.auctions-text,
 h2#sizestitle {
   text-align: center;
 }
-div.divider {
-  border: 1px solid  hsla(295, 100%, 59%, 1);
-  background: hsla(295, 100%, 59%, 1);
-
-  background: linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
-
-  background: -moz-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
-
-  background: -webkit-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
-
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
-  display:none;
-  
+h2.cyberia-main-description {
+  font-size:xx-large
 }
 
 
