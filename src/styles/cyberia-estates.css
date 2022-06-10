@@ -103,7 +103,9 @@ a#mint-estate {
 a#faqhome {
   border: none;
 }
-
+div.container-mint  {
+display:inline;
+}
 /* other styling*/
 p#apt-description,
 p.auctions-text,
@@ -113,8 +115,19 @@ h2#sizestitle {
 h2.cyberia-main-description {
   font-size:xx-large
 }
+div.rarity-container  {
+display:block;
+text-align:center;
+margin-bottom:1rem;
+}
 
+p#rarity {
+  color:blue;
+}
 
+p#rarity2 { color:brown;}
+p#rarity3 {color:silver;}
+p#rarity4 {color:gold;}
 /* animations for background image */
 @keyframes bgimage {
   0% {
