@@ -97,6 +97,21 @@ p.auctions-text,
 h2#sizestitle {
   text-align: center;
 }
+div.divider {
+  border: 1px solid  hsla(295, 100%, 59%, 1);
+  background: hsla(295, 100%, 59%, 1);
+
+  background: linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+
+  background: -moz-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+
+  background: -webkit-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
+  display:none;
+  
+}
+
 
 /* animations for background image */
 @keyframes bgimage {
@@ -116,11 +131,20 @@ h2#sizestitle {
 }
 /*mobile styling*/
 @media all and (max-width: 40em) {
-  .s1-estates {
+  .s1-estates  {
     animation: none;
     background-size: contain;
-    background-color: rgba(7, 7, 15, 0.79) !important;
+
   }
+section.s1, section.s2, section.s3, section.s4, section.s5, section.s6  {
+
+  background:rgba(7, 7, 15, 0.79)
+
+}
+div.divider {
+  display:flex;
+}
+
   img#estate-imgs {
     margin-top: 1rem;
   }
@@ -141,12 +165,16 @@ h2#sizestitle {
     margin-inline: auto;
   }
   img#roadmap-image-mobile {
-    width: 75%;
-    margin: 1rem;
-    margin-bottom: 2rem;
-    margin-inline: auto;
+    width:50%;
+    height:50%;
+    margin:auto;
+    margin-bottom:1rem;
+    padding:1rem;
+    
   }
   p#auctions-text {
     text-align: Center;
   }
+
+   
 }
