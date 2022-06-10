@@ -1,234 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../assets/favicon.ico"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/cyberia-estates.css" />
-    
-    
-    <title>Cyberia Real-estate</title>
-  </head>
 
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/cyberia-estates.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <title>CyberCitizens</title>
+</head>
+
+<body>
     <header>
-      <div class="logo">
-        <img id="scrollTop" src="../assets/logo-name.png" alt="" />
-      </div>
-      <input type="checkbox" name="" id="nav-toggle" class="nav-toggle" />
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#benefits">Benefits</a></li>
-          <li><a href="#info">Apartments</a></li>
-          <li><a href="#roadmap">Roadmap</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="../index.html">Home</a></li>
-        </ul>
-      </nav>
-      <label for="nav-toggle" class="nav-toggle-label">
-        <span></span>
-      </label>
+        <div class="logo">
+            <img id="scrollTop" src="../assets/logo-name.png" alt="">
+        </div>
+        <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul class="nav-links">
+                <li class="desktop-li"><a id="discord-desktop" href="https://discord.com/invite/7FcEFKcKJ7"><img id="header-image"
+                            src="../assets/logo-discord.svg" alt="discord image"></a></li>
+                <li><a id="discord-mobile" href="https://discord.com/invite/7FcEFKcKJ7">Discord</a></li>
+                <li class="desktop-li"><a id="twitter-desktop" href="https://twitter.com/ErgoPixels"><img id="header-image"
+                            src="../assets/logo-twitter.svg" alt="twitter image"></a></li>
+                <li><a id="twitter-mobile" href="https://twitter.com/ErgoPixels">Twitter</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#sizes">Sizes</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
     </header>
 
     <main>
-  
-      <div class="background-image-cyberia">
-        <br>
-        <section class="fade-in"id="mint">
-       
-          <h2>Cyberia Estates</h2> 
-       
-     
-     
-      
-            <div class="flex-container-mint">
-   
-              <div class="container-mint-desc">
-                <h2 class="address-title">About the estate</h2>
-                  <p class="auction-text">Cyberia Virtual real-estate is the first of many purchasable areas within Cyberia.
-                    We are proud to present the first ever condominiums for sale within Cyberia, ranging in size from small, medium, large and penthouse suites!
-                  </p>
-                
-                The exact date of release will be published shortly! 
-                Be sure to visit our discord and sign up for the whitelist in order to ensure you can mint an Apartment!
-                  </p>
 
-                
-                 Upon purchase, you will have access to your unfurnished condo within Cyberia. 
-                    Inside you will find various pieces of furniture available to you in order to customize your condo to your liking!
-                    In the future these furniture pieces will cost $CYPX but for now they will be free for all testers!
-                    The game is still being developed, and the opening date will be announced soon!
-                    
-                  </p>
-              </div>
-                <div class="container-mint container-mint-img">
-               <div class="trailer-area"><iframe src="https://player.vimeo.com/video/717726674?h=991484b3d4" id="trailer-cyberia" width="100%" height="100%" frameborder="1" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-              <!-- change coming soon to Mint when mint opens-->
-                  <a id="mint-estate">Coming Soon</a>
-                  <div id="modal-mint" class="modal">
-                    <div class="modal-content">
-                      <span class="close">&times;</span>
-                      <h3 id="modaltitle">Cyberia Estates</h3>
-                      <ul id="modal-content-estate">
-                        <h4 id="send">Send ERG to receive your apartment</h4>
-                        <h4 id="send">Ergo Amount: 30 ERG</h4>
-      
-                        <li><h3>Address:</h3></li><input type="text" value="9i8ecfipxn1wg7sxhqxig1nnpdvcb1jdd1mu9x22y2yxvu6aybi" id="mint-address" readonly>
-                       <button id="copy-address" onclick="copy()">Copy Address</button></li>
-                      </ul>
-                      <div class="modal-qr" ><img src="../assets/Cyberia/qr.png"id="qrcode"></div>
-                      <div class="modal-footer"><h3 id="waittime">It may take up to 20 minutes to receive your NFT!</h3></div>
-               
-                    </div>
-                  </div>
-                  </div>
-               
-              
-                </div>
-       
-        </section>
-     
-<section class="divider"></section>
-<h2 id="benefits-title">Benefits</h2>
-      <section  class="fade-in" id="benefits">
-       
-        <div id="benefits-container">
-          <div class="benefits-desc">
-         <img src="../assets/Cyberia/Icons/benefits-new.png"id="benefits-imgs"> 
-</div>
-</div>
-    
-   
+<!-- fade-in image for first section-->
+        <section class="s1-estates section fade-in">
 
-      </section>
-   <section class="divider"></section>
-   <div class="opacity-layer"><section class="fade-in" id="info">
-  
-
-        <div class="flex-container-aptinfo">
-
-          <div class="container-estate-btns">
-            <h2 id="sizestitle">Sizes</h2>
-            <button class="estate-size" onClick="showsmallestate()"><img id="estatebtn" src="../assets/Cyberia/button-small.png"></button>
-            <button class="estate-size" onClick="showmediumestate()"><img id="estatebtn" src="../assets/Cyberia/button-medium.png"></button>
-            <button class="estate-size" onClick="showlargeestate()"><img id="estatebtn" src="../assets/Cyberia/button-large.png"></button>
-            <button class="estate-size" onClick="showpenthouse()"><img id="estatebtn" src="../assets/Cyberia/button-penthouse.png"></button>
+            <div class="flex-container">
+                <h1>Cyberia Virtual Real-estate</h1>
             </div>
+        </section>
 
-        
-<div class="cyberia-content">
-  <div id="first"><div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/small-realestate.png"/> </img>
-  </div>
-  <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
-    <ul>Bathroom(s): 1 </ul>
-       <ul>Kitchen(s): 1</ul>
-       <ul>Living Room(s): 1</ul> 
-       <ul>Extra Room: 1</ul>           </p></div>
-  </div>
+<!-- Information/mint section-->
+        <section class="s2 section fade-in" id="info">
 
-  <div id="second"><div class="flex-container" id="apartment-description"><img id="estate-imgs"src="../assets/Cyberia/apartment-blueprints/medium-realestate.png"/>
-   </div>
-   <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
-    <ul>Bathroom(s): 1 </ul>
-    <ul>Kitchen(s): 1</ul>
-    <ul>Living Room(s): 1</ul> 
-    <ul>Extra Room(s): 2</ul>          </p></div>
-  </div>
-  <div id="third"><div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/large-realestate.png"/> 
-  </div>
-  <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
-    <ul>Bathroom(s): 1 </ul>
-    <ul>Kitchen(s): 1</ul>
-    <ul>Living Room(s): 1</ul> 
-    <ul>Extra Room(s): 4</ul>          </p></div>
-  </div>
-  
-  <div id="fourth"><div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/penthouse-realestate.png"/> 
-  
-  </div>
-  <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
-    <ul>Bathroom(s): 1 </ul>
-    <ul>Kitchen(s): 1</ul>
-    <ul>Living Room(s): 1</ul> 
-    <ul>Extra Room(s): 6</ul>          </p></div>
-  </div>
-</div>
-</div>
-   
-</div>
+            <div class="flex-container-mint">
+                <div class="container-mint container-mint-img">
+                  <iframe src="https://player.vimeo.com/video/717726674?h=991484b3d4" id="trailer-cyberia" width="100%" height="" frameborder="1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                   
+                    <a id="mint-estate">Coming Soon</a>
+                </div>
 
-<br>
-<br>
-<br>
-</div>
-</section>
+                <div class="container-mint">
+                    <h2>Cyberia Virtual real-estate is the first of many purchasable areas within Cyberia.
+                            We are proud to present the first ever condominiums for sale within Cyberia, ranging in size from small, medium, large and penthouse suites!
+                    </h2>
+                    <p class="cyberia-info"> The exact date of release will be published shortly! 
+                            Be sure to visit our discord and sign up for the whitelist in order to ensure you can mint an Apartment!</p>
+                    <p class="cyberia-info">  Upon purchase, you will have access to your unfurnished condo within Cyberia. 
+                            Inside you will find various pieces of furniture available to you in order to customize your condo to your liking!
+                        In the future these furniture pieces will cost $CYPX but for now they will be free for all testers!
+                        The game is still being developed, and the opening date will be announced soon! 
+                    </p>
 
+                    <div id="modal-mint" class="modal">
+                        <div class="modal-content">
 
-<section class ="fade-in" id="roadmap">
-  <section class="divider" id="roadmapdivider"></section>
-  <h2>Roadmap</h2>
-<div class="stage-outline">
-<img src="../assets/Cyberia/roadmap-cyberia.png" id="roadmapimage">
-</div>
+                        <span class="close">&times;</span>
+                            <h3>Cyberia Estates</h3>
+                            <ul>
+                                <h4>Send ERG to receive your apartment</h4>
+                                <h4>Ergo Amount: 35 ERG</h4>
+                            <ul>
+                            <h3>Address:</h3>
+                        </li>
+                        <input type="text" value="9i8ecfipxn1wg7sxhqxig1nnpdvcb1jdd1mu9x22y2yxvu6aybi" id="mint-address" readonly>
+                            <button id="copy-address" onclick="copy()">Copy Address</button></ul>
+                            </ul>
+                        <div class="modal-qr" >
+                            <img src="../assets/Cyberia/qr.png"id="qrcode">
+                        </div>
+                        <div class="modal-footer"><h3 id="waittime">It may take up to 20 minutes to receive your NFT!</h3></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-</section>
-    <section class = "fade-in" id="faq">
-      <section class="divider" id="roadmapdivider"></section>
-      <h2>FAQ</h2>
-<div  class="faq-container">
-<h3 id="faq-question">What is the mint price?</h3>
-<p id="faq-answer">30 ERG</h4>
-<h3 id="faq-question">How do I mint my apartment?</h3>
-<p id="faq-answer">For this drop we will be using our old method, simply send 30 ERG to the indicated address and you will receive your NFT shortly!</h4>
-<h3 id="faq-question">Is there a whitelist?</h3>
-<p id="faq-answer">Yes, we have seen the interest by our community for a whitelist. To quality for a whitelist you must hold atleast 2 CyberCitizens + verify your address in our discord whitelist channel!</h4>
-<h3 id="faq-question">What are CyberCitizen NFTs?</h3>
-<p id="faq-answer">CyberCitizens are playable NFT characters in our upcoming game</h4>
-<h3 id="faq-question">The future of Cyberia Real-Estate</h3>
-<p id="faq-answer">What you are seeing in the clip above is just the early stage of what we want to acomplish. We plan to expand heavily with our plans such as adding NFT furniture, businesses, lands and much more! This stage of customization is just for early versions of the game and we would love to hear some feedback and opinions from the community!</h4>
-</div>
+<!--benefits section-->
+        <section class="s3 section fade-in" id="benefits">
 
-  </section>
+          <h2>Benefits</h2>
+          <div class="flex-container-team">
+
+            <img src="../assets/Cyberia/Icons/benefits-new.png" id="benefits-image">
+
+        </div>
+      </section>
+
+<!-- apt sizes section-->
+        <section class="s4 section fade-in" id="sizes">
+
+            <div class="flex-container-mint">
+
+                <div class="container-mint container-mint-img">
+                    <h2 id="sizestitle">Sizes</h2>
+                <button class="estate-size" onClick="showsmallestate()"><img id="estatebtn" src="../assets/Cyberia/button-small.png"></button>
+                <button class="estate-size" onClick="showmediumestate()"><img id="estatebtn" src="../assets/Cyberia/button-medium.png"></button>
+                <button class="estate-size" onClick="showlargeestate()"><img id="estatebtn" src="../assets/Cyberia/button-large.png"></button>
+                <button class="estate-size" onClick="showpenthouse()"><img id="estatebtn" src="../assets/Cyberia/button-penthouse.png"></button>
+                </div>
+
+                <div id="first"><div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/small-realestate.png"/> </img>
+                        </div>
+                <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
+                  <ul>Bathroom(s): 1 </ul>
+                     <ul>Kitchen(s): 1</ul>
+                     <ul>Living Room(s): 1</ul> 
+                     <ul>Extra Room: 1</ul>           </p></div>
+                    </div>
+                <div id="second"><div class="flex-container" id="apartment-description"><img id="estate-imgs"src="../assets/Cyberia/apartment-blueprints/medium-realestate.png"/>
+                        </div>
+                 <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
+                  <ul>Bathroom(s): 1 </ul>
+                  <ul>Kitchen(s): 1</ul>
+                  <ul>Living Room(s): 1</ul> 
+                  <ul>Extra Room(s): 2</ul>          </p></div>
+                    </div>
+                <div id="third"><div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/large-realestate.png"/> 
+                        </div>
+                <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
+                  <ul>Bathroom(s): 1 </ul>
+                  <ul>Kitchen(s): 1</ul>
+                  <ul>Living Room(s): 1</ul> 
+                  <ul>Extra Room(s): 4</ul>          </p></div>
+                    </div>
+                <div id="fourth"><div class="flex-container" id="apartment-description"><img id="estate-imgs" src="../assets/Cyberia/apartment-blueprints/penthouse-realestate.png"/> 
+                        </div>
+                <div class="flex-container-estate" id="apartment-description"><p id="apt-description">        
+                  <ul>Bathroom(s): 1 </ul>
+                  <ul>Kitchen(s): 1</ul>
+                  <ul>Living Room(s): 1</ul> 
+                  <ul>Extra Room(s): 6</ul>          </p></div>
+                    </div>
+
+              </div>
+            </div>
+        </section>
+
+<!-- roadmap section-->
+        <section class="s5 section fade-in" id="roadmap">
+
+            <h2>Roadmap</h2>
+
+            <div class="flex-container-team">
+
+                <img src="../assets/Cyberia/roadmap-cyberia.png" id="roadmap-image">
+
+            </div>
+        </section>
+
+<!-- faq section-->
+        <section class="s6 section fade-in" id="faq">
+          
+            <h2>F.A.Q</h2>
+
+            <div class="flex-container-faq">
+
+                <h3 class="faq-header">1.) What is the mint price?</h3>
+                    <p class="faq-answer">
+                35 ERG
+                    </p>
+
+                <h3 class="faq-header">2.) How do I mint my apartment?</h3>
+                <p class="faq-answer">
+                    For this drop we will be using our old method, simply send 30 ERG to the indicated address and you will receive your NFT shortly!
+                    </p>
+
+                <h3 class="faq-header">3.) Is there a whitelist?</h3>
+                    <p class="faq-answer">
+                    Yes, we have seen the interest by our community for a whitelist. To qualify for a whitelist you must hold atleast 2 CyberCitizens + verify your address in our discord whitelist channel!
+                    </p>
+
+                <h3 class="faq-header">4.) What are CyberCitizen NFTs?</h3>
+                    <p class="faq-answer">
+                    CyberCitizens are playable NFT characters in our upcoming game, learn more by visiting the<a id="faqhome" href="../index.html#faq">F.A.Q</a> on our home-page!
+                    </p>
+
+                <h3 class="faq-header">5.) What are our plans for the future of Cyberia Real-Estate</h3>
+                    <p class="faq-answer">
+                    What you are seeing in the clip above is just the early stage of what we want to accomplish. 
+                    We plan to expand heavily with our plans such as adding NFT furniture, businesses, lands and much more! 
+                    This stage of customization is just for early versions of the game and we would love to hear some 
+                    feedback and opinions from the community!
+                    </p>
+
+            </div>
+        </section>
   
     </main>
 
     <footer>
-      <div class="footer-container">
-        <div class="footer-logo-container">
-          <img
-            class="footer-logo"
-            src="../assets/logo-name.png"
-            alt="ergopixels logo"
-          />
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <img class="footer-logo" src="../assets/logo-name.png" alt="ergopixels logo">
+            </div>
+            <div class="svg-container">
+                <a href="https://twitter.com/ErgoPixels"><img class="twitter" src="../assets/logo-twitter.svg"
+                        alt="twitter logo"></a>
+                <a href="https://discord.com/invite/7FcEFKcKJ7"><img class="discord" src="../assets/logo-discord.svg"
+                        alt="discord logo"></a>
+            </div>
+            <div class="footer-text">
+                CyberCitizens is an NFT project by the ERGOPixels team.
+            </div>
         </div>
-        <div class="svg-container">
-          <a href="https://twitter.com/ErgoPixels"
-            ><img
-              class="twitter"
-              src="../assets/logo-twitter.svg"
-              alt="twitter logo"
-          /></a>
-          <a href="https://discord.com/invite/7FcEFKcKJ7"
-            ><img
-              class="discord"
-              src="../assets/logo-discord.svg"
-              alt="discord logo"
-          /></a>
-        </div>
-        <div class="footer-text">
-          CyberCitizens is an NFT project by the ERGOPixels team.
-        </div>
-      </div>
-  
     </footer>
-  </body>
-  <script src="../js/app.js"></script>
-  <script src="../js/cyberia-slideshow.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/cyberia-slideshow.js"></script>
+
+</body>
 </html>
