@@ -16,16 +16,46 @@ function aptnumsearch() {
     }
   }
 
- function showapt0() {
-    document.getElementById("cyberia-map").style.display = "none",
-    document.getElementById("showapt0").style.display = "block"
-    document.getElementById("showapt1").style.display = "none"
+ function showgunslinger() {
+  document.getElementById("showgunslinger").style.display = "block"
+  document.getElementById("cyberia-map").style.display = "none"
+  document.getElementById("showergoproxy").style.display = "none"
+  document.getElementById("showedenplaza").style.display = "none"
+  document.getElementById("showsigmaprime").style.display = "none"
+  document.getElementById("shownipopow").style.display = "none"
  }
- function showapt1() {
-  document.getElementById("cyberia-map").style.display = "none",
-  document.getElementById("showapt1").style.display = "block"
-  document.getElementById("showapt0").style.display = "none"
+ function shownipopow() {
+  document.getElementById("shownipopow").style.display = "block"
+  document.getElementById("cyberia-map").style.display = "none"
+  document.getElementById("showergoproxy").style.display = "none"
+  document.getElementById("showedenplaza").style.display = "none"
+  document.getElementById("showsigmaprime").style.display = "none"
+  document.getElementById("showgunslinger").style.display = "none"
 }
  
+function showergoproxy() {
+  document.getElementById("showergoproxy").style.display = "block"
+  document.getElementById("cyberia-map").style.display = "none"
+  document.getElementById("shownipopow").style.display = "none"
+  document.getElementById("showedenplaza").style.display = "none"
+  document.getElementById("showsigmaprime").style.display = "none"
+  document.getElementById("showgunslinger").style.display = "none"
+}
 
+function showedenplaza() {
+  document.getElementById("showedenplaza").style.display = "block"
+  document.getElementById("cyberia-map").style.display = "none"
+  document.getElementById("showergoproxy").style.display = "none"
+  document.getElementById("shownipopow").style.display = "none"
+  document.getElementById("showsigmaprime").style.display = "none"
+  document.getElementById("showgunslinger").style.display = "none"
+}
 
+function showsigmaprime() {
+  document.getElementById("showsigmaprime").style.display = "block"
+  document.getElementById("cyberia-map").style.display = "none"
+  document.getElementById("showergoproxy").style.display = "none"
+  document.getElementById("showedenplaza").style.display = "none"
+  document.getElementById("shownipopow").style.display = "none"
+  document.getElementById("showgunslinger").style.display = "none"
+}
