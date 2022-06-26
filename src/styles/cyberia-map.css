@@ -55,7 +55,7 @@ html {
     height:auto;
     display:none;
     border-radius:2%;
-    border: 1px solid var(--pink);
+    
     margin-left:1rem;
     margin-right:1rem;
     margin-bottom:0.5rem;
@@ -88,4 +88,10 @@ html {
     font-family:PixelFont;
     font-size:smaller;
     color:var(--pink)
+}
+@media all and (max-width: 60em) {
+img#cyberia-map {
+display:block;
+background-size:50%;
+}
 }
