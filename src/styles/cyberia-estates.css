@@ -113,6 +113,7 @@ button#copy-address:hover {
 a#mint-estate {
   display:block;
   margin-top:2rem;
+  cursor:pointer;
 }
 a#faqhome {
   border: none;
@@ -121,9 +122,6 @@ a#faqhome {
 span.close {
   margin-right:100%;
   cursor: pointer;
-}
-span.close:hover {
-color:yellow;
 }
 p#apt-description,
 p.auctions-text,
