@@ -11,10 +11,10 @@ import { TextEncoder } from 'text-decoding';
 const NANOERG_TO_ERG = 1000000000;
 const MIN_ERG_BOX_VALUE = 0.001 * NANOERG_TO_ERG;
 const SIGUSD_TOKENID = "03faf2cb329f2e90d6d23b58d91bbb6c046aa143261cc21f52fbe2824bfcbf04";
-//const MIN_ERG_FEE = 0.001;
-//const MIN_FEE_SIGUSD = 0.01;
-//const FEE_PERCENT = 0.001; // 0.1%
-const MIN_ERG_FEE = 0;
+// const MIN_ERG_FEE = 0.001;
+// const MIN_FEE_SIGUSD = 0.01;
+// const FEE_PERCENT = 0.001; // 0.1%
+const MIN_ERG_FEE = 0.001;
 const MIN_FEE_SIGUSD = 0;
 const FEE_PERCENT = 0;
 const PP_REF = "Ergo Payment Portal"; // stored in R5 register to identify the box of this dApp
@@ -59,7 +59,7 @@ function triggerWaitAlert(msg, html) {
 }
 
 async function connectErgoWallet(ergAddress, currency, amount, ref) {
-    triggerWaitAlert("Connection to the wallet...");
+    triggerWaitAlert("Connection to Yoroi wallet...");
 
     ergo_request_read_access().then(function (access_granted) {
         const connectWalletButton = document.getElementById("connect-wallet");
@@ -364,7 +364,7 @@ async function sendTransaction() {
         }
     }
 
-    // Create the transaction 
+    // Create the transaction
     const txBuilder = wasm.TxBuilder.new(
         boxSelection,
         outputCandidates,
@@ -392,7 +392,7 @@ async function sendTransaction() {
     // Send transaction for signing
     setStatus("Awaiting transaction signing", "secondary");
 
-    triggerWaitAlert('Awaiting transaction signing', 'Please review the transaction shown in the wallet and sign it to process the payment.<br/>The transactions on blockchain cannot be reverted nor cancelled.');
+    triggerWaitAlert('Awaiting transaction signing', 'Please review the transaction shown in Yoroi and sign it to process the payment.<br/>The transactions on blockchain cannot be reverted nor cancelled.');
 
     processTx(correctTx).then(txId => {
         Swal.close();
@@ -529,8 +529,8 @@ if (currentLocation.toString().includes("pay.html")) {
     if (parameterValid) {
         loadPaymentPage(address, currency, amount, ref);
         if (typeof ergo_request_read_access === "undefined") {
-            var msg = "dApp connector not found, to use an ergo wallet extension ";
-            msg += '<a href="https://github.com/ThierryM1212/SAFEW/releases" target="_blank">SAFEW</a>.';
+            var msg = "Yorio ergo dApp connector not found, to use this dApp you need to install the extension ";
+            msg += '<a href="https://chrome.google.com/webstore/detail/yoroi-nightly/poonlenmfdfbjfeeballhiibknlknepo" target="_blank">Yoroi nightly</a>.';
             setStatus(msg, "warning");
             const sendButton = document.getElementById("send-transaction");
             sendButton.disabled = true;
