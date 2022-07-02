@@ -14,21 +14,19 @@
 
 <body style="overflow-x: hidden;">
   <nav class="navbar navbar-light" style="background-color: transparent;" justify-content-between">
-    <h2 style="font-family:'Montserrat'">CyberCitizens Payment Portal</h2>
+    <h2 id="paymentportal" style="font-family:'pixelFont' ">CyberCitizens Payment Portal</h2>
     <div>&nbsp;</div>
     <form class="form-inline">
-      <button style="background-color:#302c2c" id="connect-wallet" type="button" class="btn btn-outline-primary ">
-        Connect wallet
+      <button style="background-color:transparent;" id="connect-wallet" type="button" class="btn btn-outline-primary ">
+        <img src="../assets/new-cc-page/payment-portal/btn-walletconnect.png">
       </button>
     </form>
   </nav>
 
-  <div style="background-color:transparent" class="alrt alrt-secondary" role="alert" id="status">
-    Wallet not connected
-  </div>
+
 
   <div class="row">
-    <div class="card p-2 my-auto mx-auto">
+    <div class="card py-4 mx-auto">
       <div id="container" class="container-xxl mx-auto">
         <form id="token-form" class="needs-validation" action="#" onsubmit="sendTransaction();return false">
 
@@ -40,25 +38,26 @@
           </div>
 
           <div class="mb-3 row">
-            <label for="amount" class="col-sm-2 col-form-label" id="asset-label"></label>
+            <label for="amount" class="col-sm-2 col-form-label" id="asset-label">Amount:</label>
             <div class="col-sm-10">
               <input style="background-color: transparent;" class="form-control" id="amount" required readonly>
             </div>
-            <label class="col-sm col-form-label text-sm-left display-4">Amount of to be sent mininum 0.1 ERG or 1
-              SIGUSD</label>
+            <label class="col-sm col-form-label text-sm-left display-4">Min. amount to be sent must be 0.1 ERG/1 SIGUSD</label>
           </div>
 
           <div class="mb-3 row " style="align-items: center;">
-            <label for="ref" class="col-sm-2 col-form-label">Payment identifier</label>
+            <label for="ref" class="col-sm-2 col-form-label">Note:</label>
             <div class="col-sm-10 ">
               <input style="background-color: transparent;" class="form-control align-middle" id="ref" required readonly>
             </div>
           </div>
 
         </form>
-        <button id="send-transaction" class="bt bt-secondary float-right">Send
-          transaction</button>
+        <button id="send-transaction" class="bt bt-secondary float-right"><img src="../assets/new-cc-page/payment-portal/btn-mint.png"></button>
       </div>
+    </div>
+    <div style="background-color:transparent" class="alrt alrt-secondary" role="alert" id="status">
+      Wallet not found
     </div>
   </div>
   <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>

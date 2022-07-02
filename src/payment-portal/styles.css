@@ -1,20 +1,25 @@
 html {
-    font-family: Helvetica, sans-serif;
-    /* background-color: #201c1c;
-    background-image: url("stars.jpg"); */
+
+  
+   
+
     background-color: transparent;
     background-position: 0px 0px, 0px 0px;
-    background-size: contain, auto;
+    background-size: contain
+    font-family:pixelFont;
 }
 body {
     font-family: Helvetica, sans-serif;
-    background-color: transparent;
-    /* background-color: #201c1c;
-    background-image: url("stars.jpg"); */
+    background-image: url("../assets/new-cc-page/fullbar.png"); 
+    background-repeat:no-repeat;
     background-position: 0px 0px, 0px 0px;
-    background-size: contain, auto;
-    background-color: rgb(99, 65, 14);
+    background-size: cover;
+  
+ height:100vh;
     color:white;
+}
+h2 {
+    margin-inline:auto;
 }
 label {
     font-weight: bold;
@@ -25,12 +30,13 @@ label {
 }
 /* this is what users see */
 .card {
-    background-color: #302c2c;
+    color: pink;
     border-style: solid;
     border-width: 4px;
-    border-color: #d31212;
+    border-color: #378abd;
     border-radius: 20px;
-    background-color: transparent;
+    background-color: #1a1f2f;
+
 }
 
 .param {
@@ -66,9 +72,18 @@ label {
     text-align: center;
     display:flex;
 }
-
+div#status {
+    display:block;
+  padding-right:5rem;
+    color:red;
+    font-size:150%;
+}
 /* Table Styles */
-
+h2#paymentportal {
+    color:yellow;
+    font-family:pixelFont
+}
+}
 .table-wrapper{
     margin: 10px 70px 70px;
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
@@ -237,8 +252,9 @@ label {
     cursor: pointer;
 }
 .bt-secondary:hover {
-    background-color: green;
+    background-color: pink;
     box-shadow: 0 0 12px 8px #be2abe;
+    border:hidden;
 }
 .alert-danger {
     color: #ffffff;
@@ -276,7 +292,13 @@ element.style {
     color: #ffffff;
     background-color: transparent;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid pink;
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
+}
+
+img {
+    background-repeat:no-repeat;
+    display:block;
 }
