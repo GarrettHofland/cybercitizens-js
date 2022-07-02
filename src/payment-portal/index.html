@@ -8,6 +8,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./styles.css" />
     <title>Ergo Payment Portal</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 
 <body style="overflow-x: hidden;">
@@ -18,13 +19,23 @@
             </a>
         </div>
 
-        <h2>ErgoSapiens Payment Portal</h2>
+        <h2>CyberCitizens Payment Portal</h2>
         <h3>Generate URL</h3>
     </nav>
 
     <div style="background-color:transparent" class="alert alert-secondary" role="alert" id="status">
         Wallet not connected
     </div>
+    <a href="https://cybercitizens.io/payment-portal/pay.html?address=9heqk8a1pBZLr3nde1Byi6YRHcoDiMgXNTBg4eb6d58qsg7crwT&currency=ERG&amount=25&ref=CyberCitizen%20Wave%203!" onclick="document.getElementById('modal1').style.display='block'" target="iframe_modal" >Mint</a>  
+  
+    
+    <div id="modal1" class="modal">
+      <span onclick="document.getElementById('modal1').style.display='none'; document.getElementById('iframe1').src =''" class="">&times;</span>
+      <iframe id="iframe1" height="500px" width="100%" src="" name="iframe_modal"></iframe>
+    </div>
+  
+
+
 
     <div class="row">
         <div class="card p-2 my-auto mx-auto table-wrapper">

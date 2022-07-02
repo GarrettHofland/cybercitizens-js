@@ -1,0 +1,110 @@
+.s1-newccpage {
+    
+
+
+display:block;
+    background-image: url("../assets/new-cc-page/header-pic-final.png");
+    background-position: center;
+    background-size:100%;
+    width:auto;
+    height:fit-content;
+    background-repeat: no-repeat;
+ 
+    
+}
+
+div.logo-cc {
+display:flex;
+}
+a.newccpage{
+    border:none !important;
+    list-style-type:none;
+}
+
+p.newccmaintext {
+   
+    font-size:200%;
+    color:yellow;
+}
+
+
+div.mainarea {
+    display:inline-block;
+margin-top:6rem;
+}
+.s2-newccpage {    
+display:block;
+   
+
+    background-image: url("../assets/new-cc-page/fullbar.png");
+    background-position: center;
+    background-size:100%;
+    width:auto;
+    height:fit-content;
+    background-repeat: no-repeat;
+    padding-bottom:70rem;
+    
+}
+
+img#logo-big {
+    max-width:100% !important;
+}
+image.buttons-newccpage {
+    display:block;
+    size-adjust:150%;
+
+}
+
+.s3-newccpage {
+    background-image: url("../assets/new-cc-page/searcharea.png");
+    height:75vh;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+
+
+
+}
+div.divider {
+    border: 1px solid hsla(295, 100%, 59%, 1);
+    background: hsla(295, 100%, 59%, 1);
+    background: linear-gradient(
+      90deg,
+      hsla(295, 100%, 59%, 1) 0%,
+      hsla(256, 100%, 8%, 1) 1%,
+      hsla(256, 100%, 8%, 1) 99%,
+      hsla(295, 100%, 59%, 1) 100%
+    );
+    background: -moz-linear-gradient(
+      90deg,
+      hsla(295, 100%, 59%, 1) 0%,
+      hsla(256, 100%, 8%, 1) 1%,
+      hsla(256, 100%, 8%, 1) 99%,
+      hsla(295, 100%, 59%, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      90deg,
+      hsla(295, 100%, 59%, 1) 0%,
+      hsla(256, 100%, 8%, 1) 1%,
+      hsla(256, 100%, 8%, 1) 99%,
+      hsla(295, 100%, 59%, 1) 100%
+    );
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
+   
+  }
+ img#cc-mint-pic {
+
+
+min-height:25rem;
+min-width:20rem;
+
+  }
+
+
+
+
+    
+  
+div.container {
+    margin-top:10rem;
+}

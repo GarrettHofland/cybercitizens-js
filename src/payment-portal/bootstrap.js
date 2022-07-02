@@ -267,8 +267,8 @@
 /******/ 					promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
 /******/ 						return WebAssembly.instantiate(items[0], items[1]);
 /******/ 					});
-/******/ 				} else if(typeof WebAssembly.instantiateStreaming === 'function') {
-/******/ 					promise = WebAssembly.instantiateStreaming(req, importObject);
+/******				} else if(typeof WebAssembly.instantiateStreaming === 'function') {
+/****** 					promise = WebAssembly.instantiateStreaming(req, importObject);
 /******/ 				} else {
 /******/ 					var bytesPromise = req.then(function(x) { return x.arrayBuffer(); });
 /******/ 					promise = bytesPromise.then(function(bytes) {

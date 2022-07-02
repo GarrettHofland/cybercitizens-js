@@ -13,7 +13,8 @@ body {
     background-image: url("stars.jpg"); */
     background-position: 0px 0px, 0px 0px;
     background-size: contain, auto;
-    color: rgb(209, 205, 199);
+    background-color: rgb(99, 65, 14);
+    color:white;
 }
 label {
     font-weight: bold;
@@ -40,14 +41,7 @@ label {
     text-size-adjust: 50%;
 }
 
-.amount-erg {
-    color: #5ac47e;
-    text-align: end;
-}
-.amount-sigusd {
-    color: #5ac47e;
-    text-align: end;
-}
+
 
 .token-id {
     font-family: "Lucida Console", "Courier New", monospace;
