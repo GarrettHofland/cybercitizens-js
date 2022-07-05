@@ -80,7 +80,24 @@ image.buttons-newccpage {
 
   
 }
+.s6-newccpage {
+  display:block;
+   
 
+  background-image: url("../assets/new-cc-page/speaker-brick.png");
+  background-position: center;
+  background-size:cover;
+  width:auto;
+  min-height:90vh;;
+  background-repeat: no-repeat;
+
+  
+}
+img#s5-speakers {
+  min-width:75vh;
+  margin-top:15vh;
+  min-height:65vh;
+}
 .s3-newccpage {
   display:block;
    
