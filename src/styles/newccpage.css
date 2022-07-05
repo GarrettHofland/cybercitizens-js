@@ -106,7 +106,7 @@ img#s5-speakers {
   background-position:center;
   background-size:cover;
   width:auto;
-  height:80vh;
+  min-height:90vh;;;
   background-repeat: no-repeat;
 
   
