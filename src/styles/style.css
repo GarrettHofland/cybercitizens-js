@@ -132,6 +132,7 @@ nav {
     align-items: center;
     padding-right: 2em;
     gap: 2em;
+    z-index:99;
 }
 
 nav ul {
