@@ -1,29 +1,5 @@
-html {
 
-  
-   
 
-    background-color: transparent;
-    background-position: 0px 0px, 0px 0px;
-    background-size: contain;
-    font-family:pixelFont;
-}
-body {
-    font-family: Helvetica, sans-serif;
-    background-image: url("../assets/new-cc-page/fullbar.png"); 
-    background-repeat:no-repeat;
-    background-position: 0px 0px, 0px 0px;
-    background-size: cover;
-  
- height:100vh;
-    color:white;
-}
-h2 {
-    margin-inline:auto;
-}
-label {
-    font-weight: bold;
-}
 
 .mb-3 {
     align-items: center;
@@ -304,7 +280,3 @@ element.style {
     
 }
 
-img {
-    background-repeat:no-repeat;
-    display:block;
-}

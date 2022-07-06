@@ -58,7 +58,7 @@ function triggerWaitAlert(msg, html) {
     });
 }
 
-async function connectErgoWallet(ergAddress, currency, amount, ref) {
+export async function connectErgoWallet(ergAddress, currency, amount, ref) {
     triggerWaitAlert("Connection to Yoroi wallet...");
 
     ergo_request_read_access().then(function (access_granted) {

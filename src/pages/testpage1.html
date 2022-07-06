@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/explore-gen1.css">
     <link rel="stylesheet" href="../styles/newccpage.css">
+    <link rel="stylesheet" href="../payment-portal/styles.css">
 
 
     <title>Explore GEN 1</title>
@@ -34,8 +35,11 @@
                     src="../assets/new-cc-page/icons/twitter.png" alt="twitter image"></a></li>
                     <li class="desktop-li"><a id="twitter-desktop" href="https://discord.com/invite/7FcEFKcKJ7"><img id="logo"
                         src="../assets/new-cc-page/icons/discord.png" alt="twitter image"></a></li>
-                        <li class="desktop-li"><a id="twitter-desktop" href=""><img id="logo"
-                            src="../assets/new-cc-page/icons/wallet.png" alt="twitter image"></a></li>
+                        <li class="desktop-li">    <form class="form-inline">
+                            <button style="background-color:transparent;" id="connect-wallet" type="button">
+                              <img src="../assets/new-cc-page/payment-portal/btn-walletconnect.png">
+                            </button>
+                          </form></li>
         </ul>
     </nav>
     <label for="nav-toggle" class="nav-toggle-label">
@@ -151,6 +155,7 @@
         </div>
     </footer>
 
+<script type="module" src ="../payment-portal/index.js"></script>
 
   </body>
   
