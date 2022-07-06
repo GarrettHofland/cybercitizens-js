@@ -227,7 +227,32 @@ div#searchdesccont {
   margin-left:8%;
 margin-top:2rem;
 }
+#logo {
 
+    width: auto;
+    height: auto;
+    max-width: 30px;
+    max-height: 25px;
+  
+
+
+}
+#logo1 {
+
+  width: auto;
+  height: auto;
+  max-width: 30px;
+  max-height: 25px;
+  border-color: red;;
+  margin-left:20rem;
+  pointer-events:none;
+
+
+
+}
+#logo1:hover {
+  display:none;
+} 
 div.divider {
     border: 1px solid hsla(295, 100%, 59%, 1);
     background: hsla(295, 100%, 59%, 1);
@@ -256,16 +281,44 @@ div.divider {
    
   }
  img#cc-mint-pic {
-
-
+display:block;
+position:relative;
 min-height:25rem;
 min-width:20rem;
-margin-bottom:2.5vh;
-margin-top:1vh;
+margin-inline:auto;
+padding-top:5rem;
+
+
+
 
   }
 
+  a#mint {
+   display:inline;
+   border:1px solid var(--pink);
+   
 
+
+
+
+  
+
+
+  
+  }
+  .footer-logo {
+    width: 10%;
+    margin-top: 1em;
+    padding-bottom: 1em;
+}
+
+.footer-logo-container {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--pink);
+    max-width: 90%;
+    margin: 0 auto;
+}
 
 
     

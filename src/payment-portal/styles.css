@@ -5,7 +5,7 @@ html {
 
     background-color: transparent;
     background-position: 0px 0px, 0px 0px;
-    background-size: contain
+    background-size: contain;
     font-family:pixelFont;
 }
 body {
@@ -238,30 +238,36 @@ h2#paymentportal {
     line-height: 1.5;
     border-radius: 0.25rem;
 }
+button#connect-wallet{
+    border:none;
+}
+button#connect-wallet:hover {
+    zoom:105%;
+    cursor:pointer;
+    border:none;
+    
+}
 .bt-secondary {
     color: rgb(255, 255, 255);
     background-color: #2180d3;
     font-family: Oxanium, sans-serif;
-    border-color: #6c757d;
-    border-style: solid;
-    border-width: 4px;
-    border-color: #8da2e4;
-    border-radius: 6px;
+ 
     background-color: transparent;
     box-shadow: 0 0 3px 0 #000;
     cursor: pointer;
 }
 .bt-secondary:hover {
-    background-color: pink;
-    box-shadow: 0 0 12px 8px #be2abe;
-    border:hidden;
+    
+    zoom:105%;
 }
 .alert-danger {
     color: #ffffff;
     background-color: #fa071b;
     border-color: #f5c6cb;
 }
-
+a {
+    border:none;
+}
 element.style {
     background-color: #302c2c;
 }
