@@ -74,12 +74,12 @@ display:block;
    
 
     background-image: url("../assets/new-cc-page/fullbar.png");
-    background-position: center;
-    background-size:cover;
-    width:auto;
-    height:fit-content;
+
+    background-size:contain;
+    width:200rem;
+    height:46rem;
     background-repeat: no-repeat;
-    padding-bottom:65rem;
+
     
 }
 .s4-newccpage {    
