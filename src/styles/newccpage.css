@@ -3,6 +3,19 @@ header {
   z-index:99;
 
 }
+ul.nav-links {
+
+  display:flex;
+  justify-content:left;
+  
+}
+.corner {
+float:right;
+display:flex;
+
+
+ 
+}
 .s1-newccpage {
     
 
@@ -10,6 +23,7 @@ header {
 display:block;
     background-image: url("../assets/new-cc-page/header-pic-final.png");
  background-size:cover;
+ background-position:center;
 height:100%;
     background-repeat: no-repeat;
     padding-bottom:8%;
@@ -31,7 +45,6 @@ position:relative;
 z-index:0;
 }
 img#ingamecc {
-  margin-left:10vh;
   min-width:225px;
   min-height:225px;
  
@@ -77,9 +90,9 @@ display:block;
    
 
     background-image: url("../assets/new-cc-page/fullbar.png");
-
-    background-size:contain;
-    width:200rem;
+background-position:center;
+    background-size:cover;
+    width:auto;
     height:46rem;
     background-repeat: no-repeat;
 
@@ -90,11 +103,10 @@ display:block;
        
     
         background-image: url("../assets/new-cc-page/bar-left.png");
-        background-position: center;
         background-size:cover;
-    width:auto;
+        width:auto;
+        height:75rem;
         background-repeat: no-repeat;
-        height:90vh;
         
     }
 
@@ -124,17 +136,18 @@ image.buttons-newccpage {
    
 
   background-image: url("../assets/new-cc-page/speaker-brick.png");
-  background-position: center;
   background-size:cover;
   width:auto;
-  min-height:90vh;;
+  padding-top:2.5rem;
+height:75vh;
   background-repeat: no-repeat;
 
   
 }
 img#s5-speakers {
-  min-width:75vh;
-  margin-top:15vh;
+  min-width:45rem;
+ position:relative;
+
   min-height:65vh;
 }
 .disabled {
@@ -202,9 +215,9 @@ div#borderarea {
 }
 img#searchareaborder {
 
-
-  min-width:100vh;
-  min-height:45vh;
+padding-left:3rem;
+  min-width:55rem;
+  min-height:30rem;
   position:absolute;
 
 
@@ -254,8 +267,8 @@ img#search-descriptionpng{
  position:relative;
 margin-inline:auto;
 
-display:block;
-margin-left:30rem;
+display:inline-block;
+
 padding-top:3.5rem
 
 }
