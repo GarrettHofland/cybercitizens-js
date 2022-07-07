@@ -31,14 +31,17 @@ position:relative;
 z-index:0;
 }
 img#ingamecc {
-  margin-left:3.5rem;
+  margin-left:10vh;
   min-width:225px;
   min-height:225px;
+ 
 }
 img#cc-normal {
-  min-width:175px;
-  min-height:175px;
-  margin-bottom:1rem;
+  min-width:225px;
+  min-height:225px;
+margin-right:15vh;
+padding:4%;
+margin-left:1vh;
 }
 p.searchdesc2 {
  
@@ -190,7 +193,7 @@ margin-top:10vh;
 }
 div#borderarea {
     display:block;
-    padding-top:5vh;
+    padding-top:10vh;
     
     position:relative;
 
@@ -200,16 +203,17 @@ div#borderarea {
 img#searchareaborder {
 
 
-  min-width:70vh;
-  min-height:40vh;
+  min-width:100vh;
+  min-height:45vh;
   position:absolute;
+
 
 
 
 }
 div#searchcomp {
   display:inline-block;
-  margin-left:7rem;
+  margin-left:9rem;
   margin-top:5rem;
 
 }
@@ -222,11 +226,9 @@ img#faq-content{
   min-height:40vh;
 }
 img#example-searchpng{
-    min-width:45vh;
-    min-height:25vh;
-    position:relative;
-  margin-left:19vh;
-  margin-top:12vh;
+  
+
+
 
   
   
@@ -234,23 +236,27 @@ img#example-searchpng{
 }
 img#search-btn{
 position:relative;
-margin-left:7rem;
+padding-top:2rem;
 min-height:auto;
 min-width:40vh;
+margin-left:7rem;
+padding-bottom:1rem;
 
 
 
 }
 
 img#search-descriptionpng{
-    min-width:95vh;
+    min-width:100vh;
     min-height:20vh;
-padding-left:5rem;
+
 
  position:relative;
 margin-inline:auto;
 
 display:block;
+margin-left:30rem;
+padding-top:3.5rem
 
 }
 div#searchdesccont {
