@@ -16,6 +16,16 @@ display:flex;
 
  
 }
+.chat {
+display:inline;
+float:left;
+margin-left:8%;
+margin-top:10%;
+padding-top:5rem;
+  
+  
+   
+  }
 .s1-newccpage {
     
 
@@ -352,15 +362,6 @@ margin-inline:auto;
   display:flex;
 
 
-   
-
-
-
-
-  
-
-
-  
   }
   .footer-logo {
     width: 10%;
