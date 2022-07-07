@@ -14,6 +14,7 @@ float:right;
 display:flex;
 max-width:5rem;
 max-height:5rem;
+margin-right:2rem;
 
 
  
@@ -151,7 +152,7 @@ image.buttons-newccpage {
   background-image: url("../assets/new-cc-page/speaker-brick.png");
   background-size:cover;
   width:auto;
-  padding-top:2.5rem;
+
    height:80vh;
   background-repeat: no-repeat;
 
@@ -191,17 +192,10 @@ a {
 img#faq-title {
   position:absolute;
   z-index:0;
+  margin-left:15rem;
 }
-h4#faqtitle {
-  font-size:125%;
-  margin-top:12vh;
-}
-div#headercont, h4#faqtitle{
-position:relative;
-padding-top:1.8rem;
-padding-left:22.5rem;
 
-}
+
 div.namecont {
   position:relative;
 
@@ -216,15 +210,14 @@ img#faq-title{
     min-width:80vh;
     min-height:15vh;
 
-margin-top:10vh;
-  padding-top:2vh;
+
 }
 div#borderarea {
     display:inline-block;
 
-    margin-bottom:5rem;
+
     position:relative;
-    margin-top:5rem;
+
 
     
 
@@ -248,12 +241,16 @@ div#searchcomp {
 
 }
 div#faq-content  {
-  margin-top:35vh;
-  margin-right:5vh;
+
+margin-top:15%;
+  display:inline;
+  margin-top:10rem;
+
 }
 img#faq-content{
   min-width:80vh;
   min-height:40vh;
+  margin-top:15vh;
 }
 img#example-searchpng{
   
@@ -291,7 +288,7 @@ padding-top:3.5rem
 }
 div#searchdesccont {
   margin-left:8%;
-margin-top:2rem;
+
 }
 #logo {
 
@@ -322,34 +319,33 @@ div.container {
 #logo1:hover {
   display:none;
 } 
-div.divider {
-    border: 2px solid hsla(295, 100%, 59%, 1);
-    border-radius:15%;
-    background: hsla(295, 100%, 59%, 1);
-    background: linear-gradient(
-      90deg,
-      hsla(295, 100%, 59%, 1) 0%,
-      hsla(256, 100%, 8%, 1) 1%,
-      hsla(256, 100%, 8%, 1) 99%,
-      hsla(295, 100%, 59%, 1) 100%
-    );
-    background: -moz-linear-gradient(
-      90deg,
-      hsla(295, 100%, 59%, 1) 0%,
-      hsla(256, 100%, 8%, 1) 1%,
-      hsla(256, 100%, 8%, 1) 99%,
-      hsla(295, 100%, 59%, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-      90deg,
-      hsla(295, 100%, 59%, 1) 0%,
-      hsla(256, 100%, 8%, 1) 1%,
-      hsla(256, 100%, 8%, 1) 99%,
-      hsla(295, 100%, 59%, 1) 100%
-    );
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
-   
+img#divider{
+
+display:block;
+position:relative;
+min-width:200%;
+top:-51px
+
+
+}
+img#divider-s6{
+
+  display:block;
+  position:relative;
+  min-width:200%;
+  top:-65px;
+  
+  
   }
+  img#divider-s4{
+
+    display:block;
+    position:relative;
+    min-width:200%;
+    top:-58px
+    
+    
+    }
  img#cc-mint-pic {
 display:block;
 
