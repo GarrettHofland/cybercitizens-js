@@ -286,6 +286,9 @@ margin-top:2rem;
 
 
 }
+div.container {
+  display:block;
+}
 #logo1 {
 
   width: auto;
@@ -343,8 +346,12 @@ padding-top:5rem;
   }
 
   a#mint {
-   display:inline;
-   border:1px solid var(--pink);
+
+margin-inline:auto;
+   
+  display:flex;
+
+
    
 
 
