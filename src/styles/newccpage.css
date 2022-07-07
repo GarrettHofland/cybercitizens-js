@@ -117,7 +117,8 @@ background-position:center;
         background-image: url("../assets/new-cc-page/bar-left.png");
         background-size:cover;
         width:auto;
-        height:fit-content;
+    height:100%;
+       background-position:center;
         background-repeat: no-repeat;
         
     }
@@ -217,10 +218,11 @@ margin-top:10vh;
   padding-top:2vh;
 }
 div#borderarea {
-    display:block;
-    padding-top:10vh;
-    
+    display:inline-block;
+
+    margin-bottom:5rem;
     position:relative;
+    margin-top:5rem;
 
     
 
@@ -231,6 +233,7 @@ padding-left:3rem;
   min-width:55rem;
   min-height:30rem;
   position:absolute;
+display:inline-block;
 
 
 
@@ -278,8 +281,8 @@ img#search-descriptionpng{
 
  position:relative;
 margin-inline:auto;
-
-display:inline-block;
+padding-top:15rem;
+display:block;
 
 padding-top:3.5rem
 
