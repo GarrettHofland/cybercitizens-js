@@ -117,7 +117,7 @@ background-position:center;
         background-image: url("../assets/new-cc-page/bar-left.png");
         background-size:cover;
         width:auto;
-        height:75rem;
+        height:fit-content;
         background-repeat: no-repeat;
         
     }
