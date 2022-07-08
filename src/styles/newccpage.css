@@ -284,6 +284,10 @@ div#searchdesccont {
 
 
 }
+span.close {
+  display:flex;
+  float:left;
+}
 div.container {
   display:block;
 }
@@ -385,19 +389,24 @@ margin-inline:auto;
 }
 
 
-    
+   a#openplayer {
+    color:var(--purple);
+    border: 0.5px solid var(--pink);
+    cursor:pointer;
+    margin-right:5rem;
+    display:flex;
+  } 
   
 .player {
-  height: fit-content;
+  height: 1%;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
- 
-background-image:url("../assets/new-cc-page/music-pic.png");
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+ position:fixed;
+
+opacity:0.8;
+display:none;
 }
  
 .details {
@@ -417,7 +426,7 @@ background-repeat:no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 15%;
-  DISPLAY:none;
+visibility:hidden;
 }
  
 /* Changing the font sizes to suitable ones */

@@ -23,7 +23,17 @@
     <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
     <nav>
         <ul class="nav-links">
-            
+           <a class="desktop-li" id="openplayer" onclick="openandclose()">Music</a>
+            <script>function openandclose() {
+                let player = document.getElementById("player")
+                        
+                        if (player.style.display === "none") {
+                         player.style.display = "flex";
+                        } else {
+                          player.style.display = "none";
+                        }
+                 
+                }</script>
             <li><a class="disabled" class="newccpage" href="../index.html"><img src="../assets/new-cc-page/buttons/btn-citizen.png"></a></li>
             <li><a class="newccpage" href="https://docs.cybercitizens.io/"><img src="../assets/new-cc-page/buttons/btn-docs.png"></a></li>
             <li><a class="newccpage" href="../pages/cyberia-estates.html"><img src="../assets/new-cc-page/buttons/btn-estate.png"></a></li>
@@ -44,12 +54,13 @@
 
     
 </header>  
-<div class="player">
- 
+<div class="player" id="player">
+    <span class="close" onclick="document.getElementById('player').style.display='none'; document.getElementById('player').src =''" class="">&times;</span>
     <!-- Define the section for displaying details -->
     <div class="details">
+       
       <div class="now-playing">PLAYING 1 OF 2</div>
-      <div class="track-art"></div>
+      <div class="track-art"><img src="../assets/new-cc-page/music-pic.png"></div>
       <div class="track-name">Into Cyberia</div>
       <div class="track-artist">ErgoPixels</div>
     </div>
