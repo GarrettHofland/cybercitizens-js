@@ -66,19 +66,10 @@ img#cc-normal {
   min-width:225px;
   min-height:225px;
 margin-right:15vh;
-padding:4%;
+
 margin-left:1vh;
 }
-p.searchdesc2 {
- 
-    position:absolute;
-    color:white;
-    opacity:0.8;
-    font-size:115%;
-  margin-left:55vh;
-  margin-top:7vh;
-  z-index:2;
-}
+
 div.logo-cc {
 display:flex;
 }
@@ -121,7 +112,7 @@ background-position:center;
          height:80vh;
        background-position:center;
         background-repeat: no-repeat;
-        
+     
     }
 
 img#logo-big {
@@ -161,8 +152,8 @@ image.buttons-newccpage {
 img#s5-speakers {
   min-width:45rem;
  position:relative;
-
-  min-height:65vh;
+margin-top:5rem;
+  min-height:55vh;
 }
 .disabled {
   pointer-events:none;
@@ -213,10 +204,9 @@ img#faq-title{
 
 }
 div#borderarea {
-    display:inline-block;
-
-
-    position:relative;
+    display:block;
+margin-bottom:5rem;
+  
 
 
     
@@ -228,7 +218,7 @@ padding-left:3rem;
   min-width:55rem;
   min-height:30rem;
   position:absolute;
-display:inline-block;
+
 
 
 
@@ -242,9 +232,9 @@ div#searchcomp {
 }
 div#faq-content  {
 
-margin-top:15%;
-  display:inline;
-  margin-top:10rem;
+
+  display:inline-flex;
+  margin-top:5rem;
 
 }
 img#faq-content{
@@ -252,15 +242,8 @@ img#faq-content{
   min-height:40vh;
   margin-top:15vh;
 }
-img#example-searchpng{
-  
 
 
-
-  
-  
- 
-}
 img#search-btn{
 position:relative;
 padding-top:2rem;
@@ -277,13 +260,14 @@ img#search-descriptionpng{
     min-width:100vh;
     min-height:20vh;
 
+margin-top:3rem; 
 
- position:relative;
 margin-inline:auto;
-padding-top:15rem;
-display:block;
 
-padding-top:3.5rem
+
+
+
+padding-bottom:6rem;
 
 }
 div#searchdesccont {
@@ -321,24 +305,34 @@ div.container {
 } 
 img#divider{
 
-display:block;
+display:flex;
 position:relative;
-min-width:200%;
-top:-51px
+min-width:220%;
+top:-55px;
+margin-bottom:-100px;
 
 
 }
+img#divider-s1{
+
+  display:block;
+  position:relative;
+  min-width:220%;
+  top:-48px;
+  margin-bottom:-100px;
+  
+  }
 img#divider-s6{
 
   display:block;
   position:relative;
   min-width:200%;
-  top:-65px;
-  
+  top:-65px;;
+  margin-bottom:-100px;
   
   }
   img#divider-s4{
-
+    margin-bottom:-100px;
     display:block;
     position:relative;
     min-width:200%;
@@ -346,6 +340,15 @@ img#divider-s6{
     
     
     }
+    img#divider-music{
+      margin-bottom:-100px;
+      display:block;
+      position:relative;
+      min-width:200%;
+      top:-65px;
+      
+      
+      }
  img#cc-mint-pic {
 display:block;
 
@@ -384,3 +387,140 @@ margin-inline:auto;
 
     
   
+.player {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+ 
+background-image:url("../assets/new-cc-page/music-pic.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+ 
+.details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+}
+ 
+.track-art {
+  margin: 25px;
+  height: 250px;
+  width: 250px;
+  background-image: URL(
+    "https://bafybeianlwnaxlawfnav4y3u7pvpyrwy2nx6hx2plf3t364o5vireihg3a.ipfs.dweb.link/music-pic.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15%;
+  DISPLAY:none;
+}
+ 
+/* Changing the font sizes to suitable ones */
+.now-playing {
+  font-size: 1rem;
+}
+ 
+.track-name {
+  font-size: 3rem;
+}
+ 
+.track-artist {
+  font-size: 1.5rem;
+}
+ 
+/* Using flex with the row direction to
+   align items in a horizontal direction */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+ 
+.playpause-track,
+.prev-track,
+.next-track {
+  padding: 25px;
+  opacity: 0.8;
+ 
+  /* Smoothly transition the opacity */
+  transition: opacity .2s;
+}
+ 
+/* Change the opacity when mouse is hovered */
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover {
+  opacity: 1.0;
+}
+ 
+/* Define the slider width so that it scales properly */
+.slider_container {
+  width: 75%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+/* Modify the appearance of the slider */
+.seek_slider, .volume_slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: black;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+ 
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+ 
+/* Change the opacity when mouse is hovered */
+.seek_slider:hover,
+.volume_slider:hover {
+  opacity: 1.0;
+}
+ 
+.seek_slider {
+  width: 60%;
+}
+ 
+.volume_slider {
+  width: 30%;
+}
+ 
+.current-time,
+.total-duration {
+  padding: 10px;
+}
+ 
+i.fa-volume-down,
+i.fa-volume-up {
+  padding: 10px;
+}
+ 
+/* Change the mouse cursor to a pointer
+   when hovered over */
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward {
+  cursor: pointer;
+}

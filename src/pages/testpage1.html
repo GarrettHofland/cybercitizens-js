@@ -9,15 +9,13 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/explore-gen1.css">
     <link rel="stylesheet" href="../styles/newccpage.css">
-
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <title>Explore GEN 1</title>
 </head>
 
 <body>
-    <audio autoplay>
-        <source src="../assets/new-cc-page/IntoCyberia.wav" type="audio/mpeg">
-      </audio>
+
 <header>
     <div class="logo">
         <img id="explorerToHome" id="scrollTop" src="../assets/logo-name.png" alt="">
@@ -43,9 +41,50 @@
     <label for="nav-toggle" class="nav-toggle-label">
     <span></span>
     </label>
-</header>  
 
+    
+</header>  
+<div class="player">
+ 
+    <!-- Define the section for displaying details -->
+    <div class="details">
+      <div class="now-playing">PLAYING 1 OF 2</div>
+      <div class="track-art"></div>
+      <div class="track-name">Into Cyberia</div>
+      <div class="track-artist">ErgoPixels</div>
+    </div>
+ 
+    <!-- Define the section for displaying track buttons -->
+    <div class="buttons">
+      <div class="prev-track" onclick="prevTrack()">
+        <i class="fa fa-step-backward fa-2x"></i>
+      </div>
+      <div class="playpause-track" onclick="playpauseTrack()">
+        <i class="fa fa-play-circle fa-5x"></i>
+      </div>
+      <div class="next-track" onclick="nextTrack()">
+        <i class="fa fa-step-forward fa-2x"></i>
+      </div>
+    </div>
+ 
+    <!-- Define the section for displaying the seek slider-->
+    <div class="slider_container">
+      <div class="current-time">00:00</div>
+      <input type="range" min="1" max="100"
+        value="0" class="seek_slider" onchange="seekTo()">
+      <div class="total-duration">00:00</div>
+    </div>
+ 
+    <!-- Define the section for displaying the volume slider-->
+    <div class="slider_container">
+      <i class="fa fa-volume-down"></i>
+      <input type="range" min="1" max="100"
+        value="99" class="volume_slider" onchange="setVolume()">
+      <i class="fa fa-volume-up"></i>
+    </div>
+  </div>
 <section class="s1-newccpage">
+    <img src="../assets/new-cc-page/divider-new.png" id="divider-music">
     <img src="../assets/new-cc-page/corner.png" class="corner">
     <div class="mainarea">
 <img id="logo-big" src="../assets/new-cc-page/icons/cc-big.png" height:"500px">
@@ -90,7 +129,7 @@
 </section>
 
 <section class="s2-newccpage" >
-    <img src="../assets/new-cc-page/divider-new.png" id="divider">
+    <img src="../assets/new-cc-page/divider-new.png" id="divider-s1">
 <img src="../assets/new-cc-page/corner.png" class="corner">
 <img src="../assets/new-cc-page/chat-icon.png" class="chat">
 
@@ -159,7 +198,7 @@
         </div>
     </footer>
 
-
+<script src="../js/audio-player.js"></script>
   </body>
   
   </html>
