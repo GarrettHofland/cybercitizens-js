@@ -108,6 +108,9 @@ span {
 .nav-toggle {
     display: none;
 }
+img#ScrollTop {
+width:50%;
+}
 
 .nav-toggle-label {
     display: none;
