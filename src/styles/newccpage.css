@@ -3,9 +3,15 @@
 
 @font-face {
     font-family: pixelFont;
-    src: url("./assets/fonts/Mechfire_Bold.otf") format("opentype");
+    src: url("../assets/fonts/Mechfire_Bold.otf") format("opentype");
 }
+a#mint {
+    color:yellow;
 
+}
+a#mint:hover {
+    color:var(--pink)
+}
 :root {
     --yellow: #F7FC19;
     --pink: #EE2DFF;
@@ -409,7 +415,7 @@ div.track-artist {
     color:var(--pink)
 }
 section#header-main {
-    background-image:url("./assets/header-pic-final.png");
+    background-image:url("../assets/new-cc-page/header-pic-final.png");
     background-size:cover;
     background-repeat:no-repeat;
     min-height:75vh;
@@ -421,7 +427,7 @@ background-position:center;
 
 }
 section#bar-explore{
-    background-image:url("./assets/fullbar.png");
+    background-image:url("../assets/new-cc-page/fullbar.png");
     background-size:cover;
     background-repeat:no-repeat;
     min-height:75vh;
@@ -447,7 +453,7 @@ a#mint {
     display:inline-block;
 }
 section#calendar-mint {
-    background-image:url("./assets/searcharea.png");
+    background-image:url("../assets/new-cc-page/searcharea.png");
     background-size:cover;
 
     background-repeat:no-repeat;
@@ -485,7 +491,7 @@ div#search-container {
 
 }
 section#rewards {
-    background-image:url("./assets/speaker-brick.png");
+    background-image:url("../assets/new-cc-page/speaker-brick.png");
     background-size:cover;
 padding-top:1rem;
     background-repeat:no-repeat;
@@ -503,7 +509,7 @@ img#rewardsp {
    
 }
 section#search {
-    background-image:url("./assets/bar-left.png");
+    background-image:url("../assets/new-cc-page/bar-left.png");
     background-size:cover;
 padding-top:1rem;
     background-repeat:no-repeat;
@@ -557,7 +563,7 @@ img#faqcontent {
 
 }
 section#faqsection{
-    background-image:url("./assets/bar-right.png");
+    background-image:url("../assets/new-cc-page/bar-right.png");
     background-size:cover;
     padding-top:5vh;
     background-repeat:no-repeat;
