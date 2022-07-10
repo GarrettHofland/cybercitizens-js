@@ -322,7 +322,8 @@ border-radius:5%;
         flex-direction: column;
         justify-content: center;
        position:fixed;
-      top:250px;
+      top:25%;
+      left:30%;
       opacity:0.8;
       display:none;
       
