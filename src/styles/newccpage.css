@@ -602,10 +602,9 @@ div#searchborder {
     position:absolute;
 }
 img#faqtitle {
-    margin-bottom:35vh;
-    margin-left:10vh;
-    height:10vh;
-    width:50vh;
+ top:100px;
+    position:absolute;
+right:1px;
 }
 div#searchdescco {
     display:block;
@@ -619,8 +618,9 @@ img#searchdesc {
 }
 div#faqcont {
     display:inline;
+    position:relative
 }
-img#faqcontent {
+img#faqcont {
     margin-top:25vh;
     margin-left:25vh;
 
