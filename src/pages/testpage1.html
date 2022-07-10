@@ -7,18 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href=".../assets/new-cc-page/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/newccpage.css">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <title>ExploGEN 1</title>
 </head>
 <body>
 
     <header>
-        <div class="logo">
 
-        </div>
         <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
-        <nav>
+        <nav class="topnav">
             <ul class="nav-links">
               
                 <script>function openandclose() {
@@ -31,22 +29,27 @@
                             }
                      
                     }</script>
-                                <img id ="navlogo" src="../assets/new-cc-page/icons/cc-small.png" alt="">
-                                <a class="desktop-li" id="openplayer" onclick="openandclose()">Music</a>
-                <li><a class="disabled" class="newccpage" href="../index.html"><img id="citizenbtn" class="navbtns" src="../assets/new-cc-page/buttons/btn-citizen.png"></a></li>
-                
-                <li><a class="newccpage" href="https://docs.cybercitizens.io/"><img class="navbtns" src="../assets/new-cc-page/buttons/btn-docs.png"></a></li>
-                <li><a class="newccpage" href="../pages/cyberia-estates.html"><img class="navbtns" src="../assets/new-cc-page/buttons/btn-estate.png"></a></li>
-                <li><a class="disabled" href="../pages/cyberdinos-game.html"><img class="navbtns" src="../assets/new-cc-page/buttons/btn-play.png"></a></li>
-                <li class="desktop-li" ><a class="desktop-li"  href="./cyberdinos-game.html"><img id="logo"
+        <li> 
+         
+    </li>
+    <li><br><br><br> <a class="desktop-li" id="openplayer" onclick="openandclose()"><i class="fa-solid fa-music"></i></a></li>  
+                <li> <img id ="navlogo" src="../assets/new-cc-page/icons/cc-small.png" alt=""><a class="disabled" class="newccpage" href="../index.html"><img id="citizenbtn" class="navbtns" src="../assets/new-cc-page/buttons/btn-citizen.png"></a></li>
+ 
+                <li>   <br><br><br><a class="newccpage" href="https://docs.cybercitizens.io/"><img class="navbtns" src="../assets/new-cc-page/buttons/btn-docs.png"></a></li>
+                <li><br><br><br><a class="newccpage" href="../pages/cyberia-estates.html"><img class="navbtns" src="../assets/new-cc-page/buttons/btn-estate.png"></a></li>
+                <li><br><br><br><a class="disabled" href="../pages/cyberdinos-game.html"><img class="navbtns" src="../assets/new-cc-page/buttons/btn-play.png"></a></li>
+    
+                <li class="desktop-li" ><br><br><br><a class="desktop-li"  href="./cyberdinos-game.html"><img id="logo"
                     src="../assets/new-cc-page/icons/dinogame.png" alt="dino image"></a></li>
-                    <li class="desktop-li"><a id="twitter-desktop" href="https://twitter.com/ErgoPixels"><img id="logo"
+                    <li class="desktop-li"><br><br><br><a id="twitter-desktop" href="https://twitter.com/ErgoPixels"><img id="logo"
                         src="../assets/new-cc-page/icons/twitter.png" alt="twitter image"></a></li>
-                        <li class="desktop-li"><a id="twitter-desktop" href="https://discord.com/invite/7FcEFKcKJ7"><img id="logo"
+                        <li class="desktop-li"><br><br><br><a id="twitter-desktop" href="https://discord.com/invite/7FcEFKcKJ7"><img id="logo"
                             src="../assets/new-cc-page/icons/discord.png" alt="twitter image"></a></li>
-                            <li class="desktop-li"><a id="twitter-desktop" href="https://cybercitizens.io/payment-portal/pay.html?address=9heqk8a1pBZLr3nde1Byi6YRHcoDiMgXNTBg4eb6d58qsg7crwT&currency=ERG&amount=25&ref=CyberCitizen%20Wave%203!" onclick="document.getElementById('modal1').style.display='block'" target="iframe_modal"><img id="logo"
+                            <li class="desktop-li"><br><br><br><a id="twitter-desktop" href="https://cybercitizens.io/payment-portal/pay.html?address=9heqk8a1pBZLr3nde1Byi6YRHcoDiMgXNTBg4eb6d58qsg7crwT&currency=ERG&amount=25&ref=CyberCitizen%20Wave%203!" onclick="document.getElementById('modal1').style.display='block'" target="iframe_modal"><img id="logo"
                                 src="../assets/new-cc-page/icons/wallet.png" alt="twitter image"></a></li>
             </ul>
+
+            
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">
         <span></span>
@@ -54,12 +57,13 @@
     
         
     </header>  
+
     <div class="player" id="player">
         <span class="close" onclick="document.getElementById('player').style.display='none'; document.getElementById('player').src =''" class="">&times;</span>
         <!-- Define the section for displaying details -->
         <div class="details">
            
-          <div class="now-playing">PLAYING 1 OF 2</div>
+          <div class="now-playing">PLAYING 1 OF 3</div>
           <div class="track-art"></div>
           <div class="track-name">Into Cyberia</div>
           <div class="track-artist">CyberCitizens</div>
@@ -94,14 +98,16 @@
           <i class="fa fa-volume-up"></i>
         </div>
       </div>
+
       <section id="header-main">
+
         <div id="cornercont"><img src="../assets/new-cc-page/corner.png" class="corner"></div>
 
 
         <div class="mainarea">
     <img id="logo-big" src="../assets/new-cc-page/icons/cc-big.png" height:"500px">
         <p class="newccmaintext">CyberCitizens Living in the CyberVerse on the Ergo Blockchain</p>
-        <a class="newccpage" href="#s2-bar"><img class="buttons-newccpage" src="../assets/new-cc-page/buttons/btn-explore.png" id="explore"></a>
+        <a class="newccpage" href="#bar-explore"><img class="buttons-newccpage" src="../assets/new-cc-page/buttons/btn-explore.png" id="explore"></a>
         </div> 
     </div>
             <div id="modal1" class="modal">
@@ -140,7 +146,7 @@
             <div id="cornercont"><img src="../assets/new-cc-page/corner.png" class="corner"></div>
 
         </section>
-        <div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider"></span>
+        <div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider"></div>
 
 
 <section id="calendar-mint">
@@ -194,7 +200,7 @@
 <footer>
     <div class="footer-container">
         <div class="footer-logo-container">
-            <img class="footer-logo" src="../assets/new-cc-page/icons/cc-small.png" alt="ErgoPixels logo">
+            <img class="footer-logo" id="logo-footer-img" src="../assets/new-cc-page/icons/cc-small.png" alt="ErgoPixels logo">
         </div>
         <div class="svg-container">
             <a href="https://twitter.com/ErgoPixels"><img class="logofooter" src="../assets/new-cc-page/icons/twitter.png"

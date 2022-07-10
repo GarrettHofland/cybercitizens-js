@@ -51,17 +51,58 @@ button:focus {
     outline: none;
 }
 
-a > img {
-}
-
 a:hover {
     color: var(--pink);
 }
 nav > img, a {
-   display:flex;
+   display:inline-flex;
    flex-direction:row;
-   flex-shrink:calc(566px)
+
 }
+/* Style the navigation menu */
+.topnav {
+    z-index:999;
+    background-color: black;
+    position: relative;
+    
+  }
+  nav {
+    z-index:999;
+  }
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+
+  
+  /* Style navigation menu links */
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  /* Style the hamburger menu */
+  .topnav a > img#navlogo {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  /* Add a grey background color on mouse-over */
+  .topnav a:hover {
+    background-color: var(--pink);
+    color: black;
+  }
+  
+  /* Style the active link (or home/logo) */
+  .active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
 html {
     margin: 0;
     padding: 0;
@@ -82,13 +123,15 @@ body {
 }
 
 header {
-    position: fixed;
+position:fixed;
     top: 0;
     left: 0;
     background-color: var(--bg-header);
     width: 100vw;
+    z-index:99;
+    border-bottom:5px solid var(--pink)
 
-display:block;
+
 
 }
 
@@ -190,6 +233,7 @@ div.mainarea {
     display:flex;
     align-items:center;
     flex-direction:column;
+    margin-top:5rem;
    
 }
 span#searchcont {
@@ -206,12 +250,22 @@ img#divider{
   
 }
 img#navlogo {
-    width:10rem;
-    height:5rem;
-    padding-top:1vh;
+    
+
+display:inline;;
+    position:relative;
+    width:15rem;
+top:15px;
 
 
 }
+.logo {
+ 
+    cursor: initial;
+
+    display:inline;;
+}
+
 a#openplayer {
  border:1.5px solid var(--purple);
     border-radius:5%;
@@ -522,6 +576,14 @@ padding-top:1rem;
 .footer-container {
     display: flex;
     flex-direction: column;
+    max-width:fit-content;
+margin-inline:auto;
+}
+img#logo-footer-img {
+    width:20rem
+}
+.logo-footer-container{
+    margin-inline:auto;
 }
 img#searchbtn {
     height:5em;
@@ -578,22 +640,29 @@ section#faqsection{
 }
 
 .footer-logo {
-    width: 10%;
+    width: 50%;
     margin-top: 1em;
     padding-bottom: 1em;
+    padding-right:2em;
+    margin-right:3em;
+  
 }
 
 .footer-logo-container {
     display: flex;
     justify-content: center;
     border-bottom: 2px solid var(--pink);
-    max-width: 90%;
+    min-width: 90%;
     margin: 0 auto;
+    min-height:5rem;
+
 }
 
 .svg-container {
     display: flex;
     justify-content: space-around;
+ 
+
 }
 
 .svg-container a {
