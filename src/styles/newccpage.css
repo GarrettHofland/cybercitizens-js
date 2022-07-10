@@ -317,7 +317,7 @@ div.player {
 background-color:purple;
 border:1px solid yellow;
 border-radius:5%;
-      display:block;
+  display:flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
@@ -325,7 +325,7 @@ border-radius:5%;
       top:25%;
       left:30%;
       opacity:0.8;
-      display:none;
+
       
 }
 span.close {
@@ -349,7 +349,7 @@ span.close {
     background-size: cover;
     background-position: center;
     border-radius: 15%;
-display:none;
+
   }
    
   /* Changing the font sizes to suitable ones */

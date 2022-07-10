@@ -19,16 +19,25 @@
         <nav class="topnav">
             <ul class="nav-links">
               
-                <script>function openandclose() {
-                    let player = document.getElementById("player")
-                            
-                            if (player.style.display === "none") {
-                             player.style.display = "flex";
-                            } else {
-                              player.style.display = "none";
+                <script>
+                  var a=1;
+              function openandclose() {
+                    var e= document.getElementById("player")
+                    
+                    if(a==1){
+    e.style.display="block";
+  } else {
+    e.style.display="none";
+ 
+  }     
+                  
+
+
+
+
                             }
                      
-                    }</script>
+                    </script>
         <li> 
          
     </li>
@@ -58,12 +67,12 @@
         
     </header>  
 
-    <div class="player" id="player">
+    <div class="player" id="player"  style="display:none;"">
         <span class="close" onclick="document.getElementById('player').style.display='none'; document.getElementById('player').src =''" class="">&times;</span>
         <!-- Define the section for displaying details -->
         <div class="details">
            
-          <div class="now-playing">PLAYING 1 OF 3</div>
+          <div class="now-playing" >PLAYING 1 OF 3</div>
           <div class="track-art"></div>
           <div class="track-name">Into Cyberia</div>
           <div class="track-artist">CyberCitizens</div>
