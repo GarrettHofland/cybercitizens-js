@@ -14,7 +14,28 @@
 <body>
 
     <header>
-
+      <div class="mobilenav" style="background-color:black;">
+        <a href="#home" class="active"><img src="../assets/new-cc-page/icons/cc-small.png" id ="navbarimgmobile"></a>
+        <!-- Navigation links (hidden by default) -->
+        <div id="myLinks">
+          <a href="#news">News</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="mobilenavtoggle()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <script>/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+      function mobilenavtoggle() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }</script>
         <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
         <nav class="topnav">
             <ul class="nav-links">
@@ -67,7 +88,9 @@
         
     </header>  
 
-    <div class="player" id="player" style="display:none;"  >
+    <div class="player" id="player" style="display:none;">
+
+  
         <span class="close" onclick="document.getElementById('player').style.display='none'; document.getElementById('player').src =''" class="">&times;</span>
         <!-- Define the section for displaying details -->
         <div class="details">
