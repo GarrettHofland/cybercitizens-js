@@ -144,15 +144,21 @@ section {
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
 }
 div.cc-mint > img{
-    width:15rem;
-    height:15rem;
+    width:7rem;
+    height:7rem;
+    border:none;
 
+}
+img#cc-mint-pic{
+  width:15rem;
+  height:15rem;
 }
 div.cc-mint {
   display:inline-flex;
   flex-direction:column;
   align-items:center;
   padding-bottom:15rem;
+  border:none;
 
 }
 div.mainarea {
@@ -215,9 +221,61 @@ height:75px;
               top:25%;
               left:30%;
               opacity:0.8;
+              z-index:500;
         
               
         }
+        img#icon-faq {
+          width:4rem;
+          height:4rem;
+
+          top:-100px;
+
+
+        }
+
+div#faqbarcont {
+top:-75px;
+right:675px;
+z-index:999;
+position:relative;
+display:inline-block;
+}
+div#arcadedino  {
+  bottom:300px;
+right:-770px;
+z-index:999;
+position:relative;
+
+
+border-width:5px;
+height:210px;
+
+width:5%;
+
+
+
+}
+div#arcadedino:hover {
+  cursor:pointer;
+  border:1px solid var(--pink);
+  border-radius:5%;
+
+}
+
+div#faqbarcont:hover {
+  border:1px solid var(--pink);
+border-radius:15%;
+} 
+a#arcadebar {
+border:none;
+
+}
+
+a#faqbar {
+  border:none;
+  cursor:pointer;
+}
         span.close {
             margin-top:1rem;
             margin-left:1rem;
