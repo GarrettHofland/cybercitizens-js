@@ -273,17 +273,17 @@ div#mintbarcont {
 
 
 left:-273px;
-height:20px;
-top:56px;
-width:3.5%;
+
+top:75px;
+width:auto;
  
 }
 div#rewardbarcont {
   position:relative;
   display:flex;
-  width:3.5%;
+  width:auto;
 bottom:575px;
-right:79px;
+right:30px;
 
 }
 div#searchbarcont {
@@ -310,20 +310,19 @@ a#mintbarnav {
   border:none;
 }
 
-div#mintbarcont:hover, div#rewardbarcont, div#infobarcont, div#searchbarcont {
+div#mintbarcont, div#rewardbarcont, div#infobarcont, div#searchbarcont {
 cursor:pointer;
+border:1px solid var(--pink);
+border-radius:10%;
 }
 img#mintbar {
 width:4rem;
 height:0.75em;
-position:relative;
+
 
 
 }
-div#faqbarcont:hover {
 
-border-radius:15%;
-} 
 a#arcadebar {
 border:none;
 
