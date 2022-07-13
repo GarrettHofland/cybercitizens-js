@@ -262,16 +262,73 @@ div#arcadedino:hover {
   border-radius:5%;
 
 }
+div#mintbarcont {
 
+  z-index:999;
+  position:relative;
+  display:flex;
+
+
+left:-273px;
+height:20px;
+top:56px;
+width:3.5%;
+ 
+}
+div#rewardbarcont {
+  position:relative;
+  display:flex;
+  width:3.5%;
+bottom:575px;
+right:79px;
+
+}
+div#searchbarcont {
+  position:relative;
+  display:flex;
+  width:3.5%;
+bottom:230px;
+right:556px;
+}
+div#infobarcont {
+
+    position:relative;
+    display:flex;
+    width:3.5%;
+bottom:310px;
+  right:-510px;
+  
+}
+img#rewardbar {
+  height:1rem;
+  width:10rem
+}
+a#mintbarnav {
+  border:none;
+}
+
+div#mintbarcont:hover, div#rewardbarcont, div#infobarcont, div#searchbarcont {
+cursor:pointer;
+}
+img#mintbar {
+width:4rem;
+height:0.75em;
+position:relative;
+
+
+}
 div#faqbarcont:hover {
-  border:1px solid var(--pink);
+
 border-radius:15%;
 } 
 a#arcadebar {
 border:none;
 
 }
-
+img#mintbar:hover, img#rewardbar:hover, img#searchbar:hover, img#infobar:hover {
+  border:1px solid var(--pink);
+  border-radius:10%;
+}
 a#faqbar {
   border:none;
   cursor:pointer;
@@ -416,4 +473,9 @@ a#faqbar {
         div.track-artist {
             text-align:center;
             color:var(--pink)
+        }
+
+        .barnav {
+          width:3rem;
+          height:0.75rem;
         }
