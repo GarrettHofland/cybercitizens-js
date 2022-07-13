@@ -325,10 +325,7 @@ a#arcadebar {
 border:none;
 
 }
-img#mintbar:hover, img#rewardbar:hover, img#searchbar:hover, img#infobar:hover {
-  border:1px solid var(--pink);
-  border-radius:10%;
-}
+
 a#faqbar {
   border:none;
   cursor:pointer;
