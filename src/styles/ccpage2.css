@@ -21,6 +21,9 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+p.newccmaintext {
+  color:var(--yellow)
+}
 .s3-mintui{
 
     min-height: 65vh;
