@@ -33,7 +33,7 @@ let track_list = [
       path: "../assets/new-cc-page/IntoCyberia.wav"
     },
     {
-      name: "Lasers and Guns",
+      name: "Laser Guns",
       artist: "CyberCitizens",
       image: "https://bafybeianlwnaxlawfnav4y3u7pvpyrwy2nx6hx2plf3t364o5vireihg3a.ipfs.dweb.link/music-pic.png",
       path: "../assets/new-cc-page/Lasers-guns.wav"
