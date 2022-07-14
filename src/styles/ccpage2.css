@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: flex-end;
     background-color: var(--black);
-
+display:flex;
     background-image: url("../assets/new-cc-page/fullbar.png");
     background-position: center;
     background-size: cover;
@@ -240,25 +240,11 @@ height:75px;
 div#faqbarcont {
 top:-75px;
 right:675px;
-z-index:999;
+z-index:5;
 position:relative;
 display:inline-block;
 }
-div#arcadedino  {
-  bottom:300px;
-right:-770px;
-z-index:999;
-position:relative;
 
-
-border-width:5px;
-height:210px;
-
-width:5%;
-
-
-
-}
 div#arcadedino:hover {
   cursor:pointer;
   border:1px solid var(--pink);
@@ -267,7 +253,7 @@ div#arcadedino:hover {
 }
 div#mintbarcont {
 
-  z-index:999;
+  z-index: 5;
   position:relative;
   display:flex;
 
@@ -277,6 +263,9 @@ left:-273px;
 top:75px;
 width:auto;
  
+}
+header {
+  z-index:999;
 }
 div#rewardbarcont {
   position:relative;
@@ -291,11 +280,13 @@ div#searchbarcont {
   display:flex;
   width:3.5%;
 bottom:230px;
+z-index:5;
 right:556px;
+
 }
 div#infobarcont {
 
-    position:relative;
+  position:relative;
     display:flex;
     width:3.5%;
 bottom:310px;
@@ -304,7 +295,8 @@ bottom:310px;
 }
 img#rewardbar {
   height:1rem;
-  width:10rem
+  width:10rem;
+  position:static;
 }
 a#mintbarnav {
   border:none;

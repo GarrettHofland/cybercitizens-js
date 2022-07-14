@@ -22,6 +22,7 @@
                     
                     if(a==1){
     e.style.display="flex";
+    loadTrack(track_index);
   } else {
     e.style.display="none";
   }}
@@ -34,7 +35,7 @@
         <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
         <nav>
             <ul class="nav-links">
-                <li><a onclick="openandclose()"><i class="fa-solid fa-music"></i></a></li>
+                <li><a onclick="openandclose()" id="musicbtn"><i class="fa-solid fa-music"></i></a></li>
                 <li class="desktop-li"><a id="discord-desktop" href="https://discord.com/invite/7FcEFKcKJ7"><img id="header-image"
                             src="../assets/logo-discord.svg" alt="discord image"></a></li>
                 <li><a id="discord-mobile" href="https://discord.com/invite/7FcEFKcKJ7">Discord</a></li>

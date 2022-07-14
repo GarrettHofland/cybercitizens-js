@@ -74,20 +74,8 @@ function loadTrack(track_index) {
     // Apply a random background color
 
   }
-   
-  function random_bg_color() {
-    // Get a random number between 64 to 256
-    // (for getting lighter colors)
-    let red = Math.floor(Math.random() * 256) + 64;
-    let green = Math.floor(Math.random() * 256) + 64;
-    let blue = Math.floor(Math.random() * 256) + 64;
-   
-    // Construct a color withe the given values
-    let bgColor = "rgb(" + red + ", " + green + ", " + blue + ")";
-   
-    // Set the background to the new color
-    document.body.style.background = bgColor;
-  }
+
+
    
   // Function to reset all values to their default
   function resetValues() {
@@ -104,6 +92,7 @@ function loadTrack(track_index) {
    
   function playTrack() {
     // Play the loaded track
+
     curr_track.play();
     isPlaying = true;
    
