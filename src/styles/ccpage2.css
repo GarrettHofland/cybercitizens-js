@@ -267,6 +267,13 @@ width:auto;
 header {
   z-index:999;
 }
+img.navbtnsnew  {
+  width:8rem;
+  height:2.5rem;
+}
+a.navlinks {
+  border:none;
+}
 div#rewardbarcont {
   position:relative;
   display:flex;
