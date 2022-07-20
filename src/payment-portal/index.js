@@ -529,8 +529,8 @@ if (currentLocation.toString().includes("pay.html")) {
     if (parameterValid) {
         loadPaymentPage(address, currency, amount, ref);
         if (typeof ergo_request_read_access === "undefined") {
-            var msg = "Yorio ergo dApp connector not found, to use this dApp you need to install the extension ";
-            msg += '<a href="https://chrome.google.com/webstore/detail/yoroi-nightly/poonlenmfdfbjfeeballhiibknlknepo" target="_blank">Yoroi nightly</a>.';
+            var msg = "dApp connector not found, please download a wallet with a built-in dApp connector such as SafeW or Nautilus ";
+            msg += '<a href="https://chrome.google.com/webstore/detail/safew-simple-and-fast-erg/fmpbldieijjehhalgjblbpgjmijencll" target="_blank">SafeW</a>.';
             setStatus(msg, "warning");
             const sendButton = document.getElementById("send-transaction");
             sendButton.disabled = true;
