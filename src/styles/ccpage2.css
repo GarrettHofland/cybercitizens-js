@@ -105,6 +105,7 @@ right:27rem;;
 padding-top:1rem;
      height:5rem;
      top:125px;
+
     }
     div#search-container {
         position:relative;
@@ -294,16 +295,19 @@ right:556px;
 div#infobarcont {
 
   position:relative;
-    display:flex;
+  
     width:3.5%;
 bottom:310px;
   right:-510px;
   
 }
+img#infobar, img#searchbar, img#rewardbtnbackground {
+  position:relative;
+}
 img#rewardbar {
   height:1rem;
   width:10rem;
-  position:static;
+  position:relative;
 }
 a#mintbarnav {
   border:none;
@@ -311,17 +315,31 @@ a#mintbarnav {
 
 div#mintbarcont, div#rewardbarcont, div#infobarcont, div#searchbarcont {
 cursor:pointer;
-border:1px solid var(--pink);
+
 border-radius:10%;
 }
 img#mintbar {
-width:4rem;
+width:3rem;
 height:0.75em;
-
+position:relative;
 
 
 }
+img#rewardbtnbackground {
+  width:12rem;
+  height:4rem;
+  top:45px;
+  left:-15px;
 
+}
+img#mintbtnbackground {
+  width:4rem;
+  height:4rem;
+  position:absolute;
+  top:-15px;
+  left:-2px;
+  
+}
 a#arcadebar {
 border:none;
 
