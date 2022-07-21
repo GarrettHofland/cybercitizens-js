@@ -399,7 +399,7 @@ span.close {
     justify-content: center;
     align-items: center;
   }
-   
+
   /* Modify the appearance of the slider */
   .seek_slider, .volume_slider {
     -webkit-appearance: none;
@@ -649,13 +649,13 @@ img#searchbtn {
     margin-top:2.5rem;
 }
 img#searchcontimg {
-min-height:55vh;
-    position:relative;
+
 }
 div#searchborder {
    
-    display:inline-block;
-    position:absolute;
+
+
+
 }
 img#faqtitle {
  top:100px;
@@ -899,8 +899,67 @@ li #header-image {
 
 
 
+@media all and (max-width: 40em) {
+.s2-mintui{
+    background-size:contain;
+    background-image:none;
+}
 
-@media all and (max-width : 40em) {
+    section.s1,
+    section.s2,
+    section.s3,
+    section.s4,
+    section.s5,
+    section.s6 {
+      background: rgba(7, 7, 15, 0.79);
+    }
+    div.divider {
+      display: flex;
+    }
+    img#estate-imgs {
+      margin-top: 1rem;
+    }
+    /*desktop layout hidden on mobile */
+    div.flex-container-benefits {
+      display: none;
+    }
+    div.flex-container-benefits-mobile {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    img#benefits-image-mobile {
+      width: 20%;
+      height: 20%;
+      margin: 1rem;
+      margin-bottom: 2rem;
+      margin-inline: auto;
+    }
+    img#roadmap-image-mobile {
+      width: 50%;
+      height: 50%;
+      margin: auto;
+      margin-bottom: 1rem;
+      padding: 1rem;
+    }
+    p#auctions-text {
+      text-align: Center;
+    }
+    iframe#trailer-cyberia {
+      height: 20%;
+      width: 100%;
+    }
+    div.modal {
+      display: block;
+      margin-top: 5rem;
+    }
+    div.modal-content {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+  
+@media all and (max-width : 50em) {
     header {
         display: flex;
         text-align: center;

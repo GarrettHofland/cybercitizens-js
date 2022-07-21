@@ -74,9 +74,9 @@ p.newccmaintext {
 }
 img#searchcontimg {
     min-height:45vh;
-    margin-top:5rem;
+ 
 position:absolute;
-right:27rem;;
+right:10rem;;
 
     
 
@@ -93,7 +93,7 @@ right:27rem;;
         width:55%;
         height:15%;
         position:relative;
-        top:250px;
+        top:170px;
         margin-left:25%;
         padding-bottom:0.5rem;
      
@@ -246,12 +246,7 @@ position:relative;
 display:inline-block;
 }
 
-div#arcadedino:hover {
-  cursor:pointer;
-  border:1px solid var(--pink);
-  border-radius:5%;
 
-}
 div#mintbarcont {
 
   z-index: 5;
@@ -494,4 +489,47 @@ a#faqbar {
         .barnav {
           width:3rem;
           height:0.75rem;
+        }
+        img#faqtitlemob, img#faqcontentmob {
+          display:none;
+          width:auto;
+          height:auto;
+        }
+div.mobile-btns {
+  display:none;
+}
+h2#mobilemsg{
+  display:none;
+}
+img#rewardscontentmob {
+  display:none;
+  width:auto;
+  height:auto;
+}
+        @media all and (max-width: 60em) {
+          .s2-mintui, .s4-mintui, .s5-mintui, .s6-mintui{
+
+          background-color:transparent;
+}
+div.site-btns > a, img {
+  display:none;
+}
+img#faqtitlemob, img#faqcontentmob {
+  display:block;
+  width:auto;
+  height:auto;
+}
+div.mobile-btns{
+  display:block;
+}
+
+img#rewardscontentmob {
+  display:block;
+  width:75%;
+  height:auto;
+  margin-bottom:15%;
+}
+h2#mobilemsg{
+  display:block;
+}
         }
