@@ -329,6 +329,7 @@ img#rewardbtnbackground {
   height:4rem;
   top:45px;
   left:-15px;
+  position:relative;
 
 }
 img#mintbtnbackground {
