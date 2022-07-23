@@ -556,9 +556,11 @@ div.mobile-btns{
 
 img#rewardscontentmob {
   display:block;
-  width:75%;
-  height:auto;
-  margin-bottom:15%;
+
+ height:15rem;
+ margin-bottom:15%;
+width:20rem;
+
 }
 h2#mobilemsg{
   display:inline-block;
