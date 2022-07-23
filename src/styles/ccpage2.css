@@ -129,6 +129,9 @@ top:125px;
     img#searchdescco {
      
     }
+    div.searchdesccomob {
+      display:none;
+    }
 section {
     min-height: 50vh;
     display: flex;
@@ -187,7 +190,7 @@ width:13rem;
 height:3rem;
 
 }
-img#divider{
+img#divider, img#divider-mint, img#divider-faq, img#divider-bar, img#divider-search, img#divider-rewards {
     width:125%;
 
         position: absolute;
@@ -196,6 +199,7 @@ img#divider{
     
   
 }
+
 div#dividercont {
 position:relative;
 
@@ -501,10 +505,23 @@ div.mobile-btns {
 h2#mobilemsg{
   display:none;
 }
+img#searchmob, img#ccmint-mob {
+  display:none;
+}
 img#rewardscontentmob {
   display:none;
   width:auto;
   height:auto;
+}
+@media all and (max-width: 75em) {
+
+img#divider-bar, img#divider-mint, img#divider-search, img#divider-faq, img#divider-rewards {
+  width:125%;
+
+  position: absolute;
+  top:-30px;
+}
+
 }
         @media all and (max-width: 60em) {
           .s2-mintui, .s4-mintui, .s5-mintui, .s6-mintui{
@@ -514,10 +531,24 @@ img#rewardscontentmob {
 div.site-btns > a, img {
   display:none;
 }
-img#faqtitlemob, img#faqcontentmob {
+div.searchdesscomob {
   display:block;
-  width:auto;
+}
+img#searchmob{
+  display:inline-block;
+  width: 75%;
   height:auto;
+}
+img#ccmint-mob  {
+  display:inline-block;
+width:35%;
+height:35%;
+}
+img#faqtitlemob, img#faqcontentmob {
+  display:inline-block;
+  width:75%;
+  height:auto;
+  padding-bottom:15%;
 }
 div.mobile-btns{
   display:block;
@@ -530,6 +561,7 @@ img#rewardscontentmob {
   margin-bottom:15%;
 }
 h2#mobilemsg{
-  display:block;
+  display:inline-block;
+  text-align:center;
 }
         }
