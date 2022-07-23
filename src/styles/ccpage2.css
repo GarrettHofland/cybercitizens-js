@@ -11,7 +11,7 @@
 }
 .s2-mintui{
 
-    min-height: 65vh;
+    min-height: 72vh;
     flex-direction: column;
     justify-content: flex-end;
     background-color: var(--black);
@@ -20,6 +20,7 @@ display:flex;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    
 }
 p.newccmaintext {
   color:var(--yellow)
@@ -133,7 +134,7 @@ top:125px;
       display:none;
     }
 section {
-    min-height: 50vh;
+
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -522,13 +523,35 @@ img#divider-bar, img#divider-mint, img#divider-search, img#divider-faq, img#divi
   position: absolute;
   top:-30px;
 }
+div.site-btns {
+  top:-15px;
 
+}
+div#rewardbarcont{
+  top:-350px;
+}
+
+}
+@media all and (max-height:50rem) {
+  
+    div.site-btns {
+      top:-15px;
+    
+    }
+    div#rewardbarcont{
+      top:-350px;
+    }
+  
 }
         @media all and (max-width: 60em) {
           .s2-mintui, .s4-mintui, .s5-mintui, .s6-mintui{
+background-size:cover;
+background-position:center;
 
           background-color:transparent;
 }
+
+
 div.site-btns > a, img {
   display:none;
 }
@@ -546,14 +569,29 @@ width:35%;
 height:35%;
 }
 img#faqtitlemob, img#faqcontentmob {
-  display:inline-block;
-  width:75%;
-  height:auto;
-  padding-bottom:15%;
+  display:block;
+width:25rem;
+  height:5rem
+
+}
+img#faqcontentmob {
+  width:25rem;
+  height:15rem;
+  margin-top:10rem;
+  margin-bottom:2rem;
+}
+div#faqmobcont {
+
+
 }
 div.mobile-btns{
   display:block;
+
+
+
+
 }
+
 
 img#rewardscontentmob {
   display:block;
