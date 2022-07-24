@@ -283,7 +283,7 @@ div#rewardbarcont {
   position:relative;
   display:flex;
   width:auto;
-bottom:575px;
+bottom:425px;
 right:30px;
 
 }
@@ -291,7 +291,7 @@ div#searchbarcont {
   position:relative;
   display:flex;
   width:3.5%;
-bottom:230px;
+bottom:150px;
 z-index:5;
 right:556px;
 
@@ -301,7 +301,7 @@ div#infobarcont {
   position:relative;
   
     width:3.5%;
-bottom:310px;
+bottom:110px;
   right:-510px;
   
 }
@@ -529,7 +529,7 @@ img#dividermob-mint, img#dividermob-faq, img#dividermob-search, img#dividermob-r
 
 img#divider-bar, img#divider-mint, img#divider-search, img#divider-faq, img#divider-rewards {
   width:125%;
-
+display:none;
   position: absolute;
   top:-30px;
 }
@@ -539,6 +539,9 @@ img#dividermob-mint, img#dividermob-faq, img#dividermob-search, img#dividermob-r
   display:block;
   top:-12px;
 
+}
+div#rewardbarcont {
+  top:-250px;
 }
 img#dividermob-bar {
 
@@ -552,10 +555,12 @@ div#rewardbarcont{
 }
 
 }
-@media all and (max-height:50rem) {
-  
-    div.site-btns {
-      top:-15px;
+@media all and (max-width:50rem) {
+
+
+    div.site-btns > a, img {
+
+      display:none;
     
     }
     div#rewardbarcont{
@@ -570,8 +575,13 @@ background-position:center;
 
           background-color:transparent;
 }
-
-
+div#modal1 {
+  width:75%;
+left:0.15rem;
+}
+span#closemodalpayhment {
+  margin-right:50rem;
+}
 div.site-btns > a, img {
   display:none;
 }
@@ -641,7 +651,13 @@ span.close {
   margin-bottom:25rem;
   
 }
+span#closemodalpayment {
+  position:absolute;
+  margin-right:32rem;
+  margin-bottom:35rem;
+}
 div.track-art  {
   display:none;
 }
         }
+        
