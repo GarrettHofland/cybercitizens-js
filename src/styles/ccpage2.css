@@ -200,7 +200,11 @@ img#divider, img#divider-mint, img#divider-faq, img#divider-bar, img#divider-sea
     
   
 }
-
+img#dividermob {
+  width:125%;
+  position:Absolute;
+  display:none;
+}
 div#dividercont {
 position:relative;
 
@@ -523,6 +527,16 @@ img#divider-bar, img#divider-mint, img#divider-search, img#divider-faq, img#divi
   position: absolute;
   top:-30px;
 }
+img#dividermob-mint, img#dividermob-faq, img#dividermob-search, img#dividermob-rewards, img#dividermob-bar {
+  width:125%;
+  position:Absolute;
+  display:block;
+  top:-12px;
+
+}
+img#dividermob-bar {
+
+}
 div.site-btns {
   top:-15px;
 
@@ -568,17 +582,19 @@ img#ccmint-mob  {
 width:35%;
 height:35%;
 }
-img#faqtitlemob, img#faqcontentmob {
+img#faqtitlemob {
   display:block;
 width:25rem;
   height:5rem
 
 }
 img#faqcontentmob {
-  width:25rem;
+  display:block;
+  width:23rem;
   height:15rem;
   margin-top:10rem;
   margin-bottom:2rem;
+  margin-inline:auto;
 }
 div#faqmobcont {
 
@@ -606,14 +622,18 @@ h2#mobilemsg{
   text-align:center;
 }
 div.player {
-  display:flex;
- width:70%;
 
+width:20rem;
+display:flex;
+left:5%;
 
 
 }
 span.close {
   position:absolute;
+  margin-left:32rem;
+  margin-bottom:25rem;
+  
 }
 div.track-art  {
   display:none;
