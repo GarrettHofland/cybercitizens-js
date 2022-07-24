@@ -349,7 +349,9 @@ a#arcadebar {
 border:none;
 
 }
-
+a#play, a#citizens {
+opacity:0.6
+}
 a#faqbar {
   border:none;
   cursor:pointer;
