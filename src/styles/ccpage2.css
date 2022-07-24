@@ -519,6 +519,12 @@ img#rewardscontentmob {
   width:auto;
   height:auto;
 }
+a#cornernav {
+  border:none;
+}
+img#dividermob-mint, img#dividermob-faq, img#dividermob-search, img#dividermob-rewards, img#dividermob-bar {
+  display:none;
+}
 @media all and (max-width: 75em) {
 
 img#divider-bar, img#divider-mint, img#divider-search, img#divider-faq, img#divider-rewards {
