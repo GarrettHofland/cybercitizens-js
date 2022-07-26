@@ -360,8 +360,7 @@ border:none;
 
 }
 a#play, a#citizens {
-opacity:0.6;
-pointer-events:none;
+opacity:0.6
 }
 a#faqbar {
   border:none;
