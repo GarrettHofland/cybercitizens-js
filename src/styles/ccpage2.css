@@ -360,7 +360,8 @@ border:none;
 
 }
 a#play, a#citizens {
-opacity:0.6
+opacity:0.6;
+pointer-events:none;
 }
 a#faqbar {
   border:none;
@@ -541,16 +542,7 @@ div#explorebtnmobcont {
 img#dividermob-mint, img#dividermob-faq, img#dividermob-search, img#dividermob-rewards, img#dividermob-bar {
   display:none;
 }
-canvas {
-  background-image:url("../assets/new-cc-page/header-pic-final.png");
-  image-rendering: optimizeSpeed;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: optimize-contrast;
-  -ms-interpolation-mode: nearest-neighbor;
-  height:75vh;
-  background:transparent;
-}
+
 @media all and (max-width: 75em) {
   div#explorebtnmobcont {
     display:inline-block;
