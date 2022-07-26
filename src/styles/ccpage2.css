@@ -8,6 +8,16 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    /* You can aslo add */
+
+
+}
+section > img {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
 }
 .s2-mintui{
 
@@ -524,11 +534,22 @@ img#rewardscontentmob {
 a#cornernav {
   border:none;
 }
+div#explorebtnmobcont {
+  display:none;
+  border:none;
+}
 img#dividermob-mint, img#dividermob-faq, img#dividermob-search, img#dividermob-rewards, img#dividermob-bar {
   display:none;
 }
-@media all and (max-width: 75em) {
 
+@media all and (max-width: 75em) {
+  div#explorebtnmobcont {
+    display:inline-block;
+    border:hidden;
+  }
+  a#mob-explore-link {
+    border:none;
+  }
 img#divider-bar, img#divider-mint, img#divider-search, img#divider-faq, img#divider-rewards {
   width:125%;
 display:none;
@@ -548,6 +569,7 @@ div#rewardbarcont {
 img#dividermob-bar {
 
 }
+
 div.site-btns {
   top:-15px;
 
@@ -586,6 +608,14 @@ span#closemodalpayhment {
 }
 div.site-btns > a, img {
   display:none;
+}
+a#newccpagemob{
+  display:block;
+}
+img#explore-mob {
+  display:block;
+  width:12rem;
+  height:3rem;
 }
 div.searchdesscomob {
   display:block;
