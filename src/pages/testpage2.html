@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/ccpage2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>CyberCitizens</title>
 </head>
@@ -142,7 +143,7 @@
       
       </style>
 
-    <section class="s1-mintui">
+ <section class="s1-mintui">
 
         <div class="mainarea">
          <img id="logo-big" src="../assets/new-cc-page/icons/cc-big.png" height:"500px">
@@ -187,9 +188,9 @@
 
     <section class="s2-mintui" id="s2-mintui">
       <div class="mobile-btns">
-        <a class="mobile-nav-s2" href="#s3-mintui">Mint</a>
+        <a class="mobile-nav-s2" href="#cc-mint-cont">Mint</a>
         <a class="mobile-nav-s2" href="#s4-mintui">Search</a>
-        <a class="mobile-nav-s2" href="#s5-mintui">FAQ</a>
+        <a class="mobile-nav-s2" href="#faqcontentmob">FAQ</a>
         <a class="mobile-nav-s2" href="#s6-mintui">Rewards</a>
       </div>
 <div class="site-btns" id="mintbarcont"><a id="mintbarnav" href="#cc-mint-pic"><img src="../assets/new-cc-page/ButtonForPC.png" id="mintbtnbackground"><img src="../assets/new-cc-page/Mint.png" id="mintbar" class="barnav"></a></div>
@@ -201,20 +202,20 @@
        <div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider-bar"></span>
         <div id="dividercontmob"><img src="../assets/new-cc-page/divider-hires.png" id="dividermob-bar"></span>
 
-        <section class="s3-mintui" id="s3-mintui">       
+          <div class="fade">   <section class="s3-mintui" id="s3-mintui">       
              <a id="cornernav" href="#s2-mintui"> <div id="cornercont"><img src="../assets/new-cc-page/corner.png" class="corner"></div></a>
-            <div class="cc-mint">
+            <div  id="cc-mint-cont" class="cc-mint">
             <img id="cc-mint-pic" src="../assets/new-cc-page/mint-cc-new.png"><br>
             <img id="ccmint-mob" src="../assets/new-cc-page/mint-cc-new.png">
             <a id="mint" href="https://cybercitizens.io/payment-portal/pay.html?address=9heqk8a1pBZLr3nde1Byi6YRHcoDiMgXNTBg4eb6d58qsg7crwT&currency=ERG&amount=25&ref=CyberCitizen%20Wave%203!" onclick="document.getElementById('modal1').style.display='block'" target="iframe_modal" >Mint</a> </div>
-            </div></section>
+            </div> </section></div>
 
             <div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider-mint"></span>
               <div id="dividercontmob"><img src="../assets/new-cc-page/divider-hires.png" id="dividermob-mint"></span>
 
 
 
-                <section class="s4-mintui" id="s4-mintui">
+               <div class="fade"><section class="s4-mintui" id="s4-mintui">
               
                   <a id="cornernav" href="#s2-mintui"> <div id="cornercont"><img src="../assets/new-cc-page/corner.png" class="corner"></div></a>
                     <div class="cc-mint">
@@ -228,10 +229,10 @@
                         </div>
 
                 
-                </section>
-                <div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider-search"></span>
-                  <div id="dividercontmob"><img src="../assets/new-cc-page/divider-hires.png" id="dividermob-search"></span>
-<section class="s5-mintui" id="s5-mintui">
+                      </section> </div> 
+                     <div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider-search"></span>
+                     <div id="dividercontmob"><img src="../assets/new-cc-page/divider-hires.png" id="dividermob-search"> </span>
+                      <div class="fade">        <section class="s5-mintui" id="s5-mintui">
 
   <a id="cornernav" href="#s2-mintui">  <div id="cornercont"><img src="../assets/new-cc-page/corner.png" class="corner"></div></a>
 <div id="faqmobcont">  <img src="../assets/new-cc-page/faq-title.png" id="faqtitlemob"> 
@@ -246,13 +247,14 @@
 
 
 
-</section>
+</section></div>
 
 
 
 <div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider-faq"></span>
   <div id="dividercontmob"><img src="../assets/new-cc-page/divider-hires.png" id="dividermob-faq"></span>
-    <section class="s6-mintui">     <a id="cornernav" href="#s2-mintui"><div id="cornercont"><img src="../assets/new-cc-page/corner.png" class="corner"></div></a>
+<section class="s6-mintui" id="s6-mintui">     
+    <a id="cornernav" href="#s2-mintui"><div id="cornercont"><img src="../assets/new-cc-page/corner.png" class="corner"></div></a>
        <img src="../assets/new-cc-page/rewards-newccpage.png" id="rewardscontent">
        <img src="../assets/new-cc-page/rewards-newccpage.png" id="rewardscontentmob">
       </section>
@@ -286,7 +288,22 @@
             </div>
         </div>
     </footer>
-
+<script> $(window).on("load",function() {
+  $(window).scroll(function() {
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight("#s3-mintui");
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+      
+      /* If the element is completely within bounds of the window, fade it in */
+      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+        if ($(this).css("opacity")==0) {$(this).fadeTo(1000,1);}
+      } else { //object goes out of view (scrolling up)
+        if ($(this).css("opacity")==1) {$(this).fadeTo(1000,0);}
+      }
+    });
+  }).scroll(); //invoke scroll-handler on page-load
+}); </script>
     <script src="../js/app.js"></script>
     <script src="../js/audio-player.js"></script>
 </body>

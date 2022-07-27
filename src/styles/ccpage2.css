@@ -73,7 +73,7 @@ p.newccmaintext {
 }
 .s6-mintui{
 
-    min-height: 65vh;
+    min-height: 75vh;
     flex-direction: column;
     justify-content: flex-end;
     background-color: var(--black);
@@ -541,7 +541,12 @@ div#explorebtnmobcont {
 img#dividermob-mint, img#dividermob-faq, img#dividermob-search, img#dividermob-rewards, img#dividermob-bar {
   display:none;
 }
+.fade, .fade:hover {
 
+ 
+  background-color: black;
+  opacity: 1;
+}
 @media all and (max-width: 75em) {
   div#explorebtnmobcont {
     display:inline-block;
