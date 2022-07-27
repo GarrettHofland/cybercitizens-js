@@ -318,9 +318,20 @@ bottom:110px;
 img#infobar, img#searchbar, img#rewardbtnbackground {
   position:relative;
 }
+img#infobar {
+  top:2.5px;
+}
+img#searchbar {
+  right:2.5px;
+  top:-2.5px;
+}
+img#mintbar {
+  top:-2.5px;
+}
 img#rewardbar {
   height:1rem;
   width:10rem;
+  top:-2.5px;
   position:relative;
 }
 a#mintbarnav {
