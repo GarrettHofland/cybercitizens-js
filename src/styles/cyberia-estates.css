@@ -12,14 +12,15 @@
   background-repeat: no-repeat;
 }
 iframe#trailer-cyberia {
-  height:25rem;
-  width:35rem;
+  height: 25rem;
+  width: 35rem;
 }
+
 /*img stylings*/
 img#roadmap-image {
   max-width: 100%;
-  margin-bottom:2rem;
-  height:20rem
+  margin-bottom: 2rem;
+  height: 20rem;
 }
 img#benefits-image {
   max-width: 50%;
@@ -74,18 +75,37 @@ div.flex-container-benefits {
 div.flex-container-benefits-mobile {
   display: none;
 }
-div.container-mint  {
-  display:inline;
-  }
-div.divider {
-  border: 1px solid  hsla(295, 100%, 59%, 1);
-  background: hsla(295, 100%, 59%, 1);
-  background: linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
-  background: -moz-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
-  background: -webkit-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
-  display:none;
+div.container-mint {
+  display: inline;
 }
+div.divider {
+  border: 1px solid hsla(295, 100%, 59%, 1);
+  background: hsla(295, 100%, 59%, 1);
+  background: linear-gradient(
+    90deg,
+    hsla(295, 100%, 59%, 1) 0%,
+    hsla(256, 100%, 8%, 1) 1%,
+    hsla(256, 100%, 8%, 1) 99%,
+    hsla(295, 100%, 59%, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(295, 100%, 59%, 1) 0%,
+    hsla(256, 100%, 8%, 1) 1%,
+    hsla(256, 100%, 8%, 1) 99%,
+    hsla(295, 100%, 59%, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(295, 100%, 59%, 1) 0%,
+    hsla(256, 100%, 8%, 1) 1%,
+    hsla(256, 100%, 8%, 1) 99%,
+    hsla(295, 100%, 59%, 1) 100%
+  );
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
+  display: none;
+}
+
 /*buttons and links styling*/
 button.estate-size {
   background-color: transparent;
@@ -99,36 +119,57 @@ button.estate-size:hover {
   zoom: 115%;
   opacity: 1;
 }
-/* remove pointer-events none and opacity for when mint opens */
+button#copy-address {
+  background: transparent;
+  color: var(--yellow);
+  border-color: var(--pink);
+}
+button#copy-address:hover {
+  background: transparent;
+  color: var(--pink);
+  border-color: var(--yellow);
+}
 a#mint-estate {
-  pointer-events: none;
-  opacity: 0.5;
-  display:block;
+  display: block;
+  margin-top: 2rem;
 }
 a#faqhome {
   border: none;
 }
-
 /* other styling*/
+span.close {
+  margin-right: 100%;
+  cursor: pointer;
+}
+span.close:hover {
+  color: yellow;
+}
 p#apt-description,
 p.auctions-text,
 h2#sizestitle {
   text-align: center;
 }
 h2.cyberia-main-description {
-  font-size:xx-large
+  font-size: xx-large;
 }
-div.rarity-container  {
-display:block;
-text-align:center;
-margin-bottom:1rem;
+div.rarity-container {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 p#rarity {
-  color:blue;
+  color: blue;
 }
-p#rarity2 { color:brown;}
-p#rarity3 {color:silver;}
-p#rarity4 {color:gold;}
+p#rarity2 {
+  color: brown;
+}
+p#rarity3 {
+  color: silver;
+}
+p#rarity4 {
+  color: gold;
+}
+
 /* animations for background image */
 @keyframes bgimage {
   0% {
@@ -145,22 +186,24 @@ p#rarity4 {color:gold;}
     background-position: top;
   }
 }
+
 /*mobile styling*/
 @media all and (max-width: 40em) {
-  .s1-estates  {
+  .s1-estates {
     animation: none;
     background-size: contain;
-
   }
-section.s1, section.s2, section.s3, section.s4, section.s5, section.s6  {
-
-  background:rgba(7, 7, 15, 0.79)
-
-}
-div.divider {
-  display:flex;
-}
-
+  section.s1,
+  section.s2,
+  section.s3,
+  section.s4,
+  section.s5,
+  section.s6 {
+    background: rgba(7, 7, 15, 0.79);
+  }
+  div.divider {
+    display: flex;
+  }
   img#estate-imgs {
     margin-top: 1rem;
   }
@@ -181,19 +224,25 @@ div.divider {
     margin-inline: auto;
   }
   img#roadmap-image-mobile {
-    width:50%;
-    height:50%;
-    margin:auto;
-    margin-bottom:1rem;
-    padding:1rem;
-    
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
   }
   p#auctions-text {
     text-align: Center;
   }
   iframe#trailer-cyberia {
-    height:20%;
-    width:100%
+    height: 20%;
+    width: 100%;
   }
-   
+  div.modal {
+    display: block;
+    margin-top: 5rem;
+  }
+  div.modal-content {
+    display: inline-block;
+    width: 100%;
+  }
 }

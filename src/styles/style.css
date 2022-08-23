@@ -108,6 +108,9 @@ span {
 .nav-toggle {
     display: none;
 }
+img#ScrollTop {
+width:50%;
+}
 
 .nav-toggle-label {
     display: none;
@@ -132,6 +135,7 @@ nav {
     align-items: center;
     padding-right: 2em;
     gap: 2em;
+    z-index:99;
 }
 
 nav ul {
@@ -293,6 +297,7 @@ section h2 {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
 
 .flex-container {
     display: flex;

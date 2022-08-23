@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/ccpage2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>CyberCitizens</title>
+</head>
+
+<body>
+    
+    <header>
+        <script>
+                  var a=1;
+              function openandclose() {
+                    var e= document.getElementById("player")
+                    
+                    if(a==1){
+    e.style.display="flex";
+    loadTrack(track_index);
+  } else {
+    e.style.display="none";
+  }}
+
+
+        </script>
+        <div class="logo">
+            <img id="scrollTop" src="../assets/logo-name.png" alt="">
+        </div>
+        <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul class="nav-links">
+                <li><a onclick="openandclose()" id="musicbtn"><i class="fa-solid fa-music"></i></a></li>
+                <li class="desktop-li"><a id="discord-desktop" href="https://discord.com/invite/7FcEFKcKJ7"><img id="header-image"
+                            src="../assets/logo-discord.svg" alt="discord image"></a></li>
+                <li><a id="discord-mobile" href="https://discord.com/invite/7FcEFKcKJ7">Discord</a></li>
+                <li class="desktop-li"><a id="twitter-desktop" href="https://twitter.com/ErgoPixels"><img id="header-image"
+                            src="../assets/logo-twitter.svg" alt="twitter image"></a></li>
+                <li><a id="twitter-mobile" href="https://twitter.com/ErgoPixels">Twitter</a></li>
+                <li class="desktop-li"><a id="dino-desktop" href="https://cybercitizens.io/pages/cyberdinos-game.html" onclick="document.getElementById('modal2').style.display='block'" target="iframe_modal2"" ><img id="dino-image"
+                            src="../assets/dino-yellow.png" alt="dino image"></a></li>
+                <li><a class="navlinks" id="dino-mobile" href="./pages/cyberdinos-game.html"><Dino Game></a></li>
+                <li><a class="navlinks" id="citizens" href=""><img class="navbtnsnew" src="../assets/new-cc-page/buttons/btn-citizens.png"></a></li>
+                <li><a class="navlinks" href="../pages/cyberia-estates.html"><img class="navbtnsnew" src="../assets/new-cc-page/buttons/btn-estate.png"></a></li>
+                <li><a class="navlinks" href="https://docs.cybercitizens.io"><img class="navbtnsnew" src="../assets/new-cc-page/buttons/btn-docs.png"></a></li>
+                <li><a class="navlinks" id="play" href="" aria-disabled="true"><img class="navbtnsnew" src="../assets/new-cc-page/buttons/btn-play.png"></a></li>
+
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>
+<div class="audio-player"> <div class="player" id="player" style="display:none;">
+
+  
+    <span class="close" onclick="document.getElementById('player').style.display='none'; document.getElementById('player').src =''" class="">&times;</span>
+    <!-- Define the section for displaying details -->
+    <div class="details">
+       
+      <div class="now-playing" >PLAYING 1 OF 3</div>
+      <div class="track-art"></div>
+      <div class="track-name">Into Cyberia</div>
+      <div class="track-artist">CyberCitizens</div>
+    </div>
+ 
+    <!-- Define the section for displaying track buttons -->
+    <div class="buttons">
+      <div class="prev-track" onclick="prevTrack()">
+        <i class="fa fa-step-backward fa-2x"></i>
+      </div>
+      <div class="playpause-track" onclick="playpauseTrack()">
+        <i class="fa fa-play-circle fa-5x"></i>
+      </div>
+      <div class="next-track" onclick="nextTrack()">
+        <i class="fa fa-step-forward fa-2x"></i>
+      </div>
+    </div>
+ 
+    <!-- Define the section for displaying the seek slider-->
+    <div class="slider_container">
+      <div class="current-time">00:00</div>
+      <input type="range" min="1" max="100"
+        value="0" class="seek_slider" onchange="seekTo()">
+      <div class="total-duration">00:00</div>
+    </div>
+ 
+    <!-- Define the section for displaying the volume slider-->
+    <div class="slider_container">
+      <i class="fa fa-volume-down"></i>
+      <input type="range" min="1" max="100"
+        value="99" class="volume_slider" onchange="setVolume()">
+      <i class="fa fa-volume-up"></i>
+    </div></div>
+    <div id="modal2" class="modaldino" style="display:none;">
+                    
+      <span class="close" onclick="document.getElementById('modal2').style.display='none'; document.getElementById('iframedino').src =''" class="">&times;</span>
+      <iframe id="iframedino" height="1000px" width="100%;" src="" name="iframe_modal2"></iframe>
+    </div>
+    <style>.modal {
+      z-index:3;
+      display:none;
+      padding-top:50px;
+      position:fixed;
+      right:0;
+      top:20%;
+     height:fit-content;
+     width:50rem;
+      background-color:rgb(0,0,0);
+      background-color:rgba(0,0,0,0.4);
+      margin-top:2rem;
+      overflow-x:hidden;
+      margin-right:1rem;
+      
+    }
+    a#mint-cc-wave3 {
+      cursor:pointer;}
+      .modaldino {
+        z-index:3;
+      display:none;
+ 
+   width:95%;
+     height:fit-content;
+     
+      background-color:rgb(0,0,0);
+      background-color:rgba(0,0,0,0.4);
+    margin-top:5rem;
+      overflow-x:hidden;
+      margin-right:1rem;
+      }
+      span.close {
+        margin-right:49rem;
+        cursor:pointer;
+        z-index:5;
+      }
+      
+      
+      </style>
+
+ <section class="s1-mintui">
+
+        <div class="mainarea">
+         <img id="logo-big" src="../assets/new-cc-page/icons/cc-big.png" height:"500px">
+                <p class="newccmaintext">CyberCitizens Living in the CyberVerse on the Ergo Blockchain</p>
+                <a class="newccpage" href="#s2-mintui"><img class="buttons-newccpage" src="../assets/new-cc-page/buttons/btn-explore.png" id="explore"></a>
+               <div id="explorebtnmobcont"><a id="mob-explore-link" href="#s2-mintui"><img  src="../assets/new-cc-page/buttons/btn-explore.png" id="explore-mob"></a></div> 
+            </div>  
+            </div>
+                    <div id="modal1" class="modal">
+                    
+                    <span class="close2" id="closemodalpayment" onclick="document.getElementById('modal1').style.display='none'; document.getElementById('iframe1').src =''" class="">&times;</span>
+                    <iframe id="iframe1" height="500px" width="100%" src="" name="iframe_modal"></iframe>
+                  </div>
+                  <style>.modal {
+                    z-index:3;
+                    display:none;
+                    padding-top:50px;
+                    position:fixed;
+                    right:0;
+                    top:20%;
+                   height:fit-content;
+                   width:50rem;
+                    background-color:rgb(0,0,0);
+                    background-color:rgba(0,0,0,0.4);
+                    margin-top:2rem;
+                    overflow-x:hidden;
+                    margin-right:1rem;
+                    
+                  }
+                  a#mint-cc-wave3 {
+                    cursor:pointer;}
+                    
+                    span.close {
+                      margin-right:49rem;
+                      cursor:pointer;
+                    }
+                    
+                    
+                    </style>
+
+    </section>
+
+    <section class="s2-mintui" id="s2-mintui">
+      <div class="mobile-btns">
+        <a class="mobile-nav-s2" href="#cc-mint-cont">Mint</a>
+        <a class="mobile-nav-s2" href="#s4-mintui">Search</a>
+        <a class="mobile-nav-s2" href="#faqcontentmob">FAQ</a>
+        <a class="mobile-nav-s2" href="#s6-mintui">Rewards</a>
+      </div>
+<div class="site-btns" id="mintbarcont"><a id="mintbarnav" href="#cc-mint-pic"><img src="../assets/new-cc-page/ButtonForPC.png" id="mintbtnbackground"><img src="../assets/new-cc-page/Mint.png" id="mintbar" class="barnav"></a></div>
+<div class="site-btns" id="searchbarcont"><a id="mintbarnav" href="#searchborder"><img src="../assets/new-cc-page/ButtonForPC.png" id="mintbtnbackground"><img src="../assets/new-cc-page/Search.png" id="searchbar"class="barnav"></a></div>
+<div class="site-btns" id="infobarcont"><a id="mintbarnav" href="#faqtitle"><img src="../assets/new-cc-page/ButtonForPC.png" id="mintbtnbackground"><img src="../assets/new-cc-page/Info.png" id="infobar"class="barnav"></a></div>
+<div class="site-btns" id="rewardbarcont"><a id="mintbarnav" href="#rewardscontent"><img src="../assets/new-cc-page/ButtonForPC.png" id="rewardbtnbackground"><img src="../assets/new-cc-page/Rewardsbt.png" id="rewardbar"class="barnav"></a></div>
+
+</section>
+       <div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider-bar"></span>
+        <div id="dividercontmob"><img src="../assets/new-cc-page/divider-hires.png" id="dividermob-bar"></span>
+
+          <div class="fade">   <section class="s3-mintui" id="s3-mintui">       
+             <a id="cornernav" href="#s2-mintui"> <div id="cornercont"><img src="../assets/new-cc-page/corner.png" class="corner"></div></a>
+            <div  id="cc-mint-cont" class="cc-mint">
+            <img id="cc-mint-pic" src="../assets/new-cc-page/mint-cc-new.png"><br>
+            <img id="ccmint-mob" src="../assets/new-cc-page/mint-cc-new.png">
+            <a id="mint" href="https://cybercitizens.io/payment-portal/pay.html?address=9heqk8a1pBZLr3nde1Byi6YRHcoDiMgXNTBg4eb6d58qsg7crwT&currency=ERG&amount=25&ref=CyberCitizen%20Wave%203!" onclick="document.getElementById('modal1').style.display='block'" target="iframe_modal" >Mint</a> </div>
+            </div> </section></div>
+
+            <div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider-mint"></span>
+              <div id="dividercontmob"><img src="../assets/new-cc-page/divider-hires.png" id="dividermob-mint"></span>
+
+
+
+               <div class="fade"><section class="s4-mintui" id="s4-mintui">
+              
+                  <a id="cornernav" href="#s2-mintui"> <div id="cornercont"><img src="../assets/new-cc-page/corner.png" class="corner"></div></a>
+                    <div class="cc-mint">
+                                             
+                <img src="../assets/new-cc-page/buttons/btn-search.png" id="searchmob">
+                     <div id="normal-cc"><img src="../assets/new-cc-page/search-cc.png" id="normalcc">
+                        <img id="ingamecc" src="../assets/new-cc-page/search-ingame.png"><br><img src="../assets/new-cc-page/buttons/btn-search.png" id="searchbtn"></div>
+                    
+                        <div class="searchdescco"><img src="../assets/new-cc-page/nftvsingame.png" id=searchdesc></div>
+                  
+                        </div>
+
+                
+                      </section> </div> 
+                     <div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider-search"></span>
+                     <div id="dividercontmob"><img src="../assets/new-cc-page/divider-hires.png" id="dividermob-search"> </span>
+                      <div class="fade">        <section class="s5-mintui" id="s5-mintui">
+
+  <a id="cornernav" href="#s2-mintui">  <div id="cornercont"><img src="../assets/new-cc-page/corner.png" class="corner"></div></a>
+<div id="faqmobcont">  <img src="../assets/new-cc-page/faq-title.png" id="faqtitlemob"> 
+  <img src="../assets/new-cc-page/faq.png" id="faqcontentmob"></div>
+<img src="../assets/new-cc-page/faq-title.png" id="faqtitle">
+<img src="../assets/new-cc-page/faq.png" id="faqcontent">
+
+
+
+
+
+
+
+
+</section></div>
+
+
+
+<div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider-faq"></span>
+  <div id="dividercontmob"><img src="../assets/new-cc-page/divider-hires.png" id="dividermob-faq"></span>
+<section class="s6-mintui" id="s6-mintui">     
+    <a id="cornernav" href="#s2-mintui"><div id="cornercont"><img src="../assets/new-cc-page/corner.png" class="corner"></div></a>
+       <img src="../assets/new-cc-page/rewards-newccpage.png" id="rewardscontent">
+       <img src="../assets/new-cc-page/rewards-newccpage.png" id="rewardscontentmob">
+      </section>
+
+
+    <div id="dividercont"><img src="../assets/new-cc-page/divider-hires.png" id="divider-rewards"></span>
+      <div id="dividercontmob"><img src="../assets/new-cc-page/divider-hires.png" id="dividermob-rewards"></span>
+
+
+
+
+
+
+
+
+
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <img class="footer-logo" src="../assets/logo-name.png" alt="ergopixels logo">
+            </div>
+            <div class="svg-container">
+                <a href="https://twitter.com/ErgoPixels"><img class="twitter" src="../assets/logo-twitter.svg"
+                        alt="twitter logo"></a>
+                <a href="https://discord.com/invite/7FcEFKcKJ7"><img class="discord" src="../assets/logo-discord.svg"
+                        alt="discord logo"></a>
+            </div>
+            <div class="footer-text">
+                CyberCitizens is an NFT project by the ERGOPixels team.
+            </div>
+        </div>
+    </footer>
+<script> $(window).on("load",function() {
+  $(window).scroll(function() {
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight("#s3-mintui");
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+      
+      /* If the element is completely within bounds of the window, fade it in */
+      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+        if ($(this).css("opacity")==0) {$(this).fadeTo(1000,1);}
+      } else { //object goes out of view (scrolling up)
+        if ($(this).css("opacity")==1) {$(this).fadeTo(1000,0);}
+      }
+    });
+  }).scroll(); //invoke scroll-handler on page-load
+}); </script>
+    <script src="../js/app.js"></script>
+    <script src="../js/audio-player.js"></script>
+</body>
+
+</html>

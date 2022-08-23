@@ -1,0 +1,1230 @@
+/* Main Styling */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@font-face {
+    font-family: pixelFont;
+    src: url("../assets/fonts/Mechfire_Bold.otf") format("opentype");
+}
+a#mint {
+    color:yellow;
+
+}
+a#mint:hover {
+    color:var(--pink)
+}
+:root {
+    --yellow: #F7FC19;
+    --pink: #EE2DFF;
+    --blue: #0B0029;
+    --bg: var(--blue);
+
+    --red: #FF0000;
+    --purple: #811CB0;
+    --teal: #2fa388;
+    --blue-purple: #2f4aa3;
+    --light-red: #a32f4a;
+    --dark-yellow: #a3882f;
+    --black: #000000;
+    --white: #FFFFFF;
+    --grey: #92a5ce;
+    --bg-header: rgba(0, 0, 0, 0.9);
+    --nav-hover: var(--pink);
+
+    --step-0: clamp(1.31rem, 1.24rem + 0.37vw, 1.50rem);
+    --step-1: clamp(1.58rem, 1.02rem + 2.78vw, 3.00rem);
+    --step-2: clamp(1.89rem, 0.29rem + 8.02vw, 6.00rem);
+    --step-3: clamp(2.27rem, -1.53rem + 18.99vw, 12.00rem);
+    --step-4: clamp(2.72rem, -5.58rem + 41.52vw, 24.00rem);
+    --step-5: clamp(3.27rem, -14.19rem + 87.29vw, 48.00rem);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+a:hover {
+    color: var(--pink);
+}
+nav > img, a {
+   display:inline-flex;
+   flex-direction:row;
+
+}
+/* Style the navigation menu */
+.topnav {
+    z-index:999;
+    background-color: black;
+    position: relative;
+    
+  }
+  nav {
+    z-index:999;
+  }
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+
+  
+  /* Style navigation menu links */
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  /* Style the hamburger menu */
+  .topnav a > img#navlogo {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  /* Add a grey background color on mouse-over */
+  .topnav a:hover {
+    background-color: var(--pink);
+    color: black;
+  }
+  
+  /* Style the active link (or home/logo) */
+  .active {
+
+    color: white;
+  }
+
+html {
+    margin: 0;
+    padding: 0;
+    color: var(--white);
+    font-family: pixelFont;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    overflow-x: hidden;
+
+    background-color: var(--bg);
+}
+
+header {
+position:fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-header);
+    width: 100vw;
+    z-index:99;
+    border-bottom:5px solid var(--pink)
+
+
+
+}
+
+span {
+    color: var(--pink);
+}
+#explore {
+    display:flex;
+    width:10rem;
+    height:4rem
+}
+.nav-links {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.25rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+}
+
+.logo {
+  display:block;
+  width:0.1rem;
+    cursor: initial;
+
+}
+
+.logo img {
+    max-width:10%;
+    max-height:10%;
+    cursor: pointer;
+}
+
+nav {
+   margin-inline:auto;
+    display: block;
+ width:100vh;
+ margin-right:.1vh;
+    padding-right: 2em;
+    gap: 2em;
+    z-index:99;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 100%;
+}
+
+nav a {
+    margin-left: 1em;
+    margin-bottom: 0;
+    position: relative;
+}
+
+
+
+#discord-desktop,
+#twitter-desktop {
+    margin-right: 10px;
+    border: none;
+}
+
+#discord-desktop {
+    filter: invert(65%) sepia(79%) saturate(2780%) hue-rotate(199deg) brightness(90%) contrast(88%);
+}
+
+#twitter-desktop {
+    filter: invert(68%) sepia(75%) saturate(2575%) hue-rotate(179deg) brightness(99%) contrast(88%);
+}
+
+#discord-desktop::before,
+#twitter-desktop::before {
+    display: none;
+}
+
+
+
+
+#mint,
+#explore,
+.unsold {
+    font-size: 1.5rem;
+}
+
+
+div.mainarea {
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    margin-top:5rem;
+   
+}
+span#searchcont {
+    position: relative;
+
+}
+img#divider{
+    width:125%;
+
+        position: absolute;
+        top: -65px;
+  
+    
+  
+}
+img#navlogo {
+    
+
+display:inline;;
+    position:relative;
+    width:15rem;
+top:15px;
+
+
+}
+.logo {
+ 
+    cursor: initial;
+
+    display:inline;;
+}
+
+a#openplayer {
+ border:1.5px solid var(--purple);
+    border-radius:5%;
+    color:var(--yellow);
+
+
+}
+a#openplayer:hover  {
+    color:var(--pink)
+}
+img#logo-big {
+
+width:35rem;
+height:15rem;}
+img.corner {
+
+
+
+width:105px;
+height:105px;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+
+
+}
+img.navbtns {
+    width:15rem;
+    height:3rem;
+    margin-left:2vh;
+}
+#logo {
+    width:50px;
+    height:50px;
+    margin-left:1vh;
+    margin-right:1vh;
+    padding-bottom:1vh;
+}
+p.newccmaintext {
+    font-family:pixelFont;
+    color:var(--yellow);
+    font-size:200%;
+}
+div#cornercont, div#dividercont {
+    position: relative;
+
+  
+}
+div.player {
+background-color:purple;
+border:1px solid yellow;
+border-radius:5%;
+  display:flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+       position:fixed;
+      top:25%;
+      left:30%;
+      opacity:0.8;
+
+      
+}
+span.close {
+    margin-top:1rem;
+    margin-left:1rem;
+}
+.details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 25px;
+  }
+   
+  .track-art {
+    margin: 25px;
+    height: 250px;
+    width: 250px;
+    background-image: URL(
+      "https://bafybeianlwnaxlawfnav4y3u7pvpyrwy2nx6hx2plf3t364o5vireihg3a.ipfs.dweb.link/music-pic.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 15%;
+
+  }
+   
+  /* Changing the font sizes to suitable ones */
+  .now-playing {
+    font-size: 1rem;
+  }
+   
+  .track-name {
+    font-size: 3rem;
+  }
+   
+  .track-artist {
+    font-size: 1.5rem;
+  }
+   
+  /* Using flex with the row direction to
+     align items in a horizontal direction */
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+   
+  .playpause-track,
+  .prev-track,
+  .next-track {
+    padding: 25px;
+    opacity: 0.8;
+   
+    /* Smoothly transition the opacity */
+    transition: opacity .2s;
+  }
+   
+  /* Change the opacity when mouse is hovered */
+  .playpause-track:hover,
+  .prev-track:hover,
+  .next-track:hover {
+    opacity: 1.0;
+  }
+   
+  /* Define the slider width so that it scales properly */
+  .slider_container {
+    width: 75%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Modify the appearance of the slider */
+  .seek_slider, .volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: black;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+   
+  /* Modify the appearance of the slider thumb */
+  .seek_slider::-webkit-slider-thumb,
+  .volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+   
+  /* Change the opacity when mouse is hovered */
+  .seek_slider:hover,
+  .volume_slider:hover {
+    opacity: 1.0;
+  }
+   
+  .seek_slider {
+    width: 60%;
+  }
+   
+  .volume_slider {
+    width: 30%;
+  }
+   
+  .current-time,
+  .total-duration {
+    padding: 10px;
+  }
+   
+  i.fa-volume-down,
+  i.fa-volume-up {
+    padding: 10px;
+  }
+   
+  /* Change the mouse cursor to a pointer
+     when hovered over */
+  i.fa-play-circle,
+  i.fa-pause-circle,
+  i.fa-step-forward,
+  i.fa-step-backward {
+    cursor: pointer;
+  }
+div.now-playing{
+    color:black;
+    font-weight:bold;
+    font-size:150%;
+}
+div.track-name {
+    text-align:center;
+    color:var(--yellow)
+}
+div.track-artist {
+    text-align:center;
+    color:var(--pink)
+}
+section#header-main {
+    background-image:url("../assets/new-cc-page/header-pic-final.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+    min-height:75vh;
+    display: flex;
+    flex-direction: column;
+background-position:center;
+    width:auto;
+    margin-top:5rem;
+
+}
+section#bar-explore{
+    background-image:url("../assets/new-cc-page/fullbar.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+    min-height:75vh;
+    display: flex;
+    flex-direction: column;
+
+    width:100%;
+
+}
+img#cc-mint-pic {
+    max-width:15rem;
+    max-height:15rem;
+    display:inline-block;
+
+}
+div.cc-mint {
+    display:block;
+    text-align:center;
+    margin-top:5vh;
+
+}
+a#mint {
+    display:inline-block;
+}
+section#calendar-mint {
+    background-image:url("../assets/new-cc-page/searcharea.png");
+    background-size:cover;
+
+    background-repeat:no-repeat;
+    min-height:75vh;
+    display: flex;
+    flex-direction: column;
+    background-position:center;
+
+    width:100%;
+}
+div#normal-cc {
+   position:relative;
+   display:inline-block;
+   margin-top:10vh;
+   
+
+}
+img#normalcc, img#ingamecc {
+    width:15rem;
+    height:15rem
+    
+
+}
+img#normalcc {
+    margin-left:27.5vh;
+    padding-right:2rem;
+}
+img#ingamecc{
+    margin-right:27.5vh;
+    padding-left:2rem;
+}
+
+div#search-container {
+    display:block;
+    text-align:center;
+
+}
+/* Style the navigation menu */
+.mobilenav {
+    overflow: hidden;
+    background-color:black;
+    position: relative;
+    display:none;
+    width:50em;
+  }
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .mobilenav  #myLinks {
+    display:none;
+    
+  }
+
+  /* Style navigation menu links */
+  .mobilenav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    margin-inline:auto;
+ 
+  }
+  
+  /* Style the hamburger menu */
+  .mobilenav  a.icon {
+    background: black;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    width:fit-content;
+
+  }
+img#navbarimgmobile {
+    max-width:175px;
+    max-height:175px;
+   
+}
+  /* Add a grey background color on mouse-over */
+  .mobilenav  a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  div#myLinks {
+    display:block;
+  }
+a.active {
+    display:flex;
+padding-left:87px;
+position:relative;
+}
+section#rewards {
+    background-image:url("../assets/new-cc-page/speaker-brick.png");
+    background-size:cover;
+padding-top:1rem;
+    background-repeat:no-repeat;
+    min-height:75vh;
+    display: flex;
+    flex-direction: column;
+    background-position:center;
+
+    width:100%;  
+}
+div#rewardscont {
+   display:inline;
+text-align:center;}
+img#rewardsp {
+   
+}
+section#search {
+    background-image:url("../assets/new-cc-page/bar-left.png");
+    background-size:cover;
+padding-top:1rem;
+    background-repeat:no-repeat;
+    min-height:75vh;
+    display: flex;
+    flex-direction: column;
+    background-position:center;
+
+    width:100%;}
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    max-width:fit-content;
+margin-inline:auto;
+}
+img#logo-footer-img {
+    width:20rem
+}
+.logo-footer-container{
+    margin-inline:auto;
+}
+img#searchbtn {
+    height:5em;
+    width:15rem;
+    position:relative;
+    margin-top:2.5rem;
+}
+img#searchcontimg {
+
+}
+div#searchborder {
+   
+
+
+
+}
+img#faqtitle {
+ top:100px;
+    position:absolute;
+right:1px;
+}
+div#searchdescco {
+    display:block;
+
+}
+img#searchdesc {
+    width:50rem;
+    height:6rem;
+    position:relative;
+    margin-top:9vh;
+}
+div#faqcont {
+    display:inline;
+    position:relative
+}
+img#faqcont {
+    margin-top:25vh;
+    margin-left:25vh;
+
+}
+section#faqsection{
+    background-image:url("../assets/new-cc-page/bar-right.png");
+    background-size:cover;
+    padding-top:5vh;
+    background-repeat:no-repeat;
+    min-height:75vh;
+    display: flex;
+    flex-direction: column;
+    background-position:center;
+
+    width:100%;}
+.footer-container a {
+    border: none;
+}
+
+.footer-logo {
+    width: 50%;
+    margin-top: 1em;
+    padding-bottom: 1em;
+    padding-right:2em;
+    margin-right:3em;
+  
+}
+
+.footer-logo-container {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--pink);
+    min-width: 90%;
+    margin: 0 auto;
+    min-height:5rem;
+
+}
+
+.svg-container {
+    display: flex;
+    justify-content: space-around;
+ 
+
+}
+
+.svg-container a {
+    width: 50%;
+    text-align: center;
+}
+
+.discord,
+.twitter {
+    max-width: 50%;
+}
+
+.footer-text {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.svg-container {
+    justify-content: center;
+    margin: auto auto;
+    min-width: 50%;
+}
+
+.svg-container a {
+    margin: 0;
+    gap: 0;
+}
+
+.svg-container a img {
+    padding-top: 1em;
+    width: 40%;
+}
+
+.footer-logo {
+    width: 10%;
+}
+
+.footer-text {
+    padding: 1em;
+}
+
+.twitter,
+.discord {
+    filter: invert(98%) sepia(95%) saturate(6%) hue-rotate(306deg) brightness(103%) contrast(100%);
+}
+
+#wallet {
+    cursor: pointer;
+}
+
+#wallet-connector {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 50%;
+    min-height: 30%;
+    padding: 1em;
+    background-color: black;
+    border-radius: 20px;
+    color: var(--yellow);
+    text-shadow: 1px 1px #258ae8;
+    display: none;
+    z-index: 200;
+}
+
+#wallet-connector p {
+    padding-bottom: 2%;
+    font-size: 1.5rem;
+}
+
+#wallet-connector input {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+
+#wallet-connector.open {
+    z-index: 100;
+    background-color: var(--blue);
+    border: 2px var(--pink) solid;
+    display: block;
+}
+
+#wallet-address-text {
+    font-weight: 100;
+}
+
+#wallet-output {
+    padding-top: 2%;
+    color: red;
+}
+
+#wallet-buttons {
+    display: flex;
+    justify-content: end;
+    gap: 1em;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wallet-button {
+    all: unset;
+    min-width: 10%;
+    background-color: var(--pink);
+    border: 1px var(--pink) solid;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+    padding: 1%;
+    color: var(--yellow);
+    text-shadow: 1px 1px #258ae8;
+}
+
+.wallet-button:hover {
+    border: 2px #258ae8 solid;
+}
+
+#finish {
+    background-color: #258ae8;
+    border: 2px #258ae8 solid;
+}
+
+#finish:hover {
+    border: 2px var(--pink) solid;
+}
+
+input[type=text],
+textarea {
+    border: 2px #f711f7 solid;
+    background-color: var(--bblue);
+    border-radius: 20px;
+    color: var(--yellow);
+    font-family: pixelFont;
+}
+
+input[type=text]:focus,
+textarea:focus,
+input[type=text]:hover,
+textarea:hover {
+    border: 2px var(--pink) solid;
+}
+
+#dino-mobile,
+#twitter-mobile,
+#discord-mobile {
+    display: none;
+}
+
+li #dino-image {
+    flex-grow: 0;
+    flex-basis: 10%;
+}
+
+#dino-image {
+    width: auto;
+    height: auto;
+    max-width: 25px;
+    max-height: 20px;
+}
+
+li #header-image {
+    flex-grow: 1;
+    flex-basis: 10%;
+}
+
+#header-image {
+    width: auto;
+    height: auto;
+    max-width: 30px;
+    max-height: 25px;
+    border-color: red;;
+}
+
+
+
+
+@media all and (max-width: 40em) {
+.s2-mintui{
+    background-size:contain;
+    background-image:none;
+}
+
+    section.s1,
+    section.s2,
+    section.s3,
+    section.s4,
+    section.s5,
+    section.s6 {
+      background: rgba(7, 7, 15, 0.79);
+    }
+    div.divider {
+      display: flex;
+    }
+    img#estate-imgs {
+      margin-top: 1rem;
+    }
+    /*desktop layout hidden on mobile */
+    div.flex-container-benefits {
+      display: none;
+    }
+    div.flex-container-benefits-mobile {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    img#benefits-image-mobile {
+      width: 20%;
+      height: 20%;
+      margin: 1rem;
+      margin-bottom: 2rem;
+      margin-inline: auto;
+    }
+    img#roadmap-image-mobile {
+      width: 50%;
+      height: 50%;
+      margin: auto;
+      margin-bottom: 1rem;
+      padding: 1rem;
+    }
+    p#auctions-text {
+      text-align: Center;
+    }
+    iframe#trailer-cyberia {
+      height: 20%;
+      width: 100%;
+    }
+    div.modal {
+      display: block;
+      margin-top: 5rem;
+    }
+    div.modal-content {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+  
+@media all and (max-width : 50em) {
+    header {
+        display: flex;
+        text-align: center;
+        z-index: 999;
+        max-width:fit-content;
+    }
+
+    .logo {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        font-size: 2rem;
+    }
+nav {
+    display:none;
+}
+
+
+    /* Look for any nav as a preceding sibling */
+    .nav-toggle:checked~nav {
+        transform: scale(1, 1);
+    }
+
+    .nav-toggle:checked~nav .nav-links li a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 350ms;
+    }
+
+    .nav-toggle-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 1em;
+    }
+
+    /* Create hamburger */
+    .nav-toggle-label>span,
+    .nav-toggle-label>span::before,
+    .nav-toggle-label>span::after {
+        display: block;
+        background: var(--pink);
+        height: 2px;
+        width: 2em;
+        border-radius: 2px;
+        position: relative;
+    }
+
+    /* Make sure the pseudo-elements have content so they display */
+    .nav-toggle-label>span::before,
+    .nav-toggle-label>span::after {
+        content: '';
+        position: absolute;
+    }
+
+    /* Move the before pseudo-element down */
+    .nav-toggle-label>span::before {
+        bottom: 7px;
+    }
+
+    /* Move the after pseudo-element up */
+    .nav-toggle-label>span::after {
+        top: 7px;
+    }
+    .nav-links {
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 1.25rem;
+    
+        display: flex;
+        align-items: center;
+    }
+    
+    .nav-toggle {
+        display: none;
+    }
+    
+    .nav-toggle-label {
+        display: none;
+        cursor: pointer;
+    }
+    
+    .logo {
+        grid-column: 1 / 2;
+        cursor: initial;
+        padding: 5em;
+        display:none;
+    }
+    
+    .logo img {
+        max-width: 40%;
+        cursor: pointer;
+    }
+    
+    nav {
+        grid-column: 2 / 5;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 2em;
+        gap: 2em;
+        z-index:99;
+    }
+    
+
+   
+    .footer-logo {
+        width: 40%;
+    }
+
+    #wallet-connector {
+        width: 90% !important;
+    }
+
+    #wallet-connector p {
+        padding-bottom: 2%;
+        font-size: 1.25rem;
+    }
+
+    #wallet-connector input {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 1.125rem;
+    }
+
+    .wallet-button {
+        font-size: 1.125rem;
+    }
+
+    #dino-desktop,
+    #discord-desktop,
+    #twitter-desktop {
+        display: none;
+    }
+
+    #dino-mobile,
+    #twitter-mobile,
+    #discord-mobile {
+        display: inline-block;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    .desktop-li {
+        display: none;
+    }
+  
+
+@media all and (max-width : 60em) {
+
+
+    #nft-container {
+        flex-direction: column;
+    }
+
+    .auction-card-modal h2 {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        font-size: 1rem;
+    }
+
+    .roadmap-title {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .flex-container-faq {
+        max-width: 90%;
+    }
+
+    li h4 {
+        font-size: 1.5rem;
+    }
+
+    .benefits-list {
+        padding-left: 4%;
+    }
+
+    .benefit-title {
+        font-size: 1.3rem;
+    }
+
+    .benefit {
+        font-size: 1.125rem;
+    }
+
+    li p {
+        font-size: 1.25rem;
+    }
+
+    .team-member-name {
+        font-size: 1.5rem;
+    }
+
+    .team-member-description {
+        font-size: 1.25rem;
+    }
+
+    .faq-header {
+        font-size: 1.5rem;
+    }
+
+    .faq-answer {
+        word-wrap: break-word;
+        font-size: 1.25rem;
+    }
+
+    .footer-logo {
+        width: 40%;
+    }
+
+    .footer-text {
+        font-size: 1rem;
+    }
+
+    #wallet-connector {
+        width: 90% !important;
+        top: 60%;
+    }
+
+    #wallet-connector p {
+        padding-bottom: 2%;
+        font-size: 1rem;
+    }
+
+    #wallet-connector input {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 1rem;
+    }
+
+    .wallet-button {
+        font-size: 1rem;
+    }
+}}
+
+@media all and (min-width:40em) and (max-width:100em) {
+    .mobilenav {
+        display:none
+    }
+    .topnav {
+        display:flex;
+    }
+}
+@media all and (max-width:40em) {
+    .topnav {
+        display:none;
+    }
+    .mobilenav {
+        display:flex;
+    }
+}

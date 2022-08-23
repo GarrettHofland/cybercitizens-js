@@ -1,0 +1,709 @@
+.s1-mintui {
+    min-height: 65vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--black);
+
+    background-image: url("../assets/new-cc-page/header-pic-final.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* You can aslo add */
+
+
+}
+section > img {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+.s2-mintui{
+
+    min-height: 72vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--black);
+display:flex;
+    background-image: url("../assets/new-cc-page/fullbar.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+p.newccmaintext {
+  color:var(--yellow)
+}
+.s3-mintui{
+
+    min-height: 65vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--black);
+
+    background-image: url("../assets/new-cc-page/searcharea.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.s4-mintui{
+
+    min-height: 65vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--black);
+
+    background-image: url("../assets/new-cc-page/bar-left.png");
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.s5-mintui{
+
+    min-height: 75vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--black);
+
+    background-image: url("../assets/new-cc-page/bar-right.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.s6-mintui{
+
+    min-height: 75vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--black);
+
+    background-image: url("../assets/new-cc-page/speaker-brick.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+img#searchcontimg {
+    min-height:45vh;
+ 
+position:absolute;
+right:10rem;;
+
+    
+
+    }
+    img#rewardscontent {
+        margin-bottom:10%;
+    }
+    img#faqtitle {
+        margin-left:55%;}
+        img#faqcontent {
+            padding-bottom:2rem;
+        }
+    img#searchdesc {
+        width:55%;
+        height:15%;
+        position:relative;
+        top:170px;
+        margin-left:25%;
+        padding-bottom:0.5rem;
+     
+    }
+    img#searchbtn {
+       position:relative;
+       margin-left:8rem;
+     width:15rem;
+padding-top:1rem;
+     height:5rem;
+     top:125px;
+
+    }
+    div#search-container {
+        position:relative;
+        align-items:center;
+        margin-inline:auto;
+       
+    }
+    img#normalcc, img#ingamecc {
+        width:15rem;
+        height:15rem;
+        position:relative;
+top:125px;
+    
+    }
+    img#ingamecc {
+        padding-left:2rem;
+    }
+    img#normalcc {
+        padding-right:2rem;
+    }
+    div.searchdesccomob {
+      display:none;
+    }
+section {
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+
+    /* border-glow-here */
+    background: hsla(295, 100%, 59%, 1);
+
+    background: linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EE2DFF", endColorstr="#0B0029", GradientType=1);
+}
+div.cc-mint > img{
+    width:7rem;
+    height:7rem;
+    border:none;
+
+}
+img#cc-mint-pic{
+  width:15rem;
+  height:15rem;
+}
+div.cc-mint {
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  padding-bottom:15rem;
+  border:none;
+
+}
+div.mainarea {
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+padding-bottom:5rem;
+    border:none;
+    text-align:center;
+   
+}
+div.mainarea > a {
+    border:none;
+}
+div.mainarea > img  {
+    width:35rem;
+    height:15rem;
+
+}
+#explore {
+width:13rem;
+height:3rem;
+
+}
+img#divider, img#divider-mint, img#divider-faq, img#divider-bar, img#divider-search, img#divider-rewards {
+    width:125%;
+
+        position: absolute;
+        top: -60px;
+  
+    
+  
+}
+img#dividermob {
+  width:125%;
+  position:Absolute;
+  display:none;
+}
+div#dividercont {
+position:relative;
+
+  
+}
+img.corner {
+
+position:relative;
+left:85vh;
+top:50px;
+width:75px;
+height:75px;
+
+    
+    
+    }
+
+    div.player {
+        background-color:purple;
+        border:1px solid yellow;
+        border-radius:5%;
+          display:flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+               position:fixed;
+              top:25%;
+              left:30%;
+              opacity:0.8;
+              z-index:500;
+        
+              
+        }
+        img#icon-faq {
+          width:4rem;
+          height:4rem;
+
+          top:-100px;
+
+
+        }
+
+div#faqbarcont {
+top:-75px;
+right:675px;
+z-index:5;
+position:relative;
+display:inline-block;
+}
+
+
+div#mintbarcont {
+
+  z-index: 5;
+  position:relative;
+  display:flex;
+
+
+left:-273px;
+
+top:75px;
+width:auto;
+ 
+}
+header {
+  z-index:999;
+}
+img.navbtnsnew  {
+  width:8rem;
+  height:2.5rem;
+}
+a.navlinks {
+  border:none;
+}
+div#rewardbarcont {
+  position:relative;
+  display:flex;
+  width:auto;
+bottom:425px;
+right:30px;
+
+}
+div#searchbarcont {
+  position:relative;
+  display:flex;
+  width:3.5%;
+bottom:150px;
+z-index:5;
+right:556px;
+
+}
+div#infobarcont {
+
+  position:relative;
+  
+    width:3.5%;
+bottom:110px;
+  right:-510px;
+  
+}
+img#infobar, img#searchbar, img#rewardbtnbackground {
+  position:relative;
+}
+img#infobar {
+  top:2.5px;
+}
+img#searchbar {
+  right:2.5px;
+  top:-2.5px;
+}
+img#mintbar {
+  top:-2.5px;
+}
+img#rewardbar {
+  height:1rem;
+  width:10rem;
+  top:-2.5px;
+  position:relative;
+}
+a#mintbarnav {
+  border:none;
+}
+
+div#mintbarcont, div#rewardbarcont, div#infobarcont, div#searchbarcont {
+cursor:pointer;
+
+border-radius:10%;
+}
+img#mintbar {
+width:3rem;
+height:0.75em;
+position:relative;
+
+
+}
+img#rewardbtnbackground {
+  width:12rem;
+  height:4rem;
+  top:45px;
+  left:-15px;
+  position:relative;
+
+}
+img#mintbtnbackground {
+  width:4rem;
+  height:4rem;
+  position:absolute;
+  top:-15px;
+  left:-2px;
+  
+}
+a#arcadebar {
+border:none;
+
+}
+a#play, a#citizens {
+opacity:0.6;
+pointer-events:none;
+}
+a#faqbar {
+  border:none;
+  cursor:pointer;
+}
+        span.close {
+            margin-top:1rem;
+            margin-left:1rem;
+        }
+        .details {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 25px;
+          }
+           
+          .track-art {
+            margin: 25px;
+            height: 250px;
+            width: 250px;
+            background-image: URL(
+              "https://bafybeianlwnaxlawfnav4y3u7pvpyrwy2nx6hx2plf3t364o5vireihg3a.ipfs.dweb.link/music-pic.png");
+            background-size: cover;
+            background-position: center;
+            border-radius: 15%;
+        
+          }
+           
+          /* Changing the font sizes to suitable ones */
+          .now-playing {
+            font-size: 1rem;
+          }
+           
+          .track-name {
+            font-size: 3rem;
+          }
+           
+          .track-artist {
+            font-size: 1.5rem;
+          }
+           
+          /* Using flex with the row direction to
+             align items in a horizontal direction */
+          .buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+           
+          .playpause-track,
+          .prev-track,
+          .next-track {
+            padding: 25px;
+            opacity: 0.8;
+           
+            /* Smoothly transition the opacity */
+            transition: opacity .2s;
+          }
+           
+          /* Change the opacity when mouse is hovered */
+          .playpause-track:hover,
+          .prev-track:hover,
+          .next-track:hover {
+            opacity: 1.0;
+          }
+           
+          /* Define the slider width so that it scales properly */
+          .slider_container {
+            width: 75%;
+            max-width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+           
+          /* Modify the appearance of the slider */
+          .seek_slider, .volume_slider {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            height: 5px;
+            background: black;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+          }
+           
+          /* Modify the appearance of the slider thumb */
+          .seek_slider::-webkit-slider-thumb,
+          .volume_slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: white;
+            cursor: pointer;
+            border-radius: 50%;
+          }
+           
+          /* Change the opacity when mouse is hovered */
+          .seek_slider:hover,
+          .volume_slider:hover {
+            opacity: 1.0;
+          }
+           
+          .seek_slider {
+            width: 60%;
+          }
+           
+          .volume_slider {
+            width: 30%;
+          }
+           
+          .current-time,
+          .total-duration {
+            padding: 10px;
+          }
+           
+          i.fa-volume-down,
+          i.fa-volume-up {
+            padding: 10px;
+          }
+           
+          /* Change the mouse cursor to a pointer
+             when hovered over */
+          i.fa-play-circle,
+          i.fa-pause-circle,
+          i.fa-step-forward,
+          i.fa-step-backward {
+            cursor: pointer;
+          }
+        div.now-playing{
+            color:black;
+            font-weight:bold;
+            font-size:150%;
+        }
+        div.track-name {
+            text-align:center;
+            color:var(--yellow)
+        }
+        div.track-artist {
+            text-align:center;
+            color:var(--pink)
+        }
+
+        .barnav {
+          width:3rem;
+          height:0.75rem;
+        }
+        img#faqtitlemob, img#faqcontentmob {
+          display:none;
+          width:auto;
+          height:auto;
+        }
+div.mobile-btns {
+  display:none;
+}
+h2#mobilemsg{
+  display:none;
+}
+img#searchmob, img#ccmint-mob {
+  display:none;
+}
+img#rewardscontentmob {
+  display:none;
+  width:auto;
+  height:auto;
+}
+a#cornernav {
+  border:none;
+}
+div#explorebtnmobcont {
+  display:none;
+  border:none;
+}
+img#dividermob-mint, img#dividermob-faq, img#dividermob-search, img#dividermob-rewards, img#dividermob-bar {
+  display:none;
+}
+.fade, .fade:hover {
+
+ 
+  background-color: black;
+  opacity: 1;
+}
+@media all and (max-width: 75em) {
+  div#explorebtnmobcont {
+    display:inline-block;
+    border:hidden;
+  }
+  a#mob-explore-link {
+    border:none;
+  }
+img#divider-bar, img#divider-mint, img#divider-search, img#divider-faq, img#divider-rewards {
+  width:125%;
+display:none;
+  position: absolute;
+  top:-30px;
+}
+img#dividermob-mint, img#dividermob-faq, img#dividermob-search, img#dividermob-rewards, img#dividermob-bar {
+  width:125%;
+  position:Absolute;
+  display:block;
+  top:-12px;
+
+}
+div#rewardbarcont {
+  top:-250px;
+}
+img#dividermob-bar {
+
+}
+
+div.site-btns {
+  top:-15px;
+
+}
+div#rewardbarcont{
+  top:-350px;
+}
+
+}
+@media all and (max-width:50rem) {
+
+
+    div.site-btns > a, img {
+
+      display:none;
+    
+    }
+    div#rewardbarcont{
+      top:-350px;
+    }
+  
+}
+        @media all and (max-width: 60em) {
+          .s2-mintui, .s4-mintui, .s5-mintui, .s6-mintui{
+background-size:cover;
+background-position:center;
+
+          background-color:transparent;
+}
+div#modal1 {
+  width:75%;
+left:0.15rem;
+}
+span#closemodalpayhment {
+  margin-right:50rem;
+}
+div.site-btns > a, img {
+  display:none;
+}
+a#newccpagemob{
+  display:block;
+}
+img#explore-mob {
+  display:block;
+  width:12rem;
+  height:3rem;
+}
+div.searchdesscomob {
+  display:block;
+}
+img#searchmob{
+  display:inline-block;
+  width: 75%;
+  height:auto;
+}
+img#ccmint-mob  {
+  display:inline-block;
+width:35%;
+height:35%;
+}
+img#faqtitlemob {
+  display:block;
+width:25rem;
+  height:5rem
+
+}
+img#faqcontentmob {
+  display:block;
+  width:23rem;
+  height:15rem;
+  margin-top:10rem;
+  margin-bottom:2rem;
+  margin-inline:auto;
+}
+div#faqmobcont {
+
+
+}
+div.mobile-btns{
+  display:block;
+
+
+
+
+}
+
+
+img#rewardscontentmob {
+  display:block;
+
+ height:15rem;
+ margin-bottom:15%;
+width:20rem;
+
+}
+h2#mobilemsg{
+  display:inline-block;
+  text-align:center;
+}
+div.player {
+
+width:20rem;
+display:flex;
+left:5%;
+
+
+}
+span.close {
+  position:absolute;
+  margin-left:32rem;
+  margin-bottom:25rem;
+  
+}
+span#closemodalpayment {
+  position:absolute;
+  margin-right:32rem;
+  margin-bottom:35rem;
+}
+div.track-art  {
+  display:none;
+}
+        }
+        
